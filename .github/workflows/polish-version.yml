@@ -32,6 +32,6 @@ jobs:
     - name: Upload archive
       uses: actions/upload-artifact@v2
       with:
-          name: polish version
+          name: polish-version
           path: |
             ./accessibility-checker-extension/dist/*
