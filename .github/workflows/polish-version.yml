@@ -24,14 +24,14 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Build
       run: |
-           cd report-react
+           cd accessibility-checker-extension
+           npm run clean:all
            npm install
-           cd ../accessibility-checker-extension
-           npm install
-           npm run build:prod
+           npm run package:browser
+
     - name: Upload archive
       uses: actions/upload-artifact@v2
       with:
           name: polish-version
           path: |
-            ./accessibility-checker-extension/dist/*
+            ./accessibility-checker-extension/package/accessibility-checker-extension.zip
