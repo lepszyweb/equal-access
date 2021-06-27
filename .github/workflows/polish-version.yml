@@ -24,11 +24,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Build
       run: |
-           cd accessibility-checker-extension
+           cd ./accessibility-checker-extension
            npm run clean:all
            npm install
            npm run package:browser
-
     - name: Upload archive
       uses: actions/upload-artifact@v2
       with:
