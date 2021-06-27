@@ -1,41 +1,49 @@
 ---
-title: "Accessibility Checker Rule Help: RPT_Style_BackgroundImage"
+title: "Pomoc dla regułyi: RPT_Style_BackgroundImage"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div className="toolHelp">
 <Row>
-<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+<Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Who does this affect?
-
-* Blind people using screen readers
-* People with visual impairment using color contrast enhancement
-* People who use alternate backgrounds to increase legibility
-
-### Why is this important?
-
-Use CSS to include decorative images only. Background images in CSS do not support text alternatives. When users do not see the default page background, any important information in CSS background images is lost.
-
-</Column>
-<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+### Sprawdź, czy obraz tła CSS nie przekazuje ważnych informacji
 
 <div id="locLevel"></div>
 
-### Check the CSS background image does not convey important information
-Use CSS to include decorative images only.
+Użyj CSS, aby dołączyć tylko obrazy dekoracyjne.
 
-[IBM 1.1.1 Non-text content](https://www.ibm.com/able/guidelines/ci162/non_text_content.html) | [WCAG 2.1 failure technique F3](https://www.w3.org/WAI/WCAG21/Techniques/failures/F3)
+</Column>
+</Row>
+<Row>
+<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+
+### Dlaczego to jest ważne
+
+Użyj CSS, aby dołączyć tylko obrazy dekoracyjne. Obrazy tła w CSS nie obsługują alternatywnych tekstów. Gdy użytkownicy nie widzą domyślnego tła strony, wszelkie ważne informacje z obrazów tła CSS są tracone.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* If the background image contains important text, use real text rather than an image of text;
-* OR, if the background image conveys important information, use the `<img>` element with an `"alt"` attribute instead of a background image;
-* OR provide a text alternative for the information that shows if the CSS image is not displayed.
+* Jeśli obraz w tle zawiera ważny tekst, należy użyć prawdziwego tekstu, a nie obrazu tekstu;
+* LUB, jeśli obraz tła przekazuje ważne informacje, użyj elementu `<img>` z atrybutem `"alt"` zamiast obrazu tła;
+* LUB zapewnij tekst alternatywny dla informacji, które zostaną pokazane, gdy obraz CSS nie zostanie wyświetlony.
 
+</Column>
+<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+
+### O tym wymaganiu
+
+[IBM 1.1.1 Treść nietekstowa](https://www.ibm.com/able/guidelines/ci162/non_text_content.html)
+[Techniki błędów WCAG 2.1 F3](https://www.w3.org/WAI/WCAG21/Techniques/failures/F3)
+
+### Na kogo to wpływa
+
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby z wadami wzroku korzystające z przełączników kontrastu kolorów
+* Osoby korzystające z alternatywnego tła w celu zwiększenia czytelności
 
 </Column>
 </Row>

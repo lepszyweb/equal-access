@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: RPT_Form_ChangeEmpty"
+title: "Pomoc dla reguły: RPT_Form_ChangeEmpty"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,43 +8,44 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Confirm the form does not submit automatically without warning
+### Upewnij się, że formularz nie zostanie wysłany automatycznie bez ostrzeżenia
 
 <div id="locLevel"></div>
 
-A form should not be submitted automatically without warning the user
+Formularz nie powinien być przesyłany automatycznie bez ostrzeżenia użytkownika
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-Forms that are designed to automatically submit when all the fields are filled out or when focus leaves the last field pose problems for accessibility. If users are not warned, they may leave a field to get more context and be confused when the information is submitted.
+Formularze, które są przeznaczone do automatycznego wysyłania, gdy wszystkie pola są wypełnione lub gdy fokus opuszcza ostatnie pole, stwarzają problemy z dostępnością. Jeśli użytkownicy nie zostaną ostrzeżeni, mogą opuścić pole, np. aby uzyskać więcej kontekstu, co spowoduje wysłanie formularza i dezorientację użytkownika.
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* Verify that the `onchange` function does not automatically submit the form;
-* OR, if the form is automatically submitted, verify that the user is warned in advance;
-* OR, use the standard behavior of a `<form>` element by providing a "submit" button or the use of an Enter key to submit the form.
+* Upewnij się, że funkcja `zmiany` nie wysyła automatycznie formularza;
+* LUB, jeśli formularz jest wysyłany automatycznie, upewnij się, że użytkownik został wcześniej ostrzeżony;
+* LUB, użyj standardowego zachowania elementu `<form>` poprzez zapewnienienie przycisku "submit" (wyślij) lub użycie klawisza Enter do wysłania formularza.
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 3.2.2 On Input](https://www.ibm.com/able/requirements/requirements/#3_2_2)
-[WCAG 2.1 technique G13](https://www.w3.org/WAI/WCAG21/Techniques/general/G13)
-[WCAG 2.1 failure technique F36](https://www.w3.org/WAI/WCAG21/Techniques/failures/F36)
+[3.2.2 Podczas wprowadzania danych](http://www.ibm.com/able/guidelines/ci162/on_input.html)
+[Technika WCAG 2.1 G13](https://www.w3.org/WAI/WCAG21/Techniques/general/G13)
+[Techniki błędów WCAG 2.1 F36](https://www.w3.org/WAI/WCAG21/Techniques/failures/F36)
 
-### Who does this affect?
+### Na kogo to wpływa
 
-* Blind people using screen readers
-* Many older adults
-* People with learning disabilities
+* Osoby niewidome korzystające z czytników ekranu
+* Wiele osób starszych
+* Osoby z trudnościami w uczeniu się
 
 </Column>
 </Row>

@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: combobox_focusable_elements"
+title: "Pomoc dla reguły: combobox_focusable_elements"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,42 +8,42 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Tabbable focus is not set correctly within the combobox or related popup
+### Fokus klawiatury nie jest poprawnie ustawiony wewnątrz combobox lub powiązanym wyskakującym okienku
 
 <div id="locLevel"></div>
 
-Tabbable focus for the combobox must be allowable only on the text input, except when using a dialog popup
+Fokus klawiatury wewnątrz combobox można ustawić tylko na polu wprowadzania tekstu, z wyjątkiem sytuacji, gdy używane jest okienko dialogowe
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-A combobox is a UI interactive component that combines an input and another element, such as a listbox
-or grid, that can dynamically pop up to help the user set the value of the input. When a combobox 
-receives focus, the focus should be set on the text `<input>` element that can either display the 
-current value or supports editing, so people who use assistive technologies are able to accurately 
-navigate and interact with the content.
+Pole kombinowane (combobox) to interaktywny komponentem UI, który łączy dane wejściowe i inny element, taki jak pole listy lub siatka, który może dynamicznie wyskakiwać, aby pomóc użytkownikowi ustawić wartość wprowadzanych danych. Gdy pole kombi jest aktywowane, fokus powinien być ustawiony na elemencie tekstowym `<input>`, który może wyświetlać bieżącą wartość lub obsługuje edycję, aby osoby korzystające z technologii wspomagających mogły dokładnie nawigować i wchodzić w interakcje z treścią.
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
 * Unless the `has-popup` attribute value is `dialog`, set the initial DOM focus only on the combobox’s `<input>` element.
+
+* Jeśli wartością atrybutu `has-popup` nie jest `dialog`, ustaw początkowy fokus DOM tylko na elemencie `<input>` elementu combobox.
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 4.1.2 Name, Role, Value](https://www.ibm.com/able/requirements/requirements/#4_1_2)
+[4.1.2 Nazwa, rola, wartość](https://www.ibm.com/able/requirements/requirements/#4_1_2)
 [WAI-ARIA v1.2 Authoring Practices - Combobox](https://www.w3.org/TR/wai-aria-practices-1.2/#combobox)
 
-### Who does this affect?
+### Kogo to dotyczy?
 
-* People using a screen reader, including blind, low vision and neurodivergent people
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby słabowidzące korzystające z czytników ekranu
 
 </Column>
 </Row>

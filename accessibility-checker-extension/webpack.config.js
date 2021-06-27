@@ -79,49 +79,49 @@ module.exports = {
             template: path.join(sourceRootPath, 'html', 'options.html'),
             inject: 'body',
             filename: 'options.html',
-            title: 'Accessibility Checker Extension - Options Page',
+            title: 'Rozszerzenie Tester dostępności - Strona opcji',
             chunks: ['options']
         }),
         new HtmlWebpackPlugin({
             template: path.join(sourceRootPath, 'html', 'popup.html'),
             inject: 'body',
             filename: 'popup.html',
-            title: 'Accessibility Checker Extension - Popup Page',
+            title: 'Rozszerzenie Tester dostępności - Okno wyskakujące',
             chunks: ['popup']
         }),
         new HtmlWebpackPlugin({
             template: path.join(sourceRootPath, 'html', 'devtools.html'),
             inject: 'body',
             filename: 'devtools.html',
-            title: 'Accessibility Checker Extension',
+            title: 'Rozszerzenie Tester dostępności',
             chunks: ['devtools']
         }),
         new HtmlWebpackPlugin({
             template: path.join(sourceRootPath, 'html', 'devtoolsPanel.html'),
             inject: 'body',
             filename: 'devtoolsPanel.html',
-            title: 'Accessibility Checker Extension',
+            title: 'Rozszerzenie Tester dostępności',
             chunks: ['devtoolsPanel']
         }),
         new HtmlWebpackPlugin({
             template: path.join(sourceRootPath, 'html', 'devtoolsSubpanel.html'),
             inject: 'body',
             filename: 'devtoolsSubpanel.html',
-            title: 'Accessibility Checker Extension',
+            title: 'Rozszerzenie Tester dostępności',
             chunks: ['devtoolsSubpanel']
         }),
         new HtmlWebpackPlugin({
             template: path.join(sourceRootPath, 'html', 'reports.html'),
             inject: 'body',
             filename: 'reports.html',
-            title: 'Accessibility Checker Extension',
+            title: 'Rozszerzenie Tester dostępności',
             chunks: ['reports']
         }),
         new HtmlWebpackPlugin({
             template: path.join(sourceRootPath, 'html', 'usingAC.html'),
             inject: 'body',
             filename: 'usingAC.html',
-            title: 'Accessibility Checker Extension - User Guide',
+            title: 'Rozszerzenie Tester dostępności - Podręcznik użytkownika',
             chunks: ['usingAC']
         }),
         new CopyWebpackPlugin([

@@ -1,44 +1,53 @@
 ---
-title: "Accessibility Checker Rule Help: WCAG20_Elem_UniqueAccessKey"
+title: "Pomoc dotycząca reguł testowania dostępności: WCAG20_Elem_UniqueAccessKey"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div className="toolHelp">
 <Row>
-<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+<Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Who does this affect?
-
-* Blind people using screen readers
-* People who physically cannot use a pointing device
-* People with dexterity impairment using voice control
-
-### Why is this important?
-
-Setting the `accesskey` attribute on elements allows quick access to the element by focusing or activating the element using the keyboard. Having a unique `accesskey` value allows the user agents to determine which element to activate when a user triggers the access key.
-
-</Column>
-<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+### Wartość atrybutu `accesskey` nie jest unikalna
 
 <div id="locLevel"></div>
 
-### `accesskey` attribute value on the element is not unique
-`accesskey` attribute values on each element must be unique for the page
+Wartości atrybutów `accesskey` dla każdego elementu muszą być unikalne dla strony
 
-[IBM 4.1.1 Parsing](http://www.ibm.com/able/guidelines/ci162/parsing.html)
+</Column>
+</Row>
+<Row>
+<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+
+### Dlaczego to jest ważne
+
+Ustawienie ewelemntom atrybutu `accesskey` umożliwia szybki dostęp poprzez przeniesienie na element fokusu klawiatury lub aktywację elementu za pomocą klawiatury. Posiadanie unikalnej wartości `accesskey` pozwala programom użytkownika określić, który element ma zostać aktywowany, gdy użytkownik aktywuje klawisz dostępu.
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* Update the `accesskey` attribute on the element with a unique non-empty value.
+* Zaktualizuj atrybut `accesskey` elementu za pomocą unikalnej, niepustej wartości.
 
-For example:
+Na przykład:
 
-<CodeSnippet type="multi" light={true}> &lt;button type="button" name="testButton1" id="button1" accesskey="a"&gt;Accept&lt;/button&gt;
- &lt;button type="button" name="testButton2" id="button2" accesskey="r"&gt;Reject&lt;/button&gt;
+<CodeSnippet type="multi" light={true}> &lt;button type="button" name="testButton1" id="button1" accesskey="a"&gt;Zatwierdź&lt;/button&gt;
+ &lt;button type="button" name="testButton2" id="button2" accesskey="r"&gt;Odrzuć&lt;/button&gt;
  </CodeSnippet>
+
+</Column>
+<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+
+### O tym wymaganiu
+
+[IBM 4.1.1 Parsing](http://www.ibm.com/able/guidelines/ci162/parsing.html)
+
+### Na kogo to wpływa
+
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby, które nie mogą korzystać z urządzeń wskazujących, np. myszy
+* Osoby o ograniczonej sprawności ruchowej korzystające ze sterowania za pomocą głosu
 
 </Column>
 </Row>

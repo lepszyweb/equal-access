@@ -40,133 +40,133 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
               <h3>
                 IBM <strong>Accessibility</strong>
                 <br />
-                Equal Access Toolkit:
+                Zestaw narzędzi Equal Access:
                 <br />
-                Accessibility Checker
+                Tester dostępności
               </h3>
             </div>
             <div
               style={{ marginTop: "2.625rem", lineHeight: "32px" }}
               role="navigation"
             >
-              <h1>User guide</h1>
+              <h1>Podręcznik użytkownika</h1>
               <ul className="toc" style={{ marginTop: "1rem" }}>
                 <li>
-                  <a href="#prereq" title="prerequisites">
-                    1. Prerequisites
+                  <a href="#prereq" title="Wymagania wstępne">
+                    1. Wymagania wstępne
                   </a>
                 </li>
                 <li>
-                  <a href="#install" title="installation">
-                    2. Installation
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#categories" title="categories">
-                    3. Categories of accessibility issues
+                  <a href="#install" title="Instalacja">
+                    2. Instalacja
                   </a>
                 </li>
 
                 <li>
-                  <a href="#view" title="ways to view issues">
-                    4. Ways to view the issues
+                  <a href="#categories" title="kategorie">
+                    3. Kategorie problemow dostępności
                   </a>
                 </li>
 
                 <li>
-                  <a href="#t_select_settings" title="select an option">
-                    5. Options
+                  <a href="#view" title="Sposoby przeglądania problemów">
+                    4. Sposoby przeglądania problemów
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#t_select_settings" title="Wybór opcji">
+                    5. Opcje
                   </a>
                   <ul className="toc">
                     <li>
-                      <a href="#rule_deploy" title="rule set deployment">
-                        5.1 Rule set deployment date
+                      <a href="#rule_deploy" title="wdrożenie zestawu reguł">
+                        5.1 Data wdrożenia zestawu reguł
                       </a>
                     </li>
                     <li>
-                      <a href="#ruleset" title="rule set">
-                        5.2 Select accessibility guidelines
+                      <a href="#ruleset" title="Zestaw reguł">
+                        5.2 Wybór wytycznych dla dostępności
                       </a>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <a href="#usage" title="Usage">
-                    6. Usage
+                  <a href="#usage" title="Stosowanie">
+                    6. Stosowanie
                   </a>
                   <ul className="toc">
                     <li>
-                      <a href="#a11y_check" title="Accessibility Checker">
-                        6.1 Accessibility Checker
+                      <a href="#a11y_check" title="Tester dostępności">
+                        6.1 Tester dostępności
                       </a>
                     </li>
                     <li>
-                      <a href="#focus_view" title="Focus view">
-                        6.2 Focus view
+                      <a href="#focus_view" title="Skupienie na elemencie">
+                        6.2 Skupienie na elemencie
                       </a>
                     </li>
                     <li>
-                      <a href="#a11y_assess" title="Accessibility Assessment">
-                        6.3 Accessibility Assessment
+                      <a href="#a11y_assess" title="Ocena dostępności">
+                        6.3 Ocena dostępności
                       </a>
                     </li>
                     <li>
                       <a
                         href="#t_single_scan_report"
-                        title="Create scan report"
+                        title="Tworzenie raportu skanowania"
                       >
-                        6.4 Creating a scan report
+                        6.4 Tworzenie raportu skanowania
                       </a>
                     </li>
                     <li>
                       <a
                         href="#t_multi_scan_report"
-                        title="Create multi-scan report"
+                        title="Tworzenie raportu wielu skanowań"
                       >
-                        6.5 Creating a multi-scan report
+                        6.5 Tworzenie raportu wielu skanowań
                       </a>
                     </li>
                     <li>
                       <a
                         href="#t_select_hidden_settings"
-                        title="Select hidden content Settings"
+                        title="Wybierz ustwienia skanowania ukrytej treści"
                       >
-                        6.6 Hidden content scanning
+                        6.6 Skanowanie ukrytej treści
                       </a>
                     </li>
                     <li>
                       <a href="#scan_local_files" title="Scan local files">
-                        6.7 Scanning local files
+                        6.7 Skanowanie plików lokalnych
                       </a>
                     </li>
                     <li>
-                      <a href="#a11y_considerations" title="Accessibility Considerations">
-                        6.8 Accessibility Considerations
+                      <a href="#a11y_considerations" title="Uwagi dotyczące dostępności">
+                        6.8 Uwagi dotyczące dostępności
                       </a>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <a href="#the_report" title="accessibility checker report">
-                    7. Accessibility Checker reports{" "}
+                  <a href="#the_report" title="Raporty sprawdzania dostępności">
+                    7. Raporty sprawdzania dostępności{" "}
                   </a>
                   <ul className="toc">
                     <li>
-                      <a href="#t_html_report" title="HTML report">
-                        7.1 HTML report
+                      <a href="#t_html_report" title="Raport HTML">
+                        7.1 Raport HTML
                       </a>
                     </li>
                     <li>
-                      <a href="#t_excel_report" title="Excel spreadsheet report">
-                        7.2 MS Excel Spreadsheet report
+                      <a href="#t_excel_report" title="Raport w arkuszu MS Excel">
+                        7.2 Raport w arkuszu MS Excel
                       </a>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <a href="#feedback" title="feedback">
-                    8. Feedback
+                  <a href="#feedback" title="Informacje zwrotne">
+                    8. Informacje zwrotne
                   </a>
                 </li>
               </ul>
@@ -176,321 +176,254 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
           <div
             className="bx--col-md-8 bx--col-lg-8 rightPanel"
             role="main"
-            aria-label="User guide details"
+            aria-label="Treść podręcznika użytkownika"
           >
-            <h1>IBM Accessibility Checker user guide</h1>
-            <div className="versionDec">Version {manifest.version}</div>
+            <h1>IBM Accessibility Checker - podręcznik użytkownika</h1>
+            <div className="versionDec">Wersja {manifest.version}</div>
 
             <p>
-              The IBM Equal Access Accessibility Checker is a browser extension
-              that allows users to evaluate a web-based component or solution
-              for accessibility issues against W3C Web Content Accessibilty Guidelines 
-              (WCAG) and IBM guidelines with explanations and suitable fixes within the tool.
+			  IBM Equal Access Accessibility Checker jest rozszerzeniem przeglądarki  które pozwala użytkownikom ocenić komponent lub rozwiązanie oparte na sieci Web pod kątem problemów z dostępnością w odniesieniu do wytycznych W3C Web Content Accessibilty Guidelines (WCAG) i wytycznych IBM z wyjaśnieniami i odpowiednimi poprawkami w ramach narzędzia.
+			  
             </p>
             <p>
-              The extension showcases two views, the{" "}
-              <strong>Accessibility Assessment</strong> panel is a comprehensive
-              accessibility assessment tool to help you identify accessibility
-              issues and understand how to fix them, while the{" "}
-              <strong>Accessibility Checker</strong> tab in the Elements panel
-              in Chrome or the Inspector panel in Firefox is a code scanner for
-              developers looking to find and fix issues in code and on the page
-              quickly. This checker is part of an open suite of accessibility
-              automation tools. For teams seeking integrated accessibility
-              testing, IBM offers{" "}
+              Rozszerzenie prezentuje dwa widoki, panel{" "}
+              <strong>Ocena dostępności</strong> jest kompleksowym narzędziem oceny dostępności, które pomaga zidentyfikować problemy z dostępnością i zrozumieć, jak je naprawić, podczas gdy karta {" "}
+              <strong>Tester dostępności</strong> w panelu Elementy w Chrome lub panelu Inspektor w Firefoksie jest skanerem kodu dla programistów, którzy chcą szybko znaleźć i naprawić problemy w kodzie i na stronie. To narzędzie sprawdzające jest częścią otwartego pakietu narzędzi automatyzujących dostępność. Dla zespołów poszukujących zintegrowanego testowania dostępności, IBM oferuje{" "}
               <a href="https://github.com/IBMa/equal-access/blob/master/README.md">
-                plug-ins and modules for NodeJS and Karma
+                wtyczki i moduły dla NodeJS i Karma,
               </a>{" "}
-              that perform cross-platform accessibility testing in the build and
-              development process. These tools use the same test engine as the
-              Accessibility Checker.
+              które wykonują międzyplatformowe testowanie dostępności w procesie budowania i rozwoju. Narzędzia te wykorzystują ten sam silnik testowy, co Accessibility Checker.
+		  
             </p>
-            <h2 id="prereq">1. Prerequisites</h2>
+            <h2 id="prereq">1. Wymagania wstępne</h2>
             <div className="pa">
-              Supported browsers:
+              Obsługiwane przeglądarki:
               <ul
                 style={{ listStyleType: "circle", marginInlineStart: "1rem" }}
               >
-                <li>Google Chrome version 81.x or later</li>
-                <li>Mozilla Firefox version 68.x or later</li>
+                <li>Google Chrome wersja 81.x lub nowsza</li>
+                <li>Mozilla Firefox wersja 8.x lub nowsza</li>
               </ul>
             </div>
 
-            <h2 id="install">2. Installation</h2>
+            <h2 id="install">2. Instalacja</h2>
             <div className="pa">
-              Follow the steps below to install the browser extension for Google
-              Chrome:
+              Wykonaj poniższe kroki, aby zainstalować rozszerzenie przeglądarki dla Google Chrome:
               <ol
                 style={{ listStyleType: "decimal", marginInlineStart: "2rem" }}
               >
-                <li>Open the Chrome browser.</li>
+                <li>Otwórz przeglądarkę Google Chrome.</li>
                 <li>
-                  Go to the{" "}
+                  Przejdź na{" "}
                   <a
                     target="_blank"
                     href="https://chrome.google.com/webstore/detail/ibm-equal-access-accessib/lkcagbfjnkomcinoddgooolagloogehp"
                   >
                     IBM Equal Access Accessibility Checker
                   </a>{" "}
-                  in the Chrome Web Store.
+                  w Chrome Web Store.
                 </li>
                 <li>
-                  Click the <strong>'Add To Chrome'</strong> button.
+                  Naciśnij przycisk <strong>'Dodaj do Chrome'</strong>.
                 </li>
               </ol>
             </div>
             <div className="pa">
-              Follow the steps below to install the browser extension for
+              Wykonaj poniższe kroki, aby zainstalować rozszerzenie przeglądarki dla 
               Mozilla Firefox:
               <ol
                 style={{ listStyleType: "decimal", marginInlineStart: "2rem" }}
               >
-                <li>Open the Firefox browser.</li>
+                <li>Otwórz przeglądarkę Firefox.</li>
                 <li>
-                  Go to the{" "}
+                  Przejdź na{" "}
                   <a
                     target="_blank"
                     href="https://addons.mozilla.org/en-US/firefox/addon/accessibility-checker/"
                   >
                     IBM Equal Access Accessibility Checker
                   </a>{" "}
-                  in Firefox Browser Add-on.
+                  na stronie Dodatki do przeglądarki.
                 </li>
                 <li>
-                  Click the <strong>'Add To Firefox'</strong> button.
+                  Naciśnij przycisk <strong>'Dodaj do Firefoksa'</strong> .
                 </li>
               </ol>
             </div>
 
-            <h2 id="categories">3. Categories of accessibility issues</h2>
-            <p>The tool reports three kinds of accessibility issues:</p>
+            <h2 id="categories">3. Kategorie problemów dostępności</h2>
+            <p>Narzędzie zgłasza trzy rodzaje problemów z dostępnością:</p>
             <ul style={{ marginInlineStart: "2rem" }}>
               <li>
                 <p>
                   <img
                     src={violation}
-                    alt="violation icon "
+                    alt="Ikona naruszeń "
                     style={{ verticalAlign: "middle" }}
                   />{" "}
-                  <strong> Violation</strong> - accessibility failures that need
-                  to be corrected.
+                  <strong> Naruszenia</strong> - błędy dostępności, które wymagają naprawy.
                 </p>
               </li>
               <li>
                 <p>
                   <img
                     src={needsReview}
-                    alt="needs review icon "
+                    alt="ikona Do przeglądu "
                     style={{ verticalAlign: "middle" }}
                   />{" "}
-                  <strong> Needs review</strong> - issues that may not be a
-                  violation. These need a manual review to identify whether
-                  there is an accessibility problem.
+                  <strong> Do przeglądu</strong> - przypadki, które mogą nie być naruszeniem. Wymagają one ręcznego przeglądu w celu określenia, czy istnieje problem z dostępnością.
                 </p>
               </li>
               <li>
                 <p>
                   <img
                     src={recommendation}
-                    alt="recommendation icon"
+                    alt="ikona Zalecenia"
                     style={{ verticalAlign: "middle" }}
                   />{" "}
-                  <strong> Recommendation</strong> - opportunities to apply best
-                  practices to further improve accessibility.
+                  <strong> Zalecenia</strong> - możliwości zastosowania najlepszych praktyk w celu dalszej poprawy dostępności.
                 </p>
               </li>
             </ul>
             <p>
-              As with any automated test tool for accessibility, these tests
-              don’t catch all issues. Complete your accessibility assessment
-              with a quick unit test for accessibility or follow the full
-              accessibility test process.
+              Jak w przypadku każdego narzędzia do automatycznego testowania dostępności, 
+			  testy te nie wychwytują wszystkich problemów. Zakończ swoją ocenę dostępności 
+			  szybkim testem jednostkowym pod kątem dostępności 
+			  lub wykonaj pełny proces testowania dostępności.
             </p>
 
-            <h2 id="view">4. Ways to view the issues</h2>
+            <h2 id="view">4. Sposoby przeglądania problemów</h2>
             <p>
-              There are three ways to view and explore the issues identified by
-              the tool. All views show the same set of issues:
+              Istnieją trzy sposoby przeglądania i badania problemów zidentyfikowanych przez narzędzie. Wszystkie widoki pokazują ten sam zestaw zagadnień:
             </p>
             <ul style={{ marginInlineStart: "2rem" }}>
               <li>
                 <p>
-                  <strong>Requirements</strong> - issues are organized by the
-                  IBM requirements, which corresponds to the WCAG 2.1 standards. 
-                  Each issue is mapped to the most relevant requirement. This 
-                  view makes it easy to see how to classify and
-                  report issues found by the tool.
+                  <strong>Wymagania</strong> - problemy są uporządkowane według  wymagań IBM, co odpowiada standardom WCAG 2.1.  Każdy problem jest zmapowany do najbardziej odpowiedniego wymagania. Ten  widok sprawia, że łatwo jest zobaczyć, jak klasyfikować i  raportować problemy znalezione przez narzędzie.
                 </p>
               </li>
               <li>
                 <p>
-                  <strong>Element roles </strong>- issues are organized in the
-                  hierarchical structure defined by the WAI-ARIA roles of the
-                  DOM elements. This view shows both implicit and explicit
-                  roles. It does not show element names. This view is ideal for
-                  exploring the issues within a specific element and its
-                  children.
+                  <strong>role elementu </strong>- problemy są zorganizowane w hierarchicznej strukturze zdefiniowanej przez role WAI-ARIA dla elementów DOM.  Widok ten pokazuje zarówno role ukryte, jak i jawne role. Nie pokazuje on nazw elementów. Ten widok jest idealny do eksploracji zagadnień w obrębie konkretnego elementu i jego dzieci.
                 </p>
               </li>
               <li>
                 <p>
-                  <strong>Rules</strong> - issues are organized by the rules in
-                  the rule set, with violations, items that need review, and
-                  recommendations. This view is the best way to see all the
-                  different kinds of issues at once.
+                  <strong>Reguły</strong> - problemy są uporządkowane według reguł w zestawie wymagań, z podziałem na naruszenia, elementy wymagające przeglądu i rekomendacje. Ten widok jest najlepszym sposobem na zobaczenie wszystkich różnych rodzajów problemów na raz.
                 </p>
               </li>
             </ul>
 
-            <h2 id="t_select_settings">5. Options</h2>
+            <h2 id="t_select_settings">5. Opcje</h2>
             <p>
-              Use the options page to change the default rule set for a
-              supported standard or a date of rule set deployment. By default,
-              the IBM Equal Access Accessibility Checker uses the latest
-              deployment with a set of rules that correspond to the most recent
-              WCAG standards, plus some additional IBM supplemental requirements. Rule sets
-              with rules that map to specific WCAG versions are also available
-              to choose from as needed. These rule sets are updated regularly
-              and each update has a date of deployment. If you need to replicate
-              an earlier test, choose the deployment date of the original test.
+              Użyj strony opcji, aby zmienić domyślny zestaw reguł dla obsługiwanego standardu lub datę wdrożenia zestawu reguł. Domyślnie, IBM Equal Access Accessibility Checker używa najnowszego wdrożenia z zestawem reguł, które odpowiadają najnowszym standardom WCAG, plus kilku dodatkowym wymaganiom uzupełniającym IBM. W razie potrzeby  do wyboru sa również dostępne zestawy reguł z regułami, które odpowiadają konkretnym wersjom WCAG. Te zestawy reguł są regularnie aktualizowane, a każda aktualizacja ma datę wdrożenia. W przypadku konieczności powtórzenia wcześniejszego testu należy wybrać datę wdrożenia oryginalnego testu.
+
             </p>
             <p>
-              After changing options, close and reopen the developer tools for the change to take effect.
+              Po zmianie opcji zamknij i otwórz ponownie narzędzia deweloperskie, aby zmiany zaczęły obowiązywać.
             </p>
             <p>
-              Follow the steps below to open the Accessibility Checker options
-              page:
+              Wykonaj poniższe kroki, aby otworzyć stronę z opcjami programu Sprawdzanie dostępności:
             </p>
             <ol style={{ listStyleType: "decimal", marginInlineStart: "2rem" }}>
               <li>
                 <p>
-                  In the browser tool bar, select the IBM Equal Access
-                  Accessibility Checker icon, shown as a purple bee{" "}
+                  W pasku narzędzi przeglądarki, wybierz ikonę IBM Equal Access ikonę sprawdzania dostępności, pokazaną jako fioletowa pszczoła{" "}
                   <img
                     src={beeLogoUrl}
                     width="16px"
                     height="16px"
-                    alt="Accessibility checker application icon"
+                    alt="ikonę aplikacji Sprawdzanie dostępności"
                   />
-                  . This will usually be located in the upper right of the
-                  browser window. An overlay will appear.
+                  . Zazwyczaj znajduje się on w prawym górnym rogu okna okna przeglądarki. Pojawi się nakładka.
                 </p>
               </li>
               <li>
                 <p>
-                  Select <strong>'Options'</strong> in the overlay. The options
-                  will open in a new browser tab.
-                  <strong> Note:</strong> In the Firefox browser when the Enhanced
-                  Tracking Protection option is set to Strict, this causes some
-                  sites or content to break and may prevent the Options page
-                  from opening. Change the browser privacy settings to Standard, to avoid the situation.
+                  Wybierz <strong>&bdquo;Opcje&rdquo;</strong> w nakładce. Opcje zostaną otwarte w nowej karcie przeglądarki. <strong>Uwaga:</strong> W przeglądarce Firefox, gdy opcja Enhanced Tracking Protection jest ustawiona na Strict, powoduje to, że niektóre witryny lub treści mogą zostać uszkodzone i może to uniemożliwić otwarcie strony Opcje. Zmień ustawienia prywatności przeglądarki na Standard, aby uniknąć tej sytuacji.
+
                 </p>
               </li>
             </ol>
             <p>
               <img
                 src="assets/img/5_Options.png"
-                alt="Options page screenshot - a page where you can select a Rule set deployment and a Rule set for your checker to use."
+                alt="Zrzut ekranu strony opcji - strona, na której można wybrać wdrożenie zestawu reguł oraz zestaw reguł, z którego ma korzystać kontroler."
                 width="100%"
                 height="100%"
               />
             </p>
 
-            <h3 id="rule_deploy">5.1 Rule set deployment date</h3>
+            <h3 id="rule_deploy">5.1 Data wdrożenia zestawu reguł</h3>
             <p>
               {" "}
-              From the <strong>'Select a rule set deployment date'</strong> dropdown choose
-              one of the following:
+              Z listy rozwijanej <strong>'Wybierz datę wdrożenia zestawu reguł'</strong> wybierz jedną z opcji:
             </p>
             <ul style={{ marginInlineStart: "2rem" }}>
               <li>
                 <p>
-                  <strong>Latest Deployment</strong> - use the latest version of the
-                  selected rule set. This is the default option.
+                  <strong>Najnowsze wdrożenie</strong> - użyj najnowszej wersji  wybranego zestawu reguł. Jest to opcja domyślna.
                 </p>
               </li>
               <li>
                 <p>
-                  <strong>&lt;date&gt; Deployment</strong> - use a rule set
-                  from a specific date for consistent testing throughout a project, 
-                  or to replicate an earlier test.
+                  <strong>Wdrożenie &lt;data&gt; </strong> - użyj zestawu reguł z określonej daty w celu spójnego testowania w całym projekcie lub do powtórzenia wcześniejszego testu.
                 </p>
               </li>
               <li>
                 <p>
-                  <strong>Preview Rules</strong> - try an experimental preview of 
-                  a possible future rule set.
+                  <strong>Podglądowe reguły</strong> - wypróbuj eksperymentaln, być może przyszły zestaw reguł.
                 </p>
               </li>
             </ul>
             <p>
-              Select the <strong>'Save'</strong> button to keep the changes or
-              the <strong>'Reset'</strong> button to discard changes. 
-              Close and reopen the developer tools for the change to take effect.
+              Wybierz przycisk <strong>'Zapisz'</strong>, aby zachować zmiany, lub przycisk <strong>'Resetuj'</strong>, aby odrzucić zmiany.  Zamknij i otwórz ponownie narzędzia deweloperskie, aby zmiany zaczęły obowiązywać.
             </p>
 
-            <h3 id="ruleset">5.2 Select accessibility guidelines</h3>
+            <h3 id="ruleset">5.2 Wybierz wytyczne dla dostępności</h3>
             <p>
-              From the <strong>'Select accessibility guidelines'</strong> dropdown choose one of
-              the following:
+               Z listy rozwijanej <strong>'Wybierz wytyczne dla dostępności'</strong> wybierz jedną z opcji :
             </p>
             <ul style={{ marginInlineStart: "2rem" }}>
               <li>
                 <p>
-                  <strong>IBM Accessibility</strong> - Rules for Web Content
-                  Accessibility Guidelines WCAG 2.1, levels A and AA, plus
-                  additional IBM requirements. This is the default option.
+                   <strong>IBM Accessibility</strong> - Reguły obejmujące Wytyczne dla dostępności WCAG 2.1, poziomy A i AA, oraz dodatkowe wymagania IBM. Jest to opcja domyślna.
                 </p>
               </li>
 
               <li>
                 <p>
-                  <strong>WCAG 2.1 (A,AA)</strong> - This is the current W3C recommendation. 
-                  Content that conforms to WCAG 2.1 also conforms to WCAG 2.0.
-                  These rules align with the European EN 301 549 standards.
+                  <strong>WCAG 2.1 (A,AA)</strong> - Aktualne zalecenia W3C. Treści zgodne z WCAG 2.1 są również zgodne z 2.0. Zasady te są zgodne z europejskimi normami EN 301 549.
                 </p>
               </li>
 
               <li>
                 <p>
-                  <strong>WCAG 2.0 (A,AA)</strong> - These
-                  rules align with the Revised US Sec 508 standards, but are not the latest 
-                  W3C recommendation.
+                  <strong>WCAG 2.0 (A,AA)</strong> - Te reguły te są zgodne z poprawionymi normami US Sec 508, ale nie są najnowszą  rekomendacją W3C.
                 </p>
               </li>
 
               <li>
                 <p>
-                  <strong>IBM Accessibility BETA</strong> - Extends IBM Accessibility 
-                  with experimental rules.
+                  <strong>IBM Accessibility BETA</strong> - Rozszerza IBM Accessibility o eksperymentalne zasady.
                 </p>
               </li>
 
             </ul>
             <p>
-              After making a change, select the <strong>'Save'</strong> button, then
-              close and reopen the developer tools for the change to take effect.
+			  Po wprowadzeniu zmiany należy wybrać przycisk <strong>&bdquo;Zapisz&rdquo;</strong>, a następnie zamknąć i ponownie otworzyć  narzędzia programisty, aby zmiana zaczęła obowiązywać.
             </p>
 
-            <h2 id="usage">6. Usage</h2>
+            <h2 id="usage">6. Stosowanie</h2>
             <p>
-              The IBM Equal Access Accessibility Checker offers two views, the
-              Accessibility Checker view is a code scanner for developers
-              looking to find and fix errors quickly as they are building a
-              component, while the Accessibility Assessment view provides
-              explanation and suggested solutions for each issue reported.
+			  IBM Equal Access Accessibility Checker oferuje dwa widoki. Widok Tester dostępności (Accessibility Checker) jest skanerem kodu dla programistów, którzy chcą szybko znaleźć i naprawić błędy podczas budowania komponentu. Natomiast widok Ocenianie dostępności (Accessibility Assessment) zapewnia wyjaśnienie i sugerowane rozwiązania dla każdego wykrytego problemu.
               {" "}
               </p>
               <p>
-              <strong>Note</strong>: On rare occasions the Accessibility Checker
-              extension does not appear in the developer tools for some sites
-              due to a bug in the developer tools. The workaround is to go to a
-              site where you know the checker will launch, and launch the
-              checker in the developer tools. Then, in the same browser tab,
-              load the site that did not launch.
+			  <strong>Uwaga</strong>: W rzadkich przypadkach rozszerzenie Accessibility Checker nie pojawia się w narzędziach programisty dla niektórych stron z powodu błędu w narzędziach programisty. Obejściem jest przejście do witryny, gdzie wiesz, że sprawdzanie zostanie uruchomione, i uruchomienie sprawdzania w narzędziach deweloperskich. Następnie, w tej samej karcie przeglądarki, załaduj stronę, która nie została uruchomiona.
             </p>
 
-            <h3 id="a11y_check">6.1 Accessibility Checker</h3>
+            <h3 id="a11y_check">6.1 Tester dostępności</h3>
             <div className="pa">
               <ol
                 style={{
@@ -500,7 +433,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 }}
               >
                 <li>
-                  <p style={{ marginTop: "0rem" }}>Open the Developer Tools:</p>
+                  <p style={{ marginTop: "0rem" }}>Otwórz panel narzedziy programisty:</p>
                   <ul
                     style={{
                       listStyleType: "circle",
@@ -509,14 +442,13 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                   >
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        In Chrome: From the browser ‘View’ menu, select
-                        ‘Developer’ and then select ‘Developer tools’, or{" "}
+                        W Chrome: w menu przeglądarki &bdquo;Widok&rdquo; wybierz
+                        &bdquo;Programista&rdquo;, a następnie &bdquo;Narzędzia programisty&rdquo; albo{" "}
                       </p>
                     </li>
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        In Firefox: From the browser ‘Tools‘ menu, select ‘Web
-                        Developer’ and then select ‘Toggle Tools’, or
+                        W Firefox: w menu przeglądarki &bdquo;Narzędzia&rdquo; wybierz &bdquo;Programista&rdquo; , a następnie wybierz &bdquo;Przełącz narzędzia&rdquo;, or
                       </p>
                     </li>
                     <li>
@@ -744,7 +676,9 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
 
             <h3 id="focus_view">6.2 Focus View</h3>
             <p>
-            The <strong>'Focus view'</strong> switch allows you to switch between viewing all issues on the page, or only the issues for a selected element or component in the DOM. To focus on any individual element or component:
+            Przełącznik <strong>'Focus view'</strong> umożliwia przełączanie między wyświetlaniem wszystkich problemów na stronie lub tylko problemów z wybranym elementem lub komponentem w DOM. Aby skupić się na dowolnym pojedynczym elemencie lub komponencie:
+
+			
             </p>
             <div className="pa">
               <ol
@@ -752,33 +686,33 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
               >
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Select the element or the component in the DOM, or
+                    Wybierz element lub komponent w DOM albo
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Right-click on a page element and select 'Inspect' (Chrome) or ‘Inspect Element’ (Firefox).
+                    Kliknij prawym przyciskiem myszy na elemencie strony i wybierz "Zbadaj" (Chrome) lub "Zbadaj element" (Firefox).
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Select the element name in the <strong>‘Focus View’</strong> switch to view only the issues for that element and its children.
+                    Wybierz nazwę elementu w przełączniku <strong>"Focus View"</strong>, aby wyświetlić tylko problemy dotyczące tego elementu i jego dzieci.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Select the <strong>'All'</strong> option in the <strong>‘Focus View’</strong> switch to see all issues for the page again.
+                    Wybierz opcję <strong>'Wszystko'</strong> w przełączniku <strong>"Focus View"</strong> aby wyświetlić wszystkie problemy na stronie.
                   </p>
                 </li>
               
-              <p>By default, after the first scan of a page, all issues are shown, and the &lt;html&gt; element is selected, as shown in this screenshot:
+              <p>Domyślnie, po pierwszym skanowaniu strony, wyświetlane są wszystkie zagadnienia, a element &lt;html&gt; jest zaznaczony, jak pokazano na tym zrzucie ekranu:
               </p>
   
 
               <p>
                     <img
                       src="assets/img/6_2_FocusView1.png"
-                      alt="Accessibility Checker screenshot - Focus view with all issues"
+                      alt="Zrzut ekranu narzędzia Accessibility Checker - widok główny z wszystkimi problemami"
                       width="100%"
                       height="100%"
                     />
@@ -1037,14 +971,14 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
 
             <h3 id="t_single_scan_report">6.4 Creating a scan report</h3>
             <div className="pa">
-            To generate a report for a single scan in the <strong>Accessibility Checker</strong> view:
+            To generate a report for a single scan in the <strong>Tester dostępności</strong> view:
             <ol
                 style={{ listStyleType: "decimal", marginInlineStart: "2rem" }}
               >
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Follow the instructions in <a href="#a11y_check" title="Accessibility Checker">
-                        6.1 Accessibility Checker</a> to scan the web page.
+                    Follow the instructions in <a href="#a11y_check" title="Tester dostępności">
+                        6.1 Tester dostępności</a> to scan the web page.
                   </p>
                 </li>
                 <li>
@@ -1108,8 +1042,8 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
               >
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Open the <strong>Accessibility Checker</strong> view (as described in <a href="#a11y_check" title="Accessibility Checker">
-                        6.1 Accessibility Checker</a>).
+                    Open the <strong>Tester dostępności</strong> view (as described in <a href="#a11y_check" title="Tester dostępności">
+                        6.1 Tester dostępności</a>).
                  </p>
                 </li>
                 <li>

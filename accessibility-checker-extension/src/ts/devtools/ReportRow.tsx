@@ -175,12 +175,12 @@ export default class ReportRow extends React.Component<IReportRowProps, IReportR
                 <div role="cell" className="bx--col-md-2 bx--col-sm-2">
                     { this.state.scrollTo && <div ref={this.scrollRef}></div>}
                     <span style={{paddingRight:"16px"}}>{open ? <ChevronUp16/>: <ChevronDown16 />}</span>
-                    { <span style={{whiteSpace:"nowrap"}}>{(this.props.dataFromParent[0] || this.props.dataFromParent[1]) && vCount > 0 && <><img src={Violation16} style={{verticalAlign:"middle",marginBottom:"12px"}} alt="Violation" /><span style={{verticalAlign:"text-top",lineHeight:"8px", paddingLeft:"4px"}}>{vCount}</span> &nbsp;</>}</span> }
-                    { <span style={{whiteSpace:"nowrap"}}>{(this.props.dataFromParent[0] || this.props.dataFromParent[2]) && nrCount > 0 && <><img src={NeedsReview16} style={{verticalAlign:"middle",marginBottom:"12px"}} alt="Needs review" /><span style={{verticalAlign:"text-top",lineHeight:"8px", paddingLeft:"4px"}}>{nrCount}</span> &nbsp;</>}</span> }
-                    { <span style={{whiteSpace:"nowrap"}}>{(this.props.dataFromParent[0] || this.props.dataFromParent[3]) && rCount > 0 &&  <><img src={Recommendation16} style={{verticalAlign:"middle",marginBottom:"10px"}} alt="Recommendation" /><span style={{verticalAlign:"text-top",lineHeight:"8px", paddingLeft:"4px"}}>{rCount}</span> </>}</span> }
+                    { <span style={{whiteSpace:"nowrap"}}>{(this.props.dataFromParent[0] || this.props.dataFromParent[1]) && vCount > 0 && <><span style={{verticalAlign:"text-top",lineHeight:"8px"}}>{vCount}</span> <img src={Violation16} style={{verticalAlign:"middle",marginBottom:"12px"}} alt="Naruszenia" />&nbsp;</>}</span> }
+                    { <span style={{whiteSpace:"nowrap"}}>{(this.props.dataFromParent[0] || this.props.dataFromParent[2]) && nrCount > 0 && <><span style={{verticalAlign:"text-top",lineHeight:"8px"}}>{nrCount}</span> <img src={NeedsReview16} style={{verticalAlign:"middle",marginBottom:"12px"}} alt="Do przeglądu" />&nbsp;</>}</span> }
+                    { <span style={{whiteSpace:"nowrap"}}>{(this.props.dataFromParent[0] || this.props.dataFromParent[3]) && rCount > 0 &&  <><span style={{verticalAlign:"text-top",lineHeight:"8px"}}>{rCount}</span> <img src={Recommendation16} style={{verticalAlign:"middle",marginBottom:"10px"}} alt="Zalecane" /></>}</span> }
                 </div>
                 <div role="cell" className="bx--col-md-4 bx--col-sm-2">
-                    <span style={{wordBreak:"break-all"}}>{group.title.length === 0 ? "Page" : group.title}</span>
+                    <span style={{wordBreak:"break-all"}}>{group.title.length === 0 ? "Strona" : group.title}</span>
                 </div>
             </div>
             { !open && <div className="bx--row itemDetail" /> }
@@ -194,26 +194,26 @@ export default class ReportRow extends React.Component<IReportRowProps, IReportR
                                 (<div data-tip data-for={item.selected ? "selectedTip" : "selectedChildTip" } tabIndex={0} role="row" style={{cursor:'pointer'}} aria-rowindex={++rowindex} aria-selected={!!item.selected} className={"bx--row itemDetail"+(item.selected ? " selected": "")+(item.selectedChild ? " selectedChild": "")} onClick={this.props.selectItem.bind(this, item, this.props.group.checkpoint)} onKeyDown={this.onKeyDown.bind(this)}>
                                     {/* <div role="cell" className="bx--col-sm-1"> </div> */}
                                     <div role="cell" className="bx--col-sm-4" style={{paddingLeft:"44px"}}>
-                                        <div className="itemMessage" style={{paddingLeft:"4px"}}>
+                                        <div className="itemMessage">
                                             { (this.props.dataFromParent[0] || this.props.dataFromParent[1]) && val === "Violation" && 
                                             <React.Fragment>
-                                            <span ><img src={Violation16} style={{verticalAlign:"middle",marginBottom:"0px"}} alt="Violation" /></span>
+                                            <span><img src={Violation16} style={{verticalAlign:"middle",marginBottom:"0px"}} alt="Naruszenia" /></span>
                                             <span style={{fontSize:"12px"}}>{item.message}</span>
-                                            {this.props.layout === "sub" ? (<React.Fragment><span> </span><a className="helpLink" href="#" style={{cursor:'default'}} onKeyDown={(event) =>{this.learnMoreKeyDownHandler(event, item)}} onClick={(event) =>{this.learnMoreClickHandler(event, item)}} ref={this.learnMoreRef(item)}>Learn more</a></React.Fragment>) : ""}
+                                            {this.props.layout === "sub" ? (<React.Fragment><span> </span><a className="helpLink" href="#" style={{cursor:'default'}} onKeyDown={(event) =>{this.learnMoreKeyDownHandler(event, item)}} onClick={(event) =>{this.learnMoreClickHandler(event, item)}} ref={this.learnMoreRef(item)}>Czytaj więcej</a></React.Fragment>) : ""}
                                             </React.Fragment>
                                             }
                                             { (this.props.dataFromParent[0] || this.props.dataFromParent[2]) && val === "Needs review" && 
                                             <React.Fragment>
-                                            <span><img src={NeedsReview16} style={{verticalAlign:"middle",marginBottom:"0px"}} alt="Needs review" /></span>
+                                            <span><img src={NeedsReview16} style={{verticalAlign:"middle",marginBottom:"0px"}} alt="Do przeglądu" /></span>
                                             <span style={{fontSize:"12px"}}>{item.message}</span>
-                                            {this.props.layout === "sub" ? (<React.Fragment><span> </span><a className="helpLink" href="#" style={{cursor:'default'}} onKeyDown={(event) =>{this.learnMoreKeyDownHandler(event, item)}} onClick={(event) =>{this.learnMoreClickHandler(event, item)}} ref={this.learnMoreRef(item)}>Learn more</a></React.Fragment>) : ""}
+                                            {this.props.layout === "sub" ? (<React.Fragment><span> </span><a className="helpLink" href="#" style={{cursor:'default'}} onKeyDown={(event) =>{this.learnMoreKeyDownHandler(event, item)}} onClick={(event) =>{this.learnMoreClickHandler(event, item)}} ref={this.learnMoreRef(item)}>Czytaj więcej</a></React.Fragment>) : ""}
                                             </React.Fragment>
                                             }
                                             { (this.props.dataFromParent[0] || this.props.dataFromParent[3]) && val === "Recommendation" && 
                                             <React.Fragment>
-                                            <span><img src={Recommendation16} style={{verticalAlign:"middle",marginBottom:"0px"}} alt="Recommendation" /></span>
+                                            <span><img src={Recommendation16} style={{verticalAlign:"middle",marginBottom:"0px"}} alt="Zalecenia" /></span>
                                             <span style={{fontSize:"12px"}}>{item.message}</span>
-                                            {this.props.layout === "sub" ? (<React.Fragment><span> </span><a className="helpLink" href="#" style={{cursor:'default'}} onKeyDown={(event) =>{this.learnMoreKeyDownHandler(event, item)}} onClick={(event) =>{this.learnMoreClickHandler(event, item)}} ref={this.learnMoreRef(item)}>Learn more</a></React.Fragment>) : ""}
+                                            {this.props.layout === "sub" ? (<React.Fragment><span> </span><a className="helpLink" href="#" style={{cursor:'default'}} onKeyDown={(event) =>{this.learnMoreKeyDownHandler(event, item)}} onClick={(event) =>{this.learnMoreClickHandler(event, item)}} ref={this.learnMoreRef(item)}>Czytaj więcej</a></React.Fragment>) : ""}
                                             </React.Fragment>
                                             }
                                         </div>

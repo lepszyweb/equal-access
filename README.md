@@ -2,23 +2,22 @@
 
 # equal-access
 
-This Git repository hosts tools that are part of the [IBM Equal Access Toolkit](https://ibm.com/able/toolkit) and supporting components.
+W tym repozytorium Git znajdują się narzędzia wchodzące w skład pakietu [IBM Equal Access Toolkit](https://ibm.com/able/toolkit) i komponenty pomocnicze.
 
-## Overview
+## Przegląd
 
-This README covers topics for developers. For non-developer usage, see the following instruction for individual tools:
-* [accessibility-checker-extension for Chrome](https://chrome.google.com/webstore/detail/ibm-equal-access-accessib/lkcagbfjnkomcinoddgooolagloogehp) : web browser extensions that adds automated accessibility checking capabilities to Chrome and other browser that support the Chromium web-extension API
-* [accessibility-checker-extension for Firefox](https://addons.mozilla.org/en-US/firefox/addon/accessibility-checker/) : web browser extensions that adds automated accessibility checking capabilities to Firefox
-* [accessibility-checker](https://www.npmjs.com/package/accessibility-checker): automated accessibility testing for Node-based test environments
-* [karma-accessibility-checker](https://www.npmjs.com/package/karma-accessibility-checker): automated accessibility testing for the Karma environment
-* [cypress-accessibility-checker](https://www.npmjs.com/package/cypress-accessibility-checker): wrapper of accessibility-checker in the Cypress environment
+Ten plik README obejmuje tematy dla programistów. W przypadku zastosowań innych niż programistyczne zapoznaj się z następującą instrukcją dotyczącą poszczególnych narzędzi::
+* [accessibility-checker-extension for Chrome](https://chrome.google.com/webstore/detail/ibm-equal-access-accessib/lkcagbfjnkomcinoddgooolagloogehp) : rozszerzenia przeglądarki internetowej, które dodają funkcje automatycznego sprawdzania dostępności do przeglądarki Chrome i innych przeglądarek obsługujących interfejs API rozszerzenia internetowego Chromium
+* [accessibility-checker-extension for Firefox](https://addons.mozilla.org/en-US/firefox/addon/accessibility-checker/) : rozszerzenia przeglądarki internetowej, które dodają funkcje automatycznego sprawdzania dostępności do przeglądarki Firefox
+* [accessibility-checker](https://www.npmjs.com/package/accessibility-checker): automatyczne testowanie dostępności dla środowisk testowych opartych na Node
+* [karma-accessibility-checker](https://www.npmjs.com/package/karma-accessibility-checker): automatyczne testowanie dostępności dla środowiska Karma
+* [cypress-accessibility-checker](https://www.npmjs.com/package/cypress-accessibility-checker): wrapper modułu sprawdzania dostępności w środowisku Cypress
 
-
-## Getting started
+## Zaczynamy
 
 * [Node Version 12](https://nodejs.org/en/download/).
 
-### Clone Repository
+### Sklonuj repozytorium
 
 ```bash
 $ git clone --branch=master https://github.com/IBMa/equal-access.git
@@ -31,61 +30,61 @@ $ git clone --branch=master git@github.com:IBMa/equal-access.git
 $ cd equal-access
 ```
 
-### Install dependencies
+### Zainstaluj zależności
 
-Under the equal-access directory
+W katalogu equal-access
 
 ```
 npm install
 ```
-Now you can select the tool you want to use and follow the README.MD instructions
+Teraz możesz wybrać narzędzie, którego chcesz użyć i postępować zgodnie z instrukcjami README.MD
 
 
-### What's in this repository?
+### Co jest w tym repozytorium?
 
-Please review the README.md of each tool/components for more information
+Aby uzyskać więcej informacji, zapoznaj się z plikiem README.md każdego narzędzia / składnika
 
-Tools (description above):
-* [accessibility-checker-extension](accessibility-checker-extension/README.md): A web browser extensions that adds automated accessibility checking capabilities
-* [accessibility-checker](accessibility-checker/README.md): Automated accessibility testing for Node-based test environments
-* [karma-accessibility-checker](karma-accessibility-checker/README.md): Automated accessibility testing for the Karma environment
-* [cypress-accessibility-checker](cypress-accessibility-checker/README.md): Wrapper of accessibility-checker for the Cypress environment
+Narzędzia (opis powyżej):
+* [accessibility-checker-extension](accessibility-checker-extension/README.md): rozszerzenie przeglądarki internetowej, które dodaje funkcje automatycznego sprawdzania dostępności
+* [accessibility-checker](accessibility-checker/README.md):  automatyczne testowanie dostępności dla środowisk testowych opartych na środowisku Node
+* [karma-accessibility-checker](karma-accessibility-checker/README.md): Automatyczne testowanie dostępności dla środowiska Karma
+* [cypress-accessibility-checker](cypress-accessibility-checker/README.md): Wrapper modułu sprawdzającego dostępność dla środowiska Cypress
 
-Components:
-* [accessibility-checker-engine](accessibility-checker-engine/README.md): accessibility rules and evaluation engine used by
-* [rule-server](https://github.com/IBMa/equal-access/tree/master/rule-server): deploys the rules and engine for usage by the tools
+Komponenty:
+* [accessibility-checker-engine](accessibility-checker-engine/README.md): zasady dostępności i silnik oceny używane przez
+* [rule-server](https://github.com/IBMa/equal-access/tree/master/rule-server): wdraża reguły i silnik do użycia przez narzędzia
 
 
-## Usage
+## Stosowanie
 
-You can build all the tools from the root directory or build each individual tool separately.
+Możesz zbudować wszystkie narzędzia z katalogu głównego lub zbudować każde narzędzie osobno.
 
-### Build all the tools from root directory
+### Zbuduj wszystkie narzędzia z katalogu głównego
 
-cd to equal-access if you are not already in the directory, then run:
+cd do equal-access, jeśli nie jesteś jeszcze w katalogu, a następnie wykonaj:
 
 ```bash
 $ npm install
 $ npm run build
 ```
 
-#### The following libraries or tools are built by running the above commands
+#### Następujące biblioteki lub narzędzia są tworzone przez uruchomienie powyższych poleceń
 
-* In the equal-access/accessibility-checker-engine/dist directory
-  * ace-debug.js: uncompressed javascript to be used in a browser environment for development
-  * ace.js: compressed javascript to be used in a browser environment for production
-  * ace-node-debug.js: uncompressed javascript library to be used in a NodeJS environment for development
-  * ace-node.js: compressed javascript library to be used in a NodeJS environment for production
-* In the equal-access/accessibility-checker/package directory
-  * java script source that can be installed or deployed as npm package that works with an HTML parsing engines such as Selenium, Puppeteer, Playwright, or Zombie to allow developers to perform integrated accessibility testing within a continuous integration pipeline such as Travis CI. Please view more [details](accessibility-checker/src/README.md).
-* In the equal-access/karma-accessibility-checker/package directory
-  * javascript source that can be used as a Karma plugin, see more [details](karma-accessibility-checker/README.md).
+* W katalogu equal-access/accessibility-checker-engine/dist
+  * ace-debug.js: nieskompresowany javascript do wykorzystania w środowisku przeglądarki na potrzeby programowania
+  * ace.js: skompresowany javascript do użycia w środowisku przeglądarki do produkcji
+  * ace-node-debug.js: nieskompresowana biblioteka javascript do wykorzystania w środowisku NodeJS do programowania
+  * ace-node.js: skompresowana biblioteka javascript do użycia w środowisku NodeJS do produkcji
+* W katalogu equal-access/accessibility-checker/package
+  * źródło javascript, które można zainstalować lub wdrożyć jako pakiet npm, który współpracuje z silnikami analizującymi HTML, takimi jak Selenium, Puppeteer, Playwright lub Zombie, aby umożliwić programistom przeprowadzanie zintegrowanych testów dostępności w ramach ciągłej integracji, takiej jak Travis CI. Zobacz więcej [szczegółów](accessibility-checker/src/README.md).
+* W katalogu equal-access/karma-accessibility-checker/package 
+  * źródło javascript, którego można użyć jako wtyczki Karma, zobacz więcej [szczegółów](karma-accessibility-checker/README.md).
 
-### Build each individual tool separately
+### Zbuduj każde narzędzie osobno
 
-Please check README for each individual tool for its build instruction:
+Proszę sprawdzić README dla każdego narzędzia, aby uzyskać instrukcje dotyczące jego budowy::
 
-* [accessibility-checker-engine](accessibility-checker-engine/README.md)
-* [accessibility-checker-extension](accessibility-checker-extension/README.md)
-* [accessibility-checker](accessibility-checker/README.md)
-* [karma-accessibility-checker](karma-accessibility-checker/README.md)
+* [silnik sprawdzania dostępności](accessibility-checker-engine/README.md)
+* [accessibility checker extension](accessibility-checker-extension/README.md)
+* [accessibility checker](accessibility-checker/README.md)
+* [karma accessibility checker](karma-accessibility-checker/README.md)

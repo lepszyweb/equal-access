@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: RPT_List_Misuse"
+title: "Pomoc dla reguły: RPT_List_Misuse"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,40 +8,42 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### List element is missing or improperly structured
+### Brakuje elementu listy lub jest on niewłaściwie skonstruowany
 
 <div id="locLevel"></div>
 
-List elements should only be used for lists of related items
+Elementy listy powinny być używane tylko w przypadku wykazów powiązanych elementów
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne?
 
-Lists add structural information that helps users navigate without vision. Using list markup improperly hinders accessibility by making it difficult for users with specialized software to understand the organization of the page or to navigate through it.
+Listy dodają informacje strukturalne, które pomagają osobom niewidomym nawigować po strone. Używanie znaczników list w niewłaściwy sposób utrudnia dostęp do nich, utrudniając użytkownikom dysponującym specjalistycznym oprogramowaniem zrozumienie organizacji strony lub poruszanie się po niej.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
- * Check that list items are represented with `<li>` elements and enclosed within list elements `<ul>` or `<ol>`;
- * AND check that definition list items are represented with `<dt>`, or `<di>` and enclosed within a definition list element `<dl>`;
- * AND check that elements within a list element do form a list.
+ * Sprawdź, czy elementy listy są reprezentowane przez elementy `<li>` i są wewnątrz w elementach tworzących listy `<ul>` lub `<ol>`;
+ * ORAZ sprawdź, czy elementy listy definicji są reprezentowane przez `<dt>`, lub `<dd>` i są wewnątrz w elementach tworzących listy definicji `<dl>`;
+ * ORAZ sprawdź, czy elementy wewnątrzznacznika listy tworzą listę. 
+ 
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 1.3.1 Info and Relationships](https://www.ibm.com/able/requirements/requirements/#1_3_1)
-[WCAG 2.1 technique H48](https://www.w3.org/WAI/WCAG21/Techniques/html/H48)
+[IBM 1.3.1 Informacje i relacje](https://www.ibm.com/able/guidelines/ci162/info_and_relationships.html)
+[Techniki WCAG 2.1 - Technika H48](https://www.w3.org/WAI/WCAG21/Techniques/html/H48)
 
-### Who does this affect?
+### Kogo to dotyczy?
 
-* People using a screen reader, including blind, low vision and neurodivergent people
+ * Osoby niewidome korzystające z czytników ekranu
+ * Osoby słabowidzące korzystające z czytników ekranu
 
 </Column>
 </Row>

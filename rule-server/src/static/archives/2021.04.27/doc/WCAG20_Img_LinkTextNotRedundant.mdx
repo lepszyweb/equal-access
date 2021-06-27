@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: WCAG20_Img_LinkTextNotRedundant"
+title: "Pomoc dla reguły: WCAG20_Img_LinkTextNotRedundant"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,44 +8,45 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Link text is repeated in an image `alt` attribute
+### Tekst łąca jest powtarzany w atrybucie `alt` obrazu
 
 <div id="locLevel"></div>
 
- The text alternative for an image within a link should not repeat the link text or adjacent link text
+Tekst alternatywny dla obrazu w ramach łącza nie powinien powtarzać tekstu łącza ani tekstu sąsiedniego łącza.
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-When the text equivalent of an image inside or adjacent to a link is the same as the link text, people with visual impairments who use a screen reader will hear the same text announced twice. Also those who use text only browsers will see both the link text and text equivalent of the image, and can be confused by the redundant text.
+Gdy tekst równoważny obrazowi znajdującemu się wewnątrz lub w sąsiedztwie łącza jest taki sam jak tekst łącza, osoby z wadami wzroku, które korzystają z czytnika ekranu, usłyszą dwukrotnie ten sam tekst (tzw. efekt jąkania). Również osoby używające przeglądarek wyłącznie tekstowych zobaczą zarówno tekst łącza, jak i tekstowy odpowiednik obrazu i mogą być zdezorientowane przez nadmiarowy tekst.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* If a link has text and a redundant image, set the image `alt` attribute to `alt=“”` (null alt without any spaces);
-* OR If a link has text and an image that adds important information to the text, set the image `alt` attribute to convey the added information.
-  (e.g. `<a><img alt="urgent">new mail</a>`);
-* OR If adjacent links have different targets but the same text, change the link text or the `alt` attribute on the image to distinguish the purpose of each link;
-* OR If adjacent links have the same target, combine them into a single link and set the image `alt` attribute to `alt=“”`.
+* Jeśli łącze ma tekst i zbędny obrazek, ustaw atrybut `alt` na `alt=""` (pusty alt bez spacji);
+* LUB, jeśli łącze ma tekst i obrazek, który dodaje ważne informacje do tekstu, ustaw atrybut `alt`, aby przekazać dodatkowe informacje.
+  (np. `<a><img alt="pilny">nowa wiadomość</a>`);
+* LUB, jeśli sąsiadujące łącza mają różne cele, ale ten sam tekst, zmień tekst łącza lub atrybut `alt` na obrazku, aby odróżnić cel każdego łącza;
+* LUB, jeśli sąsiadujące łącza mają ten sam cel, połącz je w jedno łącze i ustaw atrybut `alt` na `alt=""`.
+
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 1.1.1 Non-text content](https://www.ibm.com/able/requirements/requirements/#1_1_1)
-[IBM 2.4.4 Link Purpose (in Context)](https://www.ibm.com/able/requirements/requirements/#2_4_4)
-[WCAG 2.1 technique H2](https://www.w3.org/TR/WCAG20-TECHS/H2.html)
+[IBM 1.1.1 Treść nietekstowa](http://www.ibm.com/able/guidelines/ci162/non_text_content.html)
+[IBM 2.4.4 Cel łącza (w kontekściet)](https://www.ibm.com/able/guidelines/ci162/link_purpose.html)
+[Technika WCAG 2.1 H2](https://www.w3.org/TR/WCAG20-TECHS/H2.html)
 
-### Who does this affect?
+### Na kogo to wpływa
 
-* Blind people using screen readers
-* People using text-based browsers (e.g., Lynx) or audio interfaces
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby korzystające z przeglądarek tekstowych (np. Lynx) lub interfejsów audio
 
 </Column>
 </Row>

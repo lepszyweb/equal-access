@@ -1,40 +1,48 @@
 ---
-title: "Accessibility Checker Rule Help: WCAG20_Text_LetterSpacing"
+title: "Pomoc dla regułyi: WCAG20_Text_LetterSpacing"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div className="toolHelp">
 <Row>
-<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+<Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Who does this affect?
-
- * Blind people using a screen reader
- * People with reading disabilities
- * People who view interfaces using an adapted layout
-
-### Why is this important?
-
-The visual appearance of spacing in text should be accomplished using style sheets to maintain meaningful text sequencing. Simply adding blank characters to control the spacing may change the meaning, pronunciation or the interpretation of the word or cause the word not to be programmatically recognized as a single word.
-
-</Column>
-<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+### Sprawdź, czy znaki spacji nie są używane do tworzenia spacji między literami słowa
 
 <div id="locLevel"></div>
 
-### Verify space characters are not being used to create space between the letters of a word
-Use CSS `letter-spacing` to control spacing within a word
+Użyj właściwości CSS `letter-spacing` do kontrolowania odstępów w obrębie słów
 
-[IBM 1.3.2 Meaningful Sequence](http://www.ibm.com/able/guidelines/ci162/meaningful_sequence.html) | [WCAG 2.1 CSS technique C9](https://www.w3.org/WAI/WCAG21/Techniques/css/C8.html)
+</Column>
+</Row>
+<Row>
+<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+
+### Dlaczego to jest ważne
+
+Wizualne wygląd odstępów w tekście powinien być uzyskany przy użyciu arkuszy stylów, aby zachować sensowną sekwencję tekstu. Samo dodanie pustych znaków w celu kontroli odstępów może zmienić znaczenie, wymowę lub interpretację słowa lub spowodować, że słowo nie będzie programowo rozpoznawane jako pojedyncze słowo.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
- * Verify space characters are not being used to create space between the letters of a word;
- * OR, if the letters of a word letters need to be spaced out, [use the CSS `letter-spacing` property](https://www.w3.org/WAI/WCAG21/Techniques/css/C8.html).
+ * Sprawdź, czy znaki spacji nie są używane do tworzenia spacji między literami słowa;
+ * LUB, jeśli między literami lub wyrazami muszą być zwiększone odstępy, [użyj właściwości CSS `letter-spacing`](https://www.w3.org/WAI/WCAG21/Techniques/css/C8.html).
+ 
+</Column>
+<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
+### O tym wymaganiu
+
+[IBM 1.3.2 Znacząca kolejność](http://www.ibm.com/able/guidelines/ci162/meaningful_sequence.html)
+[WCAG 2.1 CSS technique C9](https://www.w3.org/WAI/WCAG21/Techniques/css/C8.html)
+
+### Na kogo to wpływa
+
+ * Osoby niewidome korzystające z czytników ekranu
+ * Osoby z trudnościami w uczeniu się
+ * People who view interfaces using an adapted layout
 
 </Column>
 </Row>

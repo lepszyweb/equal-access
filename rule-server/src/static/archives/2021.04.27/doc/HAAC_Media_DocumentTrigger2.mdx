@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: HAAC_Media_DocumentTrigger2"
+title: "Pomoc dotycząca reguł testowania dostępności: HAAC_Media_DocumentTrigger2"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,40 +8,42 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Check that the file download mechanism does not cause a keyboard trap
+### Sprawdź, czy mechanizm pobierania plików nie powoduje pułapki klawiaturowej
 
 <div id="locLevel"></div>
 
 File download mechanisms should be keyboard-operable and preserve page focus location
+Mechanizmy pobierania plików powinny być obsługiwane za pomocą klawiatury i zachowywać położenie fokusu klawiatury.
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-A keyboard trap is a situation where a keyboard-only user is unable to get out of a content area. For example, if a file download mechanism is implemented with a dialog box, this moves the keyboard focus away from the web page. If keyboard focus is not handled correctly, it may inadvertently trap keyboard-only users in the dialog. In addition, when the dialog is closed, if keyboard focus is not returned to the user's original position on the web page (the 'point of regard'), they may have to spend significant effort navigating back to where they were on the page.
+Pułapka klawiaturowa to sytuacja, w której użytkownik korzystający z klawiatury nie jest w stanie wydostać się z obszaru treści. Na przykład, jeśli mechanizm pobierania plików jest zaimplementowany w oknie dialogowym, powoduje to przeniesienie fokusu klawiatury poza stronę internetową. Jeśli fokus klawiatury nie jest obsługiwany poprawnie, może to nieumyślnie uwięzić użytkowników korzystających tylko z klawiatury w oknie dialogowym. Ponadto, po zamknięciu okna dialogowego, jeśli fokus klawiatury nie zostanie przywrócony do pierwotnej pozycji użytkownika na stronie internetowej ("punktu pzeglądania", &bdquo;punktu uwagi&rdquo;), użytkownik może być zmuszony do poświęcenia znacznego wysiłku na nawigację z powrotem do miejsca, w którym znajdował się na stronie.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
- * Manually test by using the Tab key to enter and exit the file download mechanism;
- * AND, when exiting the download mechanism, ensure the keyboard focus returns to the same point on the web page where the download was initiated.
+ * Przetestuj ręcznie, przechodząc za pomocą klawisza TAB do mechanizmu pobierania i wychodząc z mechanizmu pobierania pliku;
+ * ORAZ, po wyjściu z mechanizmu pobierania, upewnij się, że fokus klawiatury powraca do tego samego punktu na stronie internetowej, w którym rozpoczęto pobieranie.
+ 
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 2.1.2 No Keyboard Trap](https://www.ibm.com/able/requirements/requirements/#2_1_2)
+[IBM 2.1.2 Bez pułaplki na klawiaturę](https://www.ibm.com/able/guidelines/ci162/no_keyboard_trap.html)
 
-### Who does this affect?
+### Na kogo to wpływa
 
- * People who rely on keyboard control
- * Blind people using screen readers
- * People who physically cannot use a pointing device
+ * Osoby, które polegają na sterowaniu klawiaturą
+ * Osoby niewidome korzystające z czytników ekranu
+ * Osoby, które nie mogą korzystać z urządzeń wskazujących, np. myszy
 
 </Column>
 </Row>

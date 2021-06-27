@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: RPT_Img_UsemapValid"
+title: "Pomoc dla reguły: RPT_Img_UsemapValid"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,37 +8,38 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Server-side image map hot-spots do not have text links
+### Punkty aktywne graficznej mapy odsyłaczy po stronie serwera nie mają zduplikowanych łączy tekstowych
+
 
 <div id="locLevel"></div>
 
-Server-side image map hot-spots must have text links
+Punkty aktywne graficznej mapy odsyłaczy po stronie serwera muszą mieć zduplikowane łącza tekstowe
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-Server-side image maps are images in which regions of the image contain "hot-spots" where a user can click to follow a link. Because the actual links are stored on the server, the browser cannot provide information about the links to a user who cannot see the graphics.
+Graficzne mapy odsyłaczy po stronie serwera po stronie serwera to obrazy, w których obszary obrazu zawierają „punkty aktywne”, w które użytkownik może kliknąć, aby przejść do łącza. Ponieważ rzeczywiste łącza są przechowywane na serwerze, przeglądarka nie może dostarczyć informacji o łączach użytkownikowi, który nie widzi grafiki.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* Use the `<a>` element with `"href"` attribute to provide text links corresponding to all hot-spots for the server-side image map on the page.
+* Użyj elementu `<a>` z atrybutem `"href"`, aby zapewnić na stronie łącza tekstowe odpowiadające wszystkim punktom aktywnym graficznej mapy odsyłaczy po stronie serwera.
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 1.1.1 Non-text content](https://www.ibm.com/able/requirements/requirements/#1_1_1)
+[IBM 1.1.1 Treść nietekstowa](https://www.ibm.com/able/guidelines/ci162/non_text_content.html)
 
-### Who does this affect?
+### Na kogo to wpływa
 
-* People using a screen reader, including blind, low vision and neurodivergent people
+* Osoby niewidome korzystające z czytników ekranu
 
 </Column>
 </Row>

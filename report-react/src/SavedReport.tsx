@@ -79,7 +79,7 @@ export default class SavedReport extends React.Component<SavedReportProps, Saved
 
     render() {
         if (!this.props.reportData) {
-            return <React.Fragment>Report Error</React.Fragment>
+            return <React.Fragment>Błąd raportu</React.Fragment>
         }
         let rs = this.props.reportData.rulesets[0];
         for (const ruleset of this.props.reportData.rulesets) {
@@ -98,35 +98,35 @@ export default class SavedReport extends React.Component<SavedReportProps, Saved
                             <h1 className="prodName">
                                 IBM <strong>Accessibility</strong><br />
                                 Equal Access Toolkit:<br />
-                                Accessibility Checker Report<br />
+                               Raport sprawdzania dostępności<br />
                             </h1>
                             
                         </div>
                     </div>
-                    <div className="bx--col-sm-4 bx--col-md-8 bx--col-lg-12" role="region" aria-label="Report overview: current status">
-                        <SummScoreCard title="Current status" report={this.props.reportData.report} />
+                    <div className="bx--col-sm-4 bx--col-md-8 bx--col-lg-12" role="region" aria-label="Przegląd raportu: stan obecny">
+                        <SummScoreCard title="Aktualny stan" report={this.props.reportData.report} />
                     </div>
                 </div>
-                <section aria-label="Report overview: score cards">
+                <section aria-label="Przegląd raportu: karty wyników">
                     <div className="bx--row">
                         <div className="bx--col-sm-2 bx--col-md-4 bx--col-lg-4">
                             <div className="time" style={{paddingTop:"12px"}}>{new Date(this.props.reportData.report.timestamp).toLocaleString()}</div>
-                            <div className="url"><strong>Scanned page:</strong> {this.props.reportData.tabURL}</div>
+                            <div className="url"><strong>Skanowana strona:</strong> {this.props.reportData.tabURL}</div>
                         </div>
                         <div className="bx--col-sm-2 bx--col-md-4 bx--col-lg-4">
-                            <ScoreCard count={this.props.reportData.report.counts.total["Violation"]} title="Violations" icon={Violation16}>
-                                Accessibility failures that need to be corrected
+                            <ScoreCard count={this.props.reportData.report.counts.total["Violation"]} title="Naruszenia" icon={Violation16}>
+                                Błędy dostępności, które muszą zostać skorygowane
                         </ScoreCard>
 
                         </div>
                         <div className="bx--col-sm-2 bx--col-md-4 bx--col-lg-4">
-                            <ScoreCard count={this.props.reportData.report.counts.total["Needs review"]} title="Needs review" icon={NeedsReview16}>
-                                Issues that may not be a violation; manual review is needed
+                            <ScoreCard count={this.props.reportData.report.counts.total["Needs review"]} title="Do przeglądu" icon={NeedsReview16}>
+                                Problemy, które mogą nie stanowić naruszenia; konieczny jest przegląd ręczny
                         </ScoreCard>
                         </div>
                         <div className="bx--col-sm-2 bx--col-md-4 bx--col-lg-4">
-                            <ScoreCard count={this.props.reportData.report.counts.total["Recommendation"]} title="Recommendations" icon={Recommendation16}>
-                                Opportunities to apply best practices to further improve accessibility
+                            <ScoreCard count={this.props.reportData.report.counts.total["Recommendation"]} title="Zalecenia" icon={Recommendation16}>
+                                Możliwości zastosowania najlepszych praktyk w celu dalszej poprawy dostępności
                         </ScoreCard>
 
                         </div>
@@ -135,16 +135,16 @@ export default class SavedReport extends React.Component<SavedReportProps, Saved
                 <section aria-label="Report details">
                     <div className="bx--row">
                         <div className="bx--col-sm-4 bx--col-md-8 bx--offset-lg-4 bx--col-lg-12">
-                            <div className="summReport" role="table" aria-label="Issues grouped by checkpoint">
-                                <h2 className="title">Results organized by requirements</h2>
+                            <div className="summReport" role="table" aria-label="Problemy pogrupowane według punktów kontrolnych">
+                                <h2 className="title">Wyniki uporządkowane według wymagań</h2>
                                 <ReportChecklist selectItem={this.selectItem.bind(this)} report={this.props.reportData.report} ruleset={rs} />
                             </div>
                         </div>
                     </div>
                     <div className="bx--row">
                         <div className="bx--col-sm-4 bx--col-md-8 bx--offset-lg-4 bx--col-lg-12">
-                            <div className="summReport" role="table" aria-label="Issues grouped by rule">
-                                <h2 className="title">Results organized by rules</h2>
+                            <div className="summReport" role="table" aria-label="Problemy pogrupowane według reguł">
+                                <h2 className="title">Wyniki uporządkowane według reguł</h2>
                                 <ReportRules selectItem={this.selectItem.bind(this)} report={this.props.reportData.report} />
                             </div>
                         </div>
@@ -156,7 +156,7 @@ export default class SavedReport extends React.Component<SavedReportProps, Saved
                 onClose={() => this.clearItem()}
             >
                 <ModalHeader />
-                <ModalBody aria-label="This modal has scrolling content">
+                <ModalBody aria-label="Ten modal ma przewijaną zawartość">
                     {this.state.selectedItem && <HelpSwitcher report={this.props.reportData.report} item={this.state.selectedItem} />}
                 </ModalBody>
             </ComposedModal>

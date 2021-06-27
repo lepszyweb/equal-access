@@ -1,39 +1,39 @@
 ---
-title: "Accessibility Checker Rule Help: WCAG20_Input_InFieldSet"
+title: "Pomoc dla regułyi: WCAG20_Input_InFieldSet"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div className="toolHelp">
 <Row>
-<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+<Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Who does this affect?
-
- * Blind people using screen readers
- * People who rely on keyboard control
-
-### Why is this important?
-
-Groups of logically related input elements must be contained within a fieldset element. All controls within a given fieldset element are then related and the relationship may then provided to the user by user agents.
-
-</Column>
-<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+### Użyj elementu `<fieldset>` do grupowania logicznie powiązanych elementów wejściowych
 
 <div id="locLevel"></div>
 
-### Use the `<fieldset>` element to group logically related input elements
-Groups of logically related input elements should be contained within a `<fieldset>` element
+Grupy logicznie powiązanych pól formularza powinny być zawarte wewnątrz elementu `<fieldset>`
 
-[IBM 1.3.1 Info and Relationships](http://www.ibm.com/able/guidelines/ci162/info_and_relationships.html) | [WCAG 2.1 HTML technique H71](https://www.w3.org/WAI/WCAG21/Techniques/html/H71)
+
+
+</Column>
+</Row>
+<Row>
+<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+
+### Dlaczego to jest ważne
+
+Grupy logicznie powiązanych pól formularza powinny być zawarte wewnątrz elementu `<fieldset>` Wszystkie kontrolki w danym elemencie zestawu stają się w ten sposób programowo powiązane i ta relacja ta może być przekazana użytkownikowi przez program użytkownika. Uwaga: przyciski umieszcza się poza zestawem pól (elementem `fieldset`)
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
+ 
+ * Użyj elementu `<fieldset>` do zgrupowania powiązanych elementów wejściowych.
+ 
 
- * Use a `<fieldset>` element to group the related input elements.
-
-For example:
+Na przykład:
 
 <CodeSnippet type="multi" light={true}>&lt;form action="..." method="post"&gt;
     &lt;fieldset&gt;
@@ -45,6 +45,19 @@ For example:
         &lt;input type="text" name="lastname" id="ln1" value="enter last name" title="enter last name"&gt;
     &lt;/fieldset&gt;
 &lt;/form&gt;</CodeSnippet>
+
+</Column>
+<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+
+### O tym wymaganiu
+
+[1.3.1 Informacje i relacje](http://www.ibm.com/able/guidelines/ci162/info_and_relationships.html)
+[WCAG 2.1 HTML technique H71](https://www.w3.org/WAI/WCAG21/Techniques/html/H71)
+
+### Na kogo to wpływa
+
+ * Osoby niewidome korzystające z czytników ekranu
+ * Osoby, które polegają na sterowaniu za pomocą klawiatury
 
 </Column>
 </Row>

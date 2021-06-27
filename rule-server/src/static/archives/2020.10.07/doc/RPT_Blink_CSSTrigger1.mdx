@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: RPT_Blink_CSSTrigger1"
+title: "Pomoc dotycząca reguł testowania dostępności: RPT_Blink_CSSTrigger1"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,44 +8,46 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Check the `blink` value of the CSS `text-decoration` property is not used for more than than five seconds
+### Sprawdź, czy wartość `blink` właściwości CSS` text-decoration` nie jest używana dłużej niż pięć sekund
 
 <div id="locLevel"></div>
 
-Do not use the `blink` value of the CSS `text-decoration` property for more than than five seconds
+Nie używaj wartości „blink” właściwości CSS „text-decoration” dłużej niż przez pięć sekund
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-Blinking content can be a severe distraction, preventing some people from attending to other content. Blinking for up to 5 seconds gives time to get a user's attention, but is short enough for them to wait out the distraction before reading the page.
+Migające treści mogą być bardzo rozpraszające, uniemożliwiając niektórym osobom skupienie się na innych treściach. Mruganie przez maksymalnie 5 sekund daje czas na zwrócenie uwagi użytkownika, ale jest wystarczająco krótkie, aby mógł on przeczekać rozproszenie uwagi przed przeczytaniem strony.
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
- * Do not use the `blink` value on the CSS `text-decoration` property;
- * OR, provide a control on the Web page that allows users to stop the blinking;
- * OR, use scripts to stop the blinking after 5 seconds.
+ * Nie używaj wartości `blink` we właściwości CSS `text-decoration`;
+ * LUB zapewnij na stronie internetowej kontrolkę, która pozwoli użytkownikom zatrzymać miganie;
+ * LUB użyj skryptów, aby zatrzymać miganie po 5 sekundach.
+
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 2.2.2 Pause, Stop, Hide](https://www.ibm.com/able/guidelines/ci162/pause_stop_hide.html)
-[WCAG 2.1 technique G13](https://www.w3.org/WAI/WCAG21/Techniques/general/G13)
+[IBM 2.2.2 Pauza, zatrzymanie, ukrycie](https://www.ibm.com/able/guidelines/ci162/pause_stop_hide.html)
+[Techniki WCAG 2.1 - Technka ogólna G13](https://www.w3.org/WAI/WCAG21/Techniques/general/G13)
 
-### Who does this affect?
+### Na kogo to wpływa
 
- * People with attention deficit disorders
- * People with reading disabilities
- * People with intellectual disabilities
- * People with low literacy
- * People with low vision
+ * Osoby z zaburzeniami koncentracji uwagi
+ * Osoby z trudnościami w uczeniu się
+ * Osoby z niepełnosprawnością intelektualną
+ * Osoby o niskim poziomie umiejętności czytania i pisania
+ * Osoby słabowidzące
 
 </Column>
 </Row>

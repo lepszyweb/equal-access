@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: WCAG20_Select_HasOptGroup"
+title: "Pomoc dotycząca reguł testowania dostępności: WCAG20_Select_HasOptGroup"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,39 +8,39 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Group of related options may need `<optgroup>`
+### Grupa powiązanych opcji może wymagać `<optgroup>`
 
 <div id="locLevel"></div>
 
-Groups of related options within a selection list should be grouped with `<optgroup>`
+Grupy powiązanych opcji na liście wyboru powinny być zgrupowane w `<optgroup>`
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-By grouping related content, users can navigate to the content they want more quickly.
+Dzięki grupowaniu powiązanych treści użytkownicy mogą szybciej przechodzić do żądanych treści.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
- * Use the `<optgroup>` element to group `<option>` elements inside a `<select>` element. Use the `"label"` attribute so that users will know what content to expect inside the group;
- * AND, place the `<optgroup>` element directly inside the `<select>` element, and place the `<option>` elements directly inside the `<optgroup>`.
+ * Użyj elementu `<optgroup>`, aby zgrupować elementy `<option>` wewnątrz elementu `<select>`. Użyj atrybutu `"label"`, aby użytkownicy wiedzieli, jakiej zawartości mogą się spodziewać w grupie;
+ * ORAZ, umieść element `<optgroup>` bezpośrednio wewnątrz elementu `<select>` element,, a elementy `<option>` bezpośrednio wewnątrz elementu `<optgroup>`.
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 1.3.1 Info and Relationships](https://www.ibm.com/able/requirements/requirements/#1_3_1)
+[1.3.1 Informacje i relacje](http://www.ibm.com/able/guidelines/ci162/info_and_relationships.html)
 
-### Who does this affect?
+### Na kogo to wpływa
 
- * People using a screen reader, including blind, low vision and neurodivergent people
- * People who rely on keyboard control
+ * Osoby niewidome korzystające z czytników ekranu
+ * Osoby, które polegają na sterowaniu klawiaturą
 
 </Column>
 </Row>

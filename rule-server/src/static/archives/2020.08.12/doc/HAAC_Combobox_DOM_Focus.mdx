@@ -1,38 +1,50 @@
 ---
-title: "Accessibility Checker Rule Help: HAAC_Combobox_DOM_Focus"
+title: "Pomoc dla regułyi: HAAC_Combobox_DOM_Focus"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div className="toolHelp">
 <Row>
-<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+<Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Who does this affect?
-
-* Blind people using screen readers
-* People with low vision using screen readers
-
-### Why is this important?
-
-A combobox is a UI interactive component that combines an input and another element, such as a listbox or grid, that can dynamically pop up to help the user set the value of the input. When a combobox receives focus, the focus should be set on the `<text>` input element that can either display the current value or supports editing, so people who use assistive technologies are able accurately navigate and interact with the content.
-
-</Column>
-<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+### Początkowy fokus DOM nie jest poprawnie ustawiony w polu combobox
 
 <div id="locLevel"></div>
 
-### Initial DOM focus is not correctly set on the combobox
-Initial DOM focus on the combobox must be set on the `<text>` input
+Początkowy fokus DOM w combobox musi być ustawiony w polu tekstowym
 
-[IBM 4.1.2 Name, Role, Value](http://www.ibm.com/able/guidelines/ci162/name_role_value.html) | [WAI-ARIA v1.1 Authoring Practices - Combobox](https://www.w3.org/TR/wai-aria-practices-1.1/#combobox)
+</Column>
+</Row>
+<Row>
+<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+
+### Dlaczego to jest ważne
+
+Combobox jest interaktywnym komponentem interfejsu użytkownika, który łączy w sobie cechy kontrolek textbox z innym elementem, takim jak listbox lub grid, który może dynamicznie wyskakiwać, aby pomóc użytkownikowi ustawić wprowadzaną wartość. Gdy combobox otrzymuje fokus, powinien on być ustawiony na elemencie wejściowym `<text>`, który może albo wyświetlać aktualną wartość albo obsługiwać edycję, tak aby osoby korzystające z technologii wspomagających mogły precyzyjnie nawigować i wchodzić w interakcję z treścią.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* Set the initial DOM focus only on the combobox’s `<text>` input element. (Note: This was necessary for the Combobox using ARIA 1.1 implementation which should be avoided due to problems with implementation. Follow the guidance for combobox in [ARIA 1.2](https://www.w3.org/TR/wai-aria-1.2/#combobox) which has changed significantly.)
+* Ustaw początkowy fokus DOM tylko na elemencie comboboxa `<text>` przyjmującym dane. 
 
+(Uwaga: Było to konieczne w przypadku `combobox` wykorzystującego ARIA 1.1, czego należy unikać ze względu na problemy z implementacja. Należy stosować się do wskazówek dotyczących stosowania combobox zawartych w [ARIA 1.2](https://www.w3.org/TR/wai-aria-1.2/#combobox), które uległy znacznej zmianie).
+
+Alert: Wytyczne dla comboboxa zmieniły się znacząco w WAI-ARIA 1.2 z powodu problemów z implementacją wzorca WAI-ARIA 1.1. Rekomendowanym wzorcem comboboxa dla WAI-ARIA 1.2 jest:
+
+</Column>
+<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+
+### O tym wymaganiu
+
+[4.1.2 Nazwa, rola, wartość](http://www.ibm.com/able/guidelines/ci162/name_role_value.html)
+[WAI-ARIA v1.1 Authoring Practices - Combobox](https://www.w3.org/TR/wai-aria-practices-1.1/#combobox)
+
+### Na kogo to wpływa
+
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby słabowidzące korzystające z czytników ekranu
 
 </Column>
 </Row>

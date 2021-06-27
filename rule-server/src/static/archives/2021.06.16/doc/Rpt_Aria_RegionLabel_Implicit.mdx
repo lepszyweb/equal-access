@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: Rpt_Aria_RegionLabel_Implicit"
+title: "Pomoc dotycząca reguł testowania dostępności: Rpt_Aria_RegionLabel_Implicit"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,46 +8,48 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### An element with a `"region"` role does not have a label
+### Element z rolą „region” nie ma etykiety 
 
 <div id="locLevel"></div>
 
-Elements with a `"region"` role must have a label that describes their purpose
+Elementy z rolą `"region"` muszą mieć etykietę opisującą ich przeznaczenie
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-Elements with a `"region"` role must have a label that describes the purpose of the region. This information helps people using assistive technologies to find and navigate the region.
+Elementy z rolą `"region"`” muszą mieć etykietę opisującą przeznaczenie obszaru. Te informacje pomagają osobom korzystającym z technologii wspomagajacych w znajdowaniu obszarów treści i poruszaniu się po nich.
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* If there is visible text that appropriately describes the region's purpose, set the region element's `aria-labelledby` attribute to the `id` value of that text (example below);
-* OR, use the `aria-label` attribute to add a label directly to the element with the `"region"` role.
+* Jeśli widoczny jest tekst, który odpowiednio opisuje przeznaczenie regionu, ustaw atrybut `aria-labelledby` elementu regionu na wartość `id` tego tekstu (przykład poniżej);
+* LUB użyj atrybutu `aria-label`, aby dodać etykietę bezpośrednio do elementu z rolą `"region".
 
-For example, the HTML `<section>` element has an implicit role of `"region"`:
+Na przykład element HTML `<section>` ma domyślną rolę `"region"`:
 
 <CodeSnippet type="multi" light={true}>&lt;section aria-labelledby="log1"&gt;
-	&lt;h3 id="log1"&gt;Real time log&lt;/h3&gt;
-	This is the text contained within the landmark region...
+	&lt;h3 id="log1"&gt;Dziennik w czasie rzeczywistym&lt;/h3&gt;
+	To jest tekst zawarty w obszarze kluczowym...
 &lt;/section&gt;</CodeSnippet>
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 2.4.1 Bypass Blocks](https://www.ibm.com/able/requirements/requirements/#2_4_1)
-[W3C WAI-ARIA Practices 1.2 Region Landmark](https://www.w3.org/TR/wai-aria-practices-1.2/examples/landmarks/region.html)
+[IBM 2.4.1 Możliwość pominięcia bloków](http://www.ibm.com/able/guidelines/ci162/bypass_blocks.html)
+[W3C WAI-ARIA Practices 1.1 Region Landmark ](https://www.w3.org/TR/wai-aria-practices-1.1/examples/landmarks/region.html)
 
-### Who does this affect?
+### Na kogo to wpływa
 
-* People using a screen reader, including blind, low vision and neurodivergent people
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby słabowidzące korzystające z czytników ekranu
 
 </Column>
 </Row>

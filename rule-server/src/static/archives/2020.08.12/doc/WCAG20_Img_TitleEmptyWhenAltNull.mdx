@@ -1,41 +1,50 @@
 ---
-title: "Accessibility Checker Rule Help: WCAG20_Img_TitleEmptyWhenAltNull"
+title: "Pomoc dla regułyi: WCAG20_Img_TitleEmptyWhenAltNull"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div className="toolHelp">
 <Row>
-<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+<Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Who does this affect?
-
-* Blind people using screen readers
-
-### Why is this important?
-
-When an image is decorative and has an empty `alt` attribute, the `title` attribute should not be included. This ensures the image is ignored by assistive technologies.
-
-</Column>
-<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+Tekst atrybutu `alt` obrazka jest pusty, ale atrybut `title` nie jest pusty.
 
 <div id="locLevel"></div>
 
-### The image `alt` text attribute is empty, but the `title` attribute is not empty
-When the image `alt` text attribute is empty, the `title` attribute must also be empty
+Kiedy tekst atrybutu `alt` obrazka jest pusty, atrybut `title` musi być również pusty.
 
-[IBM 1.1.1 Non-text content](http://www.ibm.com/able/guidelines/ci162/non_text_content.html) | [WCAG 2.1 technique H67](https://www.w3.org/TR/WCAG20-TECHS/H67)
+</Column>
+</Row>
+<Row>
+<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+
+### Dlaczego to jest ważne
+
+Gdy obraz jest dekoracyjny i ma pusty atrybut `alt`, atrybut `title` nie powinien być dołączony. Zapewnia to, że obraz jest ignorowany przez technologie wspomagające.
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* Use a null `alt` text attribute and no `title` attribute on an image that assistive technologies should ignore.
+* Używaj pustego atrybutu `alt` text i nie dodawaj żadnego atrybutu `title` w obrazach, które technologie wspomagające powinny ignorować.
 
-For example:
+Na przykład:
 
 <CodeSnippet type="single" light={true}>&lt;img src="squiggle.gif" width="20" height="20" alt="" /&gt;</CodeSnippet>
 
+</Column>
+<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+
+### O tym wymaganiu
+
+[IBM 1.1.1 Treść nietekstowa](http://www.ibm.com/able/guidelines/ci162/non_text_content.html)
+[Technika WCAG 2.1 H67](https://www.w3.org/TR/WCAG20-TECHS/H67)
+
+### Na kogo to wpływa
+
+* Osoby niewidome korzystające z czytników ekranu
 
 </Column>
 </Row>

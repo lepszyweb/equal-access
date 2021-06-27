@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: WCAG21_Style_Viewport"
+title: "Pomoc dla reguły: WCAG21_Style_Viewport"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,39 +8,41 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Check that text sized using viewport units can be resized up to 200%
+### Sprawdź, czy rozmiar tekstu za pomocą jednostek rozmiaru obszaru operacyjnego (viewport)  można zmienić aż do 200%
 
 <div id="locLevel"></div>
 
-The text must scale up to 200% without loss of content or functionality
+Tekst musi być skalowany do 200% bez utraty treści lub funkcjonalności.
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
+Aby obsługiwać osoby o słabym wzroku, każdy wizualnie wyrenderowany tekst musi być skalowany do 200% domyślnego rozmiaru treści, bez utraty treści lub funkcjonalności i bez konieczności przewijania w dwóch wymiarach. W przypadku zastosowania jednostek rozmiaru obszaru operacyjnego (viewport)  do tekstu (na ogół poprzez rozmiar czcionki w CSS), są one odniesione do obszaru roboczego i nie pozwala to na zmianę rozmiaru tekstu poprzez powiększanie lub dostosowywanie rozmiaru tekstu w przeglądarce.
 
-To support people with low vision, any visually rendered text must scale up to 200% of the default content size, without loss of content or functionality and without requiring scrolling in two dimensions. When viewport units are applied to text (generally via font-size in CSS), they are relative to the viewport and this does not allow for text resize by browser zooming or adjusting text-size.
+
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* Implement any of the sufficient techniques of the related WCAG requirement using font size units or technology that can scale up to 200% without loss of content or functionality, and without requiring scrolling in two dimensions.
+* Wdrożenie dowolnej z wystarczających technik związanych z wymaganiami dotyczącymi WCAG przy użyciu jednostek rozmiaru czcionki lub technologii, która może skalować się do 200% bez utraty treści lub funkcjonalności oraz bez konieczności przewijania w dwóch wymiarach.
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 1.4.4 Resize Text](https://www.ibm.com/able/guidelines/ci162/resize_text.html)
-[IBM 1.4.10 Reflow](https://www.ibm.com/able/guidelines/ci162/reflow_71.html)
-[WCAG 2.1 failure technique F94](https://www.w3.org/WAI/WCAG21/Techniques/failures/F94)
+[IBM 1.4.4 Zmiana rozmiaru tekstu](https://www.ibm.com/able/guidelines/ci162/resize_text.html)
+[IBM 1.4.10 Dopasowanie do ekranu](https://www.ibm.com/able/guidelines/ci162/reflow_71.html)
+[Techniki błędów WCAG 2.1 F94](https://www.w3.org/WAI/WCAG21/Techniques/failures/F94)
 
-### Who does this affect?
+### Na kogo to wpływa
 
-* People with low vision using screen magnification
+* Osoby słabowidzące używające powiększalników ekranu
 
 </Column>
 </Row>

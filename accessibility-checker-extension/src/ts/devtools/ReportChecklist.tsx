@@ -107,20 +107,20 @@ export default class ReportChecklist extends React.Component<IReportChecklistPro
         groups = groups.filter(group => group.items.length > 0);
         let scrollFirst = true;
 
-        return <div className="bx--grid report" role="table" style={{paddingLeft:"1rem", paddingRight:"0"}} aria-label="Issues grouped by checkpoint">
+        return <div className="bx--grid report" role="table" style={{paddingLeft:"1rem", paddingRight:"0"}} aria-label="Problemy pogrupowane według punktów kontrolnych">
             <div role="rowgroup">
                 <div className="bx--row reportHeader" role="row">
                     <div className="bx--col-md-2 bx--col-sm-2" role="columnheader">
-                        Issues                    
+                        Problemy                    
                     </div>
                     <div className="bx--col-md-4 bx--col-sm-2" role="columnheader">
-                        Requirements
+                        Wymagania
                     </div>
                 </div>
             </div>
             <div role="rowgroup">
                 {this.props.focusedViewFilter === true && this.props.report.counts.filtered.All === 0 ?
-                <div><br/>No accessibility issues for this HTML element or its children</div> : 
+                <div><br/>Brak problemów z dostępnością dla tego elementu HTML lub jego dzieci</div> : 
                     groups.map(group => {
                         let thisIdx = idx;
                         idx += group.items.length+1;

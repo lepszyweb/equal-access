@@ -1,42 +1,52 @@
 ---
-title: "Accessibility Checker Rule Help: WCAG20_Blink_AlwaysTrigger"
+title: "Pomoc dotycząca reguł testowania dostępności: WCAG20_Blink_AlwaysTrigger"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div className="toolHelp">
 <Row>
-<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+<Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Who does this affect?
-
-* People with attention deficit disorders
-* People with reading disabilities
-* People with intellectual disabilities
-* People with low vision
-
-### Why is this important?
-
-The text inside a `blink` element can blink at a predetermined rate as there is no way to interrupt or disable blinking. Although blinking draws attention to content, it can be a problem for some users if it persists and may make it difficult or impossible to interact with the rest of the page. The use of the `blink` element has been deprecated.
-
-</Column>
-<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+### Znaleziono treść, która ciągle miga
 
 <div id="locLevel"></div>
 
-### Content found that blinks persistently
-Content that blinks persistently must not be used
+Nie wolno używać treści, które migają w sposób ciągły.
 
-[IBM 2.2.2 Pause, Stop, Hide](http://www.ibm.com/able/guidelines/ci162/pause_stop_hide.html) | [WCAG 2.1 failure technique F47](https://www.w3.org/WAI/WCAG21/Techniques/failures/F47)
+</Column>
+</Row>
+<Row>
+<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+
+### Dlaczego to jest ważne
+
+Tekst wewnątrz elementu `blink` może migać w określonym tempie, ponieważ nie ma sposobu na przerwanie lub wyłączenie migania. Chociaż miganie zwraca uwagę na treść, może być problemem dla niektórych użytkowników, jeśli utrzymuje się dłużej,  może utrudnić lub uniemożliwić interakcję z resztą strony. Użycie elementu `blink` zostało wycofane.
+
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* If there is a need to include blinking content, use a technology that stops blinking in 5 seconds or less;
-* OR, provide an option to turn off blinking;
-* OR, provide a link to an alternative page without the blinking content.
+* Jeśli konieczne jest włączenia migającej treści, należy użyć technologii, która zatrzymuje miganie w czasie do 5 sekund;
+* LUB, należy zapewnić opcję wyłączenia migania;
+* LUB, należy podać łącze do alternatywnej strony bez migającej treści.
 
+</Column>
+<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+
+### O tym wymaganiu
+
+[IBM 2.2.2 Pauza, zatrzymanie, ukrycie](http://www.ibm.com/able/guidelines/ci162/pause_stop_hide.html)
+[Techniki błędów WCAG 2.1 F47](https://www.w3.org/WAI/WCAG21/Techniques/failures/F47)
+
+### Na kogo to wpływa
+
+* Osoby z zaburzeniami koncentracji uwagi
+* Osoby z trudnościami w uczeniu się
+* Osoby z niepełnosprawnością intelektualną
+* Osoby słabowidzące
 
 </Column>
 </Row>

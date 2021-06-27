@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: Valerie_Caption_InTable"
+title: "Pomoc dla reguły: Valerie_Caption_InTable"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,29 +8,31 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### `<caption>` element is not nested inside a `<table>` element
+### Element `<caption>` nie jest zagnieżdżony w elemencie `<table>`
 
 <div id="locLevel"></div>
 
-`<caption>` element must be nested inside the associated `<table>` element
+Element `<caption>` musi być umieszczony wewnątrz powiązanego elementu `<table>`
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne?
 
-The caption for a table is an identifier and acts like a title or heading for the table. The `<caption>` element allows screen readers to navigate directly to the caption to get the description of the table.
+Element `<caption>` jest identyfikatorem i działa jak tytuł lub nagłówek tabeli. Umożliwia czytnikom ekranu przejście bezpośrednio do napisu, aby uzyskać opis tabeli.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
- * Nest the `<caption>` element inside the associated `<table>` element. For example:
+ * Umieść element `<caption>` wewnątrz elementu `<table>`.
 
-<CodeSnippet type="multi" light={true}>&lt;table id="data_table1" border="1" summary="A simple data table showing the number of boys and girls in each grade of an elementary school"&gt;
-        &lt;caption&gt;Boys and Girls in Elementary School Classes&lt;/caption&gt;
+ Na przykład:
+
+<CodeSnippet type="multi" light={true}>&lt;table id="data_table1" border="1" summary="Prosta tabela danych przedstawiająca liczbę chłopców i dziewcząt w każdej klasie szkoły podstawowej"&gt;
+        &lt;caption&gt;Dziewczęta i chłopcy w klasach szkół podstawowych&lt;/caption&gt;
         &lt;tr&gt; ... &lt;/tr&gt;
         &lt;tr&gt; ... &lt;/tr&gt;
 &lt;/table&gt;</CodeSnippet>
@@ -38,14 +40,14 @@ The caption for a table is an identifier and acts like a title or heading for th
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 1.3.1 Info and Relationships](https://www.ibm.com/able/guidelines/ci162/info_and_relationships.html)
-[WCAG 2.1 technique H39](https://www.w3.org/WAI/WCAG21/Techniques/html/H39)
+[IBM 1.3.1 Informacje i relacje](https://www.ibm.com/able/guidelines/ci162/info_and_relationships.html)
+[Techniki WCAG 2.1 - Technika H39](https://www.w3.org/WAI/WCAG21/Techniques/html/H39)
 
-### Who does this affect?
+### Kogo to dotyczy?
 
- * Blind people using screen readers
+ * Osoby niewidome korzystające z czytników ekranu
 
 </Column>
 </Row>

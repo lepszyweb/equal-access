@@ -15,6 +15,6 @@ let server = app.listen(8080, function () {
     let host = server.address().address;
     let port = server.address().port;
 
-    console.log('Local Rule Server listening at http://%s:%s', host, port);
+    console.log('Lokalny serwer reguł nasłuchujący pod adresem http://%s:%s', host, port);
 
 });

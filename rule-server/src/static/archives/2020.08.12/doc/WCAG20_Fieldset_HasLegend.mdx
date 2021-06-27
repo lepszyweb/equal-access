@@ -1,38 +1,36 @@
 ---
-title: "Accessibility Checker Rule Help: WCAG20_Fieldset_HasLegend"
+title: "Pomoc dla regułyi: WCAG20_Fieldset_HasLegend"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div className="toolHelp">
 <Row>
-<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+<Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Who does this affect?
+### `<fieldset>` nie ma niepustej unikalnej legendy (etykiety w znaczniku `<legend>`)
 
-* Blind people using screen readers
-* People with dexterity impairment using voice control
-
-### Why is this important?
-
-The `<legend>` of a `<fieldset>` element provides a label or instruction for the group of controls within the `<fieldset>`. This label helps users to recognize that the controls are related. Controls grouping is most important for related radio buttons and checkboxes, but can also be useful for other sets of controls that are not as tightly related.
-
-</Column>
-<Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
 <div id="locLevel"></div>
 
-### `<fieldset>` does not have a non-empty, unique `<legend>`
-`<fieldset>` elements must have a single, non-empty `<legend>` as a label
+`<fieldset>` elementy muszą mieć pojedynczy, niepusty  znacznik `<legend>` jako etykietę
 
-[IBM 1.3.1 Info and Relationships](https://www.ibm.com/able/guidelines/ci162/info_and_relationships.html) | [WCAG 2.1 technique H71](https://www.w3.org/WAI/WCAG21/Techniques/html/H71)
+</Column>
+</Row>
+<Row>
+<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+
+### Dlaczego to jest ważne
+
+Znacznik `<legend>` dla elementu `<fieldset>` zapewnia etykietę lub instrukcję dla grupy kontrolek w ramach `<fieldset>`. Etykieta ta pomaga użytkownikom rozpoznać, że kontrolki formularza są powiązane. Grupowanie kontrolek formularza jest najważniejsze dla powiązanych ze sobą przycisków radiowych i pól wyboru, ale może być także użyteczne dla innych zestawów pól, które nie są tak ściśle ze sobą powiązane.
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
- * Place a single `<legend>` as the first element in the `<fieldset>` group. The legend must contain a brief description of the related fields enclosed by the `<fieldset>`.
-For example:
+ * Umieść pojedynczy `<legend>` jako pierwszy element w grupie `<fieldset>` group. Legenda musi zawierać krótki opis powiązanych pól włączonych do `<fieldset>`.
+Na przykład:
 
 <CodeSnippet type="multi" light={true}>&lt;fieldset&gt;
        &lt;legend&gt;Skill Level&lt;/legend&gt;
@@ -41,6 +39,19 @@ For example:
        &lt;input type="radio" name="skillLevel" value="novice" id="noviceLev"&gt;
        &lt;label for="noviceLev"&gt;Novice&lt;/label&gt;
 &lt;/fieldset&gt;</CodeSnippet>
+
+</Column>
+<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+
+### O tym wymaganiu
+
+[1.3.1 Informacje i relacje](https://www.ibm.com/able/guidelines/ci162/info_and_relationships.html)
+[Technika WCAG 2.1 H71](https://www.w3.org/WAI/WCAG21/Techniques/html/H71)
+
+### Na kogo to wpływa
+
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby o ograniczonej sprawności ruchowej korzystające ze sterowania za pomocą głosu
 
 </Column>
 </Row>

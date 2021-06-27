@@ -50,13 +50,13 @@
                 <div className="bx--grid" style={{paddingLeft:"1rem", paddingTop:"8px"}}>
                     <div className="bx--row">
                         <div className="bx--col-sm-2">
-                            <Button id='backToListView' onClick={this.props.reportManagerHelp} kind='tertiary' size="small" >Back to list view</Button>
+                            <Button id='backToListView' onClick={this.props.reportManagerHelp} kind='tertiary' size="small" >Wróć do widoku listyw</Button>
                         </div>
                         <div className="bx--col-sm-2" style={{position: "relative", textAlign:"right", paddingRight:"0px", paddingTop:"2px"}}>
                             <div>
                             <span>Status: </span>
                             <span>{this.props.scanStorage === true ? "storing, " : ""}</span>
-                            <span>{this.props.actualStoredScansCount().toString() === "0" ? "no scans stored" : (this.props.actualStoredScansCount().toString() === "1" ? this.props.actualStoredScansCount().toString() + " scan stored" : this.props.actualStoredScansCount().toString() + " scans stored")}</span>
+                            <span>{this.props.actualStoredScansCount().toString() === "0" ? "brak przechowywanych skanów" : (this.props.actualStoredScansCount().toString() === "1" ? this.props.actualStoredScansCount().toString() + " przechowywany skan" : this.props.actualStoredScansCount().toString() + " przechowywanych skanów")}</span>
                             </div>
                         </div>
                     </div>

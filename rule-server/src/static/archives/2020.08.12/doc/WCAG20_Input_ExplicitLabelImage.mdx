@@ -1,35 +1,46 @@
 ---
-title: "Accessibility Checker Rule Help: WCAG20_Input_ExplicitLabelImage"
+title: "Pomoc dla regułyi: WCAG20_Input_ExplicitLabelImage"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div className="toolHelp">
 <Row>
-<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+<Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Who does this affect?
-
-* Blind people using screen readers
-* Peopl with low vision using screen readers
-* People using text-based browsers (e.g., Lynx) or audio interfaces
-
-</Column>
-<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+### Element `<input>` typu `"image"` nie ma tekstu alternatywnego
 
 <div id="locLevel"></div>
 
-### The `<input>` element of type `"image"` has no text alternative
- The `<input>` element of type `"image"` should have a text alternative
+Element `<input>` typu `"image"` powinien mieć tekst alternatywny.
 
-[IBM 1.1.1 Non-text Content](http://www.ibm.com/able/guidelines/ci162/non_text_content.html) | [WCAG 2.1 HTML technique H36](https://www.w3.org/WAI/WCAG21/Techniques/html/H36)
+</Column>
+</Row>
+<Row>
+<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* Use the `alt` attribute on the `<input>` element to provide a short text that describes the input element’s function.(e.g. `<input type="image" alt="submit">`)
+* Użyj atrybutu `alt` w elemencie `<input>`, aby podać krótki tekst opisujący funkcję elementu wejściowego (np. `<input type="image" alt="wyślij">`).
 
+
+</Column>
+<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+
+### O tym wymaganiu
+
+[1.1.1 Treść nietekstowa](http://www.ibm.com/able/guidelines/ci162/non_text_content.html)
+[Techniki WCAG 2.1 - Technika H36](https://www.w3.org/WAI/WCAG21/Techniques/html/H36)
+
+### Na kogo to wpływa
+
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby słabowidzące korzystające z czytników ekranu
+* Osoby korzystające z przeglądarek tekstowych (np. Lynx) lub interfejsów audio
 
 </Column>
 </Row>

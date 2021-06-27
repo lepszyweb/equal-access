@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: WCAG20_Body_FirstAContainsSkipText_Native_Host_Sematics"
+title: "Pomoc dotycząca reguł testowania dostępności: WCAG20_Body_FirstAContainsSkipText_Native_Host_Sematics"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,44 +8,45 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Verify the description of the first hyperlink communicates where it links to
+### Sprawdź, czy opis pierwszego hiperłącza informuje o tym, do czego ono odsyła
 
 <div id="locLevel"></div>
 
-The description of the first hyperlink must communicate where it links to
+Opis pierwszego hiperłącza musi informować, do czego ono odsyła
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-Navigating to the main content on a page without a pointing device is tedious when there is other information, such as banners, navigation and search bars that are in the tab order. Although screen reader users can jump between regions, headings and other element types, other keyboard-only users do not have access to this functionality. Having initial links on a page that any user can follow to get to the main content or to skip past repeated content makes keyboard navigation vastly more efficient for these users. These links must clearly state where they lead to.
+Nawigacja do głównej treści na stronie bez urządzenia wskazującego jest uciążliwa, gdy na stronie znajdują się inne informacje, takie jak banery, paski nawigacji i wyszukiwania, które znajdują się w kolejności tabulacji. Chociaż użytkownicy czytników ekranu mogą przeskakiwać pomiędzy obszarami kluczowymi, nagłówkami i innymi typami elementów, inni użytkownicy korzystający wyłącznie z klawiatury nie mają dostępu do tej funkcjonalności. Posiadanie na stronie łączy pomijających, po których każdy użytkownik może przejść do głównej treści lub pominąć powtarzające się treści, znacznie usprawnia nawigację za pomocą klawiatury. Łącza te muszą wyraźnie określać, do czego prowadzą.
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
- * If this link skips content on the page, verify the link text communicates where it skips to (e.g. "Jump to site navigation");
- * OR, if this link goes to the main content on the page, set the link text to "Skip to main content".
+ * Jeśli to łącze omija treść strony, sprawdź, czy tekst łącza komunikuje, dokąd przeskakuje (np. "Przejdź do nawigacji strony");
+ * LUB, jeśli  to łącze przechodzi do głównej treści na stronie, ustaw tekst łącza na "Przejdź do głównej treści".
 
-For example:
+Na przykład:
 
-<CodeSnippet type="single" light={true}>&lt;A href="#maincontent"&gt;Skip to main content.&lt;/A&gt;</CodeSnippet>
+<CodeSnippet type="single" light={true}>&lt;A href="#maincontent"&gt;Skocz do tresci głównej.&lt;/A&gt;</CodeSnippet>
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 2.4.1 Bypass Blocks](http://www.ibm.com/able/guidelines/ci162/bypass_blocks.html)
-[WCAG 2.1 technique G1](https://www.w3.org/WAI/WCAG21/Techniques/general/G1)
+[IBM 2.4.1 Możliwość pominięcia bloków](http://www.ibm.com/able/guidelines/ci162/bypass_blocks.html)
+[Technika WCAG 2.1 G1](https://www.w3.org/WAI/WCAG21/Techniques/general/G1)
 
-### Who does this affect?
+### Na kogo to wpływa
 
- * People who rely on keyboard control
- * People with low vision using screen magnification
+ * Osoby, które polegają na sterowaniu klawiaturą
+ * Osoby słabowidzące używające powiększalników ekranu
  * People with dexterity impairment
 
 </Column>

@@ -37,13 +37,13 @@ export enum eToolkitLevel {
 }
 
 export enum eRuleCategory {
-    ACCESSIBILITY = "Accessibility",
+    ACCESSIBILITY = "Dostępność",
     DESIGN = "Design",
-    OTHER = "Other"
+    OTHER = "Inne"
 }
 
 export function RulePass(reasonId: number | string, messageArgs? : string[], apiArgs? : any[]) : RuleResult {
-    if (typeof reasonId === "undefined" || reasonId === null) throw new Error("Reason ID must be defined");
+    if (typeof reasonId === "undefined" || reasonId === null) throw new Error("ID powodu musi być określony");
     return {
         value: [eRulePolicy.INFORMATION, eRuleConfidence.PASS],
         reasonId: reasonId,
@@ -53,7 +53,7 @@ export function RulePass(reasonId: number | string, messageArgs? : string[], api
 }
 
 export function RuleRender(reasonId: number | string, messageArgs? : string[], apiArgs? : any[]) : RuleResult {
-    if (typeof reasonId === "undefined" || reasonId === null) throw new Error("Reason ID must be defined");
+    if (typeof reasonId === "undefined" || reasonId === null) throw new Error("ID powodu musi być określony");
     return {
         value: [eRulePolicy.INFORMATION, eRuleConfidence.PASS],
         reasonId: 0,
@@ -62,7 +62,7 @@ export function RuleRender(reasonId: number | string, messageArgs? : string[], a
     }
 }
 export function RuleFail(reasonId: number | string, messageArgs? : string[], apiArgs? : any[]) : RuleResult {
-    if (typeof reasonId === "undefined" || reasonId === null) throw new Error("Reason ID must be defined");
+    if (typeof reasonId === "undefined" || reasonId === null) throw new Error("ID powodu musi być określony");
     return {
         value: [eRulePolicy.INFORMATION, eRuleConfidence.FAIL],
         reasonId: reasonId,
@@ -72,7 +72,7 @@ export function RuleFail(reasonId: number | string, messageArgs? : string[], api
 }
 
 export function RulePotential(reasonId: number | string, messageArgs? : string[], apiArgs? : any[]) : RuleResult {
-    if (typeof reasonId === "undefined" || reasonId === null) throw new Error("Reason ID must be defined");
+    if (typeof reasonId === "undefined" || reasonId === null) throw new Error("ID powodu musi być określony");
     return {
         value: [eRulePolicy.INFORMATION, eRuleConfidence.POTENTIAL],
         reasonId: reasonId,
@@ -82,7 +82,7 @@ export function RulePotential(reasonId: number | string, messageArgs? : string[]
 }
 
 export function RuleManual(reasonId: number | string, messageArgs? : string[], apiArgs? : any[]) : RuleResult {
-    if (typeof reasonId === "undefined" || reasonId === null) throw new Error("Reason ID must be defined");
+    if (typeof reasonId === "undefined" || reasonId === null) throw new Error("ID powodu musi być określony");
     return {
         value: [eRulePolicy.INFORMATION, eRuleConfidence.MANUAL],
         reasonId: reasonId,

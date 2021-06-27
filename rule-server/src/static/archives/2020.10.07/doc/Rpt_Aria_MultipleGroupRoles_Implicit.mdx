@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: Rpt_Aria_MultipleGroupRoles_Implicit"
+title: "Pomoc dotycząca reguł testowania dostępności: Rpt_Aria_MultipleGroupRoles_Implicit"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,52 +8,53 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Multiple elements with a `"group"` role have the same label
+### Istnieje wiele elementów z rolą `"group"` bez unikalnych etykiet
+
 
 <div id="locLevel"></div>
 
-All elements with a `"group"` role must have unique labels
+Każdy element z rolą `"group"` powinien mieć widoczną, niepowtarzalną etykietę
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-When there are multiple elements with a `"group"` role they must have unique labels. This helps people using assistive technologies to quickly identify and navigate to each group.
+Jeśli strona zawiera więcej niż jeden obszar z rolą `"group", każdy z nich powinien mieć unikalną etykietę, aby osoby korzystające z technologii pomocniczych mogły szybko zidentyfikować i przejść do każdego obszaru `"group".
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* For each element with a `"group"` role, either set the value of the `aria-labelledby` attribute of each group to the `id` value of any visible text that appropriately and uniquely describes that group's purpose;
-* OR, use the `aria-label` attribute to add an invisible, unique, non-empty label to each element with the `"group"` role.
+* Dla każdego elementu z rolą `"group" ustaw wartość atrybutu `aria-labelledby` na wartość `id` dowolnego widocznego tekstu, który odpowiednio i jednoznacznie opisuje treść tego obszaru;
+* LUB, użyj atrybutu `aria-label`, aby dodać etykietę bezpośrednio do elementu z rolą `"group"`.
 
-For example:
+Na przykład:
 
-<CodeSnippet type="multi" light={true}>&lt;h2 id="stories"&gt;Breaking News Stories&lt;/h2&gt;
-&lt;div role="group" aria-labelledby="stories"&gt;
+<CodeSnippet type="multi" light={true}>&lt;h2 id="wiadomosci"&gt;Wiadomości codzienne&lt;/h2&gt;
+&lt;div role="group" aria-labelledby="wiadomosci"&gt;
 ...
 &lt;/div&gt;
     
-&lt;div role="group" aria-label="Market outlook stories"&gt;
+&lt;div role="group" aria-label="Dzisiaj na rynkach"&gt;
 ...
 &lt;/div&gt;</CodeSnippet>
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 2.4.1 Bypass Blocks](http://www.ibm.com/able/guidelines/ci162/bypass_blocks.html)
-[W3C WCAG 2.1 technique ARIA6](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA6)
-[W3C WCAG 2.1 technique ARIA13](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA13)
+[IBM 2.4.1 Możliwość pominięcia bloków](http://www.ibm.com/able/guidelines/ci162/bypass_blocks.html)
+[Techniki WCAG 2.1 - Technika ARIA6](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA6)
+[Techniki WCAG 2.1 - Technika ARIA13](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA13)
 
-### Who does this affect?
+### Na kogo to wpływa
 
-* Blind people using screen readers
-* People with low vision using a screen reader
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby słabowidzące korzystające z czytników ekranu
 
 </Column>
 </Row>

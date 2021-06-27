@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: HAAC_Combobox_Expanded"
+title: "Pomoc dla reguły: HAAC_Combobox_Expanded"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,56 +8,58 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### The `aria-owns` or the `aria-controls` attribute of the expanded combobox does not reference a valid popup `id`
+### Atrybut `aria-owns` lub `aria-controls` rozwijanego comboboksu nie odnosi się do poprawnego `id` popupu.
+
 
 <div id="locLevel"></div>
 
-The `aria-owns` or the `aria-controls` attribute of the expanded combobox must reference a valid popup `id`
+Atrybut `aria-owns` lub `aria-controls` rozwijanego comboboksu musi odnosić się do poprawnego `id` popupu (?? `id` poprawnego popupu)
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-A combobox combines a text input element and a popup element that helps the user set the value of the input. The popup becomes visible when the combobox is in an expanded state and is controlled by using an attribute `aria-owns` or `aria-controls` referencing its `id`. When the value of the `aria-owns` or the `aria-controls` attribute of the expanded combobox does not reference a valid popup `id`, assistive technologies may not be able to present and control the content correctly.
+Kontrolka combobox łączy w sobie cechy kontrolek textbox i listbox, która pomaga użytkownikowi ustawić wartość wprowadzanych danych. Wyskakujące okienko z listą wartosci do wyboru staje się widoczne, gdy pole wyboru jest w stanie rozwiniętym i jest kontrolowane za pomocą atrybutu `aria-owns` lub `aria-controls` odwołującego się do jego `id`. Jeśli wartość atrybutu `aria-owns` lub `aria-controls` rozwiniętego pola wyboru nie odwołuje się do poprawnego `id` elementu wyskakującego, technologie wspomagające mogą nie być w stanie poprawnie przedstawić i kontrolować treści.
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
 
- * Code the combobox as in the WAI-ARIA 1.2 example below;
- * AND, set the value of the combobox `aria-controls` attribute to the `id` value of an element with `role="listbox"`;
- * OR, if using the WAI-ARIA 1.1 style of combobox, update the value of the `aria-owns` attribute of the combobox to reference the `id` value of the combobox popup element;
+ * Zakoduj combobox jak w przykładzie WAI-ARIA 1.2 poniżej;
+ * ORAZ, ustaw wartość atrybutu combobox `aria-controls` na wartość `id` elementu z `role="listbox"`;
+ * LUB, jeśli używany jest styl comboboxa WAI-ARIA 1.1, zaktualizuj wartość atrybutu `aria-owns` w comboboksie, aby odnieść się do wartości `id` elementu wyskakującego comboboxa; 
+ 
+Alert: Wytyczne dla comboboxa zmieniły się znacząco w WAI-ARIA 1.2 z powodu problemów z implementacją wzorca WAI-ARIA 1.1. Rekomendowanym wzorcem comboboxa dla WAI-ARIA 1.2 jest:
 
-Alert: The guidance for combobox is changing significantly in WAI-ARIA 1.2 due to problems with implementation of the WAI-ARIA 1.1 pattern. The recommended combobox pattern for WAI-ARIA 1.2 is:
-
-<CodeSnippet type="multi" light={true}> &lt;label for="tag_combo"&gt;Tag&lt;/label&gt;
+<CodeSnippet type="multi" light={true}> &lt;label for="tag_combo"&gt;Znacznik&lt;/label&gt;
   &lt;input type="text" id="tag_combo"
       role="combobox" aria-autocomplete="list"
       aria-haspopup="listbox" aria-expanded="true"
       aria-controls="popup_listbox" aria-activedescendant="selected_option"&gt;
-  &lt;ul role="listbox" id="popup_listbox"&gt;
-   &lt;li role="option"&gt;Zebra&lt;/li&gt;
-   &lt;li role="option" id="selected_option"&gt;Zoom&lt;/li&gt;
-  &lt;/ul&gt;</CodeSnippet>
+   &lt;ul role="listbox" id="popup_listbox"&gt;
+      &lt;li role="option"&gt;Zebra&lt;/li&gt;
+      &lt;li role="option" id="selected_option"&gt;Zoom&lt;/li&gt;
+   &lt;/ul&gt;</CodeSnippet>
 
-Note, example code includes material copied from or derived from [W3C, Accessible Rich Internet Applications (WAI-ARIA) 1.2 W3C Working Draft 18 December 2019](https://www.w3.org/TR/wai-aria-1.2/#combobox). Copyright © [2013-2019] W3C® (MIT, ERCIM, Keio, Beihang).
+Uwaga, przykładowy kod obejmuje materiały skopiowane lub pochodzące z [W3C, Accessible Rich Internet Applications (WAI-ARIA) 1.2 W3C Working Draft 18 December 2019](https://www.w3.org/TR/wai-aria-1.2/#combobox). Copyright © [2013-2019] W3C® (MIT, ERCIM, Keio, Beihang).
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 4.1.2 Name, Role, Value](https://www.ibm.com/able/requirements/requirements/#4_1_2)
+[4.1.2 Nazwa, rola, wartość](http://www.ibm.com/able/guidelines/ci162/name_role_value.html)
 [W3C WAI-ARIA v1.2 Authoring Practices - Combobox](https://www.w3.org/TR/wai-aria-1.2/#combobox)
 
-### Who does this affect?
+### Na kogo to wpływa
 
-* Blind people using a screen reader
-* People with low vision using a screen reader
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby słabowidzące korzystające z czytników ekranu
 
 </Column>
 </Row>

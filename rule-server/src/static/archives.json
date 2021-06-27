@@ -1,58 +1,58 @@
 [
     {
         "id": "latest",
-        "name": "Latest Deployment",
+        "name": "Najnowsze wdrożenie",
         "path": "/archives/latest"
     },
     {
         "id": "16June2021",
-        "name": "16 June 2021 Deployment",
+        "name": "Wdrożenie 16 czerwca 2021",
         "path": "/archives/2021.06.16",
         "latest": true
     },
     {
         "id": "27April2021",
-        "name": "27 April 2021 Deployment",
+        "name": "Wdrożenie 27 kwietnia 2021",
         "path": "/archives/2021.04.27"
     },
     {
         "id": "10Feb2021",
-        "name": "10 February 2021 Deployment",
+        "name": "Wdrożenie 10 lutego 2021",
         "path": "/archives/2021.02.10"
     },
     {
         "id": "07Oct2020",
-        "name": "07 October 2020 Deployment",
+        "name": "Wdrożenie 7 października 2020",
         "path": "/archives/2020.10.07"
     },
     {
         "id": "12Aug2020",
-        "name": "12 August 2020 Deployment",
+        "name": "Wdrożenie 12 kwietnia 2020",
         "path": "/archives/2020.08.12"
     },
     {
         "id": "18June2020",
-        "name": "18 June 2020 Deployment",
+        "name": "Wdrożenie 18 czerwca 2020",
         "path": "/archives/2020.06.18"
     },
     {
         "id": "03June2020",
-        "name": "03 June 2020 Deployment",
+        "name": "Wdrożenie 3 czerwca 2020",
         "path": "/archives/2020.06.03"
     },
     {
         "id": "12May2020",
-        "name": "12 May 2020 Deployment",
+        "name": "Wdrożenie 12 maja 2020",
         "path": "/archives/2020.05.12"
     },
     {
         "id": "2020AprilDeploy",
-        "name": "02 April 2020 Deployment",
+        "name": "Wdrożenie 2 kwietnia 2020",
         "path": "/archives/2020.04.02"
     },
     {
         "id": "preview",
-        "name": "Preview Rules",
+        "name": "Podglądowe reguły",
         "path": "/archives/preview"
     }
 ]

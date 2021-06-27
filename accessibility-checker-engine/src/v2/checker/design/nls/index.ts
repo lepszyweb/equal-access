@@ -16,24 +16,24 @@
 
 let designNls = {
     "DESIGN_COLOR_Palette_Foreground": [
-        "Foreground color {0} is in the standard palette.",
-        "Foreground color {0} is not in the standard palette."
+        "Kolor pierwszego planu {0} jest ze standardowej palety.",
+        "Kolor pierwszego planu {0} nie jest ze standardowej palety."
     ],
     "DESIGN_COLOR_Palette_Background": [
-        "Background color {0} is in the standard palette.",
-        "Background color {0} is not in the standard palette."
+        "Kolor tła {0} jest ze standardowej palety.",
+        "Kolor tła {0} nie jest ze standardowej palety."
     ],
     "DESIGN_Typography_Plex": [
-        "Font Family \"{0}\" begins with \"IBM Plex\"",
-        "Font Family \"{0}\" is not a standard font, it does not begin with \"IBM Plex\"."
+        "Rodzina fontów \"{0}\" zaczyna się od \"IBM Plex\"",
+        "Rodzina fontów \"{0}\" nie jest standardową czcionką, nie zaczyna się od \"IBM Plex\"."
     ],
     "DESIGN_Typography_TextAlignLeft": [
-        "Text is left justified",
-        "Text is not left justified"
+        "Tekst jest wyrównany do lewej",
+        "Tekst nie jest wyrównany do lewej"
     ],
     "DESIGN_GridLayout_ImgAspectRatio": [
-        "Rule Passed",
-        "Image is not a supported aspect ratio (16:9, 4:3, 3:2, 2:1, or 1:1)"
+        "Wymóg spełniony",
+        "Obraz nie ma obsługiwanego współczynnika kształtu (16:9, 4:3, 3:2, 2:1, or 1:1)"
     ]
 }
 export {designNls}

@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: WCAG20_Table_Structure"
+title: "Pomoc dla reguły: WCAG20_Table_Structure"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,42 +8,45 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### The {0} element with WAI-ARIA `presentation` role or `none` role has structural element(s) and/or attribute(s) {1}
+### Element {0} z rolą WAI-ARIA `presentation lub `none` ma element(y) i atrybut(y) strukturalny(e) {1}
 
 <div id="locLevel"></div>
 
-Table elements with `role=presentation` or `role=none` should not have structural elements or attributes
+Elementy tabeli z `role=presentation` lub `role=none` nie powinny mieć strukturalnych elementów lub atrybutów
+
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-Assistive technologies use structural elements (`<th>`, `<caption>`) and attributes (`summary`, `scope`, `header`) to help users navigate and understand data tables. Including these features in layout tables makes the purpose of the table unclear.
+Technologie wspomagające wykorzystują elementy strukturalne (`<th>`, `<caption>`)`) i atrybuty (`summary`, `scope`, `header`), aby pomóc użytkownikom w nawigacji i zrozumieniu tabel danych. Włączenie tych funkcji do tabelu powoduje, że cel tabeli jest niejasny.
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
- * If the table is a data table, remove the `role` attribute;
- * OR, if a table is used for layout, use CSS-based layouts instead;
- * OR, if a layout table must be used, remove `<th>` elements, `<caption>` elements, `summary` attributes, and `scope` or `header` attributes on `<td>` elements.
-
+ * Jeśli tabela jest tabelą danych, usuń atrybut `role`;
+ * LUB, jeśli tabela jest używana do rozmieszczenia elementów, użyj zamiast tego układów opartych na CSS;
+ * LUB, jeśli musi być zastosowana tabela układu, usuń elementy, `<th>``<caption>` oraz atrybuty `summary`, `scope` lub `header` z elementów `<td>`.
+ 
+ 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 1.3.1 Info and Relationships](https://www.ibm.com/able/requirements/requirements/#1_3_1)
-[WCAG 2.1 technique F46](https://www.w3.org/WAI/WCAG21/Techniques/failures/F46.html)
-[WCAG 2.1 Technique F92](https://www.w3.org/WAI/WCAG21/Techniques/failures/F92.html)
+[1.3.1 Informacje i relacje](https://www.ibm.com/able/guidelines/ci162/info_and_relationships.html)
+[Technika WCAG 2.1 F46](https://www.w3.org/WAI/WCAG21/Techniques/failures/F46.html)
+[Technika WCAG 2.1 F92](https://www.w3.org/WAI/WCAG21/Techniques/failures/F92.html)
 
-### Who does this affect?
+### Na kogo to wpływa
 
-* Blind people using screen readers
-* People with low vision using screen readers
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby słabowidzące korzystające z czytników ekranu
 
 </Column>
 </Row>

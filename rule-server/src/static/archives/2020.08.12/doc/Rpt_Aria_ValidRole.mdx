@@ -1,39 +1,37 @@
 ---
-title: "Accessibility Checker Rule Help: Rpt_Aria_ValidRole"
+title: "Pomoc dla regułyi: Rpt_Aria_ValidRole"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div className="toolHelp">
 <Row>
-<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+<Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Who does this affect?
+### Wartość atrybutu `role` określona dla elementu nie istnieje w specyfikacji WAI-ARIA
 
-* Blind people using screen readers
-* People with dexterity impairment using voice control
-
-### Why is this important?
-
-The WAI-ARIA specification provides a collection of accessibility roles as the main indicator of the type of control. This is used to support platform accessibility APIs. Using a valid WAI-ARIA `role` on an element as defined in the WAI-ARIA specification allows assistive technologies to use the role semantics to present and support consistent object interaction.
-
-
-</Column>
-<Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
 <div id="locLevel"></div>
 
-### The `role` defined on the element is not valid per WAI-ARIA specification
-Elements must have a valid `role` per WAI-ARIA specification
+Elementy muszą posiadać poprawnie określoną wartość `role` zgodnie ze specyfikacją WAI-ARIA
 
-[IBM 4.1.2 Name, Role, Value](https://www.ibm.com/able/guidelines/ci162/name_role_value.html) | [W3C WAI-ARIA 1.1](https://www.w3.org/TR/wai-aria-1.1/)
+</Column>
+</Row>
+<Row>
+<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+
+### Dlaczego to jest ważne
+
+Specyfikacja WAI-ARIA określa zbiór ról dostępnościowych jako główny wskaźnik typu kontrolek. Jest on używany do obsługi API dostępności platformy. Użycie poprawnej, zdefiniowanej w specyfikacji WAI-ARIA, wartości `role` WAI-ARIA` opisującej rolę elementu  pozwala technologiom wspomagającym na użycie semantyki ról do prezentacji i obsługi spójnej interakcji obiektów.
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* Update the element with a valid `role` that fits the type of control as intended, using the WAI-ARIA 1.1 specification as a guide.
-The following example shows an element with a valid `role="scrollbar"` intended to provide scrollbar functionality:
+* Popraw kod elementu, użyj poprawnej atrybutu `role`, która pasuje do typu kontrolki, zgodnej ze specyfikacją WAI-ARIA 1.1.
+
+Poniższy przykład pokazuje element z prawidłową `role="scrollbar"`, który ma zapewnić funkcjonalność paska przewijania:
 
 <CodeSnippet type="multi" light={true}> &lt;div id="content1"&gt;&lt;/div&gt;
    &lt;div
@@ -46,6 +44,18 @@ The following example shows an element with a valid `role="scrollbar"` intended 
        &lt;div class="scrollhandle"&gt;&lt;/div&gt;
    &lt;/div&gt;</CodeSnippet>
 
+</Column>
+<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+
+### O tym wymaganiu
+
+[4.1.2 Nazwa, rola, wartość](https://www.ibm.com/able/guidelines/ci162/name_role_value.html)
+[W3C WAI-ARIA 1.1](https://www.w3.org/TR/wai-aria-1.1/)
+
+### Na kogo to wpływa
+
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby o ograniczonej sprawności ruchowej korzystające ze sterowania za pomocą głosu
 
 </Column>
 </Row>

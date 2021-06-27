@@ -1,61 +1,88 @@
 [![IBM Equal Access Toolkit is released under the Apache-2.0 license](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](./LICENSE)
 
 # accessibility-checker-extension
-A web browser extensions that adds automated accessibility checking capabilities
+Rozszerzenia przeglądarki internetowej, które dodają funkcje automatycznego testowania dostępności
 
-## Getting started
+## Pierwsze kroki
 
-* [Node Version 12](https://nodejs.org/en/download/).
+* [Wersja Node 12](https://nodejs.org/en/download/).
 
-### Install dependencies
+### Instalacja zależności
 
-1. Under the root directory `equal-access` directory 
+1. W katalogu głównym ```equal-access```  
 
     ```
     npm install
     ```
 
-### Build
+2. W katalogu rozszerzenia accessibility-checker-extension
+    ```
+    npm install
+    ```
 
-There are several different modes that you can run with. These will build the extension to `accessibility-checker-extension/dist` (See loading into the browser below)
+3. Wróć do katalogu głównego ```cd ..```
 
-**Run local extension with local rule server**
-1. Under the `rule-server` directory, `npm start`
-2. Open https://localhost:9445 in your browser and accept any self-signed certs. In chrome you may need to type 'thisisunsafe', which will accept the cert (you will not actually see anywhere to type it). You should get "Cannot GET /".
-3. On a new command line window, under the `accessibility-checker-extension` directory, `npm run build:watch:local`
+4. W katalogu report-react
+    ```
+    npm install
+    npm start
+    ```
 
-**Run local extension with production rule server**
+5. W nowym oknie wiersza poleceń przejdź do katalogu accessibility-checker-extension 
+   i wykonaj
+    ```
+    npm run build:watch:local
+    ```
+    Opcje uruchamiania kompilacji:<br> 
+    Kompilacja dla deweloperów: `npm run build:dev`<br> 
+    Tworzenie dla deweloperów i obserwowanie zmian: `npm run build:watch`<br> 
+    Kompilacja dla produkcji: `npm run build:prod`<br> 
 
-From the `accessibility-checker-extension` directory:
-* To continuously build when changes occur, `npm run build:watch`
-* To build once for development, `npm run build:dev`
-* To build for production, `npm run build:prod`
-
-## Loading into the browser:
-### In Chrome web browser
-1. Go to: [**chrome://extensions**](chrome://extensions)
-2. Toggle: "**developer mode**" on.
-3. Click on: "**Load unpacked**"
-4. Select the newly created folder "**dist**" ```equal-access/accessibility-checker-extension/dist``` from the project folder.
+## Ładowanie do przeglądarki:
+### W przeglądarce Chrome
+1. Przejdź do: [**chrome://extensions**](chrome://extensions)
+2. Włącz opcję on: "**developer mode**".
+3. Kliknij na: "**Load unpacked**"
+4. Wybierz nowo utworzony folder "**dist**" ```equal-access/accessibility-checker-extension/dist``` z folderu projektu.
 
 ### In Firefox web browser
-1. Go to: [**about:debugging**](about:debugging) in the Firefox browser
-2. Select: "**This Firefox**"
-3. Click on: "**Load Temporary Add-on…**"
-4. Open the newly created folder "**dist**" from the project folder, and choose the "**manifest.json**" file.
+1. Przejdź do: [**about:debugging**](about:debugging) in the Firefox browser
+2. Wybierz: "**This Firefox**"
+3. Kliknij na: "**Load Temporary Add-on…**"
+4. Otwórz nowo utworzony folder "**dist**"  z folderu projektu i wybierz plik "**manifest.json**" file.
 
-## Build the deployment package for Chrome and Firefox browsers:
+
+### W przeglądarce Firefox
+1. Przejdź do: [**about:debugowanie**](about:debugowanie) w przeglądarce Firefox
+2. Wybierz: "**To Firefox**"
+3. Kliknij na: "**Załaduj tymczasowy dodatek...**"
+4. Otwórz nowo utworzony folder "**dist**" z folderu projektu i wybierz plik "**manifest.json**".
+
+
+## Zbuduj pakiet wdrożeniowy dla przeglądarek Chrome i Firefox:
 ```
 npm run clean:all
 npm install
 npm run package:browser
 ```
-The commands generate a package/accessibility-checker-extension.zip file. The zip package can be deployed into the Chrome or Firefox store. You can test the package locally in the Firefox browser (though not in the Chrome browser):
-1. Go to: [**about:debugging**](about:debugging) in the Firefox browser
-2. Select: "**This Firefox**"
-3. Click on: "**Load Temporary Add-on…**"
-4. Open the newly created package file "**accessibility-checker-extension.zip**" from the package folder.  
+Polecenia generują plik package/accessibility-checker-extension.zip file. Pakiet zip można wdrożyć w sklepie Chrome lub Firefox. Pakiet można przetestować lokalnie w przeglądarce Firefox (choć nie w przeglądarce Chrome):
+1. Przejdź do: [**about:debugging**](about:debugging) w przeglądarce Firefox
+2. Wybierz: "**This Firefox**"
+3. Kliknij na: "**Load Temporary Add-on…**"
+4. Otwórz nowo utworzony plik pakietu "**accessibility-checker-extension.zip**" z folderu pakietu.  
 
-## Bugs and Issues
+## Błędy i problemy
 
-All bugs or issues related to the karma-accessibility-checker code can be created in [GitHub Issues](https://github.com/IBMa/equal-access/issues).
+Wszystkie błędy lub problemy związane z kodem karma-accessibility-checker mogą być tworzone w [GitHub Issues](https://github.com/IBMa/equal-access/issues).
+
+
+
+
+
+
+
+
+
+
+
+

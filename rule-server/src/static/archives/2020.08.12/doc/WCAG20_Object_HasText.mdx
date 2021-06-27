@@ -1,45 +1,55 @@
 ---
-title: "Accessibility Checker Rule Help: WCAG20_Object_HasText"
+title: "Pomoc dotycząca reguł testowania dostępności: WCAG20_Object_HasText"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div className="toolHelp">
 <Row>
-<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+<Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Who does this affect?
-
-* Blind people using screen readers;
-* People using text-based browsers (e.g., Lynx) or audio interfaces.
-
-### Why is this important?
-
-Alternative descriptions are important for users whose browsers do not support the `<object>` element or the media type of the object.
-
-</Column>
-<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+### Element `<object>` nie ma tekstu alternatywnego
 
 <div id="locLevel"></div>
 
-### An `<object>` element does not have a text alternative
-`<object>` elements must have a text alternative that describes the content rendered by the object
+Elementy `<object>` muszą posiadać alternatywę tekstową, która opisuje treść odwzorowaną przez obiekt
 
-[IBM 1.1.1 Non-text content](http://www.ibm.com/able/guidelines/ci162/non_text_content.html) | [WCAG 2.1 technique H53](https://www.w3.org/WAI/WCAG21/Techniques/html/H53)
+</Column>
+</Row>
+<Row>
+<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+
+### Dlaczego to jest ważne
+
+Opisy alternatywne są ważne dla użytkowników, których przeglądarki nie obsługują elementu `<object>` lub typu medium osadzonego za pomocą `<object>`.
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* If the `<object>` element is a Java applet, add an alternative text description;
-* OR, if the `<object>` element is a MPEG movie, add an image with alternative text.
+* Jeśli element `<object>` jest apletem Java, dodaj alternatywny opis tekstowy;
+* LUB, jeśli element `<object>` jest filmem MPEG, dodaj obraz z tekstem alternatywnym.
 
-For example:
+Na przykład:
 
-<CodeSnippet type="multi" light={true}> &lt;object classid="java:Press.class" width="500" height="500" title="Java applet: how temperature affects pressure."&gt;
-&lt;applet code="java:Press.class" width="500" height="500"&gt; As temperature increases the velocity of the molecules in the balloon...
+<CodeSnippet type="multi" light={true}> &lt;object classid="java:Press.class" width="500" height="500" title="Aplet Java: Jak temperatura wpływa na ciśnienie"&gt;
+&lt;applet code="java:Press.class" width="500" height="500"&gt; Wraz ze wzrostem temperatury wzrasta prędkość cząsteczek w balonie...
 &lt;/applet&gt;
 &lt;/object&gt;</CodeSnippet>
+
+</Column>
+<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+
+### O tym wymaganiu
+
+[IBM 1.1.1 Treść nietekstowa](http://www.ibm.com/able/guidelines/ci162/non_text_content.html)
+[Technika WCAG 2.1 H53](https://www.w3.org/WAI/WCAG21/Techniques/html/H53)
+
+### Na kogo to wpływa
+
+* Osoby niewidome korzystające z czytników ekranu;
+* Osoby korzystające z przeglądarek tekstowych (np. Lynx) lub interfejsów audio.
 
 </Column>
 </Row>

@@ -1,0 +1,53 @@
+---
+title: "Pomoc dla reguły: WCAG20_Img_AltTriggerNonDecorative"
+---
+import "../../../styles/ToolHelp.scss"
+import { CodeSnippet, Tag } from "carbon-components-react";
+
+<div className="toolHelp">
+<Row>
+<Column colLg={16} colMd={8} colSm={4} className="toolHead">
+
+### Obraz nie ma alternatywy w postaci krótkiego tekstu
+
+<div id="locLevel"></div>
+
+Obrazy, które przekazują znaczenie, muszą mieć alternatywę w postaci krótkiego tekstu.
+
+</Column>
+</Row>
+<Row>
+<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+
+### Dlaczego to jest ważne
+
+W przypadku gdy obraz zawiera ważne informacje, podanie alternatywy tekstowej powoduje, że te same informacje są dostępne za pośrednictwem audio lub innych kanałów.
+
+<div id="locSnippet"></div>
+
+
+### Co zrobić
+
+* Użyj atrybutu alt w elemencie <img>, aby podać krótki tekst, który służy temu samemu celowi, co obraz (przekazuje tę samą treść). Jeśli obraz zawiera ważne słowa, umieść je w krótkim opisie (np. <img alt="Wyślij">);
+* LUB, jeśli obraz jest ozdobny lub nadmiarowy (powtarza treści istniejące w ilustrowanym tekście), można pozostawić atrybut alt pusty (np. <img alt="">, bez żadnych znaków między ograniczającymi znakami cala) lub określić atrybut role="presentation" albo role="none".
+
+</Column>
+<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+
+### O tym wymaganiu
+
+[IBM 1.1.1 Treść nietekstowa]()
+[Technika WCAG H37]()
+
+### Na kogo to wpływa
+
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby, które wyłączają ładowanie obrazów w swoich przeglądarkach internetowych
+* Osoby używające tylko tekstu, wyświetlaczy monochromatycznych lub brajlowskich
+* Osoby korzystające z przeglądarek tekstowych (np. Lynx) lub interfejsów audio
+
+</Column>
+</Row>
+</div>
+
+export default ({ children, _frontmatter }) => (<React.Fragment>{children}</React.Fragment>)

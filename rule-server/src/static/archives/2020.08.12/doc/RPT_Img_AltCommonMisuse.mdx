@@ -1,46 +1,53 @@
 ---
-title: "Accessibility Checker Rule Help: RPT_Img_AltCommonMisuse"
+title: "Pomoc dla regułyi: RPT_Img_AltCommonMisuse"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div className="toolHelp">
 <Row>
-<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+<Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Who does this affect?
-
- * Blind people using screen readers
- * People who turn off image-loading on their web browsers
- * People using text only, monochrome or braille displays
- * People using text-based browsers (e.g., Lynx) or audio interfaces
-
-### Why is this important?
-
-When an image contains important information that is not available in text on the page, providing a text alternative makes the same information accessible through audio or other channels.
-
-</Column>
-<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+### Nazwa pliku służąca do opisu obrazu
 
 <div id="locLevel"></div>
 
-### File name used to describe an image
-Check the `"alt"` attribute value is a good alternative for the image
+Sprawdź, czy wartość atrybutu `"alt"` jest dobrą alternatywą dla obrazu
 
-[IBM 1.1.1 Non-text content](http://www.ibm.com/able/guidelines/ci162/non_text_content.html) | [WCAG 2.1 technique H37](https://www.w3.org/WAI/WCAG21/Techniques/html/H37)
+</Column>
+</Row>
+<Row>
+<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+
+### Dlaczego to jest ważne
+
+W przypadku gdy obraz zawiera ważne informacje, które nie są dostępne w tekście na stronie, podanie alternatywy tekstowej powoduje, że te same informacje są dostępne za pośrednictwem audio lub innych kanałów.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* If the image conveys meaning, the value of the `"alt"` attribute should be a short description that serves the same purpose as the image. Include any important words from the image in the short description (e.g. `<img alt="submit">`). Do not use a file name;
-* OR, if the image is decorative or the same information is also available in text, use the `"alt"` attribute with an empty string as its value (e.g.  `<img alt="">`).
+* Użyj atrybutu alt w elemencie <img>, aby podać krótki tekst, który służy temu samemu celowi, co obraz (przekazuje tę samą treść). Jeśli obraz zawiera ważne słowa, umieść je w krótkim opisie (np. <img alt="Wyślij">);
+* LUB, jeśli obraz jest ozdobny lub nadmiarowy (powtarza treści istniejące w ilustrowanym tekście), można pozostawić atrybut alt pusty (np. <img alt="">, bez żadnych znaków między ograniczającymi znakami cala) lub określić atrybut role="presentation" albo role="none".
 
 
+</Column>
+<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+
+### O tym wymaganiu
+
+[IBM 1.1.1 Treść nietekstowa](http://www.ibm.com/able/guidelines/ci162/non_text_content.html)
+[Technika WCAG 2.1 H37](https://www.w3.org/WAI/WCAG21/Techniques/html/H37)
+
+### Na kogo to wpływa
+
+ * Osoby niewidome korzystające z czytników ekranu
+ * Osoby, które wyłączają ładowanie obrazów w swoich przeglądarkach internetowych
+ * Osoby używające tylko tekstu, wyświetlaczy monochromatycznych lub brajlowskich
+ * Osoby korzystające z przeglądarek tekstowych (np. Lynx) lub interfejsów audio
 
 </Column>
 </Row>
 </div>
 
 export default ({ children, _frontmatter }) => (<React.Fragment>{children}</React.Fragment>)
-

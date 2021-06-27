@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: WCAG20_Table_SummaryAria3"
+title: "Pomoc dla reguły: WCAG20_Table_SummaryAria3"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,32 +8,32 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### The data table has no summary
+### Tabela danych nie zawiera podsumowania
 
 <div id="locLevel"></div>
 
-Data tables should have a summary that gives an overview of the table
+Tabele danych powinny zawierać podsumowanie, które daje przegląd tabeli
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-A table summary provides a brief overview of how data has been organized into a data table and is specifically useful when the table is large with many rows and columns or when the table has a complex structure (multiple row or column headers). The table summary should not duplicate the caption.
+Podsumowanie tabeli zawiera krótkie omówienie sposobu zorganizowania danych w tabeli danych i jest szczególnie przydatne, gdy tabela jest duża i zawiera wiele wierszy i kolumn lub gdy tabela ma złożoną strukturę (wiele nagłówków wierszy lub kolumn). Podsumowanie tabeli nie powinno treści podpisu tabeli.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* Add an `aria-labelledby` attribute to the `<table>` element. It must point to visible text on the page that is meaningful as its summary;
-* OR, add an `aria-describedby` attribute to provide a brief overview of the data table;
-* OR, add an `aria-label` attribute to provide a brief overview of the data table.
+  * Dodaj atrybut `aria-labelledby` do elementu `<table>`. Atrybut `aria-labelledby` musi wskazywać na element, w którym znajduje się widoczny na stronie tekst, opisujący organizację danych w tabeli (podsumowujący tabelę)
+  * lub  dodaj atrybut `aria-describedby`, aby zapewnić krótki przegląd tabeli danych;
+  * lub dodaj atrybut `aria-label`, aby zapewnić krótki przegląd tabeli danych.
 
-Note: In HTML5 the `summary` attribute is obsolete and should be avoided.
+Uwaga: w HTML5 atrybut `summary` jest przestarzały i należy go unikać.
 
-For example the following example uses the `aria-labelledby` to provide the table summary:
+Na przykład, w poniższym przykładzie przedstawiono podsumowanie tabeli, korzystając z atrybutu `aria-labelledby`:
 
 <CodeSnippet type="multi" light={true}>  &lt;p id="tblSummary"&gt;The following table shows the number of boys and girls in each grade of an elementary school.&lt;/p&gt;
     
@@ -56,14 +56,15 @@ For example the following example uses the `aria-labelledby` to provide the tabl
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 1.3.1 Non-text content](https://www.ibm.com/able/requirements/requirements/#1_3_1)
+[IBM 1.3.1 Non-text content](https://www.ibm.com/able/guidelines/ci162/info_and_relationships.html)
 [WCAG 2.1 HTML technique H73](https://www.w3.org/WAI/WCAG21/Techniques/html/H73.html)
 
-### Who does this affect?
+### Na kogo to wpływa
 
-* People using a screen reader, including blind, low vision and neurodivergent people
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby słabowidzące korzystające z czytników ekranu
 
 </Column>
 </Row>

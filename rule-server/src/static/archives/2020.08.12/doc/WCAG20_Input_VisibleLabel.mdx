@@ -1,45 +1,54 @@
 ---
-title: "Accessibility Checker Rule Help: WCAG20_Input_VisibleLabel"
+title: "Pomoc dla regułyi: WCAG20_Input_VisibleLabel"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div className="toolHelp">
 <Row>
-<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+<Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Who does this affect?
-
- * People with dexterity impairment using voice control
-
-### Why is this important?
-
-Visible labels are essential so that people using voice control know what to say. This allows them to easily navigate to interactive elements on the screen.
-
-</Column>
-<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+### Element `<input>` nie ma przypisanej widocznej etykiety
 
 <div id="locLevel"></div>
 
-### The `<input>` element does not have an associated visible label
-The `<input>` element must have an associated visible label
+Element `<input>` musi mieć przypisaną widoczną etykietę
 
-[IBM 3.3.2 Label or Instruction](https://www.ibm.com/able/guidelines/ci162/labels_or_instructions.html) | [IBM 2.5.3 Label in Name](https://www.ibm.com/able/guidelines/ci162/label_in_name_71.html) | [WCAG 2.1 technique H44](https://www.w3.org/WAI/WCAG21/Techniques/html/H44)
+</Column>
+</Row>
+<Row>
+<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+
+### Dlaczego to jest ważne
+
+Widoczne etykiety są niezbędne, aby osoby używające sterowania głosowego wiedziały, co powiedzieć. Pozwala im to na łatwe przechodzenie do interaktywnych elementów na ekranie.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
  * If there is already a visible label for the `<input>` element, use the `for` attribute on the label to reference the `<input>` element's `id` value.
  * OR, add a visible label, with the `for` attribute linking it to the `<input>`.
 
-For example:
+Na przykład:
 
-<CodeSnippet type="multi" light={true}>&lt;label for="test1"&gt;License Number:&lt;/label&gt;
-&lt;input type="text" id="test1" aria-label="Enter driver license number"/&gt;
-&lt;label for="test2"&gt;First name:&lt;/label&gt;
+<CodeSnippet type="multi" light={true}>&lt;label for="test1"&gt;Numer licjencji:&lt;/label&gt;
+&lt;input type="text" id="test1" aria-label="Wstaw numer licencji sterownika"/&gt;
+&lt;label for="test2"&gt;Imię:&lt;/label&gt;
 &lt;input type="text" id="test2"/&gt;</CodeSnippet>
 
+</Column>
+<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+
+### O tym wymaganiu
+
+[3.3.2 Etykiety i instrukcje](https://www.ibm.com/able/guidelines/ci162/labels_or_instructions.html)
+[2.5.3 Etykieta w nazwie](https://www.ibm.com/able/guidelines/ci162/label_in_name_71.html)
+[Technika WCAG 2.1 H44](https://www.w3.org/WAI/WCAG21/Techniques/html/H44)
+
+### Na kogo to wpływa
+
+ * Osoby o ograniczonej sprawności ruchowej korzystające ze sterowania za pomocą głosu
 
 </Column>
 </Row>

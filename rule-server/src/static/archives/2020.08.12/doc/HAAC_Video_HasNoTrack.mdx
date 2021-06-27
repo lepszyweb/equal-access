@@ -1,43 +1,52 @@
 ---
-title: "Accessibility Checker Rule Help: HAAC_Video_HasNoTrack"
+title: "Pomoc dla regułyi: HAAC_Video_HasNoTrack"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div className="toolHelp">
 <Row>
-<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+<Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Who does this affect?
-
-* Blind people using screen readers
-* People who are deaf or hard of hearing
-
-### Why is this important?
-
-Text tracks contain a textual transcription of either audio (captions) or visual (visual/video description) aspects of video or audio content in a synchronized media. This may include the dialog, sound effects, and relevant musical cues, or information about characters, location, actions and scene changes. Providing text alternatives makes information available that some people would not have access to otherwise.
-
-</Column>
-<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+### Upewnij się, że dla każdego znaczącego dźwięku zapewnione są rónoważne napisy lub podaj ścieżkę z napisami dla elementu `<video>`.
 
 <div id="locLevel"></div>
 
-### Media embedded with a `<video>` element does not have a `<track>`element to provide text alternatives for audio or visual content
-Media embedded with a `<video>` element must have a `<track>` element to provide text alternatives for audio or visual content
+Element `<video>` musi mieć tekstową alternatywę dla każdej znaczącej treści audio
 
-[IBM 1.2.1 Audio-only and Video-only (Prerecorded)](http://www.ibm.com/able/guidelines/ci162/audio_and_video.html) | [WCAG 2.1 technique H96](https://www.w3.org/WAI/WCAG21/Techniques/html/H96)
+</Column>
+</Row>
+<Row>
+<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+
+### Dlaczego to jest ważne?
+
+Ścieżki tekstowe lub napisy otwarte zawierają tekstową transkrypcję dźwiękowych aspektów treści wideo w zsynchronizowanym nośniku. Może to obejmować dialogi, efekty dźwiękowe i odpowiednie wskazówki muzyczne. Udostępnienie alternatyw tekstowych (naisów rozszerzonych) udostępnia informacje, do których niektóre osoby nie miałyby dostępu w innym przypadku.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-Use the `<track>` element with the `kind` attribute to provide text tracks for the audio (`kind="captions"`) and visual (`kind="descriptions"`) aspects of the video
+* Jeśli film ma jakieś sensowne audio i nie ma napisów, dodaj za pomocą elementu `<track>` napisy zamknięte ;
+* LUB upewnij się, że film ma napisy rozszerzone na żywo, zwykle zrobione przez profesjonalnych dostawców napisów w czasie rzeczywistym (nazywanych również Communication Access Realtime Translation (CART)).
 
-For example:
+Na przykład:
 
 <CodeSnippet type="multi" light={true}>&lt;video src="..."&gt;
-      &lt;track src="myvideo.srt" kind="captions" &gt;
+      &lt;track src="mojeWideo.srt" kind="captions" &gt;
 &lt;/video&gt;</CodeSnippet>
+
+</Column>
+<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+
+### O tym wymaganiu
+
+[IBM 1.2.2 Napisy rozszerzone (Nagranie)](https://www.ibm.com/able/guidelines/ci162/captions.html)
+[Techniki WCAG 2.1 - Technika H95](https://www.w3.org/WAI/WCAG21/Techniques/html/H95)
+
+### Kogo to dotyczy?
+
+* Osoby g/Głuche lub słabosłyszące
 
 </Column>
 </Row>

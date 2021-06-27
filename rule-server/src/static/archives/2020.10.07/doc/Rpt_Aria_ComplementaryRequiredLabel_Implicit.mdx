@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: Rpt_Aria_ComplementaryRequiredLabel_Implicit"
+title: "Pomoc dotycząca reguł testowania dostępności: Rpt_Aria_ComplementaryRequiredLabel_Implicit"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,47 +8,47 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### An element with `"complementary"` role does not have a label
+### Element z rolą `"complementary"` nie ma widocznej etykiety
 
 <div id="locLevel"></div>
 
-An element with `"complementary"` role must have a label
+Element z rolą `"complementary"` musi mieć etykietę
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-An element with a `"complementary"` role must have a label specified with an accessible name. This information helps people using assistive technologies to find and navigate the content.
-The HTML `<aside>` element has an implicit role of `"complementary"`.
+Element z rolą `"complementary"` musi mieć etykietę z dostępną nazwie. Ta informacja pomaga osobom korzystającym z technologii wspomagających znajdować i nawigować po treści.
+Element HTML `<aside>` posiada niejawną rolę `"complementary"`.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* If there is visible text that appropriately describes the purpose of the content, set the element's `aria-labelledby` attribute to the `id` value of that text (example below);
-* OR, use the `aria-label` attribute to add a label directly to the element with the `"complementary"` role.
+* Jeśli istnieje widoczny tekst, który odpowiednio opisuje cel treści, ustaw atrybut `aria-labelledby` elementu na wartość `id` tego tekstu (przykład poniżej);
+* LUB użyj atrybutu `aria-label` aby dodać etykietę bezpośrednio do elementu z rolą `"complementary"`.
 
-For example:
+Na przykład:
 
-<CodeSnippet type="multi" light={true}>&lt;h1 id="news"&gt;Breaking news articles&lt;/h1&gt;
-&lt;div role="complementary" aria-labelledby="news"&gt;
+<CodeSnippet type="multi" light={true}>&lt;h1 id="wiadomości"&gt;Wiadomości codzienne&lt;/h1&gt;
+&lt;div role="complementary" aria-labelledby="wiadomości"&gt;
     ...
 &lt;/div&gt;</CodeSnippet>
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 2.4.1 Bypass Blocks](http://www.ibm.com/able/guidelines/ci162/bypass_blocks.html)
+[IBM 2.4.1 Możliwość pominięcia bloków](http://www.ibm.com/able/guidelines/ci162/bypass_blocks.html)
 [WAI-ARIA 1.1 Complementary Role](https://www.w3.org/TR/wai-aria-1.1/#complementary)
 
-### Who does this affect?
+### Na kogo to wpływa
 
-* Blind people using screen readers
+* Osoby niewidome korzystające z czytników ekranu
 
 </Column>
 </Row>

@@ -250,7 +250,7 @@ export class Engine implements IEngine {
         }
         for (const ruleId of ruleIds || []) {
             if (!(ruleId in this.ruleMap)) {
-                console.warn("WARNING: Rule Id",ruleId,"could not be enabled.");
+                console.warn("OSTRZEŻNIE: Reguła z Id",ruleId," nie może być włączona.");
             } else {
                 this.ruleMap[ruleId].enabled = true;
             }
@@ -280,7 +280,7 @@ export class Engine implements IEngine {
         let idx = 0;
         const ruleId = rule.id;
         if (ruleId in this.ruleMap) {
-            console.log("WARNING: Rule",ruleId,"already added to engine. Ignoring...");
+            console.log("OSTRZEŻNIE: Reguła z Id",ruleId,"już jest dodana do silnika. Ignoruj...");
             return;
         }
         this.ruleMap[ruleId] = rule;
@@ -397,7 +397,7 @@ export class Engine implements IEngine {
                     else --partIdx;
                 }
             } else {
-                throw new Error("Context connector "+part.connector+" is not supported");
+                throw new Error("Łącznik kontekstowy "+part.connector+" nie jest obslugiwany");
             }
         }
         return partIdx === -1;

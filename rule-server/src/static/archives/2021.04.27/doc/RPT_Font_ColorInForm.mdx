@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: RPT_Font_ColorInForm"
+title: "Pomoc dla reguły: RPT_Font_ColorInForm"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,41 +8,41 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Check color is not used as the only visual means to convey the fields are required
+### Sprawdź, czy kolor nie został użyty jako jedyny wizualny środek do oznaczenia pól wymaganych
 
 <div id="locLevel"></div>
 
-Combine color and descriptive markup to convey fields are required
+Połączenie kolorów i opisujących znaczników do oznaczenia pól wymaganych
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-Using descriptive markup and visual differences together with color enables users who cannot see color to understand the meaning conveyed through color differences.
+Użycie opisujących znaczników i różnic wizualnych w połączeniu z kolorem umożliwia użytkownikom, którzy nie widzą koloru, zrozumienie znaczenia przekazywanego przez różnice kolorystyczne.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* If color is used to indicate required fields, also use the `required` attribute and an asterisk ('*') with text (e.g.  “required fields are red") to indicate required fields both programmatically and visually without color;
+* Jeśli kolor jest używany do wskazania pól wymaganych, użyj również atrybutu `required` i gwiazdki ('*') z tekstem (np. "pola wymagane są czerwone"), aby wskazać pola wymagane zarówno programowo, jak i wizualnie bez koloru;
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 1.4.1 Use of Color](https://www.ibm.com/able/requirements/requirements/#1_4_1)
-[WCAG 2.1 technique G14](https://www.w3.org/WAI/WCAG21/Techniques/general/G14)
+[1.4.1 Użycie koloru](https://www.ibm.com/able/guidelines/ci162/color.html)
+[Technika WCAG 2.1 G14](https://www.w3.org/WAI/WCAG21/Techniques/general/G14)
 
-### Who does this affect?
+### Na kogo to wpływa
 
-* Blind people using screen readers
-* People with visual impairment using color contrast enhancement
-* People who cannot see color, have limited color vision or have color blindness
-* People using text-based browsers (e.g., Lynx) or audio interfaces
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby z wadami wzroku korzystające z przełączników kontrastu kolorów
+* Osoby, które nie widzą kolorów lub mają ograniczone widzenie kolorów
+* Osoby korzystające z przeglądarek tekstowych (np. Lynx) lub interfejsów audio
 
 </Column>
 </Row>

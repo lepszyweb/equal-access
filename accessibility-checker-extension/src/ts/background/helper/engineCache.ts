@@ -63,6 +63,6 @@ export default class EngineCache {
                 }
             }
         }
-        return Promise.reject("Invalid Archive ID");
+        return Promise.reject("Niepoprawny ID archiwum");
     }
 }

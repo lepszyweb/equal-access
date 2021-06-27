@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: RPT_Script_OnclickHTML1"
+title: "Pomoc dotycząca reguł testowania dostępności: RPT_Script_OnclickHTML1"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,41 +8,41 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Possible use of a script to emulate a link
+### Możliwe, że użyto skryptu do emulacji łącza
 
 <div id="locLevel"></div>
 
-Scripts should not be used to emulate links
+Nie należy używać skryptów do emulacji łączy
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-Sometimes JavaScript event handlers are attached to page elements to emulate links, for example by placing an `"onclick"` on a &lt;`span`&gt; or &lt;`div`&gt;. When this is done, the element doesn’t provide link semantic information to assistive technologies and does not automatically provide the keyboard accessibility. User agents might not be able to identify this content as a link. Individuals will not be able to tab to the link using their keyboard. They might find it hard to determine that interactive controls are available or to understand what type of behavior to expect.
+Niekiedy do elementów strony są dołączane moduły obsługi zdarzeń JavaScript w celu emulacji łączy, na przykład poprzez umieszczenie `"onclick"` w znacznikach &lt;`span`&gt; lub &lt;`div`&gt;. Kiedy to jest zrobione, element nie informacji semantycznych o łączu do technologii wspomagających i nie zapewnia automatycznie dostępności klawiatury. Programy uzytkownika mogą nie być w stanie zidentyfikować tej treści jako łącza. Użytkownicy nie będą w stanie przejść do łącza za pomocą klawiatury. Mogą mieć trudności ze stwierdzeniem, czy istnieja interaktywne elementy sterujące lub ze zrozumieniem, jakiego rodzaju zachowania się spodziewać.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
- * Wherever possible, do not use scripts to emulate an HTML link. Use `<a href>` or `<area>` to implement links;
- * OR, if scripting must be used, add the attribute `role="link"` to the element and [implement keyboard accessibility](https://www.ibm.com/able/guidelines/ci162/keyboard.html).
+ * Jeśli to możliwe, nie używaj skryptów do emulacji łączy HTML. Użyj `<a href>` lub `<area>` do wstawiania łączy;
+ * LUB, jeśli skrypt musi być użyty, dodaj atrybut `role="link"` do elementu i [zaimplementuj dostępność klawiatury](https://www.ibm.com/able/guidelines/ci162/keyboard.html).
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 1.3.1 Info and Relationships](http://www.ibm.com/able/guidelines/ci162/info_and_relationships.html)
+[1.3.1 Informacje i relacje](http://www.ibm.com/able/guidelines/ci162/info_and_relationships.html)
 [IBM 2.1.1 Keyboard](https://www.ibm.com/able/guidelines/ci162/keyboard.html)
-[WCAG 2.1 failure technique F42](https://www.w3.org/WAI/WCAG21/Techniques/failures/F42)
+[Techniki błędów WCAG 2.1 F42](https://www.w3.org/WAI/WCAG21/Techniques/failures/F42)
 
-### Who does this affect?
+### Na kogo to wpływa
 
- * People who rely on keyboard control
- * Blind people using a screen reader
+ * Osoby, które polegają na sterowaniu klawiaturą
+ * Osoby niewidome korzystające z czytników ekranu
 
 </Column>
 </Row>

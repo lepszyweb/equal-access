@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: RPT_Embed_HasAlt"
+title: "Pomoc dotycząca reguł testowania dostępności: RPT_Embed_HasAlt"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,44 +8,44 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Verify that the `<embed>` element has alternative content
+### Sprawdź, czy element `<embed>` ma treść alternatywną
 
 <div id="locLevel"></div>
 
-Provide alternative content for `<embed>` elements
+Podaj alternatywną zawartość dla elementów `<embed>`
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-This is important for users of assistive technologies to provide information about the `<embed>` object if they are unable to understand or perceive the object.
+Jest to ważne dla użytkowników technologii wspomagających, aby zapewnić informacje o obiekcie `<embed>`, jeśli nie są w stanie zrozumieć lub dostrzec obiektu.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
- * Provide a short alternative text description that represents the function of the `<embed>` element's content. Use a functional label based on the context in which the object is used, rather than a visual description. Alternative content can be provided with the `alt` attribute.
+ * Zapewnij krótki alternatywny opis tekstowy, który reprezentuje funkcję zawartości elementu `<embed>`.  Użyj etykiety funkcjonalnej opartej na kontekście, w którym obiekt jest używany, zamiast opisu wizualnego. Alternatywną treść można podać za pomocą atrybutu `alt`. 
 
-For example:
+Na przykład:
 
-<CodeSnippet type="single" light={true}>&lt;embed src="speech.au" alt="Last week's speech"&gt;&lt;/embed&gt;</CodeSnippet>
+<CodeSnippet type="single" light={true}>&lt;embed src="speech.au" alt="Przemówienie z zeszłego tygodnia"&gt;&lt;/embed&gt;</CodeSnippet>
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 1.1.1 Non-text content](https://www.ibm.com/able/requirements/requirements/#1_1_1)
+[IBM 1.1.1 Treść nietekstowa](http://www.ibm.com/able/guidelines/ci162/non_text_content.html)
 
-### Who does this affect?
+### Na kogo to wpływa
 
- * People using a screen reader, including blind, low vision and neurodivergent people
- * People using text only, monochrome or braille displays
- * People using text-based browsers (e.g., Lynx) or audio interfaces
- * People who turn off image-loading on their web browsers
+ * Osoby niewidome korzystające z czytników ekranu
+ * Osoby używające tylko tekstu, wyświetlaczy monochromatycznych lub brajlowskich
+ * Osoby korzystające z przeglądarek tekstowych (np. Lynx) lub interfejsów audio
+ * Osoby, które wyłączają ładowanie obrazów w swoich przeglądarkach internetowych
 
 </Column>
 </Row>

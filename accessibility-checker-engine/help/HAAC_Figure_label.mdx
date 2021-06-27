@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: HAAC_Figure_label"
+title: "Pomoc dla reguły: HAAC_Figure_label"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,51 +8,50 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### The `<figure>` element does not have an associated label
-
+### Element `<figure>` nie ma przypisanej etykiety
 <div id="locLevel"></div>
 
-The `<figure>` element must have an associated label
+Element `<figure>` musi mieć przypisaną etykietę
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-A `<figure>` element is usually used to annotate illustrations, diagrams, photos, code listings, etc. Associating a label makes the same information available through audio or other channels.
+Element `<figure>` jest używany zwykle do opatrywania adnotacjami ilustracji, diagramów, zdjęć, list kodów itp. Skojarzenie z etykietą sprawia, że te same informacje są dostępne poprzez audio lub inne kanały.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* Add a `<figcaption>` element inside the `<figure>` element to provide a visual caption that describes the figure; 
-* OR, add the `aria-labelledby` attribute to the `<figure>` element. It must point to visible text on the page that is meaningful as a label;
+* Dodaj element `<figaption>` wewnątrz elementu `<figure>`, aby zapewnić widoczny podpis, który prezentuje treść elementu `<figure>`; 
+* LUB, dodaj do elementu `<figure>` atrybut `aria-labelledby`, którego wartość wskazuje na element z widocznym na ekranie tekstem, majacym znaczenie etykiety (podpisu);
 
-For example:
+Na przykład:
 
 <CodeSnippet type="multi" light={true}>&lt;figure&gt;
-	&lt;figcaption&gt;The castle through the ages: 1423, 1858, and 1999 respectively.&lt;/figcaption&gt;
+	&lt;figcaption&gt;Zamek na przestrzeni wieków: odpowiednio 1423, 1858 i 1999.&lt;/figcaption&gt;
 	&lt;figure&gt;
 	&lt;figcaption&gt;Etching. Anonymous, ca. 1423.&lt;/figcaption&gt;
-	&lt;img src="castle1423.jpeg" alt="The castle has one tower and a tall wall around it."&gt;
+	&lt;img src="castle1423.jpeg" alt="Zamek ma jedną wieżę i wysoki mur wokół niej."&gt;
 	&lt;/figure&gt;
 &lt;/figure&gt;</CodeSnippet>
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 1.1.1 Non-text content](https://www.ibm.com/able/requirements/requirements/#1_1_1)
-[WCAG 2.1 technique ARIA10](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA10)
+[IBM 1.1.1 Treść nietekstowa](http://www.ibm.com/able/guidelines/ci162/non_text_content.html)
+[Technika WCAG 2.1 ARIA10](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA10)
 
-### Who does this affect?
+### Na kogo to wpływa
 
-* People using a screen reader, including blind, low vision and neurodivergent people
-* People who turn off image-loading on their web browsers
-* People using text-based browsers (e.g., Lynx) or audio interfaces
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby, które wyłączają ładowanie obrazów w swoich przeglądarkach internetowych
+* Osoby korzystające z przeglądarek tekstowych (np. Lynx) lub interfejsów audio
 
 </Column>
 </Row>

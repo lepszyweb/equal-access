@@ -22,13 +22,13 @@ let a11yRulesets: Ruleset[] = [
     id: "IBM_Accessibility",
     name: "IBM Accessibility",
     category: eRuleCategory.ACCESSIBILITY,
-    description: "Rules for WCAG 2.1 AA plus additional IBM checklist supplemental requirements.",
+    description: "Reguły dla WCAG 2.1 AA oraz dodatkowe wymagania uzupełniające dla listy kontrolnej IBM.",
     "checkpoints": [
         {
             "num": "1.1.1",
-            "name": "Non-text Content",
+            "name": "Treść nietekstowa",
             "wcagLevel": "A",
-            "summary": "All non-text content that is presented to the user has a text alternative that serves the equivalent purpose.",
+            "summary": "Wszystkie treści nietekstowe przedstawione użytkownikowi mają alternatywę tekstową, która służy równoważnemu celowi.",
             "rules": [
                 {
                     id: "WCAG20_Input_ExplicitLabelImage",
@@ -160,9 +160,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.2.1",
-            "name": "Audio-only and Video-only (Prerecorded)",
+            "name": "Tylko audio lub tylko wideo (nagranie)",
             "wcagLevel": "A",
-            "summary": "For prerecorded audio-only or video-only media, an alternative provides equivalent information.",
+            "summary": "Dla mediów nagranych w systemie tylko audio lub tylko wideo, w alternatywny sposób zapewnione są równoważne informacje.",
             "rules": [
                 {
                     id: "HAAC_Video_HasNoTrack",
@@ -178,9 +178,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.2.2",
-            "name": "Captions (Prerecorded)",
+            "name": "Napisy rozszerzone (nagranie)",
             "wcagLevel": "A",
-            "summary": "Captions are provided for all prerecorded audio content in synchronized media.",
+            "summary": "Do wszystkich nagrań audio w multimediach zsynchronizowanych zapewnione są napisy rozszerzone.",
             "rules": [
                 {
                     id: "HAAC_Video_HasNoTrack",
@@ -191,9 +191,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.2.3",
-            "name": "Audio Description or Media Alternative (Prerecorded)",
+            "name": "Audiodeskrypcja lub alternatywa tekstowa dla mediów (nagranie)",
             "wcagLevel": "A",
-            "summary": "An alternative for time-based media or audio description of the prerecorded video content is provided for synchronized media.",
+            "summary": "Zapewniona jest alternatywa dla multimediów lub audiodeskrypcja dla nagrań wideo w multimediach zsynchronizowanych.",
             "rules": [
                 {
                     id: "RPT_Media_VideoReferenceTrigger",
@@ -204,9 +204,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.2.4",
-            "name": "Captions (Live)",
+            "name": "Napisy rozszerzone (na żywo)",
             "wcagLevel": "AA",
-            "summary": "Captions are provided for all live audio content in synchronized media.",
+            "summary": "Do wszystkich treści audio w multimediach zsynchronizowanych przekazywanych na żywo zapewnione są napisy rozszerzone.",
             "rules": [
                 {
                     id: "HAAC_Video_HasNoTrack",
@@ -222,9 +222,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.2.5",
-            "name": "Audio Description (Prerecorded)",
+            "name": "Audiodeskrypcja (nagranie)",
             "wcagLevel": "AA",
-            "summary": "Audio description is provided for all prerecorded video content in synchronized media.",
+            "summary": "Zapewniona jest audiodeskrypcja dla wszystkich nagrań wideo w multimediach zsynchronizowanych.",
             "rules": [
                 {
                     id: "RPT_Media_VideoReferenceTrigger",
@@ -235,9 +235,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.3.1",
-            "name": "Info and Relationships",
+            "name": "Informacje i relacje",
             "wcagLevel": "A",
-            "summary": "Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text.",
+            "summary": "Informacje, struktura oraz relacje między treściami przekazywane poprzez prezentację mogą być odczytane przez program komputerowy lub istnieją w postaci tekstu.",
             "rules": [
                 {
                     id: "RPT_Headers_FewWords",
@@ -364,9 +364,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.3.2",
-            "name": "Meaningful Sequence",
+            "name": "Zrozumiała kolejność",
             "wcagLevel": "A",
-            "summary": "When the sequence in which content is presented affects its meaning, a correct reading sequence can be programmatically determined.",
+            "summary": "Jeśli kolejność, w jakiej przedstawiona jest treść, ma znaczenie dla zrozumienia treści — prawidłowa kolejność odczytu musi być określona programowo.",
             "rules": [
                 {
                     id: "Valerie_Elem_DirValid",
@@ -382,9 +382,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.3.3",
-            "name": "Sensory Characteristics",
+            "name": "Właściwości zmysłowe",
             "wcagLevel": "A",
-            "summary": "Instructions provided for understanding and operating content do not rely solely on sensory characteristics of components such as shape, size, visual location, orientation, or sound.",
+            "summary": "Instrukcje co do zrozumienia i operowania treścią nie opierają się wyłącznie na właściwościach zmysłowych, takich jak: kształt, rozmiar, wzrokowa lokalizacja, orientacja w przestrzeni lub dźwięk.",
             "rules": [
                 {
                     id: "RPT_Text_SensoryReference",
@@ -395,16 +395,16 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.3.4",
-            "name": "Orientation",
+            "name": "Orientacja",
             "wcagLevel": "AA",
-            "summary": "Content does not restrict its view and operation to a single display orientation, such as portrait or landscape.",
+            "summary": "Treść nie ogranicza swojego widoku i działania do jednej orientacji wyświetlania, takiej jak pionowa lub pozioma.",
             "rules": []
         },
         {
             "num": "1.3.5",
-            "name": "Identify Input Purpose",
+            "name": "Określenie pożądanej wartości",
             "wcagLevel": "AA",
-            "summary": "The purpose of each input field that collects information about the user can be programmatically determined when the field serves a common purpose.",
+            "summary": "Cel każdego pola zbierającego informacje o użytkowniku może być programowo określony.",
             "rules": [
                 {
                     id: "WCAG21_Input_Autocomplete",
@@ -415,9 +415,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.4.1",
-            "name": "Use of Color",
+            "name": "Użycie koloru",
             "wcagLevel": "A",
-            "summary": "Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.",
+            "summary": "Kolor nie jest wykorzystywany jako jedyny wizualny sposób przekazywania informacji, wskazywania czynności do wykonania lub oczekiwania na odpowiedź, czy też wyróżniania elementów wizualnych.",
             "rules": [
                 {
                     id: "RPT_Font_ColorInForm",
@@ -433,9 +433,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.4.2",
-            "name": "Audio Control",
+            "name": "Kontrola odtwarzania dźwięku",
             "wcagLevel": "A",
-            "summary": "If any audio plays automatically for more than 3 seconds, either a mechanism is available to pause or stop the audio, or a mechanism is available to control audio volume independently from the overall system volume level.",
+            "summary": "Jeśli jakieś nagranie audio włącza się automatycznie na danej stronie i jest odtwarzane przez okres dłuższy niż 3 sekundy, istnieje mechanizm umożliwiający przerwanie lub wyłączenie nagrania albo mechanizm kontrolujący poziom głośności niezależnie od poziomu głośności całego systemu.",
             "rules": [
                 {
                     id: "RPT_Embed_AutoStart",
@@ -446,9 +446,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.4.3",
-            "name": "Contrast (Minimum)",
+            "name": "Kontrast (minimalny)",
             "wcagLevel": "AA",
-            "summary": "The visual presentation of text and images of text has a contrast ratio of at least 4.5:1, with a 3:1 ratio for large-scale text.",
+            "summary": "Wizualna prezentacja tekstu lub obrazu tekstu posiada współczynnik kontrastu wynoszący 4,5:1 w przypadku zwykłego tekstu, a 3:1 w przypadku dużego tekstu.",
             "rules": [
                 {
                     id: "IBMA_Color_Contrast_WCAG2AA",
@@ -464,9 +464,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.4.4",
-            "name": "Resize Text",
+            "name": "Zmiana rozmiaru tekstu",
             "wcagLevel": "AA",
-            "summary": "Text can be resized without assistive technology up to 200 percent without loss of content or functionality.",
+            "summary": "Rozmiar tekstu może zostać powiększony do 200% bez użycia technologii wspomagających oraz bez utraty treści lub funkcjonalności.",
             "rules": [
                 {
                     id: "WCAG21_Style_Viewport",
@@ -477,44 +477,44 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.4.5",
-            "name": "Images of Text",
+            "name": "Obrazy tekstu",
             "wcagLevel": "AA",
-            "summary": "If the technologies being used can achieve the visual presentation, text is used to convey information rather than images of text.",
+            "summary": "Jeśli wykorzystywane technologie mogą przedstawiać treść wizualnie, do przekazywania informacji wykorzystuje się tekst, a nie obraz tekstu.",
             "rules": []
         },
         {
             "num": "1.4.10",
-            "name": "Reflow",
+            "name": "Dopasowanie do ekranu",
             "wcagLevel": "AA",
-            "summary": "Content can reflow without loss of information or functionality, and without requiring scrolling in two dimensions.",
+            "summary": "Treść może być prezentowana bez utraty informacji lub funkcjonalności, bez konieczności przewijania w dwóch wymiarach.",
             "rules": []
         },
         {
             "num": "1.4.11",
-            "name": "Non-text Contrast",
+            "name": "Kontrast elementów nietekstowych",
             "wcagLevel": "AA",
-            "summary": "The parts of graphical objects required to understand the content, and the visual information required to identify UI components and states, have a contrast ratio of at least 3:1 against adjacent colors.",
+            "summary": "Części obiektów graficznych wymagane do zrozumienia treści oraz informacje wizualne wymagane do zidentyfikowania komponentów i stanów interfejsu użytkownika mają współczynnik kontrastu wynoszący co najmniej 3:1 względem sąsiednich kolorów.",
             "rules": []
         },
         {
             "num": "1.4.12",
-            "name": "Text Spacing",
+            "name": "Odstępy w tekście",
             "wcagLevel": "AA",
-            "summary": "No loss of content or functionality occurs when users change letter, word and paragraph spacing, as well as line height.",
+            "summary": "Zmiana odstępów między literami, wyrazami i akapitami, a także wysokości wiersza nie powoduje utraty treści ani funkcjonalności.",
             "rules": []
         },
         {
             "num": "1.4.13",
-            "name": "Content on Hover or Focus",
+            "name": "Treść spod kursora lub fokusu",
             "wcagLevel": "AA",
-            "summary": "Where hover or focus actions cause additional content to become visible and hidden, the additional content is dismissable, hoverable and persistent.",
+            "summary": "Gdy jakaś treść staje się widoczna po otrzymaniu kursora lub fokusu klawiatury, dodatkowa treść może być odrzucona, wskazana kursorem lub pozostaje widoczna do usunięcia wskazania lub gdy przestaje być ważna.",
             "rules": []
         },
         {
             "num": "2.1.1",
-            "name": "Keyboard",
+            "name": "Klawiatura",
             "wcagLevel": "A",
-            "summary": "All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes.",
+            "summary": "Wszystkie funkcjonalności w treści są obsługiwane za pomocą interfejsu klawiatury, bez wymogu określonego czasu użycia poszczególnych klawiszy.",
             "rules": [
                 {
                     id: "RPT_Elem_EventMouseAndKey",
@@ -550,9 +550,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.1.2",
-            "name": "No Keyboard Trap",
+            "name": "Bez pułapki na klawiaturę",
             "wcagLevel": "A",
-            "summary": "If keyboard focus can be moved to a component using a keyboard interface, then focus can be moved away from that component using only a keyboard interface, and, if it requires more than unmodified arrow or tab keys or other standard exit methods, the user is advised of the method for moving focus away.",
+            "summary": "Jeśli fokus klawiatury można przemieścić do danego komponentu treści za pomocą interfejsu klawiatury, to może on być z niego usunięty również za pomocą interfejsu klawiatury, a jeśli wymagane jest użycie czegoś więcej niż tylko strzałek, tabulatora lub innych standardowych metod wyjścia, użytkownik musi otrzymać odpowiednią podpowiedź, w jaki sposób usunąć fokus z danego komponentu.",
             "rules": [
                 {
                     id: "HAAC_Media_DocumentTrigger2",
@@ -563,16 +563,16 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.1.4",
-            "name": "Character Key Shortcuts",
+            "name": "Jednoznakowe skróty klawiaturowe",
             "wcagLevel": "A",
-            "summary": "If a keyboard shortcut is implemented using only letter, punctuation, number or symbol characters, then the shortcut can be turned off, remapped or activated only on focus.",
+            "summary": "Jeśli skrót klawiaturowy jest zaimplementowany w treści tylko przy użyciu jednego znaku (litery, w tym wielkiej i małej, cyfry lub symbolu), to skrót można wyłączyć, przemapować lub aktywować tylko, gdy komponent ma fokus.",
             "rules": []
         },
         {
             "num": "2.2.1",
-            "name": "Timing Adjustable",
+            "name": "Dostosowanie czasu",
             "wcagLevel": "A",
-            "summary": "For each time limit that is set by the content, the user can turn off, adjust, or extend the limit.",
+            "summary": "Gdy czas korzystania z treści jest ograniczany, użytkownik może wyłączyć, dostosować lub przedłużyć limit.",
             "rules": [
                 {
                     id: "RPT_Meta_Refresh",
@@ -588,9 +588,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.2.2",
-            "name": "Pause, Stop, Hide",
+            "name": "Pauza, zatrzymanie, ukrycie",
             "wcagLevel": "A",
-            "summary": "For moving, blinking, scrolling, or auto-updating information, the user can pause, stop, hide or adjust the information.",
+            "summary": "Gdy treść się porusza, migocze, przesuwa lub jest automatycznie aktualizowana, użytkownik może wstrzymać, zatrzymać, ukryć lub dostosować częstość aktualizacji.",
             "rules": [
                 {
                     id: "RPT_Marquee_Trigger",
@@ -611,16 +611,16 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.3.1",
-            "name": "Three Flashes or Below Threshold",
+            "name": "Trzy błyski lub wartości poniżej progu",
             "wcagLevel": "A",
-            "summary": "Content does not contain anything that flashes more than three times in any one second period, or the flash is below the general flash and red flash thresholds.",
+            "summary": "Treść nie zawiera niczego, co błyska częściej niż trzy razy w ciągu jednej sekundy, lub też błysk nie przekracza wartości granicznych dla błysków ogólnych i czerwonych.",
             "rules": []
         },
         {
             "num": "2.4.1",
-            "name": "Bypass Blocks",
+            "name":"Możliwość pominięcia bloków",
             "wcagLevel": "A",
-            "summary": "A mechanism is available to bypass blocks of content that are repeated on multiple Web pages.",
+            "summary": "Istnieje mechanizm, który umożliwia pominięcie bloków treści powtarzanych na wielu stronach internetowych.",
             "rules": [
                 {
                     id: "WCAG20_Frame_HasTitle",
@@ -756,9 +756,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.4.2",
-            "name": "Page Titled",
+            "name": "Tytuły stron",
             "wcagLevel": "A",
-            "summary": "Web pages, non-web documents, and software have titles that describe topic or purpose.",
+            "summary": "Strony internetowe, dokumenty inne niż internetowe i oprogramowanie mają tytuły, które opisują ich cel lub przedstawiają ich temat.",
             "rules": [
                 {
                     id: "WCAG20_Doc_HasTitle",
@@ -774,16 +774,16 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.4.3",
-            "name": "Focus Order",
+            "name": "Kolejność fokusu",
             "wcagLevel": "A",
-            "summary": "If content can be navigated sequentially and the navigation sequences affect meaning or operation, focusable components receive focus in an order that preserves meaning and operability.",
+            "summary": "Jeśli po treści można nawigować sekwencyjnie, a kolejność nawigacji wpływa na zrozumienie lub funkcjonalność strony, komponenty przyjmują fokus w kolejności, dzięki której zachowany jest sens i funkcjonalność treści.",
             "rules": []
         },
         {
             "num": "2.4.4",
-            "name": "Link Purpose (In Context)",
+            "name": "Cel łącza (w kontekście)",
             "wcagLevel": "A",
-            "summary": "The purpose of each link can be determined from the link text alone or from the link text together with its programmatically determined link content.",
+            "summary": "Cel każdego łącza można określić na podstawie samej treści łącza lub treści tekstu powiązanego z kontekstem łącza określonym programowo.",
             "rules": [
                 {
                     id: "WCAG20_A_HasText",
@@ -794,16 +794,16 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.4.5",
-            "name": "Multiple Ways",
+            "name": "Wiele dróg",
             "wcagLevel": "AA",
-            "summary": "More than one way is available to locate a Web page within a set of Web pages, except where the Web Page is the result of, or a step in, a process.",
+            "summary": "Istnieje więcej niż jeden sposób umożliwiający zlokalizowanie strony internetowej w zestawie stron internetowych, z wyjątkiem sytuacji, kiedy dana strona jest wynikiem jakiejś procedury lub jednym z jej etapów.",
             "rules": []
         },
         {
             "num": "2.4.6",
-            "name": "Headings and Labels",
+            "name": "Nagłówki i etykiety",
             "wcagLevel": "AA",
-            "summary": "Headings and labels describe topic or purpose.",
+            "summary": "Nagłówki i etykiety opisują temat lub cel treści.",
             "rules": [
                 {
                     id: "RPT_Header_HasContent",
@@ -814,9 +814,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.4.7",
-            "name": "Focus Visible",
+            "name": "Widoczny fokus",
             "wcagLevel": "AA",
-            "summary": "Any keyboard operable user interface has a mode of operation where the keyboard focus indicator is visible.",
+            "summary": "Każdy interfejs posiadający możliwość obsługi przy pomocy klawiatury ma tryb obsługi, w którym fokus klawiatury jest stale widoczny.",
             "rules": [
                 {
                     id: "RPT_Style_HinderFocus1",
@@ -832,23 +832,23 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.5.1",
-            "name": "Pointer Gestures",
+            "name": "Gesty dotykowe",
             "wcagLevel": "A",
-            "summary": "All functionality that uses multipoint or path-based gestures for operation can be operated with a single pointer without a path-based gesture.",
+            "summary": "Wszystkie funkcjonalności wykorzystujące do obsługi gesty wielopunktowe lub oparte na ścieżkach mogą być obsługiwane za pomocą dotyku jednopunktowego bez gestu opartego na ścieżce.",
             "rules": []
         },
         {
             "num": "2.5.2",
-            "name": "Pointer Cancellation",
+            "name": "Rezygnacja ze wskazania",
             "wcagLevel": "A",
-            "summary": "For functionality that can be operated using a single pointer, completion of the function is on the up-event with an ability to abort, undo or reverse the outcome.",
+            "summary": "W przypadku funkcjonalności, które są wywoływane za pomocą dotyku jednopunktowego, zakończenie funkcjonalności następuje wskutek zwolnienia nacisku albo może być przerwane lub cofnięte.",
             "rules": []
         },
         {
             "num": "2.5.3",
-            "name": "Label in Name",
+            "name": "Etykieta w nazwie",
             "wcagLevel": "A",
-            "summary": "For user interface components with labels that include text or images of text, the accessible name contains the text that is presented visually.",
+            "summary": "W przypadku komponentów interfejsu użytkownika z etykietami zawierającymi tekst lub obrazy tekstu, nazwa zawiera tekst, który jest prezentowany wizualnie.",
             "rules": [
                 {
                     id: "WCAG21_Label_Accessible",
@@ -859,16 +859,16 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.5.4",
-            "name": "Motion Actuation",
+            "name": "Aktywowanie ruchem",
             "wcagLevel": "A",
-            "summary": "Functionality that can be operated by motion can also be operated by user interface components, and the motion trigger can be disabled.",
+            "summary": "Funkcjonalność, którą można obsługiwać za pomocą ruchu urządzenia lub ruchu użytkownika, można również obsługiwać za pomocą komponentów interfejsu użytkownika, a reagowanie na ruch można wyłączyć.",
             "rules": []
         },
         {
             "num": "3.1.1",
-            "name": "Language of Page",
+            "name": "Język strony",
             "wcagLevel": "A",
-            "summary": "The default human language of Web pages, non-Web documents, or software can be programmatically determined.",
+            "summary": "Domyślny język naturalny każdej strony internetowej może zostać odczytany przez program komputerowy.",
             "rules": [
                 {
                     id: "WCAG20_Html_HasLang",
@@ -879,9 +879,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "3.1.2",
-            "name": "Language of Parts",
+            "name": "Język części",
             "wcagLevel": "AA",
-            "summary": "The human language of each passage or phrase in the content can be programmatically determined.",
+            "summary": "Język naturalny każdej innojęzycznej części lub frazy zawartej w treści może zostać odczytany przez program komputerowy.",
             "rules": [
                 {
                     id: "WCAG20_Elem_Lang_Valid",
@@ -892,9 +892,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "3.2.1",
-            "name": "On Focus",
+            "name": "Po otrzymaniu fokusu",
             "wcagLevel": "A",
-            "summary": "When any component receives focus, it does not initiate a change of context.",
+            "summary": "Przyjęcie fokusu przez dowolny komponent interfejsu użytkownika nie powoduje nieoczekiwanej zmiany kontekstu.",
             "rules": [
                 {
                     id: "WCAG20_Select_NoChangeAction",
@@ -910,9 +910,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "3.2.2",
-            "name": "On Input",
+            "name": "Podczas wprowadzania danych",
             "wcagLevel": "A",
-            "summary": "Changing the setting of any user interface component does not automatically cause a change of context unless the user has been advised of the behavior before using the component.",
+            "summary": "Zmiana ustawień jakiegokolwiek komponentu interfejsu użytkownika nie powoduje automatycznej zmiany kontekstu, chyba, że użytkownik został poinformowany o takim działaniu, zanim zaczął korzystać z komponentu.",
             "rules": [
                 {
                     id: "WCAG20_A_TargetAndText",
@@ -943,23 +943,23 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "3.2.3",
-            "name": "Consistent Navigation",
+            "name": "Spójna nawigacja",
             "wcagLevel": "AA",
-            "summary": "Navigational mechanisms that are repeated on multiple Web pages within a set of Web pages occur in the same relative order each time they are repeated, unless a change is initiated by the user.",
+            "summary": "Mechanizmy nawigacji, które powtarzają się na wielu stronach internetowych w ramach jednego zestawu stron internetowych, występują w tej samej względnej kolejności za każdym razem, gdy są powtarzane, chyba że zmiana jest inicjowana przez użytkownika.",
             "rules": []
         },
         {
             "num": "3.2.4",
-            "name": "Consistent Identification",
+            "name": "Spójna identyfikacja",
             "wcagLevel": "AA",
-            "summary": "Components that have the same functionality within a set of Web pages are identified consistently.",
+            "summary": "Komponenty, które mają tę samą funkcjonalność w ramach jednego zestawu stron internetowych, są w taki sam sposób zidentyfikowane.",
             "rules": []
         },
         {
             "num": "3.3.1",
-            "name": "Error Identification",
+            "name": "Identyfikacja błędu",
             "wcagLevel": "A",
-            "summary": "If an input error is automatically detected, the item that is in error is identified and the error is described to the user in text.",
+            "summary": "Jeśli automatycznie zostanie wykryty błąd wprowadzania danych, system wskazuje błędny element, a użytkownik otrzymuje opis błędu w postaci tekstu.",
             "rules": [
                 {
                     id: "HAAC_Aria_ErrorMessage",
@@ -970,9 +970,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "3.3.2",
-            "name": "Labels or Instructions",
+            "name": "Etykiety lub instrukcje",
             "wcagLevel": "A",
-            "summary": "Labels or instructions are provided when content requires user input.",
+            "summary": "Gdy w treści wymagane jest wprowadzenie danych przez użytkownika, zapewnione są etykiety lub instrukcje.",
             "rules": [
                 {
                     id: "WCAG20_Input_LabelBefore",
@@ -1008,23 +1008,23 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "3.3.3",
-            "name": "Error Suggestion",
+            "name": "Sugestie korekty błędów",
             "wcagLevel": "AA",
-            "summary": "If an input error is automatically detected and suggestions for correction are known, then the suggestions are provided to the user, unless it would jeopardize the security or purpose of the content.",
+            "summary": "Jeśli automatycznie zostanie wykryty błąd wprowadzania danych i znane są sugestie korekty, wtedy użytkownik otrzymuje takie sugestie, chyba, że zagrażałoby to bezpieczeństwu treści lub zmieniło jej cel.",
             "rules": []
         },
         {
             "num": "3.3.4",
-            "name": "Error Prevention (Legal, Financial, Data)",
+            "name": "Zapobieganie błędom (prawnym, finansowym, w danych)",
             "wcagLevel": "AA",
-            "summary": "For content that cause legal commitments or financial transactions for the user to occur, that modify or delete user-controllable data in data storage systems, or that submit user test responses, the user can reverse, correct, or confirm the action.",
+            "summary": "W przypadku treści, które powodują zobowiązania prawne, albo na których użytkownik przeprowadza transakcje finansowe, modyfikuje lub usuwa dane w systemach przechowywania danych, nad którymi ma kontrolę, albo udziela odpowiedzi na testy, użytkownik może cofnąć, poprawić lub potwierdzić działanie.",
             "rules": []
         },
         {
             "num": "4.1.1",
-            "name": "Parsing",
+            "name": "Poprawność kodu",
             "wcagLevel": "A",
-            "summary": "In content implemented using markup languages, elements have complete start and end tags, elements are nested according to their specifications, elements do not contain duplicate attributes, and any IDs are unique, except where the specifications allow these features.",
+            "summary": "W treści wprowadzonej przy użyciu języka znaczników, elementy posiadają kompletne znaczniki początkowe i końcowe, elementy są zagnieżdżane według swoich specyfikacji, nie posiadają zduplikowanych atrybutów, a wszystkie ID są unikalne, z wyjątkiem przypadków, kiedy specyfikacja zezwala na wyżej wymienione cechy.",
             "rules": [
                 {
                     id: "RPT_Elem_UniqueId",
@@ -1040,9 +1040,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "4.1.2",
-            "name": "Name, Role, Value",
+            "name": "Nazwa, rola, wartość",
             "wcagLevel": "A",
-            "summary": "For all user interface components (including, but not limited to: form elements, links and components generated by scripts), the name and role can be programmatically determined; states, properties, and values that can be set by the user can be programmatically set; and notification of changes to these items is available to user agents, including assistive technologies.",
+            "summary": "Dla wszystkich komponentów interfejsu użytkownika (w tym, ale nie tylko, elementów formularzy, łączy oraz komponentów wygenerowanych przez skrypty) nazwa oraz rola mogą być określone programowo; stan, właściwości oraz wartości, które mogą być ustawione przez użytkownika, mogą również być ustawione programowo; powiadomienie o zmianach w tych elementach dostępne jest dla programów użytkownika, w tym technologii wspomagających.",
             "rules": [
                 {
                     id: "WCAG20_Input_ExplicitLabel",
@@ -1187,13 +1187,13 @@ let a11yRulesets: Ruleset[] = [
     id: "WCAG_2_1",
     name: "WCAG 2.1 (A, AA)",
     category: eRuleCategory.ACCESSIBILITY,
-    description: "Rules for WCAG 2.1 AA. This is the current W3C recommendation. Content that conforms to WCAG 2.1 also conforms to WCAG 2.0.", 
+    description: "Reguły dla WCAG 2.1 AA. Jest to aktualne zalecenie W3C. Treść, która jest zgodna z WCAG 2.1 jest również zgodna z WCAG 2.0.", 
     "checkpoints": [
         {
             "num": "1.1.1",
-            "name": "Non-text Content",
+            "name": "Treść nietekstowa",
             "wcagLevel": "A",
-            "summary": "All non-text content that is presented to the user has a text alternative that serves the equivalent purpose.",
+            "summary": "Wszystkie treści nietekstowe przedstawione użytkownikowi mają alternatywę tekstową, która służy równoważnemu celowi.",
             "rules": [
                 {
                     id: "WCAG20_Input_ExplicitLabelImage",
@@ -1325,9 +1325,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.2.1",
-            "name": "Audio-only and Video-only (Prerecorded)",
+            "name": "Tylko audio lub tylko wideo (nagranie)",
             "wcagLevel": "A",
-            "summary": "For prerecorded audio-only or video-only media, an alternative provides equivalent information.",
+            "summary": "Dla mediów nagranych w systemie tylko audio lub tylko wideo, w alternatywny sposób zapewnione są równoważne informacje.",
             "rules": [
                 {
                     id: "HAAC_Video_HasNoTrack",
@@ -1343,9 +1343,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.2.2",
-            "name": "Captions (Prerecorded)",
+            "name": "Napisy rozszerzone (nagranie)",
             "wcagLevel": "A",
-            "summary": "Captions are provided for all prerecorded audio content in synchronized media.",
+            "summary": "Do wszystkich nagrań audio w multimediach zsynchronizowanych zapewnione są napisy rozszerzone.",
             "rules": [
                 {
                     id: "HAAC_Video_HasNoTrack",
@@ -1356,9 +1356,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.2.3",
-            "name": "Audio Description or Media Alternative (Prerecorded)",
+            "name": "Audiodeskrypcja lub alternatywa tekstowa dla mediów (nagranie)",
             "wcagLevel": "A",
-            "summary": "An alternative for time-based media or audio description of the prerecorded video content is provided for synchronized media.",
+            "summary": "Zapewniona jest alternatywa dla multimediów lub audiodeskrypcja dla nagrań wideo w multimediach zsynchronizowanych.",
             "rules": [
                 {
                     id: "RPT_Media_VideoReferenceTrigger",
@@ -1369,9 +1369,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.2.4",
-            "name": "Captions (Live)",
+            "name": "Napisy rozszerzone (na żywo)",
             "wcagLevel": "AA",
-            "summary": "Captions are provided for all live audio content in synchronized media.",
+            "summary": "Do wszystkich treści audio w multimediach zsynchronizowanych przekazywanych na żywo zapewnione są napisy rozszerzone.",
             "rules": [
                 {
                     id: "HAAC_Video_HasNoTrack",
@@ -1387,9 +1387,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.2.5",
-            "name": "Audio Description (Prerecorded)",
+            "name": "Audiodeskrypcja (nagranie)",
             "wcagLevel": "AA",
-            "summary": "Audio description is provided for all prerecorded video content in synchronized media.",
+            "summary": "Zapewniona jest audiodeskrypcja dla wszystkich nagrań wideo w multimediach zsynchronizowanych.",
             "rules": [
                 {
                     id: "RPT_Media_VideoReferenceTrigger",
@@ -1400,9 +1400,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.3.1",
-            "name": "Info and Relationships",
+            "name": "Informacje i relacje",
             "wcagLevel": "A",
-            "summary": "Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text.",
+            "summary": "Informacje, struktura oraz relacje między treściami przekazywane poprzez prezentację mogą być odczytane przez program komputerowy lub istnieją w postaci tekstu.",
             "rules": [
                 {
                     id: "RPT_Headers_FewWords",
@@ -1529,9 +1529,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.3.2",
-            "name": "Meaningful Sequence",
+            "name": "Zrozumiała kolejność",
             "wcagLevel": "A",
-            "summary": "When the sequence in which content is presented affects its meaning, a correct reading sequence can be programmatically determined.",
+            "summary": "Jeśli kolejność, w jakiej przedstawiona jest treść, ma znaczenie dla zrozumienia treści — prawidłowa kolejność odczytu musi być określona programowo.",
             "rules": [
                 {
                     id: "Valerie_Elem_DirValid",
@@ -1547,9 +1547,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.3.3",
-            "name": "Sensory Characteristics",
+            "name": "Właściwości zmysłowe",
             "wcagLevel": "A",
-            "summary": "Instructions provided for understanding and operating content do not rely solely on sensory characteristics of components such as shape, size, visual location, orientation, or sound.",
+            "summary": "Instrukcje co do zrozumienia i operowania treścią nie opierają się wyłącznie na właściwościach zmysłowych, takich jak: kształt, rozmiar, wzrokowa lokalizacja, orientacja w przestrzeni lub dźwięk.",
             "rules": [
                 {
                     id: "RPT_Text_SensoryReference",
@@ -1560,16 +1560,16 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.3.4",
-            "name": "Orientation",
+            "name": "Orientacja",
             "wcagLevel": "A",
-            "summary": "Content does not restrict its view and operation to a single display orientation, such as portrait or landscape.",
+            "summary": "Treść nie ogranicza swojego widoku i działania do jednej orientacji wyświetlania, takiej jak pionowa lub pozioma.",
             "rules": []
         },
         {
             "num": "1.3.5",
-            "name": "Identify Input Purpose",
+            "name": "Określenie pożądanej wartości",
             "wcagLevel": "AA",
-            "summary": "The purpose of each input field that collects information about the user can be programmatically determined when the field serves a common purpose.",
+            "summary": "Cel każdego pola zbierającego informacje o użytkowniku może być programowo określony.",
             "rules": [
                 {
                     id: "WCAG21_Input_Autocomplete",
@@ -1580,9 +1580,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.4.1",
-            "name": "Use of Color",
+            "name": "Użycie koloru",
             "wcagLevel": "A",
-            "summary": "Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.",
+            "summary": "Kolor nie jest wykorzystywany jako jedyny wizualny sposób przekazywania informacji, wskazywania czynności do wykonania lub oczekiwania na odpowiedź, czy też wyróżniania elementów wizualnych.",
             "rules": [
                 {
                     id: "RPT_Font_ColorInForm",
@@ -1598,9 +1598,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.4.2",
-            "name": "Audio Control",
+            "name": "Kontrola odtwarzania dźwięku",
             "wcagLevel": "A",
-            "summary": "If any audio plays automatically for more than 3 seconds, either a mechanism is available to pause or stop the audio, or a mechanism is available to control audio volume independently from the overall system volume level.",
+            "summary": "Jeśli jakieś nagranie audio włącza się automatycznie na danej stronie i jest odtwarzane przez okres dłuższy niż 3 sekundy, istnieje mechanizm umożliwiający przerwanie lub wyłączenie nagrania albo mechanizm kontrolujący poziom głośności niezależnie od poziomu głośności całego systemu.",
             "rules": [
                 {
                     id: "RPT_Embed_AutoStart",
@@ -1611,9 +1611,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.4.3",
-            "name": "Contrast (Minimum)",
+            "name": "Kontrast (minimalny)",
             "wcagLevel": "AA",
-            "summary": "The visual presentation of text and images of text has a contrast ratio of at least 4.5:1, with a 3:1 ratio for large-scale text.",
+            "summary": "Wizualna prezentacja tekstu lub obrazu tekstu posiada współczynnik kontrastu wynoszący 4,5:1 w przypadku zwykłego tekstu, a 3:1 w przypadku dużego tekstu.",
             "rules": [
                 {
                     id: "IBMA_Color_Contrast_WCAG2AA",
@@ -1629,9 +1629,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.4.4",
-            "name": "Resize Text",
+            "name": "Zmiana rozmiaru tekstu",
             "wcagLevel": "AA",
-            "summary": "Text can be resized without assistive technology up to 200 percent without loss of content or functionality.",
+            "summary": "Rozmiar tekstu może zostać powiększony do 200% bez użycia technologii wspomagających oraz bez utraty treści lub funkcjonalności.",
             "rules": [
                 {
                     id: "WCAG21_Style_Viewport",
@@ -1642,44 +1642,44 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.4.5",
-            "name": "Images of Text",
+            "name": "Obrazy tekstu",
             "wcagLevel": "AA",
-            "summary": "If the technologies being used can achieve the visual presentation, text is used to convey information rather than images of text.",
+            "summary": "Jeśli wykorzystywane technologie mogą przedstawiać treść wizualnie, do przekazywania informacji wykorzystuje się tekst, a nie obraz tekstu.",
             "rules": []
         },
         {
             "num": "1.4.10",
-            "name": "Reflow",
+            "name": "Dopasowanie do ekranu",
             "wcagLevel": "AA",
-            "summary": "Content can reflow without loss of information or functionality, and without requiring scrolling in two dimensions.",
+            "summary": "Treść może być prezentowana bez utraty informacji lub funkcjonalności, bez konieczności przewijania w dwóch wymiarach.",
             "rules": []
         },
         {
             "num": "1.4.11",
-            "name": "Non-text Contrast",
+            "name": "Kontrast elementów nietekstowych",
             "wcagLevel": "AA",
-            "summary": "The parts of graphical objects required to understand the content, and the visual information required to identify UI components and states, have a contrast ratio of at least 3:1 against adjacent colors.",
+            "summary": "Części obiektów graficznych wymagane do zrozumienia treści oraz informacje wizualne wymagane do zidentyfikowania komponentów i stanów interfejsu użytkownika mają współczynnik kontrastu wynoszący co najmniej 3:1 względem sąsiednich kolorów.",
             "rules": []
         },
         {
             "num": "1.4.12",
-            "name": "Text Spacing",
+            "name": "Odstępy w tekście",
             "wcagLevel": "AA",
-            "summary": "No loss of content or functionality occurs when users change letter, word and paragraph spacing, as well as line height.",
+            "summary": "Zmiana odstępów między literami, wyrazami i akapitami, a także wysokości wiersza nie powoduje utraty treści ani funkcjonalności.",
             "rules": []
         },
         {
             "num": "1.4.13",
-            "name": "Content on Hover or Focus",
+            "name": "Treść spod kursora lub fokusu",
             "wcagLevel": "AA",
-            "summary": "Where hover or focus actions cause additional content to become visible and hidden, the additional content is dismissable, hoverable and persistent.",
+            "summary": "Gdy jakaś treść staje się widoczna po otrzymaniu kursora lub fokusu klawiatury, dodatkowa treść może być odrzucona, wskazana kursorem lub pozostaje widoczna do usunięcia wskazania lub gdy przestaje być ważna.",
             "rules": []
         },
         {
             "num": "2.1.1",
-            "name": "Keyboard",
+            "name": "Klawiatura",
             "wcagLevel": "A",
-            "summary": "All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes.",
+            "summary": "Wszystkie funkcjonalności w treści są obsługiwane za pomocą interfejsu klawiatury, bez wymogu określonego czasu użycia poszczególnych klawiszy.",
             "rules": [
                 {
                     id: "RPT_Elem_EventMouseAndKey",
@@ -1715,9 +1715,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.1.2",
-            "name": "No Keyboard Trap",
+            "name": "Bez pułapki na klawiaturę",
             "wcagLevel": "A",
-            "summary": "If keyboard focus can be moved to a component using a keyboard interface, then focus can be moved away from that component using only a keyboard interface, and, if it requires more than unmodified arrow or tab keys or other standard exit methods, the user is advised of the method for moving focus away.",
+            "summary": "Jeśli fokus klawiatury można przemieścić do danego komponentu treści za pomocą interfejsu klawiatury, to może on być z niego usunięty również za pomocą interfejsu klawiatury, a jeśli wymagane jest użycie czegoś więcej niż tylko strzałek, tabulatora lub innych standardowych metod wyjścia, użytkownik musi otrzymać odpowiednią podpowiedź, w jaki sposób usunąć fokus z danego komponentu.",
             "rules": [
                 {
                     id: "HAAC_Media_DocumentTrigger2",
@@ -1728,16 +1728,16 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.1.4",
-            "name": "Character Key Shortcuts",
+            "name": "Jednoznakowe skróty klawiaturowe",
             "wcagLevel": "A",
-            "summary": "If a keyboard shortcut is implemented using only letter, punctuation, number or symbol characters, then the shortcut can be turned off, remapped or activated only on focus.",
+            "summary": "Jeśli skrót klawiaturowy jest zaimplementowany w treści tylko przy użyciu jednego znaku (litery, w tym wielkiej i małej, cyfry lub symbolu), to skrót można wyłączyć, przemapować lub aktywować tylko, gdy komponent ma fokus.",
             "rules": []
         },
         {
             "num": "2.2.1",
-            "name": "Timing Adjustable",
+            "name": "Dostosowanie czasu",
             "wcagLevel": "A",
-            "summary": "For each time limit that is set by the content, the user can turn off, adjust, or extend the limit.",
+            "summary": "Gdy czas korzystania z treści jest ograniczany, użytkownik może wyłączyć, dostosować lub przedłużyć limit.",
             "rules": [
                 {
                     id: "RPT_Meta_Refresh",
@@ -1753,9 +1753,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.2.2",
-            "name": "Pause, Stop, Hide",
+            "name": "Pauza, zatrzymanie, ukrycie",
             "wcagLevel": "A",
-            "summary": "For moving, blinking, scrolling, or auto-updating information, the user can pause, stop, hide or adjust the information.",
+            "summary": "Gdy treść się porusza, migocze, przesuwa lub jest automatycznie aktualizowana, użytkownik może wstrzymać, zatrzymać, ukryć lub dostosować częstość aktualizacji.",
             "rules": [
                 {
                     id: "RPT_Marquee_Trigger",
@@ -1776,16 +1776,16 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.3.1",
-            "name": "Three Flashes or Below Threshold",
+            "name": "Trzy błyski lub wartości poniżej progu",
             "wcagLevel": "A",
-            "summary": "Content does not contain anything that flashes more than three times in any one second period, or the flash is below the general flash and red flash thresholds.",
+            "summary": "Treść nie zawiera niczego, co błyska częściej niż trzy razy w ciągu jednej sekundy, lub też błysk nie przekracza wartości granicznych dla błysków ogólnych i czerwonych.",
             "rules": []
         },
         {
             "num": "2.4.1",
-            "name": "Bypass Blocks",
+            "name":"Możliwość pominięcia bloków",
             "wcagLevel": "A",
-            "summary": "A mechanism is available to bypass blocks of content that are repeated on multiple Web pages.",
+            "summary": "Istnieje mechanizm, który umożliwia pominięcie bloków treści powtarzanych na wielu stronach internetowych.",
             "rules": [
                 {
                     id: "WCAG20_Frame_HasTitle",
@@ -1921,9 +1921,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.4.2",
-            "name": "Page Titled",
+            "name": "Tytuły stron",
             "wcagLevel": "A",
-            "summary": "Web pages, non-web documents, and software have titles that describe topic or purpose.",
+            "summary": "Strony internetowe, dokumenty inne niż internetowe i oprogramowanie mają tytuły, które opisują ich cel lub przedstawiają ich temat.",
             "rules": [
                 {
                     id: "WCAG20_Doc_HasTitle",
@@ -1939,16 +1939,16 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.4.3",
-            "name": "Focus Order",
+            "name": "Kolejność fokusu",
             "wcagLevel": "A",
-            "summary": "If content can be navigated sequentially and the navigation sequences affect meaning or operation, focusable components receive focus in an order that preserves meaning and operability.",
+            "summary": "Jeśli po treści można nawigować sekwencyjnie, a kolejność nawigacji wpływa na zrozumienie lub funkcjonalność strony, komponenty przyjmują fokus w kolejności, dzięki której zachowany jest sens i funkcjonalność treści.",
             "rules": []
         },
         {
             "num": "2.4.4",
-            "name": "Link Purpose (In Context)",
+            "name": "Cel łącza (w kontekście)",
             "wcagLevel": "A",
-            "summary": "The purpose of each link can be determined from the link text alone or from the link text together with its programmatically determined link content.",
+            "summary": "Cel każdego łącza można określić na podstawie samej treści łącza lub treści tekstu powiązanego z kontekstem łącza określonym programowo.",
             "rules": [
                 {
                     id: "WCAG20_A_HasText",
@@ -1959,16 +1959,16 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.4.5",
-            "name": "Multiple Ways",
+            "name": "Wiele dróg",
             "wcagLevel": "AA",
-            "summary": "More than one way is available to locate a Web page within a set of Web pages, except where the Web Page is the result of, or a step in, a process.",
+            "summary": "Istnieje więcej niż jeden sposób umożliwiający zlokalizowanie strony internetowej w zestawie stron internetowych, z wyjątkiem sytuacji, kiedy dana strona jest wynikiem jakiejś procedury lub jednym z jej etapów.",
             "rules": []
         },
         {
             "num": "2.4.6",
-            "name": "Headings and Labels",
+            "name": "Nagłówki i etykiety",
             "wcagLevel": "AA",
-            "summary": "Headings and labels describe topic or purpose.",
+            "summary": "Nagłówki i etykiety opisują temat lub cel treści.",
             "rules": [
                 {
                     id: "RPT_Header_HasContent",
@@ -1979,9 +1979,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.4.7",
-            "name": "Focus Visible",
+            "name": "Widoczny fokus",
             "wcagLevel": "AA",
-            "summary": "Any keyboard operable user interface has a mode of operation where the keyboard focus indicator is visible.",
+            "summary": "Każdy interfejs posiadający możliwość obsługi przy pomocy klawiatury ma tryb obsługi, w którym fokus klawiatury jest stale widoczny.",
             "rules": [
                 {
                     id: "RPT_Style_HinderFocus1",
@@ -1997,23 +1997,23 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.5.1",
-            "name": "Pointer Gestures",
+            "name": "Gesty dotykowe",
             "wcagLevel": "A",
-            "summary": "All functionality that uses multipoint or path-based gestures for operation can be operated with a single pointer without a path-based gesture.",
+            "summary": "Wszystkie funkcjonalności wykorzystujące do obsługi gesty wielopunktowe lub oparte na ścieżkach mogą być obsługiwane za pomocą dotyku jednopunktowego bez gestu opartego na ścieżce.",
             "rules": []
         },
         {
             "num": "2.5.2",
-            "name": "Pointer Cancellation",
+            "name": "Rezygnacja ze wskazania",
             "wcagLevel": "A",
-            "summary": "For functionality that can be operated using a single pointer, completion of the function is on the up-event with an ability to abort, undo or reverse the outcome.",
+            "summary": "W przypadku funkcjonalności, które są wywoływane za pomocą dotyku jednopunktowego, zakończenie funkcjonalności następuje wskutek zwolnienia nacisku albo może być przerwane lub cofnięte.",
             "rules": []
         },
         {
             "num": "2.5.3",
-            "name": "Label in Name",
+            "name": "Etykieta w nazwie",
             "wcagLevel": "A",
-            "summary": "For user interface components with labels that include text or images of text, the accessible name contains the text that is presented visually.",
+            "summary": "W przypadku komponentów interfejsu użytkownika z etykietami zawierającymi tekst lub obrazy tekstu, nazwa zawiera tekst, który jest prezentowany wizualnie.",
             "rules": [
                 {
                     id: "WCAG21_Label_Accessible",
@@ -2024,16 +2024,16 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.5.4",
-            "name": "Motion Actuation",
+            "name": "Aktywowanie ruchem",
             "wcagLevel": "A",
-            "summary": "Functionality that can be operated by motion can also be operated by user interface components, and the motion trigger can be disabled.",
+            "summary": "Funkcjonalność, którą można obsługiwać za pomocą ruchu urządzenia lub ruchu użytkownika, można również obsługiwać za pomocą komponentów interfejsu użytkownika, a reagowanie na ruch można wyłączyć.",
             "rules": []
         },
         {
             "num": "3.1.1",
-            "name": "Language of Page",
+            "name": "Język strony",
             "wcagLevel": "A",
-            "summary": "The default human language of Web pages, non-Web documents, or software can be programmatically determined.",
+            "summary": "Domyślny język naturalny każdej strony internetowej może zostać odczytany przez program komputerowy.",
             "rules": [
                 {
                     id: "WCAG20_Html_HasLang",
@@ -2044,9 +2044,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "3.1.2",
-            "name": "Language of Parts",
+            "name": "Język części",
             "wcagLevel": "AA",
-            "summary": "The human language of each passage or phrase in the content can be programmatically determined.",
+            "summary": "Język naturalny każdej innojęzycznej części lub frazy zawartej w treści może zostać odczytany przez program komputerowy.",
             "rules": [
                 {
                     id: "WCAG20_Elem_Lang_Valid",
@@ -2057,9 +2057,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "3.2.1",
-            "name": "On Focus",
+            "name": "Po otrzymaniu fokusu",
             "wcagLevel": "A",
-            "summary": "When any component receives focus, it does not initiate a change of context.",
+            "summary": "Przyjęcie fokusu przez dowolny komponent interfejsu użytkownika nie powoduje nieoczekiwanej zmiany kontekstu.",
             "rules": [
                 {
                     id: "WCAG20_Select_NoChangeAction",
@@ -2075,9 +2075,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "3.2.2",
-            "name": "On Input",
+            "name": "Podczas wprowadzania danych",
             "wcagLevel": "A",
-            "summary": "Changing the setting of any user interface component does not automatically cause a change of context unless the user has been advised of the behavior before using the component.",
+            "summary": "Zmiana ustawień jakiegokolwiek komponentu interfejsu użytkownika nie powoduje automatycznej zmiany kontekstu, chyba, że użytkownik został poinformowany o takim działaniu, zanim zaczął korzystać z komponentu.",
             "rules": [
                 {
                     id: "WCAG20_A_TargetAndText",
@@ -2108,23 +2108,23 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "3.2.3",
-            "name": "Consistent Navigation",
+            "name": "Spójna nawigacja",
             "wcagLevel": "AA",
-            "summary": "Navigational mechanisms that are repeated on multiple Web pages within a set of Web pages occur in the same relative order each time they are repeated, unless a change is initiated by the user.",
+            "summary": "Mechanizmy nawigacji, które powtarzają się na wielu stronach internetowych w ramach jednego zestawu stron internetowych, występują w tej samej względnej kolejności za każdym razem, gdy są powtarzane, chyba że zmiana jest inicjowana przez użytkownika.",
             "rules": []
         },
         {
             "num": "3.2.4",
-            "name": "Consistent Identification",
+            "name": "Spójna identyfikacja",
             "wcagLevel": "AA",
-            "summary": "Components that have the same functionality within a set of Web pages are identified consistently.",
+            "summary": "Komponenty, które mają tę samą funkcjonalność w ramach jednego zestawu stron internetowych, są w taki sam sposób zidentyfikowane.",
             "rules": []
         },
         {
             "num": "3.3.1",
-            "name": "Error Identification",
+            "name": "Identyfikacja błędu",
             "wcagLevel": "A",
-            "summary": "If an input error is automatically detected, the item that is in error is identified and the error is described to the user in text.",
+            "summary": "Jeśli automatycznie zostanie wykryty błąd wprowadzania danych, system wskazuje błędny element, a użytkownik otrzymuje opis błędu w postaci tekstu.",
             "rules": [
                 {
                     id: "HAAC_Aria_ErrorMessage",
@@ -2135,9 +2135,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "3.3.2",
-            "name": "Labels or Instructions",
+            "name": "Etykiety lub instrukcje",
             "wcagLevel": "A",
-            "summary": "Labels or instructions are provided when content requires user input.",
+            "summary": "Gdy w treści wymagane jest wprowadzenie danych przez użytkownika, zapewnione są etykiety lub instrukcje.",
             "rules": [
                 {
                     id: "WCAG20_Input_LabelBefore",
@@ -2173,23 +2173,23 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "3.3.3",
-            "name": "Error Suggestion",
+            "name": "Sugestie korekty błędów",
             "wcagLevel": "AA",
-            "summary": "If an input error is automatically detected and suggestions for correction are known, then the suggestions are provided to the user, unless it would jeopardize the security or purpose of the content.",
+            "summary": "Jeśli automatycznie zostanie wykryty błąd wprowadzania danych i znane są sugestie korekty, wtedy użytkownik otrzymuje takie sugestie, chyba, że zagrażałoby to bezpieczeństwu treści lub zmieniło jej cel.",
             "rules": []
         },
         {
             "num": "3.3.4",
-            "name": "Error Prevention (Legal, Financial, Data)",
+            "name": "Zapobieganie błędom (prawnym, finansowym, w danych)",
             "wcagLevel": "AA",
-            "summary": "For content that cause legal commitments or financial transactions for the user to occur, that modify or delete user-controllable data in data storage systems, or that submit user test responses, the user can reverse, correct, or confirm the action.",
+            "summary": "W przypadku treści, , które powodują zobowiązania prawne, albo na których użytkownik przeprowadza transakcje finansowe, modyfikuje lub usuwa dane w systemach przechowywania danych, nad którymi ma kontrolę, albo udziela odpowiedzi na testy, użytkownik może cofnąć, poprawić lub potwierdzić działanie.",
             "rules": []
         },
         {
             "num": "4.1.1",
-            "name": "Parsing",
+            "name": "Poprawność kodu",
             "wcagLevel": "A",
-            "summary": "In content implemented using markup languages, elements have complete start and end tags, elements are nested according to their specifications, elements do not contain duplicate attributes, and any IDs are unique, except where the specifications allow these features.",
+            "summary": "W treści wprowadzonej przy użyciu języka znaczników, elementy posiadają kompletne znaczniki początkowe i końcowe, elementy są zagnieżdżane według swoich specyfikacji, nie posiadają zduplikowanych atrybutów, a wszystkie ID są unikalne, z wyjątkiem przypadków, kiedy specyfikacja zezwala na wyżej wymienione cechy.",
             "rules": [
                 {
                     id: "RPT_Elem_UniqueId",
@@ -2205,9 +2205,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "4.1.2",
-            "name": "Name, Role, Value",
+            "name": "Nazwa, rola, wartość",
             "wcagLevel": "A",
-            "summary": "For all user interface components (including, but not limited to: form elements, links and components generated by scripts), the name and role can be programmatically determined; states, properties, and values that can be set by the user can be programmatically set; and notification of changes to these items is available to user agents, including assistive technologies.",
+            "summary": "Dla wszystkich komponentów interfejsu użytkownika (w tym, ale nie tylko, elementów formularzy, łączy oraz komponentów wygenerowanych przez skrypty) nazwa oraz rola mogą być określone programowo; stan, właściwości oraz wartości, które mogą być ustawione przez użytkownika, mogą również być ustawione programowo; powiadomienie o zmianach w tych elementach dostępne jest dla programów użytkownika, w tym technologii wspomagających.",
             "rules": [
                 {
                     id: "WCAG20_Input_ExplicitLabel",
@@ -2224,7 +2224,7 @@ let a11yRulesets: Ruleset[] = [
                     level: eRulePolicy.VIOLATION,
                     toolkitLevel: eToolkitLevel.LEVEL_ONE
                 },
-                {
+                 {
                     id: "table_aria_descendants",
                     level: eRulePolicy.VIOLATION,
                     toolkitLevel: eToolkitLevel.LEVEL_ONE
@@ -2352,13 +2352,13 @@ let a11yRulesets: Ruleset[] = [
     id: "WCAG_2_0",
     name: "WCAG 2.0 (A, AA)",
     category: eRuleCategory.ACCESSIBILITY,
-    description: "Rules for WCAG 2.0 AA. Referenced by US Section 508, but not the latest W3C recommendation.",
+    description: "Reguły dla WCAG 2.0 AA. Przywołane przez US Section 508, ale nie w najnowszym zaleceniu W3C.",
     "checkpoints": [
         {
             "num": "1.1.1",
-            "name": "Non-text Content",
+            "name": "Treść nietekstowa",
             "wcagLevel": "A",
-            "summary": "All non-text content that is presented to the user has a text alternative that serves the equivalent purpose.",
+            "summary": "Wszystkie treści nietekstowe przedstawione użytkownikowi mają alternatywę tekstową, która służy równoważnemu celowi.",
             "rules": [
                 {
                     id: "WCAG20_Input_ExplicitLabelImage",
@@ -2490,9 +2490,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.2.1",
-            "name": "Audio-only and Video-only (Prerecorded)",
+            "name": "Tylko audio lub tylko wideo (nagranie)",
             "wcagLevel": "A",
-            "summary": "For prerecorded audio-only or video-only media, an alternative provides equivalent information.",
+            "summary": "Dla mediów nagranych w systemie tylko audio lub tylko wideo, w alternatywny sposób zapewnione są równoważne informacje.",
             "rules": [
                 {
                     id: "HAAC_Video_HasNoTrack",
@@ -2508,9 +2508,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.2.2",
-            "name": "Captions (Prerecorded)",
+            "name": "Napisy rozszerzone (nagranie)",
             "wcagLevel": "A",
-            "summary": "Captions are provided for all prerecorded audio content in synchronized media.",
+            "summary": "Do wszystkich nagrań audio w multimediach zsynchronizowanych zapewnione są napisy rozszerzone.",
             "rules": [
                 {
                     id: "HAAC_Video_HasNoTrack",
@@ -2521,9 +2521,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.2.3",
-            "name": "Audio Description or Media Alternative (Prerecorded)",
+            "name": "Audiodeskrypcja lub alternatywa tekstowa dla mediów (nagranie)",
             "wcagLevel": "A",
-            "summary": "An alternative for time-based media or audio description of the prerecorded video content is provided for synchronized media.",
+            "summary": "Zapewniona jest alternatywa dla multimediów lub audiodeskrypcja dla nagrań wideo w multimediach zsynchronizowanych.",
             "rules": [
                 {
                     id: "RPT_Media_VideoReferenceTrigger",
@@ -2534,9 +2534,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.2.4",
-            "name": "Captions (Live)",
+            "name": "Napisy rozszerzone (na żywo)",
             "wcagLevel": "AA",
-            "summary": "Captions are provided for all live audio content in synchronized media.",
+            "summary": "Do wszystkich treści audio w multimediach zsynchronizowanych przekazywanych na żywo zapewnione są napisy rozszerzone.",
             "rules": [
                 {
                     id: "HAAC_Video_HasNoTrack",
@@ -2552,9 +2552,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.2.5",
-            "name": "Audio Description (Prerecorded)",
+            "name": "Audiodeskrypcja (nagranie)",
             "wcagLevel": "AA",
-            "summary": "Audio description is provided for all prerecorded video content in synchronized media.",
+            "summary": "Zapewniona jest audiodeskrypcja dla wszystkich nagrań wideo w multimediach zsynchronizowanych.",
             "rules": [
                 {
                     id: "RPT_Media_VideoReferenceTrigger",
@@ -2565,9 +2565,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.3.1",
-            "name": "Info and Relationships",
+            "name": "Informacje i relacje",
             "wcagLevel": "A",
-            "summary": "Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text.",
+            "summary": "Informacje, struktura oraz relacje między treściami przekazywane poprzez prezentację mogą być odczytane przez program komputerowy lub istnieją w postaci tekstu.",
             "rules": [
                 {
                     id: "RPT_Headers_FewWords",
@@ -2694,9 +2694,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.3.2",
-            "name": "Meaningful Sequence",
+            "name": "Zrozumiała kolejność",
             "wcagLevel": "A",
-            "summary": "When the sequence in which content is presented affects its meaning, a correct reading sequence can be programmatically determined.",
+            "summary": "Jeśli kolejność, w jakiej przedstawiona jest treść, ma znaczenie dla zrozumienia treści — prawidłowa kolejność odczytu musi być określona programowo.",
             "rules": [
                 {
                     id: "Valerie_Elem_DirValid",
@@ -2712,9 +2712,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.3.3",
-            "name": "Sensory Characteristics",
+            "name": "Właściwości zmysłowe",
             "wcagLevel": "A",
-            "summary": "Instructions provided for understanding and operating content do not rely solely on sensory characteristics of components such as shape, size, visual location, orientation, or sound.",
+            "summary": "Instrukcje co do zrozumienia i operowania treścią nie opierają się wyłącznie na właściwościach zmysłowych, takich jak: kształt, rozmiar, wzrokowa lokalizacja, orientacja w przestrzeni lub dźwięk.",
             "rules": [
                 {
                     id: "RPT_Text_SensoryReference",
@@ -2725,9 +2725,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.4.1",
-            "name": "Use of Color",
+            "name": "Użycie koloru",
             "wcagLevel": "A",
-            "summary": "Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.",
+            "summary": "Kolor nie jest wykorzystywany jako jedyny wizualny sposób przekazywania informacji, wskazywania czynności do wykonania lub oczekiwania na odpowiedź, czy też wyróżniania elementów wizualnych.",
             "rules": [
                 {
                     id: "RPT_Font_ColorInForm",
@@ -2743,9 +2743,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.4.2",
-            "name": "Audio Control",
+            "name": "Kontrola odtwarzania dźwięku",
             "wcagLevel": "A",
-            "summary": "If any audio plays automatically for more than 3 seconds, either a mechanism is available to pause or stop the audio, or a mechanism is available to control audio volume independently from the overall system volume level.",
+            "summary": "Jeśli jakieś nagranie audio włącza się automatycznie na danej stronie i jest odtwarzane przez okres dłuższy niż 3 sekundy, istnieje mechanizm umożliwiający przerwanie lub wyłączenie nagrania albo mechanizm kontrolujący poziom głośności niezależnie od poziomu głośności całego systemu.",
             "rules": [
                 {
                     id: "RPT_Embed_AutoStart",
@@ -2756,9 +2756,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.4.3",
-            "name": "Contrast (Minimum)",
+            "name": "Kontrast (minimalny)",
             "wcagLevel": "AA",
-            "summary": "The visual presentation of text and images of text has a contrast ratio of at least 4.5:1, with a 3:1 ratio for large-scale text.",
+            "summary": "Wizualna prezentacja tekstu lub obrazu tekstu posiada współczynnik kontrastu wynoszący 4,5:1 w przypadku zwykłego tekstu, a 3:1 w przypadku dużego tekstu.",
             "rules": [
                 {
                     id: "IBMA_Color_Contrast_WCAG2AA",
@@ -2774,9 +2774,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.4.4",
-            "name": "Resize Text",
+            "name": "Zmiana rozmiaru tekstu",
             "wcagLevel": "AA",
-            "summary": "Text can be resized without assistive technology up to 200 percent without loss of content or functionality.",
+            "summary": "Rozmiar tekstu może zostać powiększony do 200% bez użycia technologii wspomagających oraz bez utraty treści lub funkcjonalności.",
             "rules": [
                 {
                     id: "WCAG21_Style_Viewport",
@@ -2787,16 +2787,16 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.4.5",
-            "name": "Images of Text",
+            "name": "Obrazy tekstu",
             "wcagLevel": "AA",
-            "summary": "If the technologies being used can achieve the visual presentation, text is used to convey information rather than images of text.",
+            "summary": "Jeśli wykorzystywane technologie mogą przedstawiać treść wizualnie, do przekazywania informacji wykorzystuje się tekst, a nie obraz tekstu.",
             "rules": []
         },
         {
             "num": "2.1.1",
-            "name": "Keyboard",
+            "name": "Klawiatura",
             "wcagLevel": "A",
-            "summary": "All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes.",
+            "summary": "Wszystkie funkcjonalności w treści są obsługiwane za pomocą interfejsu klawiatury, bez wymogu określonego czasu użycia poszczególnych klawiszy.",
             "rules": [
                 {
                     id: "RPT_Elem_EventMouseAndKey",
@@ -2832,9 +2832,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.1.2",
-            "name": "No Keyboard Trap",
+            "name": "Bez pułapki na klawiaturę",
             "wcagLevel": "A",
-            "summary": "If keyboard focus can be moved to a component using a keyboard interface, then focus can be moved away from that component using only a keyboard interface, and, if it requires more than unmodified arrow or tab keys or other standard exit methods, the user is advised of the method for moving focus away.",
+            "summary": "Jeśli fokus klawiatury można przemieścić do danego komponentu treści za pomocą interfejsu klawiatury, to może on być z niego usunięty również za pomocą interfejsu klawiatury, a jeśli wymagane jest użycie czegoś więcej niż tylko strzałek, tabulatora lub innych standardowych metod wyjścia, użytkownik musi otrzymać odpowiednią podpowiedź, w jaki sposób usunąć fokus z danego komponentu.",
             "rules": [
                 {
                     id: "HAAC_Media_DocumentTrigger2",
@@ -2845,9 +2845,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.2.1",
-            "name": "Timing Adjustable",
+            "name": "Dostosowanie czasu",
             "wcagLevel": "A",
-            "summary": "For each time limit that is set by the content, the user can turn off, adjust, or extend the limit.",
+            "summary": "Gdy czas korzystania z treści jest ograniczany, użytkownik może wyłączyć, dostosować lub przedłużyć limit.",
             "rules": [
                 {
                     id: "RPT_Meta_Refresh",
@@ -2863,9 +2863,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.2.2",
-            "name": "Pause, Stop, Hide",
+            "name": "Pauza, zatrzymanie, ukrycie",
             "wcagLevel": "A",
-            "summary": "For moving, blinking, scrolling, or auto-updating information, the user can pause, stop, hide or adjust the information.",
+            "summary": "Gdy treść się porusza, migocze, przesuwa lub jest automatycznie aktualizowana, użytkownik może wstrzymać, zatrzymać, ukryć lub dostosować częstość aktualizacji.",
             "rules": [
                 {
                     id: "RPT_Marquee_Trigger",
@@ -2886,16 +2886,16 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.3.1",
-            "name": "Three Flashes or Below Threshold",
+            "name": "Trzy błyski lub wartości poniżej progu",
             "wcagLevel": "A",
-            "summary": "Content does not contain anything that flashes more than three times in any one second period, or the flash is below the general flash and red flash thresholds.",
+            "summary": "Treść nie zawiera niczego, co błyska częściej niż trzy razy w ciągu jednej sekundy, lub też błysk nie przekracza wartości granicznych dla błysków ogólnych i czerwonych.",
             "rules": []
         },
         {
             "num": "2.4.1",
-            "name": "Bypass Blocks",
+            "name":"Możliwość pominięcia bloków",
             "wcagLevel": "A",
-            "summary": "A mechanism is available to bypass blocks of content that are repeated on multiple Web pages.",
+            "summary": "Istnieje mechanizm, który umożliwia pominięcie bloków treści powtarzanych na wielu stronach internetowych.",
             "rules": [
                 {
                     id: "WCAG20_Frame_HasTitle",
@@ -3007,7 +3007,7 @@ let a11yRulesets: Ruleset[] = [
                     level: eRulePolicy.VIOLATION,
                     toolkitLevel: eToolkitLevel.LEVEL_THREE
                 },
-                {
+               {
                     id: "Rpt_Aria_ContentinfoWithNoMain_Implicit",
                     level: eRulePolicy.RECOMMENDATION,
                     toolkitLevel: eToolkitLevel.LEVEL_THREE
@@ -3031,9 +3031,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.4.2",
-            "name": "Page Titled",
+            "name": "Tytuły stron",
             "wcagLevel": "A",
-            "summary": "Web pages, non-web documents, and software have titles that describe topic or purpose.",
+            "summary": "Strony internetowe, dokumenty inne niż internetowe i oprogramowanie mają tytuły, które opisują ich cel lub przedstawiają ich temat.",
             "rules": [
                 {
                     id: "WCAG20_Doc_HasTitle",
@@ -3049,16 +3049,16 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.4.3",
-            "name": "Focus Order",
+            "name": "Kolejność fokusu",
             "wcagLevel": "A",
-            "summary": "If content can be navigated sequentially and the navigation sequences affect meaning or operation, focusable components receive focus in an order that preserves meaning and operability.",
+            "summary": "Jeśli po treści można nawigować sekwencyjnie, a kolejność nawigacji wpływa na zrozumienie lub funkcjonalność strony, komponenty przyjmują fokus w kolejności, dzięki której zachowany jest sens i funkcjonalność treści.",
             "rules": []
         },
         {
             "num": "2.4.4",
-            "name": "Link Purpose (In Context)",
+            "name": "Cel łącza (w kontekście)",
             "wcagLevel": "A",
-            "summary": "The purpose of each link can be determined from the link text alone or from the link text together with its programmatically determined link content.",
+            "summary": "Cel każdego łącza można określić na podstawie samej treści łącza lub treści tekstu powiązanego z kontekstem łącza określonym programowo.",
             "rules": [
                 {
                     id: "WCAG20_A_HasText",
@@ -3069,16 +3069,16 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.4.5",
-            "name": "Multiple Ways",
+            "name": "Wiele dróg",
             "wcagLevel": "AA",
-            "summary": "More than one way is available to locate a Web page within a set of Web pages, except where the Web Page is the result of, or a step in, a process.",
+            "summary": "Istnieje więcej niż jeden sposób umożliwiający zlokalizowanie strony internetowej w zestawie stron internetowych, z wyjątkiem sytuacji, kiedy dana strona jest wynikiem jakiejś procedury lub jednym z jej etapów.",
             "rules": []
         },
         {
             "num": "2.4.6",
-            "name": "Headings and Labels",
+            "name": "Nagłówki i etykiety",
             "wcagLevel": "AA",
-            "summary": "Headings and labels describe topic or purpose.",
+            "summary": "Nagłówki i etykiety opisują temat lub cel treści.",
             "rules": [
                 {
                     id: "RPT_Header_HasContent",
@@ -3089,9 +3089,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.4.7",
-            "name": "Focus Visible",
+            "name": "Widoczny fokus",
             "wcagLevel": "AA",
-            "summary": "Any keyboard operable user interface has a mode of operation where the keyboard focus indicator is visible.",
+            "summary": "Każdy interfejs posiadający możliwość obsługi przy pomocy klawiatury ma tryb obsługi, w którym fokus klawiatury jest stale widoczny.",
             "rules": [
                 {
                     id: "RPT_Style_HinderFocus1",
@@ -3107,9 +3107,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "3.1.1",
-            "name": "Language of Page",
+            "name": "Język strony",
             "wcagLevel": "A",
-            "summary": "The default human language of Web pages, non-Web documents, or software can be programmatically determined.",
+            "summary": "Domyślny język naturalny każdej strony internetowej może zostać odczytany przez program komputerowy.",
             "rules": [
                 {
                     id: "WCAG20_Html_HasLang",
@@ -3120,9 +3120,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "3.1.2",
-            "name": "Language of Parts",
+            "name": "Język części",
             "wcagLevel": "AA",
-            "summary": "The human language of each passage or phrase in the content can be programmatically determined.",
+            "summary": "Język naturalny każdej innojęzycznej części lub frazy zawartej w treści może zostać odczytany przez program komputerowy.",
             "rules": [
                 {
                     id: "WCAG20_Elem_Lang_Valid",
@@ -3133,9 +3133,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "3.2.1",
-            "name": "On Focus",
+            "name": "Po otrzymaniu fokusu",
             "wcagLevel": "A",
-            "summary": "When any component receives focus, it does not initiate a change of context.",
+            "summary": "Przyjęcie fokusu przez dowolny komponent interfejsu użytkownika nie powoduje nieoczekiwanej zmiany kontekstu.",
             "rules": [
                 {
                     id: "WCAG20_Select_NoChangeAction",
@@ -3151,9 +3151,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "3.2.2",
-            "name": "On Input",
+            "name": "Podczas wprowadzania danych",
             "wcagLevel": "A",
-            "summary": "Changing the setting of any user interface component does not automatically cause a change of context unless the user has been advised of the behavior before using the component.",
+            "summary": "Zmiana ustawień jakiegokolwiek komponentu interfejsu użytkownika nie powoduje automatycznej zmiany kontekstu, chyba, że użytkownik został poinformowany o takim działaniu, zanim zaczął korzystać z komponentu.",
             "rules": [
                 {
                     id: "WCAG20_A_TargetAndText",
@@ -3184,23 +3184,23 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "3.2.3",
-            "name": "Consistent Navigation",
+            "name": "Spójna nawigacja",
             "wcagLevel": "AA",
-            "summary": "Navigational mechanisms that are repeated on multiple Web pages within a set of Web pages occur in the same relative order each time they are repeated, unless a change is initiated by the user.",
+            "summary": "Mechanizmy nawigacji, które powtarzają się na wielu stronach internetowych w ramach jednego zestawu stron internetowych, występują w tej samej względnej kolejności za każdym razem, gdy są powtarzane, chyba że zmiana jest inicjowana przez użytkownika.",
             "rules": []
         },
         {
             "num": "3.2.4",
-            "name": "Consistent Identification",
+            "name": "Spójna identyfikacja",
             "wcagLevel": "AA",
-            "summary": "Components that have the same functionality within a set of Web pages are identified consistently.",
+            "summary": "Komponenty, które mają tę samą funkcjonalność w ramach jednego zestawu stron internetowych, są w taki sam sposób zidentyfikowane.",
             "rules": []
         },
         {
             "num": "3.3.1",
-            "name": "Error Identification",
+            "name": "Identyfikacja błędu",
             "wcagLevel": "A",
-            "summary": "If an input error is automatically detected, the item that is in error is identified and the error is described to the user in text.",
+            "summary": "Jeśli automatycznie zostanie wykryty błąd wprowadzania danych, system wskazuje błędny element, a użytkownik otrzymuje opis błędu w postaci tekstu.",
             "rules": [
                 {
                     id: "HAAC_Aria_ErrorMessage",
@@ -3211,9 +3211,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "3.3.2",
-            "name": "Labels or Instructions",
+            "name": "Etykiety lub instrukcje",
             "wcagLevel": "A",
-            "summary": "Labels or instructions are provided when content requires user input.",
+            "summary": "Gdy w treści wymagane jest wprowadzenie danych przez użytkownika, zapewnione są etykiety lub instrukcje.",
             "rules": [
                 {
                     id: "WCAG20_Input_LabelBefore",
@@ -3249,23 +3249,23 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "3.3.3",
-            "name": "Error Suggestion",
+            "name": "Sugestie korekty błędów",
             "wcagLevel": "AA",
-            "summary": "If an input error is automatically detected and suggestions for correction are known, then the suggestions are provided to the user, unless it would jeopardize the security or purpose of the content.",
+            "summary": "Jeśli automatycznie zostanie wykryty błąd wprowadzania danych i znane są sugestie korekty, wtedy użytkownik otrzymuje takie sugestie, chyba, że zagrażałoby to bezpieczeństwu treści lub zmieniło jej cel.",
             "rules": []
         },
         {
             "num": "3.3.4",
-            "name": "Error Prevention (Legal, Financial, Data)",
+            "name": "Zapobieganie błędom (prawnym, finansowym, w danych)",
             "wcagLevel": "AA",
-            "summary": "For content that cause legal commitments or financial transactions for the user to occur, that modify or delete user-controllable data in data storage systems, or that submit user test responses, the user can reverse, correct, or confirm the action.",
+            "summary": "W przypadku treści, , które powodują zobowiązania prawne, albo na których użytkownik przeprowadza transakcje finansowe, modyfikuje lub usuwa dane w systemach przechowywania danych, nad którymi ma kontrolę, albo udziela odpowiedzi na testy, użytkownik może cofnąć, poprawić lub potwierdzić działanie.",
             "rules": []
         },
         {
             "num": "4.1.1",
-            "name": "Parsing",
+            "name": "Poprawność kodu",
             "wcagLevel": "A",
-            "summary": "In content implemented using markup languages, elements have complete start and end tags, elements are nested according to their specifications, elements do not contain duplicate attributes, and any IDs are unique, except where the specifications allow these features.",
+            "summary": "W treści wprowadzonej przy użyciu języka znaczników, elementy posiadają kompletne znaczniki początkowe i końcowe, elementy są zagnieżdżane według swoich specyfikacji, nie posiadają zduplikowanych atrybutów, a wszystkie ID są unikalne, z wyjątkiem przypadków, kiedy specyfikacja zezwala na wyżej wymienione cechy.",
             "rules": [
                 {
                     id: "RPT_Elem_UniqueId",
@@ -3281,9 +3281,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "4.1.2",
-            "name": "Name, Role, Value",
+            "name": "Nazwa, rola, wartość",
             "wcagLevel": "A",
-            "summary": "For all user interface components (including, but not limited to: form elements, links and components generated by scripts), the name and role can be programmatically determined; states, properties, and values that can be set by the user can be programmatically set; and notification of changes to these items is available to user agents, including assistive technologies.",
+            "summary": "Dla wszystkich komponentów interfejsu użytkownika (w tym, ale nie tylko, elementów formularzy, łączy oraz komponentów wygenerowanych przez skrypty) nazwa oraz rola mogą być określone programowo; stan, właściwości oraz wartości, które mogą być ustawione przez użytkownika, mogą również być ustawione programowo; powiadomienie o zmianach w tych elementach dostępne jest dla programów użytkownika, w tym technologii wspomagających.",
             "rules": [
                 {
                     id: "WCAG20_Input_ExplicitLabel",
@@ -3428,13 +3428,13 @@ let a11yRulesets: Ruleset[] = [
     id: "IBM_Accessibility_BETA",
     name: "IBM Accessibility BETA",
     category: eRuleCategory.ACCESSIBILITY,
-    description: "Rules for WCAG 2.1 AA plus additional IBM checklist supplemental requirements and experimental rules.",
+    description: "Reguły dla WCAG 2.1 AA oraz dodatkowe wymagania uzupełniające dla listy kontrolnej IBM i reguły eksperymentalne.",
     "checkpoints": [
         {
             "num": "1.1.1",
-            "name": "Non-text Content",
+            "name": "Treść nietekstowa",
             "wcagLevel": "A",
-            "summary": "All non-text content that is presented to the user has a text alternative that serves the equivalent purpose.",
+            "summary": "Wszystkie treści nietekstowe przedstawione użytkownikowi mają alternatywę tekstową, która służy równoważnemu celowi.",
             "rules": [
                 {
                     id: "WCAG20_Input_ExplicitLabelImage",
@@ -3566,9 +3566,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.2.1",
-            "name": "Audio-only and Video-only (Prerecorded)",
+            "name": "Tylko audio lub tylko wideo (nagranie)",
             "wcagLevel": "A",
-            "summary": "For prerecorded audio-only or video-only media, an alternative provides equivalent information.",
+            "summary": "Dla mediów nagranych w systemie tylko audio lub tylko wideo, w alternatywny sposób zapewnione są równoważne informacje.",
             "rules": [
                 {
                     id: "HAAC_Video_HasNoTrack",
@@ -3584,9 +3584,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.2.2",
-            "name": "Captions (Prerecorded)",
+            "name": "Napisy rozszerzone (nagranie)",
             "wcagLevel": "A",
-            "summary": "Captions are provided for all prerecorded audio content in synchronized media.",
+            "summary": "Do wszystkich nagrań audio w multimediach zsynchronizowanych zapewnione są napisy rozszerzone.",
             "rules": [
                 {
                     id: "HAAC_Video_HasNoTrack",
@@ -3597,9 +3597,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.2.3",
-            "name": "Audio Description or Media Alternative (Prerecorded)",
+            "name": "Audiodeskrypcja lub alternatywa tekstowa dla mediów (nagranie)",
             "wcagLevel": "A",
-            "summary": "An alternative for time-based media or audio description of the prerecorded video content is provided for synchronized media.",
+            "summary": "Zapewniona jest alternatywa dla multimediów lub audiodeskrypcja dla nagrań wideo w multimediach zsynchronizowanych.",
             "rules": [
                 {
                     id: "RPT_Media_VideoReferenceTrigger",
@@ -3610,9 +3610,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.2.4",
-            "name": "Captions (Live)",
+            "name": "Napisy rozszerzone (na żywo)",
             "wcagLevel": "AA",
-            "summary": "Captions are provided for all live audio content in synchronized media.",
+            "summary": "Do wszystkich treści audio w multimediach zsynchronizowanych przekazywanych na żywo zapewnione są napisy rozszerzone.",
             "rules": [
                 {
                     id: "HAAC_Video_HasNoTrack",
@@ -3628,9 +3628,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.2.5",
-            "name": "Audio Description (Prerecorded)",
+            "name": "Audiodeskrypcja (nagranie)",
             "wcagLevel": "AA",
-            "summary": "Audio description is provided for all prerecorded video content in synchronized media.",
+            "summary": "Zapewniona jest audiodeskrypcja dla wszystkich nagrań wideo w multimediach zsynchronizowanych.",
             "rules": [
                 {
                     id: "RPT_Media_VideoReferenceTrigger",
@@ -3641,9 +3641,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.3.1",
-            "name": "Info and Relationships",
+            "name": "Informacje i relacje",
             "wcagLevel": "A",
-            "summary": "Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text.",
+            "summary": "Informacje, struktura oraz relacje między treściami przekazywane poprzez prezentację mogą być odczytane przez program komputerowy lub istnieją w postaci tekstu.",
             "rules": [
                 {
                     id: "RPT_Headers_FewWords",
@@ -3770,9 +3770,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.3.2",
-            "name": "Meaningful Sequence",
+            "name": "Zrozumiała kolejność",
             "wcagLevel": "A",
-            "summary": "When the sequence in which content is presented affects its meaning, a correct reading sequence can be programmatically determined.",
+            "summary": "Jeśli kolejność, w jakiej przedstawiona jest treść, ma znaczenie dla zrozumienia treści — prawidłowa kolejność odczytu musi być określona programowo.",
             "rules": [
                 {
                     id: "Valerie_Elem_DirValid",
@@ -3788,9 +3788,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.3.3",
-            "name": "Sensory Characteristics",
+            "name": "Właściwości zmysłowe",
             "wcagLevel": "A",
-            "summary": "Instructions provided for understanding and operating content do not rely solely on sensory characteristics of components such as shape, size, visual location, orientation, or sound.",
+            "summary": "Instrukcje co do zrozumienia i operowania treścią nie opierają się wyłącznie na właściwościach zmysłowych, takich jak: kształt, rozmiar, wzrokowa lokalizacja, orientacja w przestrzeni lub dźwięk.",
             "rules": [
                 {
                     id: "RPT_Text_SensoryReference",
@@ -3801,16 +3801,16 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.3.4",
-            "name": "Orientation",
+            "name": "Orientacja",
             "wcagLevel": "A",
-            "summary": "Content does not restrict its view and operation to a single display orientation, such as portrait or landscape.",
+            "summary": "Treść nie ogranicza swojego widoku i działania do jednej orientacji wyświetlania, takiej jak pionowa lub pozioma.",
             "rules": []
         },
         {
             "num": "1.3.5",
-            "name": "Identify Input Purpose",
+            "name": "Określenie pożądanej wartości",
             "wcagLevel": "AA",
-            "summary": "The purpose of each input field that collects information about the user can be programmatically determined when the field serves a common purpose.",
+            "summary": "Cel każdego pola zbierającego informacje o użytkowniku może być programowo określony.",
             "rules": [
                 {
                     id: "WCAG21_Input_Autocomplete",
@@ -3821,9 +3821,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.4.1",
-            "name": "Use of Color",
+            "name": "Użycie koloru",
             "wcagLevel": "A",
-            "summary": "Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.",
+            "summary": "Kolor nie jest wykorzystywany jako jedyny wizualny sposób przekazywania informacji, wskazywania czynności do wykonania lub oczekiwania na odpowiedź, czy też wyróżniania elementów wizualnych.",
             "rules": [
                 {
                     id: "RPT_Font_ColorInForm",
@@ -3839,9 +3839,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.4.2",
-            "name": "Audio Control",
+            "name": "Kontrola odtwarzania dźwięku",
             "wcagLevel": "A",
-            "summary": "If any audio plays automatically for more than 3 seconds, either a mechanism is available to pause or stop the audio, or a mechanism is available to control audio volume independently from the overall system volume level.",
+            "summary": "Jeśli jakieś nagranie audio włącza się automatycznie na danej stronie i jest odtwarzane przez okres dłuższy niż 3 sekundy, istnieje mechanizm umożliwiający przerwanie lub wyłączenie nagrania albo mechanizm kontrolujący poziom głośności niezależnie od poziomu głośności całego systemu.",
             "rules": [
                 {
                     id: "RPT_Embed_AutoStart",
@@ -3852,9 +3852,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.4.3",
-            "name": "Contrast (Minimum)",
+            "name": "Kontrast (minimalny)",
             "wcagLevel": "AA",
-            "summary": "The visual presentation of text and images of text has a contrast ratio of at least 4.5:1, with a 3:1 ratio for large-scale text.",
+            "summary": "Wizualna prezentacja tekstu lub obrazu tekstu posiada współczynnik kontrastu wynoszący 4,5:1 w przypadku zwykłego tekstu, a 3:1 w przypadku dużego tekstu.",
             "rules": [
                 {
                     id: "IBMA_Color_Contrast_WCAG2AA",
@@ -3870,9 +3870,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.4.4",
-            "name": "Resize Text",
+            "name": "Zmiana rozmiaru tekstu",
             "wcagLevel": "AA",
-            "summary": "Text can be resized without assistive technology up to 200 percent without loss of content or functionality.",
+            "summary": "Rozmiar tekstu może zostać powiększony do 200% bez użycia technologii wspomagających oraz bez utraty treści lub funkcjonalności.",
             "rules": [
                 {
                     id: "WCAG21_Style_Viewport",
@@ -3883,44 +3883,44 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "1.4.5",
-            "name": "Images of Text",
+            "name": "Obrazy tekstu",
             "wcagLevel": "AA",
-            "summary": "If the technologies being used can achieve the visual presentation, text is used to convey information rather than images of text.",
+            "summary": "Jeśli wykorzystywane technologie mogą przedstawiać treść wizualnie, do przekazywania informacji wykorzystuje się tekst, a nie obraz tekstu.",
             "rules": []
         },
         {
             "num": "1.4.10",
-            "name": "Reflow",
+            "name": "Dopasowanie do ekranu",
             "wcagLevel": "AA",
-            "summary": "Content can reflow without loss of information or functionality, and without requiring scrolling in two dimensions.",
+            "summary": "Treść może być prezentowana bez utraty informacji lub funkcjonalności, bez konieczności przewijania w dwóch wymiarach.",
             "rules": []
         },
         {
             "num": "1.4.11",
-            "name": "Non-text Contrast",
+            "name": "Kontrast elementów nietekstowych",
             "wcagLevel": "AA",
-            "summary": "The parts of graphical objects required to understand the content, and the visual information required to identify UI components and states, have a contrast ratio of at least 3:1 against adjacent colors.",
+            "summary": "Części obiektów graficznych wymagane do zrozumienia treści oraz informacje wizualne wymagane do zidentyfikowania komponentów i stanów interfejsu użytkownika mają współczynnik kontrastu wynoszący co najmniej 3:1 względem sąsiednich kolorów.",
             "rules": []
         },
         {
             "num": "1.4.12",
-            "name": "Text Spacing",
+            "name": "Odstępy w tekście",
             "wcagLevel": "AA",
-            "summary": "No loss of content or functionality occurs when users change letter, word and paragraph spacing, as well as line height.",
+            "summary": "Zmiana odstępów między literami, wyrazami i akapitami, a także wysokości wiersza nie powoduje utraty treści ani funkcjonalności.",
             "rules": []
         },
         {
             "num": "1.4.13",
-            "name": "Content on Hover or Focus",
+            "name": "Treść spod kursora lub fokusu",
             "wcagLevel": "AA",
-            "summary": "Where hover or focus actions cause additional content to become visible and hidden, the additional content is dismissable, hoverable and persistent.",
+            "summary": "Gdy jakaś treść staje się widoczna po otrzymaniu kursora lub fokusu klawiatury, dodatkowa treść może być odrzucona, wskazana kursorem lub pozostaje widoczna do usunięcia wskazania lub gdy przestaje być ważna.",
             "rules": []
         },
         {
             "num": "2.1.1",
-            "name": "Keyboard",
+            "name": "Klawiatura",
             "wcagLevel": "A",
-            "summary": "All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes.",
+            "summary": "Wszystkie funkcjonalności w treści są obsługiwane za pomocą interfejsu klawiatury, bez wymogu określonego czasu użycia poszczególnych klawiszy.",
             "rules": [
                 {
                     id: "RPT_Elem_EventMouseAndKey",
@@ -3956,9 +3956,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.1.2",
-            "name": "No Keyboard Trap",
+            "name": "Bez pułapki na klawiaturę",
             "wcagLevel": "A",
-            "summary": "If keyboard focus can be moved to a component using a keyboard interface, then focus can be moved away from that component using only a keyboard interface, and, if it requires more than unmodified arrow or tab keys or other standard exit methods, the user is advised of the method for moving focus away.",
+            "summary": "Jeśli fokus klawiatury można przemieścić do danego komponentu treści za pomocą interfejsu klawiatury, to może on być z niego usunięty również za pomocą interfejsu klawiatury, a jeśli wymagane jest użycie czegoś więcej niż tylko strzałek, tabulatora lub innych standardowych metod wyjścia, użytkownik musi otrzymać odpowiednią podpowiedź, w jaki sposób usunąć fokus z danego komponentu.",
             "rules": [
                 {
                     id: "HAAC_Media_DocumentTrigger2",
@@ -3969,16 +3969,16 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.1.4",
-            "name": "Character Key Shortcuts",
+            "name": "Jednoznakowe skróty klawiaturowe",
             "wcagLevel": "A",
-            "summary": "If a keyboard shortcut is implemented using only letter, punctuation, number or symbol characters, then the shortcut can be turned off, remapped or activated only on focus.",
+            "summary": "Jeśli skrót klawiaturowy jest zaimplementowany w treści tylko przy użyciu jednego znaku (litery, w tym wielkiej i małej, cyfry lub symbolu), to skrót można wyłączyć, przemapować lub aktywować tylko, gdy komponent ma fokus.",
             "rules": []
         },
         {
             "num": "2.2.1",
-            "name": "Timing Adjustable",
+            "name": "Dostosowanie czasu",
             "wcagLevel": "A",
-            "summary": "For each time limit that is set by the content, the user can turn off, adjust, or extend the limit.",
+            "summary": "Gdy czas korzystania z treści jest ograniczany, użytkownik może wyłączyć, dostosować lub przedłużyć limit.",
             "rules": [
                 {
                     id: "RPT_Meta_Refresh",
@@ -3994,9 +3994,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.2.2",
-            "name": "Pause, Stop, Hide",
+            "name": "Pauza, zatrzymanie, ukrycie",
             "wcagLevel": "A",
-            "summary": "For moving, blinking, scrolling, or auto-updating information, the user can pause, stop, hide or adjust the information.",
+            "summary": "Gdy treść się porusza, migocze, przesuwa lub jest automatycznie aktualizowana, użytkownik może wstrzymać, zatrzymać, ukryć lub dostosować częstość aktualizacji.",
             "rules": [
                 {
                     id: "RPT_Marquee_Trigger",
@@ -4017,16 +4017,16 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.3.1",
-            "name": "Three Flashes or Below Threshold",
+            "name": "Trzy błyski lub wartości poniżej progu",
             "wcagLevel": "A",
-            "summary": "Content does not contain anything that flashes more than three times in any one second period, or the flash is below the general flash and red flash thresholds.",
+            "summary": "Treść nie zawiera niczego, co błyska częściej niż trzy razy w ciągu jednej sekundy, lub też błysk nie przekracza wartości granicznych dla błysków ogólnych i czerwonych.",
             "rules": []
         },
         {
             "num": "2.4.1",
-            "name": "Bypass Blocks",
+            "name":"Możliwość pominięcia bloków",
             "wcagLevel": "A",
-            "summary": "A mechanism is available to bypass blocks of content that are repeated on multiple Web pages.",
+            "summary": "Istnieje mechanizm, który umożliwia pominięcie bloków treści powtarzanych na wielu stronach internetowych.",
             "rules": [
                 {
                     id: "WCAG20_Frame_HasTitle",
@@ -4162,9 +4162,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.4.2",
-            "name": "Page Titled",
+            "name": "Tytuły stron",
             "wcagLevel": "A",
-            "summary": "Web pages, non-web documents, and software have titles that describe topic or purpose.",
+            "summary": "Strony internetowe, dokumenty inne niż internetowe i oprogramowanie mają tytuły, które opisują ich cel lub przedstawiają ich temat.",
             "rules": [
                 {
                     id: "WCAG20_Doc_HasTitle",
@@ -4180,9 +4180,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.4.3",
-            "name": "Focus Order",
+            "name": "Kolejność fokusu",
             "wcagLevel": "A",
-            "summary": "If content can be navigated sequentially and the navigation sequences affect meaning or operation, focusable components receive focus in an order that preserves meaning and operability.",
+            "summary": "Jeśli po treści można nawigować sekwencyjnie, a kolejność nawigacji wpływa na zrozumienie lub funkcjonalność strony, komponenty przyjmują fokus w kolejności, dzięki której zachowany jest sens i funkcjonalność treści.",
             "rules": [
                 {
                     id: "IBMA_Focus_Tabbable",
@@ -4198,9 +4198,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.4.4",
-            "name": "Link Purpose (In Context)",
+            "name": "Cel łącza (w kontekście)",
             "wcagLevel": "A",
-            "summary": "The purpose of each link can be determined from the link text alone or from the link text together with its programmatically determined link content.",
+            "summary": "Cel każdego łącza można określić na podstawie samej treści łącza lub treści tekstu powiązanego z kontekstem łącza określonym programowo.",
             "rules": [
                 {
                     id: "WCAG20_A_HasText",
@@ -4211,16 +4211,16 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.4.5",
-            "name": "Multiple Ways",
+            "name": "Wiele dróg",
             "wcagLevel": "AA",
-            "summary": "More than one way is available to locate a Web page within a set of Web pages, except where the Web Page is the result of, or a step in, a process.",
+            "summary": "Istnieje więcej niż jeden sposób umożliwiający zlokalizowanie strony internetowej w zestawie stron internetowych, z wyjątkiem sytuacji, kiedy dana strona jest wynikiem jakiejś procedury lub jednym z jej etapów.",
             "rules": []
         },
         {
             "num": "2.4.6",
-            "name": "Headings and Labels",
+            "name": "Nagłówki i etykiety",
             "wcagLevel": "AA",
-            "summary": "Headings and labels describe topic or purpose.",
+            "summary": "Nagłówki i etykiety opisują temat lub cel treści.",
             "rules": [
                 {
                     id: "RPT_Header_HasContent",
@@ -4231,9 +4231,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.4.7",
-            "name": "Focus Visible",
+            "name": "Widoczny fokus",
             "wcagLevel": "AA",
-            "summary": "Any keyboard operable user interface has a mode of operation where the keyboard focus indicator is visible.",
+            "summary": "Każdy interfejs posiadający możliwość obsługi przy pomocy klawiatury ma tryb obsługi, w którym fokus klawiatury jest stale widoczny.",
             "rules": [
                 {
                     id: "RPT_Style_HinderFocus1",
@@ -4249,23 +4249,23 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.5.1",
-            "name": "Pointer Gestures",
+            "name": "Gesty dotykowe",
             "wcagLevel": "A",
-            "summary": "All functionality that uses multipoint or path-based gestures for operation can be operated with a single pointer without a path-based gesture.",
+            "summary": "Wszystkie funkcjonalności wykorzystujące do obsługi gesty wielopunktowe lub oparte na ścieżkach mogą być obsługiwane za pomocą dotyku jednopunktowego bez gestu opartego na ścieżce.",
             "rules": []
         },
         {
             "num": "2.5.2",
-            "name": "Pointer Cancellation",
+            "name": "Rezygnacja ze wskazania",
             "wcagLevel": "A",
-            "summary": "For functionality that can be operated using a single pointer, completion of the function is on the up-event with an ability to abort, undo or reverse the outcome.",
+            "summary": "W przypadku funkcjonalności, które są wywoływane za pomocą dotyku jednopunktowego, zakończenie funkcjonalności następuje wskutek zwolnienia nacisku albo może być przerwane lub cofnięte.",
             "rules": []
         },
         {
             "num": "2.5.3",
-            "name": "Label in Name",
+            "name": "Etykieta w nazwie",
             "wcagLevel": "A",
-            "summary": "For user interface components with labels that include text or images of text, the accessible name contains the text that is presented visually.",
+            "summary": "W przypadku komponentów interfejsu użytkownika z etykietami zawierającymi tekst lub obrazy tekstu, nazwa zawiera tekst, który jest prezentowany wizualnie.",
             "rules": [
                 {
                     id: "WCAG21_Label_Accessible",
@@ -4276,16 +4276,16 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "2.5.4",
-            "name": "Motion Actuation",
+            "name": "Aktywowanie ruchem",
             "wcagLevel": "A",
-            "summary": "Functionality that can be operated by motion can also be operated by user interface components, and the motion trigger can be disabled.",
+            "summary": "Funkcjonalność, którą można obsługiwać za pomocą ruchu urządzenia lub ruchu użytkownika, można również obsługiwać za pomocą komponentów interfejsu użytkownika, a reagowanie na ruch można wyłączyć.",
             "rules": []
         },
         {
             "num": "3.1.1",
-            "name": "Language of Page",
+            "name": "Język strony",
             "wcagLevel": "A",
-            "summary": "The default human language of Web pages, non-Web documents, or software can be programmatically determined.",
+            "summary": "Domyślny język naturalny każdej strony internetowej może zostać odczytany przez program komputerowy.",
             "rules": [
                 {
                     id: "WCAG20_Html_HasLang",
@@ -4296,9 +4296,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "3.1.2",
-            "name": "Language of Parts",
+            "name": "Język części",
             "wcagLevel": "AA",
-            "summary": "The human language of each passage or phrase in the content can be programmatically determined.",
+            "summary": "Język naturalny każdej innojęzycznej części lub frazy zawartej w treści może zostać odczytany przez program komputerowy.",
             "rules": [
                 {
                     id: "WCAG20_Elem_Lang_Valid",
@@ -4309,9 +4309,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "3.2.1",
-            "name": "On Focus",
+            "name": "Po otrzymaniu fokusu",
             "wcagLevel": "A",
-            "summary": "When any component receives focus, it does not initiate a change of context.",
+            "summary": "Przyjęcie fokusu przez dowolny komponent interfejsu użytkownika nie powoduje nieoczekiwanej zmiany kontekstu.",
             "rules": [
                 {
                     id: "WCAG20_Select_NoChangeAction",
@@ -4327,9 +4327,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "3.2.2",
-            "name": "On Input",
+            "name": "Podczas wprowadzania danych",
             "wcagLevel": "A",
-            "summary": "Changing the setting of any user interface component does not automatically cause a change of context unless the user has been advised of the behavior before using the component.",
+            "summary": "Zmiana ustawień jakiegokolwiek komponentu interfejsu użytkownika nie powoduje automatycznej zmiany kontekstu, chyba, że użytkownik został poinformowany o takim działaniu, zanim zaczął korzystać z komponentu.",
             "rules": [
                 {
                     id: "WCAG20_A_TargetAndText",
@@ -4360,23 +4360,23 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "3.2.3",
-            "name": "Consistent Navigation",
+            "name": "Spójna nawigacja",
             "wcagLevel": "AA",
-            "summary": "Navigational mechanisms that are repeated on multiple Web pages within a set of Web pages occur in the same relative order each time they are repeated, unless a change is initiated by the user.",
+            "summary": "Mechanizmy nawigacji, które powtarzają się na wielu stronach internetowych w ramach jednego zestawu stron internetowych, występują w tej samej względnej kolejności za każdym razem, gdy są powtarzane, chyba że zmiana jest inicjowana przez użytkownika.",
             "rules": []
         },
         {
             "num": "3.2.4",
-            "name": "Consistent Identification",
+            "name": "Spójna identyfikacja",
             "wcagLevel": "AA",
-            "summary": "Components that have the same functionality within a set of Web pages are identified consistently.",
+            "summary": "Komponenty, które mają tę samą funkcjonalność w ramach jednego zestawu stron internetowych, są w taki sam sposób zidentyfikowane.",
             "rules": []
         },
         {
             "num": "3.3.1",
-            "name": "Error Identification",
+            "name": "Identyfikacja błędu",
             "wcagLevel": "A",
-            "summary": "If an input error is automatically detected, the item that is in error is identified and the error is described to the user in text.",
+            "summary": "Jeśli automatycznie zostanie wykryty błąd wprowadzania danych, system wskazuje błędny element, a użytkownik otrzymuje opis błędu w postaci tekstu.",
             "rules": [
                 {
                     id: "HAAC_Aria_ErrorMessage",
@@ -4387,9 +4387,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "3.3.2",
-            "name": "Labels or Instructions",
+            "name": "Etykiety lub instrukcje",
             "wcagLevel": "A",
-            "summary": "Labels or instructions are provided when content requires user input.",
+            "summary": "Gdy w treści wymagane jest wprowadzenie danych przez użytkownika, zapewnione są etykiety lub instrukcje.",
             "rules": [
                 {
                     id: "WCAG20_Input_LabelBefore",
@@ -4425,23 +4425,23 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "3.3.3",
-            "name": "Error Suggestion",
+            "name": "Sugestie korekty błędów",
             "wcagLevel": "AA",
-            "summary": "If an input error is automatically detected and suggestions for correction are known, then the suggestions are provided to the user, unless it would jeopardize the security or purpose of the content.",
+            "summary": "Jeśli automatycznie zostanie wykryty błąd wprowadzania danych i znane są sugestie korekty, wtedy użytkownik otrzymuje takie sugestie, chyba, że zagrażałoby to bezpieczeństwu treści lub zmieniło jej cel.",
             "rules": []
         },
         {
             "num": "3.3.4",
-            "name": "Error Prevention (Legal, Financial, Data)",
+            "name": "Zapobieganie błędom (prawnym, finansowym, w danych)",
             "wcagLevel": "AA",
-            "summary": "For content that cause legal commitments or financial transactions for the user to occur, that modify or delete user-controllable data in data storage systems, or that submit user test responses, the user can reverse, correct, or confirm the action.",
+            "summary": "W przypadku treści, , które powodują zobowiązania prawne, albo na których użytkownik przeprowadza transakcje finansowe, modyfikuje lub usuwa dane w systemach przechowywania danych, nad którymi ma kontrolę, albo udziela odpowiedzi na testy, użytkownik może cofnąć, poprawić lub potwierdzić działanie.",
             "rules": []
         },
         {
             "num": "4.1.1",
-            "name": "Parsing",
+            "name": "Poprawność kodu",
             "wcagLevel": "A",
-            "summary": "In content implemented using markup languages, elements have complete start and end tags, elements are nested according to their specifications, elements do not contain duplicate attributes, and any IDs are unique, except where the specifications allow these features.",
+            "summary": "W treści wprowadzonej przy użyciu języka znaczników, elementy posiadają kompletne znaczniki początkowe i końcowe, elementy są zagnieżdżane według swoich specyfikacji, nie posiadają zduplikowanych atrybutów, a wszystkie ID są unikalne, z wyjątkiem przypadków, kiedy specyfikacja zezwala na wyżej wymienione cechy.",
             "rules": [
                 {
                     id: "RPT_Elem_UniqueId",
@@ -4457,9 +4457,9 @@ let a11yRulesets: Ruleset[] = [
         },
         {
             "num": "4.1.2",
-            "name": "Name, Role, Value",
+            "name": "Nazwa, rola, wartość",
             "wcagLevel": "A",
-            "summary": "For all user interface components (including, but not limited to: form elements, links and components generated by scripts), the name and role can be programmatically determined; states, properties, and values that can be set by the user can be programmatically set; and notification of changes to these items is available to user agents, including assistive technologies.",
+            "summary": "Dla wszystkich komponentów interfejsu użytkownika (w tym, ale nie tylko, elementów formularzy, łączy oraz komponentów wygenerowanych przez skrypty) nazwa oraz rola mogą być określone programowo; stan, właściwości oraz wartości, które mogą być ustawione przez użytkownika, mogą również być ustawione programowo; powiadomienie o zmianach w tych elementach dostępne jest dla programów użytkownika, w tym technologii wspomagających.",
             "rules": [
                 {
                     id: "WCAG20_Input_ExplicitLabel",
@@ -4476,7 +4476,7 @@ let a11yRulesets: Ruleset[] = [
                     level: eRulePolicy.VIOLATION,
                     toolkitLevel: eToolkitLevel.LEVEL_ONE
                 },
-                {
+                  {
                     id: "table_aria_descendants",
                     level: eRulePolicy.VIOLATION,
                     toolkitLevel: eToolkitLevel.LEVEL_ONE

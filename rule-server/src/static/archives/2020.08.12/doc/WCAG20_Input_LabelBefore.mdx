@@ -1,41 +1,51 @@
 ---
-title: "Accessibility Checker Rule Help: WCAG20_Input_LabelBefore"
+title: "Pomoc dla regułyi: WCAG20_Input_LabelBefore"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div className="toolHelp">
 <Row>
-<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+<Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Who does this affect?
-
-* Blind people using screen readers
-* People with low vision using screen magnification
-
-### Why is this important?
-
-Applications generally place the labels for text input and `<select>` elements before the element itself. Users expect this convention to be followed consistently. When labels are placed after the text input or `<select>` element, users can become disoriented.
-
-</Column>
-<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+### Tekst etykiety znajduje się za powiązanym z nim polem tekstowym`<input>` lub elementem `<select>`
 
 <div id="locLevel"></div>
 
-### Label text is located after its associated text input or `<select>` element
-Text input and `<select>` elements must have the label before the element
+Pole tekstowe `<input>` i element `<select>` muszą mieć etykietę przed elementem
 
-[IBM 1.3.1 Info and Relationships](https://www.ibm.com/able/guidelines/ci162/info_and_relationships.html) | [IBM 4.1.2 Name, Role, Value](https://www.ibm.com/able/guidelines/ci162/name_role_value.html)
+</Column>
+</Row>
+<Row>
+<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+
+### Dlaczego to jest ważne
+
+W aplikacjach zazwyczaj umieszcza się etykiety pól tekstowych `<input>` i elementów `<select>` przed samym elementem. Użytkownicy oczekują, że ta konwencja będzie konsekwentnie przestrzegana. Gdy etykiety są umieszczane za polem tekstowym lub elementem `<select>`, użytkownicy mogą być zdezorientowani.
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* Place the text of the label immediately before the text input or `<select>` element.
+* Umieść tekst etykiety bezpośrednio przed polem tekstowym `input` lub elementem `<select>`
 
-For example:
+Na przykład:
 
-<CodeSnippet type="single" light={true}>&lt;label for="txt1"&gt;Field 1&lt;/label&gt; &lt;input type="text" id="txt1" name="txt1"&gt;</CodeSnippet>
+<CodeSnippet type="single" light={true}>&lt;label for="txt1"&gt;Pole 1&lt;/label&gt; &lt;input type="text" id="txt1" name="txt1"&gt;</CodeSnippet>
+
+</Column>
+<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+
+### O tym wymaganiu
+
+[1.3.1 Informacje i relacje](https://www.ibm.com/able/guidelines/ci162/info_and_relationships.html)
+[4.1.2 Nazwa, rola, wartość](https://www.ibm.com/able/guidelines/ci162/name_role_value.html)
+
+### Na kogo to wpływa
+
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby słabowidzące używające powiększalników ekranu
 
 </Column>
 </Row>

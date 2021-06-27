@@ -33,21 +33,19 @@ export default class ReportSplash extends React.Component<IReportSplashProps, IR
                 <div className="bx--row">
                     <div className="bx--col-lg-8 bx--col-md-8 box--col-sm-4">
                         <h2>
-                            <div className="title">IBM <span style={{ fontWeight: 600 }}>Accessibility</span></div>
-                            <div className="subtitle">Equal Access Accessibility Checker</div>
-                            <div className="version">Version {manifest.version}</div>
+                            <div className="title">IBM <span style={{ fontWeight: 600 }}>Dostępność</span></div>
+                            <div className="subtitle">Equal Access Tester dostępności</div>
+                            <div className="version">Wersja {manifest.version}</div>
                         </h2>
                         <div className="description">
-                            This extension helps you identify accessibility issues and understand how to fix them. Use the <span style={{ fontWeight: 600 }}>'Accessibility Checker' tab in 
-                            the {BrowserDetection.isChrome()?"Elements":"Inspector" } panel</span> to locate your issues in the code and on the page.<br /><br />
-                            These automated tests don't catch all issues. Complete your accessibility assessment with
-                            a <a className="link" href="https://ibm.com/able/toolkit/develop/considerations/unit-testing" target="_blank">quick unit test for accessibility</a><span> </span>
-                            or follow the <a className="link" href="https://ibm.com/able/toolkit/verify" target="_blank">full accessibility test process</a>.<br /><br />
-                            Learn how to design, build and test for accessibility with the <a className="link" href="https://ibm.com/able/toolkit" target="_blank">IBM Equal Access Toolkit</a>.
+                            Rozszerzenie pomaga zidentyfikować problemy z dostępnością i zrozumieć, jak je usunąć. Użyj karty <span style={{ fontWeight: 600 }}>'Tester dostępności' w panelu&nbsp;{BrowserDetection.isChrome()?"Elements":"Inspektor" } panel</span>, aby zlokalizować swoje problemy w kodzie i na stronie.<br /><br />
+                            Te zautomatyzowane testy nie wychwytują wszystkich problemów. Uzupełnij swoją ocenę dostępności za pomocą&nbsp;<a className="link" href="https://ibm.com/able/toolkit/develop/considerations/unit-testing" target="_blank">szybkiego jednostkowego testu dostępności</a><span> </span>
+                           lub przejdź do <a className="link" href="https://ibm.com/able/toolkit/verify" target="_blank">pełnego procesu testowania dostępności</a>.<br /><br />
+                            Naucz się projektować, budować i testować dostępność z  <a className="link" href="https://ibm.com/able/toolkit" target="_blank">IBM Equal Access Toolkit</a>.
                         </div>
                     </div>
                     <div className="bx--col-lg-8 bx--col-md-8 box--col-sm-4">
-                        <img src={splashScreen} alt="Splash screen" style={{ maxWidth: "100%", marginTop: "36px" }}></img>
+                        <img src={splashScreen} alt="Ekran dotykowy" style={{ maxWidth: "100%", marginTop: "36px" }}></img>
                     </div>
                 </div>
             </div>

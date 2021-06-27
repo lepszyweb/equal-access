@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: Valerie_Frame_SrcHtml"
+title: "Pomoc dla reguły: Valerie_Frame_SrcHtml"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,42 +8,43 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Verify `<frame>` content is accessible
+### Sprawdź, czy zawartość `<frame>` jest dostępna
 
 <div id="locLevel"></div>
 
-A `<frame>` containing non-HTML content must be made accessible
+Treść inna niż HTML osadzona w ramce `<frame>` musi być dostępna
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-If the content of a `<frame>` is not HTML, it may not be accessible. For example, if the source of the `<frame>` element is an image file, assistive technology cannot read the content because you cannot add `alt` text to the image in the `<frame>` source. The user opens the frame and hears nothing or perhaps the name of the image file. The `<frame>` element is obsolete and ideally should not be used. When used, the frame source must be accessible.
+Jeśli we `<frame>` znajduje się treść inna niż HTML, może być niedostępna. Na przykład, jeśli źródłem elementu `<frame>` jest plik obrazu, technologia wspomagająca nie może odczytać treści, ponieważ nie można dodać tekstu `alt` do obrazu w źródle `<frame>`. Użytkownik otwiera ramkę i nic nie słyszy albo słyszy nazwę pliku obrazu. Element `<frame>` jest przestarzały i nie powinien być używany. Kiedy jest używany, źródło ramki musi być dostępne.
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
- * HTML `<frame>` is obsolete, if possible avoid its use;
- * OR, verify that interactive content inside the frame is accessible by keyboard;
- * AND, verify that content inside the frame can be accessed by assistive technologies such as a screen reader.
+ * Element HTML `<frame>` jest przestarzały, jeśli to możliwe, unikaj jego używania;
+ * LUB  sprawdź, czy zawartość interaktywna wewnątrz ramki jest dostępna za pomocą klawiatury;
+ * ORAZ sprawdź, czy dostęp do treści w ramce można uzyskać za pomocą technologii wspomagających, takich jak czytnik ekranu. 
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 2.4.1 Bypass Blocks](https://www.ibm.com/able/requirements/requirements/#2_4_1)
+[IBM 4.1.1 Poprawność kodu](http://www.ibm.com/able/guidelines/ci162/bypass_blocks.html)
 
-### Who does this affect?
+### Na kogo to wpływa
 
- * People who rely on keyboard control
- * People using a screen reader, including blind, low vision and neurodivergent people
- * People with low vision using screen magnification
- * People with dexterity impairment
+ * Osoby, które polegają na sterowaniu klawiaturą
+ * Osoby niewidome korzystające z czytników ekranu
+ * Osoby słabowidzące używające powiększalników ekranu
+ * Osoby z ograniczeniami możliwości ruchu i manipulacji
 
 </Column>
 </Row>

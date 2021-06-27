@@ -65,7 +65,7 @@ export default class ReportElements extends React.Component<IReportElementsProps
         return <div className="bx--grid report" role="rowgroup">
             <div className="bx--row reportHeader">
                 <div className="bx--col-sm-1 bx--col-md-2 bx--col-lg-4">
-                    <div className="label" style={{ marginLeft: "2rem" }}>Issues</div>
+                    <div className="label" style={{ marginLeft: "2rem" }}>Problem</div>
                 </div>
                 <div className="bx--col-sm-3 bx--col-md-6 bx--col-lg-8">
                     <div className="label">Element</div>

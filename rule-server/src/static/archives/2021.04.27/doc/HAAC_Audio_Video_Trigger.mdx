@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: HAAC_Audio_Video_Trigger"
+title: "Pomoc dla reguły: HAAC_Audio_Video_Trigger"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,49 +8,58 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Check media using `<audio>` and/or `<video>` element has keyboard accessible controls
+### Sprawdź, czy media używajace elementu `<audio>` lub `<video>` mogą być sterowane za pomocą klawiatury
+
 
 <div id="locLevel"></div>
 
-Media using `<audio>` and / or `<video>` elements must have keyboard accessible controls
+Media wykorzystujące elementy `<audio>` lub `<video>` muszą mieć sterowanie za pomocą klawiatury
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
 HTML5 `<audio>` and `<video>` elements are used to embed media on the page. Keyboard-only users must have keyboard access to the media controls to play, pause, increase and decrease volume.
 
+Elementy HTML5 `<audio>` i `<video>` są używane do osadzania na stronie multimediów. Użytkownicy korzystający tylko z klawiatury muszą mieć dostęp do elementów sterujących mediami, aby móc je odtwarzać, pauzować oraz zwiększać i zmniejszać głośność.
+
+
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
 * If using custom audio and / or video controls, ensure they are made keyboard accessible by scripting;
 * OR check to ensure default playback controls provided by the browser allow easy keyboard navigation and control.
-For example:
+
+
+* Jeśli korzystasz z włąsnych elementów sterujących audio lub wideo, upewnij się, że skrypty zapewniają ich dostępność;
+* LUB sprawdź, czy domyślne elementy sterujące odtwarzaniem zapewnione przez przeglądarkę umożliwiają łatwą nawigację i sterowanie za pomocą klawiatury.
+
+Na przykład:
 
 <CodeSnippet type="multi" light={true}>&lt;audio id="demo" src="audio.mp3"&gt;&lt;/audio&gt;
     &lt;div&gt;
-        &lt;button onclick="document.getElementById('demo').play()"&gt;Play the Audio&lt;/button&gt;
-        &lt;button onclick="document.getElementById('demo').pause()"&gt;Pause the Audio&lt;/button&gt;
-        &lt;button onclick="document.getElementById('demo').volume+=0.1"&gt;Increase Volume&lt;/button&gt;
-        &lt;button onclick="document.getElementById('demo').volume-=0.1"&gt;Decrease Volume&lt;/button&gt;
+        &lt;button onclick="document.getElementById('demo').play()"&gt;Graj&lt;/button&gt;
+        &lt;button onclick="document.getElementById('demo').pause()"&gt;Stop&lt;/button&gt;
+        &lt;button onclick="document.getElementById('demo').volume+=0.1"&gt;Głośniej&lt;/button&gt;
+        &lt;button onclick="document.getElementById('demo').volume-=0.1"&gt;Ciszej&lt;/button&gt;
     &lt;/div&gt;</CodeSnippet>
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 2.1.1 Keyboard](https://www.ibm.com/able/requirements/requirements/#2_1_1)
+[IBM 2.1.1 Klawiatura](http://www.ibm.com/able/guidelines/ci162/keyboard.html)
 
-### Who does this affect?
+### Na kogo to wpływa
 
-* Blind people using screen readers
-* People with low vision who have trouble finding or tracking a pointer indicator on the screen
-* People who physically cannot use a pointing device
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby słabowidzące, które mają problemy ze znalezieniem lub śledzeniem wskaźnika na ekranie
+* Osoby, które nie mogą korzystać z urządzeń wskazujących, np. myszy
 
 </Column>
 </Row>

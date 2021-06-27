@@ -78,17 +78,15 @@ export default class SummScoreCard extends React.Component<SummScoreCardProps, {
                 <div className="bx--col-sm-2 bx--col-md-4 bx--col-lg-4 scLeft">
                     <h2 className="title">{this.props.title}</h2>
                     <div className="score">{elementNoFailures}%</div>
-                    <div>Percentage of elements with no detected violations or items to review</div>
+                    <div>Odsetek elementów, w których nie stwierdzono naruszeń lub elementów do przeglądu</div>
                 </div>
                 <div className="bx--col-sm-4 bx--col-md-4 bx--col-lg-10" style={{paddingLeft:"6.5rem"}}>
                     <div>
-                        This report summarizes automated tests. You have to perform additional manual 
-                        tests to complete accessibility assessments. Use 
-                        the <a href="https://ibm.com/able/toolkit" target="_blank" rel="noopener noreferrer" style={{color:'#002D9C'}}>IBM Equal Access Toolkit</a> to guide you.
+                        Ten raport podsumowuje testy automatyczne. Musisz wykonać dodatkowe testy ręczne, aby zakończyć ocenę dostępności. Użyj  strony <a href="https://ibm.com/able/toolkit" target="_blank" rel="noopener noreferrer" style={{color:'#002D9C'}}>IBM Equal Access Toolkit</a>, aby się dowiedzieć, jak.
                     </div>
-                    <div style={{paddingTop:"36px"}}>More resources:</div>
-                    <div><a className="link" href="https://ibm.com/able/toolkit/develop/considerations/unit-testing" target="_blank" style={{color:'#002D9C'}}>Quick unit test for accessibility</a></div>
-                    <div><a className="link" href="https://ibm.com/able/toolkit/verify" target="_blank" style={{color:'#002D9C'}}>Full accessibility test process</a></div>
+                    <div style={{paddingTop:"36px"}}>Więcej zasobów:</div>
+                    <div><a className="link" href="https://ibm.com/able/toolkit/develop/considerations/unit-testing" target="_blank" style={{color:'#002D9C'}}>Szybki jednostkowy test dostępności</a></div>
+                    <div><a className="link" href="https://ibm.com/able/toolkit/verify" target="_blank" style={{color:'#002D9C'}}>Pełny proces badania dostępności</a></div>
                 </div>
                 <div className="bx--col-sm-4 bx--col-md-4 bx--col-lg-2" style={{paddingLeft:"6.5rem"}}></div>
             </div>

@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: WCAG20_Applet_HasAlt"
+title: "Pomoc dla reguły: WCAG20_Applet_HasAlt"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,51 +8,51 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### An `<applet>` element does not have a short text alternative
+### Element `<applet>` nie ma atrybutu `alt`, który zapewnia krótki tekst alternatywny. 
 
 <div id="locLevel"></div>
 
-`<applet>` elements must provide `alt` text and an alternative description
+Elementy `<applet>` muszą zawierać tekst `alt` i opis alternatywny
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-Alternative text on `<applet>` elements is important for users who do not have a Java-capable browser or have disabled Java™. In addition, providing a text alternative makes the same information accessible through audio or other channels.
+Tekst alternatywny w elementach `<applet>` jest ważny dla użytkowników, którzy nie mają przeglądarki obsługującej język Java lub mają wyłączoną obsługę języka Java™. Ponadto zapewnienie alternatywy tekstowej sprawia, że te same informacje są dostępne za pośrednictwem dźwięku lub innych kanałów.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* If the `<applet>` element is missing an alternative description, add an `alt` attribute
-* AND, add HTML-based content (i.e., inner text) that describes the function of the `<applet>` element, if possible.
+* Jeśli element `<applet>` nie ma opisu alternatywnego, dodaj atrybut `alt`
+* ORAZ dodaj treść oparta na HTML (tj. tekst wewnętrzny), która opisuje funkcję elementu `<applet>`, jeśli to możliwe. 
 
-For example:
+Na przykład:
 
-<CodeSnippet type="multi" light={true}>&lt;applet CODE="banner.class" ALT="Scrolling news banner" WIDTH="200" HEIGHT="200"&gt;
-Banner showing three things:
+<CodeSnippet type="multi" light={true}>&lt;applet CODE="banner.class" ALT="Przewijany baner wiadomości" WIDTH="200" HEIGHT="200"&gt;
+Baner przedstawiający trzy rzeczy:
  &lt;ol&gt;
-  &lt;li&gt;The Dow Jones Industrial Average climbed 300 points today in heavy trading.&lt;/li&gt;
-  &lt;li&gt;G8 Summit to start in Washington tomorrow.&lt;/li&gt;
-  &lt;li&gt;Global nuclear non-proliferation treaty signed by all nations today.&lt;/li&gt;
+  &lt;li&gt;Średnia wartość Dow Jones Industrial wzrósła dziś o 300 punktów w ciężkich transakcjach.&lt;/li&gt;
+  &lt;li&gt;Szczyt G8 rozpocznie się jutro w Waszyngtonie.&lt;/li&gt;
+  &lt;li&gt;Globalny traktat o nierozprzestrzenianiu broni jądrowej podpisany dzisiaj przez wszystkie narody.&lt;/li&gt;
  &lt;/ol&gt;
 &lt;/applet&gt;</CodeSnippet>
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 1.1.1 Non-text content](https://www.ibm.com/able/requirements/requirements/#1_1_1)
-[WCAG 2.1 technique H35](https://www.w3.org/TR/WCAG20-TECHS/H35)
+[IBM 1.1.1 Treść nietekstowa](http://www.ibm.com/able/guidelines/ci162/non_text_content.html)
+[Technika WCAG 2.1 H35](https://www.w3.org/TR/WCAG20-TECHS/H35)
 
-### Who does this affect?
+### Na kogo to wpływa
 
-* People using a screen reader, including blind, low vision and neurodivergent people
-* People using text-based browsers (e.g., Lynx) or audio interfaces
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby korzystające z przeglądarek tekstowych (np. Lynx) lub interfejsów audio
 
 </Column>
 </Row>

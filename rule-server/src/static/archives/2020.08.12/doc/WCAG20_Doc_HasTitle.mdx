@@ -1,47 +1,58 @@
 ---
-title: "Accessibility Checker Rule Help: WCAG20_Doc_HasTitle"
+title: "Pomoc dla regułyi: WCAG20_Doc_HasTitle"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div className="toolHelp">
 <Row>
-<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+<Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Who does this affect?
-
- * Blind people using screen readers
- * People with low vision using screen magnification
- * People with dexterity impairment using voice control
-
-### Why is this important?
-
-The `<title>` element labels your page. Browsers put the title in the title bar of the page window where it is quickly accessible. It is typically the first part of the page that users see (or hear), and it allows them to differentiate your page from others. Automated tools such as search engines use the title to index and classify the page.
-
-</Column>
-<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+### Strona nie ma tytułu
 
 <div id="locLevel"></div>
 
-### Page does not have a title
-Every page should have a title that correctly identifies the subject of the page
+Każda strona powinna mieć tytuł, który poprawnie określa jej temat.
 
-[IBM 2.4.2 Page Titled](https://www.ibm.com/able/guidelines/ci162/page_titled.html) | [WCAG 2.1 technique G88](https://www.w3.org/WAI/WCAG21/Techniques/general/G88)
+</Column>
+</Row>
+<Row>
+<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+
+### Dlaczego to jest ważne
+
+Element `<title>` określa stronę. Jest to zazwyczaj pierwszy element strony, który użytkownicy widzą lub słyszą i który pozwala im odróżnić stronę od innych.  Przeglądarki umieszczają tytuł na pasku tytułu okna strony, gdzie jest on szybko dostępny. Zautomatyzowane narzędzia, takie jak wyszukiwarki, używają tytułu do indeksowania i klasyfikowania strony. Czytniki ekranu odczytują tytuł strony jako pierwszą informację o stronie.
+Opisowe tytuły stron pomagają użytkownikom znaleźć odpowiednie treści i poruszać się po nich.
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
- * Make sure the page has a `<head>` element;
- * AND, make sure the `<head>` element contains a `<title>` element;
- * AND, add text that describes the subject of the page to the `<title>` element. Make the title as unique as possible within your own site.
-
-For example:
+ * Upewnij się, że strona ma element `<head>`;
+ * ORAZ upewnij się, że element `<head>` zawiera element `<title>`;
+ * ORAZ dodaj w elemencie `<title>`tekst, który opisuje temat strony. Uczyń tytuł tak unikalnym jak to tylko możliwe w ramach własnej strony.
+ 
+Na przykład:
 
 <CodeSnippet type="multi" light={true}>&lt;html lang="en"&gt;
 &lt;head&gt;
     &lt;title&gt;IBM Accessibility&lt;/title&gt;
 &lt;/head&gt;</CodeSnippet>
+
+</Column>
+<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+
+### O tym wymaganiu
+
+[IBM 2.4.2 Tytuły stron](https://www.ibm.com/able/guidelines/ci162/page_titled.html)
+[Technika WCAG 2.1 G88](https://www.w3.org/WAI/WCAG21/Techniques/general/G88)
+
+### Na kogo to wpływa
+
+ * Osoby niewidome korzystające z czytników ekranu
+ * Osoby słabowidzące używające powiększalników ekranu
+ * Osoby o ograniczonej sprawności ruchowej korzystające ze sterowania za pomocą głosu
 
 </Column>
 </Row>

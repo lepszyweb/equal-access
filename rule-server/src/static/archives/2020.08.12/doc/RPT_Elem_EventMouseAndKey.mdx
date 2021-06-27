@@ -1,42 +1,38 @@
 ---
-title: "Accessibility Checker Rule Help: RPT_Elem_EventMouseAndKey"
+title: "Pomoc dotycząca reguł testowania dostępności: RPT_Elem_EventMouseAndKey"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div className="toolHelp">
 <Row>
-<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+<Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Who does this affect?
-
-* Blind people using screen readers
-* People with low vision
-* People with tremor or other movement disorders
-* People who rely on keyboard control
-
-### Why is this important?
-
-Scripted mouse-specific event handlers can be used to trigger actions on graphical user interface (GUI) controls. Equivalent keyboard-specific handlers allow individuals who rely on a keyboard or keyboard interface to access the same functionality.
-
-</Column>
-<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+### Sprawdź, czy treść interaktywna z obsługą zdarzeń myszy ma równoważny dostęp z klawiatury
 
 <div id="locLevel"></div>
 
-### Check that interactive content with mouse event handlers has equivalent keyboard access
-All interactive content with mouse event handlers must have equivalent keyboard access
+Cała treść interaktywna z obsługą zdarzeń myszy musi mieć równoważny dostęp z klawiatury
 
-[IBM 2.1.1 Keyboard](http://www.ibm.com/able/guidelines/ci162/keyboard.html)) | [WCAG technique SCR20](https://www.w3.org/WAI/WCAG21/Techniques/client-side-script/SCR20)
+</Column>
+</Row>
+<Row>
+<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+
+### Dlaczego to jest ważne
+
+Skrypty obsługi zdarzeń specyficzne dla myszy mogą być używane do wyzwalania działań kontrolek graficznego interfejsu użytkownika (GUI). Równoważne programy obsługi specyficzne dla klawiatury umożliwiają osobom, które polegają na klawiaturze lub interfejsie klawiatury, dostęp do tych samych funkcji.
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* Using only the keyboard, make sure you can access all the functionality provided by the mouse event handlers.
-* AND, if there is no equivalent keyboard access, follow the event handler table below to provide the corresponding keyboard event handlers:
+* Używając tylko klawiatury, upewnij się, że możesz uzyskać dostęp do wszystkich funkcji zapewnianych przez obsługę zdarzeń myszy.
+* ORAZ, jeśli nie ma równoważnego dostępu z klawiatury, postępuj zgodnie z poniższą tabelą obsługi zdarzeń, aby zapewnić odpowiednie obsługi zdarzeń klawiatury:
 
-| Use           | with          |
+
+| Użyj          | z          |
 | :------------ | :------------ |
 | onmousedown   | onkeydown     |
 | onmouseup     | onkeyup       |
@@ -44,7 +40,20 @@ All interactive content with mouse event handlers must have equivalent keyboard 
 | onmouseover   | onfocus 		|
 | onmouseout    | onblur        |
 
+</Column>
+<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
+### O tym wymaganiu
+
+[IBM 2.1.1 Klawiaura](http://www.ibm.com/able/guidelines/ci162/keyboard.html))
+[Techniki WCAG 2.1 - Technika skryptowa SCR20](https://www.w3.org/WAI/WCAG21/Techniques/client-side-script/SCR20)
+
+### Na kogo to wpływa
+
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby słabowidzące
+* Osoby z drżeniem lub innymi zaburzeniami ruchowymi
+* Osoby, które polegają na sterowaniu klawiaturą
 
 </Column>
 </Row>

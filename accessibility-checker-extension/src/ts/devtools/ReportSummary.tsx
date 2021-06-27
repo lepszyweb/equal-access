@@ -56,9 +56,9 @@ export default class ReportSummary extends React.Component<IReportSummaryProps, 
             <div className="bx--grid" style={{ margin: "2rem -1rem 0rem 0rem" }}>
                 <div className="bx--row">
                     <div className="bx--col-lg-8 bx--col-md-8 box--col-sm-4">
-                        <h2 id="summaryTitle" className="summaryTitle">Scan summary</h2>
+                        <h2 id="summaryTitle" className="summaryTitle">Podsumowanie skanowania</h2>
                         <div className="summaryTitleDetail">{time}</div>
-                        <div className="summaryTitleDetail"><span style={{ fontWeight: 600 }}>Scanned page:</span> {this.props.tabURL}</div>
+                        <div className="summaryTitleDetail"><span style={{ fontWeight: 600 }}>Zeskanowana strona:</span> {this.props.tabURL}</div>
                     </div>
                     <div className="bx--col-lg-8 bx--col-md-8 box--col-sm-4">
                     </div>
@@ -67,20 +67,20 @@ export default class ReportSummary extends React.Component<IReportSummaryProps, 
                     <div className="bx--col-lg-8 bx--col-md-8 box--col-sm-4">
                         <Tile className="tile score-tile">
                             <div>
-                                <h3 className="tile-title" >Current Status</h3>
+                                <h3 className="tile-title" >Aktualny stan</h3>
                             </div>
                             <div className="tile-score">{elementNoFailures}%</div>
-                            <div className="tile-description">Percentage of elements with no detected violations or items to review</div>
+                            <div className="tile-description">Odsetek elementów, w których nie wykryto naruszeń lub elementów do przeglądu</div>
                         </Tile>
                     </div>
                     <div className="bx--col-lg-8 bx--col-md-8 box--col-sm-4">
                         <Tile className="tile count-tile">
                             <div>
-                                <h3 className="tile-title" style={{ display: "inline" }}>Violations</h3>
-                                <span><img src={Violation16} style={{ verticalAlign: "top", float: "right" }} alt="Violation" /></span>
+                                <h3 className="tile-title" style={{ display: "inline" }}>Naruszenia</h3>
+                                <span><img src={Violation16} style={{ verticalAlign: "top", float: "right" }} alt="Naruszenie" /></span>
                             </div>
                             <div className="tile-score">{summaryNumbers[0]}</div>
-                            <div className="tile-description">Accessibility failures that need to be corrected</div>
+                            <div className="tile-description">Błędy dostępności, które należy skorygować</div>
                         </Tile>
                     </div>
                 </div>
@@ -88,21 +88,21 @@ export default class ReportSummary extends React.Component<IReportSummaryProps, 
                     <div className="bx--col-lg-8 bx--col-md-8 box--col-sm-4">
                         <Tile className="tile count-tile">
                             <div>
-                                <h3 className="tile-title" style={{ display: "inline" }}>Needs review</h3>
-                                <span><img src={NeedsReview16} style={{ verticalAlign: "top", float: "right" }} alt="Needs review" /></span>
+                                <h3 className="tile-title" style={{ display: "inline" }}>Do przeglądu</h3>
+                                <span><img src={NeedsReview16} style={{ verticalAlign: "top", float: "right" }} alt="Do przeglądu" /></span>
                             </div>
                             <div className="tile-score">{summaryNumbers[1]}</div>
-                            <div className="tile-description2">Issues that may not be a violation; manual review is needed</div>
+                            <div className="tile-description2">Kwestie, które mogą stanowić naruszenia; konieczna jest ręczna weryfikacja</div>
                         </Tile>
                     </div>
                     <div className="bx--col-lg-8 bx--col-md-8 box--col-sm-4">
                         <Tile className="tile count-tile">
                             <div>
-                                <h3 className="tile-title" style={{ display: "inline" }}>Recommendations</h3>
-                                <span><img src={Recommendation16} style={{ verticalAlign: "top", float: "right" }} alt="Recommendation" /></span>
+                                <h3 className="tile-title" style={{ display: "inline" }}>Zalecenia</h3>
+                                <span><img src={Recommendation16} style={{ verticalAlign: "top", float: "right" }} alt="Zalecenia" /></span>
                             </div>
                             <div className="tile-score">{summaryNumbers[2]}</div>
-                            <div className="tile-description2">Opportunities to apply best practices to further improve accessibility</div>
+                            <div className="tile-description2">Możliwości zastosowania najlepszych praktyk w celu dalszej poprawy dostępności</div>
                         </Tile>
                     </div>
                 </div>

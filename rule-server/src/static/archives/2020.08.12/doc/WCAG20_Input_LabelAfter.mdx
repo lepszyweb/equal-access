@@ -1,42 +1,53 @@
 ---
-title: "Accessibility Checker Rule Help: WCAG20_Input_LabelAfter"
+title: "Pomoc dla regułyi: WCAG20_Input_LabelAfter"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div className="toolHelp">
 <Row>
-<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+<Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Who does this affect?
-
- * Blind people using screen readers
- * People with low vision using screen magnification
-
-### Why is this important?
-
-Applications generally place the labels for radio button and check box elements after the element itself. Users expect this convention to be followed consistently. When labels are placed before a radio button or checkbox element, users can become disoriented.
-
-</Column>
-<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+### Tekst etykiety znajduje się przed powiązanym z nim polem wyboru lub przyciskiem radiowym (polem opcji)
 
 <div id="locLevel"></div>
 
-### Label text is located before its associated checkbox or radio button element
-Checkbox and radio button elements must have the label after the element
+Pole wyboru i przyciski radiowe muszą mieć etykietę za elementem
 
-[IBM 1.3.1 Info and Relationships](https://www.ibm.com/able/guidelines/ci162/info_and_relationships.html) | [IBM 4.1.2 Name, Role, Value](https://www.ibm.com/able/guidelines/ci162/name_role_value.html) | [WCAG 2.1 technique H44](https://www.w3.org/WAI/WCAG21/Techniques/html/H44)
+</Column>
+</Row>
+<Row>
+<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+
+### Dlaczego to jest ważne
+
+W aplikacjach zazwyczaj umieszcza się etykiety przycisków radiowych i pól wyboru bezpośrednio za elementem. Użytkownicy oczekują konsekwentnego przestrzegania tej konwencji. Gdy etykiety są umieszczane przed przyciskiem radiowym lub elementem pola wyboru, użytkownicy mogą zostać zdezorientowani.
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* Place the text of the label immediately after the checkbox or radio button element.
+* Umieść tekst etykiety bezpośrednio za polem wyboru lub przyciskiem opcji (radiowym).
 
-For example:
+Na przykład:
 
-<CodeSnippet type="multi" light={true}>&lt;input id="chk1" name="chkgroup" type="checkbox"&gt;&lt;label for="chk1"&gt;Option 1&lt;/label&gt;
-&lt;label&gt;&lt;input name="chkgroup" type="checkbox"&gt;Option 1&lt;/label&gt;</CodeSnippet>
+<CodeSnippet type="multi" light={true}>&lt;input id="chk1" name="chkgroup" type="checkbox"&gt;&lt;label for="chk1"&gt;Opcje 1&lt;/label&gt;
+&lt;label&gt;&lt;input name="chkgroup" type="checkbox"&gt;Opcje 1&lt;/label&gt;</CodeSnippet>
+
+</Column>
+<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+
+### O tym wymaganiu
+
+[1.3.1 Informacje i relacje](https://www.ibm.com/able/guidelines/ci162/info_and_relationships.html)
+[4.1.2 Nazwa, rola, wartość](https://www.ibm.com/able/guidelines/ci162/name_role_value.html)
+[Techniki WCAG 2.1 Technika H44](https://www.w3.org/WAI/WCAG21/Techniques/html/H44)
+
+### Na kogo to wpływa
+
+ * Osoby niewidome korzystające z czytników ekranu
+ * Osoby słabowidzące używające powiększalników ekranu
 
 </Column>
 </Row>

@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: RPT_Style_ColorSemantics1"
+title: "Pomoc dla reguły: RPT_Style_ColorSemantics1"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,41 +8,42 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Check color is not used as the only visual means of conveying information
+### Sprawdź, czy kolor nie jest jedynym wizualnym środkiem przekazu informacji
 
 <div id="locLevel"></div>
 
-Combine color and descriptive markup to convey information
+Połącz kolor i opisowe oznaczenia, aby przekazać informacje
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-Using descriptive markup and visual differences together with color enables users who cannot see color to understand the meaning conveyed through color differences.
+Używanie opisowych znaczników i różnic wizualnych wraz z kolorem umożliwia użytkownikom, którzy nie widzą koloru, zrozumienie znaczenia przekazywanego przez różnice kolorów.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* If color is used to indicate required fields, also use an asterisk ('*') to visually indicate required fields without color (e.g.  “required fields are red and indicated with '*' ") and indicate them programmatically with the `required` attribute;
-* OR if use of color conveys other meaning or information, check that there is another visual indicator together with programmatic or text information that conveys the same information (e.g. use “green checkmarks” and “red crosses” instead of just “red” and “green” indicators).
+* Jeśli użycie koloru przekazuje inne znaczenie lub informacje, sprawdź, czy istnieje inny wskaźnik wizualny wraz z informacjami programowymi lub tekstowymi, które przekazują te same informacje (np. Użyj „zielonych fiszek” i „czerwonych krzyżyków” zamiast tylko  „czerwonych” i „zielonych” wskaźników).
+* LUB jeśli do wskazania wymaganych pól używany jest kolor, użyj również gwiazdki („*”), aby wizualnie oznaczyć wymagane pola bez koloru (np. „Wymagane pola są czerwone i oznaczone gwiazdką - „*”) i wskaż je programowo za pomocą atrybutu `required`;
+
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 1.4.1 Use of color](https://www.ibm.com/able/requirements/requirements/#1_4_1)
+[IBM 1.4.1 Użycie koloru](http://www.ibm.com/able/guidelines/ci162/color.html)
 
-### Who does this affect?
+### Na kogo to wpływa
 
- * People who cannot see color, have limited color vision or have color blindness
- * People using text only, monochrome or braille displays
- * People who personalize their display colors for easier reading
-
+ * Osoby, które nie widzą kolorów lub mają ograniczone widzenie kolorów
+ * Osoby korzystające wyłącznie z wyświetlaczy tekstowych, monochromatycznych lub brajlowskich
+ * Osoby, które dostosowują kolory wyświetlacza, aby ułatwić czytanie
+ 
 </Column>
 </Row>
 </div>

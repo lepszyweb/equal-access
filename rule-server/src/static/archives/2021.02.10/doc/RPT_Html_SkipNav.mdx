@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: RPT_Html_SkipNav"
+title: "Pomoc dla reguły: RPT_Html_SkipNav"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,42 +8,45 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Check there is a way to bypass blocks of content that are repeated on multiple Web pages
+### Sprawdź, czy istnieje sposób na ominięcie bloków treści, które powtarzają się na wielu stronach internetowych.
 
 <div id="locLevel"></div>
 
-Provide a way to bypass blocks of content that are repeated on multiple Web pages
+W zestawach stronach internetowych musi istnieć sposób na ominięcie bloków treści powtarzających się na wielu stronach.
+
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-People with disabilities often navigate content without a mouse, using the tab key or other key commands to move around the page. When there is repeating information between related pages, it is tedious to tab through these to get to other areas of the page. When repeated content is organized into logical groups that can be easily skipped, navigation becomes much more efficient.
+Osoby z niepełnosprawnościami często poruszają się po treści bez użycia myszy, używając klawisza tabulacji lub innych poleceń klawiszowych. W przypadku powtarzających się informacji pomiędzy powiązanymi stronami, żmudne jest przechodzenie przez nie w celu przejścia do innych obszarów strony. Gdy powtarzające się treści są zorganizowane w logiczne grupy, które można łatwo pominąć, nawigacja staje się dużo bardziej efektywna.
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* Provide headings for each content section using `<h1>` ... `<h6>`;
-* AND/OR provide landmarks to identify blocks of content on the page;
-* AND/OR use links to skip blocks of repeated content by linking from the top of the page to the main content, or from the start of the repeated content to the end of the block;
-* AND/OR group blocks of repeated content using structural elements (e.g. `<map>`, `<ul>` or `<ol>`), or `<frame>` elements with a `"title"` attribute, or an expandable and collapsible menu.
+* Zapewnij nagłówki dla każdej sekcji treści używając `<h1>` ... `<h6>`;
+* ORAZ/LUB określ punkty orientacyjne identyfikujące bloki treści na stronie;
+* ORAZ/LUB używać łączy do pominięcia bloków powtarzających się treści - łącza na początku strony prowadzącego do głównej treści, lub od początku powtarzającej się treści do jej końca;
+* ORAZ/LUB zgrupuj bloki powtarzającej się treści używając elementów strukturalnych (np. `<map>`, `<ul>` lub `<ol>`), lub elementów `<frame>` z atrybutem `"title"`, lub rozwijalnego i składanego menu.
+
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 2.4.1 Bypass Blocks ](https://www.ibm.com/able/requirements/requirements/#2_4_1)
+[2.4.1 Możliwość pominięcia bloków](http://www.ibm.com/able/guidelines/ci162/bypass_blocks.html)
 
-### Who does this affect?
+### Na kogo to wpływa
 
-* Blind people using screen readers
-* People who physically cannot use a pointing device
-* People with dexterity impairment who navigate web pages with a keyboard
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby, które nie mogą korzystać z urządzeń wskazujących, np. myszy
+* Osoby z ograniczeniami sprawności manualnej, które nawigują za pomocą klawiatury
 
 </Column>
 </Row>

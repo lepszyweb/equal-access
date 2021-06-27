@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: RPT_Table_LayoutTrigger"
+title: "Pomoc dotycząca reguł testowania dostępności: RPT_Table_LayoutTrigger"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,39 +8,40 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Verify table is not being used to format text content in columns unless the table can be linearized
+### Sprawdź, czy tabela nie jest używana do formatowania zawartości tekstowej w kolumnach, chyba że tabela może być zlinearyzowana
 
 <div id="locLevel"></div>
 
-Avoid using tables to format text documents in columns unless the table can be linearized
+Unikaj używania tabel do formatowania dokumentów tekstowych w kolumnach, chyba że tabela może być zlinearyzowana
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-Some users consume a linearized version of a Web page, with each element following the previous one. In linearized form, tables are read from cell to cell horizontally across each row, moving down the rows from top to bottom. If this reading order is not appropriate for the content, users will not be able to make sense of it.
+Niektórzy użytkownicy korzystają ze zlinearyzowanej wersji strony internetowej, w której każdy następny element występuje po poprzednim elemencie w kodzie strony. W formie zlinearyzowanej, tabele są czytane od komórki do komórki poziomo w każdym wierszu, przesuwając się w dół wierszy z góry na dół. Jeśli ten porządek czytania nie jest odpowiedni dla treści, użytkownicy nie będą w stanie zrozumieć jej sensu.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
- * If a table is being used for presentation purposes, separate content from presentation by using CSS instead of a table to achieve the desired layout;
- * OR, if a table must be used, add `role="none"` and structure the table so that a left-to-right, top-to-bottom reading of the table gives a natural reading order for the content.
+ * Jeśli tabela jest używana do celów prezentacji, oddziel zawartość od prezentacji używając CSS zamiast tabeli, aby osiągnąć pożądany układ;
+ * LUB, jeśli tabela musi być użyta, dodaj `role="none"` i ustrukturyzuj tabelę tak, aby czytanie od lewej do prawej, od góry do dołu tabeli dawało naturalną kolejność czytania treści.
+
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 1.3.1 Info and Relationships](http://www.ibm.com/able/guidelines/ci162/info_and_relationships.html)
+[1.3.1 Informacje i relacje](http://www.ibm.com/able/guidelines/ci162/info_and_relationships.html)
 
-### Who does this affect?
+### Na kogo to wpływa
 
- * Blind people using screen readers or braille displays
- * People with reading disabilities
+ * Osoby niewidome korzystające z czytników ekranu or braille displays
+ * Osoby z trudnościami w uczeniu się
  * People with cognitive differences who view interfaces using an adapted layout
 
 </Column>

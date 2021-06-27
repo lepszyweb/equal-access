@@ -124,7 +124,7 @@ export class Checker {
         let retVal = null;
         if (rsIds) {
             if (!(ruleId in this.ruleLevels)) {
-                throw new Error("Rule triggered for which we have no rule level information: "+ruleId);
+                throw new Error("Wywołana reguła, dla której nie mamy informacji na poziomie reguły: "+ruleId);
             }
             for (const rsId of rsIds) {
                 if (rsId in rsInfo) {
@@ -139,7 +139,7 @@ export class Checker {
             }
         }
         if (retVal === null) {
-            throw new Error("Rule triggered for which we have no rule level information: "+ruleId);
+            throw new Error("Wywołana reguła, dla której nie mamy informacji na poziomie reguły: "+ruleId);
         }
         return retVal;
     }

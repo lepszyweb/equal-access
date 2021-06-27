@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: WCAG20_Input_InFieldSet"
+title: "Pomoc dla reguły: WCAG20_Input_InFieldSet"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,28 +8,32 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Use the `<fieldset>` element to group logically related input elements
+### Użyj elementu `<fieldset>` do grupowania logicznie powiązanych elementów wejściowych
 
 <div id="locLevel"></div>
 
-Groups of logically related input elements should be contained within a `<fieldset>` element
+Grupy logicznie powiązanych pól formularza powinny być zawarte wewnątrz elementu `<fieldset>`
+
+
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-Groups of logically related input elements must be contained within a fieldset element. All controls within a given fieldset element are then related and the relationship may then provided to the user by user agents.
+Grupy logicznie powiązanych pól formularza powinny być zawarte wewnątrz elementu `<fieldset>` Wszystkie kontrolki w danym elemencie zestawu stają się w ten sposób programowo powiązane i ta relacja ta może być przekazana użytkownikowi przez program użytkownika. Uwaga: przyciski umieszcza się poza zestawem pól (elementem `fieldset`)
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
+ 
+ * Użyj elementu `<fieldset>` do zgrupowania powiązanych elementów wejściowych.
+ 
 
- * Use a `<fieldset>` element to group the related input elements.
-
-For example:
+Na przykład:
 
 <CodeSnippet type="multi" light={true}>&lt;form action="..." method="post"&gt;
     &lt;fieldset&gt;
@@ -45,15 +49,15 @@ For example:
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 1.3.1 Info and Relationships](http://www.ibm.com/able/guidelines/ci162/info_and_relationships.html)
+[1.3.1 Informacje i relacje](http://www.ibm.com/able/guidelines/ci162/info_and_relationships.html)
 [WCAG 2.1 HTML technique H71](https://www.w3.org/WAI/WCAG21/Techniques/html/H71)
 
-### Who does this affect?
+### Na kogo to wpływa
 
- * Blind people using screen readers
- * People who rely on keyboard control
+ * Osoby niewidome korzystające z czytników ekranu
+ * Osoby, które polegają na sterowaniu za pomocą klawiatury
 
 </Column>
 </Row>

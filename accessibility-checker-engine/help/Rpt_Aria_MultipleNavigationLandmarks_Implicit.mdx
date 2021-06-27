@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: Rpt_Aria_MultipleNavigationLandmarks_Implicit"
+title: "Pomoc dla reguły: Rpt_Aria_MultipleNavigationLandmarks_Implicit"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,53 +8,53 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Multiple elements with `"nav"` role do not have unique labels
+### Istnieje wiele elementów z rolą `"navigation"` bez unikalnych etykiet
 
 <div id="locLevel"></div>
 
-Multiple elements with `"nav"` role must have unique labels
+Jeśli na stronie istnieje wiecej niż jeden element z rolą `"navigation"`, każdy musi mieć unikalną etykietę opisującą jego przeznaczenie
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-When there multiple elements with role `"nav"` on a page, they must have unique labels that clearly describe their purpose. This helps people who use assistive technologies to quickly understand and navigate to each navigation region.
+Jeśli istnieje wiele elementów z rolą `"navigation"`, muszą one mieć unikalne etykiety, które jasno opisują treść obszaru. Obejmuje to elementy `<nav>`, które mają domyślną rolę `"navigation"`. Te etykiety pomagają osobom korzystającym z technologii wspomagajacych w szybkim znajdowaniu i nawigowaniu do każdego obszaru.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* For each element with a `"nav"` role, either set the value of the `aria-labelledby` attribute to the `id` value of any visible text that appropriately and uniquely describes that navigation region;
-* OR, use the `aria-label` attribute to add an invisible, unique, non-empty label to an element with the `"nav"` role.
+* Dla każdego elementu z rolą `"navigation"` ustaw wartość atrybutu `aria-labelledby na wartość `id` dowolnego widocznego tekstu, który odpowiednio i jednoznacznie opisuje dany obszar nawigacyjny;
+* LUB, użyj atrybutu `aria-label`, aby dodać niewidoczną, unikalną, niepustą etykietę do elementu z rolą `"navigation"`.
 
+Na przykład:
 
-For example:
-
-<CodeSnippet type="multi" light={true}>&lt;h2 id="weather"&gt;Weather portlet&lt;/h2&gt;
+<CodeSnippet type="multi" light={true}>&lt;h2 id="weather"&gt;Prognoza pogody&lt;/h2&gt;
 &lt;nav aria-labelledby="weather"&gt;
 	...
 &lt;/nav&gt;
     
-&lt;nav aria-label="Stock ticker portlet"&gt;
+&lt;nav aria-label="Notowania giełdowe"&gt;
 		...
 &lt;/nav&gt;</CodeSnippet>
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 2.4.1 Bypass Blocks](https://www.ibm.com/able/requirements/requirements/#2_4_1)
-[W3C WCAG 2.1 technique ARIA6](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA6)
-[W3C WCAG 2.1 technique ARIA13](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA13)
+[IBM 2.4.1 Możliwość pominięcia bloków](http://www.ibm.com/able/guidelines/ci162/bypass_blocks.html)
+[Techniki WCAG 2.1 - Technika ARIA6](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA6)
+[Techniki WCAG 2.1 - Technika ARIA13](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA13)
 
-### Who does this affect?
+### Na kogo to wpływa
 
-* People using a screen reader, including blind, low vision and neurodivergent people
-* People with dexterity impairment using voice control
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby słabowidzące korzystające z czytników ekranu
+* Osoby o ograniczonej sprawności ruchowej korzystające ze sterowania za pomocą głosu
 
 </Column>
 </Row>

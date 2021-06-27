@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: RPT_Img_LongDescription2"
+title: "Pomoc dla reguły: RPT_Img_LongDescription2"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,46 +8,47 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Verify that the file designated by the `"longdesc"` attribute contains valid HTML content
+### Sprawdź, czy plik oznaczony przez atrybut `"longdesc"` zawiera prawidłową treść HTML
 
 <div id="locLevel"></div>
 
-The `"longdesc"` attribute must reference HTML content
+Atrybut `"longdesc"` musi odnosić się do zawartości HTML
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-Text alternatives provide important information that cannot be visually perceived by some people. When a short description is not sufficient, the `"longdesc"` attribute can link to a URL containing a longer description of the image.
+Alternatywy tekstowe dostarczają ważnych informacji, które nie mogą być odebrane wizualnie przez niektóre osoby. Gdy krótki opis nie jest wystarczający, atrybut `"longdesc"` może połączyć się z adresem URL zawierającym dłuższy opis obrazu.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
- * The `longdesc` attribute is inconsistently implemented across browsers.  Where possible, it is preferable to provide a longer image description [using the `aria-describedby` attribute](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA15);
- * OR, verify the `longdesc` attribute value is a valid URL of an HTML page with a text description of the image.
+ * Atrybut `longdesc` nie jest spójnie wdrażany we wszystkich przeglądarkach.  Tam, gdzie to możliwe, lepiej jest podać dłuższy opis obrazu [używając atrybutu `aria-describedby`] (https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA15);
+ * LUB, sprawdź, czy wartość atrybutu `longdesc` jest prawidłowym adresem URL strony HTML z tekstowym opisem obrazu. 
+ 
 
-For example:
+Na przykład:
 
-<CodeSnippet type="single" light={true}>&lt;img src="table.gif" alt="a complex table" longdesc="tabledescription.html" /&gt;</CodeSnippet>
+<CodeSnippet type="single" light={true}>&lt;img src="table.gif" alt="złożona tabela" longdesc="tabledescription.html" /&gt;</CodeSnippet>
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 1.1.1 Non-text content](http://www.ibm.com/able/guidelines/ci162/non_text_content.html)
-[WCAG 2.1 technique H45](https://www.w3.org/WAI/WCAG21/Techniques/html/H45)
+[IBM 1.1.1 Treść nietekstowa](http://www.ibm.com/able/guidelines/ci162/non_text_content.html)
+[Technika WCAG 2.1 H45](https://www.w3.org/WAI/WCAG21/Techniques/html/H45)
 
-### Who does this affect?
+### Na kogo to wpływa
 
- * Blind people using a screen reader
- * People using text only, monochrome or braille displays
- * People using text-based browsers (e.g., Lynx) or audio interfaces
- * People who turn off image-loading on their web browsers
+ * Osoby niewidome korzystające z czytników ekranu
+ * Osoby używające tylko tekstu, wyświetlaczy monochromatycznych lub brajlowskich
+ * Osoby korzystające z przeglądarek tekstowych (np. Lynx) lub interfejsów audio
+ * Osoby, które wyłączają ładowanie obrazów w swoich przeglądarkach internetowych
 
 </Column>
 </Row>

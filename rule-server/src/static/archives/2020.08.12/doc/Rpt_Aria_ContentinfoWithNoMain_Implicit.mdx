@@ -1,38 +1,35 @@
 ---
-title: "Accessibility Checker Rule Help: Rpt_Aria_ContentinfoWithNoMain_Implicit"
+title: "Pomoc dotycząca reguł testowania dostępności: Rpt_Aria_ContentinfoWithNoMain_Implicit"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div className="toolHelp">
 <Row>
-<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+<Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Who does this affect?
-
-* Blind people using screen readers
-
-### Why is this important?
-
-A element with `"contentinfo"` role is an area that identifies common information at the bottom of each page, typically called the footer of the page. It includes information such as copyrights and links to privacy and accessibility statements. A footer without any main content within a `"main"` role is not permited. The HTML `<footer>` element has an implicit role of `"contentinfo"` when it is a direct descendent of the `<body>` element.
-</Column>
-<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+### Istnieje element z rolą `"contentinfo"`, ale nie ma elementu `"main"`.
 
 <div id="locLevel"></div>
 
-### A element with `"contentinfo"` role is present without an element with a `"main"` role
-A element with `"contentinfo"` role is only permitted with an element with `"main"` role
+Element z rolą `"contentinfo"` jest dozwolony tylko, gdy istnieje element z rolą `"main"`
 
-[IBM 2.4.1 Bypass Blocks](http://www.ibm.com/able/guidelines/ci162/bypass_blocks.html) | [WAI-ARIA 1.1 Contentinfo Role](https://www.w3.org/TR/wai-aria-1.1/#contentinfo)
+</Column>
+</Row>
+<Row>
+<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+
+### Dlaczego to jest ważne
+
+Element z rolą `"contentinfo"` jest obszarem, który określa wspólne informacje na dole każdej strony, zwykle nazywany stopką strony. Zawiera informacje takie jak prawa autorskie i łącza do oświadczeń o prywatności i dostępności. Stopka bez głównej treści w ramach roli `"main"` nie jest dozwolona. Element HTML `<footer>` ma niejawną rolę `"contentinfo"`, gdy jest bezpośrednim potomkiem elementu `<body>`.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* Add a `<main>` element that has an implicit role of `"main"` to enclose the main content of the Web page.
+* Dodaj element `<main>`, który ma niejawną rolę `"main"`, aby umieścić główną treść strony internetowej.
 
-
-For example:
+Na przykład:
 
 <CodeSnippet type="multi" light={true}>&lt;body&gt;
     &lt;div role="main"&gt;
@@ -42,6 +39,18 @@ For example:
 	    ...
     &lt;/div&gt;
 &lt;/body&gt;</CodeSnippet>
+
+</Column>
+<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+
+### O tym wymaganiu
+
+[IBM 2.4.1 Możliwość pominięcia bloków](http://www.ibm.com/able/guidelines/ci162/bypass_blocks.html)
+[WAI-ARIA 1.1 Contentinfo Role](https://www.w3.org/TR/wai-aria-1.1/#contentinfo)
+
+### Na kogo to wpływa
+
+* Osoby niewidome korzystające z czytników ekranu
 
 </Column>
 </Row>

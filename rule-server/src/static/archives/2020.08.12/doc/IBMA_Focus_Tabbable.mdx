@@ -1,39 +1,49 @@
 ---
-title: "Accessibility Checker Rule Help: IBMA_Focus_Tabbable"
+title: "Pomoc dla regułyi: IBMA_Focus_Tabbable"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div className="toolHelp">
 <Row>
-<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+<Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Who does this affect?
-
-* Blind people using screen readers
-* People who physically cannot use a pointing device
-* People with tremor or other movement disorders
-
-### Why is this important?
-
-Unlike native HTML form elements, browsers do not provide keyboard support for graphical user interface (GUI) components that are made accessible with ARIA - authors must incorporate the code for keyboard access.
-
-</Column>
-<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+### Komponent nie ma elementu przyjmującego fokus klawiatury
 
 <div id="locLevel"></div>
 
-### The component does not have a tabbable element
-The component must have at least one tabbable element
+Komponent musi posiadać co najmniej jeden przyjmujący fokus klawiatury
 
-[IBM 1.1.1 Non-text content]() | [WCAG technique H37]()
+</Column>
+</Row>
+<Row>
+<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+
+### Dlaczego to jest ważne?
+
+W przeciwieństwie do rdzennych elementów formularzy HTML, przeglądarki nie zapewniają obsługi klawiatury dla komponentów graficznego interfejsu użytkownika (GUI), które są udostępniane za pomocą ARIA - autorzy muszą zapewnić kod obsługi klawiatury.
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-Use the HTML tabindex attribute to include the component in the tab sequence.  (Refer to the [WAI-ARIA Authoring practices](https://www.w3.org/TR/wai-aria-practices-1.1/#keyboard) for more information on how to manage keyboard focus.)
+Użyj atrybutu HTML tabindex, aby włączyć komponent do porządku tabulacji. (Zobacz WAI-ARIA Authoring practices](https://www.w3.org/TR/wai-aria-practices-1.1/#keyboard), aby uzyskać więcej informacji na temat sposobu zarządzania fokusem klawiatury).
 
+
+</Column>
+<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+
+### O tym wymaganiu
+
+[IBM 1.1.1 Non-text content]()
+[Technika WCAG H37]()
+
+### Kogo to dotyczy?
+
+ * Osoby niewidome korzystające z czytników ekranu
+ * Osoby, które nie mogą używać urządzenia wskazującego
+ * Osoby z drżeniem rąk lub innymi zaburzeniami ruchu
 
 </Column>
 </Row>

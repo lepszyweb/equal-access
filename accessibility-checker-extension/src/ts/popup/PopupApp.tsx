@@ -43,9 +43,9 @@ export default class PopupApp extends React.Component {
             <div className="popupTitle">
               IBM <strong>Equal Access</strong>
               <br />
-              Accessibility Checker
+              Tester dostępności
             </div>
-            <div className="versionDec">Version {manifest.version}</div>
+            <div className="versionDec">Wersja {manifest.version}</div>
           </div>
           <div
             style={{
@@ -58,39 +58,38 @@ export default class PopupApp extends React.Component {
               src={purple_bee}
               width="36px"
               height="36px"
-              alt="purple bee icon"
+              alt="fioletowa ikona pszczoły"
             />
           </div>
         </div>
 
-        <h2 className="popupSubTitle">Accessibility Assessment</h2>
+        <h2 className="popupSubTitle">Ocenianie dostępności</h2>
 
         <div className="popupPanelDesc" style={{ width: "406px" }}>
-          A comprehensive accessibility assessment tool. Start using by
-          navigating to the “Accessibility Assessment” panel in Dev Tools.
+          Kompleksowe narzędzie oceny dostępności. Rozpocznij korzystanie z niego poprzez przejście do panelu
+		  &rdquo;Ocena dostępności&bdquo; w Narzędziach programisty.
         </div>
         <div style={{ marginTop: "8px" }}>
           <img
             src={assessment_screen_copy}
             width="446px"
             height="149px"
-            alt="Chrome Accessibility Assessment panel icon"
+            alt="Ikona panelu oceny dostępności Chrome"
           />
         </div>
         <h2 className="popupSubTitle" style={{ marginTop: "17px" }}>
-          Accessibility Checker
+          Ocena dostępności
         </h2>
         <div className="popupPanelDesc" style={{ width: "406px" }}>
-          A code scanner for developers looking to find and fix errors quickly.
-          Start using by navigating to the “Accessibility Checker” panel in Dev
-          Tools.
+          Skaner kodu dla programistów chcących szybko znaleźć i naprawić błędy. 
+		  Zacznij używać, przechodząc do panelu &rdquo;Ocena dostępności&bdquo; w Narzędziach programisty.
         </div>
         <div style={{ marginTop: "8px" }}>
           <img
             src={checker_screen_copy}
             width="446px"
             height="149px"
-            alt="Chrome Accessibility Assessment panel icon"
+            alt="Ikona panelu oceny dostępności Chrome"
           />
         </div>
         <div style={{ marginTop: "8px", display: "flex", fontSize: "14px" }}>
@@ -100,7 +99,7 @@ export default class PopupApp extends React.Component {
               target="_blank"
               rel="noopener noreferred"
             >
-              Options
+              Opcje
             </a>
           </div>
 
@@ -110,7 +109,7 @@ export default class PopupApp extends React.Component {
               target="_blank"
               rel="noopener noreferred"
             >
-              Git Repo
+              Repozytorium Github
             </a>
           </div>
           <div style={{ marginLeft: "2rem" }}>
@@ -119,7 +118,7 @@ export default class PopupApp extends React.Component {
               target="_blank"
               rel="noopener noreferred"
             >
-              Docs
+              Dokumentacja
             </a>
           </div>
         </div>

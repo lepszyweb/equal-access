@@ -1,41 +1,49 @@
 ---
-title: "Accessibility Checker Rule Help: WCAG20_Img_PresentationImgHasNonNullAlt"
+title: "Pomoc dla regułyi: WCAG20_Img_PresentationImgHasNonNullAlt"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div className="toolHelp">
 <Row>
-<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+<Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Who does this affect?
-
-* Blind people using screen readers
-
-
-### Why is this important?
-
-Roles of `presentation` and `none` on an image indicate the element is decorative and should be ignored by assistive technologies. Providing a non-null text alternative conflicts with that decorative designation.
-
-</Column>
-<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+### Obraz oznaczony jako dekoracyjny ma wypełniony tekst alternatywny
 
 <div id="locLevel"></div>
 
-### Image designated as decorative has non-null text alternative
-Image designated as decorative must have a null text alternative
+Obraz oznaczony jako dekoracyjny musi mieć pusty tekst alternatywny (atrybut `alt`)
 
-[IBM 1.1.1 Non-text content](http://www.ibm.com/able/guidelines/ci162/non_text_content.html)
+</Column>
+</Row>
+<Row>
+<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+
+### Dlaczego to jest ważne
+
+Role `presentation` i none` w elemencie obrazu wskazują, że element jest dekoracyjny i powinny być ignorowane przez technologie wspomagające. Dostarczanie niezerowego tekstu alternatywnego koliduje z tym oznaczeniem dekoracyjnym.
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-Set the `alt` attribute to an empty (or null) string (i.e., `<img alt="">`) for images with `role="presentation"` or `role="none"`.
+Zostaw atrybut `alt` pusty (bez żadnych znaków wewnątrz, tj. `<img alt="">`) dla obrazów z `role="presentation"` lub `role="none"`.
 
-Example:
+Przykład:
 
 <CodeSnippet type="single" light={true}>&lt;img src="demomovie.gif" role="presentation" alt="" /&gt;</CodeSnippet>
+
+</Column>
+<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+
+### O tym wymaganiu
+
+[IBM 1.1.1 Treść nietekstowa](http://www.ibm.com/able/guidelines/ci162/non_text_content.html)
+
+### Na kogo to wpływa
+
+* Osoby niewidome korzystające z czytników ekranu
 
 </Column>
 </Row>

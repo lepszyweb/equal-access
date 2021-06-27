@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: WCAG20_Input_ExplicitLabelImage"
+title: "Pomoc dla reguły: WCAG20_Input_ExplicitLabelImage"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,11 +8,11 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### The `<input>` element of type `"image"` has no text alternative
+### Element `<input>` typu `"image"` nie ma tekstu alternatywnego
 
 <div id="locLevel"></div>
 
- The `<input>` element of type `"image"` should have a text alternative
+Element `<input>` typu `"image"` powinien mieć tekst alternatywny.
 
 </Column>
 </Row>
@@ -23,22 +23,24 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* Use the `alt` attribute on the `<input>` element to provide a short text that describes the input element’s function.(e.g. `<input type="image" alt="submit">`)
+* Użyj atrybutu `alt` w elemencie `<input>`, aby podać krótki tekst opisujący funkcję elementu wejściowego (np. `<input type="image" alt="wyślij">`).
+
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 1.1.1 Non-text Content](https://www.ibm.com/able/requirements/requirements/#1_1_1)
-[WCAG 2.1 HTML technique H36](https://www.w3.org/WAI/WCAG21/Techniques/html/H36)
+[1.1.1 Treść nietekstowa](http://www.ibm.com/able/guidelines/ci162/non_text_content.html)
+[Techniki WCAG 2.1 - Technika H36](https://www.w3.org/WAI/WCAG21/Techniques/html/H36)
 
-### Who does this affect?
+### Na kogo to wpływa
 
-* People using a screen reader, including blind, low vision and neurodivergent people
-* People using text-based browsers (e.g., Lynx) or audio interfaces
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby słabowidzące korzystające z czytników ekranu
+* Osoby korzystające z przeglądarek tekstowych (np. Lynx) lub interfejsów audio
 
 </Column>
 </Row>

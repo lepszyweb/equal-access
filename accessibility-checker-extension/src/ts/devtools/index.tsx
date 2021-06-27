@@ -17,14 +17,14 @@ import Config from "../background/helper/config";
   *****************************************************************************/
 let localStr = (Config.engineEndpoint && Config.engineEndpoint.includes("localhost") && " (local)") || "";
 
-chrome.devtools.panels.elements.createSidebarPane("Accessibility Checker"+localStr,
+chrome.devtools.panels.elements.createSidebarPane("Tester dostępności"+localStr,
     function(sidebar) {
         //sidebar initialization code here
         sidebar.setPage("devtoolsSubpanel.html");
     }
 );
 
-chrome.devtools.panels.create("Accessibility Assessment"+localStr, "", "devtoolsPanel.html", 
+chrome.devtools.panels.create("Ocena dostępności"+localStr, "", "devtoolsPanel.html", 
     function(_sidebar) {
     }
 );

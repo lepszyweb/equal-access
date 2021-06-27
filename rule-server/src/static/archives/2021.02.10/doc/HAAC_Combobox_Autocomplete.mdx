@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: HAAC_Combobox_Autocomplete"
+title: "Pomoc dla reguły: HAAC_Combobox_Autocomplete"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,31 +8,31 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### The combobox has the `aria-autocomplete` attribute set on an element that isn't a text input
+### Komponent combobox ma atrybut `aria-autocomplete` ustawiony na elemencie, który nie jest polem tekstowym
 
 <div id="locLevel"></div>
+Komponent combobox, które obsługuje autouzupełnianie, może mieć przypisany atrybut „aria-autocomplete” tylko do elementu przyjmującego tekstu.
 
-A combobox that supports autocompletion behavior must have the `aria-autocomplete` attribute only on its text input element
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-A combobox is a UI interactive component that combines an input and another element, such as a listbox or grid, that can dynamically pop up to help the user set the value of the input. Only the text entry element can have the `aria-autocomplete` attribute, otherwise assistive technologies may be unable to understand and present the component's autocomplete functionality effectively.
+Combobox jest interaktywnym komponentem interfejsu użytkownika, który łączy w sobie cechy kontrolek textbox z innym elementem, takim jak listbox lub grid, który może dynamicznie wyskakiwać, aby pomóc użytkownikowi ustawić wprowadzaną wartość. Tylko element przeznaczony na wprowadzenie danych tekstowych może mieć atrybut `aria-autocomplete`.  W przeciwnym razie technologie wspomagające mogą nie być w stanie skutecznie zrozumieć i przedstawić funkcji autouzupełniania komponentu.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* Remove the `aria-autocomplete` attribute from combobox elements that are not text input elements;
-* AND, if autocomplete behavior is desired, verify that the text input element of the combobox has the `aria-autocomplete` attribute.
+* Usuń atrybut `aria-autocomplete` z elementów combobox, które nie są elementem przeznaczonym na wprowadzenie tekstu;
+* ORAZ, jeśli autouzupełnianie jest pożądane, sprawdź, czy element przeznaczony na wprowadzenie tekstu w polu kombi ma atrybut`aria-autocomplete`.
 
-For example: 
+Na przykład: 
 
-<CodeSnippet type="multi" light={true}> &lt;label for="tag_combo"&gt;Tag&lt;/label&gt;
+<CodeSnippet type="multi" light={true}> &lt;label for="tag_combo"&gt;Znacznik&lt;/label&gt;
   &lt;input type="text" id="tag_combo"
       role="combobox" aria-autocomplete="list"
       aria-haspopup="listbox" aria-expanded="true"
@@ -42,20 +42,20 @@ For example:
    &lt;li role="option" id="selected_option"&gt;Zoom&lt;/li&gt;
 &lt;/ul&gt;</CodeSnippet>
 
-Note, example code includes material copied from or derived from [W3C, ARIA 1.1 Authoring practices](https://www.w3.org/TR/wai-aria-practices-1.1/examples/combobox/aria1.1pattern/listbox-combo.html). Copyright © [2013-2017] W3C® (MIT, ERCIM, Keio, Beihang).
+Uwaga, przykładowy kod obejmuje materiał skopiowany z lub uzyskany z [W3C, ARIA 1.1 Authoring practices](https://www.w3.org/TR/wai-aria-practices-1.1/examples/combobox/aria1.1pattern/listbox-combo.html). Copyright © [2013-2017] W3C® (MIT, ERCIM, Keio, Beihang).
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 4.1.2 Name, Role, Value](https://www.ibm.com/able/requirements/requirements/#4_1_2)
+[4.1.2 Nazwa, rola, wartość](http://www.ibm.com/able/guidelines/ci162/name_role_value.html)
 [WAI-ARIA v1.2 Authoring Practices - Combobox](https://www.w3.org/TR/wai-aria-practices-1.2/#combobox)
 
-### Who does this affect?
+### Na kogo to wpływa
 
-* Blind people using screen readers
-* People with low vision using screen readers
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby słabowidzące korzystające z czytników ekranu
 
 </Column>
 </Row>

@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: Rpt_Aria_RequiredProperties"
+title: "Pomoc dotycząca reguł testowania dostępności: Rpt_Aria_RequiredProperties"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,28 +8,30 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### An element with WAI-ARIA role `"{0}"` does not have the required WAI-ARIA attribute(s): `{1}`
+### Element z rolą WAI-ARIA  `"{0}"` nie ma wymaganego atrybutu WAI-ARIA: `{1}`
 
 <div id="locLevel"></div>
 
-When using a WAI-ARIA role on an element, the required attributes for that role must be defined
+W przypadku użycia dla elementu atrybutu roli WAI-ARIA, muszą być zdefiniowane atrybuty wymagane dla tej roli
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-When elements are assigned a WAI-ARIA `role`, there are required attributes for that role. These attributes represent states and properties of the element. If these are not defined, assistive technologies may not be able to describe the element or its status to users.
+Kiedy elementom przypisany jest atrybut `role`, istnieją wymagane atrybuty dla tej roli. Atrybuty te reprezentują stany i właściwości elementu. Jeśli nie są one zdefiniowane, technologie wspomagające mogą nie być w stanie opisać elementu lub jego stanu użytkownikom.
+
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* Define the missing state or property attributes for the element according to its role.
+* Zdefiniuj brakujące atrybuty stanu lub właściwości dla elementu zgodnie z jego rolą.
 
-The following example shows all the required properties defined for the `scrollbar` role:
+Poniższy przykład pokazuje wszystkie wymagane właściwości zdefiniowane dla roli `scrollbar`:
 
 <CodeSnippet type="multi" light={true}> &lt;div id="content1"&gt;Lorem ipsum ...&lt;/div&gt;
    &lt;div
@@ -45,15 +47,15 @@ The following example shows all the required properties defined for the `scrollb
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 4.1.2 Name, Role, Value](https://www.ibm.com/able/requirements/requirements/#4_1_2)
-[WC3 WAI-ARIA 1.2 required states](https://www.w3.org/TR/wai-aria-1.2/#requiredState)
+[4.1.2 Nazwa, rola, wartość](http://www.ibm.com/able/guidelines/ci162/name_role_value.html)
+[WC3 WAI-ARIA 1.1 required states](https://www.w3.org/TR/wai-aria-1.2/#requiredState)
 
-### Who does this affect?
+### Na kogo to wpływa
 
-* People using a screen reader, including blind, low vision and neurodivergent people
-* People with dexterity impairment using voice control
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby o ograniczonej sprawności ruchowej korzystające ze sterowania za pomocą głosu
 
 </Column>
 </Row>

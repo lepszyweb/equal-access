@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: WCAG20_Embed_HasNoEmbed"
+title: "Pomoc dotycząca reguł testowania dostępności: WCAG20_Embed_HasNoEmbed"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,49 +8,50 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Verify that the `<embed>` element is immediately followed by a non-embedded element
+### Zweryfikuj, czy po elemencie `<embed>` występuje bezpośrednio element `<noembed>`
 
 <div id="locLevel"></div>
 
-`<embed>` elements should be immediately followed by a non-embedded element
+Bezpośrednio po elementach `<embed>` powinien następować element `<noembed>`
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-The `<noembed>` element is used to provide information for screen readers to display when the browser cannot display an embedded object. The content of the `<noembed>` element is rendered only if the content of the `<embed>` element is not supported. It must be positioned so as to be clear to assistive technologies that a text alternative is associated with the `<embed>` element it describes.
+Element `<noembed>` służy do zapewnienia informacji czytnikom ekranu, które mają być wyświetlane, gdy przeglądarka nie może wyświetlić osadzonego obiektu. Zawartość elementu `<noembed>` jest renderowana tylko wtedy, gdy zawartość elementu `<embed>` nie jest obsługiwana. Musi być umieszczone w taki sposób, aby było jasne dla technologii wspomagających, że alternatywa tekstowa jest powiązana z elementem `<embed> ', który opisuje.
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
+ 
+ * Element `<noembed>` jest przestarzały i należy go unikać. Użyj elementu `<object>` zamiast elementu `<embed>` i użyj treści elementu, aby zapewnić zawartość zastępczą, gdy obiekt nie zostanie załadowany.
 
- * The `<noembed>` element is deprecated and should be avoided. Use the `<object>` element instead of `<embed>` and use the body of the element to provide fallback content when the object does not load.
+  Na przykład:
 
-  For example:
-
-<CodeSnippet type="multi" light={true}> &lt;object src="../movies/history_of_rome.mov" height="60" width="144" autostart="false"&gt;
-         &lt;a href="../transcripts/transcript_history_rome.htm"&gt;Transcript of "The history of Rome"&lt;/a&gt;
+<CodeSnippet type="multi" light={true}> &lt;object src="../movies/historia-rzymu.mov" height="60" width="144" autostart="false"&gt;
+         &lt;a href="../transcripts/transcript_history_rome.htm"&gt;Transkrypcja "Historii Rzymu"&lt;/a&gt;
  &lt;/object&gt;
  </CodeSnippet>
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 1.1.1 Non-text content](https://www.ibm.com/able/requirements/requirements/#1_1_1)
-[WCAG 2.1 technique H53](https://www.w3.org/WAI/WCAG21/Techniques/html/H53)
-[WCAG 2.1 technique H46](https://www.w3.org/WAI/WCAG21/Techniques/html/H46.html)
+[IBM 1.1.1 Treść nietekstowa](http://www.ibm.com/able/guidelines/ci162/non_text_content.html)
+[Technika WCAG 2.1 H53](https://www.w3.org/WAI/WCAG21/Techniques/html/H53)
+[Technika WCAG 2.1 H46](https://www.w3.org/WAI/WCAG21/Techniques/html/H46.html)
 
-### Who does this affect?
+### Na kogo to wpływa
 
- * People using a screen reader, including blind, low vision and neurodivergent people
- * People using text only, monochrome or braille displays
- * People using text-based browsers (e.g., Lynx) or audio interfaces
- * People who turn off image-loading on their web browsers
+ * Osoby niewidome korzystające z czytników ekranu
+ * Osoby korzystające wyłącznie z wyświetlaczy tekstowych, monochromatycznych lub brajlowskich
+ * Osoby korzystające z przeglądarek tekstowych (np. Lynx) lub interfejsów audio
+ * Osoby, które wyłączają ładowanie obrazów w swoich przeglądarkach internetowych
 
 </Column>
 </Row>

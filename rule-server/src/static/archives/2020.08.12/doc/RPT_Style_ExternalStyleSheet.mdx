@@ -1,45 +1,53 @@
 ---
-title: "Accessibility Checker Rule Help: RPT_Style_ExternalStyleSheet"
+title: "Pomoc dotycząca reguł testowania dostępności: RPT_Style_ExternalStyleSheet"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div className="toolHelp">
 <Row>
-<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+<Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Who does this affect?
+### Wykryte zewnętrzne arkusze stylów zapewniają, że CSS nie dodaje obrazów, które przekazują ważne informacje w treści.
+
+<div id="locLevel"></div>
+
+Sprawdź zewnętrzne arkusze stylów, aby upewnić się, że CSS nie jest używany do dodawania obrazów, które przekazują ważne informacje w treści.
+
+</Column>
+</Row>
+<Row>
+<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+
+### Dlaczego to jest ważne
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 
-### Why is this important?
+<div id="locSnippet"></div>
+
+### Co zrobić
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 
 </Column>
-<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-<div id="locLevel"></div>
+### O tym wymaganiu
 
-### Image does not have a short text alternative
-Images that convey meaning must have a short text alternative.
+[IBM 1.1.1 Treść nietekstowa]()
+[WCAG technique H37]()
 
-[IBM 1.1.1 Non-text content]() | [WCAG technique H37]()
-
-<div id="locSnippet"></div>
-
-### What to do
+### Na kogo to wpływa
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-
 
 </Column>
 </Row>

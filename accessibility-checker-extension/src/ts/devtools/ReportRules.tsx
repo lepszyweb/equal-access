@@ -91,20 +91,20 @@ export default class ReportRules extends React.Component<IReportRulesProps, IRep
 
         let idx=0;
         let scrollFirst = true;
-        return <div className="bx--grid report" role="table" style={{paddingLeft:"1rem", paddingRight:"0"}} aria-label="Issues grouped by rule">
+        return <div className="bx--grid report" role="table" style={{paddingLeft:"1rem", paddingRight:"0"}} aria-label="Problemy pogrupowane według reguł testowych">
             <div role="rowgroup">
                 <div className="bx--row reportHeader" role="row">
                     <div className="bx--col-md-2 bx--col-sm-2" role="columnheader">
-                        Issues                    
+                        Problemy                    
                     </div>
                     <div className="bx--col-md-4 bx--col-sm-2" role="columnheader">
-                        Rules
+                        Reguły testowe
                     </div>
                 </div>
             </div>
             <div role="rowgroup">
                 {this.props.focusedViewFilter === true && this.props.report.counts.filtered.All === 0 ?
-                <div><br/>No accessibility issues for this HTML element or its children</div> : 
+                <div><br/>W tym elemencie i jego dzieciach nie ma problemów z dostępnością</div> : 
                     groups.map(group => {
                         let thisIdx = idx;
                         idx += group.items.length+1; 

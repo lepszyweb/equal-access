@@ -52,10 +52,10 @@ export class AttrInfo {
         if (!inclusive 
                 && ((typeof eq) !== "undefined" && eq.length > 0))
         {
-            throw new Error("Cannot have !attr"+eq+" context");    
+            throw new Error("Nie może mieć kontekstu(???) !attr"+eq+" ");    
         }
         if (inclusive && (typeof eq) !== "undefined" && eq.length > 0 && ((typeof value) === "undefined" || value.length === 0)) {
-            throw new Error("Cannot have equivalence check without a value");    
+            throw new Error("Nie można sprawdzać równoważności bez wartości");    
         }
     }
 
@@ -81,7 +81,7 @@ export class AttrInfo {
             } else if (ruleAttrPart.eq === "!~") {
                 return ruleAttrPart.value !== attrValue;
             } else {
-                throw new Error("Context equivalence operator not supported")
+                throw new Error("Nieobsługiwany operator równoważności kontekstowej")
             }
         }
     }
@@ -95,7 +95,7 @@ export class PartInfo {
         public attrs: AttrInfo[], 
         public connector: string) {
             if (role === "*" && !inclusive) {
-                throw new Error("!* context not supported");
+                throw new Error("!* kontekst nie jest obsługiwany");
             }
         }
 

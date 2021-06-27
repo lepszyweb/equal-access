@@ -20,8 +20,6 @@ interface IReportManagerTableState {
     pageTitle: string,
     date: string,
     userScanLabel: string,
-    deleteModal: boolean,
-    deleteModalSelectedRows: any
 }
 
 interface IReportManagerTableProps {
@@ -68,8 +66,6 @@ export default class ReportManagerTable extends React.Component<IReportManagerTa
         pageTitle: "",
         date: "",
         userScanLabel: "",
-        deleteModal: false,
-        deleteModalSelectedRows: null
     };
 
     format_date(timestamp: string) {
@@ -143,12 +139,6 @@ export default class ReportManagerTable extends React.Component<IReportManagerTa
         });
     }
 
-    deleteModalHandler() {
-        this.setState({ 
-            deleteModal: true, 
-        });
-    }
-
     render() {
 
         const headers = [
@@ -157,19 +147,19 @@ export default class ReportManagerTable extends React.Component<IReportManagerTa
                 key:    'url',
             },
             {
-                header: 'Page title', 
+                header: 'Tytuł strony', 
                 key:    'title',
             },
             {
-                header: 'Date and Time', 
+                header: 'Data i czas', 
                 key:    'date',
             },
             {
-                header: 'Scan label', 
+                header: 'Etykieta skanu', 
                 key:    'label',
             },
             {
-                header: 'Details', 
+                header: 'Szczegóły', 
                 key:    'details',
             },
         ];
@@ -197,7 +187,7 @@ export default class ReportManagerTable extends React.Component<IReportManagerTa
                 
                 <Row style={{marginTop:"64px",paddingLeft:"16px",height:"100%"}}>
                     <div className="bx--col-lg-3 bx--col-sm-4 stored-scans" style={{marginBottom:"14px"}}>
-                        Stored Scans
+                        Przechowywane skany
                     </div>
                     <div className="bx--col-lg-8 bx--col-sm-6" style={{paddingLeft:0, maxWidth:"100%"}}>
                     <div style={{overflowX:"auto", paddingBottom:"16px"}}>
@@ -214,7 +204,7 @@ export default class ReportManagerTable extends React.Component<IReportManagerTa
                                 {/* Since I could not figure out how to call selectAll 
                                 outside of the DataTable context I made a dummy button to do it */}
                                 <Button ref={this.myRef} id="secretSelectAll"  style={{display:"none"}} onClick={this.handleSelectAll(selectAll)}>
-                                    Select All
+                                    Zaznacz wszystkie
                                 </Button>
                             <TableContainer
                             {...getTableContainerProps()}>
@@ -225,22 +215,14 @@ export default class ReportManagerTable extends React.Component<IReportManagerTa
                                         renderIcon={Download16}
                                         onClick={() => this.downloadScanReports(selectedRows)}
                                     >
-                                        Download
+                                        Pobierz
                                     </TableBatchAction>
                                     <TableBatchAction
                                         tabIndex={getBatchActionProps().shouldShowBatchActions ? 0 : -1}
                                         renderIcon={Delete16}
-                                        //onClick={() => this.deleteSelected(selectedRows)}
-                                        onClick={(() => {
-                                            this.setState({ deleteModalSelectedRows: selectedRows });
-                                            this.deleteModalHandler();
-                                            // console.log(selectedRows);
-                                            // console.log(typeof selectedRows);
-                                            // this.deleteSelected(selectedRows);
-                                            // this.props.clearStoredScans(true);
-                                        }).bind(this)}
+                                        onClick={() => this.deleteSelected(selectedRows)}
                                     >
-                                        Delete
+                                        Usuń
                                     </TableBatchAction>
                                 </TableBatchActions>
                                 <TableToolbarContent>
@@ -281,8 +263,8 @@ export default class ReportManagerTable extends React.Component<IReportManagerTa
                             </Table>
                             </TableContainer>
                             <Modal
-                                aria-label="Scan details"
-                                modalHeading="Details"
+                                aria-label="Szczegóły skanu"
+                                modalHeading="Szczegóły"
                                 passiveModal={true}
                                 open={this.state.modalScreenShot}
                                 onRequestClose={(() => {
@@ -292,42 +274,17 @@ export default class ReportManagerTable extends React.Component<IReportManagerTa
                             >
                                 <div className="bx--row">
                                     <div className="bx--col-lg-8 bx--col-md-4 bx--col-sm-2">
-                                        <img src={this.state.screenShot} alt="Screenshot of page scanned" width="100%"/>  
+                                        <img src={this.state.screenShot} alt="Zrzut ekranu zeskanowanej strony" width="100%"/>  
                                     </div>
                                     <div className="bx--col-lg-8 bx--col-md-4 bx--col-sm-2">
-                                        <div><strong>Scan label: </strong>
+                                        <div><strong>Etykieta skanu: </strong>
                                             <input style={{width:"6rem"}} type="text" placeholder={this.state.userScanLabel} onBlur={(e) => {this.props.storeScanLabel(e,this.state.screenShotRow) }}/>
                                         </div>
                                         <div><strong>URL: </strong>{this.state.url}</div>
-                                        <div><strong>Page title: </strong>{this.state.pageTitle}</div>
+                                        <div><strong>Tytuł strony: </strong>{this.state.pageTitle}</div>
                                         <div>{this.state.date}</div>
                                     </div>
                                 </div>
-                            </Modal>
-                            <Modal 
-                                aria-label="Delete stored scans"
-                                modalHeading="Delete stored scans"
-                                size='sm'
-                                danger={true}
-                                open={this.state.deleteModal}
-                                shouldSubmitOnEnter={false}
-                                onRequestClose={(() => {
-                                    this.setState({ deleteModal: false });
-                                }).bind(this)}
-                                onRequestSubmit={(() => {
-                                    this.setState({ deleteModal: false });
-                                    this.deleteSelected(this.state.deleteModalSelectedRows);
-                                }).bind(this)}
-                                selectorPrimaryFocus=".bx--modal-footer .bx--btn--secondary"
-                                primaryButtonText="Delete"
-                                secondaryButtonText="Cancel"
-                                primaryButtonDisabled={false}
-                                preventCloseOnClickOutside={true}
-                            >
-                                <p style={{ marginBottom: '1rem' }}>
-                                    Are you sure you want to delete selected scans?
-                                    This action is irreversible.
-                                </p>
                             </Modal>
                             </React.Fragment>
                         )}

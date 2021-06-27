@@ -1,24 +1,24 @@
 [![IBM Equal Access Toolkit is released under the Apache-2.0 license](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](./LICENSE)
 
 # accessibility-checker
-An automated accessibility testing for Node-based test environments from [IBM Equal Access Toolkit](https://ibm.com/able/toolkit).
+Automatyczne sprawdzanie dostępności dla środowisk testowych opartych na Node z [IBM Equal Access Toolkit](https://ibm.com/able/toolkit).
 
-To get started, please review [NPM](https://www.npmjs.com/package/accessibility-checker).
+Aby rozpocząć, zapoznaj się z [NPM](https://www.npmjs.com/package/accessibility-checker).
 
-## Running Locally
+## Lokalnie
 
-### Install
+### Instalacja
 
 ```bash
 $ npm install
 ```
 
-### Build & Package
+### Kompiluj i pakuj
 
 ```bash
 $ npm install
 $ npm run build
-$ npm run package:zip  or  npm run package:npm
+$ npm run package:zip  lub  npm run package:npm
 ```
 
 ### Test
@@ -27,6 +27,6 @@ $ npm run package:zip  or  npm run package:npm
 $ npm test
 ```
 
-### Reporting bugs 
+### Zgłaszanie błędów
 
-If you think you've found a bug, have questions or suggestions, please report the bug in [GitHub Issues](https://github.com/IBMa/equal-access/issues).
+Jeśli uważasz, że znalazłeś błąd, masz pytania lub sugestie, zgłoś błąd na [GitHub Issues](https://github.com/IBMa/equal-access/issues).

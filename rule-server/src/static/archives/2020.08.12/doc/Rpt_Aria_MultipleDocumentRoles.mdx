@@ -1,40 +1,49 @@
 ---
-title: "Accessibility Checker Rule Help: Rpt_Aria_MultipleDocumentRoles_Implicit"
+title: "Pomoc dotycząca reguł testowania dostępności: Rpt_Aria_MultipleDocumentRoles_Implicit"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div className="toolHelp">
 <Row>
-<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+<Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Who does this affect?
-
-* Blind people using screen readers
-* People with low vision using a screen reader
-
-### Why is this important?
-
-When there are multiple elements with a `"document"` role they must have unique labels. This helps people using assistive technologies to quickly identify and navigate to each document.
-
-</Column>
-<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+### Wiele elementów z rolą `"document"` nie ma unikalnych etykiet
 
 <div id="locLevel"></div>
 
-### Multiple elements with a `"document"` role do not have unique labels
-All elements with a `"document"` role must have unique labels
+Wszystkie elementy z rolą `"document"` muszą mieć unikalne etykiety
 
-[IBM 2.4.1 Bypass Blocks](http://www.ibm.com/able/guidelines/ci162/bypass_blocks.html) | [WCAG 2.1 technique ARIA6](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA6.html) | [WCAG 2.1 technique ARIA13](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA13)
+</Column>
+</Row>
+<Row>
+<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+
+### Dlaczego to jest ważne
+
+Gdy istnieje wiele elementów z rolą `"document"`, muszą one mieć unikalne etykiety. Pomaga to osobom korzystającym z technologii wspomagających w szybkiej identyfikacji i nawigacji do każdego dokumentu.
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* For each element with a `"document"` role, either set the value of the `aria-labelledby` attribute of each document to the `id` value of any visible text that appropriately and uniquely describes that document's purpose;
-* OR, use the `aria-label` attribute to add an invisible, unique, non-empty label to each element with the `"document"` role.
+* Dla każdego elementu z rolą `"document"` ustaw wartość atrybutu `aria-labelledby` na wartość `id` dowolnego widocznego tekstu, który odpowiednio i jednoznacznie opisuje cel tego dokumentu;
+* LUB, użyj atrybutu `aria-label` aby dodać niewidoczną, unikalną, niepustą etykietę do każdego elementu z rolą `"document"`.
 
+</Column>
+<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
+### O tym wymaganiu
+
+[IBM 2.4.1 Możliwość pominięcia bloków](http://www.ibm.com/able/guidelines/ci162/bypass_blocks.html)
+[Technika WCAG 2.1 ARIA6](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA6.html)
+[Technika WCAG 2.1 ARIA13](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA13)
+
+### Na kogo to wpływa
+
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby słabowidzące korzystające z czytników ekranu
 
 </Column>
 </Row>

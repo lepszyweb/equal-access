@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: combobox_haspopup"
+title: "Pomoc dotycząca reguł testowania dostępności: combobox_haspopup"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,55 +8,52 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### The value of the combobox `aria-haspopup` attribute is invalid or does not have a valid reference to the related popup
+### Wartość atrybutu `aria-haspopup` w combobox jest nieprawidłowa lub nie ma prawidłowego odniesienia do powiązanego wyskakującego okienka
 
 <div id="locLevel"></div>
 
-The combobox attribute 'aria-haspopup' value must be appropriate for the role of the element referenced by `aria-controls` (WAI-ARIA 1.2) or `aria-owns` (WAI-ARIA 1.0)
+Wartość atrybutu 'aria-haspopup' w combobox  musi być odpowiednia dla roli elementu, do którego odwołuje się `aria-controls` (WAI-ARIA 1.2) lub `aria-owns` (WAI-ARIA 1.0)
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-An element with `role="combobox"` may have a popup element with the role of "listbox", "tree", "grid", or "dialog".
-If the value for the `aria-haspopup` attribute does not match the value for the popup element's `role` 
-attribute, people who use assistive technologies may see unexpected behavior and will not know how 
-to interact with the content.
+Element z atrybutem `role="combobox"` może mieć wyskakujący element z rolą „listbox”, „tree”, „grid” lub „dialog”. Jeśli wartość atrybutu `aria-haspopup nie jest zgodna z wartością atrybutu `role` elementu wyskakującego, osoby korzystające z technologii wspomagających mogą zobaczyć nieoczekiwane zachowanie i nie będą wiedzieć, jak korzystać z treści.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
- * Set the value of the `aria-haspopup` attribute of the combobox element to match the value of the `role` attribute of the implemented popup. Allowed popup element `role` attribute values are "listbox", "tree", "grid", or "dialog".
+ * Ustaw wartość atrybutu `aria-haspopup` elementu combobox tak, aby odpowiadała wartości atrybutu `role` zaimplementowanego wyskakującego okienka. Dozwolone wartości atrybutu `role` elementu wyskakującego to „listbox”, „tree”, „grid” i „dialog”.
 
-Alert: The guidance for combobox is changing significantly in WAI-ARIA 1.2 due to problems with implementation of the WAI-ARIA 1.1 pattern. The recommended combobox pattern for WAI-ARIA 1.2 is:
+Alert: Wytyczne dla comboboxa zmieniły się znacząco w WAI-ARIA 1.2 z powodu problemów z implementacją wzorca WAI-ARIA 1.1. Rekomendowanym wzorcem comboboxa dla WAI-ARIA 1.2 jest:
 
-<CodeSnippet type="multi" light={true}> &lt;label for="tag_combo"&gt;Tag&lt;/label&gt;
+<CodeSnippet type="multi" light={true}> &lt;label for="tag_combo"&gt;Znacznik&lt;/label&gt;
   &lt;input type="text" id="tag_combo"
       role="combobox" aria-autocomplete="list"
       aria-haspopup="listbox" aria-expanded="true"
       aria-controls="popup_listbox" aria-activedescendant="selected_option"&gt;
    &lt;ul role="listbox" id="popup_listbox"&gt;
       &lt;li role="option"&gt;Zebra&lt;/li&gt;
-      &lt;li role="option" id="selected_option"&gt;Zoom&lt;/li&gt;
+      &lt;li role="option" id="selected_option"&gt;Powiększenie&lt;/li&gt;
    &lt;/ul&gt;</CodeSnippet>
 
-Note, example code includes material copied from or derived from [W3C, Accessible Rich Internet Applications (WAI-ARIA) 1.2 W3C Working Draft 18 December 2019](https://www.w3.org/TR/wai-aria-1.2/#combobox). Copyright © [2013-2019] W3C® (MIT, ERCIM, Keio, Beihang).
+**Uwaga**. Przykładowy kod obejmuje materiał skopiowany lub uzyskany z [W3C, Accessible Rich Internet Applications (WAI-ARIA) 1.2 W3C Working Draft 18 December 2019](https://www.w3.org/TR/wai-aria-1.2/#combobox). Copyright © [2013-2019] W3C® (MIT, ERCIM, Keio, Beihang).
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 4.1.2 Name, Role, Value](https://www.ibm.com/able/requirements/requirements/#4_1_2)
+[4.1.2 Nazwa, rola, wartość](https://www.ibm.com/able/requirements/requirements/#4_1_2)
 [W3C WAI-ARIA v1.2 Authoring Practices - Combobox](https://www.w3.org/TR/wai-aria-1.2/#combobox)
 
-### Who does this affect?
+### Kogo to dotyczy?
 
- * People using screen readers
+* Osoby niewidome korzystające z czytników ekranu
 
 </Column>
 </Row>

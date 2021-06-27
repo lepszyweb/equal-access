@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: aria_semantics_role"
+title: "Pomoc dla reguły: aria_semantics_role"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,41 +8,39 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### The WAI-ARIA role `{0}` is not valid for the element `<{1}>` 
+### Rola WAI-ARIA `{0}` jest niepoprawna dla `<{1}>` 
 
 <div id="locLevel"></div>
 
-WAI-ARIA roles must be valid for the element to which they are assigned
+Role WAI-ARIA muszą być poprawne dla elementu, do którego są przypisane
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-Some HTML elements or attributes have native semantics that map, by default, to implied WAI-ARIA semantics. 
-For predictable interaction and behavior of UI controls, these implicit semantics should only be overridden 
-as defined in the [W3C ARIA in HTML Document conformance requirements for use of ARIA attributes in HTML](https://www.w3.org/TR/html-aria/#docconformance) specification.
+Niektóre elementy lub atrybuty HTML mają rdzenną semantykę, która domyślnie mapuje się do zakladanej semantyki WAI-ARIA. Dla przewidywalnej interakcji i zachowania kontrolek interfejsu użytkownika ta domyślna semantyka może być nadpisywana tylko na określone sposoby, zdefiniowane w specyfikacji [W3C ARIA in HTML Document conformance requirements for use of ARIA attributes in HTML](https://www.w3.org/TR/html-aria/#docconformance).
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* If a native HTML element fits the intended behavior, use that instead of adding ARIA markup;
-* OR, update the role on the element using the guidance in the [Document conformance requirements for use of "ARIA" attributes in HTML](https://www.w3.org/TR/html-aria/#docconformance) section of the W3C ARIA in HTML specification. This reference provides details of valid ARIA markup on native HTML elements.
+* Jeśli rdzenny element HTML pasuje do zamierzonego zachowania, użyj tego elementu;
+* LUB popraw wartość atrybutu role zgodnie ze wskazówkami sekcji specyfikacji W3C ARIA w HTML [Document conformance requirements for use of "ARIA" attributes in HTML](https://www.w3.org/TR/html-aria/#docconformance). Ta speyfikacja dostarcza szczegółów na temat poprawnych znaczników ARIA na natywnych elementach HTML.
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 4.1.2 Name, Role, Value](https://www.ibm.com/able/requirements/requirements/#4_1_2)
+[4.1.2 Nazwa, rola, wartość](https://www.ibm.com/able/requirements/requirements/#4_1_2)
 [W3C ARIA in HTML Document conformance requirements for use of ARIA attributes in HTML](https://www.w3.org/TR/html-aria/#docconformance)
 
-### Who does this affect?
+### Na kogo to wpływa
 
-* People using a screen reader, including blind, low vision and neurodivergent people
+* Osoby korzystające z czytników ekranu, w tym niewidome, słabowidzące, neurodywergentne
 
 </Column>
 </Row>

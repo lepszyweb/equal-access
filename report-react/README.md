@@ -1,77 +1,79 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ten projekt został uruchomiony przy pomocy [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Dostępne skrypty
 
-In the project directory, you can run:
+W katalogu projektu, można uruchomić:
 
 ### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Uruchamia aplikację w trybie deweloperskim.<br />
+Otwórz [http://localhost:3000](http://localhost:3000), aby zobaczyć go w przeglądarce.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Strona zostanie przeładowana po wprowadzeniu zmian.<br />
+Zobaczysz również wszelkie błędy lint w konsoli.
+
 
 ### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Uruchamia runner testowy w interaktywnym trybie obserwacyjnym.<br />
+Zobacz rozdział o [running tests](https://facebook.github.io/create-react-app/docs/running-tests), aby uzyskać więcej informacji.
 
 ### `yarn build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Buduje aplikację dla produkcji do folderu `build`.<br />
+Poprawnie buduje Reacta w trybie produkcyjnym i optymalizuje kompilację dla najlepszej wydajności.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Kompilacja jest zminifikowana, a nazwy plików zawierają hashe.<br />
+Twoja aplikacja jest gotowa do wdrożenia!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Zobacz rozdział  [deployment](https://facebook.github.io/create-react-app/docs/deployment), aby uzyskać więcej informacji.
 
 ### `yarn analyze`
 
-Builds a local production of the `build` folder and displays a chunking distribution chart after compilation.
+Buduje lokalną produkcję z folderu `build` i wyświetla wykres dystrybucji kawałków po kompilacji.
 
 ### `yarn prod`
 
-Runs a local production of the `build` folder.<br /><br />
-It serves your compiled source in a production environment using an express server hosted on port `8080`.
+Uruchamia lokalną produkcję folderu `build`.<br /><br />
+Serwuje twoje skompilowane źródło w środowisku produkcyjnym, używając serwera express hostowanego na porcie `8080`.
 
 ### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Uwaga: to jest operacja jednokierunkowa. Gdy raz `wyrzucisz`, nie możesz wrócić!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Jeśli nie jesteś zadowolony z wyboru narzędzia do budowania i konfiguracji, możesz `eject` (opuśccić) w dowolnym momencie. Ta komenda usunie pojedynczą zależność od kompilacji z twojego projektu.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Zamiast tego, skopiuje wszystkie pliki konfiguracyjne i zależności przechodnie (Webpack, Babel, ESLint, itp.) bezpośrednio do twojego projektu, dzięki czemu będziesz miał nad nimi pełną kontrolę. Wszystkie komendy oprócz `eject` będą nadal działać, ale będą wskazywać na skopiowane skrypty, więc będziesz mógł je dostosować. W tym momencie jesteś zdany na siebie.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Nie musisz nigdy używać `eject`. Zestaw funkcji jest odpowiedni dla małych i średnich wdrożeń, i nie powinieneś czuć się zobowiązany do korzystania z tej funkcji. Rozumiemy jednak, że to narzędzie nie byłoby użyteczne, gdybyś nie mógł go dostosować, gdy jesteś na to gotowy.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Dowiedz się więcej
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Więcej informacji można znaleźć na stronie [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-### Code Splitting
+Aby nauczyć się React, sprawdź [React documentation](https://reactjs.org/).
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Podział kodu
 
-### Analyzing the Bundle Size
+Ta sekcja została przeniesiona tutaj: https://facebook.github.io/create-react-app/docs/code-splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Analiza wielkości pakietów
 
-### Making a Progressive Web App
+Ta sekcja została przeniesiona tutaj: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+### Tworzenie progresywnej aplikacji internetowej
 
-### Advanced Configuration
+Ta sekcja została przeniesiona tutaj: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+### Zaawansowana konfiguacja
 
-### Deployment
+Ta sekcja została przeniesiona tutaj: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+### Wdrażanie
 
-### `yarn build` fails to minify
+Ta sekcja została przeniesiona tutaj: https://facebook.github.io/create-react-app/docs/deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### `yarn build` nie udaje się zminifikować
+
+Ta sekcja została przeniesiona tutaj: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

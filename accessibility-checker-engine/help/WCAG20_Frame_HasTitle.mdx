@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: WCAG20_Frame_HasTitle"
+title: "Pomoc dla reguły: WCAG20_Frame_HasTitle"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,46 +8,48 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Inline frame does not have a title
+### Ramka wbudowana nie ma tytułu
 
 <div id="locLevel"></div>
 
-Inline frames must have a unique, non-empty title
+Ramki wbudowane muszą mieć niepusty, opisowy i unikalny tytuł
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne?
 
-An inline frame’s title provides a label for the frame that describes its content to the user. With this information a user can determine which frame to enter and explore in detail.
+Tytuł ramki wbudowanej (iFrame)  jest etykietą, która opisuje użytkownikowi treść ramki. Dzięki tym informacjom użytkownik może określić, do której ramki wejść i szczegółowo zbadać. 
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* Use the `"title"` attribute of the `<iframe>` element to provide a unique, non-empty title that describes its contents.
-For example:
+* Użyj atrybutu `title`, aby zapewnić elementowi `<iframe>` unikalny, niepusty tytuł, który opisuje jego zawartość.
+
+Na przykład:
 
 <CodeSnippet type="multi" light={true}>&lt;iframe src="https://cloudstorage.html" id="adiframe"
-       name="adiframe" title="Cloud Storage"&gt;
-         &lt;a href="storage-ad.html"&gt; Cloud storage&lt;/a&gt;
+       name="adiframe" title="Przechowywanie w chmurach"&gt;
+         &lt;a href="storage-ad.html"&gt; Przechowywanie w chmurach&lt;/a&gt;
 &lt;/iframe&gt;</CodeSnippet>
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 4.1.2 Name, Role, Value](https://www.ibm.com/able/requirements/requirements/#4_1_2)
-[WCAG 2.1 technique H64](https://www.w3.org/WAI/WCAG21/Techniques/html/H64)
+[IBM 4.1.2 Nazwa, rola wartość](http://www.ibm.com/able/guidelines/ci162/name_role_value.html)
+[Tecniki WCAG 2.1 - Technika H64](https://www.w3.org/WAI/WCAG21/Techniques/html/H64)
 
-### Who does this affect?
+### Kogo to dotyczy?
 
-* People using a screen reader, including blind, low vision and neurodivergent people
-* People who physically cannot use a pointing device
-* People with dexterity impairment who navigate web pages with a keyboard
+ * Osoby niewidome korzystające z czytników ekranu
+ * Osoby, które nie mogą używać urządzenia wskazującego
+ * •	Osoby o ograniczonej sprawności ruchowej, które poruszają się po stronach internetowych za pomocą klawiatury
 
 </Column>
 </Row>

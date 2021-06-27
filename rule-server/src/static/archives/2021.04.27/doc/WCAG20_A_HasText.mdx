@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: WCAG20_A_HasText"
+title: "Pomoc dla reguły: WCAG20_A_HasText"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,45 +8,45 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Hyperlink has no description of its purpose
+### Hiperłącze nie ma opisu celu
 
 <div id="locLevel"></div>
 
-Hyperlinks must have link text, a label or an image with a text alternative
+Hiperłącza muszą zawierać tekst łącza, etykietę lub obraz z tekstem alternatywnym 
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne?
 
-When the purpose of a link is clear users can easily navigate links on the page without having to see the surrounding information for context.
+Gdy cel łącza jest jasny, użytkownicy mogą z łatwością poruszać się po łączach na stronie bez konieczności przeglądania otaczających informacji w kontekście.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* Ideally, add unique link text as the content of the hyperlink that describes the purpose of the hyperlink;
-* OR If it’s not possible to use unique link text (e.g. multiple ‘Read more..’ links for different topics), use the `aria-labelledby` attribute to point to text visible on the page that identifies the link purpose.  The following example shows how the `aria-labelledby` provides additional context by adding the text 'Breaking News' from the header to the link text 'Read more..':
+* Idealnie byłoby dodać unikalny tekst jako treść hiperłącza, który opisuje cel hiperłącza;
+* LUB jeśli nie jest możliwe użycie niepowtarzalnego tekstu linku (np. w przypadku wielu łączy „Czytaj więcej…” dla różnych tematów), użyj atrybutu `aria-labelledby`, aby wskazać tekst widoczny na stronie, określający cel łącza. Poniższy przykład pokazuje, jak `aria-labelledby` zapewnia dodatkowy kontekst, dodając tekst „Wiadomości codzienne” z nagłówka do tekstu łącza „Czytaj więcej…”:
 
-<CodeSnippet type="multi" light={true}>&lt;h2 id="topic1"&gt;Breaking News&lt;/h2&gt;
-&lt;p&gt;The central bank cut interest rates by half a percentage to protect economy.
-&lt;a id="p1" href="news.html" aria-labelledby="p1 topic1"&gt;Read more...&lt;/a&gt;&lt;/p&gt;</CodeSnippet>
+<CodeSnippet type="multi" light={true}>&lt;h2 id="temat1"&gt;Wiadomości codzienne&lt;/h2&gt;
+&lt;p&gt;Bank centralny obniżył stopy procentowe o pół procent, aby chronić gospodarkę.
+&lt;a id="p1" href="news.html" aria-labelledby="p1 temat1"&gt;Czytaj więcej...&lt;/a&gt;&lt;/p&gt;</CodeSnippet>
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 2.4.4 Link Purpose (in Context)](https://www.ibm.com/able/requirements/requirements/#2_4_4)
-[WCAG 2.1 technique H30](https://www.w3.org/TR/WCAG20-TECHS/H30)
-[WCAG 2.1 technique ARIA7](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA7)
+[IBM 2.4.4 Cel łącza (w kontekście)](https://www.ibm.com/able/guidelines/ci162/link_purpose.html)
+[Techniki WCAG 2.1 - Technika H30](https://www.w3.org/TR/WCAG20-TECHS/H30)
+[Techniki WCAG 2.1 - Technika ARIA7](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA7)
 
-### Who does this affect?
+### Kogo to dotyczy?
 
-* Blind people using screen readers
-* People with low vision using screen magnification
+ * Osoby niewidome korzystające z czytników ekranu
+ * Osoby słabowidzące korzystajace z powiększalników ekranu
 
 </Column>
 </Row>

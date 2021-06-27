@@ -50,7 +50,7 @@ export default class Fetch {
             });
 
             oReq.addEventListener("error", function() {
-                reject("error: failed to load files from the rules server.");
+                reject("Błąd: Nie udało się załadować plików z serwera reguł.");
             });
 
             oReq.open("GET", filename);

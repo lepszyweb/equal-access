@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: combobox_active_descendant"
+title: "Pomoc dotycząca reguł testowania dostępności: combobox_active_descendant"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,57 +8,56 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Active descendant focus is not set correctly within the combobox or related popup
+### Fokus aktywnego potomka (właściwość `aria-activedescendant`) w kontrolce kombo lub powiązanym oknie wyskakującym nie jest ustawiony poprawnie
 
 <div id="locLevel"></div>
 
-'aria-activedescendant' must be used to define focus within the combobox popup, except when using a dialog popup
+Do ustawienia fokusu w wyskakującym polu kobinowanym musi być użyta właściwość 'aria-activedescendant' z wyjątkiem sytuacji, gdy używasz wyskakującego okna
+
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne?
 
-A combobox is a UI interactive component that combines an input and another element, such as a listbox
-or grid, that can dynamically pop up to help the user set the value of the input. When a combobox 
-receives focus, the focus should be set on the text `<input>` element. Unless using a `dialog`
-popup, the `aria-activedescendant` must be used to identify the currently focused selection in the
-popup, so people who use assistive technologies are able to accurately navigate and interact with the content.
+Pole kombinowane (combobox) to interaktywny komponentem UI, który łączy dane wejściowe i inny element, taki jak pole listy lub siatka, który może dynamicznie wyskakiwać, aby pomóc użytkownikowi ustawić wartość wprowadzanych danych. Gdy pole kombinowane jest aktywowane, fokus powinien być ustawiony na elemencie tekstowym `<input>. Jeśli nie używamy okna wyskakującego `dialog`, `aria-activedescendant` musi być użyte do identyfikacji aktualnie fokusowanego wyboru w wyskakującym okienku, aby osoby korzystające z technologii wspomagających były w stanie precyzyjnie nawigować i wchodzić w interakcję z treścią.
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* Unless the `has-popup` attribute value is `dialog`, set the active descendant focus using the `aria-activedescendant` attribute only on the combobox’s `<input>` element.
+* Jeśli wartość atrybutu `has-popup` nie jest równa `dialog`, ustaw fokus aktywnego elementu potomnego za pomocą atrybutu `aria-activedescendant` tylko w elemencie `<input>` elementu `combobox`.
 
-Alert: The guidance for combobox is changing significantly in WAI-ARIA 1.2 due to problems with implementation of the WAI-ARIA 1.1 pattern. The recommended combobox pattern for WAI-ARIA 1.2 is:
+Alert: Wytyczne dla comboboxa zmieniły się znacząco w WAI-ARIA 1.2 z powodu problemów z implementacją wzorca WAI-ARIA 1.1. Rekomendowanym wzorcem comboboxa dla WAI-ARIA 1.2 jest:
 
-<CodeSnippet type="multi" light={true}> &lt;label for="tag_combo"&gt;Tag&lt;/label&gt;
+
+<CodeSnippet type="multi" light={true}> &lt;label for="tag_combo"&gt;Znacznik&lt;/label&gt;
   &lt;input type="text" id="tag_combo"
       role="combobox" aria-autocomplete="list"
       aria-haspopup="listbox" aria-expanded="true"
       aria-controls="popup_listbox" aria-activedescendant="selected_option"&gt;
    &lt;ul role="listbox" id="popup_listbox"&gt;
       &lt;li role="option"&gt;Zebra&lt;/li&gt;
-      &lt;li role="option" id="selected_option"&gt;Zoom&lt;/li&gt;
+      &lt;li role="option" id="selected_option"&gt;Powiększenie&lt;/li&gt;
    &lt;/ul&gt;</CodeSnippet>
 
-Note, example code includes material copied from or derived from [W3C, Accessible Rich Internet Applications (WAI-ARIA) 1.2 W3C Working Draft 18 December 2019](https://www.w3.org/TR/wai-aria-1.2/#combobox). Copyright © [2013-2019] W3C® (MIT, ERCIM, Keio, Beihang).
+**Uwaga**. Przykładowy kod obejmuje materiał skopiowany lub uzyskany z [W3C, Accessible Rich Internet Applications (WAI-ARIA) 1.2 W3C Working Draft 18 December 2019](https://www.w3.org/TR/wai-aria-1.2/#combobox). Copyright © [2013-2019] W3C® (MIT, ERCIM, Keio, Beihang).
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 4.1.2 Name, Role, Value](https://www.ibm.com/able/requirements/requirements/#4_1_2)
+[4.1.2 Nazwa, rola, wartość](http://www.ibm.com/able/guidelines/ci162/name_role_value.html)
 [WAI-ARIA v1.2 Authoring Practices - Combobox](https://www.w3.org/TR/wai-aria-practices-1.2/#combobox)
 
-### Who does this affect?
+### Kogo to dotyczy?
 
-* Blind people using screen readers
-* People with low vision using screen readers
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby słabowidzące korzystające z czytników ekranu
 
 </Column>
 </Row>

@@ -31,7 +31,7 @@ TabMessaging.addListener("DAP_SCAN_TAB", async (message: any) => {
     try {
         let checker = new (<any>window).ace.Checker();
 
-        console.info(`Accessibility Checker - Scanning with archive ${message.archiveId} and policy ${message.policyId}`);
+        console.info(`Accessibility Checker - Skanowanie z archiwum ${message.archiveId} i zasadami${message.policyId}`);
 
         (window as any).aceReportCache = {
             archiveId: message.archiveId,

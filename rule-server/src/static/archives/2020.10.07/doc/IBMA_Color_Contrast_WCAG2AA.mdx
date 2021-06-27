@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: IBMA_Color_Contrast_WCAG2AA"
+title: "Pomoc dla reguły: IBMA_Color_Contrast_WCAG2AA"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,42 +8,47 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Text contrast of {0} with its background is less than the WCAG AA minimum requirements for text of size {1}px and weight of {2}
+### Kontrast tekstu {0} do jego tła jest mniejszy niż minimalne wymagania dla WCAG AA dla tekstu o rozmiarze {1}px i wadze {2}
 
 <div id="locLevel"></div>
 
-Color contrast of text with its background must meet WCAG 2.1 AA minimum requirements
+Kontrast kolorów tekstu z jego tłem musi spełniać minimalne wymagania WCAG 2.1 AA
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne?
 
-When text and its background colors have less than a 4.5 to 1 contrast ratio it can be difficult for people with moderately low vision to read the text without a contrast-enhancing technology. For larger text of 18 point or more, or bold 14 point text, the text and background colors must give at least a 3 to 1 contrast ratio.
+
+Kiedy tekst i jego kolory tła mają mniejszy współczynnik kontrastu  niż 4,5 do 1, osobom o średnio słabym wzroku może być trudno odczytać tekst bez technologii zwiększającej kontrast. W przypadku tekstu o większym rozmiarze, wynoszącym co najmniej 18 punktów lub pogrubionego 14 punktów, tekst i kolory tła muszą mieć co najmniej współczynnik kontrastu 3 do 1.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
- * For large text that is at least 18 point or at least 14 point when bold, adjust the color of the text or its background to give at least a 3 to 1 contrast ratio;
- * OR, for body text that is less than 18 point or less than 14 point when bold, adjust the color of the text or its background to give at least a 4.5 to 1 contrast ratio.
+ * W przypadku dużego tekstu, który ma co najmniej 18 punktów lub co najmniej 14 punktów, gdy jest pogrubiony, dostosuj kolor tekstu lub jego tła, aby uzyskać współczynnik kontrastu co najmniej 3 do 1;
+ * LUB w przypadku tekstu, który ma mniej niż 18 punktów lub mniej niż 14 punktów w przypadku tekstu pogrubionego, dostosuj kolor tekstu lub jego tła, aby uzyskać współczynnik kontrastu co najmniej 4,5 do 1.
+
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
 [IBM 1.4.3 Contrast (Minimum)](http://www.ibm.com/able/guidelines/ci162/contrast.html)
 [WCAG 2.1 technique G18 ](https://www.w3.org/WAI/WCAG21/Techniques/general/G18)
 [WCAG 2.1 technique G145 ](https://www.w3.org/WAI/WCAG21/Techniques/general/G145)
 
-### Who does this affect?
+### Kogo to dotyczy?
 
- * People with moderately low vision who do not use a contrast-enhancing technology
- * People with visual impairment using color contrast enhancement
- * People who cannot see color, have limited color vision or have color blindness
+ * Osoby z umiarkowanie słabym wzrokiem, które nie używają technologii zwiększającej kontrast 
+ * Osoby słabowidzące używające wzmocnienia kontrastu kolorów
+ * Osoby, które nie widzą kolorów
+ * Osoby, które nie widzą pełnej gamy kolorów 
+
+
 
 </Column>
 </Row>

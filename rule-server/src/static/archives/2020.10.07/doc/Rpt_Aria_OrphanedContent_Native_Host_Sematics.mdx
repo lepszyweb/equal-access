@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: Rpt_Aria_OrphanedContent_Native_Host_Sematics"
+title: "Pomoc dotycząca reguł testowania dostępności: Rpt_Aria_OrphanedContent_Native_Host_Sematics"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,42 +8,44 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Content is not within a landmark element
+### Treść nie znajduje się w elemencie punktu orientacyjnego
 
 <div id="locLevel"></div>
 
-All content must reside within an element with a landmark role
+Cała treść musi znajdować się w elementach z rolą punktów orientacyjnych
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
+Role punktów oriientacyjnych (obszarów kluczowych) zapewniają programowy dostęp do sekcji strony internetowej, ułatwiając użytkownikowi zrozumienie struktury strony i łatwe przechodzenie do różnych sekcji. Umożliwiają również użytkownikom pomijanie bloków treści, które powtarzają się na wielu stronach.
 
-Landmark roles provide programmatic access to sections of a web page, making it easy for the user to understand the structure of the page and easily navigate to different sections. They also enable users to skip over blocks of content that are repeated on multiple pages.
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* Enclose the content within an HTML5 sectioning element with an implicit landmark role (e.g. `<main>Content</main>`);
-* OR use the `"role"` attribute on an enclosing element to specify an appropriate WAI-ARIA landmark value (e.g. `<div role="contentinfo">...</div>`).
+* Umieść wewnątrz elementu sekcyjnego HTML5 z niejawną rolą punktu orientacyjnego (np. `<main>Treść</main>`);
+* LUB użyj atrybutu `"role"` w elemencie obejmującym treść, aby określić odpowiednią wartość punktu orientacyjnego WAI-ARIA (np.`<div role="contentinfo">Treśc stopki</div>`).
+
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 1.3.1 Info and Relationships](https://www.ibm.com/able/guidelines/ci162/info_and_relationships.html)
-[IBM 2.4.1 Bypass Blocks](http://www.ibm.com/able/guidelines/ci162/bypass_blocks.html)
-[WCAG 2.1 technique ARIA11](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA11)
+[1.3.1 Informacje i relacje](https://www.ibm.com/able/guidelines/ci162/info_and_relationships.html)
+[IBM 2.4.1 Możliwość pominięcia bloków](http://www.ibm.com/able/guidelines/ci162/bypass_blocks.html)
+[Techniki WCAG 2.1 - Technika ARIA11](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA11)
 [HTML5 Sectioning elements](https://www.w3.org/TR/wai-aria-practices/examples/landmarks/HTML5.html)
 
-### Who does this affect?
+### Na kogo to wpływa
 
-* Blind people using screen readers
-* People who physically cannot use a pointing device
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby, które nie mogą korzystać z urządzeń wskazujących, np. myszy
 
 </Column>
 </Row>

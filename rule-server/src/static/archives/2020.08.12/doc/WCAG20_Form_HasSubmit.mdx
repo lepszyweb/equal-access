@@ -1,40 +1,49 @@
 ---
-title: "Accessibility Checker Rule Help: WCAG20_Form_HasSubmit"
+title: "Pomoc dla regułyi: WCAG20_Form_HasSubmit"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div className="toolHelp">
 <Row>
-<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+<Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Who does this affect?
-
-* Blind people using screen readers
-* People with cognitive limitations
-* Many older adults
-
-### Why is this important?
-
-Submit buttons and image buttons allow users to explicitly request submission of the form and to control the change of context. Forms that are submitted by other mechanisms might change the user's context before they are ready, causing frustration or confusion.
-
-</Column>
-<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+### Sprawdź, czy element `<form>` posiada przycisk lub graficzny przycisk wysyłania
 
 <div id="locLevel"></div>
 
-### Check the `<form>` element has a submit button or an image button
-A `<form>` element should have a submit button or an image button
+Element `<form>` powinien mieć przycisk przycisk wysyłania lub przycisk graficzny
 
-[IBM 3.2.2 On Input](http://www.ibm.com/able/guidelines/ci162/on_input.html) | [WCAG 2.1 technique G80](https://www.w3.org/WAI/WCAG21/Techniques/html/H32) | [WCAG 2.1 technique G80](https://www.w3.org/WAI/WCAG21/Techniques/general/G80)
+</Column>
+</Row>
+<Row>
+<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+
+### Dlaczego to jest ważne
+
+Przyciski &bdquo;Wyślij&rdquo; i graficzny przycisk &bdquo;Wyślij&rdquo; pozwalają użytkownikom na wyraźne żądanie przesłania formularza i kontrolę zmiany kontekstu. Formularze wysyłane przez inne mechanizmy mogą zmienić kontekst użytkownika zanim będzie on gotowe, powodując frustrację lub dezorientację.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* Provide a submit button using an `<input>` element with a `type="submit"` attribute;
-* OR, uses a server-side script (specified in the action attribute) that redirects the user to the requested page (see Example 2 in [WCAG 2.1 technique H32](https://www.w3.org/WAI/WCAG21/Techniques/html/H32).)
+* Zapewnij przycisk wysyłania, używając elementu `<input>` z atrybutem `type="submit"`;
+* LUB, użyj skryptu po stronie serwera (określonego w atrybucie `action`), który przekierowuje użytkownika na żądaną stronę (patrz Przykład 2 w[Technika WCAG 2.1 H32](https://www.w3.org/WAI/WCAG21/Techniques/html/H32).)
 
+</Column>
+<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+
+### O tym wymaganiu
+
+[3.2.2 Podczas wprowadzania danych](http://www.ibm.com/able/guidelines/ci162/on_input.html)
+[Technika WCAG 2.1 H32](https://www.w3.org/WAI/WCAG21/Techniques/html/H32)
+[Technika WCAG 2.1 G80](https://www.w3.org/WAI/WCAG21/Techniques/general/G80)
+
+### Na kogo to wpływa
+
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby z ograniczonymi możliwościami poznawczymi
+* Wiele osób starszych
 
 </Column>
 </Row>

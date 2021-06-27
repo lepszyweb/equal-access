@@ -1,46 +1,58 @@
 ---
-title: "Accessibility Checker Rule Help: HAAC_Aria_Native_Host_Sematics"
+title: "Pomoc dla regułyi: HAAC_Aria_Native_Host_Sematics"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div className="toolHelp">
 <Row>
-<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+<Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Who does this affect?
-
-* Blind people using screen readers
-* People with low vision using screen readers
-
-### Why is this important?
-
-Some HTML elements or attributes have native semantics that map by default to an implied WAI-ARIA semantics. For predictable interaction and behavior of UI controls, these implicit semantics should only be overridden in specific ways, defined in the [W3C ARIA in HTML Document conformance requirements for use of ARIA attributes in HTML](https://www.w3.org/TR/html-aria/#docconformance) specification.  
-
-</Column>
-<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+### Rola lub atrybut WAI-ARIA `{0}` jest niepoprawny dla `<{1}>` 
 
 <div id="locLevel"></div>
 
-### The WAI-ARIA role or attribute `{0}` is not valid for the element `<{1}>` 
-WAI-ARIA roles and attributes must be valid for the element they are assigned to
+Role i atrybuty WAI-ARIA muszą być poprawne dla elementu, do którego są przypisane
 
-[IBM 4.2.1 Non-text content](https://www.ibm.com/able/guidelines/ci162/name_role_value.html) | [W3C ARIA in HTML Document conformance requirements for use of ARIA attributes in HTML](https://www.w3.org/TR/html-aria/#docconformance)
+</Column>
+</Row>
+<Row>
+<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+
+### Dlaczego to jest ważne
+
+Niektóre elementy lub atrybuty HTML mają rdzenną semantykę, która domyślnie mapuje się do zakladanej semantyki WAI-ARIA. Dla przewidywalnej interakcji i zachowania kontrolek interfejsu użytkownika ta domyślna semantyka może być nadpisywana tylko na określone sposoby, zdefiniowane w specyfikacji [W3C ARIA in HTML Document conformance requirements for use of ARIA attributes in HTML](https://www.w3.org/TR/html-aria/#docconformance).
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* If a native HTML element fits the intended behavior, use that;
-* OR, update the role and/or attributes using the guidance in [W3C ARIA in HTML Document conformance requirements for use of "ARIA" attributes in HTML](https://www.w3.org/TR/html-aria/#docconformance).
+* Jeśli rdzenny element HTML pasuje do zamierzonego zachowania, użyj tego elementu;
+* LUB popraw wartość atrybutu role lub atrybutu WAI ARIA zgodnie ze wskazówkami sekcji specyfikacji W3C ARIA w HTML [Document conformance requirements for use of "ARIA" attributes in HTML](https://www.w3.org/TR/html-aria/#docconformance). Ta speyfikacja dostarcza szczegółów na temat poprawnych znaczników ARIA na natywnych elementach HTML.
 
-The following sample code correctly uses the HTML5 `<aside>` element to designate complementary content on the page.
+Poniższy przykładowy kod poprawnie używa elementu `<aside>` do oznaczenia obszaru treści uzupełniającej na stronie.
 
-<CodeSnippet type="single" light={true}>&lt;aside&gt;About the editor, Max Perkins: Editor of Genius(1978),…… &lt;/aside&gt; </CodeSnippet>
+
+<CodeSnippet type="single" light={true}>&lt;aside&gt;O wydawcy Max Perkins: Wydawca Geniusa (1978),…… &lt;/aside&gt; </CodeSnippet>
         
 The following code correctly overrides the `&lt;aside&gt;` element’s implicit semantics (`role=“complementary”`) by using the ARIA role of `“note”` to designate the notated content on the page.
+
+Poniższy kod poprawnie zastępuje niejawną semantykę elementu `&lt;aside&gt;` (`role="complementary"`) poprzez użycie roli ARIA `"note"`, aby oznaczyć  na stronie notatkę o treści.
     
-<CodeSnippet type="single" light={true}>&lt;aside role="note"&gt;About the editor, Max Perkins: Editor of Genius(1978),…… &lt;/aside&gt; </CodeSnippet>
+<CodeSnippet type="single" light={true}>&lt;aside role="note"&gt;O wydawcy Max Perkins: Wydawca Geniusa (1978),…… &lt;/aside&gt; </CodeSnippet>
+
+</Column>
+<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+
+### O tym wymaganiu
+
+[4.1.2 Nazwa, rola, wartość](https://www.ibm.com/able/guidelines/ci162/name_role_value.html)
+[W3C ARIA in HTML Document conformance requirements for use of ARIA attributes in HTML](https://www.w3.org/TR/html-aria/#docconformance)
+
+### Na kogo to wpływa
+
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby słabowidzące korzystające z czytników ekranu
 
 </Column>
 </Row>

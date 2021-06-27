@@ -1,38 +1,46 @@
 ---
-title: "Accessibility Checker Rule Help: RPT_Media_VideoReferenceTrigger"
+title: "Pomoc dla regułyi: RPT_Media_VideoReferenceTrigger"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div className="toolHelp">
 <Row>
-<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+<Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Who does this affect?
-
- * People with visual impairment
-
-### Why is this important?
-
-By providing an additional audio track, users can choose to replace the original video sound track with one that includes information that focuses on actions, characters, or scene changes that are important to understanding the content. This is sometimes referred to as an 'audio description', as in 'a description in audio format', and should not be confused with captions.
-
-</Column>
-<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+### Sprawdź, czy istnieje wybierana przez użytkownika ścieżka dźwiękowej z opisem treści wizualnej
 
 <div id="locLevel"></div>
 
-### Verify availability of a user-selectable audio track with description of visual content
-Pre-recorded media should have an audio track that describes visual information
+Wcześniej nagrane multimedia powinny mieć ścieżkę dźwiękową, która opisuje informacje wizualne
 
-[IBM 1.2.5 Audio Description (Prerecorded)](http://www.ibm.com/able/guidelines/ci162/audio_descriptions.html)
+</Column>
+</Row>
+<Row>
+<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+
+### Dlaczego to jest ważne
+
+Gdy istnieje dodatkowa ścieżka dźwiękowa, użytkownicy mogą zdecydować się na zastąpienie oryginalnej ścieżki dźwiękowej wideo taką, która zawiera informacje skupiające się na akcjach, postaciach lub zmianach scen, które są ważne dla zrozumienia treści. Czasami jest to określane jako „audiodeskrypcja”, na przykład „opis w formacie audio” i nie powinno być mylone z napisami.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
- * Verify that the media has an audio description track;
- * OR, add an audio description track to the media.
+ * Sprawdź, czy multimedium ma ścieżkę opisu audio;
+ * LUB dodaj ścieżkę opisu audio do multimedium.
 
+</Column>
+<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+
+### O tym wymaganiu
+
+[IBM 1.2.5 Audiodeskrypcja (nagranie)
+](http://www.ibm.com/able/guidelines/ci162/audio_descriptions.html)
+
+### Na kogo to wpływa
+
+ * Osoby z niepełnosprawnością wzroku
 
 </Column>
 </Row>

@@ -1,36 +1,38 @@
 # accessibility-checker-engine
 
-For information on creating, modifying rules, see [README-RULES.md]
+Aby uzyskać informacje na temat tworzenia, modyfikowania reguł, zobac [README-RULES.md]
 
-## Overview
+## Przegląd
 
-accessibility-checker-engine contains IBM accessibility rules and evaluation engine to help users to check their web pages to identify and report accessibility issues.
+accessibility-checker-engine zawiera reguły dostępności IBM i mechanizm oceny ułatwiający użytkownikom sprawdzanie ich stron WWW w celu identyfikacji i zgłaszania problemów z dostępnością.
 
-## Install
+## Instalacja
 
-Please review [README.md](../README.md) on how to clone the source. Once the source code is cloned to your local environment, you can build the source code based on the requirements of your local environment.
+Zapoznaj się z plikiem [README.md](../README.md), aby dowiedzieć się, jak sklonować źródło. Po sklonowaniu kodu źródłowego do lokalnego środowiska możesz zbudować kod źródłowy w oparciu o wymagania lokalnego środowiska.
 
-### build ace.js that can be used in a browser environment
+### Zbuduj ace.js, którego można używać w środowisku przeglądarki
 
 ```bash
 $ cd accessibility-checker-engine
 $ npm install
 $ npm run build
 ```
-This will build the ace.js in the dist directory.
 
-### build ace-node.js that can be used in a NodeJS environment
+Spowoduje to utworzenie pliku ace.js w katalogu dist, którego można używać w środowisku przeglądarki
+
+### Zbuduj ace-node.js, który może być używany w środowisku NodeJS
 
 ```
 $ cd accessibility-checker-engine
 $ npm install
 $ npm run build-node
 ```
-This will build the ace-node.js in the dist directory.
+
+Spowoduje to utworzenie pliku ace-node.js w katalogu dist
 
 ## API
 
-The most important entry point API is the `check` method of `ace.Checker` object. You can use a callback or Promise mechanism to retrieve the accessibility results for further processing in your javascript or NodeJS program.
+Najważniejszym API punktu wejścia jest metoda `check` obiektu `ace.Checker`. Możesz użyć mechanizmu wywołania zwrotnego lub mechanizmu Promise, aby pobrać wyniki dostępności do dalszego przetwarzania w programie javascript lub NodeJS.
 
 ```javascript
 const checker = new ace.Checker();
@@ -40,33 +42,36 @@ checker.check(doc, ["IBM_Accessibility"])
     });  
 ```
 
-* `doc` - can be one of: 
-  * a Document Object Model (`DOM`) object representing an HTML document which is usually available in a browser environment as `document`
-  * a `DOM` element representing a fragment HTML which can be retrieved from a `DOM` by matching against one or more selectors.
-* `["IBM_Accessibility"]` - apply IBM accessibility rules only, IBM design rules only.
-* `report` - accessibility results contains identified accessibility issues and their descriptions from the given `doc`, and a summary of the issues. The report is in JSON format (see [details](#report)).
+* `doc` - może być jednym z: 
+  * obiekt Document Object Model (`DOM`) reprezentujący dokument HTML, który jest zwykle dostępny w środowisku przeglądarki jako `document`
+  * element `DOM` stanowiący fragment HTML, które mogą być pobrane z DOM dopasowując przeciwko jednemu lub większej liczby selektorów.
+* `["IBM_Accessibility"]` - stosować tylko reguły dostępności IBM, tylko reguły projektowania IBM.
+* `report` - wyniki dostępności zawierają zidentyfikowane problemy dostępności i ich opisy z podanych `doc`, a także podsumowanie tych zagadnień. Raport jest w formacie JSON (zobacz [szczegóły](#report)).
 
-## Checklist and Rulesets
 
-The rule are based on the IBM [Checklist](https://www.ibm.com/able/guidelines/ci162/accessibility_checklist.html), which is a superset of WCAG 2.1 AA. We also provide a WCAG 2.0 AA rulesets. Mappings from the checklists to rules are defined in the [ruleset file](https://github.com/IBMa/equal-access/blob/master/accessibility-checker-engine/src/v2/checker/accessibility/rulesets/index.ts)
+## Lista kontrolna i zestawy reguł
+
+Reguła jest oparta na IBM [Checklist](https://www.ibm.com/able/guidelines/ci162/accessibility_checklist.html), która jest nadzbiorem WCAG 2.1 AA. Zapewniamy również zestawy reguł WCAG 2.0 AA. Odwzorowania z list kontrolnych na reguły są zdefiniowane w  [pliku zestawu reguł](https://github.com/IBMa/equal-access/blob/master/accessibility-checker-engine/src/v2/checker/accessibility/rulesets/index.ts)
+
 
 ## Report
 
-The accessibility report is in JSON format, and contains information about the identified accessibility issues and their descriptions.
+Raport dostępności jest w formacie JSON i zawiera informacje o zidentyfikowanych problemach z dostępnością oraz ich opisy..
 
 ```javascript
 {
     report: {
         scanID: "18504e0c-fcaa-4a78-a07c-4f96e433f3e7",
         toolID: "@ibma/aat-v2.0.6",
-        // Label passed to getCompliance
+        // Etykieta przekazywana do getCompliance
         label: "MyTestLabel",
-        // Number of rules executed
+        // Liczba wykonanych reguł
         numExecuted: 137,
         nls: {
             // Mapping of result.ruleId, result.reasonId to get a tokenized string for the result. Message args are result.messageArgs
+			// Mapowanie result.ruleId, result.reasonId w celu uzyskania tokenizowanego ciągu dla wyniku. Argumenty wiadomości to result.messageArgs 
             "WCAG20_Html_HasLang": {
-                "Pass_0": "Page language detected as {0}"
+                "Pass_0": "Wykryty język strony {0}"
             },
             // ...
         },
@@ -97,12 +102,13 @@ The accessibility report is in JSON format, and contains information about the i
         },
         results: [
             {
-                // Which rule triggered?
+                // jaka zasada wywołane? 
                 "ruleId": "WCAG20_Html_HasLang",
-                // In what way did the rule trigger?
+                // W jaki sposób reguła się uruchomiła?
                 "reasonId": "Pass_0",
                 "value": [
-                    // Is this rule based on a VIOLATION, RECOMMENDATION or INFORMATION
+                    // Czy ta reguła jest oparta na NARUSZENIU, ZALECANIU lub 
+                    „NARUSZENIU” INFORMACJI ,
                     "VIOLATION",
                     // PASS, FAIL, POTENTIAL, or MANUAL
                     "PASS"
@@ -114,27 +120,27 @@ The accessibility report is in JSON format, and contains information about the i
                     "aria": ""
                 },
                 "ruleTime": 0,
-                // Generated message
+                //  Wygenerowana wiadomość
                 "message": "Page language detected as en",
                 // Arguments to the message
                 "messageArgs": [
                     "en"
                 ],
                 "apiArgs": [],
-                // Bounding box of the element
+                // Obramowanie element
                 "bounds": {
                     "left": 0,
                     "top": 0,
                     "height": 143,
                     "width": 800
                 },
-                // HTML snippet of the element
+                // Fragment HTML elementu
                 "snippet": "<html lang=\"en\">",
-                // What category is this rule?
+                // Jaka kategoria to ta reguła?
                 "category": "Accessibility",
-                // Was this issue ignored due to a baseline?
+                // Czy ten problem został zignorowany z powodu punktu odniesienia?
                 "ignored": false,
-                // Summary of the value: violation, potentialviolation, recommendation, potentialrecommendation, manual, pass
+                // Podsumowanie wartośc: violation, potentialviolation, recommendation, potentialrecommendation, manual, pass
                 "level": "pass"
             },
             // ...
@@ -143,27 +149,30 @@ The accessibility report is in JSON format, and contains information about the i
 }
 ```
 
-## Usage examples
+## Przykłady użycia
 
-This section provides 'AS-IS' code examples, snippets, or logic. The users are expected to make changes according to their environments.
+Ta sekcja zawiera przykłady kodu, fragmenty kodu lub logikę „TAK JAK JEST”. Oczekuje się, że użytkownicy będą wprowadzać zmiany w zależności od środowiska.
 
-### Command-line in a browser developer tool
 
-You can use the wrapper method `checkDemo` in `ace` object, which is specifically created for checking accessibility in a browser developer tool. The `checkDemo` method outputs both raw accessibility results in JSON format, and the results sorted by elements identified by their xPath. Following are the example steps to use  `ace.checkDemo()` to display the results in a Chrome developer tool:
+### Wiersz poleceń w narzędziach programistycznch przeglądarki
 
-* Navigate to a page or type the url to the page in Chrome browser
-* Open the developer tool in Chrome browser: click `Customize and Control Google Chrome` button, select `More Tools`, then select `Developer Tool`
-* Select `Console` tab to show command prompt
-* Open the `ace.js` you built in the build step in a text editor, select and copy all the content
-* Past the content you copied to the command prompt in the developer tool, then press `Enter`
-* Type in the command prompt: `ace.checkDemo()`, then `Enter`
+Możesz użyć wrapera metody `checkDemo` w obiekcie `ace`, który jest specjalnie stworzony do sprawdzania dostępności w narzędziu programistycznym przeglądarki. Metoda `checkDemo` daje na wyjściu zarówno surowe wyniki dostępności w formacie JSON, jak i wyniki klasyfikowane według elementów wskazanych przez ich XPath. Oto przykładowe kroki zastsowania  `ace.checkDemo()`, aby wyświetlić wyniki w narzędziu deweloperskim Chrome:
 
-You can view the accessibility report for the page:  
+* Otwórz stronę lub wpisz adres URL strony w przeglądarce Chrome
+* Otwórz narzędzie programistyczne w przeglądarce Chrome: kliknij przycisk `Customize and Control Google Chrome`, wybierz `More Tools`, a następnie wybierz`Developer Tool`
+* Wybierz kartę `Console`, aby wyświetlić wiersz polecenia
+* Otwórz ace.js, któy zbudowałeś w kroku Budowanie w edytorze tekstu, zaznacz i skopiuj całą zawartość
+* Wklej skopiowaną zawartość do wiersza polecenia w narzędziu programistycznym, a następnie naciśnij `Enter`
+* Wpisz w wierszu polecenia: `ace.checkDemo()`, a następnie naciśnij `Enter`
+
+
+Możesz wyświetlić raport dostępności stron:  
 ![use ACE in the Chrome developer tool](img/use-ace-in-developer-tool.png "Use ACE in the Chrome developer tool to test accessibility of a web page")
 
-### Programmatic
+### Programowo
+Poniższy fragment kodu demonstruje, jak używać ACE do testowania strony internetowej pod kątem dostępności we wbudowanym środowisku Chrome (`puppeteer`). Zobacz [accessibility-checker](../accessibility-checker) dostępności, aby uzyskać bardziej kompletne narzędzie dla tego środowiska.
 
-The following code snippet demonstrates how to use ACE to test a web page for accessibility in an embedded Chrome environment (`puppeteer`). See [accessibility-checker](../accessibility-checker) for a more complete tool for this environment.
+
 
 ```javascript
 (async () => {
@@ -172,6 +181,7 @@ The following code snippet demonstrates how to use ACE to test a web page for ac
   const puppeteer = require('puppeteer');
   
   // Initialize a Chrome instance
+  // zainicjuj instancję Chrome
   const chrome = await chromeLauncher.launch({
     //chromeFlags: ['--headless'],
     logLevel: 'info',
@@ -181,36 +191,40 @@ The following code snippet demonstrates how to use ACE to test a web page for ac
   const { webSocketDebuggerUrl } = response.data;
 
   // Connect puppeteer to the chrome instance using the endpoint
+  // Połącz puppeteer z instancją chrome za pomocą endpoint
   const browser = await puppeteer.connect({ browserWSEndpoint: webSocketDebuggerUrl });
 
   //get the page
   const [page] = await browser.pages();
 
   // inject the ace.js into the page when domcontentloaded event is fired, assuming the ace.js is in the same folder
+  // wstrzyknij ace.js na stronę kiedy zdarzenie domcontentloaded jest zwolniony, zakładając ace.js jest w tym samym folderze
   await page.goto('http://localhost:3000', { waitUtil: 'domcontentloaded' };
   await page.addScriptTag({ path: path.join(__dirname, 'ace.js') });
 
-  //invoke the ace to evaluate the page for accessibility
+  //wywołaj ace, aby ocenić stronę pod kątem dostępności
   await page.evaluate(() => {
     const checker = new ace.Checker();
     checker.check(document, ["IBM_Accessibility"])
         .then(function (report) {
             for (let idx = 0; idx < report.results.length; ++idx) {
-                //process the report
+                //przetwórz raport
             }
         });
   });
 })();
 ```
 
-### Browser extensions
+### Rozszerzenie przeglądarki
 
-You can use the [accessibility-checker-extension](../accessibility-checker-extension) for Chrome or Firefox. The browser extensions integrate the accessibility web engine (ace.js) and formatted results into the browser developer tool to visually view the accessibility issues and the locations of violating components. For more information and instructions, please view [accessibility-checker-extensions](../accessibility-checker-extension).
+Możesz użyć [accessibility-checker-extension](../accessibility-checker-extension) dla przeglądarki Chrome lub Firefox. Rozszerzenia przeglądarki integrują accessibility web engine (ace.js) i formatują wyniki w narzędziu programistycznym przeglądarki, aby wizualnie wyświetlić problemy z dostępnością i lokalizacje komponentów naruszających. Aby uzyskać więcej informacji i instrukcji, zobacz [accessibility-checker-extensions](../accessibility-checker-extension).
 
-### Integration with test frameworks
 
-You can use the [karma-accessibility-checker](../karma-accessibility-checker) to integrate accessibility web engine into [Karma](https://karma-runner.github.io/latest/index.html) or [Selenium](https://www.selenium.dev/) test framework. For more information and instructions, please view [karma-accessibility-checker](../karma-accessibility-checker).
+### Integracja z frameworkami testowymi
 
-### Reporting bugs
+Możesz użyć narzędzia [karma-accessibility-checker](../karma-accessibility-checker), aby zintegrować silnik sieciowy dostępności z platformą testową [Karma](https://karma-runner.github.io/latest/index.html) lub [Selenium](https://www.selenium.dev/). Aby uzyskać więcej informacji i instrukcji, zobacz [karma-accessibility-checker](../karma-accessibility-checker).
 
-If you think you've found a bug, have questions or suggestions, please report the bug in [GitHub Issues](https://github.com/IBMa/equal-access/issues).
+
+### Zgłaszanie błędów
+
+Jeśli uważasz, że znalazłeś błąd, masz pytania lub sugestie, zgłoś błąd na [GitHub Issues](https://github.com/IBMa/equal-access/issues).

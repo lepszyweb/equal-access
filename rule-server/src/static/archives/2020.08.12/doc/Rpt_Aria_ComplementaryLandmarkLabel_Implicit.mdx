@@ -1,45 +1,53 @@
 ---
-title: "Accessibility Checker Rule Help: Rpt_Aria_ComplementaryLandmarkLabel_Implicit"
+title: "Pomoc dotycząca reguł testowania dostępności: Rpt_Aria_ComplementaryLandmarkLabel_Implicit"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div className="toolHelp">
 <Row>
-<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+<Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Who does this affect?
-
-* Blind people using screen readers
-
-### Why is this important?
-
-Elements with a `"complementary"` role are a type of region used to enclose content that is complementary to the main content on the page. Providing a visible label for each `"complementary"` region on the page provides better context for all users including people using assistive technologies. These landmark labels help to identify and navigate to the content.
-
-</Column>
-<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+### Element z rolą `"complementary"` nie ma widocznej etykiety
 
 <div id="locLevel"></div>
 
-### An element with a `"complementary"` role does not have a visible label
-A unique and visible label is preferred for each element with a `"complementary"` role
+Zalecane jest stosowanie unikalnej i widocznej etykiety dla każdego elementu z rolą `"complementary"`.
 
-[IBM 2.4.1 Bypass Blocks](http://www.ibm.com/able/guidelines/ci162/bypass_blocks.html) | [WAI-ARIA 1.1 Complementary Role](https://www.w3.org/TR/wai-aria-1.1/#complementary)
+</Column>
+</Row>
+<Row>
+<Column colLg={11} colMd={5} colSm={4} className="toolMain">
+
+### Dlaczego to jest ważne
+
+Elementy z rolą `"complementary"` są typem obszaru używanego do umieszczenia treści, która jest uzupełnieniem głównej treści na stronie. Zapewnienie widocznej etykiety dla każdego obszaru `"complementary"` zapewnia lepszy kontekst dla wszystkich użytkowników, w tym osób korzystających z technologii wspomagających. Takie etykiety pomagają w identyfikacji i nawigacji do treści.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* For each `<aside>` element or element with `role="complementary"`, set the value of the `aria-labelledby` attribute to the `id` value of any visible text that appropriately and uniquely describes the complementary content.
+* Dla każdego elementu `<aside>`lub elementu z `role="complementary"` ustaw wartość atrybutu `aria-labelledby` na wartość `id` dowolnego widocznego tekstu, który odpowiednio i jednoznacznie opisuje uzupełniającą treść.
 
-For example:
+Na przykład:
 
-<CodeSnippet type="multi" light={true}>&lt;h1 id="weather"&gt;Weather portlet&lt;/h1&gt;
+<CodeSnippet type="multi" light={true}>&lt;h1 id="pogoda"&gt;Prognoza pogody&lt;/h1&gt;
     
-&lt;div role="complementary" aria-labelledby="weather"&gt;
+&lt;div role="complementary" aria-labelledby="pogoda"&gt;
 ...
 &lt;/div&gt;</CodeSnippet>
 
+</Column>
+<Column colLg={5} colMd={3} colSm={4} className="toolLeft">
+
+### O tym wymaganiu
+
+[IBM 2.4.1 Możliwość pominięcia bloków](http://www.ibm.com/able/guidelines/ci162/bypass_blocks.html)
+[WAI-ARIA 1.1 Complementary Role](https://www.w3.org/TR/wai-aria-1.1/#complementary)
+
+### Na kogo to wpływa
+
+* Osoby niewidome korzystające z czytników ekranu
 
 </Column>
 </Row>

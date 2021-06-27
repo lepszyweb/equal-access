@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: IBMA_Focus_MultiTab"
+title: "Pomoc dla reguły: IBMA_Focus_MultiTab"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,40 +8,41 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### The component has more than one tabbable element
+### Komponent ma więcej niż jeden element tabulowany
 
 <div id="locLevel"></div>
 
-The component must have no more than one tabbable element
+Komponent nie może mieć więcej niż jednego tabulowanego elementu
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne?
+Podstawowa konwencja nawigacji klawiaturowej zakłąda wykorzystanie klawiszy Tab i `Shift+Tab` do przenoszenia fokusu z jednego komponentu interfejsu użytkownika na drugi. Inne klawisze (głównie klawisze strzałki) przenoszą fokus w komponentach składających się z wielu elementów interaktywnych. Autorzy muszą stosować się do tej konwencji i zapewnić nie więcej niż jedno zatrzymanie tabulacji dla każdego komponentu (dostarczając fokus na klawiaturze).
 
-The primary keyboard navigation convention uses Tab and `Shift+Tab` key commands to move focus from one UI component to another. Other keys (primarily the arrow keys) move focus within components comprised of multiple focusable elements. Authors must follow this convention and provide no more than one tab stop per component (providing keyboard focus).
+
 
 <div id="locSnippet"></div>
 
-### What to do
-* Modify the widget’s keyboard navigation model to contain only one tab stop to set focus in or on the widget. (Refer to the [WAI-ARIA Authoring practices](https://www.w3.org/TR/wai-aria-practices-1.2/#keyboard) for more information on how to manage keyboard focus.)
+### Co zrobić
+* Zmodyfikuj model nawigacji sekwencyjnej klawiaturą tak, aby zawierał tylko jedno miejsce umożliwiające ustawienie fokusu w lub na widżecie. (Więcej informacji na temat zarządzania fokusem klawiatury znajduje się w [WAI-ARIA Authoring practices](https://www.w3.org/TR/wai-aria-practices-1.1/#keyboard).
+
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 2.1.1 Keyboard](https://www.ibm.com/able/requirements/requirements/#2_1_1)
+[IBM 2.1.1 Klawiatura](https://www.ibm.com/able/guidelines/ci162/keyboard.html)
+[Sekwencja tabulacji](https://www.w3.org/TR/wai-aria-practices-1.1/#kbd_general_between)
 
-[The Tab Sequence](https://www.w3.org/TR/wai-aria-practices-1.2/#kbd_general_between)
+### Kogo to dotyczy?
 
-### Who does this affect?
-
-* People using a screen reader, including blind, low vision and neurodivergent people
-* People who physically cannot use a pointing device
-* People with tremor or other movement disorders
+ * Osoby niewidome korzystające z czytników ekranu
+ * Osoby, które nie mogą używać urządzenia wskazującego
+ * Osoby z drżeniem rąk lub innymi zaburzeniami ruchu
 
 </Column>
 </Row>

@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: Rpt_Aria_EmptyPropertyValue"
+title: "Pomoc dotycząca reguł testowania dostępności: Rpt_Aria_EmptyPropertyValue"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,42 +8,42 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Element attribute(s): `{0}` value is empty
-
+### Atrybut(y) elementu: wartość `{0}` jest pusta
 <div id="locLevel"></div>
 
-When specifying a required WAI-ARIA attribute, the value must be non-empty
+Przy podawaniu wymaganego atrybutu WAI-ARIA, wartość musi być niepusta
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-For each WAI-ARIA attribute (a property or a state) used in an element, a valid value for the attribute must be specified. This enables assistive technologies to present the element appropriately.
+Dla każdego atrybutu WAI-ARIA (właściwość lub stan) użytego w elemencie musi być określona prawidłowa wartość atrybutu. Umożliwia to technologiom wspomagającym odpowiednią prezentację elementu.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
- * Provide a valid value for the empty required attribute(s). Refer to the [WAI-ARIA 1.1 Taxonomy of States and Properties](https://www.w3.org/TR/wai-aria-1.1/#state_prop_taxonomy) for valid values for each attribute.
+ * Podaj poprawną wartość pustego wymaganego atrybutu (atrybutów). Zobacz [Taxonomy of States and Properties](https://www.w3.org/TR/wai-aria-1.1/#state_prop_taxonomy), aby uzyskać prawidłowe wartości dla każdego atrybutu.
+ 
+Na przykład, następujący element używa właściwości `aria-live`. Właściwość `aria-live` wymaga prawidłowego, niepustego zestawu wartości, z których jedną jest `"polite"`.
 
-For example, the following element uses an `aria-live` property. The `aria-live` property requires a valid non-empty value set, one of which is `"polite"`.
 
-<CodeSnippet type="single" light={true}>&lt;div role="range" aria-live="polite"&gt;Live region content.&lt;/div&gt;</CodeSnippet>
+<CodeSnippet type="single" light={true}>&lt;div role="range" aria-live="polite"&gt;Obszar treści aktualizowanej dynamicznie (żywy region).&lt;/div&gt;</CodeSnippet>
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 4.1.2 Name, Role, Value](http://www.ibm.com/able/guidelines/ci162/name_role_value.html)
+[4.1.2 Nazwa, rola, wartość](http://www.ibm.com/able/guidelines/ci162/name_role_value.html)
 [W3C WAI-ARIA 1.1 Taxonomy of States and Properties](https://www.w3.org/TR/wai-aria-1.1/#state_prop_taxonomy)
 
-### Who does this affect?
+### Na kogo to wpływa
 
- * Blind people using screen readers
+ * Osoby niewidome korzystające z czytników ekranu
 
 </Column>
 </Row>

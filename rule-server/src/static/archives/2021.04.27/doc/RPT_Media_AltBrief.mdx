@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: RPT_Media_AltBrief"
+title: "Pomoc dla reguły: RPT_Media_AltBrief"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,50 +8,51 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Text alternative is more than 150 characters
+### Tekst alternatywny ma więcej niż 150 znaków
 
 <div id="locLevel"></div>
 
-Alternative text in `alt` attribute should be brief
+Tekst alternatywny w atrybucie `alt` powinien być krótki
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-`alt` attribute values ('alt text') are intended to be a brief, inline replacement for an image when it cannot be loaded or displayed. Verbose or long alt text can have a negative impact on the user experience.
+Wartości atrybutu `alt` ('tekst alt') są przeznaczone do krótkiego, liniowego zastąpienia obrazu, gdy nie można go załadować lub wyświetlić. Przegadany lub długi tekst alt może mieć negatywny wpływ na doświadczenie użytkownika.
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
- * Use an `alt` description less than 150 characters long;
- * OR, if a shorter description is not adequate, use the `aria-describedby` attribute to point to the `id` value of an element containing a longer description;
- * OR, use a 'D' link as shown in the example.
+ * Użyj opisu `alt` o długości mniejszej niż 150 znaków;
+ * LUB, jeśli krótszy opis nie jest odpowiedni, użyj atrybutu `aria-describeby`, aby wskazać wartość `id` elementu zawierającego dłuższy opis;
+ * LUB, użyj odnośnika 'D', jak pokazano w przykładzie.
 
- For example:
+Na przykład:
 
-<CodeSnippet type="multi" light={true}>&lt;img src="boxplot.gif" alt="Box plot comparing scores across five testing conditions" aria-describedby="imgDescription"&gt;
-&lt;div id="imgDescription"&gt;This box plot shows test scores for the expert group (mean 4.5, std. dev 1.1), intermediate group ... &lt;/div&gt;
+<CodeSnippet type="multi" light={true}>&lt;img src="boxplot.gif" alt="Wykres słupkowy porównujący wyniki w pięciu warunkach testowych" aria-describedby="imgDescription"&gt;
+&lt;div id="imgDescription"&gt;Ten wykres przedstawia wyniki badań dla grupy ekspertów (średnia 4,5, std. dev 1,1), grupy pośredniej ... &lt;/div&gt;
     
-&lt;img src="rpttested.gif" alt="Tested with IBM Equal Access Accessibility Checker"&gt;
+&lt;img src="rpttested.gif" alt="Testowane z IBM Equal Access Accessibility Checker"&gt;
 &lt;a href="testInfo.html"&gt;D&lt;/a&gt;</CodeSnippet>
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 1.1.1 Non-text content](https://www.ibm.com/able/requirements/requirements/#1_1_1)
+[IBM 1.1.1 Treść nietekstowa](http://www.ibm.com/able/guidelines/ci162/non_text_content.html)
 
-### Who does this affect?
+### Na kogo to wpływa
 
- * Blind people using a screen reader
- * People using text only, monochrome or braille displays
- * People using text-based browsers (e.g., Lynx) or audio interfaces
- * People who turn off image-loading on their web browsers
+ * Osoby niewidome korzystające z czytników ekranu
+ * Osoby używające tylko tekstu, wyświetlaczy monochromatycznych lub brajlowskich
+ * Osoby korzystające z przeglądarek tekstowych (np. Lynx) lub interfejsów audio
+ * Osoby, które wyłączają ładowanie obrazów w swoich przeglądarkach internetowych
 
 </Column>
 </Row>

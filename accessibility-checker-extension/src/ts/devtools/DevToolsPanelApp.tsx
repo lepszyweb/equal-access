@@ -276,18 +276,18 @@ export default class DevToolsPanelApp extends React.Component<IPanelProps, IPane
 
     errorHandler = (error: string | null) => {
 
-        if (error && error.indexOf('Cannot access contents of url "file://') != -1) {
+        if (error && error.indexOf('Nie można uzyskać dostępu do zawartości adresu url "file://') != -1) {
 
             let sub_s = error.substring(error.indexOf("\"") + 1);
             let sub_e = sub_s.substring(0, sub_s.indexOf("\""));
 
             return (
                 <React.Fragment>
-                    <p>Can not scan local file: <span style={{ fontWeight: "bold" }}>{sub_e}</span></p>
+                    <p>Nie można zeskanować pliku lokalnego: <span style={{ fontWeight: "bold" }}>{sub_e}</span></p>
                     <br />
-                    <p>Follow the {" "}
-                        <a href={chrome.runtime.getURL("usingAC.html")} target="_blank" rel="noopener noreferred">User Guide</a>
-                        {" "}to allow scanning of local .html or .htm files in your browser</p>
+                    <p>Postępuj zgodnie z {" "}
+                        <a href={chrome.runtime.getURL("usingAC.html")} target="_blank" rel="noopener noreferred">Podręcznikiem użytkownika</a>
+                        {" "}, aby umożliwić skanowanie lokalnych plików .html lub .htm w Twojej przeglądarce</p>
                 </React.Fragment>
             )
         }
@@ -473,7 +473,7 @@ export default class DevToolsPanelApp extends React.Component<IPanelProps, IPane
         var element_no_violations = parseInt((((summaryNumbers[4] - summaryNumbers[0]) / summaryNumbers[4]) * 100).toFixed(0));
 
         var violation = report?.counts.total.Violation;
-        var needsReview = report?.counts.total["Needs review"];
+        var needsReview = report?.counts.total["Do przeglądu"];
         var recommendation = report?.counts.total.Recommendation;
 
         // Keep track of number of stored scans (be sure to adjust when clear scans)
@@ -483,7 +483,7 @@ export default class DevToolsPanelApp extends React.Component<IPanelProps, IPane
 
         // scan label of the current stored scan 
         // the current scan is always stored for the current scan report
-        this.setState({ currentStoredScan:  "scan" + this.state.storedScanCount });
+        this.setState({ currentStoredScan:  "skan" + this.state.storedScanCount });
 
         // get only data needed for multi-scan report
         const scanData = MultiScanData.issues_sheet_rows(xlsx_props); 
@@ -665,7 +665,7 @@ export default class DevToolsPanelApp extends React.Component<IPanelProps, IPane
     
                 var tabTitle: string = this.state.tabTitle;
                 var tabTitleSubString = tabTitle ? tabTitle.substring(0, 50) : "";
-                var filename = "Accessibility_Report-" + tabTitleSubString + ".html";
+                var filename = "IBM_Equal_Access_Raport_dla_Strony---" + tabTitleSubString + ".html";
                 //replace illegal characters in file name
                 filename = filename.replace(/[/\\?%*:|"<>]/g, '-');
     
@@ -794,7 +794,7 @@ export default class DevToolsPanelApp extends React.Component<IPanelProps, IPane
                             console.error(isException);
                         }
                         if (!result) {
-                            console.log('Could not select element, it may have moved');
+                            console.log('IBM_Equal_Access_Raport_dla_Strony---');
                         }
                         // do focus after inspected Window script
                         setTimeout(() => {
@@ -820,7 +820,7 @@ export default class DevToolsPanelApp extends React.Component<IPanelProps, IPane
                     console.error(isException);
                 }
                 if (!result) {
-                    console.log('Could not get selected element');
+                    console.log('Nie można uzyskać wybranego elementu');
                 }
                 // get current element after inspected Window script
                 setTimeout(() => {
@@ -839,7 +839,7 @@ export default class DevToolsPanelApp extends React.Component<IPanelProps, IPane
                     console.error(isException);
                 }
                 if (!result) {
-                    console.log('Could not select element');
+                    console.log('Nie udało się wybrać elementu');
                 }
                 // select element after inspected Window script
                 setTimeout(() => {
@@ -888,14 +888,14 @@ export default class DevToolsPanelApp extends React.Component<IPanelProps, IPane
         }
         else if (this.props.layout === "main") {
             return <React.Fragment>
-                <div style={{ display: "flex", height: "100%", maxWidth: "50%" }} className="mainPanel" role="aside" aria-label={!this.state.report?"About IBM Accessibility Checker":this.state.report && !this.state.selectedItem ? "Scan summary" : "Issue help"}>
+                <div style={{ display: "flex", height: "100%", maxWidth: "50%" }} className="mainPanel" role="aside" aria-label={!this.state.report?"O Testerze dostepności IBM":this.state.report && !this.state.selectedItem ? "Podsumowanie skanowania" : "Pomoc w rozwiązaniu problemu"}>
                     <div ref={this.leftPanelRef} style={{ flex: "1 1 50%", height:"100%", position:"fixed", left:"50%", maxWidth:"50%", backgroundColor: "#f4f4f4", overflowY: this.state.report && this.state.selectedItem ? "scroll" : undefined }}>
                         {!this.state.report && <ReportSplash />}
                         {this.state.report && !this.state.selectedItem && <ReportSummary tabURL={this.state.tabURL} report={this.state.report} />}
                         {this.state.report && this.state.selectedItem && <Help report={this.state.report!} item={this.state.selectedItem} checkpoint={this.state.selectedCheckpoint} />}
                     </div>
                     {this.leftPanelRef.current?.scrollTo(0, 0)}
-                    <div style={{ flex: "1 1 50%" }} className="mainPanelRight" role="main" aria-label="IBM Accessibility Assessment">
+                    <div style={{ flex: "1 1 50%" }} className="mainPanelRight" role="main" aria-label="IBM Ocena dostepności">
                         <Header
                             layout={this.props.layout}
                             counts={this.state.report && this.state.report.counts}
@@ -921,7 +921,7 @@ export default class DevToolsPanelApp extends React.Component<IPanelProps, IPane
                             getCurrentSelectedElement={this.getCurrentSelectedElement.bind(this)}
                         />
                         <div style={{ marginTop: "8rem", height: "calc(100% - 8rem)" }}>
-                            <div role="region" aria-label="issue list" className="issueList">
+                            <div role="region" aria-label="lista problemów" className="issueList">
                                 {this.state.numScanning > 0 ? <Loading /> : <></>}
                                 {this.state.report && <Report
                                     selectItem={this.selectItem.bind(this)}
@@ -1001,7 +1001,7 @@ export default class DevToolsPanelApp extends React.Component<IPanelProps, IPane
                     />
                     <div style={{overflowY:"scroll", height:"100%"}}>
                         <div style={{ marginTop: "8rem", height: "calc(100% - 8rem)" }}>
-                            <div role="region" aria-label="issue list" className="issueList">
+                            <div role="region" aria-label="lista problemów" className="issueList">
                                 {this.state.numScanning > 0 ? <Loading /> : <></>}
                                 {this.state.report && <Report
                                     selectItem={this.selectItem.bind(this)}

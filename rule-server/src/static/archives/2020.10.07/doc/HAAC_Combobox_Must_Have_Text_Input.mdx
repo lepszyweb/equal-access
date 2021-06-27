@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: HAAC_Combobox_Must_Have_Text_Input"
+title: "Pomoc dla reguły: HAAC_Combobox_Must_Have_Text_Input"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -10,30 +10,33 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 
 ### The text input `role` or number of lines is not valid for a combobox
 
+Wartość atrybutu `role` w polu przeznaczonym na dane tekstowe lub liczba wierszy nie są poprawnymi wartściami dla combox
+
 <div id="locLevel"></div>
 
-A combobox must have a single line text input element with a valid `role`
+Combobox musi posiadać jednowierszowe pole tekstowe z poprawną wartością `role`
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-A combobox combines a text input element and a popup element that helps the user set the value of the input. The text input element must be a single line text field with an appropriate role, otherwise assistive technologies may not be able to present and control the content correctly.
+Combobox jest interaktywnym komponentem interfejsu użytkownika, który łączy w sobie cechy kontrolek textbox z innym elementem, takim jak listbox lub grid, który może dynamicznie wyskakiwać, aby pomóc użytkownikowi ustawić wprowadzaną wartość. Elementem przeznaczonym na wprowadzenie tekstu musi być jednowierszowe pole tekstowe z odpowiednią wartością atrybutu role, w przeciwnym razie technologie wspomagające mogą nie być w stanie prawidłowo zaprezentować i kontrolować treści.
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
- * Code the combobox as in the WAI-ARIA 1.2 example below;
- * OR, if the text input element is multi-line (e.g. `<textarea>`), set `aria-multiline="false"`;
- * AND, ensure the text input element has `role="textbox"` or `role="searchbox"`. An `<input type="text">` element has the implicit role of `"textbox"`.
+ * Zakoduj combobox jak w przykładzie WAI-ARIA 1.2 poniżej;
+ * LUB, jeśli element wprowadzania tekstu jest wielowierszowy (np. `<textarea>`), ustaw `aria-multiline="false"`;
+ * ORAZ, i upewnij się, że element wprowadzania tekstu ma `role="textbox"` lub `role="searchbox"`. Element `<input type="text">` ma domyślną rolę `"textbox"`.
 
-Alert: The guidance for combobox is changing significantly in WAI-ARIA 1.2 due to problems with implementation of the WAI-ARIA 1.1 pattern. The recommended combobox pattern for WAI-ARIA 1.2 is:
+Alert: Wytyczne dla comboboxa zmieniły się znacząco w WAI-ARIA 1.2 z powodu problemów z implementacją wzorca WAI-ARIA 1.1. Rekomendowanym wzorcem comboboxa dla WAI-ARIA 1.2 jest:
 
-<CodeSnippet type="multi" light={true}> &lt;label for="tag_combo"&gt;Tag&lt;/label&gt;
+<CodeSnippet type="multi" light={true}> &lt;label for="tag_combo"&gt;Znacznik&lt;/label&gt;
   &lt;input type="text" id="tag_combo"
       role="combobox" aria-autocomplete="list"
       aria-haspopup="listbox" aria-expanded="true"
@@ -43,20 +46,20 @@ Alert: The guidance for combobox is changing significantly in WAI-ARIA 1.2 due t
       &lt;li role="option" id="selected_option"&gt;Zoom&lt;/li&gt;
    &lt;/ul&gt;</CodeSnippet>
 
-Note, example code includes material copied from or derived from [W3C, Accessible Rich Internet Applications (WAI-ARIA) 1.2 W3C Working Draft 18 December 2019](https://www.w3.org/TR/wai-aria-1.2/#combobox). Copyright © [2013-2019] W3C® (MIT, ERCIM, Keio, Beihang).
+Uwaga, przykładowy kod obejmuje materiały skopiowane lub pochodzące z [W3C, Accessible Rich Internet Applications (WAI-ARIA) 1.2 W3C Working Draft 18 December 2019](https://www.w3.org/TR/wai-aria-1.2/#combobox). Copyright © [2013-2019] W3C® (MIT, ERCIM, Keio, Beihang).
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 4.1.2 Name, Role, Value](http://www.ibm.com/able/guidelines/ci162/name_role_value.html)
+[4.1.2 Nazwa, rola, wartość](http://www.ibm.com/able/guidelines/ci162/name_role_value.html)
 [W3C WAI-ARIA v1.2 Authoring Practices - Combobox](https://www.w3.org/TR/wai-aria-1.2/#combobox)
 
-### Who does this affect?
+### Na kogo to wpływa
 
- * Blind people using screen readers
- * People with low vision using screen readers
+ * Osoby niewidome korzystające z czytników ekranu
+ * Osoby słabowidzące korzystające z czytników ekranu
 
 </Column>
 </Row>

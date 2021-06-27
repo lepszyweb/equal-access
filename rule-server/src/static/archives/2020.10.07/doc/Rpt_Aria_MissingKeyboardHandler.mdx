@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: Rpt_Aria_MissingKeyboardHandler"
+title: "Pomoc dotycząca reguł testowania dostępności: Rpt_Aria_MissingKeyboardHandler"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,31 +8,36 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Interactive WAI_ARIA UI component does not have keyboard handlers implemented for keyboard access
+### Interaktywny komponent interfejsu użytkownika WAI_ARIA nie ma zaimplementowanej obsługi klawiatury
+
 
 <div id="locLevel"></div>
 
-Interactive WAI_ARIA UI components must provide keyboard access
+Interaktywny komponent interfejsu użytkownika WAI_ARIA muszą zapewniać dostęp do treści za pomocą klawiatury
+
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-Unlike native HTML form elements, browsers do not provide keyboard support for graphical user interface (GUI) components that are made accessible with WAI-ARIA. Authors need to implement keyboard access using keyboard handlers such as `onkeydown` or `onkeypress`.
+W przeciwieństwie do rdzennych elementów formularzy HTML, przeglądarki nie zapewniają obsługi klawiatury dla komponentów graficznego interfejsu użytkownika (GUI), które są dostępne za pomocą WAI-ARIA. Autorzy muszą zaimplementować dostęp z klawiatury przy użyciu funkcji obsługi klawiatury, takich jak `onkeydown` lub `onkeypress`.
+
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
- * Confirm you can use only the keyboard to navigate to and interact with the UI component;
- * OR, if the component is not keyboard accessible, implement `onkeydown` or `onkeypress` keyboard handlers on the element itself using the [ARIA 1.2 Authoring practices guidance](https://www.w3.org/TR/wai-aria-practices-1.2);
- * OR, if the inaccessible component has required children, implement `onkeydown` or `onkeypress` keyboard handlers on all the required children (example below) or a grandchild of each required child;
- * OR, use other methods to provide keyboard access as described in [WAI-ARIA Authoring Practices 1.2, Design Patterns and Widgets](https://www.w3.org/TR/wai-aria-practices-1.2/#aria_ex).
-
-For example:
+ * Potwierdź, że możesz używać klawiatury do nawigacji i interakcji z komponentem interfejsu użytkownika;
+ * LUB, jeśli komponent nie jest dostępny za pomocą klawiatury, zaimplementuj programy obsługi klawiatury `onkeydown` lub `onkeypress` w samym elemencie, korzystając z [ARIA 1.2 Authoring practice tips](https://www.w3.org/TR/wai-aria -praktyki-1.2);
+ * LUB, jeśli niedostępny komponent ma wymagane elementy potomne, zaimplementuj obsługę klawiatury `onkeydown` lub` onkeypress` we wszystkich wymaganych elementach potomnych (przykład poniżej) lub wszystkich wnukach;
+ * LUB, jeśli niedostępny komponent ma wymagane elementy potomne, zaimplementuj obsługę klawiatury `onkeydown` lub` onkeypress` we wszystkich wymaganych elementach potomnych (przykład poniżej) lub wszystkich wnukach;
+ * LUB użyj innych metod, aby zapewnić dostęp z klawiatury, jak opisano w [WAI-ARIA Authoring Practices 1.2, Design Patterns and Widgets](https://www.w3.org/TR/wai-aria-practices-1.2/#aria_ex) . 
+  
+Na przykład:
 
 <CodeSnippet type="multi" light={true}>&lt;div role="tree" id="tree1"&gt;
     &lt;div id="item1" role="treeitem" tabindex="0" onkeypress="keyEvent()"&gt;Tree item&lt;/div&gt;
@@ -41,18 +46,18 @@ For example:
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 2.1.1 Keyboard](http://www.ibm.com/able/guidelines/ci162/keyboard.html)
+[IBM 2.1.1 Klawiatura](http://www.ibm.com/able/guidelines/ci162/keyboard.html)
 [WAI-ARIA Authoring Practices 1.2, Design Patterns and Widgets](https://www.w3.org/TR/wai-aria-practices-1.2/#aria_ex)
 [W3C WAI-ARIA 1.2, Developing a Keyboard Interface](https://www.w3.org/TR/wai-aria-practices-1.2/#keyboard)
 
-### Who does this affect?
+### Na kogo to wpływa
 
- * Blind people using screen readers
- * People with low vision
- * People with tremor or other movement disorders
- * People who rely on keyboard control
+ * Osoby niewidome korzystające z czytników ekranu
+ * Osoby słabowidzące
+ * Osoby z drżeniem lub innymi zaburzeniami ruchowymi
+ * Osoby, które polegają na sterowaniu klawiaturą
 
 </Column>
 </Row>

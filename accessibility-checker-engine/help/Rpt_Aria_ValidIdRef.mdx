@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: Rpt_Aria_ValidIdRef"
+title: "Pomoc dla reguły: Rpt_Aria_ValidIdRef"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,47 +8,47 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### The `id` `"{0}"` specified for the WAI-ARIA property `{1}` value is not valid
+### Wartość `id` `"{0}"` określona dla właściwości WAI-ARIA `{1}` jest nieprawidłowa
 
 <div id="locLevel"></div>
 
-The WAI-ARIA property must reference a non-empty unique id of an existing element that is visible
+Właściwość WAI-ARIA musi odwoływać się do niepustego unikalnego identyfikatora istniejącego elementu, który jest widoczny
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-Any element that uses a WAI-ARIA property must reference a valid `id` attribute. This enables assistive technologies to precisely identify the referenced element.
+Każdy element, który używa właściwości WAI-ARIA, musi odwoływać się do prawidłowego atrybutu `id`. Umożliwia to technologiom wspomagającym precyzyjną identyfikację elementu, którego dotyczy odwołanie.
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
- * Update the WAI-ARIA property value with the unique `id` value of a valid visible element.
+ * Zaktualizuj wartość właściwości WAI-ARIA unikalną wartością  `id` poprawnego widocznego elementu.
 
-For example:
+Na przykład:
 
 <CodeSnippet type="multi" light={true}>&lt;form action="" method="post"&gt;
-      &lt;label for="ln1"&gt;Last Name&lt;/label&gt;
-      &lt;input type="text" name="lastname" id="ln1" value="enter last name" title="enter last name" aria-describedby="ln2"&gt;
+      &lt;label for="ln1"&gt;Imię&lt;/label&gt;
+      &lt;input type="text" name="imie" id="ln1" value="enter last name" title="wpisz imię" aria-describedby="ln2"&gt;
 &lt;/form&gt;
-&lt;div id="ln2" role="tooltip"&gt;Last Name must be alpha only characters&lt;/div&gt;</CodeSnippet>
+&lt;div id="ln2" role="tooltip"&gt;Imię może zawierać tylko znaki alfabetu&lt;/div&gt;</CodeSnippet>
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 1.3.1 Info and Relationships](https://www.ibm.com/able/requirements/requirements/#1_3_1)
-[IBM 4.1.2 Name, Role, Value](https://www.ibm.com/able/requirements/requirements/#4_1_2)
+[1.3.1 Informacje i relacje](http://www.ibm.com/able/guidelines/ci162/info_and_relationships.html)
+[4.1.2 Nazwa, rola, wartość](http://www.ibm.com/able/guidelines/ci162/name_role_value.html)
 
-### Who does this affect?
+### Na kogo to wpływa
 
-* People using a screen reader, including blind, low vision and neurodivergent people
-* People with dexterity impairment using voice control
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby o ograniczonej sprawności ruchowej korzystające ze sterowania za pomocą głosu
 
 </Column>
 </Row>

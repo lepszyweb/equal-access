@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: HAAC_Input_Placeholder"
+title: "Pomoc dla reguły: HAAC_Input_Placeholder"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,59 +8,62 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### HTML5 `<placeholder>` attribute is the only visible label
+### Jedyną widoczną etykietą jest atrybut HTML5 `<placeholder>`
 
 <div id="locLevel"></div>
 
-HTML5 `<placeholder>` attribute must not be used as a visible label replacement
+Atrybutu HTML5 `<placeholder>` nie można używać jako widocznego zamiennika etykiety
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-The `<placeholder>` attribute when used as the only visible label, reduces the accessibility for a wide range of users for the following reasons:
- * it is not persistent; the placeholder value disappears when the user starts typing in the input field;
- * it can be mistaken for a pre-filled value;
- * the text color commonly fails a minimum contrast ratio;
- * the lack of a label reduces the hit region for setting focus to the input field.
+Atrybut `<placeholder>` użyty jako jedyna widoczna etykieta zmniejsza dostępność dla szerokiego grona użytkowników z następujących powodów:
+  * nie jest trwały; tekst zastępczy znika, gdy użytkownik zaczyna pisać w polu formularza;
+  * można go pomylić ze wstępnie wypełnioną wartością;
+  * kolor tekstu zwykle nie spełnia minimalnego współczynnika kontrastu;
+  * brak etykiety zmniejsza obszar aktywny (trafienia) przy ustawianiu fokusu na pole wejściowe.
+  
+  
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
+  * Użyj atrybutu `placeholder` jako krótkiej wskazówki (słowa lub krótkiej frazy), aby pomóc użytkownikowi we wprowadzaniu danych
+  * ORAZ użyj prawidłowej metody etykietowania, która jest zarówno widoczna, jak i określona programowo;
+  * LUB, jeśli nie można dodać widocznej etykiety, sprawdź, czy etykieta pola wejściowego jest zrozumiała w kontekście;
+  
 
- * Use the `placeholder` attribute for a short hint (a word or short phrase) to aid the user with data entry
+Na przykład:
 
- * AND, use a valid label method that is both visible and programmatically determined;
+<CodeSnippet type="single" light={true}>&lt;label&gt;Adres e-mail: &lt;input type="email" name="adres1" placeholder="jan@przyklad.net"&gt;&lt;/label&gt;</CodeSnippet>
 
-* OR, if a visible label can not be added, verify the input field label is understood witin the context;
-
-For example:
-
-<CodeSnippet type="single" light={true}>&lt;label&gt;Email Address: &lt;input type="email" name="address1" placeholder="john@example.net"&gt;&lt;/label&gt;</CodeSnippet>
-
-<CodeSnippet type="single" light={true}>&lt;label for="address2"&gt;Address&lt;/label&gt;</CodeSnippet>
+<CodeSnippet type="single" light={true}>&lt;label for="adres2"&gt;Adres&lt;/label&gt;</CodeSnippet>
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 3.3.2 Labels and Instructions](https://www.ibm.com/able/guidelines/ci162/labels_or_instructions.html)
+[IBM 3.3.2 Etykiety i instrukcje](https://www.ibm.com/able/guidelines/ci162/labels_or_instructions.html)
 [W3C Placeholder Research](https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/Placeholder_Research)
 
-### Who does this affect?
+### Na kogo to wpływa
 
-* People with low vision using screen magnification
-* People with visual impairment using color contrast enhancement
-* People with tremor or other movement disorders
-* Many older adults
+* Osoby słabowidzące używające powiększalników ekranu
+* Osoby z wadami wzroku korzystające z przełączników kontrastu kolorów
+* Osoby z drżeniem lub innymi zaburzeniami ruchowymi
+* Wiele osób starszych
 
 </Column>
 </Row>
 </div>
 
+
+$_Qqrooq6894
+$_Qqrooq6894
 export default ({ children, _frontmatter }) => (<React.Fragment>{children}</React.Fragment>)

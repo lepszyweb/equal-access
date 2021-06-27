@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: Rpt_Aria_MultipleApplicationLandmarks"
+title: "Pomoc dla reguły: Rpt_Aria_MultipleApplicationLandmarks"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,51 +8,52 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Multiple elements with `"application"` role do not have unique labels
+### Istnieje wiele elementów z rolą `"application"` bez unikalnych etykiet
 
 <div id="locLevel"></div>
 
-Each element with an `"application"` role must have a unique label that describes its purpose
+Każdy element z rolą `"application"` musi mieć unikalną etykietę opisującą jego przeznaczenie
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
 
-An element with an `"application"` role is a type of WAI-ARIA landmark region. When there are multiple application regions, they must have unique labels, so people who use assistive technologies can quickly identify and navigate to each application region.
+Element z rolą `"application"` jest typem obszaru kluczowego WAI-ARIA. Jeśli istnieje wiele obszarów z rolą `"application"`, muszą one mieć unikalne etykiety, aby osoby korzystające z technologii wspomagajacych mogły szybko zidentyfikować i nawigować do każdej aplikacji.
 
 <div id="locSnippet"></div>
+ 
+### Co zrobić
 
-### What to do
+* Dla każdego elementu z `role="application"` ustaw wartość atrybutu `aria-labelledby` na wartość `id` dowolnego widocznego tekstu, który odpowiednio i jednoznacznie opisuje zawartość tego obszaru;
+* LUB, użyj atrybutu `aria-label`, aby dodać niewidoczną, unikalną, niepustą etykietę do każdego elementu z rolą `"application"`.  
+  
 
- * For each element with `role="application"`, either set the value of the `aria-labelledby` attribute of each application to the `id` value of any visible text that appropriately and uniquely describes that application's purpose;
- * OR, use the `aria-label` attribute to add an invisible, unique, non-empty label to each element with the `"application"` role.
+Na przykład:
 
-For example:
-
-<CodeSnippet type="multi" light={true}>&lt;h1 id="weather"&gt;Weather portlet&lt;/h1&gt;
-&lt;div role="application" aria-labelledby="weather"&gt;
+<CodeSnippet type="multi" light={true}>&lt;h1 id="pogoda"&gt;Prognoza pogory&lt;/h1&gt;
+&lt;div role="application" aria-labelledby="pogoda"&gt;
     ...
 &lt;/div&gt;
     
-&lt;div role="application" aria-label="Stock ticker portlet"&gt;
+&lt;div role="application" aria-label="Notowania giełdowe"&gt;
     ...
 &lt;/div&gt;</CodeSnippet>
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 2.4.1 Bypass Blocks](https://www.ibm.com/able/requirements/requirements/#2_4_1)
-[W3C WCAG 2.1 technique ARIA6](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA6)
-[W3C WCAG 2.1 technique ARIA13](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA13)
+[IBM 2.4.1 Możliwość pominięcia bloków](http://www.ibm.com/able/guidelines/ci162/bypass_blocks.html)
+[Techniki WCAG 2.1 - Technika ARIA6](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA6)
+[Techniki WCAG 2.1 - Technika ARIA13](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA13)
 
-### Who does this affect?
+### Na kogo to wpływa
 
- * People using a screen reader, including blind, low vision and neurodivergent people
+ * Osoby niewidome korzystające z czytników ekranu
 
 </Column>
 </Row>

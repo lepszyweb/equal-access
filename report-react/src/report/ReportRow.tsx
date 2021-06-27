@@ -145,7 +145,7 @@ export default class ReportRow extends React.Component<IReportRowProps, IReportR
                     {rCount > 0 && <><span style={{ verticalAlign: "text-top", lineHeight: "8px" }}>{rCount}</span> {Recommendation16}</>}
                 </div>
                 <div className="bx--col-sm-3 bx--col-md-6 bx--col-lg-8" role="cell">
-                    <span >{group.title.length === 0 ? "Page" : group.title}</span>
+                    <span >{group.title.length === 0 ? "Strona" : group.title}</span>
                 </div>
             </div>
             {!open && <div className="bx--row itemDetail" />}
@@ -160,7 +160,7 @@ export default class ReportRow extends React.Component<IReportRowProps, IReportR
                                 {val === "Needs review" && <span>{NeedsReview16}</span>}
                                 {val === "Recommendation" && <span>{Recommendation16}</span>}
                                 <span style={{ fontSize: "12px" }}>{item.message}</span>
-                                <span> </span><a className="helpLink" href="javascript:void(0);" onClick={this.props.selectItem.bind(this, item, this.props.group.checkpoint)} >Learn more <Popup16 /></a>
+                                <span> </span><a className="helpLink" href="javascript:void(0);" onClick={this.props.selectItem.bind(this, item, this.props.group.checkpoint)} >Zobacz więcej <Popup16 /></a>
                             </div>
                         </div>
                     </div>)

@@ -1,5 +1,5 @@
 ---
-title: "Accessibility Checker Rule Help: HAAC_ActiveDescendantCheck"
+title: "Pomoc dla reguły: HAAC_ActiveDescendantCheck"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,53 +8,56 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### The `aria-activedescendant` property of the component does not reference the `id` of a valid child element.
+### Właściwość `aria-activedescendant` komponentu nie odwołuje się do `id` prawidłowego elementu potomnego.
 
 <div id="locLevel"></div>
 
-The `aria-activedescendant` property must reference the `id` of a non-empty, non-hidden active child element.
+Właściwość `aria-activedescendant` musi odnosić się do `id` niepustego, nieukrytego aktywnego elementu potomnego.
 
 </Column>
 </Row>
 <Row>
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
-### Why is this important?
+### Dlaczego to jest ważne
+W komponentach złożonych, gdzie elementy potomne nie mogą normalnie przyjmować fokusu klawiatury, atrybut `aria-activedescendant` może być użyty do identyfikacji elementu potomnego, który aktualnie ma fokus. Umożliwia to prawidłowe sterowanie komponentem za pomocą klawiatury, a także pozwala technologiom wspomagajacym na zbieranie informacji o komponencie i jego stanie.
 
-In a composite component where the child elements are not normally able to take keyboard focus, the `aria-activedescendant` attribute can be used to identify the child element that currently has focus. This enables proper keyboard control of the component, and allows assistive technologies to gather information about the component and its state.
+
 
 <div id="locSnippet"></div>
 
-### What to do
+### Co zrobić
 
-* Verify that the `aria-activedescendant` attribute value is the `id` of the currently active child element;
-* AND, verify that the child element is not hidden;
-* AND, verify that the child element is either a descendant of this element, or is owned by this element (indicated by using the aria-owns attribute on this element).
+* Sprawdź, czy wartością atrybutu `aria-activedescendant`jest `id` aktualnie aktywnego elementu potomnego;
+* AND, sprawdź, czy element potomny nie jest ukryty;
+* AND, sprawdź, czy element podrzędny jest potomkiem tego elementu lub należy do tego elementu (wskazywany przez użycie atrybutu aria-owns w tym elemencie).
 
-The following example* shows a radio group using `aria-activedescendant` to indicate the active radio button, which is coded as a DOM descendant:
+Poniższy przykład* przedstawia grupę opcji używającą `aria-activedescendant` do wskazania aktywnego przycisku opcji, który jest zakodowany jako element podrzędny DOM:
 
 <CodeSnippet type="multi" light={true}> 
-   &lt;h3 id="group_label_1"&gt;Pizza Crust&lt;/h3&gt;
+   &lt;h3 id="group_label_1"&gt;Ciasto na pizzę&lt;/h3&gt;
    &lt;ul id="rg1" class="radiogroup" role="radiogroup" aria-labelledby="group_label_1" aria-activedescendant="rb11" tabindex="0"&gt;
-     &lt;li id="rb11" role="radio" aria-checked="false"&gt;Regular crust&lt;/li&gt;
-     &lt;li id="rb12" role="radio" aria-checked="false"&gt;Deep dish&lt;/li&gt;
-     &lt;li id="rb13" role="radio" aria-checked="false"&gt;Thin crust&lt;/li&gt;
+     &lt;li id="rb11" role="radio" aria-checked="false"&gt;Zwykłe ciasto&lt;/li&gt;
+     &lt;li id="rb12" role="radio" aria-checked="false"&gt;Grube ciasto&lt;/li&gt;
+     &lt;li id="rb13" role="radio" aria-checked="false"&gt;Cienkie ciasto&lt;/li&gt;
    &lt;/ul&gt; 
    </CodeSnippet> 
    
-* Example code includes material copied from or derived from ARIA 1.2 Practices - Radio Group Example Using aria-activedescendant. Copyright © 2018-2019 W3C® (MIT, ERCIM, Keio, Beihang).
+* Przykładowy kod obejmuje materiał skopiowany lub uzyskany z ARIA 1.2 Practices - Radio Group Example Using aria-activedescendant. Copyright © 2018-2019 W3C® (MIT, ERCIM, Keio, Beihang).
+
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
-### About this requirement
+### O tym wymaganiu
 
-[IBM 4.1.2 Name, Role, Value](https://www.ibm.com/able/requirements/requirements/#4_1_2)
-[WAI-ARIA v1.2: Managing Focus in Composites Using aria-activedescendant](https://www.w3.org/TR/wai-aria-practices-1.2/#kbd_focus_activedescendant)
+[4.1.2 Nazwa, rola, wartość](http://www.ibm.com/able/guidelines/ci162/name_role_value.html)
+[WAI-ARIA v1.2: Zarządzanie fokusem w kompozytach za pomocą aria-activedescendant](https://www.w3.org/TR/wai-aria-practices-1.2/#kbd_focus_activedescendant)
 
-### Who does this affect?
+### Na kogo to wpływa
 
-* People using a screen reader, including blind, low vision and neurodivergent people
+* Osoby niewidome korzystające z czytników ekranu
+* Osoby słabowidzące korzystające z czytników ekranu
 
 </Column>
 </Row>
