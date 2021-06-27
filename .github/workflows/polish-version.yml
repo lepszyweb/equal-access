@@ -25,6 +25,7 @@ jobs:
     - name: Build
       run: |
            cd ./accessibility-checker-extension
+           npm install shx
            npm run clean:all
            npm install
            npm run package:browser
