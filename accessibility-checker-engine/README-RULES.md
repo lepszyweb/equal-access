@@ -124,3 +124,26 @@ Aby uruchomić wszystkie przypadki testowe, `npm test`. Aby przetestować pojedy
 Następnie uruchom ponownie `npm test`.
 
 `npm test` będzie obserwować pliki i automatycznie uruchamiać się ponownie, gdy przypadek testowy lub reguły zostaną zmienione.
+
+## Run local server with local browser extension
+
+Zbuduj i uruchom serwer reguł. W rule-server uruchom 
+```
+npm run start
+```
+lub bez pomocy
+
+ ```
+ npm run start:nohelp.
+```
+
+Załaduj https://localhost:9445/ w przeglądarce i wpisz `thisisunsafe`, aby ominąć ostrzeżenia o certyfikatach.
+Zbuduj rozszerzenie. W accessibility-checker-extension uruchom 
+
+```
+npm run build:watch:local
+```
+
+Dodaj do Chrome rozszerzenie znajdujące się w katalogu accessibility-checker-extension/dist. Będzie ono miało etykietę (local) na karcie DevTools.
+
+**Uwaga**: Zmiany w regułach nie są automatycznie przebudowywane. Będziesz musiał zabić serwer reguł (Ctrl+C), a następnie odbudować go i uruchomić ponownie. Może być konieczne odświeżenie rozszerzenia, aby przeładować reguły.
