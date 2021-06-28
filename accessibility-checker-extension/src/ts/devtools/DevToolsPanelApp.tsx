@@ -276,7 +276,7 @@ export default class DevToolsPanelApp extends React.Component<IPanelProps, IPane
 
     errorHandler = (error: string | null) => {
 
-        if (error && error.indexOf('Nie można uzyskać dostępu do zawartości adresu url "file://') != -1) {
+        if (error && error.indexOf('Nie można uzyskać dostępu do treści pod adresem url "file://') != -1) {
 
             let sub_s = error.substring(error.indexOf("\"") + 1);
             let sub_e = sub_s.substring(0, sub_s.indexOf("\""));
@@ -534,8 +534,8 @@ export default class DevToolsPanelApp extends React.Component<IPanelProps, IPane
             url: this.state.tabURL,
             pageTitle: this.state.tabTitle,
             dateTime: this.state.report?.timestamp,
-            scanLabel: "scan" + this.state.storedScanCount, // is this safe since setState above is async
-            userScanLabel: "scan" + this.state.storedScanCount, // this is the visible scan label which may be edited by user
+            scanLabel: "skan" + this.state.storedScanCount, // is this safe since setState above is async
+            userScanLabel: "skan" + this.state.storedScanCount, // this is the visible scan label which may be edited by user
             ruleSet: report.option.deployment.name,
             guidelines: report.option.guideline.name,
             reportDate: new Date(report.timestamp),
@@ -544,7 +544,7 @@ export default class DevToolsPanelApp extends React.Component<IPanelProps, IPane
             recommendations: recommendation,
             elementsNoViolations: element_no_violations,
             elementsNoFailures: element_no_failures,
-            storedScan: "scan" + this.state.storedScanCount,
+            storedScan: "skan" + this.state.storedScanCount,
             screenShot: canvas,
             storedScanData: scanData,
         };
@@ -665,7 +665,7 @@ export default class DevToolsPanelApp extends React.Component<IPanelProps, IPane
     
                 var tabTitle: string = this.state.tabTitle;
                 var tabTitleSubString = tabTitle ? tabTitle.substring(0, 50) : "";
-                var filename = "IBM_Equal_Access_Raport_dla_Strony---" + tabTitleSubString + ".html";
+                var filename = "Raport_dostepnosci-" + tabTitleSubString + ".html";
                 //replace illegal characters in file name
                 filename = filename.replace(/[/\\?%*:|"<>]/g, '-');
     
@@ -794,7 +794,7 @@ export default class DevToolsPanelApp extends React.Component<IPanelProps, IPane
                             console.error(isException);
                         }
                         if (!result) {
-                            console.log('IBM_Equal_Access_Raport_dla_Strony---');
+                            console.log('Nie można wybrać elementu, być może został przeniesiony');
                         }
                         // do focus after inspected Window script
                         setTimeout(() => {
@@ -839,7 +839,7 @@ export default class DevToolsPanelApp extends React.Component<IPanelProps, IPane
                     console.error(isException);
                 }
                 if (!result) {
-                    console.log('Nie udało się wybrać elementu');
+                    console.log('Nie można wybrać elementu');
                 }
                 // select element after inspected Window script
                 setTimeout(() => {
@@ -888,7 +888,7 @@ export default class DevToolsPanelApp extends React.Component<IPanelProps, IPane
         }
         else if (this.props.layout === "main") {
             return <React.Fragment>
-                <div style={{ display: "flex", height: "100%", maxWidth: "50%" }} className="mainPanel" role="aside" aria-label={!this.state.report?"O Testerze dostepności IBM":this.state.report && !this.state.selectedItem ? "Podsumowanie skanowania" : "Pomoc w rozwiązaniu problemu"}>
+                <div style={{ display: "flex", height: "100%", maxWidth: "50%" }} className="mainPanel" role="aside" aria-label={!this.state.report?"O Testerze dostepności IBM":this.state.report && !this.state.selectedItem ? "Podsumowanie skanowania" : "Pomoc w problemach"}>
                     <div ref={this.leftPanelRef} style={{ flex: "1 1 50%", height:"100%", position:"fixed", left:"50%", maxWidth:"50%", backgroundColor: "#f4f4f4", overflowY: this.state.report && this.state.selectedItem ? "scroll" : undefined }}>
                         {!this.state.report && <ReportSplash />}
                         {this.state.report && !this.state.selectedItem && <ReportSummary tabURL={this.state.tabURL} report={this.state.report} />}

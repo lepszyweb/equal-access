@@ -34,10 +34,10 @@ export default class OptionUtil {
                 latestArchive?.name.substring(
                     0,
                     latestArchive.name.indexOf("Deployment")
-                ) + " - Latest Deployment"
+                ) + " - Najnowsze wdrożenie"
             );
         } else if (selected_archive_id == "preview") {
-            return "Preview (TBD)";
+            return "Podglądowe (TBD)";
         } else {
             let selected_archive = archives?.find((archive: any) => {
                 return archive.id == selected_archive_id;

@@ -43,7 +43,7 @@ export default class PopupApp extends React.Component {
             <div className="popupTitle">
               IBM <strong>Equal Access</strong>
               <br />
-              Tester dostępności
+              Accessibility Checker
             </div>
             <div className="versionDec">Wersja {manifest.version}</div>
           </div>
@@ -63,11 +63,11 @@ export default class PopupApp extends React.Component {
           </div>
         </div>
 
-        <h2 className="popupSubTitle">Ocenianie dostępności</h2>
+        <h2 className="popupSubTitle">Ocena dostępności</h2>
 
         <div className="popupPanelDesc" style={{ width: "406px" }}>
-          Kompleksowe narzędzie oceny dostępności. Rozpocznij korzystanie z niego poprzez przejście do panelu
-		  &rdquo;Ocena dostępności&bdquo; w Narzędziach programisty.
+          Kompleksowe narzędzie oceny dostępności. Aby rozpocząć korzystanie z niego, przejź do panelu
+		  &bdquo;Ocena dostępności&rdquo; w Narzędziach programistycznych.
         </div>
         <div style={{ marginTop: "8px" }}>
           <img
@@ -78,11 +78,11 @@ export default class PopupApp extends React.Component {
           />
         </div>
         <h2 className="popupSubTitle" style={{ marginTop: "17px" }}>
-          Ocena dostępności
+          Tester dostępności
         </h2>
         <div className="popupPanelDesc" style={{ width: "406px" }}>
-          Skaner kodu dla programistów chcących szybko znaleźć i naprawić błędy. 
-		  Zacznij używać, przechodząc do panelu &rdquo;Ocena dostępności&bdquo; w Narzędziach programisty.
+		Skaner kodu dla programistów chcących szybko znaleźć i naprawić błędy. 
+		  Zacznij używać, przechodząc do panelu &rdquo;Tester dostępności&bdquo; w Narzędziach programistycznych.
         </div>
         <div style={{ marginTop: "8px" }}>
           <img
@@ -118,7 +118,7 @@ export default class PopupApp extends React.Component {
               target="_blank"
               rel="noopener noreferred"
             >
-              Dokumentacja
+              Podręcznik użytkownika
             </a>
           </div>
         </div>

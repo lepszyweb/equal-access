@@ -177,8 +177,8 @@ class OptionsApp extends React.Component<{}, OptionsAppState> {
                 <img src={beeLogoUrl} alt="fioletowa ikona pszczoły" className="icon" />
                 <h2>
                   IBM <strong>Accessibility</strong>
-                  <br />Zestaw narzędzi Equal Access:
-                  <br />Tester dostępności
+                  <br /> Zestaw narzędzi Equal Access:
+                  <br /> Tester dostępności
                 </h2>
               </div>
               <aside aria-label="O opcjach Testera dostępności">
@@ -186,7 +186,7 @@ class OptionsApp extends React.Component<{}, OptionsAppState> {
                   Wersja {manifest.version}
                 </div>
                 <p>
-                  Domyślnie Tester dostępności korzysta z zestawu reguł, 
+                  Tester dostępności korzysta domyślnie z zestawu reguł, 
 				  które odpowiadają najnowszym wytycznym WCAG oraz kilku 
 				  dodatkowym wymaganiom IBM. Dostępne są również zestawy reguł 
 				  dla poszczególnych wersji WCAG. Zestawy reguł są regularnie aktualizowane, 
@@ -205,7 +205,7 @@ class OptionsApp extends React.Component<{}, OptionsAppState> {
                     <Button 
                           renderIcon={Information16} 
                           kind="ghost"   
-                          hasIconOnly iconDescription="Rule set info" tooltipPosition="top" 
+                          hasIconOnly iconDescription="Informacje o zestawie reguł" tooltipPosition="top" 
                           style={{color:"black", border:"none", verticalAlign:"baseline", minHeight:"28px", 
                                   paddingTop:"8px", paddingLeft:"8px", paddingRight:"8px"}}
                           onClick={(() => {
@@ -221,7 +221,7 @@ class OptionsApp extends React.Component<{}, OptionsAppState> {
                     id="archivedRuleset"
                     items={archives}
                     itemToString={(item: any) => (item ? item["name"] : "")}
-                    label="Data wdrożenia zasady"
+                    label="Data wdrożenia zestawu"
                     light={false}
                     titleText=""
                     type="default"
@@ -231,16 +231,16 @@ class OptionsApp extends React.Component<{}, OptionsAppState> {
 
                   <Modal
                       aria-label="Informacje o wersji"
-                      modalHeading="Wybieranie daty wdrożenia zestawu reguł"
+                      modalHeading="Wybierz datę wdrożenia zestawu reguł"
                       passiveModal={true}
                       open={this.state.modalRuleSet}
                       onRequestClose={(() => {
                           this.setState({ modalRuleSet: false });
                       }).bind(this)}
                   >
-                      <p style={{maxWidth:"100%"}}><strong>Datowane wdrożenie: </strong> Użyj zestawu reguł z określonej daty do spójnego testowania w całym projekcie lub do powtórzenia wcześniejszych testów</p>  
+                      <p style={{maxWidth:"100%"}}><strong>Wdrożenie datowane: </strong> użyj zestawu reguł z określonej daty w celu spójnego testowania w całym projekcie albo żeby powtórzyć wcześniejsze testy</p> 
                       
-                      <p style={{maxWidth:"100%"}}><strong>Przyszły zestaw: </strong> Wypróbuj eksperymentalny podgląd możliwego przyszłego zestawu reguł</p> 
+                      <p style={{maxWidth:"100%"}}><strong>Reguły podglądowe: </strong> wypróbuj eksperymentalny zestaw przyszłych reguł</p> 
                       
                       <p style={{maxWidth:"100%"}}>Szczegółowe informacje na temat zmian w zestawie reguł pomiędzy wdrożeniami znajdują się na stronie <a className="link" href="https://www.ibm.com/able/requirements/release-notes" target="_blank" style={{color:'#002D9C'}}>Uwagi o wydaniu</a></p>        
                   </Modal>
@@ -249,11 +249,11 @@ class OptionsApp extends React.Component<{}, OptionsAppState> {
                 </div>
 
                 <div className="rulesetDate" style={{ marginTop: "1rem" }}>
-                  Wybierz wytyczne dotyczące dostępności
+                  Wybierz wytyczne dla dostępności
                   <Button 
                         renderIcon={Information16} 
                         kind="ghost"   
-                        hasIconOnly iconDescription="Informacje o zestawie reguł" tooltipPosition="top" 
+                        hasIconOnly iconDescription="Informacje o wytycznych" tooltipPosition="top" 
                         style={{color:"black", border:"none", verticalAlign:"baseline", minHeight:"28px", 
                                 paddingTop:"8px", paddingLeft:"8px", paddingRight:"8px"}}
                         onClick={(() => {
@@ -265,11 +265,11 @@ class OptionsApp extends React.Component<{}, OptionsAppState> {
                 <Dropdown
                   ariaLabel={undefined}
                   disabled={false}
-                  helperText={"Obecnie używane: " + rulesets[0].name}
+                  helperText={"Obecnie używany: " + rulesets[0].name}
                   id="rulesetSelection"
                   items={rulesets}
                   itemToString={(item: any) => (item ? item["name"] : "")}
-                  label="Wybór reguł"
+                  label="Wybór wytycznych"
                   light={false}
                   titleText=""
                   type="default"
@@ -286,10 +286,10 @@ class OptionsApp extends React.Component<{}, OptionsAppState> {
                         this.setState({ modalGuidelines: false });
                     }).bind(this)}
                 >
-                    <p style={{maxWidth:"100%"}}><strong>IBM Accessibility: </strong> Reguły dla WCAG 2.1 AA plus dodatkowe wymagania IBM</p>  
-                    <p style={{maxWidth:"100%"}}><strong>WCAG 2.1 (A, AA): </strong> Jest to aktualne zalecenie W3C. Treści zgodne z WCAG 2.1 są również zgodne z WCAG 2.0.</p> 
-                    <p style={{maxWidth:"100%"}}><strong>WCAG 2.0 (A, AA): </strong> Odniesienie do amerykańskiej sekcji 508, ale nie do najnowszego zalecenia W3C</p> 
-                    <p style={{maxWidth:"100%"}}><strong>IBM Accessibility BETA: </strong> Zasady dla WCAG 2.1 AA plus dodatkowe wymagania IBM i zasady eksperymentalne</p>      
+                    <p style={{maxWidth:"100%"}}><strong>IBM Accessibility: </strong> Reguły dla WCAG 2.1 AA oraz dodatkowe wymagania IBM</p>  
+                    <p style={{maxWidth:"100%"}}><strong>WCAG 2.1 (A, AA): </strong> Aktualne zalecenie W3C. Treści zgodne z WCAG 2.1 są również zgodne z WCAG 2.0. Zasady te są zgodne z europejską normą EN 301 549.</p> 
+                    <p style={{maxWidth:"100%"}}><strong>WCAG 2.0 (A, AA): </strong> Reguły odnoszące się do amerykańskiej Sekcji 508, ale nie do najnowszego zalecenia W3C</p> 
+                    <p style={{maxWidth:"100%"}}><strong>IBM Accessibility BETA: </strong> Reguły dla WCAG 2.1 AA i dodatkowe wymagania IBM oraz reguły eksperymentalne.</p>      
                 </Modal>
                 
                 <div className="buttonRow">
@@ -327,9 +327,9 @@ class OptionsApp extends React.Component<{}, OptionsAppState> {
         <div>
         <p>Wystąpił błąd podczas ładowania tej strony. Proszę sprawdzić połączenie internetowe i spróbować ponownie.</p>
         <br />
-        <p> Prosimy również sprawdzić  {" "}
-            <a href={chrome.runtime.getURL("usingAC.html")} target="_blank" rel="noopener noreferred">Podręcznik użytkownika</a>
-            {" "}, jak dać przeglądarce pozwolenie na uruchomienie strony opcji. </p>
+        <p> Prosimy również sprawdzić w{" "}
+            <a href={chrome.runtime.getURL("usingAC.html")} target="_blank" rel="noopener noreferred">Podręczniku użytkownika</a>
+            {" "}, jak dać przeglądarce pozwolenie na uruchomienie strony opcji.</p>
         </div>
       )
     }

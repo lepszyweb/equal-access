@@ -19,10 +19,10 @@ import React from "react";
 import ReactTooltip from "react-tooltip";
 
 import {
-    Button, Checkbox, ContentSwitcher, Switch, Tooltip, OverflowMenu, OverflowMenuItem
+    Button, Checkbox, ContentSwitcher, Switch, OverflowMenu, OverflowMenuItem, Modal
 } from 'carbon-components-react';
 import { settings } from 'carbon-components';
-import { ReportData16, Renew16, ChevronDown16 } from '@carbon/icons-react';
+import { Information16, ReportData16, Renew16, ChevronDown16 } from '@carbon/icons-react';
 import { IArchiveDefinition } from '../background/helper/engineCache';
 import OptionUtil from '../util/optionUtil';
 
@@ -32,7 +32,10 @@ import NeedsReview16 from "../../assets/NeedsReview16.svg";
 import Recommendation16 from "../../assets/Recommendation16.svg";
 
 const { prefix } = settings;
-interface IHeaderState { }
+interface IHeaderState {
+    deleteModal: boolean,
+    modalRulsetInfo: boolean,
+ }
 
 interface IHeaderProps {
     layout: "main" | "sub",
@@ -82,7 +85,30 @@ interface IHeaderProps {
 }
 
 export default class Header extends React.Component<IHeaderProps, IHeaderState> {
-    state: IHeaderState = {};
+    infoButton1Ref: React.RefObject<HTMLButtonElement>;
+    infoButton2Ref: React.RefObject<HTMLButtonElement>;
+    constructor(props:any) {
+        super(props);
+        this.infoButton1Ref = React.createRef();
+        this.infoButton2Ref = React.createRef();
+    }
+    
+    state: IHeaderState = {
+        deleteModal: false,
+        modalRulsetInfo: false,
+    };
+
+    focusInfoButton1() {
+        setTimeout(() => {
+            this.infoButton1Ref.current?.focus();
+        }, 0);
+    }
+
+    focusInfoButton2() {
+        setTimeout(() => {
+            this.infoButton2Ref.current?.focus();
+        }, 0);
+    }
 
     processFilterCheckBoxes(value: boolean, id: string) {
         // console.log("In processFilterCheckBoxes - dataFromParent", this.props.dataFromParent);
@@ -97,15 +123,15 @@ export default class Header extends React.Component<IHeaderProps, IHeaderState> 
         if (newItems[1] == true && newItems[2] == true && newItems[3] == true) {
             // console.log("All true");
             newItems[0] = true;
-            this.setState({ showIssueTypeFilter: newItems });
+            // this.setState({ showIssueTypeFilter: newItems });
         } else if (newItems[1] == false && newItems[2] == false && newItems[3] == false) {
             // console.log("All false");
             newItems[0] = true;
-            this.setState({ showIssueTypeFilter: newItems });
+            // this.setState({ showIssueTypeFilter: newItems });
         } else {
             // console.log("Mixed");
             newItems[0] = false;
-            this.setState({ showIssueTypeFilter: newItems });
+            // this.setState({ showIssueTypeFilter: newItems });
         }
         // console.log("After process: ", newItems);
         this.props.showIssueTypeCheckBoxCallback(newItems);
@@ -137,6 +163,12 @@ export default class Header extends React.Component<IHeaderProps, IHeaderState> 
         } else {
             return false;
         }
+    }
+    
+    deleteModalHandler() {
+        this.setState({ 
+            deleteModal: true, 
+        });
     }
 
 
@@ -176,7 +208,7 @@ export default class Header extends React.Component<IHeaderProps, IHeaderState> 
             {this.props.layout === "sub" ? 
             <div className="bx--row" style={{ lineHeight: "1rem" }}>
                 <div className="bx--col-sm-4">
-                    <h1>IBM Equal Access Tester dostępności</h1>
+                    <h1>IBM Equal Access Accessibility Checker</h1>
                 </div>
                 {/* <div className="bx--col-sm-2" style={{ position: "relative", textAlign: "right", paddingTop:"2px" }}>
                     <img className="bee-logo" src={BeeLogo} alt="IBM Accessibility" />
@@ -189,7 +221,7 @@ export default class Header extends React.Component<IHeaderProps, IHeaderState> 
             </div>
             : <div className="bx--row" style={{ lineHeight: "1rem" }}>
                 <div className="bx--col-sm-3">
-                    <h1>IBM Equal Access Tester dostępności</h1>
+                    <h1>IBM Equal Access: Sprawdzanie dostępności</h1>
                 </div>
                 <div className="bx--col-sm-1" style={{ position: "relative", textAlign: "right", paddingTop:"2px" }}>
                     <img className="bee-logo" src={BeeLogo} alt="IBM Dostępność" />
@@ -212,7 +244,7 @@ export default class Header extends React.Component<IHeaderProps, IHeaderState> 
                             style={{backgroundColor: "black", height:"32px", width:"32px"}} 
                             iconDescription="Opcje otwierania i zamykania raportów skanowania"
                             renderIcon={ChevronDown16}
-                            ariaLabel="Menu raportu" 
+                            ariaLabel="Menu raportów" 
                             // size="xl"
                             id="reportMenu"
                         >
@@ -225,14 +257,15 @@ export default class Header extends React.Component<IHeaderProps, IHeaderState> 
                             <OverflowMenuItem 
                                 style={{maxWidth:"13rem", width:"13rem"}}
                                 // if scanStorage false not storing scans, if true storing scans
-                                itemText= {this.props.scanStorage ? "Stop storing scans" : "Start storing scans"}
+                                itemText= {this.props.scanStorage ? "Zatrzymaj przechowywanie skanów" : "Rozpocznij przechowywanie skanów"}
                                 onClick={this.props.startStopScanStoring}
                             />
                             <OverflowMenuItem 
                                 style={{maxWidth:"13rem", width:"13rem"}}
                                 disabled={this.props.actualStoredScansCount() == 0 ? true : false}
-                                itemText="Wyczyść przechowywane skany" 
-                                onClick={() => this.props.clearStoredScans(true) }
+                                itemText="Usuń przechowywane skany" 
+                                // onClick={() => this.props.clearStoredScans(true) }
+                                onClick={() => this.deleteModalHandler() }
                             />
                             <OverflowMenuItem 
                                 style={{maxWidth:"13rem", width:"13rem"}}
@@ -247,22 +280,69 @@ export default class Header extends React.Component<IHeaderProps, IHeaderState> 
                                 onClick={this.props.reportManagerHandler} // need to pass selected as scanType
                             />
                         </OverflowMenu>
-                        {/* {isLatestArchive ? "" : ( */}
-                            <Tooltip iconDescription="Informacja o zestawie reguł">
-                                <p id="tooltip-body">
-                                    Używasz zestawu reguł z {OptionUtil.getRuleSetDate(this.props.selectedArchive, this.props.archives)}. Najnowszy zestaw reguł to {OptionUtil.getRuleSetDate('latest', this.props.archives)}
-                                </p>
-                                <div className={`${prefix}--tooltip__footer`}>
-                                    <a
-                                        href={chrome.runtime.getURL("options.html")}
-                                        target="_blank"
-                                        className={`${prefix}--link`}
-                                    >
-                                        Zmień zestaw reguł
-                                    </a>
-                                </div>
-                            </Tooltip>
-                        {/* )} */}
+                        <Modal
+                            aria-label="Usuń przechowywane skany"
+                            modalHeading="Usuń przechowywane skany"
+                            open={this.state.deleteModal}
+                            shouldSubmitOnEnter={false}
+                            onRequestClose={(() => {
+                                this.setState({ deleteModal: false });
+                            }).bind(this)}
+                            onRequestSubmit={(() => {
+                                this.setState({ deleteModal: false });
+                                this.props.clearStoredScans(true);
+                            }).bind(this)}
+                            danger={true}
+                            size='sm'
+                            selectorPrimaryFocus=".bx--modal-footer .bx--btn--secondary"
+                            primaryButtonText="Usuń"
+                            secondaryButtonText="Anuluj"
+                            primaryButtonDisabled={false}
+                            preventCloseOnClickOutside={true}
+                        >
+                            <p style={{ marginBottom: '1rem' }}>
+                                Czy na pewno chcesz usunąć przechowywane skany?
+                                Ta operacja jest nieodwracalna.
+                            </p>
+                        </Modal>
+                        <Button 
+                            ref={this.infoButton1Ref}
+                            renderIcon={Information16} 
+                            kind="ghost"   
+                            hasIconOnly iconDescription="Informacja o zestawie reguł" tooltipPosition="top" 
+                            style={{color:"black", border:"none", verticalAlign:"baseline", minHeight:"28px", 
+                                    paddingTop:"8px", paddingLeft:"8px", paddingRight:"8px"}}
+                            onClick={(() => {
+                                this.setState({ modalRulsetInfo: true });
+                            }).bind(this)}>
+                        </Button>
+                        <Modal
+                            aria-label="Informacja o zestawie reguł"
+                            modalHeading="Informacja o zestawie reguł"
+                            size='xs'
+                            passiveModal={true}
+                            open={this.state.modalRulsetInfo}
+                            onRequestClose={(() => {
+                                this.setState({ modalRulsetInfo: false });
+                                this.focusInfoButton1();
+                            }).bind(this)}
+                        >
+                            <p>
+                                Używasz zestawu reguł z {OptionUtil.getRuleSetDate(this.props.selectedArchive, this.props.archives)}.
+                                <span>{<br/>}</span>
+                                Najnowszy zestaw reguł to {OptionUtil.getRuleSetDate('latest', this.props.archives)}
+                            </p>
+                            <br></br>
+                            <div>
+                                <a
+                                    href={chrome.runtime.getURL("options.html")}
+                                    target="_blank"
+                                    className={`${prefix}--link`}
+                                >
+                                    Zmień zestaw reguł
+                                </a>
+                            </div>       
+                        </Modal>
                     </div>
                     <div className="bx--col-md-2 bx--col-sm-0" style={{ height: "28px" }}></div>
 
@@ -289,7 +369,7 @@ export default class Header extends React.Component<IHeaderProps, IHeaderState> 
                             />
                             <Switch
                                 disabled={!this.props.counts}
-                                text="All"
+                                text="Wszystko"
                                 onClick={() => {
                                     // console.log('All click');
                                 }}
@@ -298,7 +378,7 @@ export default class Header extends React.Component<IHeaderProps, IHeaderState> 
                         </ContentSwitcher>
 
                         <ReactTooltip id="focusViewTip" place="top" effect="solid">
-                            Widok fokusu
+                            Widok skoncentrowany
                         </ReactTooltip>
 
                     </div>
@@ -307,7 +387,7 @@ export default class Header extends React.Component<IHeaderProps, IHeaderState> 
                     <div className="bx--col-sm-4">
                         <div>
                             <span>Status: </span>
-                            <span>{this.props.scanStorage === true ? "storing, " : ""}</span>
+                            <span>{this.props.scanStorage === true ? "przechowywanie, " : ""}</span>
                             <span>{this.props.actualStoredScansCount().toString() === "0" ? "brak przechowywanych skanów" : (this.props.actualStoredScansCount().toString() === "1" ? this.props.actualStoredScansCount().toString() + " przechowywany skan" : this.props.actualStoredScansCount().toString() + " przechowywanych skanów")}</span>
                         </div>
                     </div>
@@ -318,22 +398,43 @@ export default class Header extends React.Component<IHeaderProps, IHeaderState> 
                 <div className="bx--row" style={{ marginTop: '10px' }}>
                     <div className="bx--col-sm-3" style={{ display: 'flex', alignContent: 'center' }}>
                         <Button disabled={this.props.scanning} renderIcon={Renew16} onClick={this.props.startScan.bind(this)} size="small" className="scan-button">Skanuj</Button>
-                        {/* {isLatestArchive ? "" : ( */}
-                            <Tooltip iconDescription="Informacja o zestawie reguł">
-                                <p id="tooltip-body">
-                                    Używasz zestawu reguł z {OptionUtil.getRuleSetDate(this.props.selectedArchive, this.props.archives)}. Najnowszy zestaw reguł to {OptionUtil.getRuleSetDate('latest', this.props.archives)}
-                                </p>
-                                <div className={`${prefix}--tooltip__footer`}>
-                                    <a
-                                        href={chrome.runtime.getURL("options.html")}
-                                        target="_blank"
-                                        className={`${prefix}--link`}
-                                    >
-                                        Zmień zestaw reguł
-                                    </a>
-                                </div>
-                            </Tooltip>
-                        {/* )} */}
+                        <Button 
+                            ref={this.infoButton2Ref}
+                            renderIcon={Information16} 
+                            kind="ghost"   
+                            hasIconOnly iconDescription="Informacja o zestawie reguł" tooltipPosition="top" 
+                            style={{color:"black", border:"none", verticalAlign:"baseline", minHeight:"28px", 
+                                    paddingTop:"8px", paddingLeft:"8px", paddingRight:"8px"}}
+                            onClick={(() => {
+                                this.setState({ modalRulsetInfo: true });
+                            }).bind(this)}>
+                        </Button>
+                        <Modal
+                            aria-label="Informacja o zestawie reguł"
+                            modalHeading="Informacja o zestawie reguł"
+                            passiveModal={true}
+                            open={this.state.modalRulsetInfo}
+                            onRequestClose={(() => {
+                                this.setState({ modalRulsetInfo: false });
+                                this.focusInfoButton2();
+                            }).bind(this)}
+                        >
+                            <p>
+                                Używasz zestawu reguł z {OptionUtil.getRuleSetDate(this.props.selectedArchive, this.props.archives)}.
+                                <span>{<br/>}</span>
+                                Najnowszy zestaw reguł to{OptionUtil.getRuleSetDate('latest', this.props.archives)}
+                            </p>
+                            <br></br>
+                            <div>
+                                <a
+                                    href={chrome.runtime.getURL("options.html")}
+                                    target="_blank"
+                                    className={`${prefix}--link`}
+                                >
+                                    Zmien zestaw reguł
+                                </a>
+                            </div>       
+                        </Modal>
                     </div>
                     <div className="bx--col-sm-1" style={{ position: "relative" }}>
                         <div className="headerTools" style={{ display: "flex", justifyContent: "flex-end" }}>
@@ -406,7 +507,7 @@ export default class Header extends React.Component<IHeaderProps, IHeaderState> 
                             className="checkboxLabel"
                             disabled={!this.props.counts}
                             // title="Filter recommendations"
-                            aria-label="Filtruj według zaleceń"
+                            aria-label="Filtruj według Zalecenia"
                             defaultChecked
                             id="Recommendations"
                             indeterminate={false}
@@ -416,13 +517,13 @@ export default class Header extends React.Component<IHeaderProps, IHeaderState> 
                             wrapperClassName="checkboxWrapper"
                         />
                         <ReactTooltip id="filterRecommendationTip" place="top" effect="solid">
-                            Filtruj według zaleceń
+                            Filtruj według Zalecenia
                         </ReactTooltip>
                     </span>
                 </div>
                 <div className="countItem" role="status" style={{ paddingTop: "0", paddingBottom: "0", height: "34px", textAlign: "right", overflow: "visible" }}>
                     {/* <span className="summaryBarCounts" style={{ fontWeight: 400 }}>{noScan ? ((bDiff ? counts.filtered["All"] + "/" : "") + counts.total["All"]) : " "}&nbsp;Issues&nbsp;{(bDiff ? "selected" : "found")}</span> */}
-                    <span className="summaryBarCounts" style={{ fontWeight: 400, lineHeight: "32px" }}>{!noScan ? "Nie skanowano" : (this.props.scanning ? "Skanowanie..." : ((bDiff ? counts.filtered["All"] + "/" : "") + counts.total["All"] + " problemów " + (bDiff ? "zaznaczono" : "znaleziono")))}</span>
+                    <span className="summaryBarCounts" style={{ fontWeight: 400, lineHeight: "32px" }}>{!noScan ? "Nie skanowano" : (this.props.scanning ? "Skanowanie..." : ((bDiff ? counts.filtered["All"] + "/" : "") + counts.total["All"] + " problemy " + (bDiff ? "zaznaczono" : "znaleziono")))}</span>
                 </div>
             </div>
         </div>); // end of headerContent

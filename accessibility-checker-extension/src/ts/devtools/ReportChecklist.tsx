@@ -120,7 +120,7 @@ export default class ReportChecklist extends React.Component<IReportChecklistPro
             </div>
             <div role="rowgroup">
                 {this.props.focusedViewFilter === true && this.props.report.counts.filtered.All === 0 ?
-                <div><br/>Brak problemów z dostępnością dla tego elementu HTML lub jego dzieci</div> : 
+                <div><br/>Nie ma problemów z dostępnością tego elementu HTML lub jego dzieci</div> : 
                     groups.map(group => {
                         let thisIdx = idx;
                         idx += group.items.length+1;

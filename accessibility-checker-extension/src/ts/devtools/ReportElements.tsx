@@ -94,20 +94,20 @@ export default class ReportElements extends React.Component<IReportElementsProps
         
         let idx=0;
         let scrollFirst = true;
-        return <div className="bx--grid report" role="table" style={{paddingLeft:"1rem", paddingRight:"0"}} aria-label="Problemy pogrupowane według roli elementów">
+        return <div className="bx--grid report" role="table" style={{paddingLeft:"1rem", paddingRight:"0"}} aria-label="Problemy pogrupowane według ról elementów">
             <div role="rowgroup">
                 <div className="bx--row reportHeader" role="row">
                     <div className="bx--col-md-2 bx--col-sm-2" role="columnheader">
                         Problemy                    
                     </div>
                     <div className="bx--col-md-4 bx--col-sm-2" role="columnheader">
-                        Role elementu
+                        Role elementów
                     </div>
                 </div>
             </div>
             <div role="rowgroup">
                 {this.props.focusedViewFilter === true && this.props.report.counts.filtered.All === 0 ?
-                <div><br/>Brak problemów z dostępnością dla tego elementu HTML lub jego dzieci</div> :   
+                <div><br/>Nie ma problemów z dostępnością tego elementu HTML lub jego dzieci</div> :   
                     groups.map(group => {
                         let thisIdx = idx;
                         idx += group.items.length+1;

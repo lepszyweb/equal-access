@@ -38,7 +38,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
             <div role="banner">
               <img src={beeLogoUrl} alt="purple bee icon" className="icon" />
               <h3>
-                IBM <strong>Accessibility</strong>
+                IBM <strong>Dostępność</strong>
                 <br />
                 Zestaw narzędzi Equal Access:
                 <br />
@@ -102,8 +102,8 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                       </a>
                     </li>
                     <li>
-                      <a href="#focus_view" title="Skupienie na elemencie">
-                        6.2 Skupienie na elemencie
+                      <a href="#focus_view" title="Widok skoncentrowany">
+                        6.2 Widok skoncentrowany
                       </a>
                     </li>
                     <li>
@@ -182,18 +182,19 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
             <div className="versionDec">Wersja {manifest.version}</div>
 
             <p>
-			  IBM Equal Access Accessibility Checker jest rozszerzeniem przeglądarki  które pozwala użytkownikom ocenić komponent lub rozwiązanie oparte na sieci Web pod kątem problemów z dostępnością w odniesieniu do wytycznych W3C Web Content Accessibilty Guidelines (WCAG) i wytycznych IBM z wyjaśnieniami i odpowiednimi poprawkami w ramach narzędzia.
+			  IBM Equal Access Accessibility Checker jest rozszerzeniem przeglądarek, które pozwala sprawdzać, &nbsp;oceniać i&nbsp;poprawiać dostępność cyfrową rozwiązań dla Internetu w oparciu o&nbsp;Wytyczne W3C Web Content Accessibilty Guidelines (WCAG) oraz wytyczne IBM z wyjaśnieniami i&nbsp;propozycjami odpowiednich poprawek.
 			  
             </p>
             <p>
-              Rozszerzenie prezentuje dwa widoki, panel{" "}
-              <strong>Ocena dostępności</strong> jest kompleksowym narzędziem oceny dostępności, które pomaga zidentyfikować problemy z dostępnością i zrozumieć, jak je naprawić, podczas gdy karta {" "}
-              <strong>Tester dostępności</strong> w panelu Elementy w Chrome lub panelu Inspektor w Firefoksie jest skanerem kodu dla programistów, którzy chcą szybko znaleźć i naprawić problemy w kodzie i na stronie. To narzędzie sprawdzające jest częścią otwartego pakietu narzędzi automatyzujących dostępność. Dla zespołów poszukujących zintegrowanego testowania dostępności, IBM oferuje{" "}
+              Rozszerzenie prezentuje dwa widoki. Widok panelu{" "}
+              <strong>Ocena dostępności</strong> jest kompleksowym narzędziem, które pomaga wykryć problemy z&nbsp;dostępnością i zrozumieć, jak je naprawić. Natomiast karta {" "}
+              <strong>Tester dostępności</strong> w panelu Elementy w Chrome lub panelu Inspektor w&nbsp;Firefoksie jest skanerem kodu dla programistów, którzy chcą szybko znaleźć i naprawić problemy w&nbsp;kodzie i na stronie.
+			</p>
+			<p>
+			  IBM Equal Access Accessibility Checker jest częścią otwartego pakietu narzędzi automatyzujących pracę nad dostępnością. Dla zespołów poszukujących rozwiązań zintegrowanego testowania dostępności, IBM oferuje{" "}
               <a href="https://github.com/IBMa/equal-access/blob/master/README.md">
-                wtyczki i moduły dla NodeJS i Karma,
-              </a>{" "}
-              które wykonują międzyplatformowe testowanie dostępności w procesie budowania i rozwoju. Narzędzia te wykorzystują ten sam silnik testowy, co Accessibility Checker.
-		  
+                wtyczki i moduły dla NodeJS i&nbsp;Karma</a>{" "},
+              które wykonują międzyplatformowe testy dostępności w procesie budowania i rozwoju. Narzędzia te wykorzystują ten sam silnik testowy, co Accessibility Checker.
             </p>
             <h2 id="prereq">1. Wymagania wstępne</h2>
             <div className="pa">
@@ -201,8 +202,8 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
               <ul
                 style={{ listStyleType: "circle", marginInlineStart: "1rem" }}
               >
-                <li>Google Chrome wersja 81.x lub nowsza</li>
-                <li>Mozilla Firefox wersja 8.x lub nowsza</li>
+                <li>Google Chrome w wersji 81.x lub nowszej</li>
+                <li>Mozilla Firefox wersji 8.x lub nowszej</li>
               </ul>
             </div>
 
@@ -253,6 +254,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
 
             <h2 id="categories">3. Kategorie problemów dostępności</h2>
             <p>Narzędzie zgłasza trzy rodzaje problemów z dostępnością:</p>
+	
             <ul style={{ marginInlineStart: "2rem" }}>
               <li>
                 <p>
@@ -287,60 +289,62 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
             </ul>
             <p>
               Jak w przypadku każdego narzędzia do automatycznego testowania dostępności, 
-			  testy te nie wychwytują wszystkich problemów. Zakończ swoją ocenę dostępności 
-			  szybkim testem jednostkowym pod kątem dostępności 
-			  lub wykonaj pełny proces testowania dostępności.
-            </p>
+			  testy te nie wychwytują wszystkich problemów. Dopełnij swoją ocenę dostępności  
+			  <a className="link" href="https://ibm.com/able/toolkit/develop/considerations/unit-testing" target="_blank">szybkim testem jednostkowym</a> lub przejdź do <a className="link" href="https://ibm.com/able/toolkit/verify" target="_blank">pełnego procesu testowania dostępności</a>.
+			  
+           </p>
 
             <h2 id="view">4. Sposoby przeglądania problemów</h2>
             <p>
-              Istnieją trzy sposoby przeglądania i badania problemów zidentyfikowanych przez narzędzie. Wszystkie widoki pokazują ten sam zestaw zagadnień:
+              Istnieją trzy sposoby przeglądania i badania problemów wykrytych przez narzędzie. Wszystkie widoki pokazują ten sam zestaw problemów:
             </p>
             <ul style={{ marginInlineStart: "2rem" }}>
               <li>
                 <p>
-                  <strong>Wymagania</strong> - problemy są uporządkowane według  wymagań IBM, co odpowiada standardom WCAG 2.1.  Każdy problem jest zmapowany do najbardziej odpowiedniego wymagania. Ten  widok sprawia, że łatwo jest zobaczyć, jak klasyfikować i  raportować problemy znalezione przez narzędzie.
+                  <strong>Wymagania</strong> - problemy są uporządkowane według wymagań IBM, co odpowiada standardom WCAG 2.1. Każdy problem jest zmapowany do konkretnego wymagania WCAG 2.1. Ten  widok sprawia, że łatwo jest zobaczyć, jak klasyfikować i raportować problemy wykryte przez narzędzie.
                 </p>
               </li>
               <li>
                 <p>
-                  <strong>role elementu </strong>- problemy są zorganizowane w hierarchicznej strukturze zdefiniowanej przez role WAI-ARIA dla elementów DOM.  Widok ten pokazuje zarówno role ukryte, jak i jawne role. Nie pokazuje on nazw elementów. Ten widok jest idealny do eksploracji zagadnień w obrębie konkretnego elementu i jego dzieci.
+                  <strong>Role elementów</strong> - problemy są zorganizowane w hierarchicznej strukturze określonej przez role WAI-ARIA dla elementów DOM. Widok ten pokazuje zarówno role ukryte, jak i role jawne. Nie pokazuje on nazw elementów. Ten widok jest idealny do eksploracji problemów w obrębie konkretnego elementu i&nbsp;jego dzieci.
                 </p>
               </li>
               <li>
                 <p>
-                  <strong>Reguły</strong> - problemy są uporządkowane według reguł w zestawie wymagań, z podziałem na naruszenia, elementy wymagające przeglądu i rekomendacje. Ten widok jest najlepszym sposobem na zobaczenie wszystkich różnych rodzajów problemów na raz.
+                  <strong>Reguły</strong> - problemy są uporządkowane według reguł w zestawie wymagań. Są podzielone na naruszenia, kwestie wymagające przeglądu i zalecenia. Ten widok jest najlepszym sposobem na równoczesny przegląd wszystkich problemów różnego typu.
                 </p>
               </li>
             </ul>
 
             <h2 id="t_select_settings">5. Opcje</h2>
             <p>
-              Użyj strony opcji, aby zmienić domyślny zestaw reguł dla obsługiwanego standardu lub datę wdrożenia zestawu reguł. Domyślnie, IBM Equal Access Accessibility Checker używa najnowszego wdrożenia z zestawem reguł, które odpowiadają najnowszym standardom WCAG, plus kilku dodatkowym wymaganiom uzupełniającym IBM. W razie potrzeby  do wyboru sa również dostępne zestawy reguł z regułami, które odpowiadają konkretnym wersjom WCAG. Te zestawy reguł są regularnie aktualizowane, a każda aktualizacja ma datę wdrożenia. W przypadku konieczności powtórzenia wcześniejszego testu należy wybrać datę wdrożenia oryginalnego testu.
+              Użyj strony opcji, aby zmienić domyślny zestaw reguł dla obsługiwanego standardu lub datę wdrożenia zestawu reguł.
+            </p>
+            <p>Domyślnie, IBM Equal Access Accessibility Checker używa najnowszego wdrożenia zestawu reguł, które odpowiadają najnowszym standardom WCAG oraz kilku dodatkowym wymaganiom uzupełniającym IBM. W&nbsp;razie potrzeby do wyboru są również dostępne zestawy reguł z regułami, które odpowiadają konkretnym wersjom WCAG. Te zestawy reguł są regularnie aktualizowane, a każda aktualizacja ma datę wdrożenia. W przypadku konieczności powtórzenia wcześniejszego testu należy wybrać datę wdrożenia oryginalnego testu.
 
             </p>
             <p>
-              Po zmianie opcji zamknij i otwórz ponownie narzędzia deweloperskie, aby zmiany zaczęły obowiązywać.
+              Po zmianie opcji zamknij i otwórz ponownie narzędzia programistyczne, aby zmiany zaczęły obowiązywać.
             </p>
             <p>
-              Wykonaj poniższe kroki, aby otworzyć stronę z opcjami programu Sprawdzanie dostępności:
+              Wykonaj poniższe kroki, aby otworzyć stronę z opcjami programu Tester dostępności:
             </p>
             <ol style={{ listStyleType: "decimal", marginInlineStart: "2rem" }}>
               <li>
                 <p>
-                  W pasku narzędzi przeglądarki, wybierz ikonę IBM Equal Access ikonę sprawdzania dostępności, pokazaną jako fioletowa pszczoła{" "}
+                  W pasku narzędzi przeglądarki, wybierz ikonę IBM Equal Access Accessibility Checker, widoczną jako fioletowa pszczoła{" "}
                   <img
                     src={beeLogoUrl}
                     width="16px"
                     height="16px"
-                    alt="ikonę aplikacji Sprawdzanie dostępności"
+                    alt="ikona aplikacji Tester dostępności"
                   />
-                  . Zazwyczaj znajduje się on w prawym górnym rogu okna okna przeglądarki. Pojawi się nakładka.
+                  . Zazwyczaj znajduje się on w&nbsp;prawym górnym rogu okna okna przeglądarki. Pojawi się nakładka.
                 </p>
               </li>
               <li>
                 <p>
-                  Wybierz <strong>&bdquo;Opcje&rdquo;</strong> w nakładce. Opcje zostaną otwarte w nowej karcie przeglądarki. <strong>Uwaga:</strong> W przeglądarce Firefox, gdy opcja Enhanced Tracking Protection jest ustawiona na Strict, powoduje to, że niektóre witryny lub treści mogą zostać uszkodzone i może to uniemożliwić otwarcie strony Opcje. Zmień ustawienia prywatności przeglądarki na Standard, aby uniknąć tej sytuacji.
+                  Wybierz w nakładce <strong>„Opcje”</strong>. Opcje zostaną otwarte na nowej karcie przeglądarki. <strong>Uwaga:</strong> W przeglądarce Firefox, gdy w opcjach Wzmocniona ochrony przed śledzeniem wybrano ustawienie <strong>Ścisła</strong>, zdarza się, że niektóre witryny lub treści mogą zostać uszkodzone i może to uniemożliwić otwarcie strony Opcje. Zmień ustawienia prywatności przeglądarki na Standard, aby uniknąć tej sytuacji.
 
                 </p>
               </li>
@@ -348,7 +352,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
             <p>
               <img
                 src="assets/img/5_Options.png"
-                alt="Zrzut ekranu strony opcji - strona, na której można wybrać wdrożenie zestawu reguł oraz zestaw reguł, z którego ma korzystać kontroler."
+                alt="Zrzut ekranu strony opcji - strona, na której można wybrać wdrożenie zestawu reguł oraz zestaw reguł, z jakiego ma korzystać kontroler."
                 width="100%"
                 height="100%"
               />
@@ -367,60 +371,60 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
               </li>
               <li>
                 <p>
-                  <strong>Wdrożenie &lt;data&gt; </strong> - użyj zestawu reguł z określonej daty w celu spójnego testowania w całym projekcie lub do powtórzenia wcześniejszego testu.
+                  <strong>Wdrożenie &lt;data&gt; </strong> - użyj zestawu reguł z określonej daty w celu spójnego testowania w całym projekcie albo żeby powtórzyć wcześniejsze testy.
                 </p>
               </li>
               <li>
                 <p>
-                  <strong>Podglądowe reguły</strong> - wypróbuj eksperymentaln, być może przyszły zestaw reguł.
+                  <strong>Podglądowe reguły</strong> - wypróbuj eksperymentalny zestaw przyszłych reguł.
                 </p>
               </li>
             </ul>
             <p>
-              Wybierz przycisk <strong>'Zapisz'</strong>, aby zachować zmiany, lub przycisk <strong>'Resetuj'</strong>, aby odrzucić zmiany.  Zamknij i otwórz ponownie narzędzia deweloperskie, aby zmiany zaczęły obowiązywać.
+              Wybierz przycisk <strong>„Zapisz”</strong>, aby zachować zmiany, lub przycisk <strong>„Przywróć domyślne”</strong>, aby odrzucić zmiany. Zamknij i otwórz ponownie narzędzia programistyczne, aby zmiany zaczęły obowiązywać.
             </p>
 
             <h3 id="ruleset">5.2 Wybierz wytyczne dla dostępności</h3>
             <p>
-               Z listy rozwijanej <strong>'Wybierz wytyczne dla dostępności'</strong> wybierz jedną z opcji :
+               Z listy rozwijanej <strong>„Wybierz wytyczne dla dostępności”</strong> wybierz jedną z opcji :
             </p>
             <ul style={{ marginInlineStart: "2rem" }}>
               <li>
                 <p>
-                   <strong>IBM Accessibility</strong> - Reguły obejmujące Wytyczne dla dostępności WCAG 2.1, poziomy A i AA, oraz dodatkowe wymagania IBM. Jest to opcja domyślna.
+                   <strong>IBM Accessibility</strong> - Reguły obejmujące Wytyczne dla dostępności WCAG 2.1 zgodnie z poziomami A i AA oraz dodatkowe wymagania IBM. Jest to opcja domyślna.
                 </p>
               </li>
 
               <li>
                 <p>
-                  <strong>WCAG 2.1 (A,AA)</strong> - Aktualne zalecenia W3C. Treści zgodne z WCAG 2.1 są również zgodne z 2.0. Zasady te są zgodne z europejskimi normami EN 301 549.
+                  <strong>WCAG 2.1 (A,AA)</strong> - Aktualne zalecenie W3C. Treści zgodne z WCAG 2.1 są również zgodne z 2.0. Zasady te są zgodne z europejską normą EN 301 549.
                 </p>
               </li>
 
               <li>
                 <p>
-                  <strong>WCAG 2.0 (A,AA)</strong> - Te reguły te są zgodne z poprawionymi normami US Sec 508, ale nie są najnowszą  rekomendacją W3C.
+                  <strong>WCAG 2.0 (A,AA)</strong> - Te reguły te są zgodne z obwiązującymi w USA poprawionymi normami Sekcja 508, ale nie z najnowszą rekomendacją W3C.
                 </p>
               </li>
 
               <li>
                 <p>
-                  <strong>IBM Accessibility BETA</strong> - Rozszerza IBM Accessibility o eksperymentalne zasady.
+                  <strong>IBM Accessibility BETA</strong> - Reguły dla WCAG 2.1 AA i dodatkowe wymagania IBM oraz reguły eksperymentalne.
                 </p>
               </li>
 
             </ul>
             <p>
-			  Po wprowadzeniu zmiany należy wybrać przycisk <strong>&bdquo;Zapisz&rdquo;</strong>, a następnie zamknąć i ponownie otworzyć  narzędzia programisty, aby zmiana zaczęła obowiązywać.
+			  Po wprowadzeniu zmiany należy wybrać przycisk <strong>„Zapisz”</strong>, a następnie zamknąć i&nbsp;ponownie otworzyć narzędzia programistyczne, aby zmiana zaczęła obowiązywać.
             </p>
 
             <h2 id="usage">6. Stosowanie</h2>
             <p>
-			  IBM Equal Access Accessibility Checker oferuje dwa widoki. Widok Tester dostępności (Accessibility Checker) jest skanerem kodu dla programistów, którzy chcą szybko znaleźć i naprawić błędy podczas budowania komponentu. Natomiast widok Ocenianie dostępności (Accessibility Assessment) zapewnia wyjaśnienie i sugerowane rozwiązania dla każdego wykrytego problemu.
+			  IBM Equal Access Accessibility Checker oferuje dwa widoki. Widok Tester dostępności (Accessibility Checker) jest skanerem kodu dla programistów, którzy chcą szybko znaleźć i&nbsp;naprawić błędy podczas budowania komponentu. Natomiast widok Ocena dostępności (Accessibility Assessment) zapewnia wyjaśnienie i&nbsp;sugerowane rozwiązania dla każdego wykrytego problemu.
               {" "}
               </p>
               <p>
-			  <strong>Uwaga</strong>: W rzadkich przypadkach rozszerzenie Accessibility Checker nie pojawia się w narzędziach programisty dla niektórych stron z powodu błędu w narzędziach programisty. Obejściem jest przejście do witryny, gdzie wiesz, że sprawdzanie zostanie uruchomione, i uruchomienie sprawdzania w narzędziach deweloperskich. Następnie, w tej samej karcie przeglądarki, załaduj stronę, która nie została uruchomiona.
+			  <strong>Uwaga</strong>: W rzadkich przypadkach rozszerzenie Accessibility Checker nie pojawia się w&nbsp;narzędziach programistycznych na niektórych stronach z powodu błędu w tych narzędziach. Obejściem jest przejście do witryny, o&nbsp;której wiesz, że sprawdzanie zostanie na niej uruchomione, i&nbsp;uruchomienie sprawdzania. Następnie załaduj na tej samej karcie przeglądarki stronę, która nie została uruchomiona.
             </p>
 
             <h3 id="a11y_check">6.1 Tester dostępności</h3>
@@ -433,7 +437,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 }}
               >
                 <li>
-                  <p style={{ marginTop: "0rem" }}>Otwórz panel narzedziy programisty:</p>
+                  <p style={{ marginTop: "0rem" }}>Otwórz panel narzędzi programisty:</p>
                   <ul
                     style={{
                       listStyleType: "circle",
@@ -442,45 +446,41 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                   >
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        W Chrome: w menu przeglądarki &bdquo;Widok&rdquo; wybierz
-                        &bdquo;Programista&rdquo;, a następnie &bdquo;Narzędzia programisty&rdquo; albo{" "}
+                        W Chrome: z menu przeglądarki wybierz „Więcej narzędzi”, a następnie „Narzędzia dla deweloperów” albo{" "}
                       </p>
                     </li>
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        W Firefox: w menu przeglądarki &bdquo;Narzędzia&rdquo; wybierz &bdquo;Programista&rdquo; , a następnie wybierz &bdquo;Przełącz narzędzia&rdquo;, or
+                        W Firefox: w menu przeglądarki „Narzędzia” wybierz „Narzędzia przeglądarki” , a następnie wybierz „Narzędzia dla twórców witryn”, lub
                       </p>
                     </li>
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        Press <strong>Command+Option+I</strong> on MacOS® or{" "}
-                        <strong>Control+Shift+I</strong> on Microsoft Windows®,
-                        or
+                        Naciśnij <strong>Command+Option+I</strong> w systemie  MacOS® albo{" "}
+                        <strong>Control+Shift+I</strong> w&nbsp;systemie Microsoft Windows®,
+                        lub
                       </p>
                     </li>
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        Right-click on a page element and select ‘Inspect’
-                        (Chrome) or ‘Inspect Element’ (Firefox).
+                        Kliknij prawym przyciskiem myszy element strony i&nbsp;wybierz z menu kontekstowego „Zbadaj”.
                       </p>
                     </li>
                   </ul>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Open the ‘Elements’ panel (Chrome) or ‘Inspector’ panel
-                    (Firefox).
+                    Otwórz panel „Elementy” (Chrome) lub „Inspektor” (Firefox).
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Select <strong>'Accessibility Checker'</strong> from the
-                    tabs in the right-hand pane:{" "}
+                    Wybierz <strong>„Tester dostępności”</strong> z&nbsp;kart w&nbsp;prawym okienku:{" "}
                   </p>
                   <p>
                     <img
                       src="assets/img/Chrome_Checker.png"
-                      alt="Accessibility Checker screenshot - a code scanner for developers"
+                      alt="Zrzut ekranu Accessibility Checker - skaner kodu dla programistów"
                       width="100%"
                       height="100%"
                     />
@@ -488,24 +488,17 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Click the <strong>'Scan'</strong> button to scan the web
-                    page.
+                    Kliknij przycisk <strong>„Skanuj”</strong>, aby zeskanować stronę internetową.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    The scan result displays the total number of issues found
-                    with individual counts for violations, items that need
-                    review, and recommendations in the issue count region. By
-                    default, the issue list is shown in the 'Element roles' view
-                    (see the previous definition), while 'Requirements' and 'Rules'
-                    tabs are also available. All views show the same set of
-                    issues.
+                    Wynik skanowania wyświetla łączną liczbę wykrytych problemów oraz liczbę naruszeń, kwestii wymagających przeglądu i zaleceń. Domyślnie lista problemów jest wyświetlana w&nbsp;widoku „Role elementów” (patrz poprzednia definicja), dostępne są również karty „Wymagania” i&nbsp;„Reguły”. Wszystkie widoki pokazują ten sam zestaw problemów.
                   </p>
                   <p>
                     <img
                       src="assets/img/6_1_AccessibilityChecker5.png"
-                      alt="Accessibility Checker results"
+                      alt="Wyniki oceniania dostępności"
                       width="100%"
                       height="100%"
                     />
@@ -513,17 +506,13 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    To <strong>filter</strong> issues and focus only on
-                    violations, items that need review or recommendations,
-                    deselect the checkbox by the issue type in the issue count region below the{" "}
-                    <strong>'Scan'</strong> button to exclude the issue type from the results. Select 
-                    the checkbox by the issue type to include the issue type in the results.
-                    In this screenshot, the 'Needs review' items have been filtered out. 
+                    Aby <strong>filtrować</strong> problemy i skupić się tylko na naruszeniach, elementach, które wymagają sprawdzenia lub zaleceniach, usuń zaznaczenie pola wyboru obok typu problemu w obszarze liczby problemów poniżej przycisku{" "}
+                    <strong>„Skanuj”</strong>, aby wykluczyć typ problemu z wyników. Zaznacz pole wyboru obok typu problemów, aby uwzględnić typ problemu w wynikach. Na tym zrzucie ekranu elementy „Do przeglądu” zostały odfiltrowane. 
                   </p>
                   <p>
                     <img
                       src="assets/img/6_1_AccessibilityChecker6.png"
-                      alt="Accessibility Checker results with 'Needs review' issues filtered out"
+                      alt="Wyniki sprawdzania dostępności z odfiltrowanymi problemami Do przeglądu."
                       width="100%"
                       height="100%"
                     />
@@ -531,22 +520,16 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Select the expand icon (^) next to an element role, requirement,
-                    or rule in the table to display the corresponding issues
-                    found.
+                    Wybierz ikonę rozwijania (^) obok roli elementu, wymagania lub reguły w tabeli, aby wyświetlić odpowiednie znalezione problemy.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Select the 'learn more' link for an issue to view more detailed help
-                    information that describes the issue and how to fix it. The
-                    help includes links to more detailed explanation, and
-                    summarizes why this issue is important, and who is affected
-                    by it.
+                    Wybierz link „Dowiedz się więcej” w definicji problemu, aby wyświetlić bardziej szczegółowe informacje pomocy opisujące problem i&nbsp;sposoby jego rozwiązania. Pomoc zawiera łącza do bardziej szczegółowych wyjaśnień i&nbsp;podsumowuje, dlaczego ten problem jest ważny i&nbsp;kogo dotyczy.
                   </p>
                 </li>
                 <li>
-                  Element roles tab:
+                  Karta Role elementu:
                   <ul
                     style={{
                       listStyleType: "circle",
@@ -555,9 +538,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                   >
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        Select an instance of an issue, or an element in the
-                        document object model (DOM), or use the ‘Inspect
-                        element’ command on the web page to:
+                        Wybierz instancję problemu lub element w obiektowym modelu dokumentu (DOM) lub użyj polecenia „Zbadaj” na stronie internetowej, aby:
                       </p>
                       <ul
                         style={{
@@ -567,29 +548,22 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                       >
                         <li>
                           <p style={{ marginTop: "0rem" }}>
-                            Highlight the selected element, or the element
-                            containing the selected issue, in the DOM under the
-                            browser's Elements panel and highlight its location
-                            on the web page.
+                            Podświetl wybrany element lub element zawierający wybrane zagadnienie w DOM pod panelem Elementy przeglądarki i zaznacz jego lokalizację na stronie internetowej.
                           </p>
                         </li>
                         <li>
                           <p style={{ marginTop: "0rem" }}>
-                            See summary counts showing the number of issues of
-                            each type within the selected element and its
-                            children.
+                            Zobacz liczniki podsumowujące pokazujące liczbę problemów każdego typu w wybranym elemencie i jego dzieciach.
                           </p>
                         </li>
                         <li>
                           <p style={{ marginTop: "0rem" }}>
-                            Open and highlight all issues in the element, if any
-                            (purple highlight)
+                            Otwórz i zaznacz wszystkie problemy w elemencie, jeśli występują (fioletowe podświetlenie)
                           </p>
                         </li>
                         <li>
                           <p style={{ marginTop: "0rem" }}>
-                            Open and highlight all issues in the element's
-                            children, if any (light purple highlight).
+                            Otwórz i zaznacz wszystkie problemy w elementach potomnych elementu, jeśli występują (jasnofioletowe podświetlenie).
                           </p>
                         </li>
                       </ul>
@@ -597,7 +571,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                   </ul>
                 </li>
                 <li>
-                  Requirements tab:
+                  Karta Wymagania:
                   <ul
                     style={{
                       listStyleType: "circle",
@@ -606,24 +580,20 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                   >
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        Select the <strong>'Requirements'</strong> tab to view the
-                        scan results by the{" "}
+                        Wybierz kartę <strong>„Wymagania”</strong>, aby wyświetlić wyniki skanowania{" "}
                         <a href="https://www.ibm.com/able/requirements/requirements/">
-                          IBM accessibility requirements</a>.{" "}
+                          według wymagań dostępności IBM</a>.{" "}
                       </p>
                     </li>
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        Select an element or an instance of an issue to
-                        highlight the same set of issues and child issues as in
-                        the 'Element roles' tab. In this view, the issues will
-                        be shown within the relevant requirements.
+                        Wybierz element lub wystąpienie problemu, aby wyróżnić ten sam zestaw problemów i&nbsp;problemów podrzędnych, co na karcie „Role elementów”. W&nbsp;tym widoku problemy zostaną pokazane w&nbsp;ramach odpowiednich wymagań.
                       </p>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  Rules tab:
+                  Karta Reguły:
                   <ul
                     style={{
                       listStyleType: "circle",
@@ -633,50 +603,40 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                     <li>
                       <p style={{ marginTop: "0rem" }}>
                         {" "}
-                        Select the <strong>'Rules'</strong> tab to view the scan
-                        results by the Accessibility Checker rules.
+                        Wybierz kartę <strong>„Reguły”</strong>, aby wyświetlić wyniki skanowania według reguł sprawdzania dostępności.
                       </p>
                     </li>
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        Select an element or an instance of an issue to
-                        highlight the same set of issues and child issues as in
-                        the 'Element roles' tab. In this view, the issues will
-                        be shown within the relevant rules.
+                        Wybierz element lub wystąpienie problemu, aby wyróżnić ten sam zestaw problemów i&nbsp;problemów podrzędnych, co na karcie „Role elementów”. Z&nbsp;tego punktu widzenia problemy zostaną pokazane w ramach odpowiednich zasad.
                       </p>
                     </li>
                   </ul>
                 </li>
-
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Switch between tabs to see the same set of highlighted
-                    issues in different views.
+                    Przełączaj się między kartami, aby zobaczyć ten sam zestaw wyróżnionych problemów w&nbsp;różnych widokach.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Use the <strong>'Reports'</strong> menu button to download reports
-                    and to store and manage scans to combine into reports. 
-                    For details, see Sections{" "}
-                    <a href="#t_single_scan_report" title="Create scan report">6.4 Creating a scan report</a>,{" "} 
-                    <a href="#t_multi_scan_report" title="Create multi-scan report">6.5 Creating a multi-scan report</a>{" "}
-                    and <a href="#the_report" title="accessibility checker report">7 Accessibility Checker reports</a>.
+                    Użyj przycisku menu <strong>„Raporty”</strong>, aby pobrać raporty oraz przechowywać i&nbsp;zarządzać skanami w celu połączenia ich w raporty. Aby uzyskać szczegółowe informacje, zobacz sekcje {" "}
+                    <a href="#t_single_scan_report" title="Utwórz raport skanowania">6.4 Tworzenie raportu ze skanowania</a>,{" "} 
+                    <a href="#t_multi_scan_report" title="Utwórz raport z wielu skanowań">6.5 Tworzenie raportu z wielu skanów</a>{" "}
+                    oraz <a href="#the_report" title="Raporty sprawdzania dostępności">7 Raporty sprawdzania dostępności</a>.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Optionally, you can update the code in the browser's
-                    Elements panel and run <strong>'Scan'</strong> again to
-                    confirm your code changes fix the issue.
+                    Opcjonalnie możesz zaktualizować kod w panelu Elementy przeglądarki i ponownie uruchomić <strong>„Skanuj”</strong>, aby potwierdzić, że zmiany w kodzie rozwiązują problem.
                   </p>
                 </li>
               </ol>
             </div>
 
-            <h3 id="focus_view">6.2 Focus View</h3>
+            <h3 id="focus_view">6.2 Widok skoncentrowany</h3>
             <p>
-            Przełącznik <strong>'Focus view'</strong> umożliwia przełączanie między wyświetlaniem wszystkich problemów na stronie lub tylko problemów z wybranym elementem lub komponentem w DOM. Aby skupić się na dowolnym pojedynczym elemencie lub komponencie:
+            Przełącznik <strong>Widok skoncentrowany</strong> umożliwia przełączanie między wyświetlaniem wszystkich problemów na stronie lub tylko problemów z wybranym elementem lub komponentem w DOM. Aby skupić się na dowolnym pojedynczym elemencie lub komponencie:
 
 			
             </p>
@@ -691,21 +651,21 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Kliknij prawym przyciskiem myszy na elemencie strony i wybierz "Zbadaj" (Chrome) lub "Zbadaj element" (Firefox).
+                    Kliknij prawym przyciskiem myszy na elemencie strony i&nbsp;wybierz z&nbsp;menu kontekstowego „Zbadaj”.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Wybierz nazwę elementu w przełączniku <strong>"Focus View"</strong>, aby wyświetlić tylko problemy dotyczące tego elementu i jego dzieci.
+                    Wybierz nazwę elementu w przełączniku <strong>„Widok skoncentrowany”</strong>, aby wyświetlić tylko problemy dotyczące tego elementu i&nbsp;jego dzieci.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Wybierz opcję <strong>'Wszystko'</strong> w przełączniku <strong>"Focus View"</strong> aby wyświetlić wszystkie problemy na stronie.
+                    Wybierz opcję <strong>„Wszystko”</strong> w przełączniku <strong>„Widok skoncentrowany”</strong>, aby wyświetlić wszystkie problemy na stronie.
                   </p>
                 </li>
               
-              <p>Domyślnie, po pierwszym skanowaniu strony, wyświetlane są wszystkie zagadnienia, a element &lt;html&gt; jest zaznaczony, jak pokazano na tym zrzucie ekranu:
+              <p>Domyślnie, po pierwszym skanowaniu strony, wyświetlane są wszystkie zagadnienia, a&nbsp;element &lt;html&gt; jest zaznaczony, jak pokazano na tym zrzucie ekranu:
               </p>
   
 
@@ -717,25 +677,25 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                       height="100%"
                     />
               </p>
-              <p>In this screen shot, the search &lt;input&gt; element in the DOM has been selected, and the{" "} 
-              <strong>'Focus View'</strong> switch has been set to show all the issues on the whole page:
+              <p>Na tym zrzucie ekranu wybrano element wyszukiwania &lt;input&gt; w DOM, a przełącznik {" "} 
+              <strong>„Widok skoncentrowany”</strong> został ustawiony tak, aby wyświetlał wszystkie problemy na całej stronie:
               <br/>
               </p>
               <p>
                     <img
                       src="assets/img/6_2_FocusView2.png"
-                      alt="Accessibility Checker screenshot. Focus view switch options are 'input' and 'All' (selected) and all issues on the page are shown"
+                      alt="Zrzut ekranu narzędzia sprawdzania dostępności. Opcje przełączania widoku ostrości to 'input' i 'Wszystko' (wybrane) i&nbsp;wszystkie problemy na stronie są pokazane"
                       width="100%"
                       height="100%"
                     />
               </p>
-              <p>In this screen shot, the search &lt;input&gt; element in the DOM has been selected, and the{" "}
-              <strong>‘Focus View’</strong> switch has been set to show only the issues for that search &lt;input&gt; element:
+              <p>Na tym zrzucie ekranu wybrano pole wyszukiwania &lt;input&gt; w DOM, a przełącznik{" "}
+              <strong>„skoncentrowany”</strong>  został ustawiony tak, aby wyświetlał tylko problemy dla tego elementu wyszukiwania &lt;input&gt;:
               </p>
               <p>
                     <img
                       src="assets/img/6_2_FocusView3.png"
-                      alt="Accessibility Checker screenshot. Focus view switch options are 'input' (selected) and 'All' only the two issues within the search input element are shown"
+                      alt="Zrzut ekranu narzędzia sprawdzania dostępności. Opcje przełączania widoku ostrości to 'input' (zaznaczone) i 'Wszystko', pokazane są tylko dwa problemy w obrębie elementu wejściowego wyszukiwania"
                       width="100%"
                       height="100%"
                     />
@@ -744,7 +704,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
               </ol>
             </div>
 
-            <h3 id="a11y_assess">6.3 Accessibility Assessment</h3>
+            <h3 id="a11y_assess">6.3 Ocena dostępności</h3>
             <div className="pa">
               <ol
                 style={{
@@ -754,7 +714,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 }}
               >
                 <li>
-                  Open the Developer Tools:
+                 Otwórz Narzędzia dla programistów:
                   <ul
                     style={{
                       listStyleType: "circle",
@@ -763,40 +723,38 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                   >
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        In Chrome: From the browser ‘View’ menu, select
-                        ‘Developer’ and then select ‘Developer tools’, or{" "}
+                        W przeglądarce Chrome: z menu przeglądarki wybierz „Więcej narzędzi”, a&nbsp;następnie „Narzędzia dla deweloperów” lub{" "}
                       </p>
                     </li>
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        In Firefox: From the browser ‘Tools menu, select ‘Web
-                        Developer’ and then select ‘Toggle Tools’, or
+                        W przeglądarce Firefox: z menu „Narzędzia” przeglądarki wybierz „Narzędzia przeglądarki”, a następnie wybierz „Narzędzia dla twórców witryn” lub
+                      </p>
+                    </li>
+				
+                    <li>
+                      <p style={{ marginTop: "0rem" }}>
+                        Naciśnij <strong>Command+Option+I</strong> w systemie MacOS® lub{" "}
+                        <strong>Control+Shift+I</strong> w&nbsp;systemie Microsoft Windows®,
+                         lub
                       </p>
                     </li>
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        Press <strong>Command+Option+I</strong> on MacOS® or{" "}
-                        <strong>Control+Shift+I</strong> on Microsoft Windows®,
-                        or
-                      </p>
-                    </li>
-                    <li>
-                      <p style={{ marginTop: "0rem" }}>
-                        Right-click on a page element and select ‘Inspect’
-                        (Chrome) or ‘Inspect Element’ (Firefox).
+                        Kliknij prawym przyciskiem myszy element strony i&nbsp;wybierz z&nbsp;menu kontekstowego „Zbadaj”
                       </p>
                     </li>
                   </ul>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Select the <strong>'Accessibility Assessment'</strong>{" "}
+                    Wybierz panel  <strong>„Ocena dostępności”</strong>{" "}
                     panel:{" "}
                   </p>
                   <p>
                     <img
                       src="assets/img/6_3_AccessibilityAssessment2.png"
-                      alt="Accessibility Assessment screenshot - A comprehensive accessibility assessment tool"
+                      alt="Zrzut ekranu oceny dostępności - Kompleksowe narzędzie do oceny dostępności"
                       width="100%"
                       height="100%"
                     />
@@ -804,42 +762,36 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Click the <strong>'Scan'</strong> button to scan the web
-                    page.
+                    Kliknij przycisk <strong>„Skanuj”</strong>, aby zeskanować stronę internetową.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    By default, the results display by the{" "}
-                    <strong>'Requirements'</strong> with a breakdown of
-                    the total number of issues found by category.
+                    Domyślnie wyniki są wyświetlane według {" "}
+                    <strong>„Wymagań”</strong> with z podziałem całkowitej liczby wykrytych problemów według kategorii.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    The right panel displays an Accessibility Checker Report
-                    summary, while the left panel shows the scan result with the
-                    total number of issues found, with individual counts for
-                    violations, items that need review, and recommendations:{" "}
+                    Prawy panel wyświetla podsumowanie raportu Kontrolera dostępności, a lewy panel pokazuje wynik skanowania z łączną liczbą wykrytych problemów, z liczbami naruszeń, kwestii, które wymagają sprawdzenia oraz zaleceniami:{" "}
                   </p>
                   <p>
                     <img
                       src="assets/img/6_3_AccessibilityAssessment5.png"
-                      alt="Accessibility Assessment report screenshot - a sample report of Accessibility Assessment"
+                      alt="Zrzut ekranu raportu Oceny dostępności - przykładowy raport Oceny dostępności"
                       width="100%"
                       height="100%"
                     />
                   </p>
                 </li>
+			
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    By default, issues are shown in the 'Requirements' view, while
-                    'Element roles' and 'Rules' tabs are also available. All
-                    views show the same set of issues.
+                    Domyślnie problemy są wyświetlane w widoku „Wymagania”, ale dostępne są również karty „Role elementów” i&nbsp;„Reguły”. Wszystkie widoki pokazują ten sam zestaw problemów.
                   </p>
                 </li>
                 <li>
-                  Requirements tab:
+                  Karta Wymagania:
                   <ul
                     style={{
                       listStyleType: "circle",
@@ -848,23 +800,17 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                   >
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        Select the expand icon next to a requirement in the table
-                        to display a list of issues found within that
-                        requirement.
+                        Wybierz ikonę rozwijania obok wymagania w tabeli, aby wyświetlić listę problemów znalezionych w ramach tego wymagania.
                       </p>
                     </li>
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        Select an instance of an issue and the report summary is
-                        replaced with a detailed description that includes the
-                        error level, why the content is failing, what the
-                        requirement is, what resources to use, what to do to fix
-                        the issue, who it affects, and why it is important:{" "}
+                        Wybierz wystąpienie problemu, a podsumowanie raportu zostanie zastąpione szczegółowym opisem, który zawiera poziom błędu, dlaczego treść nie działa dostępnie, jakie są wymagania, jakich zasobów użyć, co zrobić, aby naprawić problem, kogo dotyczy i&nbsp; dlaczego jest to ważne:{" "}
                       </p>
                       <p>
                         <img
                           src="assets/img/6_3_AccessibilityAssessment7.png"
-                          alt="Accessibility Assessment help panel screenshot - a sample help panel of Accessibility Assessment "
+                          alt="Zrzut ekranu panelu pomocy Oceny dostępności - przykładowy panel pomocy Oceny dostępności "
                           width="100%"
                           height="100%"
                         />
@@ -873,7 +819,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                   </ul>
                 </li>
                 <li>
-                  Element roles tab:
+                  Karta Rola elementu:
                   <ul
                     style={{
                       listStyleType: "circle",
@@ -882,19 +828,16 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                   >
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        Select the <strong>'Element roles'</strong> tab to view
-                        the scan results organized by element roles on the web
-                        page.
+                        Wybierz kartę <strong>„Role elementów”</strong>, aby wyświetlić wyniki skanowania uporządkowane według ról elementów na stronie internetowej.
                       </p>
                     </li>
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        Expand an element role to view the issues for that
-                        element role.
+                        Rozwiń rolę elementu, aby wyświetlić problemy dla tej roli elementu.
                       </p>
                     </li>
                     <li>
-                      Select an issue to:
+                      Wybierz problem, aby:
                       <ul
                         style={{
                           listStyleType: "disc",
@@ -903,13 +846,12 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                       >
                         <li>
                           <p style={{ marginTop: "0rem" }}>
-                            Highlight the issue.
+                            Podświetlić problem.
                           </p>
                         </li>
                         <li>
                           <p style={{ marginTop: "0rem" }}>
-                            View the detailed description for that issue in the
-                            summary pane (on the left).
+                            Wyświetlić szczegółowy opis tego problemu w okienku podsumowania (po lewej stronie).
                           </p>
                         </li>
                       </ul>
@@ -917,7 +859,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                   </ul>
                 </li>
                 <li>
-                  Rules tab:
+                  Karta Reguły:
                   <ul
                     style={{
                       listStyleType: "circle",
@@ -926,17 +868,16 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                   >
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        Select the <strong>'Rules'</strong> tab to view the scan
-                        results by the Accessibility Checker rule.
+                        Wybierz kartę <strong>„Reguły”</strong>, aby wyświetlić wyniki skanowania według reguły sprawdzania dostępności.
                       </p>
                       <li>
                         {" "}
                         <p style={{ marginTop: "0rem" }}>
-                          Expand a rule to view the issues for that rule.
+                          Rozwiń regułę, aby wyświetlić problemy dla tej reguły.
                         </p>
                       </li>
                       <li>
-                        Select an issue to:
+                        Wybierz problem, aby:
                         <ul
                           style={{
                             listStyleType: "disc",
@@ -945,13 +886,12 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                         >
                           <li>
                             <p style={{ marginTop: "0rem" }}>
-                              Highlight the issue.
+                              Poświetlić problem.
                             </p>
                           </li>
                           <li>
                             <p style={{ marginTop: "0rem" }}>
-                              View the detailed description for that issue in
-                              the summary pane (on the left).
+                              Wyświetlić szczegółowy opis tego problemu w okienku podsumowania (po lewej stronie).
                             </p>
                           </li>
                         </ul>
@@ -961,34 +901,32 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Optionally, you can select the browser's Element panel to
-                    view the Accessibility Checker results alongside the code
-                    and test fixes.
+                    Opcjonalnie możesz wybrać panel Element przeglądarki, aby wyświetlić wyniki sprawdzania dostępności wraz z&nbsp;poprawkami kodu i&nbsp;testów.
                   </p>
                 </li>
               </ol>
             </div>
 
-            <h3 id="t_single_scan_report">6.4 Creating a scan report</h3>
+            <h3 id="t_single_scan_report">6.4 Tworzenie raportu ze skanowania</h3>
             <div className="pa">
-            To generate a report for a single scan in the <strong>Tester dostępności</strong> view:
+            Aby wygenerować raport dla pojedynczego skanu w widoku <strong>Tester dostępności</strong>:
             <ol
                 style={{ listStyleType: "decimal", marginInlineStart: "2rem" }}
               >
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Follow the instructions in <a href="#a11y_check" title="Tester dostępności">
-                        6.1 Tester dostępności</a> to scan the web page.
+                    Postępuj zgodnie z instrukcjami w <a href="#a11y_check" title="Tester dostępności">
+                        6.1 Tester dostępności</a>, aby zeskanować stronę internetową.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Open the <strong>'Reports'</strong> drop-down menu that follows the scan button.
+                   Otwórz menu rozwijane <strong>„Raporty”</strong>, które znajduje się za przyciskiem skanowania.
                   </p>
                   <p>
               <img
                 src="assets/img/6_4_CreatingSingleScanReport2.png"
-                alt="Screen shot of the 'Reports' menu"
+                alt="Zrzut ekranu menu 'Raporty'."
                 width="100%"
                 height="100%"
               />
@@ -997,44 +935,41 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Select <strong>'Download current scan'</strong>.
+                    Wybierz <strong>„Pobierz aktualny skan”</strong>.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    The report for the most recent scan will be downloaded in both HTML and MS Excel spreadsheet formats.
+                    Raport z ostatniego skanowania zostanie pobrany w formacie arkusza kalkulacyjnego HTML i MS Excel.
                 </p>
                 </li>
                 </ol>
-                <p>To generate a report for a single scan in the <strong>Accessibility Assessment</strong> view:
+                <p>Aby wygenerować raport dla pojedynczego skanowania w widoku <strong>Ocena dostępności</strong>:
                 </p>
                 <ol
                 style={{ listStyleType: "decimal", marginInlineStart: "2rem" }}
               >
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Follow the instructions in <a href="#a11y_assess" title="Accessibility Assessment">6.3 Accessibility Assessment</a> to scan the web page.
+                    Postępuj zgodnie z instrukcjami w  <a href="#a11y_assess" title="Ocena dostępności">6.3 Ocena dostępności</a>, aby zeskanować stronę internetową.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Select the <strong>'Reports'</strong> button.
+                    Wybierz przycisk <strong>„Raporty”</strong>.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    The report for the most recent scan will be downloaded in both HTML and MS Excel spreadsheet formats.
+                    Raport z ostatniego skanowania zostanie pobrany w formacie arkusza kalkulacyjnego HTML i&nbsp;MS Excel.
                   </p>
                 </li>
               </ol>
             </div>
 
-            <h3 id="t_multi_scan_report">6.5 Creating a multi-scan report</h3>
+            <h3 id="t_multi_scan_report">6.5 Tworzenie raportu z wielu skanów</h3>
             <p>
-              Follow these steps to combine several scans into a single report. 
-              Up to 50 scans may be combined. Reports 
-              with more than 50 scans may not open correctly in MS Excel due to 
-              limitations of the libraries used to write the reports.
+              Wykonaj poniższe czynności, aby połączyć kilka skanów w jeden raport. Można połączyć do 50 skanów. Raporty zawierające więcej niż 50 skanów mogą nie otwierać się poprawnie w&nbsp;MS Excel ze względu na ograniczenia bibliotek używanych do pisania raportów.
               </p>
              <div className="pa">
              <ol
@@ -1042,29 +977,28 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
               >
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Open the <strong>Tester dostępności</strong> view (as described in <a href="#a11y_check" title="Tester dostępności">
+                    Otwórz widok <strong>Tester dostępności</strong> (opisany w <a href="#a11y_check" title="Tester dostępności">
                         6.1 Tester dostępności</a>).
                  </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Open the <strong>'Reports'</strong> drop-down menu.
+                    Otwórz menu rozwijane <strong>„Raporty”</strong>.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Select the <strong>'Start storing scans'</strong> menu item.
+                    Wybierz pozycję menu <strong>„Rozpocznij przechowywanie skanów”</strong>.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    The status indicator below the scan button will show that you are now 
-                    storing scans to build a report, and that no scans are stored.
+                    Wskaźnik stanu poniżej przycisku skanowania pokaże, że teraz przechowujesz skany w&nbsp;celu utworzenia raportu i&nbsp;że żadne skany nie są przechowywane.
                   </p>
                   <p>
                     <img
                       src="assets/img/6_5_CreatingMulti-scanReport4.png"
-                      alt="Status: storing, no scans stored"
+                      alt="Status: przechowywanie, brak zapisanych skanów"
                       width="100%"
                       height="100%"
                     />
@@ -1072,14 +1006,12 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Scan the pages you want to include in the report.  This may include scans 
-                    of the same page in different states. 
-                    The status indicator will update to show how many scans are stored.
+                    Zeskanuj strony, które chcesz uwzględnić w raporcie. Może to obejmować skany tej samej strony w różnych stanach. Wskaźnik stanu zaktualizuje się, pokazując, ile skanów jest przechowywanych.
                   </p>
                   <p>
                     <img
                       src="assets/img/6_5_CreatingMulti-scanReport5.png"
-                      alt="Status: storing, 1 scan stored"
+                      alt="Status: zapisywanie, 1 skan zapisany"
                       width="100%"
                       height="100%"
                     />
@@ -1087,50 +1019,46 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    When storing scans, you may stop storing scans by selecting the <strong>'Stop storing scans'</strong>{" "} 
-                    option in the <strong>'Reports'</strong> drop-down menu, and your stored scans will not be lost.  
-                    You can start storing scans again at any time.
+                    Podczas zapisywania skanów możesz przestać zapisywać skany, wybierając opcję <strong>„Zatrzymaj przechowywanie skanów”</strong>{" "} w&nbsp;menu rozwijanym <strong>„Raporty”</strong>, a&nbsp;zapisane skany nie zostaną utracone. W&nbsp;dowolnym momencie możesz ponownie zapisywać skany.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    To remove all stored scans, open the <strong>'Reports'</strong> drop-down menu and 
-                    select <strong>'Clear stored scans'</strong>.
+                    Aby usunąć wszystkie zapisane skany, otwórz menu rozwijane <strong>„Raporty”</strong> i&nbsp;wybierz opcję  <strong>„Wyczyść przechowywane skany”</strong>.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    When you have stored the scans for the report, open the <strong>'Reports'</strong> drop-down menu and select{" "} 
-                    <strong>'View stored scans'</strong>. This opens the Scan manager view, showing a table listing all the stored scans. 
+                    Po zapisaniu skanów do raportu otwórz menu rozwijane <strong>„Raporty”</strong>i&nbsp;wybierz opcję {" "} 
+                    <strong>„Pokaż przechowywane skany”</strong>. Spowoduje to otwarcie widoku menedżera skanowania, zawierającego tabelę zawierającą wszystkie zapisane skany. 
                   </p>
                   <p>
                         <img
                           src="assets/img/6_5_CreatingMulti-scanReport8.png"
-                          alt="Accessibility Checker Stored Scans panel screenshot - a table listing the stored scans "
+                          alt="Zrzut ekranu panelu Accessibility Checker Stored Scans - tabela zawierająca listę zapisanych skanów "
                           width="100%"
                           height="100%"
                         />
                   </p>
                 </li>
               </ol>
-              <p>Creating a report in the scan manager view:
+              <p>Tworzenie raportu w widoku menedżera skanowania:
               </p><ol 
                 style={{ listStyleType: "decimal", marginInlineStart: "2rem" }}
               >
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Review the scans listed and select the ones you want in the report. Select or unselect all 
-                    the stored scans with the checkbox in the first column of the header row of the table.
+                    Przejrzyj wymienione skany i wybierz te, które chcesz umieścić w&nbsp;raporcie. Zaznacz lub usuń zaznaczenie wszystkich zapisanych skanów za pomocą pola wyboru w&nbsp;pierwszej kolumnie wiersza nagłówka tabeli.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Use the <strong>'View'</strong> link in the 'Details' column at the right of the table to see a screenshot of each scan.
+                    Użyj linku <strong>„Wyświetl”</strong> w kolumnie „Szczegóły” po prawej stronie tabeli, aby zobaczyć zrzut ekranu każdego skanu.
                   </p>
                   <p>
                         <img
                           src="assets/img/6_5_CreatingMulti-scanReport10.png"
-                          alt="Popup dialog with screenshot of scan, and details about the scan "
+                          alt="Wyskakujące okno dialogowe zawierające zrzut ekranu i&nbsp;szczegóły dotyczące skanowania "
                           width="100%"
                           height="100%"
                         />
@@ -1138,12 +1066,12 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Unselect any scan you do not want in the report by unchecking its checkbox in the table. 
+                    Usuń zaznaczenie dowolnego skanowania, którego nie chcesz umieścić w&nbsp;raporcie, odznaczając jego pole wyboru w tabeli. 
                   </p>
                   <p>
                         <img
                           src="assets/img/6_5_CreatingMulti-scanReport11.png"
-                          alt="Accessibility Checker Stored Scans panel screenshot - one scan is unchecked "
+                          alt="Zrzut ekranu panelu Accessibility Checker Stored Scans - jeden skan jest niezaznaczony "
                           width="100%"
                           height="100%"
                         />
@@ -1151,13 +1079,12 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    [Optional] To help differentiate the scans in the final report, enter meaningful scan labels 
-                    in the 'Scan label’ column of the table.  These labels will appear in the final report.
+                    [Opcjonalnie] Aby ułatwić rozróżnienie skanów w raporcie końcowym, wpisz odpowiednie etykiety skanowania w kolumnie „Etykieta skanowania” w&nbsp;tabeli. Etykiety te pojawią się w&nbsp;raporcie końcowym.
                   </p>
                   <p>
                         <img
                           src="assets/img/6_5_CreatingMulti-scanReport12.png"
-                          alt="Accessibility Checker Stored Scans panel screenshot - three scans are labelled 'Original scan', 'with form' and 'with link' "
+                          alt="Zrzut ekranu panelu Accessibility Checker Stored Scans - trzy skany są oznaczone jako 'oryginalny skan', 'z formularzem' i 'z linkiem'. "
                           width="100%"
                           height="100%"
                         />
@@ -1165,41 +1092,30 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Download the multi-scan report spreadsheet by selecting the <strong>'Download'</strong> button at the top of the table.
-                    The spreadsheet will automatically download.
+                    Pobierz arkusz z raportem z wielu skanów, wybierając przycisk  <strong>„Pobierz”</strong> u&nbsp;góry tabeli. Arkusz kalkulacyjny zostanie pobrany automatycznie.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Remove the selected stored scans using the <strong>'Delete'</strong> button. 
-                    This preserves memory for new scans to be stored.
+                    Usuń wybrane zapisane skany za pomocą przycisku  <strong>„Usuń”</strong> Pozwala to zachować pamięć do przechowywania nowych skanów.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Return to the main checker view by selecting <strong>'Back to list view'</strong>.
+                    Wróć do głównego widoku sprawdzania, wybierając <strong>„Powrót do widoku listy”</strong>.
                   </p>
                 </li>
               </ol>
             </div>
 
-            <h3 id="t_select_hidden_settings">6.6 Hidden content scanning</h3>
+            <h3 id="t_select_hidden_settings">6.6 Skanowanie ukrytych treści</h3>
             <p>
-              By default, the tool skips hidden content (Web pages that use the{" "}
-              <var>visibility:hidden</var> or <var>display:none</var> elements),
-              if this content is displayed to the user at any point, you must
-              test the web content by fully exercising the user interface
-              according to the usage scenarios in your test plan. Ensure the
-              tests trigger the display of hidden content so that the
-              Accessibility Checker can validate the content that is displayed.
+              Domyślnie narzędzie pomija ukrytą zawartość (strony internetowe, które używają elementów{" "}
+              <var>visibility:hidden</var> lub <var>display:none</var>, jeśli ta zawartość jest wyświetlana użytkownikowi w&nbsp;dowolnym momencie, należy przetestować zawartość sieci Web, w pełni wykorzystując interfejs użytkownika zgodnie z scenariusze użycia w&nbsp;planie testów. Upewnij się, że testy uruchamiają wyświetlanie ukrytej zawartości, aby narzędzie sprawdzania ułatwień dostępu mogło sprawdzić poprawność wyświetlanej zawartości.
             </p>
-
-            <h3 id="scan_local_files">6.7 Scan local files</h3>
+            <h3 id="scan_local_files">6.7 Skanuj pliki lokalne</h3>
             <p>
-              The Accessibility Checker is able to scan local .html or .htm
-              files launched in the Firefox browser by default. Follow the steps
-              below to allow scanning of local .html or .htm files in the Chrome
-              browser:
+              Narzędzie sprawdzania ułatwień dostępu domyślnie skanuje lokalne pliki .html lub .htm uruchamiane w przeglądarce Firefox. Wykonaj poniższe czynności, aby zezwolić na skanowanie lokalnych plików .html lub .htm w&nbsp;przeglądarce Chrome:
               </p>
             <div className="pa">
               <ol
@@ -1207,38 +1123,36 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
               >
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Open the Chrome browser.
+                    Otwórz przeglądarkę Chrome.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Open the <strong>'Window'</strong> menu.
+                    Otwórz menu <strong>„Okno”</strong>.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Select the <strong>'Extensions'</strong> menu option to see
-                    all installed extensions.
+                    Wybierz opcję menu <strong>„Rozszerzenia”</strong>, aby zobaczyć wszystkie zainstalowane rozszerzenia.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Select the <strong>'Details'</strong> button of the IBM Equal
-                    Access Accessibility Checker Extension.
+                    Wybierz przycisk <strong>„Szczegóły”</strong> rozszerzenia IBM Equal Accessibility Checker.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Scroll down to <strong>'Allow access to file URLs'</strong>{" "}
-                    and turn this option on.
+                    Przewiń w dół do <strong>„Zezwól na dostęp do adresów URL plików”</strong>{" "}
+                     i&nbsp;włącz tę opcję.
                   </p>
                 </li>
               </ol>
             </div>
 
-            <h3 id="a11y_considerations">6.8 Accessibility Considerations</h3>
+            <h3 id="a11y_considerations">6.8 Rozważania dotyczące dostępności</h3>
             <p>
-              Highlighted below are several accessibility features for adaptability and to ensure ease of access to the Checker functionality, including with keyboard or with a screen reader: 
+              Poniżej wyróżniono kilka funkcji dostępności umożliwiających dostosowanie i&nbsp;zapewniających łatwy dostęp do funkcji Checker, w&nbsp;tym za pomocą klawiatury lub czytnika ekranu:
             </p>
             <div className="pa">
               <ol
@@ -1246,12 +1160,12 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
               >
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    The Accessibility Checker tool is responsive to the user's preferred font size and colors.
+                    Narzędzie Tester dostępności reaguje na preferowany rozmiar i&nbsp;kolory czcionki użytkownika.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Both the Accessibility Assessment view and the Accessibility Checker view are fully keyboard accessible, navigate as follows:
+                    Zarówno widok Oceny dostępności, jak i widok Tester dostępności są w&nbsp;pełni dostępne za pomocą klawiatury, nawiguj w następujący sposób:
                   </p>
                 </li>
                   <ul
@@ -1262,46 +1176,43 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                   >
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        Use the <strong>'tab'</strong> key to navigate to any focusable element in the checker, starting
-                        with the <strong>'Scan'</strong> button once the checker launches.
+                        Użyj klawisza <strong>„Tab”</strong>, aby przejść do dowolnego elementu sprawdzania, który można ustawić, zaczynając od przycisku <strong>„Skanuj”</strong> po uruchomieniu sprawdzania.
                       </p>
                     </li>
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        After running the scan, press the <strong>'tab'</strong> key again, to navigate to the <strong>'Reports'</strong> drop-down menu button.
+                        Po uruchomieniu skanowania ponownie naciśnij klawisz <strong>„tab”</strong>, aby przejść do przycisku menu rozwijanego <strong>„Raporty”</strong>.
                       </p>
                     </li>
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        In the Accessibility Checker view, press the <strong>'tab'</strong> key again to navigate to the 'Focus view’ toggle button. 
-                        Use the arrow keys to select whether the issue list includes all issues (default) or just the issues for the currently focused element and its children. 
-                        This function is not available in the Accessibility Assessment view. 
+                        W widoku Tester dostępności ponownie naciśnij klawisz <strong>„Tab”</strong>, aby przejść do przycisku przełączania „Widok skoncentrowany”. Użyj klawiszy strzałek, aby wybrać, czy lista spraw zawiera wszystkie sprawy (domyślnie), czy tylko sprawy dla aktualnie wybranego elementu i&nbsp;jego elementów podrzędnych. Ta funkcja nie jest dostępna w widoku Ocena dostępności. 
                       </p>
                     </li>
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        Press the <strong>'tab'</strong> key to navigate to the checkbox by each issue type and press the <strong>'enter'</strong> key to filter the list of issue by <strong>Violations</strong>, <strong>Needs review</strong> and/or by <strong>Recommendations</strong>.
+                        Naciśnij klawisz <strong>„Tab”</strong>, aby przejść do pola wyboru według każdego typu problemu i naciśnij klawisz <strong>„enter”</strong>, aby przefiltrować listę problemów według <strong>naruszeń</strong>, <strong>Do przeglądu</strong> lub według <strong>Zaleceń</strong>.
                       </p>
                     </li>
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        Press the <strong>'tab'</strong> key to navigate to the <strong>Issue List</strong> tabs and use the <strong>'right arrow'</strong> or the <strong>'left arrow'</strong> keys to navigate between the <strong>'Element Roles'</strong> view, the <strong>'Requirements'</strong> view and the <strong>'Rules'</strong> view.
+                        Naciśnij klawisz <strong>„Tab”</strong>, aby przejść do kart z <strong>listą problemów</strong> i użyj klawiszy <strong>„strzałka w&nbsp;prawo”</strong> lub <strong>„strzałka w&nbsp;lewo”</strong>, aby przechodzić między widokami <strong>„Role elementów”</strong>, <strong>„Wymagania”</strong> i&nbsp;widokiem <strong>„Reguły”</strong>.
                       </p>
                     </li>
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        Press the <strong>'tab'</strong> key to navigate through the <strong>issue groupings</strong> associated with each requirement, element role or rule. Use the <strong>'enter'</strong> key to open or close an issue grouping. Within an open grouping, press the <strong>'tab'</strong> key to navigate to each issue, and press the <strong>'enter'</strong> key to select the current issue.
+                        Naciśnij klawisz <strong>„Tab”</strong>, aby poruszać się po <strong>grupach problemów</strong> związanych z każdym wymaganiem, rolą elementu lub regułą. Użyj klawisza <strong>„enter”</strong>, aby otworzyć lub zamknąć grupowanie spraw. W ramach otwartej grupy naciśnij klawisz <strong>„Tab”</strong>, aby przejść do każdego problemu, i&nbsp;naciśnij klawisz <strong>„Enter”</strong>, aby wybrać bieżący problem.
                       </p>
                     </li>
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        Press the <strong>'tab'</strong> key to move to the <strong>'Learn more'</strong> link or to move to the next issue.
+                        Naciśnij klawisz <strong>„Tab”</strong>, aby przejść do linku <strong>„Więcej informacji”</strong> lub przejść do następnego problemu.
                       </p>
                     </li>
                   </ul>  
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Use the <strong>headings</strong> hierarchy or the implemented <strong>landmarks</strong> to quickly navigate from one section to another. The list of implemented landmarks are as follows:
+                    Użyj <strong>hierarchii nagłówków</strong> lub zaimplementowanych <strong>punktów orientacyjnych</strong>, aby szybko przechodzić z&nbsp;jednej sekcji do drugiej. <br />Lista wdrożonych punktów orientacyjnych jest następująca:
                   </p>
                 </li>
                   <ul
@@ -1312,7 +1223,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                   >
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        The <strong>Accessibility Assessment</strong> or the <strong>Accessibility Checker</strong> main landmark contains the main functionality of the tool in each view and includes,
+                       Główny punkt orientacyjny w widokach <strong>Ocena dostępności</strong> lub <strong>Tester dostępności</strong> zawiera główną funkcjonalność narzędzia i&nbsp;obejmuje,
                       </p>
                       <ul
                           style={{
@@ -1322,83 +1233,70 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                         >
                           <li>
                             <p style={{ marginTop: "0rem" }}>
-                              The <strong>Issue Count</strong> region: contains the issue count by issue type as well as the total number of issues found.
+                              Obszar <strong>Liczba problemów</strong>: zawiera liczbę problemów według typu oraz łączną liczbę wykrytych problemów.
                             </p>
                           </li>
                           <li>
                             <p style={{ marginTop: "0rem" }}>
-                              The <strong>Issue List</strong> region: contains the list of issues grouped by Element Roles, by Requirements or by Rules.
+                              Obszar <strong>Lista problemów</strong>: zawiera listę problemów pogrupowanych według ról elementów, wymagań lub reguł.
                             </p>
                           </li>
                           <li>
                           <p style={{ marginTop: "0rem" }}>
-                            In the Accessibility Checker view, the main landmark also containes issue help and the overview of stored scans, when those are 
-                            requested by the user.
+                            W widoku Tester dostępności główny punkt orientacyjny zawiera również pomoc dotyczącą problemów oraz przegląd zapisanych skanów, jeśli użytkownik o&nbsp;nie poprosi.
                           </p>
                          </li>
                         </ul>
                     </li>
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        The Accessibility Assessment view <strong>Scan Summary</strong> aside or the complementary landmark contains the scan summary, after the scan completes or shows the issue help when any issue is selected.
+                        Obszar uzupełniający <strong>Podsumowanie skanowania</strong> w widoku Ocena dostępności zawiera podsumowanie skanowania po zakończeniu skanowania lub pokazuje pomoc dotycząca problemu, gdy zostanie wybrany.
                       </p>
                     </li>
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        The Accessibility Assessment view <strong>Issue Help</strong> aside or the complementary landmark contains the issue help when any issue is selected.
+                        Obszar uzupełniający <strong>Problem Pomoc</strong> w widoku Ocena dostępności zawiera pomoc dotyczącą problemu po wybraniu dowolnego problemu.
                       </p>
                     </li>
                   </ul>
               </ol>
             </div>
 
-            <h2 id="the_report">7. Accessibility Checker reports</h2>
+            <h2 id="the_report">7. Raporty sprawdzania dostępności</h2>
             <p>
-            The Accessibility Checker can create reports for a single scan, or for multiple scans combined (multi-scan reports). 
-            Single scan reports are provided in both HTML and MS Excel spreadsheet formats. 
-            Multi-scan reports are available only in MS Excel spreadsheet format. 
-            Sections <a href="#t_single_scan_report"
-                        title="Create scan report">
-                  6.4 Creating a scan report
+            Narzędzie sprawdzania dostępności może tworzyć raporty dla pojedynczego skanowania lub dla wielu skanów połączonych (raporty z wielu skanów). Raporty pojedynczego skanowania są dostarczane zarówno w formacie arkuszy kalkulacyjnych HTML, jak i&nbsp;MS Excel. Raporty z&nbsp;wielu skanów są dostępne tylko w formacie arkusza kalkulacyjnego MS Excel. Rozdziały <a href="#t_single_scan_report"
+                        title="Tworzenie raportu ze skanowania">
+						
+                 6.4 Tworzenie raportu ze skanowania
                   </a>{" "}
                   and <a href="#t_multi_scan_report"
-                        title="Create multi-scan report">
-                    6.5 Creating a multi-scan report
+                        title="Tworzenie raportu z wielu skanów">
+                    6.5 Tworzenie raportu z wielu skanów
                   </a>{" "}
-                  describe how to generate reports.
+                  opisują sposób generowania raportów.
             </p>
-            <h3 id="t_html_report">7.1 HTML report</h3>
+            <h3 id="t_html_report">7.1 Raport HTML</h3>
             <p>
-              This is an interactive report saved as an HTML file for future use. It includes the report
-              scan date and time, URL, and a summary of test results followed by
-              the issue details organized by requirements, by element
-              roles, and by rules. Each instance of an issue also includes a{" "}
-              <strong>'Learn more'</strong> link that opens an overlay
-              containing a more detailed description of the issue.
+              Jest to interaktywny raport zapisany jako plik HTML do wykorzystania w przyszłości. Zawiera datę i godzinę skanowania raportu, adres URL oraz podsumowanie wyników testów, a następnie szczegóły problemu uporządkowane według wymagań, ról elementów i reguł. Każde wystąpienie problemu zawiera również łącze <strong>„Dowiedz się więcej”</strong>, które otwiera nakładkę zawierającą bardziej szczegółowy opis problemu.
             </p>
             <p>
-              The current accessibility status of the Web content displays as a
-              percentage of elements with no detected violations or items to
-              review.{" "}
+              Bieżący stan dostępności treści internetowych jest wyświetlany jako procent elementów bez wykrytych naruszeń lub elementów do przejrzenia.{" "}
             </p>
             <p>
-              <strong>Important Note:</strong> This percentage is based on
-              automated tests only. Be sure to perform additional reviews and
-              manual tests to complete the accessibility assessments. Use the{" "}
-              <a href="www.ibm.com/able/toolkit">IBM Equal Access Toolkit</a> as
-              a guide.
+              <strong>Ważna uwaga:</strong> ten odsetek jest oparty wyłącznie na testach automatycznych. Pamiętaj, aby wykonać dodatkowe przeglądy i testy ręczne, aby ukończyć oceny dostępności. Użyj zestawu{" "}
+              <a href="www.ibm.com/able/toolkit">IBM Equal Access Toolkit</a> jako przewodnika
             </p>
             <p>
               <img
                 src="assets/img/7_1_Report.png"
-                alt="Screen shot of an Accessibility Checker Report"
+                alt="Zrzut ekranu raportu z narzędzia sprawdzania dostępności"
                 width="100%"
                 height="100%"
               />
             </p>
-            <h3 id="t_excel_report">7.2 MS Excel Spreadsheet report</h3>
+            <h3 id="t_excel_report">7.2 Raport w arkuszu kalkulacyjnym MS Excel</h3>
             <p>
-              This is a 5 sheet spreadsheet report. It can describe a single scan, or multiple scans.
+              Raport zkłada się z 5 arkuszy kalkulacyjnych. Może opisywać pojedynczy skan lub wiele skanów.
             </p>
             <ol
               style={{
@@ -1409,66 +1307,54 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
             >
               <li>
                 <p style={{ marginTop: "0rem" }}>
-                  <strong>Overview</strong> includes the name of the tool with its version, the scan date, 
-                  ruleset, guidelines and platform used for the scan, and a summary of the overall results across all included scans.  
+                  <strong>Przegląd</strong> zawiera nazwę narzędzia i jego wersję, datę skanowania, zestaw reguł, wytyczne i platformę używaną do skanowania oraz podsumowanie ogólnych wyników wszystkich uwzględnionych skanów.  
                 </p>            
               </li>
               <li>
                 <p style={{ marginTop: "0rem" }}>
-                  <strong>Scan summary</strong> provides an overview of the set of scans within the report.
+                  <strong>Zestawienie skanowań</strong> zawiera przegląd zestawu skanów w raporcie.
                 </p>            
               </li>
               <li>
                 <p style={{ marginTop: "0rem" }}>
-                  <strong>Issue Summary</strong> provides an overview of the issues found across all the scans.  
-                  Issues are summarized in a prioritized order, starting with Level 1 items, 
-                  as defined in the IBM Equal Access Toolkit, followed by Level 2 and Levels 3 
-                  and 4.  Levels 1-3 are necessary to complete the IBM requirements. Within each 
-                  level, the summary lists issues that are Violations, items that Need Review, 
-                  and Recommendations. Counts are provided for each type of issue.
+                  <strong>Zestawienie problemów</strong> zawiera przegląd problemów znalezionych we wszystkich skanach. Zagadnienia są podsumowywane według priorytetów, zaczynając od pozycji Poziomu 1, zgodnie z&nbsp;definicją w IBM Equal Access Toolkit, a następnie Poziomu 2 oraz Poziomów 3 i 4. Poziomy 1-3 są niezbędne do spełnienia wymagań IBM. Na każdym poziomie podsumowanie zawiera listę problemów, które stanowią naruszenia, kwestie wymagające przeglądu oraz zalecenia. Liczby są podane dla każdego rodzaju problemu.
                 </p>            
               </li>
               <li>
                 <p style={{ marginTop: "0rem" }}>
-                  <strong>Issues</strong> has the details of the individual issues. This includes the scan label 
-                  assigned to the scan, an ID for each issue, relevant accessibility requirements, 
-                  and toolkit levels.
+                  <strong>Problemy</strong> zawiera szczegóły poszczególnych spraw. Obejmuje to etykietę skanu, identyfikator każdego problemu, odpowiednie wymagania dla dostępności i poziomy zestawu narzędzi.
                 </p>            
               </li>
               <li>
                 <p style={{ marginTop: "0rem" }}>
-                  <strong>Definition of fields</strong> defines the columns in the other sheets.
+                  <strong>Definicja pól</strong> definiuje kolumny w pozostałych arkuszach.
                 </p>            
               </li>
             </ol>
             <p>
-            In a multi-scan report where the same page is scanned several times, 
-            issues may be repeated across scans of the same page.  These duplicate 
-            issues can be identified by having the same Issue ID.  Where a site template 
-            or reused component has issues, these will also be repeated in the report, 
-            but may have different Issue IDs.
+            W raporcie z wielu skanów, w którym ta sama strona jest skanowana kilka razy, problemy mogą się powtarzać w różnych skanach tej samej strony. Te zduplikowane problemy można zidentyfikować, mając ten sam identyfikator problemu. W przypadku wystąpienia problemów z&nbsp;szablonem witryny lub ponownie użytym komponentem, zostaną one również powtórzone w&nbsp;raporcie, ale mogą mieć różne identyfikatory problemów.
             </p>            
-            <h2 id="feedback">8. Feedback</h2>
+            <h2 id="feedback">8. Informacje zwrotne</h2>
               <div className="pa">
-                Visit the{" "}
+                Odwiedź {" "}
                   <a href="https://github.com/IBMa/equal-access/issues">
-                  Equal Access git repository</a> to:
+                  repozytorium git Equal Access</a>, aby:
                 <ol
                 style={{ listStyleType: "circle", marginInlineStart: "2rem" }}
                 >
                   <li>
                     <p style={{ marginTop: "0rem" }}>
-                      Report a problem with the checker tool.
+                      Zgłosić problem z narzędziem do sprawdzania.
                     </p>            
                   </li>
                   <li>
                     <p style={{ marginTop: "0rem" }}>
-                      Report a problem with the checker rules or accuracy of the errors reported by the checker.
+                      Zgłosić problem z regułami sprawdzania lub dokładnością błędów zgłoszonych przez sprawdzarkę.
                     </p>            
                   </li>
                   <li>
                     <p style={{ marginTop: "0rem" }}>
-                      Find information on any existing issues.
+                      Znaleźć informacje o istniejących problemach.
                     </p>            
                   </li>
                 </ol>

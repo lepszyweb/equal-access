@@ -77,7 +77,7 @@ export default class ReportSummary extends React.Component<IReportSummaryProps, 
                         <Tile className="tile count-tile">
                             <div>
                                 <h3 className="tile-title" style={{ display: "inline" }}>Naruszenia</h3>
-                                <span><img src={Violation16} style={{ verticalAlign: "top", float: "right" }} alt="Naruszenie" /></span>
+                                <span><img src={Violation16} style={{ verticalAlign: "top", float: "right" }} alt="Naruszenia" /></span>
                             </div>
                             <div className="tile-score">{summaryNumbers[0]}</div>
                             <div className="tile-description">Błędy dostępności, które należy skorygować</div>
