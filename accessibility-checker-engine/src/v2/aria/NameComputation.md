@@ -1,15 +1,15 @@
-The text alternative for a given element is computed as follows:
+Tekst alternatywny dla danego elementu jest obliczany w następujący sposób:
 
-1. **[!aria-labelledby]** If the current node is hidden and is not directly referenced by aria-labelledby return the empty string.
+1. **[!aria-labelledby]** Jeśli bieżący węzeł jest ukryty i nie ma do niego bezpośredniego odwołania przez aria-labelledby zwróci pusty łańcuch.
 
-2. if the current node has an aria-labelledby attribute that contains at least one valid IDREF, and the current node is not already part of an aria-labelledby traversal, process its IDREFs in the order they occur:
-    1. Set the accumulated text to the empty string.
-    2. For each IDREF:
-        1. Set the current node to the node referenced by the IDREF.
-        2. Compute the text alternative of the current node **[aria-labelledby=true]**
-        3. Append the result, with a space, to the accumulated text.
-    3. Return the accumulated text.
-
+2. Jeśli bieżący węzeł posiada atrybut aria-labelledby, który zawiera co najmniej jeden poprawny IDREF, a bieżący węzeł nie jest jeszcze częścią sekwencji przeglądania aria-labelledby, przetwórz jego IDREFy w kolejności ich występowania:
+    1. Ustaw zgromadzony tekst na pusty łańcuch.
+    2. Dla każdego IDREF:
+        1. Ustaw bieżący węzeł na węzeł, do którego odwołuje się IDREF.
+        2. Oblicz tekst alternatywny dla bieżącego węzła **[aria-labelledby=true]**
+        3. Dodaj wynik, ze spacją, do zgromadzonego tekstu.
+    3. Zwróć skumulowany tekst.
+	
 3. if the current node has an aria-label attribute whose value is not the empty string, nor, when trimmed of white space, is not the empty string:
     * If traversal of the current node is due to recursion and the current node is an embedded control as defined in step 2E, ignore aria-label and skip to rule 2E.
     * Otherwise, return the value of aria-label.

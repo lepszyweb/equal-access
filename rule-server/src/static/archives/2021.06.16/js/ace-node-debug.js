@@ -145,13 +145,13 @@ var eToolkitLevel;
 })(eToolkitLevel = exports.eToolkitLevel || (exports.eToolkitLevel = {}));
 var eRuleCategory;
 (function (eRuleCategory) {
-    eRuleCategory["ACCESSIBILITY"] = "Accessibility";
+    eRuleCategory["ACCESSIBILITY"] = "Dost\u0119pno\u015B\u0107";
     eRuleCategory["DESIGN"] = "Design";
-    eRuleCategory["OTHER"] = "Other";
+    eRuleCategory["OTHER"] = "Inne";
 })(eRuleCategory = exports.eRuleCategory || (exports.eRuleCategory = {}));
 function RulePass(reasonId, messageArgs, apiArgs) {
     if (typeof reasonId === "undefined" || reasonId === null)
-        throw new Error("Reason ID must be defined");
+        throw new Error("ID powodu musi być określony");
     return {
         value: [eRulePolicy.INFORMATION, eRuleConfidence.PASS],
         reasonId: reasonId,
@@ -162,7 +162,7 @@ function RulePass(reasonId, messageArgs, apiArgs) {
 exports.RulePass = RulePass;
 function RuleRender(reasonId, messageArgs, apiArgs) {
     if (typeof reasonId === "undefined" || reasonId === null)
-        throw new Error("Reason ID must be defined");
+        throw new Error("ID powodu musi być określony");
     return {
         value: [eRulePolicy.INFORMATION, eRuleConfidence.PASS],
         reasonId: 0,
@@ -173,7 +173,7 @@ function RuleRender(reasonId, messageArgs, apiArgs) {
 exports.RuleRender = RuleRender;
 function RuleFail(reasonId, messageArgs, apiArgs) {
     if (typeof reasonId === "undefined" || reasonId === null)
-        throw new Error("Reason ID must be defined");
+        throw new Error("ID powodu musi być określony");
     return {
         value: [eRulePolicy.INFORMATION, eRuleConfidence.FAIL],
         reasonId: reasonId,
@@ -184,7 +184,7 @@ function RuleFail(reasonId, messageArgs, apiArgs) {
 exports.RuleFail = RuleFail;
 function RulePotential(reasonId, messageArgs, apiArgs) {
     if (typeof reasonId === "undefined" || reasonId === null)
-        throw new Error("Reason ID must be defined");
+        throw new Error("ID powodu musi być określony");
     return {
         value: [eRulePolicy.INFORMATION, eRuleConfidence.POTENTIAL],
         reasonId: reasonId,
@@ -195,7 +195,7 @@ function RulePotential(reasonId, messageArgs, apiArgs) {
 exports.RulePotential = RulePotential;
 function RuleManual(reasonId, messageArgs, apiArgs) {
     if (typeof reasonId === "undefined" || reasonId === null)
-        throw new Error("Reason ID must be defined");
+        throw new Error("ID powodu musi być określony");
     return {
         value: [eRulePolicy.INFORMATION, eRuleConfidence.MANUAL],
         reasonId: reasonId,
@@ -231,8 +231,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.NodeWalker = exports.ColorObj = exports.RPTUtilStyle = exports.RPTUtil = void 0;
 var ARIADefinitions_1 = __webpack_require__(5);
 var ARIAMapper_1 = __webpack_require__(9);
-var DOMUtil_1 = __webpack_require__(3);
-var fragment_1 = __webpack_require__(2);
+var DOMUtil_1 = __webpack_require__(2);
+var fragment_1 = __webpack_require__(3);
 var RPTUtil = /** @class */ (function () {
     function RPTUtil() {
     }
@@ -1898,7 +1898,7 @@ var RPTUtil = /** @class */ (function () {
                 // In the case we detect nodetype as text node and the patent of the text node is
                 // the same element we are checking has Inner content for then get the inner content of this
                 // text node.
-                if (node.nodeType === 3 && node.parentElement === element) {
+                if (node.nodeType === 3 && DOMUtil_1.DOMUtil.parentElement(node) === element) {
                     // Check if the innerText of the element is empty or not
                     hasContent = !RPTUtil.isInnerTextEmpty(node);
                 }
@@ -2633,7 +2633,7 @@ var RPTUtil = /** @class */ (function () {
         while (walkNode) {
             if (walkNode.nodeType === 1)
                 ancestors.push(walkNode);
-            walkNode = walkNode.parentElement;
+            walkNode = DOMUtil_1.DOMUtil.parentElement(walkNode);
         }
         var retVal = {
             "hasGradient": false,
@@ -3517,72 +3517,21 @@ exports.NodeWalker = NodeWalker;
     limitations under the License.
  *****************************************************************************/
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FragmentUtil = void 0;
-var FragmentUtil = /** @class */ (function () {
-    function FragmentUtil() {
-    }
-    FragmentUtil.getOwnerFragment = function (node) {
-        var n = node;
-        while (n.parentNode && (n = n.parentNode)) {
-            if (n.nodeType === 11) {
-                return n;
-            }
-        }
-        return node.ownerDocument;
-    };
-    FragmentUtil.getById = function (node, id) {
-        return this.getOwnerFragment(node).getElementById(id);
-    };
-    FragmentUtil.getAncestor = function (hierarchies, elemName) {
-        var matches = hierarchies["dom"].filter(function (info) { return info.role === elemName; });
-        return matches.length > 0 && matches[0].node || null;
-    };
-    FragmentUtil.getAncestorWithRole = function (hierarchies, role) {
-        var matches = hierarchies["aria"].filter(function (info) { return info.role === role; });
-        return matches.length > 0 && matches[0].node || null;
-    };
-    return FragmentUtil;
-}());
-exports.FragmentUtil = FragmentUtil;
-
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-/******************************************************************************
-     Copyright:: 2020- IBM, Inc
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
- *****************************************************************************/
-Object.defineProperty(exports, "__esModule", { value: true });
 exports.DOMUtil = void 0;
 var DOMUtil = /** @class */ (function () {
     function DOMUtil() {
     }
     DOMUtil.hasParent = function (node, names) {
-        var p = node.parentElement;
+        var p = DOMUtil.parentElement(node);
         while (p && !names.includes(p.nodeName)) {
-            p = p.parentElement;
+            p = DOMUtil.parentElement(p);
         }
         return !!p;
     };
     DOMUtil.getAncestor = function (node, names) {
-        var p = node.parentElement;
+        var p = DOMUtil.parentElement(node);
         while (p && !names.includes(p.nodeName.toLowerCase())) {
-            p = p.parentElement;
+            p = DOMUtil.parentElement(p);
         }
         return p;
     };
@@ -3590,7 +3539,7 @@ var DOMUtil = /** @class */ (function () {
         try {
             var vis = null;
             while (node && node.nodeType !== 1 /* Node.ELEMENT_NODE */) {
-                node = node.parentElement;
+                node = DOMUtil.parentElement(node);
             }
             var elem = node;
             var w = elem.ownerDocument.defaultView;
@@ -3603,7 +3552,7 @@ var DOMUtil = /** @class */ (function () {
                     if (vis === "hidden")
                         return false;
                 }
-                elem = elem.parentElement;
+                elem = DOMUtil.parentElement(elem);
             } while (elem);
             return true;
         }
@@ -3649,9 +3598,67 @@ var DOMUtil = /** @class */ (function () {
         }
         return p;
     };
+    DOMUtil.parentElement = function (node) {
+        var elem = node;
+        do {
+            elem = DOMUtil.parentNode(elem);
+        } while (elem && elem.nodeType !== 1);
+        return elem;
+    };
     return DOMUtil;
 }());
 exports.DOMUtil = DOMUtil;
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+/******************************************************************************
+     Copyright:: 2020- IBM, Inc
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ *****************************************************************************/
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FragmentUtil = void 0;
+var FragmentUtil = /** @class */ (function () {
+    function FragmentUtil() {
+    }
+    FragmentUtil.getOwnerFragment = function (node) {
+        var n = node;
+        while (n.parentNode && (n = n.parentNode)) {
+            if (n.nodeType === 11) {
+                return n;
+            }
+        }
+        return node.ownerDocument;
+    };
+    FragmentUtil.getById = function (node, id) {
+        return this.getOwnerFragment(node).getElementById(id);
+    };
+    FragmentUtil.getAncestor = function (hierarchies, elemName) {
+        var matches = hierarchies["dom"].filter(function (info) { return info.role === elemName; });
+        return matches.length > 0 && matches[0].node || null;
+    };
+    FragmentUtil.getAncestorWithRole = function (hierarchies, role) {
+        var matches = hierarchies["aria"].filter(function (info) { return info.role === role; });
+        return matches.length > 0 && matches[0].node || null;
+    };
+    return FragmentUtil;
+}());
+exports.FragmentUtil = FragmentUtil;
 
 
 /***/ }),
@@ -6147,7 +6154,7 @@ ARIADefinitions.containers = containerArray;
  *****************************************************************************/
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DOMWalker = void 0;
-var DOMUtil_1 = __webpack_require__(3);
+var DOMUtil_1 = __webpack_require__(2);
 var DOMWalker = /** @class */ (function () {
     function DOMWalker(element, bEnd, root) {
         this.root = root || element;
@@ -6341,7 +6348,7 @@ var Config = /** @class */ (function () {
     function Config() {
     }
     Config.DEBUG = false;
-    Config.helpRoot = "https://able.ibm.com/rules/tools/help";
+    Config.helpRoot = "https://audyt.lepszyweb.pl/reguly/narzedzia/pomoc";
     return Config;
 }());
 exports.Config = Config;
@@ -6370,7 +6377,7 @@ exports.Config = Config;
  *****************************************************************************/
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CommonMapper = void 0;
-var DOMUtil_1 = __webpack_require__(3);
+var DOMUtil_1 = __webpack_require__(2);
 var CommonMapper = /** @class */ (function () {
     function CommonMapper() {
         this.hierarchyRole = null;
@@ -6519,9 +6526,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ARIAMapper = void 0;
 var ARIADefinitions_1 = __webpack_require__(5);
 var CommonMapper_1 = __webpack_require__(8);
-var DOMUtil_1 = __webpack_require__(3);
+var DOMUtil_1 = __webpack_require__(2);
 var legacy_1 = __webpack_require__(1);
-var fragment_1 = __webpack_require__(2);
+var fragment_1 = __webpack_require__(3);
 var ARIAMapper = /** @class */ (function (_super) {
     __extends(ARIAMapper, _super);
     function ARIAMapper() {
@@ -7315,10 +7322,10 @@ var AttrInfo = /** @class */ (function () {
         this.value = value;
         if (!inclusive
             && ((typeof eq) !== "undefined" && eq.length > 0)) {
-            throw new Error("Cannot have !attr" + eq + " context");
+            throw new Error("Nie może mieć kontekstu(???) !attr" + eq + " ");
         }
         if (inclusive && (typeof eq) !== "undefined" && eq.length > 0 && ((typeof value) === "undefined" || value.length === 0)) {
-            throw new Error("Cannot have equivalence check without a value");
+            throw new Error("Nie można sprawdzać równoważności bez wartości");
         }
     }
     AttrInfo.prototype.matches = function (context) {
@@ -7350,7 +7357,7 @@ var AttrInfo = /** @class */ (function () {
                 return ruleAttrPart.value !== attrValue;
             }
             else {
-                throw new Error("Context equivalence operator not supported");
+                throw new Error("Nieobsługiwany operator równoważności kontekstowej");
             }
         }
     };
@@ -7365,7 +7372,7 @@ var PartInfo = /** @class */ (function () {
         this.attrs = attrs;
         this.connector = connector;
         if (role === "*" && !inclusive) {
-            throw new Error("!* context not supported");
+            throw new Error("!* kontekst nie jest obsługiwany");
         }
     }
     PartInfo.prototype.matches = function (contextHier, hierLevel) {
@@ -7695,7 +7702,7 @@ var Checker = /** @class */ (function () {
         var retVal = null;
         if (rsIds) {
             if (!(ruleId in this.ruleLevels)) {
-                throw new Error("Rule triggered for which we have no rule level information: " + ruleId);
+                throw new Error("Wywołana reguła, dla której nie mamy informacji na poziomie reguły: " + ruleId);
             }
             for (var _i = 0, rsIds_2 = rsIds; _i < rsIds_2.length; _i++) {
                 var rsId = rsIds_2[_i];
@@ -7713,7 +7720,7 @@ var Checker = /** @class */ (function () {
             }
         }
         if (retVal === null) {
-            throw new Error("Rule triggered for which we have no rule level information: " + ruleId);
+            throw new Error("Wywołana reguła, dla której nie mamy informacji na poziomie reguły: " + ruleId);
         }
         return retVal;
     };
@@ -7767,7 +7774,7 @@ var DOMWalker_1 = __webpack_require__(6);
 var Context_1 = __webpack_require__(11);
 var Config_1 = __webpack_require__(7);
 var DOMMapper_1 = __webpack_require__(16);
-var DOMUtil_1 = __webpack_require__(3);
+var DOMUtil_1 = __webpack_require__(2);
 var WrappedRule = /** @class */ (function () {
     function WrappedRule(rule, parsedInfo) {
         this.rule = rule;
@@ -7974,7 +7981,7 @@ var Engine = /** @class */ (function () {
         for (var _i = 0, _a = ruleIds || []; _i < _a.length; _i++) {
             var ruleId = _a[_i];
             if (!(ruleId in this.ruleMap)) {
-                console.warn("WARNING: Rule Id", ruleId, "could not be enabled.");
+                console.warn("OSTRZEŻNIE: Reguła z Id", ruleId, " nie może być włączona.");
             }
             else {
                 this.ruleMap[ruleId].enabled = true;
@@ -8002,7 +8009,7 @@ var Engine = /** @class */ (function () {
         var idx = 0;
         var ruleId = rule.id;
         if (ruleId in this.ruleMap) {
-            console.log("WARNING: Rule", ruleId, "already added to engine. Ignoring...");
+            console.log("OSTRZEŻNIE: Reguła z Id", ruleId, "już jest dodana do silnika. Ignoruj...");
             return;
         }
         this.ruleMap[ruleId] = rule;
@@ -8123,7 +8130,7 @@ var Engine = /** @class */ (function () {
                 }
             }
             else {
-                throw new Error("Context connector " + part.connector + " is not supported");
+                throw new Error("Łącznik kontekstowy " + part.connector + " nie jest obslugiwany");
             }
         }
         return partIdx === -1;
@@ -8744,7 +8751,7 @@ exports.a11yRulesMeta = a11yRulesMeta;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.a11yRulesColor = void 0;
 var IEngine_1 = __webpack_require__(0);
-var DOMUtil_1 = __webpack_require__(3);
+var DOMUtil_1 = __webpack_require__(2);
 var legacy_1 = __webpack_require__(1);
 var a11yRulesColor = [
     {
@@ -9009,7 +9016,7 @@ exports.a11yRulesColor = a11yRulesColor;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.a11yRulesHeading = void 0;
 var IEngine_1 = __webpack_require__(0);
-var DOMUtil_1 = __webpack_require__(3);
+var DOMUtil_1 = __webpack_require__(2);
 var legacy_1 = __webpack_require__(1);
 var a11yRulesHeading = [
     {
@@ -9220,7 +9227,7 @@ exports.a11yRulesApplet = a11yRulesApplet;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.a11yRulesCombobox = void 0;
 var IEngine_1 = __webpack_require__(0);
-var fragment_1 = __webpack_require__(2);
+var fragment_1 = __webpack_require__(3);
 var legacy_1 = __webpack_require__(1);
 function patternDetect(elem) {
     // check 'explicit' role combobox and that it is not <select>. 
@@ -9579,7 +9586,8 @@ exports.a11yRulesCombobox = a11yRulesCombobox;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.a11yRulesHier = void 0;
 var IEngine_1 = __webpack_require__(0);
-var fragment_1 = __webpack_require__(2);
+var DOMUtil_1 = __webpack_require__(2);
+var fragment_1 = __webpack_require__(3);
 var legacy_1 = __webpack_require__(1);
 var a11yRulesHier = [{
         /**
@@ -9590,7 +9598,7 @@ var a11yRulesHier = [{
         context: "aria:group",
         run: function (context, options) {
             var ruleContext = context["dom"].node;
-            var parent = ruleContext.parentElement;
+            var parent = DOMUtil_1.DOMUtil.parentElement(ruleContext);
             if (!legacy_1.RPTUtil.hasRoleInSemantics(parent, "list")) {
                 return null;
             }
@@ -9839,9 +9847,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.a11yRulesElem = void 0;
 var IEngine_1 = __webpack_require__(0);
 var legacy_1 = __webpack_require__(1);
-var fragment_1 = __webpack_require__(2);
+var fragment_1 = __webpack_require__(3);
 var lang_1 = __webpack_require__(12);
-var DOMUtil_1 = __webpack_require__(3);
+var DOMUtil_1 = __webpack_require__(2);
 var a11yRulesElem = [
     {
         /**
@@ -10094,7 +10102,7 @@ exports.a11yRulesHtml = void 0;
 var IEngine_1 = __webpack_require__(0);
 var legacy_1 = __webpack_require__(1);
 var ancestor_1 = __webpack_require__(10);
-var fragment_1 = __webpack_require__(2);
+var fragment_1 = __webpack_require__(3);
 var lang_1 = __webpack_require__(12);
 var a11yRulesHtml = [
     {
@@ -11138,8 +11146,9 @@ exports.a11yRulesAria = void 0;
 var IEngine_1 = __webpack_require__(0);
 var legacy_1 = __webpack_require__(1);
 var ARIADefinitions_1 = __webpack_require__(5);
-var fragment_1 = __webpack_require__(2);
+var fragment_1 = __webpack_require__(3);
 var __1 = __webpack_require__(4);
+var DOMUtil_1 = __webpack_require__(2);
 var a11yRulesAria = [{
         /**
          * Description: Triggers if a role is not a valid WAI-ARIA role
@@ -11842,10 +11851,10 @@ var a11yRulesAria = [{
                 passed = parentRoles.filter(function (role) { return role in params.mapLandmarks; }).length > 0;
                 if (!passed) {
                     // Don't fail elements when a parent or sibling has failed - causes too many messages.
-                    var walkElement = ruleContext.parentElement;
+                    var walkElement = DOMUtil_1.DOMUtil.parentElement(ruleContext);
                     while (!passed && walkElement != null) {
                         passed = legacy_1.RPTUtil.getCache(walkElement, "Rpt_Aria_OrphanedContent", false);
-                        walkElement = walkElement.parentElement;
+                        walkElement = DOMUtil_1.DOMUtil.parentElement(walkElement);
                     }
                     walkElement = ruleContext.nextElementSibling;
                     while (!passed && walkElement != null) {
@@ -12290,7 +12299,7 @@ var a11yRulesAria = [{
                 // In the case that we ever need to consider hidden for this case need to add if (RPTUtil.shouldNodeBeSkippedHidden(myNode)
                 // and continue to the next node.
                 while ((myNode != null) && (myNode.nodeName.toLowerCase() != 'html') && (!(myNode.hasAttribute("autocomplete")))) {
-                    myNode = myNode.parentElement;
+                    myNode = DOMUtil_1.DOMUtil.parentElement(myNode);
                 }
                 if ((myNode != null) && (myNode.hasAttribute("autocomplete"))) {
                     html5AutoCompleteAttr = myNode.getAttribute("autocomplete").trim().toLowerCase();
@@ -12316,7 +12325,7 @@ var a11yRulesAria = [{
                 // In the case that we ever need to consider hidden for this case need to add if (RPTUtil.shouldNodeBeSkippedHidden(myNode)
                 // and continue to the next node.
                 while ((myNode != null) && (myNode.nodeName.toLowerCase() != 'html') && (!(myNode.hasAttribute("disabled")))) {
-                    myNode = myNode.parentElement;
+                    myNode = DOMUtil_1.DOMUtil.parentElement(myNode);
                 }
                 if ((myNode != null) && (myNode.hasAttribute("disabled"))) {
                     html5DisabledAttr = myNode.getAttribute("disabled");
@@ -12591,8 +12600,9 @@ exports.a11yRulesFieldset = a11yRulesFieldset;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.a11yRulesInput = void 0;
 var IEngine_1 = __webpack_require__(0);
+var DOMUtil_1 = __webpack_require__(2);
 var DOMWalker_1 = __webpack_require__(6);
-var fragment_1 = __webpack_require__(2);
+var fragment_1 = __webpack_require__(3);
 var legacy_1 = __webpack_require__(1);
 var a11yRulesInput = [
     {
@@ -12699,9 +12709,9 @@ var a11yRulesInput = [
             }
             // Rpt_Aria_ValidIdRef determines if the aria-labelledby id points to a valid element
             if (!passed && (buttonTypes.indexOf(type) !== -1)) {
-                if (ruleContext.hasAttribute("class") && ruleContext.getAttribute("class") == "dijitOffScreen" && ruleContext.parentElement.hasAttribute("widgetid")) {
+                if (ruleContext.hasAttribute("class") && ruleContext.getAttribute("class") == "dijitOffScreen" && DOMUtil_1.DOMUtil.parentElement(ruleContext).hasAttribute("widgetid")) {
                     // Special handling for dijit buttons
-                    var labelId = ruleContext.parentElement.getAttribute("widgetid") + "_label";
+                    var labelId = DOMUtil_1.DOMUtil.parentElement(ruleContext).getAttribute("widgetid") + "_label";
                     var label = fragment_1.FragmentUtil.getById(ruleContext, labelId);
                     if (label != null) {
                         passed = legacy_1.RPTUtil.hasInnerContentHidden(label);
@@ -14102,8 +14112,8 @@ exports.a11yRulesLabeling = void 0;
 var IEngine_1 = __webpack_require__(0);
 var legacy_1 = __webpack_require__(1);
 var ARIADefinitions_1 = __webpack_require__(5);
-var fragment_1 = __webpack_require__(2);
-var DOMUtil_1 = __webpack_require__(3);
+var fragment_1 = __webpack_require__(3);
+var DOMUtil_1 = __webpack_require__(2);
 var __1 = __webpack_require__(4);
 var a11yRulesLabeling = [
     {
@@ -14994,8 +15004,8 @@ exports.a11yRulesFig = a11yRulesFig;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.a11yRulesLabel = void 0;
 var IEngine_1 = __webpack_require__(0);
-var DOMUtil_1 = __webpack_require__(3);
-var fragment_1 = __webpack_require__(2);
+var DOMUtil_1 = __webpack_require__(2);
+var fragment_1 = __webpack_require__(3);
 var legacy_1 = __webpack_require__(1);
 var a11yRulesLabel = [
     {
@@ -15290,7 +15300,7 @@ exports.a11yRulesLabel = a11yRulesLabel;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.a11yRulesTable = void 0;
 var IEngine_1 = __webpack_require__(0);
-var fragment_1 = __webpack_require__(2);
+var fragment_1 = __webpack_require__(3);
 var legacy_1 = __webpack_require__(1);
 var a11yRulesTable = [
     {
@@ -16479,7 +16489,7 @@ var a11yRulesBlockquote = [
                     // we're not already marked up
                     // Also skip if we're in a script - there's lots of quotes used in scripts
                     if ((dblQuotes != null || snglQuotes != null) &&
-                        legacy_1.RPTUtil.getAncestor(walkNode, ["blockquote", "q", "script"]) == null) {
+                        legacy_1.RPTUtil.getAncestor(walkNode, ["blockquote", "q", "script", "style"]) == null) {
                         if (dblQuotes != null) {
                             for (var i = 0; passed && i < dblQuotes.length; ++i)
                                 passed = legacy_1.RPTUtil.wordCount(dblQuotes[i]) < minWords;
@@ -16507,6 +16517,10 @@ var a11yRulesBlockquote = [
                 // Don't trigger if we're not in the body or if we're in a script or code segment
                 var checkAncestor = legacy_1.RPTUtil.getAncestor(ruleContext, ["body", "script", "code"]);
                 passed = checkAncestor == null || checkAncestor.nodeName.toLowerCase() != "body";
+            }
+            //if the violatedtext is longer than 69 chars, only keep the first 32, the " ... ", and the last 32 chars 
+            if (!passed && violatedtext.length && violatedtext.length > 69) {
+                violatedtext = violatedtext.substring(0, 32) + " ... " + violatedtext.substring(violatedtext.length - 32);
             }
             return passed ? IEngine_1.RulePass("Pass_0") : IEngine_1.RulePotential("Potential_1", [violatedtext]);
         }
@@ -17312,6 +17326,7 @@ exports.designRules = designRules;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.designRulesColor = void 0;
 var IEngine_1 = __webpack_require__(0);
+var DOMUtil_1 = __webpack_require__(2);
 var legacy_1 = __webpack_require__(1);
 var PALETTE = [
     "#2c080a", "#4f0408", "#750e13", "#a51920", "#da1e28", "#fb4b53", "#ff767c", "#ffa4a9", "#fcd0d3", "#fff0f1", "#2a0a16", "#4f0027", "#760a3a", "#a11950", "#d12765", "#ee538b", "#fa75a6", "#ffa0c2", "#ffcfe1", "#fff0f6", "#1e1033", "#321260", "#4f2196", "#6e32c9", "#8a3ffc", "#a970ff", "#bb8eff", "#d0b0ff", "#e6d6ff", "#f7f1ff", "#051243", "#051b75", "#0530ad", "#054ada", "#0062ff", "#418cff", "#6ea6ff", "#97c1ff", "#c9deff", "#edf4ff", "#07192b", "#002749", "#003d73", "#0058a1", "#0072c3", "#1193e8", "#30b0ff", "#6ccaff", "#b3e6ff", "#e3f6ff", "#081a1c", "#002b30", "#004548", "#006161", "#007d79", "#009e9a", "#00bab6", "#20d5d2", "#87eded", "#dbfbfb", "#081b09", "#012e0e", "#054719", "#10642a", "#198038", "#24a249", "#3dbb61", "#56d679", "#9deeb2", "#dafbe4", "#000000", "#13171a", "#202529", "#373d42", "#50565b", "#697077", "#868d95", "#9fa5ad", "#b9bfc7", "#d8dce3", "#f2f4f8", "#ffffff", "#000000", "#171717", "#252525", "#3d3d3d", "#565656", "#6f6f6f", "#8c8c8c", "#a4a4a4", "#bebebe", "#dcdcdc", "#f3f3f3", "#ffffff", "#000000", "#1a1717", "#272424", "#403c3c", "#595555", "#726e6e", "#8f8b8b", "#a7a2a2", "#c1bcbb", "#e0dbda", "#f7f3f1", "#ffffff"
@@ -17335,7 +17350,7 @@ var designRulesColor = [{
                 if (parentWalk.nodeName.toLowerCase() === "body") {
                     inBody = true;
                 }
-                parentWalk = parentWalk.parentElement;
+                parentWalk = DOMUtil_1.DOMUtil.parentElement(parentWalk);
             }
             if (!hasText || !inBody) {
                 return null;
@@ -17359,12 +17374,12 @@ var designRulesColor = [{
         context: "dom:*",
         run: function (context, options) {
             var ruleContext = context["dom"].node;
-            var parentWalk = ruleContext.parentElement;
+            var parentWalk = DOMUtil_1.DOMUtil.parentElement(ruleContext);
             while (parentWalk) {
                 if (legacy_1.RPTUtil.getCache(parentWalk, "DESIGN_COLOR_Palette_Background", null)) {
                     return null;
                 }
-                parentWalk = parentWalk.parentElement;
+                parentWalk = DOMUtil_1.DOMUtil.parentElement(parentWalk);
             }
             var colorCombo = legacy_1.RPTUtil.ColorCombo(ruleContext);
             var bg = colorCombo.bg.toHex();
@@ -17453,6 +17468,7 @@ exports.designRulesGrid = designRulesGrid;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.designRulesType = void 0;
 var IEngine_1 = __webpack_require__(0);
+var DOMUtil_1 = __webpack_require__(2);
 var designRulesType = [{
         id: "DESIGN_Typography_Plex",
         context: "dom:*",
@@ -17468,7 +17484,7 @@ var designRulesType = [{
                 if (parentWalk.nodeName.toLowerCase() === "body") {
                     inBody = true;
                 }
-                parentWalk = parentWalk.parentElement;
+                parentWalk = DOMUtil_1.DOMUtil.parentElement(parentWalk);
             }
             var hasText = false;
             var child = ruleContext.firstChild;
@@ -17503,7 +17519,7 @@ var designRulesType = [{
                 if (parentWalk.nodeName.toLowerCase() === "body") {
                     inBody = true;
                 }
-                parentWalk = parentWalk.parentElement;
+                parentWalk = DOMUtil_1.DOMUtil.parentElement(parentWalk);
             }
             var hasText = (ruleContext.innerText || "").trim().length > 0;
             if (!inBody || !hasText) {
@@ -17570,278 +17586,277 @@ exports.a11yNls = void 0;
 var a11yNls = {
     // JCH - DONE
     "RPT_List_Misuse": {
-        0: "List elements should only be used for lists of related items",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "List element is missing or improperly structured"
+        0: "Elementy listy powinny być używane tylko w przypadku wykazów powiązanych elementów",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Brakuje elementu listy lub jest on niewłaściwie skonstruowany"
     },
     // JCH - DONE
     "RPT_Marquee_Trigger": {
-        0: "The <marquee> element is obsolete and should not be used",
-        "Passed_0": "Rule Passed",
-        "Fail_1": "Scrolling content found that uses the obsolete <marquee> element"
+        0: "Element <marquee> jest przestarzały i nie powinien być używany",
+        "Passed_0": "Wymóg spełniony",
+        "Fail_1": "Znaleziono przewijaną treść, która używa przestarzałego elementu <marquee>"
     },
     // JCH - DONE
     "RPT_Headers_FewWords": {
-        0: "Heading elements must not be used for presentation",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify that the heading element is a genuine heading"
+        0: "Elementy nagłówków nie mogą być wykorzystywane do prezentacji",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź, czy element nagłówka jest rzeczywiście nagłówkiem"
     },
     // JCH - DONE
     "WCAG20_Input_ExplicitLabelImage": {
-        0: "The <input> element of type \"image\" should have a text alternative",
-        "Pass_0": "Image button provides alternative text using the 'alt' attribute",
-        "Pass_1": "Image button provides alternative text using a WAI-ARIA label",
-        "Pass_2": "Image button provides alternative text using the 'title' attribute",
-        "Fail": "The <input> element of type \"image\" has no text alternative"
+        0: "Element <input> typu \"image\" powinien mieć tekst alternatywny",
+        "Pass_0": "Przycisk graficzny zapewnia tekst alternatywny za pomocą atrybutu 'alt'",
+        "Pass_1": "Przycisk graficzny zapewnia tekst alternatywny za pomocą atrybutu 'aria-label'",
+        "Pass_2": "Przycisk graficzny zapewnia tekst alternatywny za pomocą atrybutu 'title'",
+        "Fail": "Element <input> typu \"image\" nie ma tekstu alternatywnego"
     },
     // JCH - DONE
     "RPT_Img_UsemapValid": {
-        0: "Server-side image map hot-spots must have duplicate text links",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Server-side image map hot-spots do not have duplicate text links"
+        0: "Punkty aktywne graficznej mapy odsyłaczy po stronie serwera muszą mieć zduplikowane łącza tekstowe",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Punkty aktywne graficznej mapy odsyłaczy po stronie serwera nie mają zduplikowanych łączy tekstowych"
     },
     // JCH - DONE
     "WCAG20_Object_HasText": {
-        0: "<object> elements must have a text alternative for the content rendered by the object",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "An <object> element does not have a text alternative"
+        0: "Elementy <object> muszą posiadać alternatywę tekstową, która opisuje treść odwzorowaną przez obiekt",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Element <object> nie ma tekstu alternatywnego"
     },
     // JCH - DONE
     "WCAG20_Applet_HasAlt": {
-        0: "<applet> elements must provide an 'alt' attribute and an alternative description",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "An <applet> element does not have an 'alt' attribute that provides a short text alternative",
-        "Fail_2": "The 'alt' attribute value for an <applet> element duplicates the 'code' attribute",
-        "Fail_3": "An <applet> element provides alternative text, but does not provide inner content"
+        0: "Elementy <applet> muszą zawierać tekst 'alt' i opis alternatywny",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Element <applet>`nie ma atrybutu 'alt', który zapewnia krótki tekst alternatywny",
+        "Fail_2": "Wartość atrybutu 'alt' dla elementu <applet> powtarza wartość atrybutu 'code'",
+        "Fail_3": "Element <applet> zapewnia tekst alternatywny, ale nie zapewnia wewnętrznej treści"
     },
     // JCH - DONE
     "RPT_Media_AudioTrigger": {
-        0: "Audio information should also be available in text form",
-        "Pass_0": "Rule Passed",
-        "Manual_1": "Provide transcripts for audio files"
+        0: "Informacje dźwiękowe powinny być istnieć również w formie tekstowej",
+        "Pass_0": "Wymóg spełniony",
+        "Manual_1": "Zapewnij transkrypcję plików audio"
     },
     // JCH - DONE
     "RPT_Blockquote_HasCite": {
-        0: "Use <blockquote> only for quotations, not indentation",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify that <blockquote> is used only for quotations, not indentation"
+        0: "Elementu <blockquote> można używać tylko do cytatów",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź, czy `<blockquote>` jest używany tylko do cytatów, a nie wcięć"
     },
     // JCH - DONE
     "RPT_Meta_Refresh": {
-        0: "Pages should not refresh automatically",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify page is not being caused to refresh automatically"
+        0: "Strony nie powinny się odświeżać automatycznie",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Upewnij się, że strona nie jest odświeżana automatycznie"
     },
     // JCH - DONE
     "WCAG20_Frame_HasTitle": {
-        0: "Inline frames must have a unique, non-empty 'title' attribute",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Inline frame does not have a 'title' attribute"
+        0: "Ramki wbudowane muszą mieć niepusty, opisowy i unikalny atrybut 'title'",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Ramka wbudowana nie ma atrybutu 'title' z tytułem"
     },
     // JCH - DONE
     "WCAG20_Input_ExplicitLabel": {
-        0: "Each form control must have an associated label",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Form control element <{0}> has no associated label",
-        "Fail_2": "Form control with \"{0}\" role has no associated label"
+        0: "Każda kontrolka interfejsu użytkownika musi mieć powiązaną z nią etykietę",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Kontrolka formularza <{0}> nie ma powiązanej z nią etykiety",
+        "Fail_2": "Kontrolka formularza z rolą \"{0}\" nie ma powiązanej z nią etykiety"
     },
     // JCH - DONE
     "RPT_Media_AltBrief": {
-        0: "Alternative text in 'alt' attribute should be brief (<150 characters)",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Text alternative is more than 150 characters"
+        0: "Tekst alternatywny w atrybucie 'alt' powinien być krótki (<150 znaków)",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Tekst alternatywny ma więcej niż 150 znaków"
     },
     // JCH - DONE
     "WCAG20_A_TargetAndText": {
-        0: "Users should be warned in advance if their input action will open a new window or otherwise change their context",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Inform the user when their input action will open a new window or otherwise change their context"
+        0: "Użytkownicy powinni być ostrzegani z wyprzedzeniem, jeśli ich działanie spowoduje otwarcie nowego okna lub w inny sposób zmieni kontekst",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Poinformuj użytkownika, że jego działanie spowoduje otwarcie nowego okna lub w inny sposób zmieni kontekst"
     },
     // JCH - DONE
     "WCAG20_Area_HasAlt": {
-        0: "<area> elements in an image map must have a text alternative",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "<area> element in an image map has no text alternative"
+        0: "Elementy <area> na graficznej mapie odsyłaczy muszą mieć alternatywę tekstową",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Element <area> na graficznej mapie odsyłaczy nie ma alternatywy tekstowej"
     },
     // JCH - DONE
     "RPT_Media_ImgColorUsage": {
-        0: "Do not use color as the only means to convey information, provide an additional non-color cue",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify color is not the only means to convey information"
+        0: "Nie używaj koloru jako jedynego środka przekazu informacji, zapewnij dodatkowe wskazówki tekstowe",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Upewnij się, że kolor nie jest jedynym środkiem przekazu informacji"
     },
     // JCH - DONE
     "WCAG20_Meta_RedirectZero": {
-        0: "Page should not automatically refresh without warning or option to turn it off or adjust the time limit",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Check page does not automatically refresh without warning or options"
+        0: "Strona nie powinna odświeżać się automatycznie bez ostrzeżenia lub możliwości wyłączenia tego albo dostosowania limitu czasu",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Sprawdź, czy strona nie odświeża się automatycznie bez ostrzeżenia lub opcji dostosowania"
     },
     // JCH - DONE
     "RPT_Elem_Deprecated": {
-        0: "Avoid use of obsolete language features if possible",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Obsolete language features are being used"
+        0: "W miarę możliwości unikaj stosowania przestarzałych cech języka kodowania",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Używane są przestarzałe funkcje kodowania"
     },
     // JCH - DONE
     "RPT_Blockquote_WrapsTextQuote": {
-        0: "Quotations should be marked with <q> or <blockquote> elements",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "If the following text is a quotation, mark it as a <q> or <blockquote> element: {0}"
+        0: "Cytaty powinny być oznaczone jako elementy '<q>' lub '<blockquote>'",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Jeśli poniższy tekst jest cytatem, zaznacz go jako element '<q>' lub '<blockquote>': {0}"
     },
     // JCH - DONE
     "RPT_Elem_EventMouseAndKey": {
-        0: "All interactive content with mouse event handlers must have equivalent keyboard access",
-        "Pass_0": "Rule Passed",
-        "Manual_1": "Confirm the <{0}> element with mouse event handler(s) '{1}' has a corresponding keyboard handler(s)"
+        0: "Cała treść interaktywna z obsługą zdarzeń myszy musi mieć równoważny dostęp z klawiatury",
+        "Pass_0": "Wymóg spełniony",
+        "Manual_1": "Upewnij się, że element <{0}> z obsługą zdarzeń myszy '{1}' ma odpowiadającą mu obsługę zdarzeń klawiatury"
     },
     // JCH - DONE
     "WCAG20_Doc_HasTitle": {
-        0: "The page should have a title that correctly identifies the subject of the page",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Missing <head> element so there can be no <title> element present",
-        "Fail_2": "Missing <title> element in <head> element",
-        "Fail_3": "The <title> element is empty (no innerHTML)"
+        0: "Każda strona powinna mieć tytuł, który określa jej temat",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Ponieważ nie ma elementu <head>, to nie istnieje element <title>",
+        "Fail_2": "W elemencie <head> nie ma elementu <title>",
+        "Fail_3": "Element <title> jest pusty (nie ma wewnątrz treści)"
     },
     // JCH - DONE
     "RPT_Block_ShouldBeHeading": {
-        0: "Heading text must use a heading element",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Check if this text should be marked up as a heading: {0}"
+        0: "Tekst nagłówka musi być objęty znacznikami nagłówka",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź, czy tekst, który wygląda jak nagłówek, mieści się w elemencie nagłówka"
     },
     // JCH - DONE
     "WCAG20_Form_HasSubmit": {
-        0: "A <form> element should have a submit button or an image button",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify the <form> element has a submit button or an image button"
+        0: "Element <form> powinien mieć przycisk wysyłania lub przycisk graficzny",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź, czy element <form> posiada przycisk lub graficzny przycisk wysyłania"
     },
     // JCH - DONE
     "RPT_Elem_UniqueId": {
-        0: "Element 'id' attribute values must be unique within a document",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "The <{0}> element has the id \"{1}\" that is empty",
-        "Fail_2": "The <{0}> element has the id \"{1}\" that is already in use"
+        0: "Wartości atrybutu 'id' elementów muszą być unikalne w ramach dokumentu",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Element <{0}> ma id \"{1}\", które jest puste",
+        "Fail_2": "Element <{0}> ma id \"{1}\", które nie jest unikalne"
     },
     // JCH - DONE
     "RPT_Font_ColorInForm": {
-        0: "Combine color and descriptive markup to indicate required form fields",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Check color is not used as the only visual means to convey which fields are required"
+        0: "Połącz kolor i opisowe znaczniki, aby wskazać wymagane pola formularza",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź, czy kolor nie został użyty jako jedyny wizualny środek oznaczenia pól wymaganych"
     },
     // JCH - DONE
     "RPT_Label_UniqueFor": {
-        0: "Form controls should have exactly one label",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Form control has more than one label"
+        0: "Kontrolki formularzy powinny mieć dokładnie jedną etykietę",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Kontrolka formularza ma więcej niż jedną etykietę"
     },
     // JCH - DONE
     "RPT_Img_AltCommonMisuse": {
-        0: "'alt' attribute value must be a good inline replacement for the image",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify that the file name serves as a good inline replacement for the image"
+        0: "Wartość atrybutu 'alt' musi być dobrym zamiennikiem dla obrazu",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź, czy nazwa pliku jest równoważną alternatywą dla obrazu"
     },
     // JCH - DONE
     "RPT_Img_LongDescription2": {
-        0: " The 'longdesc' attribute must reference HTML content",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify that the file designated by the 'longdesc' attribute contains valid HTML content (file extension not recognized)"
+        0: "Atrybut 'longdesc' musi odnosić się do zawartości HTML",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź, czy plik wskazany w atrybucie 'longdesc' zawiera prawidłową treść HTML (rozszerzenie pliku nie jest przetwarzane)"
     },
     // JCH - DONE
     "WCAG20_Img_HasAlt": {
-        0: "Images must have an 'alt' attribute with a short text alternative if they convey meaning, or 'alt=\"\" if decorative",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Image 'alt' attribute value consists only of whitespace",
-        "Fail_2": "Image does not have an 'alt' attribute short text alternative",
-        "Fail_3": "Image does not have an 'alt' attribute and 'title' attribute value consists only of whitespace"
+        0: "Obrazy muszą mieć atrybut 'alt' z krótkim tekstem alternatywnym, jeśli przekazują znaczenie, lub 'alt=\"\", jeśli są dekoracyjne.",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Wartość atrybutu 'alt' obrazu składa się tylko z białych znaków (spacji)",
+        "Fail_2": "Obraz nie ma alternatywy w postaci krótkiego tekstu 'alt'"
     },
     // JCH - DONE
     "RPT_Style_BackgroundImage": {
-        0: "Images included by using CSS alone must not convey important information",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify the CSS background image does not convey important information"
+        0: "Obrazy dołączone za pomocą CSS nie mogą przekazywać ważnych informacji",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Upewnij się, że obraz tła CSS nie przekazuje ważnych informacji"
     },
     // JCH - DONE
     "RPT_Pre_ASCIIArt": {
-        0: "ASCII art must have a text alternative",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify that ASCII art has a text alternative"
+        0: "Grafika ASCII musi mieć alternatywę tekstową",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Upewnij się, że grafika ASCII ma alternatywę tekstową"
     },
     // JCH - DONE
     "RPT_Media_VideoReferenceTrigger": {
-        0: "Pre-recorded media should have an audio track that describes visual information",
-        "Pass_0": "Rule Passed",
-        "Manual_1": "Verify availability of a user-selectable audio track with description of visual content"
+        0: "Wcześniej nagrane multimedia powinny mieć ścieżkę dźwiękową, która opisuje informacje wizualne",
+        "Pass_0": "Wymóg spełniony",
+        "Manual_1": "Sprawdź, czy istnieje wybierana przez użytkownika ścieżka dźwiękowa z opisem treści wizualnej"
     },
     // JCH - DONE
     "RPT_Media_AudioVideoAltFilename": {
-        0: "Audio or video on the page must have a short text alternative that describes the media content",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Filename used as label for embedded audio or video"
+        0: "Audio lub wideo na stronie musi mieć alternatywę w postaci krótkiego tekstu, który opisuje treść medium.",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Użyto nazwy pliku jako etykiety dla osadzonego audio lub wideo"
     },
     // JCH - DONE
     "RPT_Style_ColorSemantics1": {
-        0: "Combine color and descriptive markup to convey information",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify color is not used as the only visual means of conveying information"
+        0: "Połącz kolor i opisowe oznaczenia, aby przekazać informacje",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź, czy kolor nie jest jedynym wizualnym środkiem przekazu informacji"
     },
     // JCH - DONE
     "WCAG20_Select_HasOptGroup": {
-        0: "Groups of related options within a selection list should be grouped with <optgroup>",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Group of related options may need <optgroup>"
+        0: "Grupy powiązanych opcji na liście wyboru powinny być zgrupowane w <optgroup>",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Grupa powiązanych opcji może wymagać <optgroup>"
     },
     // JCH - DONE
     "RPT_List_UseMarkup": {
-        0: "Use proper HTML list elements to create lists",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify whether this is a list that should use HTML list elements"
+        0: "Użyj odpowiednich elementów listy HTML do tworzenia list",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź, czy jest to lista, która powinna wykorzystywać elementy listy HTML"
     },
     // JCH - DONE
     "RPT_Script_OnclickHTML1": {
-        0: "Scripts should not be used to emulate links",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Possible use of a script to emulate a link"
+        0: "Nie należy używać skryptów do emulacji łączy",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Możliwe, że użyto skryptu do emulacji łącza"
     },
     // JCH - DONE
     "WCAG20_Table_Structure": {
-        0: "Table elements with 'role=\"presentation\" or 'role=\"none\" should not have structural elements or attributes",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "The <{0}> element with \"presentation\" role or \"none\" role has structural element(s) and/or attribute(s) '{1}'"
+        0: "Elementy tabeli z role=\"presentation\" lub role=\"none\" nie powinny mieć strukturalnych elementów lub atrybutów",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Element <{0}> z rolą WAI-ARIA \"presentation\" lub \"none\" ma element(y) i atrybut(y) strukturalny(e) '{1}'"
     },
     // JCH - DONE
     "WCAG20_Img_AltTriggerNonDecorative": {
-        0: "Convey information with text rather than images of text",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify that images of text are not used to convey information"
+        0: "Informacja jest przekazywana za pomocą obrazu tekstu, a nie tekstu",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź, czy obrazy tekstu nie są wykorzystywane do przekazywania informacji"
     },
     // JCH - DONE
     "WCAG20_Blink_AlwaysTrigger": {
-        0: "Content that blinks persistently must not be used",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Content found that blinks persistently"
+        0: "Nie wolno używać treści, które migają w sposób ciągły",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Znaleziono treść, która ciągle miga"
     },
     // JCH - DONE
     "RPT_Blink_CSSTrigger1": {
-        0: "Do not use the \"blink\" value of the 'text-decoration' property for longer than five seconds",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Check the \"blink\" value of the CSS 'text-decoration' property is not used for more than than five seconds"
+        0: "Nie używaj wartości \"blink\" właściwości CSS 'text-decoration' dłużej niż przez 5 sekund",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź, czy wartość \"blink\" właściwości CSS 'text-decoration' nie jest używana dłużej niż 5 sekund"
     },
     // JCH - DONE
     "RPT_Html_SkipNav": {
-        0: "Provide a way to bypass blocks of content that are repeated on multiple Web pages",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify there is a way to bypass blocks of content that are repeated on multiple Web pages"
+        0: "Zapewnienie sposobu na ominięcie bloków treści, które są powtarzane na wielu stronach internetowych",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź, czy istnieje sposób na ominięcie bloków treści, które powtarzają się na wielu stronach internetowych"
     },
     // JCH - DONE
     "RPT_Title_Valid": {
-        0: "Page <title> should be a descriptive title, rather than a filename",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Page <title> is empty",
-        "Potential_2": "Verify that using the filename as the page <title> value is descriptive"
+        0: "Treść <title> strony powinna być opisem jej treści, a nie nazwą pliku",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Tytuł strony <title> jest pusty",
+        "Potential_2": "Sprawdź, czy użycie nazwy pliku jako wartości <title> strony jest opisowe."
     },
     // JCH - DONE
     "RPT_Header_HasContent": {
-        0: "Heading elements must provide descriptive text",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Heading element has no descriptive content"
+        0: "Elementy nagłówka muszą zawierać tekst opisowy",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Element nagłówka nie ma opisowego tekstu "
     },
     // JCH - DONE
     // JCH - 0: provides the general DAP message for the rule
@@ -17850,745 +17865,743 @@ var a11yNls = {
     //       "Potential_k" descriptive message describing case when it is not a failure 
     //                     but needs other checking to confirm pass or
     "WCAG20_Html_HasLang": {
-        0: "Page must identify the default language of the document with a 'lang' attribute",
-        "Pass_0": "Page language detected as \"{0}\"",
-        "Fail_1": "Page detected as XHTML 1.0, but has neither 'lang' nor 'xml:lang' attributes",
-        "Fail_2": "Page detected as XHTML, but does not have an 'xml:lang' attribute",
-        "Fail_3": "Page detected as HTML, but does not have a 'lang' attribute",
-        "Fail_4": "Page detected with 'lang' and 'xml:lang' attributes and primary languages do not match: \"{0}\", \"{1}\"",
-        "Fail_5": "Page detected with 'lang' and 'xml:lang' attributes that do not match: \"{0}\", \"{1}\"",
-        "Potential_5": "Page detected as XHTML 1.0 with only a 'lang' attribute. Confirm that page is only delivered via text/html mime type",
-        "Potential_6": "Page detected as XHTML 1.0 with only an 'xml:lang' attribute. Confirm that page is only delivered via xml mime type"
+        0: "Strona musi określać domyślny język dokumentu za pomocą atrybutu 'lang'",
+        "Pass_0": "Język strony rozpoznany jako \"{0}\"",
+        "Fail_1": "Strona rozpoznana jako XHTML 1.0, ale nie posiada atrybutów 'lang' ani 'xml:lang'",
+        "Fail_2": "Strona rozpoznana jako XHTML, ale nie posiada atrybutu 'xml:lang'",
+        "Fail_3": "Strona rozpoznana jako HTML, ale nie posiada atrybutu 'lang'",
+        "Fail_4": "Strona rozpoznana jako XHTML 1.0 z atrybutami 'lang' i 'xml:lang', które nie są takie same: \"{0}\", \"{1}\"",
+        "Potential_5": "Strona rozpoznana jako XHTML 1.0 tylko z atrybutem 'lang'. Upewnij się, że strona jest dostarczana tylko przez typ mime text/html",
+        "Potential_6": "Strona rozpoznana jako XHTML 1.0 tylko z atrybutem 'xml:lang' Upewnij się, że strona jest dostarczana tylko przez typ mime text/html"
     },
     // JCH - DONE
     "WCAG20_Form_TargetAndText": {
-        0: "User should be informed in advance when interacting with content causes a change of context",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify that interacting with content will not open pop-up windows or change the active window without informing the user"
+        0: "Użytkownik powinien być informowany z wyprzedzeniem, gdy interakcja z treścią powoduje zmianę kontekstu",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź, czy interakcja z treścią nie inicjuje otwarcia wyskakującego okna lub zmiany aktywnego okna bez poinformowania o tym użytkownika"
     },
     // JCH - DONE
     "WCAG20_A_HasText": {
-        0: "Hyperlinks must have a text description of their purpose",
-        "Pass_0": "Hyperlink has a description of its purpose",
-        "Fail_1": "Hyperlink has no link text, label or image with a text alternative"
+        0: "Hiperłącze musi mieć tekst łącza, który opisuje jego przeznaczenie",
+        "Pass_0": "Hiperłącze ma opis swojego przeznaczenia",
+        "Fail_1": "Hiperłącze nie ma ani tekstu łącza, ani etykiety lub obrazu z tekstem alternatywnym"
     },
     // JCH - DONE
     "WCAG20_Fieldset_HasLegend": {
-        0: " <fieldset> elements must have a single, non-empty <legend> as a label",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "<fieldset> element does not have a <legend>",
-        "Fail_2": "<fieldset> element has more than one <legend>",
-        "Fail_3": "<fieldset> element <legend> is empty"
+        0: "Element <fieldset> musi mieć pojedynczy, niepusty  znacznik <legend> jako etykietę",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Element <fieldset> nie ma elementu <legend>",
+        "Fail_2": "Element <fieldset> ma więcej niż jeden element <legend>",
+        "Fail_3": "Element <fieldset> ma pusty element <legend>"
     },
     // JCH - DONE
     "RPT_Media_VideoObjectTrigger": {
-        0: "Live media (streaming video with audio) should have captions for audio content",
-        "Pass_0": "Rule Passed",
-        "Manual_1": "Verify captions are provided for live media (streaming video with audio)"
+        0: "Media na żywo (transmisja strumieniowa wideo z dźwiękiem) powinny mieć napisy rozszerzone",
+        "Pass_0": "Wymóg spełniony",
+        "Manual_1": "Sprawdź, czy media na żywo (transmisja strumieniowa wideo z dźwiękiem) mają napisy rozszerzone"
     },
     // JCH - DONE
     "RPT_Text_SensoryReference": {
-        0: "Instructions must be meaningful without shape or location words",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "If the word(s) '{0}' is part of instructions for using page content, check it is still understandable without this location or shape information"
+        0: "Instrukcje muszą mieć znaczenie bez słów określających kształt lub lokalizację",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Jeśli słowo(a) '{0}' są częścią instrukcji, sprawdź, czy instrukcje są nadal zrozumiałe bez informacji o lokalizacji lub kształcie"
     },
     // JCH - DONE
     "RPT_Embed_AutoStart": {
-        0: "Mechanism must be available to pause or stop and control the volume of the audio that plays automatically",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify there is a mechanism to pause or stop and control the volume for the audio that plays automatically"
+        0: "Musi istnieć mechanizm wstrzymywania lub zatrzymywania i kontrolowania głośności dźwięku odtwarzanego automatycznie",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź, czy istnieje mechanizm wstrzymywania lub zatrzymywania i kontrolowania głośności dźwięku odtwarzanego automatycznie"
     },
     // JCH - DONE
     "RPT_Style_HinderFocus1": {
-        0: "The keyboard focus indicator must be highly visible when default border or outline is modified by CSS",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Check the keyboard focus indicator is highly visible when using CSS elements for border or outline"
+        0: "Wskaźnik fokusu klawiatury musi być dobrze widoczny, gdy domyślne obramowanie lub kontur są modyfikowane przez CSS",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź, czy wskaźnik fokusu klawiatury jest dobrze widoczny, gdy używane są włąściwości CSS dla obramowania lub konturu"
     },
     // JCH - DONE
     "WCAG20_Elem_Lang_Valid": {
-        0: "The language of content must be valid and specified in accordance with BCP 47",
-        "Pass_0": "Lang has a valid primary lang and conforms to BCP 47",
-        "Fail_1": "Specified 'lang' attribute does not include a valid primary language",
-        "Fail_2": "Specified 'lang' attribute does not conform to BCP 47",
-        "Fail_3": "Specified 'lang' attribute does not include a valid primary language",
-        "Fail_4": "Specified 'xml:lang' attribute does not conform to BCP 47",
+        0: "Język treści musi być określony zgodnie z BCP 47",
+        "Pass_0": "Atrybut lang ma poprawny język podstawowy określony zgodnie z BCP 47",
+        "Fail_1": "Podany atrybut 'lang' nie zawiera poprawnego języka podstawowego",
+        "Fail_2": "Podany atrybut 'lang' jest niezgodny z BCP 47",
+        "Fail_3": "Podany atrybut 'lang' nie zawiera poprawnego języka podstawowego",
+        "Fail_4": "Podany atrybut 'xml:lang' nie jest zgodny z BCP 47"
     },
     // JCH - DONE
     "WCAG20_Img_LinkTextNotRedundant": {
-        0: "The text alternative for an image within a link should not repeat the link text or adjacent link text",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Link text is repeated in an image 'alt' value within the same link",
-        "Fail_2": "Link text of previous link is repeated in image 'alt' value of a link",
-        "Fail_3": "Image 'alt' value within a link is repeated in link text of the link after"
+        0: "Tekst alternatywny obrazu w ramach łącza nie powinien powtarzać tekstu łącza ani tekstu sąsiedniego łącza",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Tekst łącza jest powtarzany w wartości 'alt' obrazu w tym samym łączu",
+        "Fail_2": "Tekst łącza poprzedniego łącza jest powtarzany w wartości 'alt' obrazka łącza",
+        "Fail_3": "Wartość 'alt' obrazu w łączu jest powtarzana w tekście łącza znajdującym się za obrazem"
     },
     // JCH - DONE
     "RPT_Style_ExternalStyleSheet": {
-        0: "Check external style sheets to ensure that CSS is not used to add images that convey important information in the content.",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "External style sheets detected ensure that CSS does not add images that convey important information in the content."
+        0: "Sprawdź zewnętrzne arkusze stylów, aby upewnić się, że CSS nie jest używany do dodawania obrazów, które przekazują ważne informacje w treści.",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Wykryte zewnętrzne arkusze stylów zapewniają, że CSS nie dodaje obrazów, które przekazują ważne informacje w treści"
     },
     // JCH - DONE
     "RPT_Header_Trigger": {
-        0: "Heading text should correctly describe the subject of the web page sections",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify that heading text correctly describes the subject of each web page section"
+        0: "Nagłówek powinien poprawnie opisywać tematykę sekcji strony internetowej",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź, czy tekst nagłówka poprawnie opisuje temat każdej sekcji strony internetowej"
     },
     // JCH - DONE
     "RPT_Script_OnclickHTML2": {
-        0: "Scripts should not be used to emulate links",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify that 'onclick' events are not used in script to emulate a link"
+        0: "Nie należy używać skryptów do emulacji łączy",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź, czy zdarzenie 'onclick' nie jest używane w skrypcie do emulacji łącza"
     },
     // JCH - DONE
     "WCAG20_Table_CapSummRedundant": {
-        0: "The table summary must not duplicate the caption",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "The table summary duplicates the caption"
+        0: "Treść elementu 'summary' nie może być powtórzeniem treści elementu 'caption'",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "W tabeli w elemencie 'summary' powielono treść 'caption'"
     },
     // JCH - DONE
     "WCAG20_Input_LabelBefore": {
-        0: "Text inputs and <select> elements must have a label before the input control",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Text input is nested in label, so label is not before the text input control",
-        "Fail_2": "Label text is located after its associated text input or <select> element"
+        0: "Pole tekstowe <input> i element <select> muszą mieć etykietę przed elementem",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Pole tekstowe <input> jest zagnieżdżone w <label>, więc etykieta nie jest przed polem tekstowym",
+        "Fail_2": "Etykieta znajduje się za powiązanym z nim polem tekstowym <input> lub elementem <select>"
     },
     // JCH - DONE
     "WCAG20_Input_LabelAfter": {
-        0: "Checkboxes and radio buttons must have a label after the input control",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Checkbox or radio button is nested in label, so label is not after the input control",
-        "Fail_2": "Label text is located before its associated checkbox or radio button element"
+        0: "Pole wyboru i przyciski radiowe muszą mieć etykietę za kontrolką",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Pole wyboru lub przycisk opcji jest zagnieżdżone w etykiecie label, więc etykieta nie jest za polem wprrowadzania danych (kontrolką wejściową)",
+        "Fail_2": "Etykieta znajduje się przed powiązanym z nią polem wyboru lub przyciskiem radiowym (polem opcji)"
     },
     // JCH - DONE
     "WCAG20_Embed_HasNoEmbed": {
-        0: "<embed> elements should be immediately followed by a non-embedded element",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify that the <embed> element is immediately followed by a non-embedded element"
+        0: "Bezpośrednio po elementach <embed> powinien następować element <noembed>",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź, czy po elemencie <embed> występuje bezpośrednio element <noembed>"
     },
     // JCH - DONE
     "WCAG20_Table_Scope_Valid": {
-        0: "Value for 'scope' attribute must be \"row\", \"col\", \"rowgroup\", or \"colgroup\"",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Value provided is invalid for the 'scope' attribute"
+        0: "Atrybut 'scope' może mieć tylko jedną z następujących wartości \"row\", \"col\", \"rowgroup\" lub \"colgroup\"",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Wartość określona w atrybucie 'scope' jest niepoprawna."
     },
     // JCH - DONE
     "WCAG20_Img_TitleEmptyWhenAltNull": {
-        0: "When the image 'alt' attribute is empty, the 'title' attribute must also be empty",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "The image 'alt' attribute is empty, but the 'title' attribute is not empty"
+        0: "Kiedy atrybut 'alt' obrazka jest pusty, atrybut 'title' musi być również pusty",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Tekst atrybutu 'alt' obrazka jest pusty, ale atrybut 'title' nie jest pusty."
     },
     // JCH - DONE
     "WCAG20_Input_InFieldSet": {
-        0: "Groups of logically related input elements should be contained within a <fieldset> element",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Use the <fieldset> element to group logically related input elements"
+        0: "Grupy logicznie powiązanych pól formularza powinny być zawarte wewnątrz elementu <fieldset>",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Użyj <fieldset> do grupowania logicznie powiązanych elementów wejściowych"
     },
     // JCH - DONE
     "WCAG20_Input_RadioChkInFieldSet": {
-        0: "Related sets of radio buttons or checkboxes should be programmatically grouped",
-        "Pass_LoneNogroup": "{0} grouping not required for a control of this type",
-        "Pass_Grouped": "{0} input is grouped with other related controls with the same name",
-        "Pass_RadioNoName": "Radio input is not grouped, but passes because it has no name to group with other radio inputs",
-        "Fail_ControlNameMismatch": "{0} input found that has the same name, \"{2}\" as a {1} input",
-        "Potential_LoneCheckbox": "Verify that this ungrouped checkbox input is not related to other checkboxes",
-        "Potential_UnnamedCheckbox": "Verify that this un-named, ungrouped checkbox input is not related to other checkboxes",
-        "Fail_NotGroupedOtherGrouped": "{0} input is not in the group with another {0} with the name \"{1}\"",
-        "Fail_NotGroupedOtherNotGrouped": "{0} input and others with the name \"{1}\" are not grouped together",
-        "Fail_NotSameGroup": "{0} input is in a different group than another {0} with the name \"{1}\""
+        0: "Powiązane zestawy przycisków opcji lub pól wyboru muszą być programowo pogrupowane",
+        "Pass_LoneNogroup": "grupowanie {0} nie jest wymagane dla kontrolek tego typu",
+        "Pass_Grouped": "Pole tekstowe {0} jest zgrupowane z innymi powiązanymi kontrolkami z tą samą nazwą",
+        "Pass_RadioNoName": "Przycisk opcji nie jest zgrupowany, ale spełnia wymogi, ponieważ nie ma nazwy grupującej z innymi przyciskami opcji",
+        "Fail_ControlNameMismatch": "Znaleziono kontrolkę {0} z taką samą nazwą, jak kontrolka {1}",
+        "Potential_LoneCheckbox": "Sprawdź, czy to niezgrupowane pole wyboru nie jest powiązane z innymi polami wyboru",
+        "Potential_UnnamedCheckbox": "Sprawdź, czy czy to nienazwane, niezgrupowane pole wyboru nie jest powiązane z innymi polami wyboru",
+        "Fail_NotGroupedOtherGrouped": "Kontrolka {0} nie jest w grupie z inną {0} o nazwie \"{1}\"",
+        "Fail_NotGroupedOtherNotGrouped": "Kontrolka {0} i inna o nazwie \"{1}\" nie są zgrupowane",
+        "Fail_NotSameGroup": "Kontrolka {0} jest w innej grupie niż inna {0} o nazwie \"{1}\"."
     },
     // JCH - DONE
     "WCAG20_Select_NoChangeAction": {
-        0: "No changes of context should occur when a selection value receives focus",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify that no change of context or action occurs when selection options in this component receive focus"
+        0: "Żadna zmiana kontekstu nie powinna nastąpić, gdy fokus zostanie przeniesiony na którąkolwiek z wartości do wyboru",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź, czy nie następuje zmiana kontekstu lub działania, gdy opcje wyboru w tym komponencie otrzymują fokus"
     },
     // JCH - DONE
     "WCAG20_Input_HasOnchange": {
-        0: "Verify that any changes of context are explained in advance to the user",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify that any changes of context are explained in advance to the user"
+        0: "Wszelkie nieoczekiwane zmiany kontekstu są objaśnione z wyprzedzeniem",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź, czy wszelkie zmiany kontekstu są objaśnione z wyprzedzeniem"
     },
     // JCH - DONE
     "RPT_Embed_HasAlt": {
-        0: "Provide alternative content for <embed> elements",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify that the <embed> element has alternative content"
+        0: "Zapewnij treść alternatywną dla elementu <embed>",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź, czy element <embed> ma treść alternatywną"
     },
     // JCH - DONE
     "Valerie_Noembed_HasContent": {
-        0: "<noembed> elements should contain descriptive text",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Add descriptive text to the <noembed> element"
+        0: "Element <noembed> powinien zawierać opisowy tekst",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Dodaj opisowy tekst do elementu <noembed>"
     },
     // JCH - DONE
     "Valerie_Caption_HasContent": {
-        0: "A <caption> element for a <table> element must contain descriptive text",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "The <table> element has an empty <caption> element"
+        0: "Element <caption> w elemencie <table> musi zawierać opisowy tekst",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Element <table> ma pusty element <caption>"
     },
     // JCH - DONE
     "Valerie_Caption_InTable": {
-        0: "The <caption> element must be nested inside the associated <table> element",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "<caption> element is not nested inside a <table> element"
+        0: "Element <caption> musi być umieszczony wewnątrz powiązanego elementu <table>",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Element <caption> nie jest zagnieżdżony w elemencie <table>"
     },
     // JCH - DONE
     "Valerie_Label_HasContent": {
-        0: "A <label> element must have non-empty descriptive text that identifies the purpose of the interactive component",
-        "Pass_Regular": "<label> element has accessible name with inner content",
-        "Pass_AriaLabel": "<label> element has accessible name via 'aria-label'",
-        "Pass_LabelledBy": "<label> element has accessible name via 'aria-labelledby'",
-        "Fail_1": "The <label> element does not have descriptive text that identifies the expected input"
+        0: "Element <label> musi mieć niepusty tekst, wystarczająco opisowy, który identyfikuje cel komponentu interaktywnego",
+        "Pass_Regular": "Element <label> ma dostępną nazwę za pomocą tekstu wewnątrz",
+        "Pass_AriaLabel": "Element <label> ma dostępną nazwę za pomocą 'aria-label'",
+        "Pass_LabelledBy": "Element <label> ma dostępną nazwę za pomocą 'aria-labelledby'",
+        "Fail_1": "Element <label> nie ma wystarczająco opisowego tekstu, który określa  który określa oczekiwane dane wejściowe"
     },
     // JCH - DONE
     "Valerie_Elem_DirValid": {
-        0: "'dir' attribute value must be \"ltr\", \"rtl\", or \"auto\"",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Invalid value used for the 'dir' attribute"
+        0: "Wartością atrybutu 'dir' musi być  \"ltr\", \"rtl\" lub \"auto\"",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Nieprawidłowa wartość użyta w atrybucie 'dir'"
     },
     // JCH - DONE
     "Valerie_Frame_SrcHtml": {
-        0: "A <frame> containing non-HTML content must be made accessible",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify <frame> content is accessible"
+        0: "Treść inna niż HTML osadzona w ramce <frame> musi być dostępna",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź, czy treść <frame> jest dostępna"
     },
     // JCH - DONE
     "Valerie_Table_DataCellRelationships": {
-        0: "For a complex data table, all <th> and <td> elements must be related via 'header' or 'scope' attributes",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Complex table does not have headers for each cell properly defined with 'header' or 'scope'"
+        0: "W złożonej tabeli danych wszystkie elementy <th> i <td> muszą być powiązane za pomocą atrybutów 'header' lub 'scope'.",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Złożona tabela nie ma nagłówków dla każdej komórki zdefiniowanych poprawnie za pomocą 'header' lub 'scope'"
     },
     // JCH - DONE
     "RPT_Table_LayoutTrigger": {
-        0: "Avoid using tables to format text documents in columns unless the table can be linearized",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify table is not being used to format text content in columns unless the table can be linearized"
+        0: "Unikaj używania tabel do formatowania dokumentów tekstowych w kolumnach, chyba że tabela może być zlinearyzowana",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź, czy tabela nie jest używana do formatowania treści tekstowej w kolumnach, chyba że tabela może być zlinearyzowana"
     },
     // JCH - DONE
     "RPT_Table_DataHeadingsAria": {
-        0: "Data table must identify headers",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Table has no headers identified"
+        0: "Tabela danych musi mieć określone nagłówki",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Tabela nie ma określonych nagłówków"
     },
     // JCH - DONE
     "WCAG20_Label_RefValid": {
-        0: "The 'for' attribute must reference a non-empty, unique 'id' attribute of an <input> element",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "The value \"{0}\" of the 'for' attribute is not the 'id' of a valid <input> element"
+        0: "Atrybut 'for' musi odnosić się do niepustego unikalnego atrybutu 'id' elementu <input>",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Wartość \"{0}\" w atrybucie 'for' nie jest taka jak wartość 'id' elementu <input>"
     },
     // JCH - DONE
     "WCAG20_Elem_UniqueAccessKey": {
-        0: "'accesskey' attribute values on each element must be unique for the page",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "'accesskey' attribute value on the element is not unique"
+        0: "Wartości atrybutów `accesskey` dla każdego elementu muszą być na stronie unikalne",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Wartość atrybutu 'accesskey' nie jest unikalna"
     },
     // JCH - DONE
     "WCAG20_Script_FocusBlurs": {
-        0: "Scripting must not remove focus from content that normally receives focus",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify script does not remove focus from content that normally receives focus"
+        0: "Skrypty nie mogą usuwać fokusu z treści, która normalnie otrzymuje fokus",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź, czy skrypt nie usuwa fokusu z treści, która zwykle jest aktywna"
     },
     // JCH - DONE
     "HAAC_Img_UsemapAlt": {
-        0: "An image map and each <area> element in an image map must have text alternative(s)",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Image map or child <area> has no text alternative"
+        0: "Mapa odsyłaczy i każdy element <area> w mapie odsyłaczy musi mieć tekst alternatywny",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Mapa odsyłaczy lub element <area> na mapie nie ma tekstu alternatywnego"
     },
     // JCH - DONE
     "WCAG20_Text_Emoticons": {
-        0: "Emoticons must have a short text alternative that describes their purpose",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify that emoticons have a text alternative"
+        0: "Ikony emocji muszą mieć krótką alternatywę tekstową, która opisuje ich przeznaczenie",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź, czy ikony emocji mają alternatywę tekstową"
     },
     // JCH - DONE
     "WCAG20_Style_BeforeAfter": {
-        0: "Do not use CSS '::before' and '::after' pseudo-elements to insert non-decorative content",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify the '::before' and '::after' pseudo-elements do not insert non-decorative content"
+        0: "Nie używaj pseudoelementów CSS '::before' i '::after' do wstawiania treści niedekoracyjnej",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź, czy pseudoelementy '::before' i '::after' nie wstawiają treści niedekoracyjnej"
     },
     // JCH - DONE
     "WCAG20_Text_LetterSpacing": {
-        0: "Use CSS 'letter-spacing' to control spacing within a word",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify space characters are not being used to create space between the letters of a word"
+        0: "Użyj właściwości CSS 'letter-spacing' do kontrolowania odstępów w obrębie słów",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź, czy znaki spacji nie są używane do tworzenia odstępów między literami słowa"
     },
     // JCH - DONE
     "Rpt_Aria_ValidRole": {
-        0: "Elements must have a valid 'role' per WAI-ARIA specification",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Some of the 'role's defined on the element are not valid per WAI-ARIA specification",
-        "Fail_2": "The 'role' defined on the element is not valid per WAI-ARIA specification"
+        0: "Elementy muszą posiadać poprawnie określoną wartość 'role' zgodnie ze specyfikacją WAI-ARIA",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Wartość atrybutu 'role' określona dla elementu nie istnieje w specyfikacji WAI-ARIA"
     },
     "table_aria_descendants": {
-        0: "Table structure elements cannot specify an explicit 'role' within table containers",
-        "explicit_role": "An explicit WAI-ARIA 'role' is not valid for <{0}> element within a WAI-ARIA role '{1}' per the ARIA in HTML specification"
+        0: "Elementy struktury tabeli nie mogą określać jawnie roli w kontenerach tabeli",
+        "explicit_role": "Jawne określenie roli WAI-ARIA 'role' nie jest poprawne dla elementu `<{0}>` w elemencie z rolą WAI-ARIA '{1}' zgodnie ze specyfikacją ARIA w HTML"
     },
     // JCH - DONE
     "Rpt_Aria_ValidPropertyValue": {
-        0: "WAI-ARIA property values must be valid",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "The value \"{0}\" specified for attribute '{1}' on element <{2}> is not valid"
+        0: "Wartość atrybutu określona w elemencie musi być poprawna zgodnie ze specyfikacją WAI-ARIA 1.2",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Wartość \"{0}\" określona dla właściwości WAI-ARIA '{1}' dla elementu `<{2}>` jest nieprawidłowa"
     },
     // JCH - DONE
     "Rpt_Aria_ValidIdRef": {
-        0: "The WAI-ARIA property must reference a non-empty unique id of an existing element that is visible",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "The 'id' \"{0}\" specified for the WAI-ARIA property '{1}' value is not valid"
+        0: "Właściwość WAI-ARIA musi odwoływać się do niepustego unikalnego identyfikatora istniejącego elementu, który jest widoczny",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Wartość 'id' równa \"{0}\" określona dla właściwości WAI-ARIA '{1}' jest nieprawidłowa"
     },
     // JCH - DONE
     "Rpt_Aria_RequiredProperties": {
-        0: "When using a WAI-ARIA role on an element, the required attributes for that role must be defined",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "An element with WAI-ARIA role '{0}' does not have the required WAI-ARIA attribute(s): '{1}'"
+        0: "Element z atrybutem roli WAI-ARIA musi mieć zdefiniowane atrybuty wymagane dla tej roli",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Element z rolą WAI-ARIA  '{0}' nie ma wymaganego atrybutu WAI-ARIA: '{1}'"
     },
     // JCH - DONE
     "Rpt_Aria_EmptyPropertyValue": {
-        0: "When specifying a required WAI-ARIA attribute, the value must not be empty",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "The element attribute(s): '{0}' value is empty"
+        0: "Wartość wymaganych atrybutów WAI-ARIA nie może być pusta",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Wartość atrybutu (ów) elementu '{0}' jest pusta"
     },
     // JCH - DONE
     "Rpt_Aria_ValidProperty": {
-        0: "WAI-ARIA attributes must be valid for the element's role",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "The attribute(s) '{0}' referenced by the element <{1}> is not a valid WAI-ARIA state or property"
+        0: "Atrybuty WAI-ARIA muszą być poprawne dla roli elementu",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Atrybut(y) '{0}', do których odwołuje się element `<{1}>` , nie jest prawidłowym stanem lub właściwością WAI-ARIA"
     },
     // JCH - DONE
     "Rpt_Aria_InvalidTabindexForActivedescendant": {
-        0: "Element using 'aria-activedescendant' property must have its 'tabindex' attribute value set to 0 or -1 to be keyboard accessible",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "The <{0}> element using 'aria-activedescendant' set to \"{1}\" does not have its 'tabindex' attribute value set to 0 or -1"
+        0: "Element używający właściwości 'aria-activedescendant' musi mieć wartość atrybutu 'tabindex' ustawioną na 0 lub -1, aby był dostępny z klawiatury.",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Element <{0}> używający właściwości 'aria-activedescendant' ustawionej na \"{1}\" nie posiada wartości atrybutu 'tabindex' ustawionej na 0 lub -1 "
     },
     // JCH - DONE
     "Rpt_Aria_MissingFocusableChild": {
-        0: "UI component must have at least one focusable child element for keyboard access",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "The descendent <{0}> element with \"{1}\" role has no focusable child element"
+        0: "Komponent UI musi mieć co najmniej jeden element potomny z możliwością ustawienia fokusu, aby można go obsługiwać za pomocą klawiatury",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Element potomny `<{0}>` z rolą \"{1}\" nie ma elementu potomnego, na którym można utawić fokus"
     },
     // JCH - DONE
     "Rpt_Aria_MissingKeyboardHandler": {
-        0: "Interactive WAI_ARIA UI components must provide keyboard access",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify the <{0}> element with \"{1}\" role has keyboard access"
+        0: "Interaktywne komponenty interfejsu użytkownika WAI_ARIA muszą zapewniać dostęp do treści za pomocą klawiatury",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź, czy element `<{0}>` z rolą \"{1}\" jest dostępny z klawiatury"
     },
     // JCH - DONE
     "WCAG20_Img_PresentationImgHasNonNullAlt": {
-        0: "Image designated as decorative must have 'alt=\"\"",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Image designated as decorative has non-null 'alt' attribute"
+        0: "Obraz oznaczony jako dekoracyjny musi mieć pusty tekst alternatywny (atrybut 'alt=\"\")",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Obraz oznakowany jako dekoracyjny ma wypełniony tekst alternatywny"
     },
     // JCH - DONE
     "Rpt_Aria_MultipleSearchLandmarks": {
-        0: "Each element with \"search\" role must have a unique label that describes its purpose",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Multiple elements with \"search\" role do not have unique labels"
+        0: "Jeśli na stronie istnieje więcej niż jeden element z rolą \"search\", każdy musi mieć unikalną etykietę opisującą jego przeznaczenie",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Istnieje wiele elementów z rolą \"search\" bez unikalnych etykiet"
     },
     // JCH - DONE
     "Rpt_Aria_MultipleApplicationLandmarks": {
-        0: "Each element with \"application\" role must have a unique label that describes its purpose",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Multiple elements with \"application\" role do not have unique labels"
+        0: "Każdy element z rolą \"application\" musi mieć unikalną etykietę, która opisuje jego przeznaczenie",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Istnieje wiele elementów z rolą \"application\" bez unikalnych etykiet"
     },
     // JCH - DONE
     "Rpt_Aria_ApplicationLandmarkLabel": {
-        0: "An element with \"application\" role must have a label that describes its purpose",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Element with \"application\" role does not have a label"
+        0: "Element z rolą \"application\" musi mieć unikalną etykietę, która opisuje jego przeznaczenie",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Element z rolą \"application\" nie ma etykiety"
     },
     // JCH - DONE
     "Rpt_Aria_MultipleDocumentRoles": {
         0: "All elements with a \"document\" role must have unique labels",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Multiple elements with a \"document\" role do not have unique labels"
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Wiele elementów z rolą \"document\" nie ma unikalnych etykiet"
     },
     // JCH - DONE
     "WCAG20_Label_TargetInvisible": {
-        0: "Do not label hidden <input> elements ('type=\"hidden\")",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Hidden <input> element ('type=\"hidden\") is possibly labelled"
+        0: "Nie należy etykietować ukrytych elementów `<input>` ('type=\"hidden\"')",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Ukryte pole `<input>` ('type=\"hidden\"') prawdopodobnie ma etykietę"
     },
     // JCH - DONE
     "HAAC_Video_HasNoTrack": {
-        0: "A <video> element must have a text alternative for any meaningful audio content",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify that captions are available for any meaningful audio or provide a caption track for the <video> element"
+        0: "Element `<video>` musi mieć tekstową alternatywę dla każdej znaczącej treści audio",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Upewnij się, że dla każdego znaczącego dźwięku zapewnione są równoważne napisy rozszerzone lub podaj ścieżkę z napisami dla elementu `<video>`"
     },
     // JCH - DONE
     "HAAC_Audio_Video_Trigger": {
-        0: "Media using <audio> and/or <video> elements must have keyboard accessible controls",
-        "Pass_0": "Rule Passed",
-        "Manual_1": "Verify media using <audio> and/or <video> elements have keyboard accessible controls"
+        0: "Media wykorzystujące elementy `<audio>` lub `<video>` muszą mieć sterowanie za pomocą klawiatury",
+        "Pass_0": "Wymóg spełniony",
+        "Manual_1": "Sprawdź, czy media używajace elementu `<audio>` lub `<video>` mogą być sterowane za pomocą klawiatury"
     },
     // JCH - DONE
     "HAAC_Input_HasRequired": {
-        0: "If the application must be accessible in Internet Explorer 8, use 'aria-required' instead of the HTML5 'required' property",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "If the application must be accessible in Internet Explorer 8, use 'aria-required' instead of the HTML5 'required' property"
+        0: "Jeśli aplikacja musi być dostępna w przeglądarce Internet Explorer 8, użyj właściwości `aria-required` zamiast właściwości HTML5 `required`",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Jeśli aplikacja musi być dostępna w przeglądarce Internet Explorer 8, użyj właściwości 'aria-required' zamiast właściwości HTML5 `required`"
     },
     // JCH - DONE
     "HAAC_Aria_ImgAlt": {
-        0: "An element with \"img\" role must have a non-empty label",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Element with \"img\" role has no label",
-        "Fail_2": "Element with \"img\" role has no label or an empty label",
-        "Fail_3": "Element with \"img\" role missing non-empty 'aria-label' or 'aria-labelledby'"
+        0: "Element z rolą \"img\" musi mieć wypełnioną etykietę (`label`)",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Element z rolą \"img\" nie ma etykiety",
+        "Fail_2": "Element z rolą \"img\" nie ma etykiety lub etykieta jest pusta",
+        "Fail_3": "Element z rolą \"img\" nie ma niepustej etykiety 'aria-label' lub 'aria-labelledby'"
     },
     "HAAC_Aria_SvgAlt": {
         0: "An element with \"{0}\" graphics role must have a non-empty label",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Element with \"{0}\" graphics role has no label",
-        "Fail_2": "Element with \"{0}\" graphics role has no label or an empty label",
-        "Fail_3": "Element with \"{0}\" graphics role missing non-empty 'aria-label' or 'aria-labelledby'"
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Element graficzny z \"{0}\" nie ma etykiety",
+        "Fail_2": "Element graficzny z \"{0}\" nie ma etykiety lub etykieta jest pusta",
+        "Fail_3": "Element graficzny z \"{0}\" nie ma niepustej etykiety 'aria-label' lub 'aria-labelledby'"
     },
     // JCH - DONE
     "HAAC_BackgroundImg_HasTextOrTitle": {
-        0: "Background images that convey important information must have a text alternative that describes the image",
-        "Pass_0": "Rule Passed",
-        "Manual_1": "Verify important background image information has a text alternative in system high contrast mode"
+        0: "Obrazy tła, które przekazują znaczenie, muszą mieć alternatywę tekstową, która opisuje obraz",
+        "Pass_0": "Wymóg spełniony",
+        "Manual_1": "Sprawdź, czy w trybie wysokiego kontrastu obraz w tle ma alternatywę tekstową"
     },
     // JCH - DONE
     "HAAC_Accesskey_NeedLabel": {
-        0: "An HTML element with an assigned 'accesskey' attribute must have an associated label",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "The HTML element with an assigned 'accesskey' attribute does not have an associated label"
+        0: "Element HTML z przypisanym atrybutem `accesskey` musi mieć przypisaną etykietę",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Element HTML z przypisanym atrybutem `accesskey` nie ma przypisanej etykiety"
     },
     // JCH - DONE
     "HAAC_Aria_Or_HTML5_Attr": {
-        0: "HTML5 attributes must not conflict with the associated WAI-ARIA attribute used on an input element",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "HTML5 attribute is in conflict with the associated WAI-ARIA attribute used on an input element"
+        0: "Atrybuty HTML5 nie mogą być w konflikcie z powiązanym atrybutem WAI-ARIA użytym dla pola formularza",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Konflikt między atrybutem HTML5 z powiązanym atrybutem WAI-ARIA zastosowanymi do pola formularza"
     },
     // JCH - DONE
     "HAAC_Canvas": {
-        0: "The <canvas> element may not be accessible",
-        "Pass_0": "Rule Passed",
-        "Manual_1": "Verify accessibility of the <canvas> element"
+        0: "Element <canvas> może nie być dostępny",
+        "Pass_0": "Wymóg spełniony",
+        "Manual_1": "Sprawdź, czy element `<canvas>` jest dostępny"
     },
     // JCH - DONE
     "HAAC_Figure_label": {
-        0: "A <figure> element must have an associated label",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "The <figure> element does not have an associated label"
+        0: "Element `<figure>` musi mieć przypisaną etykietę",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Element `<figure>` nie ma przypisanej etykiety"
     },
     // JCH - DONE
     "HAAC_Input_Placeholder": {
-        0: "HTML5 'placeholder' attribute must not be used as a visible label replacement",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "HTML5 placeholder is the only visible label",
-        "Potential_2": "Additional visible label referenced by 'aria-labelledby' is not valid"
+        0: "Atrybutu HTML5 `placeholder` nie można używać jako widocznego zamiennika etykiety",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Jedyną widoczną etykietą jest atrybut HTML5 `placeholder`",
+        "Potential_2": "Dodatkowa widoczna etykieta, do której odwołuje się `aria-labelledby` nie jest poprawna"
     },
     // JCH - DONE
     "aria_semantics_role": {
-        0: "WAI-ARIA roles must be valid for the element to which they are assigned",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "The WAI-ARIA role '{0}' is not valid for the element <{1}>",
-        "Fail_2": "The WAI-ARIA role '{0}' is not valid for the element <{1}> and may be ignored by the browser since the element is focusable"
+        0: "Role WAI-ARIA muszą być poprawne dla elementu, do którego są przypisane",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Rola WAI-ARIA '{0}' nie jest poprawna dla elementu `<{1}>`",
+        "Fail_2": "Rola WAI-ARIA '{0}' nie jest poprawna dla elementu `<{1}>` i może zostać zignorowana przez przeglądarkę, ponieważ element przyjmuje fokus"
     },
     "aria_semantics_attribute": {
-        0: "WAI-ARIA attributes must be valid for the element and WAI-ARIA role to which they are assigned",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "The WAI-ARIA attribute '{0}' is not valid for the element <{1}> with WAI-ARIA role '{2}'"
+        0: "Atrybuty WAI-ARIA muszą być ważne dla poprawne i roli WAI-ARIA, do której są przypisane",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Atrybut '{0}' nie jest poprawny dla elementu `<{1}>` z rolą WAI-ARIA '{2}'"
     },
     // JCH - DONE
     "RPT_Form_ChangeEmpty": {
-        0: "A form should not be submitted automatically without warning the user",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Confirm the form does not submit automatically without warning"
+        0: "Formularz nie powinien być przesyłany automatycznie bez ostrzeżenia użytkownika",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Upewnij się, że formularz nie zostanie wysłany automatycznie bez ostrzeżenia"
     },
     // JCH - DONE
     "IBMA_Color_Contrast_WCAG2AA": {
-        0: "The contrast ratio of text with its background must meet WCAG 2.1 AA requirements",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Text contrast of {0} with its background is less than the WCAG AA minimum requirements for text of size {1}px and weight of {2}",
-        "Potential_1": "The foreground text and its background color are both detected as {3}. Verify the text meets the WCAG 2.1 AA requirements for minimum contrast"
+        0: "Kontrast kolorów tekstu z jego tłem musi spełniać minimalne wymagania WCAG 2.1 AA",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Kontrast tekstu {0} do jego tła jest mniejszy niż minimalne wymagania dla WCAG AA dla tekstu o rozmiarze {1}px i wadze {2}",
+        "Potential_1": "Zarówno tekst na pierwszym planie, jak i jego kolor tła są wykrywane jako {3}. Sprawdź, czy tekst spełnia wymagania WCAG 2.1 AA dla minimalnego kontrastu"
     },
     // JCH - DONE
     "IBMA_Color_Contrast_WCAG2AA_PV": {
-        0: "The contrast ratio of text with its background (i.e. background with a color gradient or a background image) must meet WCAG 2.1 AA requirements",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify the contrast ratio of the text against the lightest and the darkest colors of the background meets the WCAG 2.1 AA minimum requirements for text of size {1}px and weight of {2}"
+        0: "Współczynnik kontrastu tekstu na tle gradientu kolorów lub obrazu tła musi spełniać wymagania WCAG 2.1 AA.",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź kontrast tekstu w stosunku do najjaśniejszych i najciemniejszych kolorów tła, czy spełnia minimalne wymagania normy WCAG 2.1 AA dla tekstu o rozmiarze {1}px i wadze {2}."
     },
     // JCH - DONE
     "WCAG20_Body_FirstASkips_Native_Host_Sematics": {
-        0: "Pages must provide a way to skip directly to the main content",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "The page does not provide a way to quickly navigate to the main content (WAI-ARIA \"main\" landmark or a skip link)"
+        0: "Strony internetowe muszą zapewniać możliwość przejścia bezpośrednio do głównej treści",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Na stronie nie ma możliwości szybkiego przejścia do głównej treści (punkt orientacyjny \"main\" lub łącze pomijające)"
     },
     // JCH - DONE
     "WCAG20_Body_FirstAContainsSkipText_Native_Host_Sematics": {
-        0: "The description of a hyperlink used to skip content must communicate where it links to",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify that if this hyperlink skips content, the description communicates where it links to"
+        0: "Opis hiperłącza użytego do pominięcia treści musi informować, do czego ono odsyła",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Jeśli to hiperłącze pomija treść, sprawdź, czy opis informuje, do czego się łączy"
     },
     // JCH - DONE
     "Rpt_Aria_RequiredChildren_Native_Host_Sematics": {
-        0: "An element with a WAI-ARIA role must contain required children",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "The element with WAI-ARIA role of \"{0}\" does not contain or own at least one child element with each of the following WAI-ARIA roles: \"{1}\""
+        0: "Element z WAI-ARIA 'role' musi zawierać wymagane elementy potomne",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Element z rolą WAI-ARIA \"{0}\" nie zawiera ani nie posiada co najmniej jednego elementu podrzędnego z każdą z następujących ról WAI-ARIA: \"{1}\""
     },
     // JCH - DONE
     "Rpt_Aria_RequiredParent_Native_Host_Sematics": {
-        0: "An element with a WAI-ARIA role must be contained within a valid element",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "The element with \"{0}\" role is not contained in or owned by an element with one of the following WAI-ARIA roles: \"{1}\""
+        0: "Element z rolą WAI-ARIA musi być zawarty w poprawnym elemencie",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Element z rolą WAI-ARIA \"{0}\" nie jest zawarty w elemencie z jedną z następujących ról WAI-ARIA ani nie jest przez niego własnością: \"{1}\""
     },
     // JCH - DONE
     "Rpt_Aria_EventHandlerMissingRole_Native_Host_Sematics": {
-        0: "Elements with event handlers must have a valid WAI-ARIA role",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "The <{0}> element with '{1}' does not have a valid WAI-ARIA role specified"
+        0: "Elementy obsługujące zdarzenia muszą mieć poprawną rolę WAI-ARIA",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Element <{0}> z '{1}' nie ma określonej prawidłowej roli WAI-ARIA."
     },
     // JCH - DONE
     "Rpt_Aria_WidgetLabels_Implicit": {
-        0: "Interactive component must have a programmatically associated name",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Interactive component with WAI-ARIA role '{0}' does not have a programmatically associated name"
+        0: "Komponent interaktywny musi mieć programowo powiązaną nazwę",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Komponent interaktywny nie ma programowo powiązanej nazwy"
     },
     // JCH - DONE
     "Rpt_Aria_OrphanedContent_Native_Host_Sematics": {
-        0: "All content must reside within an element with a landmark role",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Content is not within a landmark element"
+        0: "Cała treść musi się znajdować wewnątrz obszarów z rolami punktów orientacyjnych",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Treść znajduje się poza obszarem punktu orientacyjnego"
     },
     // JCH - DONE
     "Rpt_Aria_RegionLabel_Implicit": {
-        0: "Each element with \"region\" role must have a label that describes its purpose",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Section element with an implicit \"region\" role is not labeled with an 'aria-label' or 'aria-labelledby'",
-        "Fail_2": "The element with \"region\" role is not labeled with an 'aria-label' or 'aria-labelledby'"
+        0: "Elementy z rolą \"region\" muszą mieć etykietę opisującą ich przeznaczenie",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Element sekcji z dorozumianą rolą \"region\" nie jest oznaczony etykietą `aria-label` 'aria-labelledby'",
+        "Fail_2": "Element z rolą \"region\" nie jest oznaczony etykietą `aria-label` lub `aria-labelledby`."
     },
     // JCH - DONE
     "Rpt_Aria_MultipleMainsVisibleLabel_Implicit": {
-        0: "Each element with \"main\" role should have a unique visible label that describes its purpose",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Multiple elements with \"main\" role do not have unique visible labels"
+        0: "Każdy element z rolą \"main\" powinien mieć widoczną niepowtarzalną etykietę, która opisuje jego cel",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Więcej niż jeden element z rolą \"main\"  bez unikalnej etykiety"
     },
     // JCH - DONE
     "Rpt_Aria_MultipleBannerLandmarks_Implicit": {
-        0: "Each element with \"banner\" role must have a unique label that describes its purpose",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Multiple elements with \"banner\" role do not have unique labels"
+        0: "Jeśli na stronie istnieje więcej niż jeden element  pełniący  rolę \"banner\", każdy musi mieć unikalną etykietę opisującą jego przeznaczenie",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Istnieje wiele elementów z rolą \"banner\" bez unikalnych etykiet"
     },
     // JCH - DONE
     "Rpt_Aria_MultipleComplementaryLandmarks_Implicit": {
-        0: "Each element with \"complementary\" role must have a unique label that describes its purpose",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Multiple elements with \"complementary\" role do not have unique labels"
+        0: "Jeśli na stronie istnieje więcej niż jeden element pełniący  rolę \"complementary\", każdy musi mieć unikalną etykietę opisującą jego przeznaczenie",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Istnieje wiele elementów z rolą \"complementary\" bez unikalnych etykiet"
     },
     // JCH - DONE
     "Rpt_Aria_MultipleContentinfoLandmarks_Implicit": {
-        0: "Each element with \"contentinfo\" role must have a unique label that describes its purpose",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Multiple elements with \"contentinfo\" role do not have unique labels"
+        0: "Jeśli na stronie istnieje więcej niż jeden element pełniący  rolę \"contentinfo\", każdy musi mieć unikalną etykietę opisującą jego przeznaczenie",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Istnieje wiele elementów z rolą \"contentinfo\" bez unikalnych etykiet"
     },
     // JCH - DONE
     "Rpt_Aria_MultipleFormLandmarks_Implicit": {
-        0: "Each element with \"form\" role must have a unique label that describes its purpose",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Multiple elements with \"form\" role do not have unique labels"
+        0: "Jeśli na stronie istnieje więcej niż jeden element z rolą \"form\", każdy musi mieć unikalną etykietę opisującą jego przeznaczenie",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Istnieje wiele elementów z rolą \"form\" bez unikalnych etykiet"
     },
     // JCH - DONE
     "Rpt_Aria_MultipleNavigationLandmarks_Implicit": {
-        0: "Each element with \"navigation\" role must have a unique label that describes its purpose",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Multiple elements with \"navigation\" role do not have unique labels"
+        0: "Jeśli na stronie istnieje więcej niż jeden element z rolą \"navigation\", każdy musi mieć unikalną etykietę opisującą jego przeznaczenie",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Istnieje wiele elementów z rolą \"navigation\" bez unikalnych etykiet"
     },
     // JCH - DONE
     "Rpt_Aria_ComplementaryLandmarkLabel_Implicit": {
-        0: "Each element with \"complementary\" role should have a visible label that describes its purpose",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "The element with \"complementary\" role does not have a visible label"
+        0: "Każdy element z rolą \"complementary\" powinien mieć unikalną i widoczną etykietę, która opisuje jego cel",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Element z rolą \"complementary\" nie ma widocznej etykiety"
     },
     // JCH - DONE
     "Rpt_Aria_MultipleArticleRoles_Implicit": {
-        0: "Each element with \"article\" role must have a unique label that describes its purpose",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Multiple elements with \"article\" role do not have unique labels"
+        0: "Każdy element z rolą \"article\" powinien mieć unikalną i widoczną etykietę, która opisuje jego cel",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Istnieje wiele elementów z rolą \"article\"  bez unikalnych etykiet"
     },
     // JCH - DONE
     "Rpt_Aria_ArticleRoleLabel_Implicit": {
-        0: "An element with \"article\" role must have a label that describes its purpose",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "The element with \"article\" role does not have a label"
+        0: "Wszystkie elementy z rolą \"article\" muszą mieć etykietę, która opisuje ich cel",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Element z rolą \"article\" nie ma etykiety"
     },
     // JCH - DONE
     "Rpt_Aria_MultipleGroupRoles_Implicit": {
-        0: "Each element with \"group\" role must have a unique label that describes its purpose",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Multiple elements with \"group\" role do not have unique labels"
+        0: "Każdy element z rolą \"group\" powinien mieć unikalną i widoczną etykietę, która opisuje jego cel",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Istnieje wiele elementów z rolą \"group\" bez unikalnych etykiet"
     },
     // JCH - DONE
     "Rpt_Aria_GroupRoleLabel_Implicit": {
-        0: "An element with \"group\" role should have a unique label that describes its purpose",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "The <{0}> element with \"group\" role does not have a label"
+        0: "Wszystkie elementy z rolą \"group\" muszą mieć etykietę, która opisuje kolekcję powiązanych elementów",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Element <{0}> z rolą \"group\" nie ma etykiety"
     },
     // JCH - DONE
     "Rpt_Aria_MultipleContentinfoInSiblingSet_Implicit": {
-        0: "A page, document or application should only have one element with \"contentinfo\" role",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Multiple elements with \"contentinfo\" role found on a page"
+        0: "Strona, dokument lub aplikacja może mieć tylko jeden element z rolą \"contentinfo\"",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Znaleziono na stronie wiele elementów z rolą \"contentinfo\""
     },
     // JCH - DONE
     "Rpt_Aria_OneBannerInSiblingSet_Implicit": {
-        0: "There must be only one element with \"banner\" role on the page",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "There is more than one element with \"banner\" role on the page"
+        0: "Na stronie może się znajdować  tylko jeden element z rolą \"banner\"",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Na stronie znajduje się wiele elementów z rolą \"banner\""
     },
     // JCH - DONE
     "Rpt_Aria_ContentinfoWithNoMain_Implicit": {
-        0: "An element with \"contentinfo\" role is only permitted with an element with \"main\" role",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "The element with \"contentinfo\" role is present without an element with \"main\" role"
+        0: "Element z rolą \"contentinfo\" jest dozwolony tylko, gdy istnieje element z rolą \"main\"",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Istnieje element z rolą \"contentinfo\", ale nie ma elementu \"main\""
     },
     // JCH - DONE
     "Rpt_Aria_ComplementaryRequiredLabel_Implicit": {
-        0: "An element with \"complementary\" role must have a label",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "The element with \"complementary\" role does not have a label"
+        0: "Element z rolą \"complementary\" musi mieć etykietę",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Element z rolą \"complementary\" nie ma etykiety"
     },
     // JCH - DONE
     "Rpt_Aria_MultipleRegionsUniqueLabel_Implicit": {
-        0: "Each element with a \"region\" role must have a unique label",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Multiple elements with \"region\" role do not have unique labels"
+        0: "Każdy element z rolą \"region\" musi mieć unikalną etykietę",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Istnieje wiele elementów z rolą \"region\" bez unikalnych etykiet"
     },
     // JCH - DONE
     "IBMA_Focus_Tabbable": {
-        0: "Component must have at least one tabbable element",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Component with \"{0}\" role does not have a tabbable element"
+        0: "W komponencie musi być co najmniej jeden element przyjmujący fokus klawiatury",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Komponent z rolą \"{0}\" nie ma elementu przyjmującego fokus klawiatury"
     },
     // JCH - DONE
     "IBMA_Focus_MultiTab": {
-        0: "Certain components must have no more than one tabbable element",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Component with \"{0}\" role has more than one tabbable element"
+        0: "Niektóre komponenty mogą mieć tylko jeden element osiągany klawiszem Tab",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Komponent z rolą \"{0}\" ma więcej niż jeden element osiągany klawiszem Tab"
     },
     // JCH - DONE
     "WCAG20_Table_SummaryAria3": {
-        0: "Complex data tables should have a 'summary' or an 'aria-describedby' that references an overview of the table",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "A complex data table should have a 'summary' or an 'aria-describedby' that references an overview of the table"
+        0: "Złożone tabele danych powinny mieć 'summary' lub 'aria-describedby', które daje przegląd tabeli",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Złożona tabela danych nie ma 'summary' lub 'aria-describedby', które daje przegląd tabeli"
     },
     // JCH - DONE
     "RPT_Style_Trigger2": {
-        0: "Windows high contrast mode must be supported when using CSS to include, position or alter non-decorative content",
-        "Pass_0": "Rule Passed",
-        "Manual_1": "Confirm Windows high contrast mode is supported when using CSS to include, position or alter non-decorative content"
+        0: "Tryb wysokiego kontrastu w systemie Windows musi być obsługiwany dla obrazów tła CSS",
+        "Pass_0": "Wymóg spełniony",
+        "Manual_1": "Upewnij się, że tryb wysokiego kontrastu systemu Windows jest obsługiwany dla obrazów tła CSS"
     },
     // JCH - DONE
     "Rpt_Aria_MultipleMainsRequireLabel_Implicit_2": {
-        0: "Elements with \"main\" role must have unique labels",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Multiple elements with \"main\" role do not have unique labels"
+        0: "Każdy element z rolą \"main\" powinien mieć widoczną niepowtarzalną etykietę, która opisuje jego cel",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Wiele elementów z rolą \"main\" bez unikalnej etykiety"
     },
     // JCH - DONE
     "HAAC_Media_DocumentTrigger2": {
-        0: "File download mechanisms should be keyboard-operable and preserve page focus location",
-        "Pass_0": "Rule Passed",
-        "Manual_1": "Verify that the file download mechanism does not cause a keyboard trap"
+        0: "Mechanizmy pobierania plików powinny być obsługiwane za pomocą klawiatury i zachowywać położenie fokusu klawiatury",
+        "Pass_0": "Wymóg spełniony",
+        "Manual_1": "Sprawdź, czy mechanizm pobierania plików nie powoduje pułapki klawiaturowej"
     },
     // JCH - DONE
     "HAAC_Aria_ErrorMessage": {
-        0: "A custom error message must reference a valid 'id' value and when triggered the message must be appropriately exposed",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Custom error message has invalid reference 'id' value",
-        "Fail_2": "Custom error message is not visible"
+        0: "Własny komunikat o błędzie musi odwoływać się do poprawnego 'id', a po wyzwoleniu komunikat musi być odpowiednio wyeksponowany",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Własny komunikat o błędzie ma nieprawidłowe odniesienie 'id'",
+        "Fail_2": "Własny komunikat o błędzie nie jest widoczny"
     },
     // JCH - DONE
     "HAAC_List_Group_ListItem": {
-        0: "List component with \"group\" role must limit children to <listitem> elements",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "List component with \"group\" role has children that are not <listitem> elements"
+        0: "'Elementami potomnymi komponentu listy zbudowanego za pomocą atrybutu 'role=\"group\"' mogą być tylko elementy 'listitem'",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Komponent listy zbudowany za pomocą atrybutu 'role=\"group\"' ma dzieci, które nie są elementami 'listitem'"
     },
     // JCH - DONE
     "HAAC_ActiveDescendantCheck": {
-        0: "The 'aria-activedescendant' property must reference the 'id' of a non-empty, non-hidden active child element",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "The 'aria-activedescendant' property is empty",
-        "Fail_2": "The 'aria-activedescendant' property references a hidden node",
-        "Fail_3": "Element is not a combobox, and the referenced active-descendant element is not a valid descendant",
-        "Fail_4": "Element is a combobox, and the referenced active-descendant element is not controlled by this component"
+        0: "Właściwość 'aria-activedescendant' musi odnosić się do 'id' niepustego nieukrytego aktywnego elementu potomnego.",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Właściwość 'aria-activedescendant' jest pusta",
+        "Fail_2": "Właściwość 'aria-activedescendant' odnosi się do elementu ukrytego",
+        "Fail_3": "Element nie jest komponentem złożonym (combobox), a element, do którego odwołuje się aktywny element potomny nie jest prawidłowym elementem potomnym",
+        "Fail_4": "Element nie jest komponentem złożonym (combobox), a odnośny element active-descendant nie jest kontrolowany przez ten komponent"
     },
     // JCH - DONE
     "HAAC_Application_Role_Text": {
-        0: "Non-decorative static text and image content within an element with \"application\" role must be accessible",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify that the non-decorative static text and image content within an element with \"application\" role are accessible"
+        0: "Niedekoracyjna  statyczna treść tekstowa i graficzna w ramach elementu z rolą \"application\" musi być dostępna",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź, czy dostępna jest niedekoracyjna statyczna treść tekstowa lub obraz w ramach elementu z rolą \"application\""
     },
     // JCH - DONE
     "Rpt_Aria_MultipleToolbarUniqueLabel": {
-        0: "All toolbar components on a page must have unique labels specified",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Multiple toolbar components do not have unique labels"
+        0: "Wszystkie komponenty na stronie z rolą muszą 'toolbar' mieć unikalne etykiety ",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Wiele komponentów z rolą 'toolbar' bez unikalnej etykiety"
     },
     "combobox_version": {
-        0: "The combobox design pattern must be valid for WAI-ARIA 1.2",
-        "Pass_1.0": "The combobox design pattern is detected as WAI-ARIA 1.0, which is allowed by WAI-ARIA 1.2",
-        "Fail_1.1": "The combobox design pattern is detected as WAI-ARIA 1.1, which is not allowed by WAI-ARIA 1.2",
-        "Pass_1.2": "The combobox design pattern is detected as WAI-ARIA 1.2"
+        0: "Wzorzec projektowy combobox musi być zgodny z WAI-ARIA 1.2.",
+        "Pass_1.0": "Wykryto zastosowanie wzorca projektowego combobox z WAI-ARIA 1.0, co nie jest dozwolone przez WAI-ARIA 1.2",
+        "Fail_1.1": "Wykryto zastosowanie wzorca projektowego combobox z WAI-ARIA 1.1, co nie jest dozwolone przez WAI-ARIA 1.2",
+        "Pass_1.2": "Wykryto zastosowanie wzorca projektowego combobox z WAI-ARIA 1.2"
     },
     "combobox_popup_reference": {
-        0: "The 'aria-controls' (for WAI-ARIA 1.2) or the 'aria-owns' (for WAI-ARIA 1.0) attribute of the expanded combobox must reference a valid popup 'id' value",
-        "Pass_expanded": "The combobox popup referenced by 'aria-controls' (WAI-ARIA 1.2) or 'aria-owns' (WAI-ARIA 1.0) exists and is visible",
-        "Pass_collapsed": "The combobox popup in its collapsed state does not reference any visible popup as required",
-        "Fail_1.0_missing_owns": "The 'aria-owns' attribute of the expanded combobox is missing",
-        "Fail_1.2_missing_controls": "The 'aria-controls' attribute of the expanded combobox is missing",
-        "Fail_1.0_popup_reference_missing": "The 'aria-owns' attribute \"{0}\" of the expanded combobox does not reference a valid popup 'id' value",
-        "Fail_1.2_popup_reference_missing": "The 'aria-controls' attribute \"{0}\" of the expanded combobox does not reference a valid popup 'id' value",
-        "Fail_combobox_expanded_hidden": "The combobox 'aria-expanded' attribute is true, but the combobox popup is not visible",
-        "Fail_combobox_collapsed_visible": "The combobox 'aria-expanded' attribute is false, but the combobox popup is visible"
+        0: "Atrybut 'aria-controls' (dla WAI-ARIA 1.2) lub 'aria-owns' (dla WAI-ARIA 1.0) rozwiniętego combo musi odwoływać się do prawidłowej wartości 'id' wyskakującego okienka",
+        "Pass_expanded": "Wyskakujące okienko kombi, do którego odwołuje się 'aria-controls' (WAI-ARIA 1.2) lub 'aria-owns' (WAI-ARIA 1.0) istnieje i jest widoczne",
+        "Pass_collapsed": "Wyskakujące okienko kombi w stanie zwiniętym nie odwołuje się do żadnego widocznego wyskakującego okienka zgodnie z wymaganiami",
+        "Fail_1.0_missing_owns": "Brak atrybutu 'aria-owns' w rozwiniętym polu kombi",
+        "Fail_1.2_missing_controls": "Brak atrybutu 'aria-controls' w rozwiniętym polu kombi",
+        "Fail_1.0_popup_reference_missing": "Atrybut 'aria-owns' \"{0}\" rozwiniętego combo nie odwołuje się do prawidłowej wartości 'id' wyskakującego okienka",
+        "Fail_1.2_popup_reference_missing": "Atrybut 'aria-controls' \"{0}\" rozwiniętego pola combo nie odwołuje się do prawidłowej wartości 'id' wyskakującego okienka",
+        "Fail_combobox_expanded_hidden": "Wartością atrybutu 'aria-expanded' combobox jest 'true', ale wyskakujące okienko combobox nie jest widoczne",
+        "Fail_combobox_collapsed_visible": "Wartością atrybutu 'aria-expanded' combobox jest 'false', ale wyskakujące okienko combobox jest widoczne"
     },
     "combobox_haspopup": {
-        0: "The combobox attribute 'aria-haspopup' value must be appropriate for the role of the element referenced by 'aria-controls' (WAI-ARIA 1.2) or 'aria-owns' (WAI-ARIA 1.0)",
-        "Pass": "The 'aria-controls' (WAI-ARIA 1.2) or 'aria-owns' (WAI-ARIA 1.0) appropriately references a valid popup 'id' value",
-        "Fail_popup_role_invalid": "The 'role' value \"{0}\" of the popup element \"{1}\" should be one of \"listbox\", \"grid\", \"tree\" or \"dialog\"",
-        "Fail_combobox_popup_role_mismatch": "The value of the combobox 'aria-haspopup' attribute \"{0}\" does not match the 'role' value of the popup element \"{1}\""
+        0: "Wartość atrybutu 'aria-haspopup' w combobox musi być odpowiednia dla roli elementu, do którego odwołuje się 'aria-controls' (WAI-ARIA 1.2) lub 'aria-owns' (WAI-ARIA 1.0)",
+        "Pass": "Wartość atrybutu 'aria-controls (WAI-ARIA 1.2) lub 'aria-owns' (WAI-ARIA 1.0) odpowiednio odwołuje się do prawidłowej wartości 'id' wyskakującego okienka",
+        "Fail_popup_role_invalid": "Wartość 'role' \"{0}\" elementu wyskakującego \"{1}\" powinna być jedną z następujących: \"listbox\", \"grid\", \"tree\" lub \"dialog\"",
+        "Fail_combobox_popup_role_mismatch": "Wartość atrybutu 'aria-haspopup' combobox \"{0}\" nie jest zgodna z wartością atrybutu 'role' elementu popup \"{1}\" "
     },
     "combobox_focusable_elements": {
-        0: "Tabbable focus for the combobox must be allowed only on the text input, except when using a dialog popup",
-        "Pass": "DOM focus is allowed only on the combobox element as required",
-        "Fail_not_tabbable": "The combobox element does not allow DOM focus as required",
-        "Fail_tabbable_child": "The popup of the combobox has DOM focus or has 'aria-activedescendant' defined, which is not allowed"
+        0: "Fokus klawiatury wewnątrz combobox można ustawić tylko na polu wprowadzania tekstu, z wyjątkiem sytuacji, gdy używane jest okienko dialogowe",
+        "Pass": "Fokus DOM jest dozwolony tylko na elemencie combobox, zgodnie z wymaganiami",
+        "Fail_not_tabbable": "Element combobox nie pozwala na ustawianie fokusu DOM zgodnie z wymaganiami",
+        "Fail_tabbable_child": "Wyskakujące okienko combo ma fokus DOM lub ma zdefiniowane 'aria-activedescendant', co jest niedozwolone"
     },
     "combobox_active_descendant": {
-        0: "'aria-activedescendant' must be used to define focus within the combobox popup, except when using a dialog popup",
-        "Pass": "'aria-activedescendant' is used appropriately for this combobox",
-        "Fail_missing": "The element referenced by 'aria-activedescendant' \"{0}\" does not exist",
-        "Fail_not_in_popup": "The element referenced by 'aria-activedescendant' \"{0}\" does not exist within the popup referenced by 'id' \"{1}\"",
-        "Fail_active_role_invalid": "The 'aria-activedescendant' \"{0}\" references an element with the roles \"{1}\", which does not have a valid WAI-ARIA role of 'option', 'gridcell', 'row', or 'treeitem'",
-        "Fail_active_not_selected": "The 'aria-activedescendant' \"{0}\" references an element that does not have 'aria-selected' set to true",
+        0: "Do ustawienia fokusu w wyskakującym polu kombinowanym musi być użyta właściwość 'aria-activedescendant' z wyjątkiem sytuacji, gdy używasz wyskakującego okna",
+        "Pass": "Właściwość 'aria-activedescendant' jest użyty odpowiednio dla tego comboboxa",
+        "Fail_missing": "Element, do którego odwołuje się 'aria-activedescendant' \"{0}\" nie istnieje",
+        "Fail_not_in_popup": "Element, do którego odwołuje się 'aria-activedescendant' \"{0}\" nie istnieje w oknie wyskakującym, do którego odwołuje się 'id' \"{1}\"",
+        "Fail_active_role_invalid": "Element 'aria-activedescendant' \"{0}\" odnosi się do elementu z rolą \"{1}\", który nie ma poprawnej roli WAI-ARIA o wartości 'option', 'gridcell', 'row', lub 'treeitem'",
+        "Fail_active_not_selected": "Element 'aria-activedescendant' \"{0}\" odnosi się do elementu, który nie ma  opcji 'aria-selected' ustawionej na wartość true"
     },
     "combobox_autocomplete": {
-        0: "A combobox that supports autocompletion behavior must have the 'aria-autocomplete' attribute only on its text input element with a valid value; a value of '\"inline\"' is not supported",
-        "Pass": "The combobox does not use 'aria-autocomplete' value '\"inline\"' nor does it have 'aria-autocomplete' defined within the popup",
-        "Fail_1": "The combobox has the 'aria-autocomplete' attribute incorrectly set on an element within the popup referenced by \"{0}\"",
-        "Fail_inline": "The combobox does not support an 'aria-autocomplete' attribute value set to '\"inline\"' "
+        0: "Pole kombinowane, które obsługuje funkcję autouzupełniania, musi mieć atrybut 'aria-autocomplete' z prawidłową wartością tylko w elemencie wprowadzania tekstu; wartość '\"inline\"' nie jest obsługiwana",
+        "Pass": "Pole kombinowane nie używa w atrybucie 'aria-autocomplete' wartości '\"inline\"' ani nie ma zdefiniowanego 'aria-autocomplete' w wyskakującym okienku",
+        "Fail_1": "Pole kombinowane ma nieprawidłowo ustawiony atrybut 'aria-autocomplete' dla elementu w wyskakującym okienku, do którego odwołuje się \"{0}\"",
+        "Fail_inline": "Pole kombinowane nie obsługuje wartości atrybutu 'aria-autocomplete' ustawionej na '\"inline\"' "
     },
     // JCH - DONE
     "WCAG21_Style_Viewport": {
-        0: "Text must scale up to 200% without loss of content or functionality",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "Verify that text sized using viewport units can be resized up to 200%"
+        0: "Tekst musi być skalowany do 200% bez utraty treści lub funkcjonalności",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Sprawdź, czy rozmiar tekstu za pomocą jednostek rozmiaru obszaru operacyjnego (viewport)  można zmienić aż do 200%"
     },
     // JCH - DONE
     "WCAG21_Label_Accessible": {
-        0: "Accessible name must match or contain the visible label text",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "Accessible name does not match or contain the visible label text"
+        0: "Dostępna nazwa musi być taka sama lub zawierać widoczny tekst etykiety",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Dostępna nazwa nie pasuje lub nie zawiera widocznego tekstu etykiety"
     },
     // JCH - DONE
     "WCAG21_Input_Autocomplete": {
-        0: "The 'autocomplete' attribute's token(s) must be appropriate for the input form field",
-        "Pass_0": "Rule Passed",
-        "Fail_1": "The 'autocomplete' attribute's token(s) are not appropriate for the input form field"
+        0: "Tokeny atrybutu 'autocomplete' w pola wejściowym formularza muszą być odpowiednie",
+        "Pass_0": "Wymóg spełniony",
+        "Fail_1": "Nieodpowiednie tokeny dla atrybutu 'autocomplete' w polu wejściowym formularza"
     },
     // JCH - DONE
     "WCAG20_Input_VisibleLabel": {
-        0: "An input element must have an associated visible label",
-        "Pass_0": "Rule Passed",
-        "Potential_1": "The input element does not have an associated visible label"
+        0: "Element '<input>' musi mieć przypisaną widoczną etykietę",
+        "Pass_0": "Wymóg spełniony",
+        "Potential_1": "Element '<input>' nie ma przypisanej widocznej etykiety"
     }
 };
 exports.a11yNls = a11yNls;
@@ -18619,24 +18632,24 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.designNls = void 0;
 var designNls = {
     "DESIGN_COLOR_Palette_Foreground": [
-        "Foreground color {0} is in the standard palette.",
-        "Foreground color {0} is not in the standard palette."
+        "Kolor pierwszego planu {0} jest ze standardowej palety.",
+        "Kolor pierwszego planu {0} nie jest ze standardowej palety."
     ],
     "DESIGN_COLOR_Palette_Background": [
-        "Background color {0} is in the standard palette.",
-        "Background color {0} is not in the standard palette."
+        "Kolor tła {0} jest ze standardowej palety.",
+        "Kolor tła {0} nie jest ze standardowej palety."
     ],
     "DESIGN_Typography_Plex": [
-        "Font Family \"{0}\" begins with \"IBM Plex\"",
-        "Font Family \"{0}\" is not a standard font, it does not begin with \"IBM Plex\"."
+        "Rodzina fontów \"{0}\" zaczyna się od \"IBM Plex\"",
+        "Rodzina fontów \"{0}\" nie jest standardową czcionką, nie zaczyna się od \"IBM Plex\"."
     ],
     "DESIGN_Typography_TextAlignLeft": [
-        "Text is left justified",
-        "Text is not left justified"
+        "Tekst jest wyrównany do lewej",
+        "Tekst nie jest wyrównany do lewej"
     ],
     "DESIGN_GridLayout_ImgAspectRatio": [
-        "Rule Passed",
-        "Image is not a supported aspect ratio (16:9, 4:3, 3:2, 2:1, or 1:1)"
+        "Wymóg spełniony",
+        "Obraz nie ma obsługiwanego współczynnika kształtu (16:9, 4:3, 3:2, 2:1, or 1:1)"
     ]
 };
 exports.designNls = designNls;
@@ -19934,13 +19947,13 @@ var a11yRulesets = [
         id: "IBM_Accessibility",
         name: "IBM Accessibility",
         category: IEngine_1.eRuleCategory.ACCESSIBILITY,
-        description: "Rules for WCAG 2.1 AA plus additional IBM checklist supplemental requirements.",
+        description: "Reguły dla WCAG 2.1 AA oraz dodatkowe wymagania uzupełniające dla listy kontrolnej IBM.",
         "checkpoints": [
             {
                 "num": "1.1.1",
-                "name": "Non-text Content",
+                "name": "Treść nietekstowa",
                 "wcagLevel": "A",
-                "summary": "All non-text content that is presented to the user has a text alternative that serves the equivalent purpose.",
+                "summary": "Wszystkie treści nietekstowe przedstawione użytkownikowi mają alternatywę tekstową, która służy równoważnemu celowi.",
                 "rules": [
                     {
                         id: "WCAG20_Input_ExplicitLabelImage",
@@ -20071,9 +20084,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.2.1",
-                "name": "Audio-only and Video-only (Prerecorded)",
+                "name": "Tylko audio lub tylko wideo (nagranie)",
                 "wcagLevel": "A",
-                "summary": "For prerecorded audio-only or video-only media, an alternative provides equivalent information.",
+                "summary": "Dla mediów nagranych w systemie tylko audio lub tylko wideo, w alternatywny sposób zapewnione są równoważne informacje.",
                 "rules": [
                     {
                         id: "HAAC_Video_HasNoTrack",
@@ -20089,9 +20102,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.2.2",
-                "name": "Captions (Prerecorded)",
+                "name": "Napisy rozszerzone (nagranie)",
                 "wcagLevel": "A",
-                "summary": "Captions are provided for all prerecorded audio content in synchronized media.",
+                "summary": "Do wszystkich nagrań audio w multimediach zsynchronizowanych zapewnione są napisy rozszerzone.",
                 "rules": [
                     {
                         id: "HAAC_Video_HasNoTrack",
@@ -20102,9 +20115,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.2.3",
-                "name": "Audio Description or Media Alternative (Prerecorded)",
+                "name": "Audiodeskrypcja lub alternatywa tekstowa dla mediów (nagranie)",
                 "wcagLevel": "A",
-                "summary": "An alternative for time-based media or audio description of the prerecorded video content is provided for synchronized media.",
+                "summary": "Zapewniona jest alternatywa dla multimediów lub audiodeskrypcja dla nagrań wideo w multimediach zsynchronizowanych.",
                 "rules": [
                     {
                         id: "RPT_Media_VideoReferenceTrigger",
@@ -20115,9 +20128,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.2.4",
-                "name": "Captions (Live)",
+                "name": "Napisy rozszerzone (na żywo)",
                 "wcagLevel": "AA",
-                "summary": "Captions are provided for all live audio content in synchronized media.",
+                "summary": "Do wszystkich treści audio w multimediach zsynchronizowanych przekazywanych na żywo zapewnione są napisy rozszerzone.",
                 "rules": [
                     {
                         id: "HAAC_Video_HasNoTrack",
@@ -20133,9 +20146,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.2.5",
-                "name": "Audio Description (Prerecorded)",
+                "name": "Audiodeskrypcja (nagranie)",
                 "wcagLevel": "AA",
-                "summary": "Audio description is provided for all prerecorded video content in synchronized media.",
+                "summary": "Zapewniona jest audiodeskrypcja dla wszystkich nagrań wideo w multimediach zsynchronizowanych.",
                 "rules": [
                     {
                         id: "RPT_Media_VideoReferenceTrigger",
@@ -20146,9 +20159,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.3.1",
-                "name": "Info and Relationships",
+                "name": "Informacje i relacje",
                 "wcagLevel": "A",
-                "summary": "Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text.",
+                "summary": "Informacje, struktura oraz relacje między treściami przekazywane poprzez prezentację mogą być odczytane przez program komputerowy lub istnieją w postaci tekstu.",
                 "rules": [
                     {
                         id: "RPT_Headers_FewWords",
@@ -20274,9 +20287,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.3.2",
-                "name": "Meaningful Sequence",
+                "name": "Zrozumiała kolejność",
                 "wcagLevel": "A",
-                "summary": "When the sequence in which content is presented affects its meaning, a correct reading sequence can be programmatically determined.",
+                "summary": "Jeśli kolejność, w jakiej przedstawiona jest treść, ma znaczenie dla zrozumienia treści — prawidłowa kolejność odczytu musi być określona programowo.",
                 "rules": [
                     {
                         id: "Valerie_Elem_DirValid",
@@ -20292,9 +20305,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.3.3",
-                "name": "Sensory Characteristics",
+                "name": "Właściwości zmysłowe",
                 "wcagLevel": "A",
-                "summary": "Instructions provided for understanding and operating content do not rely solely on sensory characteristics of components such as shape, size, visual location, orientation, or sound.",
+                "summary": "Instrukcje co do zrozumienia i operowania treścią nie opierają się wyłącznie na właściwościach zmysłowych, takich jak: kształt, rozmiar, wzrokowa lokalizacja, orientacja w przestrzeni lub dźwięk.",
                 "rules": [
                     {
                         id: "RPT_Text_SensoryReference",
@@ -20305,16 +20318,16 @@ var a11yRulesets = [
             },
             {
                 "num": "1.3.4",
-                "name": "Orientation",
+                "name": "Orientacja",
                 "wcagLevel": "AA",
-                "summary": "Content does not restrict its view and operation to a single display orientation, such as portrait or landscape.",
+                "summary": "Treść nie ogranicza swojego widoku i działania do jednej orientacji wyświetlania, takiej jak pionowa lub pozioma.",
                 "rules": []
             },
             {
                 "num": "1.3.5",
-                "name": "Identify Input Purpose",
+                "name": "Określenie pożądanej wartości",
                 "wcagLevel": "AA",
-                "summary": "The purpose of each input field that collects information about the user can be programmatically determined when the field serves a common purpose.",
+                "summary": "Cel każdego pola zbierającego informacje o użytkowniku może być programowo określony.",
                 "rules": [
                     {
                         id: "WCAG21_Input_Autocomplete",
@@ -20325,9 +20338,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.4.1",
-                "name": "Use of Color",
+                "name": "Użycie koloru",
                 "wcagLevel": "A",
-                "summary": "Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.",
+                "summary": "Kolor nie jest wykorzystywany jako jedyny wizualny sposób przekazywania informacji, wskazywania czynności do wykonania lub oczekiwania na odpowiedź, czy też wyróżniania elementów wizualnych.",
                 "rules": [
                     {
                         id: "RPT_Font_ColorInForm",
@@ -20343,9 +20356,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.4.2",
-                "name": "Audio Control",
+                "name": "Kontrola odtwarzania dźwięku",
                 "wcagLevel": "A",
-                "summary": "If any audio plays automatically for more than 3 seconds, either a mechanism is available to pause or stop the audio, or a mechanism is available to control audio volume independently from the overall system volume level.",
+                "summary": "Jeśli jakieś nagranie audio włącza się automatycznie na danej stronie i jest odtwarzane przez okres dłuższy niż 3 sekundy, istnieje mechanizm umożliwiający przerwanie lub wyłączenie nagrania albo mechanizm kontrolujący poziom głośności niezależnie od poziomu głośności całego systemu.",
                 "rules": [
                     {
                         id: "RPT_Embed_AutoStart",
@@ -20356,9 +20369,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.4.3",
-                "name": "Contrast (Minimum)",
+                "name": "Kontrast (minimalny)",
                 "wcagLevel": "AA",
-                "summary": "The visual presentation of text and images of text has a contrast ratio of at least 4.5:1, with a 3:1 ratio for large-scale text.",
+                "summary": "Wizualna prezentacja tekstu lub obrazu tekstu posiada współczynnik kontrastu wynoszący 4,5:1 w przypadku zwykłego tekstu, a 3:1 w przypadku dużego tekstu.",
                 "rules": [
                     {
                         id: "IBMA_Color_Contrast_WCAG2AA",
@@ -20374,9 +20387,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.4.4",
-                "name": "Resize Text",
+                "name": "Zmiana rozmiaru tekstu",
                 "wcagLevel": "AA",
-                "summary": "Text can be resized without assistive technology up to 200 percent without loss of content or functionality.",
+                "summary": "Rozmiar tekstu może zostać powiększony do 200% bez użycia technologii wspomagających oraz bez utraty treści lub funkcjonalności.",
                 "rules": [
                     {
                         id: "WCAG21_Style_Viewport",
@@ -20387,44 +20400,44 @@ var a11yRulesets = [
             },
             {
                 "num": "1.4.5",
-                "name": "Images of Text",
+                "name": "Obrazy tekstu",
                 "wcagLevel": "AA",
-                "summary": "If the technologies being used can achieve the visual presentation, text is used to convey information rather than images of text.",
+                "summary": "Jeśli wykorzystywane technologie mogą przedstawiać treść wizualnie, do przekazywania informacji wykorzystuje się tekst, a nie obraz tekstu.",
                 "rules": []
             },
             {
                 "num": "1.4.10",
-                "name": "Reflow",
+                "name": "Dopasowanie do ekranu",
                 "wcagLevel": "AA",
-                "summary": "Content can reflow without loss of information or functionality, and without requiring scrolling in two dimensions.",
+                "summary": "Treść może być prezentowana bez utraty informacji lub funkcjonalności, bez konieczności przewijania w dwóch wymiarach.",
                 "rules": []
             },
             {
                 "num": "1.4.11",
-                "name": "Non-text Contrast",
+                "name": "Kontrast elementów nietekstowych",
                 "wcagLevel": "AA",
-                "summary": "The parts of graphical objects required to understand the content, and the visual information required to identify UI components and states, have a contrast ratio of at least 3:1 against adjacent colors.",
+                "summary": "Części obiektów graficznych wymagane do zrozumienia treści oraz informacje wizualne wymagane do zidentyfikowania komponentów i stanów interfejsu użytkownika mają współczynnik kontrastu wynoszący co najmniej 3:1 względem sąsiednich kolorów.",
                 "rules": []
             },
             {
                 "num": "1.4.12",
-                "name": "Text Spacing",
+                "name": "Odstępy w tekście",
                 "wcagLevel": "AA",
-                "summary": "No loss of content or functionality occurs when users change letter, word and paragraph spacing, as well as line height.",
+                "summary": "Zmiana odstępów między literami, wyrazami i akapitami, a także wysokości wiersza nie powoduje utraty treści ani funkcjonalności.",
                 "rules": []
             },
             {
                 "num": "1.4.13",
-                "name": "Content on Hover or Focus",
+                "name": "Treść spod kursora lub fokusu",
                 "wcagLevel": "AA",
-                "summary": "Where hover or focus actions cause additional content to become visible and hidden, the additional content is dismissable, hoverable and persistent.",
+                "summary": "Gdy jakaś treść staje się widoczna po otrzymaniu kursora lub fokusu klawiatury, dodatkowa treść może być odrzucona, wskazana kursorem lub pozostaje widoczna do usunięcia wskazania lub gdy przestaje być ważna.",
                 "rules": []
             },
             {
                 "num": "2.1.1",
-                "name": "Keyboard",
+                "name": "Klawiatura",
                 "wcagLevel": "A",
-                "summary": "All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes.",
+                "summary": "Wszystkie funkcjonalności w treści są obsługiwane za pomocą interfejsu klawiatury, bez wymogu określonego czasu użycia poszczególnych klawiszy.",
                 "rules": [
                     {
                         id: "RPT_Elem_EventMouseAndKey",
@@ -20460,9 +20473,9 @@ var a11yRulesets = [
             },
             {
                 "num": "2.1.2",
-                "name": "No Keyboard Trap",
+                "name": "Bez pułapki na klawiaturę",
                 "wcagLevel": "A",
-                "summary": "If keyboard focus can be moved to a component using a keyboard interface, then focus can be moved away from that component using only a keyboard interface, and, if it requires more than unmodified arrow or tab keys or other standard exit methods, the user is advised of the method for moving focus away.",
+                "summary": "Jeśli fokus klawiatury można przemieścić do danego komponentu treści za pomocą interfejsu klawiatury, to może on być z niego usunięty również za pomocą interfejsu klawiatury, a jeśli wymagane jest użycie czegoś więcej niż tylko strzałek, tabulatora lub innych standardowych metod wyjścia, użytkownik musi otrzymać odpowiednią podpowiedź, w jaki sposób usunąć fokus z danego komponentu.",
                 "rules": [
                     {
                         id: "HAAC_Media_DocumentTrigger2",
@@ -20473,16 +20486,16 @@ var a11yRulesets = [
             },
             {
                 "num": "2.1.4",
-                "name": "Character Key Shortcuts",
+                "name": "Jednoznakowe skróty klawiaturowe",
                 "wcagLevel": "A",
-                "summary": "If a keyboard shortcut is implemented using only letter, punctuation, number or symbol characters, then the shortcut can be turned off, remapped or activated only on focus.",
+                "summary": "Jeśli skrót klawiaturowy jest zaimplementowany w treści tylko przy użyciu jednego znaku (litery, w tym wielkiej i małej, cyfry lub symbolu), to skrót można wyłączyć, przemapować lub aktywować tylko, gdy komponent ma fokus.",
                 "rules": []
             },
             {
                 "num": "2.2.1",
-                "name": "Timing Adjustable",
+                "name": "Dostosowanie czasu",
                 "wcagLevel": "A",
-                "summary": "For each time limit that is set by the content, the user can turn off, adjust, or extend the limit.",
+                "summary": "Gdy czas korzystania z treści jest ograniczany, użytkownik może wyłączyć, dostosować lub przedłużyć limit.",
                 "rules": [
                     {
                         id: "RPT_Meta_Refresh",
@@ -20498,9 +20511,9 @@ var a11yRulesets = [
             },
             {
                 "num": "2.2.2",
-                "name": "Pause, Stop, Hide",
+                "name": "Pauza, zatrzymanie, ukrycie",
                 "wcagLevel": "A",
-                "summary": "For moving, blinking, scrolling, or auto-updating information, the user can pause, stop, hide or adjust the information.",
+                "summary": "Gdy treść się porusza, migocze, przesuwa lub jest automatycznie aktualizowana, użytkownik może wstrzymać, zatrzymać, ukryć lub dostosować częstość aktualizacji.",
                 "rules": [
                     {
                         id: "RPT_Marquee_Trigger",
@@ -20521,16 +20534,16 @@ var a11yRulesets = [
             },
             {
                 "num": "2.3.1",
-                "name": "Three Flashes or Below Threshold",
+                "name": "Trzy błyski lub wartości poniżej progu",
                 "wcagLevel": "A",
-                "summary": "Content does not contain anything that flashes more than three times in any one second period, or the flash is below the general flash and red flash thresholds.",
+                "summary": "Treść nie zawiera niczego, co błyska częściej niż trzy razy w ciągu jednej sekundy, lub też błysk nie przekracza wartości granicznych dla błysków ogólnych i czerwonych.",
                 "rules": []
             },
             {
                 "num": "2.4.1",
-                "name": "Bypass Blocks",
+                "name": "Możliwość pominięcia bloków",
                 "wcagLevel": "A",
-                "summary": "A mechanism is available to bypass blocks of content that are repeated on multiple Web pages.",
+                "summary": "Istnieje mechanizm, który umożliwia pominięcie bloków treści powtarzanych na wielu stronach internetowych.",
                 "rules": [
                     {
                         id: "WCAG20_Frame_HasTitle",
@@ -20666,9 +20679,9 @@ var a11yRulesets = [
             },
             {
                 "num": "2.4.2",
-                "name": "Page Titled",
+                "name": "Tytuły stron",
                 "wcagLevel": "A",
-                "summary": "Web pages, non-web documents, and software have titles that describe topic or purpose.",
+                "summary": "Strony internetowe, dokumenty inne niż internetowe i oprogramowanie mają tytuły, które opisują ich cel lub przedstawiają ich temat.",
                 "rules": [
                     {
                         id: "WCAG20_Doc_HasTitle",
@@ -20684,16 +20697,16 @@ var a11yRulesets = [
             },
             {
                 "num": "2.4.3",
-                "name": "Focus Order",
+                "name": "Kolejność fokusu",
                 "wcagLevel": "A",
-                "summary": "If content can be navigated sequentially and the navigation sequences affect meaning or operation, focusable components receive focus in an order that preserves meaning and operability.",
+                "summary": "Jeśli po treści można nawigować sekwencyjnie, a kolejność nawigacji wpływa na zrozumienie lub funkcjonalność strony, komponenty przyjmują fokus w kolejności, dzięki której zachowany jest sens i funkcjonalność treści.",
                 "rules": []
             },
             {
                 "num": "2.4.4",
-                "name": "Link Purpose (In Context)",
+                "name": "Cel łącza (w kontekście)",
                 "wcagLevel": "A",
-                "summary": "The purpose of each link can be determined from the link text alone or from the link text together with its programmatically determined link content.",
+                "summary": "Cel każdego łącza można określić na podstawie samej treści łącza lub treści tekstu powiązanego z kontekstem łącza określonym programowo.",
                 "rules": [
                     {
                         id: "WCAG20_A_HasText",
@@ -20704,16 +20717,16 @@ var a11yRulesets = [
             },
             {
                 "num": "2.4.5",
-                "name": "Multiple Ways",
+                "name": "Wiele dróg",
                 "wcagLevel": "AA",
-                "summary": "More than one way is available to locate a Web page within a set of Web pages, except where the Web Page is the result of, or a step in, a process.",
+                "summary": "Istnieje więcej niż jeden sposób umożliwiający zlokalizowanie strony internetowej w zestawie stron internetowych, z wyjątkiem sytuacji, kiedy dana strona jest wynikiem jakiejś procedury lub jednym z jej etapów.",
                 "rules": []
             },
             {
                 "num": "2.4.6",
-                "name": "Headings and Labels",
+                "name": "Nagłówki i etykiety",
                 "wcagLevel": "AA",
-                "summary": "Headings and labels describe topic or purpose.",
+                "summary": "Nagłówki i etykiety opisują temat lub cel treści.",
                 "rules": [
                     {
                         id: "RPT_Header_HasContent",
@@ -20724,9 +20737,9 @@ var a11yRulesets = [
             },
             {
                 "num": "2.4.7",
-                "name": "Focus Visible",
+                "name": "Widoczny fokus",
                 "wcagLevel": "AA",
-                "summary": "Any keyboard operable user interface has a mode of operation where the keyboard focus indicator is visible.",
+                "summary": "Każdy interfejs posiadający możliwość obsługi przy pomocy klawiatury ma tryb obsługi, w którym fokus klawiatury jest stale widoczny.",
                 "rules": [
                     {
                         id: "RPT_Style_HinderFocus1",
@@ -20742,23 +20755,23 @@ var a11yRulesets = [
             },
             {
                 "num": "2.5.1",
-                "name": "Pointer Gestures",
+                "name": "Gesty dotykowe",
                 "wcagLevel": "A",
-                "summary": "All functionality that uses multipoint or path-based gestures for operation can be operated with a single pointer without a path-based gesture.",
+                "summary": "Wszystkie funkcjonalności wykorzystujące do obsługi gesty wielopunktowe lub oparte na ścieżkach mogą być obsługiwane za pomocą dotyku jednopunktowego bez gestu opartego na ścieżce.",
                 "rules": []
             },
             {
                 "num": "2.5.2",
-                "name": "Pointer Cancellation",
+                "name": "Rezygnacja ze wskazania",
                 "wcagLevel": "A",
-                "summary": "For functionality that can be operated using a single pointer, completion of the function is on the up-event with an ability to abort, undo or reverse the outcome.",
+                "summary": "W przypadku funkcjonalności, które są wywoływane za pomocą dotyku jednopunktowego, zakończenie funkcjonalności następuje wskutek zwolnienia nacisku albo może być przerwane lub cofnięte.",
                 "rules": []
             },
             {
                 "num": "2.5.3",
-                "name": "Label in Name",
+                "name": "Etykieta w nazwie",
                 "wcagLevel": "A",
-                "summary": "For user interface components with labels that include text or images of text, the accessible name contains the text that is presented visually.",
+                "summary": "W przypadku komponentów interfejsu użytkownika z etykietami zawierającymi tekst lub obrazy tekstu, nazwa zawiera tekst, który jest prezentowany wizualnie.",
                 "rules": [
                     {
                         id: "WCAG21_Label_Accessible",
@@ -20769,16 +20782,16 @@ var a11yRulesets = [
             },
             {
                 "num": "2.5.4",
-                "name": "Motion Actuation",
+                "name": "Aktywowanie ruchem",
                 "wcagLevel": "A",
-                "summary": "Functionality that can be operated by motion can also be operated by user interface components, and the motion trigger can be disabled.",
+                "summary": "Funkcjonalność, którą można obsługiwać za pomocą ruchu urządzenia lub ruchu użytkownika, można również obsługiwać za pomocą komponentów interfejsu użytkownika, a reagowanie na ruch można wyłączyć.",
                 "rules": []
             },
             {
                 "num": "3.1.1",
-                "name": "Language of Page",
+                "name": "Język strony",
                 "wcagLevel": "A",
-                "summary": "The default human language of Web pages, non-Web documents, or software can be programmatically determined.",
+                "summary": "Domyślny język naturalny każdej strony internetowej może zostać odczytany przez program komputerowy.",
                 "rules": [
                     {
                         id: "WCAG20_Html_HasLang",
@@ -20789,9 +20802,9 @@ var a11yRulesets = [
             },
             {
                 "num": "3.1.2",
-                "name": "Language of Parts",
+                "name": "Język części",
                 "wcagLevel": "AA",
-                "summary": "The human language of each passage or phrase in the content can be programmatically determined.",
+                "summary": "Język naturalny każdej innojęzycznej części lub frazy zawartej w treści może zostać odczytany przez program komputerowy.",
                 "rules": [
                     {
                         id: "WCAG20_Elem_Lang_Valid",
@@ -20802,9 +20815,9 @@ var a11yRulesets = [
             },
             {
                 "num": "3.2.1",
-                "name": "On Focus",
+                "name": "Po otrzymaniu fokusu",
                 "wcagLevel": "A",
-                "summary": "When any component receives focus, it does not initiate a change of context.",
+                "summary": "Przyjęcie fokusu przez dowolny komponent interfejsu użytkownika nie powoduje nieoczekiwanej zmiany kontekstu.",
                 "rules": [
                     {
                         id: "WCAG20_Select_NoChangeAction",
@@ -20820,9 +20833,9 @@ var a11yRulesets = [
             },
             {
                 "num": "3.2.2",
-                "name": "On Input",
+                "name": "Podczas wprowadzania danych",
                 "wcagLevel": "A",
-                "summary": "Changing the setting of any user interface component does not automatically cause a change of context unless the user has been advised of the behavior before using the component.",
+                "summary": "Zmiana ustawień jakiegokolwiek komponentu interfejsu użytkownika nie powoduje automatycznej zmiany kontekstu, chyba, że użytkownik został poinformowany o takim działaniu, zanim zaczął korzystać z komponentu.",
                 "rules": [
                     {
                         id: "WCAG20_A_TargetAndText",
@@ -20853,23 +20866,23 @@ var a11yRulesets = [
             },
             {
                 "num": "3.2.3",
-                "name": "Consistent Navigation",
+                "name": "Spójna nawigacja",
                 "wcagLevel": "AA",
-                "summary": "Navigational mechanisms that are repeated on multiple Web pages within a set of Web pages occur in the same relative order each time they are repeated, unless a change is initiated by the user.",
+                "summary": "Mechanizmy nawigacji, które powtarzają się na wielu stronach internetowych w ramach jednego zestawu stron internetowych, występują w tej samej względnej kolejności za każdym razem, gdy są powtarzane, chyba że zmiana jest inicjowana przez użytkownika.",
                 "rules": []
             },
             {
                 "num": "3.2.4",
-                "name": "Consistent Identification",
+                "name": "Spójna identyfikacja",
                 "wcagLevel": "AA",
-                "summary": "Components that have the same functionality within a set of Web pages are identified consistently.",
+                "summary": "Komponenty, które mają tę samą funkcjonalność w ramach jednego zestawu stron internetowych, są w taki sam sposób zidentyfikowane.",
                 "rules": []
             },
             {
                 "num": "3.3.1",
-                "name": "Error Identification",
+                "name": "Identyfikacja błędu",
                 "wcagLevel": "A",
-                "summary": "If an input error is automatically detected, the item that is in error is identified and the error is described to the user in text.",
+                "summary": "Jeśli automatycznie zostanie wykryty błąd wprowadzania danych, system wskazuje błędny element, a użytkownik otrzymuje opis błędu w postaci tekstu.",
                 "rules": [
                     {
                         id: "HAAC_Aria_ErrorMessage",
@@ -20880,9 +20893,9 @@ var a11yRulesets = [
             },
             {
                 "num": "3.3.2",
-                "name": "Labels or Instructions",
+                "name": "Etykiety lub instrukcje",
                 "wcagLevel": "A",
-                "summary": "Labels or instructions are provided when content requires user input.",
+                "summary": "Gdy w treści wymagane jest wprowadzenie danych przez użytkownika, zapewnione są etykiety lub instrukcje.",
                 "rules": [
                     {
                         id: "WCAG20_Input_LabelBefore",
@@ -20918,23 +20931,23 @@ var a11yRulesets = [
             },
             {
                 "num": "3.3.3",
-                "name": "Error Suggestion",
+                "name": "Sugestie korekty błędów",
                 "wcagLevel": "AA",
-                "summary": "If an input error is automatically detected and suggestions for correction are known, then the suggestions are provided to the user, unless it would jeopardize the security or purpose of the content.",
+                "summary": "Jeśli automatycznie zostanie wykryty błąd wprowadzania danych i znane są sugestie korekty, wtedy użytkownik otrzymuje takie sugestie, chyba, że zagrażałoby to bezpieczeństwu treści lub zmieniło jej cel.",
                 "rules": []
             },
             {
                 "num": "3.3.4",
-                "name": "Error Prevention (Legal, Financial, Data)",
+                "name": "Zapobieganie błędom (prawnym, finansowym, w danych)",
                 "wcagLevel": "AA",
-                "summary": "For content that cause legal commitments or financial transactions for the user to occur, that modify or delete user-controllable data in data storage systems, or that submit user test responses, the user can reverse, correct, or confirm the action.",
+                "summary": "W przypadku treści, które powodują zobowiązania prawne, albo na których użytkownik przeprowadza transakcje finansowe, modyfikuje lub usuwa dane w systemach przechowywania danych, nad którymi ma kontrolę, albo udziela odpowiedzi na testy, użytkownik może cofnąć, poprawić lub potwierdzić działanie.",
                 "rules": []
             },
             {
                 "num": "4.1.1",
-                "name": "Parsing",
+                "name": "Poprawność kodu",
                 "wcagLevel": "A",
-                "summary": "In content implemented using markup languages, elements have complete start and end tags, elements are nested according to their specifications, elements do not contain duplicate attributes, and any IDs are unique, except where the specifications allow these features.",
+                "summary": "W treści wprowadzonej przy użyciu języka znaczników, elementy posiadają kompletne znaczniki początkowe i końcowe, elementy są zagnieżdżane według swoich specyfikacji, nie posiadają zduplikowanych atrybutów, a wszystkie ID są unikalne, z wyjątkiem przypadków, kiedy specyfikacja zezwala na wyżej wymienione cechy.",
                 "rules": [
                     {
                         id: "RPT_Elem_UniqueId",
@@ -20950,9 +20963,9 @@ var a11yRulesets = [
             },
             {
                 "num": "4.1.2",
-                "name": "Name, Role, Value",
+                "name": "Nazwa, rola, wartość",
                 "wcagLevel": "A",
-                "summary": "For all user interface components (including, but not limited to: form elements, links and components generated by scripts), the name and role can be programmatically determined; states, properties, and values that can be set by the user can be programmatically set; and notification of changes to these items is available to user agents, including assistive technologies.",
+                "summary": "Dla wszystkich komponentów interfejsu użytkownika (w tym, ale nie tylko, elementów formularzy, łączy oraz komponentów wygenerowanych przez skrypty) nazwa oraz rola mogą być określone programowo; stan, właściwości oraz wartości, które mogą być ustawione przez użytkownika, mogą również być ustawione programowo; powiadomienie o zmianach w tych elementach dostępne jest dla programów użytkownika, w tym technologii wspomagających.",
                 "rules": [
                     {
                         id: "WCAG20_Input_ExplicitLabel",
@@ -21097,13 +21110,13 @@ var a11yRulesets = [
         id: "WCAG_2_1",
         name: "WCAG 2.1 (A, AA)",
         category: IEngine_1.eRuleCategory.ACCESSIBILITY,
-        description: "Rules for WCAG 2.1 AA. This is the current W3C recommendation. Content that conforms to WCAG 2.1 also conforms to WCAG 2.0.",
+        description: "Reguły dla WCAG 2.1 AA. Jest to aktualne zalecenie W3C. Treść, która jest zgodna z WCAG 2.1 jest również zgodna z WCAG 2.0.",
         "checkpoints": [
             {
                 "num": "1.1.1",
-                "name": "Non-text Content",
+                "name": "Treść nietekstowa",
                 "wcagLevel": "A",
-                "summary": "All non-text content that is presented to the user has a text alternative that serves the equivalent purpose.",
+                "summary": "Wszystkie treści nietekstowe przedstawione użytkownikowi mają alternatywę tekstową, która służy równoważnemu celowi.",
                 "rules": [
                     {
                         id: "WCAG20_Input_ExplicitLabelImage",
@@ -21234,9 +21247,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.2.1",
-                "name": "Audio-only and Video-only (Prerecorded)",
+                "name": "Tylko audio lub tylko wideo (nagranie)",
                 "wcagLevel": "A",
-                "summary": "For prerecorded audio-only or video-only media, an alternative provides equivalent information.",
+                "summary": "Dla mediów nagranych w systemie tylko audio lub tylko wideo, w alternatywny sposób zapewnione są równoważne informacje.",
                 "rules": [
                     {
                         id: "HAAC_Video_HasNoTrack",
@@ -21252,9 +21265,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.2.2",
-                "name": "Captions (Prerecorded)",
+                "name": "Napisy rozszerzone (nagranie)",
                 "wcagLevel": "A",
-                "summary": "Captions are provided for all prerecorded audio content in synchronized media.",
+                "summary": "Do wszystkich nagrań audio w multimediach zsynchronizowanych zapewnione są napisy rozszerzone.",
                 "rules": [
                     {
                         id: "HAAC_Video_HasNoTrack",
@@ -21265,9 +21278,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.2.3",
-                "name": "Audio Description or Media Alternative (Prerecorded)",
+                "name": "Audiodeskrypcja lub alternatywa tekstowa dla mediów (nagranie)",
                 "wcagLevel": "A",
-                "summary": "An alternative for time-based media or audio description of the prerecorded video content is provided for synchronized media.",
+                "summary": "Zapewniona jest alternatywa dla multimediów lub audiodeskrypcja dla nagrań wideo w multimediach zsynchronizowanych.",
                 "rules": [
                     {
                         id: "RPT_Media_VideoReferenceTrigger",
@@ -21278,9 +21291,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.2.4",
-                "name": "Captions (Live)",
+                "name": "Napisy rozszerzone (na żywo)",
                 "wcagLevel": "AA",
-                "summary": "Captions are provided for all live audio content in synchronized media.",
+                "summary": "Do wszystkich treści audio w multimediach zsynchronizowanych przekazywanych na żywo zapewnione są napisy rozszerzone.",
                 "rules": [
                     {
                         id: "HAAC_Video_HasNoTrack",
@@ -21296,9 +21309,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.2.5",
-                "name": "Audio Description (Prerecorded)",
+                "name": "Audiodeskrypcja (nagranie)",
                 "wcagLevel": "AA",
-                "summary": "Audio description is provided for all prerecorded video content in synchronized media.",
+                "summary": "Zapewniona jest audiodeskrypcja dla wszystkich nagrań wideo w multimediach zsynchronizowanych.",
                 "rules": [
                     {
                         id: "RPT_Media_VideoReferenceTrigger",
@@ -21309,9 +21322,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.3.1",
-                "name": "Info and Relationships",
+                "name": "Informacje i relacje",
                 "wcagLevel": "A",
-                "summary": "Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text.",
+                "summary": "Informacje, struktura oraz relacje między treściami przekazywane poprzez prezentację mogą być odczytane przez program komputerowy lub istnieją w postaci tekstu.",
                 "rules": [
                     {
                         id: "RPT_Headers_FewWords",
@@ -21437,9 +21450,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.3.2",
-                "name": "Meaningful Sequence",
+                "name": "Zrozumiała kolejność",
                 "wcagLevel": "A",
-                "summary": "When the sequence in which content is presented affects its meaning, a correct reading sequence can be programmatically determined.",
+                "summary": "Jeśli kolejność, w jakiej przedstawiona jest treść, ma znaczenie dla zrozumienia treści — prawidłowa kolejność odczytu musi być określona programowo.",
                 "rules": [
                     {
                         id: "Valerie_Elem_DirValid",
@@ -21455,9 +21468,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.3.3",
-                "name": "Sensory Characteristics",
+                "name": "Właściwości zmysłowe",
                 "wcagLevel": "A",
-                "summary": "Instructions provided for understanding and operating content do not rely solely on sensory characteristics of components such as shape, size, visual location, orientation, or sound.",
+                "summary": "Instrukcje co do zrozumienia i operowania treścią nie opierają się wyłącznie na właściwościach zmysłowych, takich jak: kształt, rozmiar, wzrokowa lokalizacja, orientacja w przestrzeni lub dźwięk.",
                 "rules": [
                     {
                         id: "RPT_Text_SensoryReference",
@@ -21468,16 +21481,16 @@ var a11yRulesets = [
             },
             {
                 "num": "1.3.4",
-                "name": "Orientation",
+                "name": "Orientacja",
                 "wcagLevel": "A",
-                "summary": "Content does not restrict its view and operation to a single display orientation, such as portrait or landscape.",
+                "summary": "Treść nie ogranicza swojego widoku i działania do jednej orientacji wyświetlania, takiej jak pionowa lub pozioma.",
                 "rules": []
             },
             {
                 "num": "1.3.5",
-                "name": "Identify Input Purpose",
+                "name": "Określenie pożądanej wartości",
                 "wcagLevel": "AA",
-                "summary": "The purpose of each input field that collects information about the user can be programmatically determined when the field serves a common purpose.",
+                "summary": "Cel każdego pola zbierającego informacje o użytkowniku może być programowo określony.",
                 "rules": [
                     {
                         id: "WCAG21_Input_Autocomplete",
@@ -21488,9 +21501,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.4.1",
-                "name": "Use of Color",
+                "name": "Użycie koloru",
                 "wcagLevel": "A",
-                "summary": "Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.",
+                "summary": "Kolor nie jest wykorzystywany jako jedyny wizualny sposób przekazywania informacji, wskazywania czynności do wykonania lub oczekiwania na odpowiedź, czy też wyróżniania elementów wizualnych.",
                 "rules": [
                     {
                         id: "RPT_Font_ColorInForm",
@@ -21506,9 +21519,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.4.2",
-                "name": "Audio Control",
+                "name": "Kontrola odtwarzania dźwięku",
                 "wcagLevel": "A",
-                "summary": "If any audio plays automatically for more than 3 seconds, either a mechanism is available to pause or stop the audio, or a mechanism is available to control audio volume independently from the overall system volume level.",
+                "summary": "Jeśli jakieś nagranie audio włącza się automatycznie na danej stronie i jest odtwarzane przez okres dłuższy niż 3 sekundy, istnieje mechanizm umożliwiający przerwanie lub wyłączenie nagrania albo mechanizm kontrolujący poziom głośności niezależnie od poziomu głośności całego systemu.",
                 "rules": [
                     {
                         id: "RPT_Embed_AutoStart",
@@ -21519,9 +21532,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.4.3",
-                "name": "Contrast (Minimum)",
+                "name": "Kontrast (minimalny)",
                 "wcagLevel": "AA",
-                "summary": "The visual presentation of text and images of text has a contrast ratio of at least 4.5:1, with a 3:1 ratio for large-scale text.",
+                "summary": "Wizualna prezentacja tekstu lub obrazu tekstu posiada współczynnik kontrastu wynoszący 4,5:1 w przypadku zwykłego tekstu, a 3:1 w przypadku dużego tekstu.",
                 "rules": [
                     {
                         id: "IBMA_Color_Contrast_WCAG2AA",
@@ -21537,9 +21550,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.4.4",
-                "name": "Resize Text",
+                "name": "Zmiana rozmiaru tekstu",
                 "wcagLevel": "AA",
-                "summary": "Text can be resized without assistive technology up to 200 percent without loss of content or functionality.",
+                "summary": "Rozmiar tekstu może zostać powiększony do 200% bez użycia technologii wspomagających oraz bez utraty treści lub funkcjonalności.",
                 "rules": [
                     {
                         id: "WCAG21_Style_Viewport",
@@ -21550,44 +21563,44 @@ var a11yRulesets = [
             },
             {
                 "num": "1.4.5",
-                "name": "Images of Text",
+                "name": "Obrazy tekstu",
                 "wcagLevel": "AA",
-                "summary": "If the technologies being used can achieve the visual presentation, text is used to convey information rather than images of text.",
+                "summary": "Jeśli wykorzystywane technologie mogą przedstawiać treść wizualnie, do przekazywania informacji wykorzystuje się tekst, a nie obraz tekstu.",
                 "rules": []
             },
             {
                 "num": "1.4.10",
-                "name": "Reflow",
+                "name": "Dopasowanie do ekranu",
                 "wcagLevel": "AA",
-                "summary": "Content can reflow without loss of information or functionality, and without requiring scrolling in two dimensions.",
+                "summary": "Treść może być prezentowana bez utraty informacji lub funkcjonalności, bez konieczności przewijania w dwóch wymiarach.",
                 "rules": []
             },
             {
                 "num": "1.4.11",
-                "name": "Non-text Contrast",
+                "name": "Kontrast elementów nietekstowych",
                 "wcagLevel": "AA",
-                "summary": "The parts of graphical objects required to understand the content, and the visual information required to identify UI components and states, have a contrast ratio of at least 3:1 against adjacent colors.",
+                "summary": "Części obiektów graficznych wymagane do zrozumienia treści oraz informacje wizualne wymagane do zidentyfikowania komponentów i stanów interfejsu użytkownika mają współczynnik kontrastu wynoszący co najmniej 3:1 względem sąsiednich kolorów.",
                 "rules": []
             },
             {
                 "num": "1.4.12",
-                "name": "Text Spacing",
+                "name": "Odstępy w tekście",
                 "wcagLevel": "AA",
-                "summary": "No loss of content or functionality occurs when users change letter, word and paragraph spacing, as well as line height.",
+                "summary": "Zmiana odstępów między literami, wyrazami i akapitami, a także wysokości wiersza nie powoduje utraty treści ani funkcjonalności.",
                 "rules": []
             },
             {
                 "num": "1.4.13",
-                "name": "Content on Hover or Focus",
+                "name": "Treść spod kursora lub fokusu",
                 "wcagLevel": "AA",
-                "summary": "Where hover or focus actions cause additional content to become visible and hidden, the additional content is dismissable, hoverable and persistent.",
+                "summary": "Gdy jakaś treść staje się widoczna po otrzymaniu kursora lub fokusu klawiatury, dodatkowa treść może być odrzucona, wskazana kursorem lub pozostaje widoczna do usunięcia wskazania lub gdy przestaje być ważna.",
                 "rules": []
             },
             {
                 "num": "2.1.1",
-                "name": "Keyboard",
+                "name": "Klawiatura",
                 "wcagLevel": "A",
-                "summary": "All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes.",
+                "summary": "Wszystkie funkcjonalności w treści są obsługiwane za pomocą interfejsu klawiatury, bez wymogu określonego czasu użycia poszczególnych klawiszy.",
                 "rules": [
                     {
                         id: "RPT_Elem_EventMouseAndKey",
@@ -21623,9 +21636,9 @@ var a11yRulesets = [
             },
             {
                 "num": "2.1.2",
-                "name": "No Keyboard Trap",
+                "name": "Bez pułapki na klawiaturę",
                 "wcagLevel": "A",
-                "summary": "If keyboard focus can be moved to a component using a keyboard interface, then focus can be moved away from that component using only a keyboard interface, and, if it requires more than unmodified arrow or tab keys or other standard exit methods, the user is advised of the method for moving focus away.",
+                "summary": "Jeśli fokus klawiatury można przemieścić do danego komponentu treści za pomocą interfejsu klawiatury, to może on być z niego usunięty również za pomocą interfejsu klawiatury, a jeśli wymagane jest użycie czegoś więcej niż tylko strzałek, tabulatora lub innych standardowych metod wyjścia, użytkownik musi otrzymać odpowiednią podpowiedź, w jaki sposób usunąć fokus z danego komponentu.",
                 "rules": [
                     {
                         id: "HAAC_Media_DocumentTrigger2",
@@ -21636,16 +21649,16 @@ var a11yRulesets = [
             },
             {
                 "num": "2.1.4",
-                "name": "Character Key Shortcuts",
+                "name": "Jednoznakowe skróty klawiaturowe",
                 "wcagLevel": "A",
-                "summary": "If a keyboard shortcut is implemented using only letter, punctuation, number or symbol characters, then the shortcut can be turned off, remapped or activated only on focus.",
+                "summary": "Jeśli skrót klawiaturowy jest zaimplementowany w treści tylko przy użyciu jednego znaku (litery, w tym wielkiej i małej, cyfry lub symbolu), to skrót można wyłączyć, przemapować lub aktywować tylko, gdy komponent ma fokus.",
                 "rules": []
             },
             {
                 "num": "2.2.1",
-                "name": "Timing Adjustable",
+                "name": "Dostosowanie czasu",
                 "wcagLevel": "A",
-                "summary": "For each time limit that is set by the content, the user can turn off, adjust, or extend the limit.",
+                "summary": "Gdy czas korzystania z treści jest ograniczany, użytkownik może wyłączyć, dostosować lub przedłużyć limit.",
                 "rules": [
                     {
                         id: "RPT_Meta_Refresh",
@@ -21661,9 +21674,9 @@ var a11yRulesets = [
             },
             {
                 "num": "2.2.2",
-                "name": "Pause, Stop, Hide",
+                "name": "Pauza, zatrzymanie, ukrycie",
                 "wcagLevel": "A",
-                "summary": "For moving, blinking, scrolling, or auto-updating information, the user can pause, stop, hide or adjust the information.",
+                "summary": "Gdy treść się porusza, migocze, przesuwa lub jest automatycznie aktualizowana, użytkownik może wstrzymać, zatrzymać, ukryć lub dostosować częstość aktualizacji.",
                 "rules": [
                     {
                         id: "RPT_Marquee_Trigger",
@@ -21684,16 +21697,16 @@ var a11yRulesets = [
             },
             {
                 "num": "2.3.1",
-                "name": "Three Flashes or Below Threshold",
+                "name": "Trzy błyski lub wartości poniżej progu",
                 "wcagLevel": "A",
-                "summary": "Content does not contain anything that flashes more than three times in any one second period, or the flash is below the general flash and red flash thresholds.",
+                "summary": "Treść nie zawiera niczego, co błyska częściej niż trzy razy w ciągu jednej sekundy, lub też błysk nie przekracza wartości granicznych dla błysków ogólnych i czerwonych.",
                 "rules": []
             },
             {
                 "num": "2.4.1",
-                "name": "Bypass Blocks",
+                "name": "Możliwość pominięcia bloków",
                 "wcagLevel": "A",
-                "summary": "A mechanism is available to bypass blocks of content that are repeated on multiple Web pages.",
+                "summary": "Istnieje mechanizm, który umożliwia pominięcie bloków treści powtarzanych na wielu stronach internetowych.",
                 "rules": [
                     {
                         id: "WCAG20_Frame_HasTitle",
@@ -21829,9 +21842,9 @@ var a11yRulesets = [
             },
             {
                 "num": "2.4.2",
-                "name": "Page Titled",
+                "name": "Tytuły stron",
                 "wcagLevel": "A",
-                "summary": "Web pages, non-web documents, and software have titles that describe topic or purpose.",
+                "summary": "Strony internetowe, dokumenty inne niż internetowe i oprogramowanie mają tytuły, które opisują ich cel lub przedstawiają ich temat.",
                 "rules": [
                     {
                         id: "WCAG20_Doc_HasTitle",
@@ -21847,16 +21860,16 @@ var a11yRulesets = [
             },
             {
                 "num": "2.4.3",
-                "name": "Focus Order",
+                "name": "Kolejność fokusu",
                 "wcagLevel": "A",
-                "summary": "If content can be navigated sequentially and the navigation sequences affect meaning or operation, focusable components receive focus in an order that preserves meaning and operability.",
+                "summary": "Jeśli po treści można nawigować sekwencyjnie, a kolejność nawigacji wpływa na zrozumienie lub funkcjonalność strony, komponenty przyjmują fokus w kolejności, dzięki której zachowany jest sens i funkcjonalność treści.",
                 "rules": []
             },
             {
                 "num": "2.4.4",
-                "name": "Link Purpose (In Context)",
+                "name": "Cel łącza (w kontekście)",
                 "wcagLevel": "A",
-                "summary": "The purpose of each link can be determined from the link text alone or from the link text together with its programmatically determined link content.",
+                "summary": "Cel każdego łącza można określić na podstawie samej treści łącza lub treści tekstu powiązanego z kontekstem łącza określonym programowo.",
                 "rules": [
                     {
                         id: "WCAG20_A_HasText",
@@ -21867,16 +21880,16 @@ var a11yRulesets = [
             },
             {
                 "num": "2.4.5",
-                "name": "Multiple Ways",
+                "name": "Wiele dróg",
                 "wcagLevel": "AA",
-                "summary": "More than one way is available to locate a Web page within a set of Web pages, except where the Web Page is the result of, or a step in, a process.",
+                "summary": "Istnieje więcej niż jeden sposób umożliwiający zlokalizowanie strony internetowej w zestawie stron internetowych, z wyjątkiem sytuacji, kiedy dana strona jest wynikiem jakiejś procedury lub jednym z jej etapów.",
                 "rules": []
             },
             {
                 "num": "2.4.6",
-                "name": "Headings and Labels",
+                "name": "Nagłówki i etykiety",
                 "wcagLevel": "AA",
-                "summary": "Headings and labels describe topic or purpose.",
+                "summary": "Nagłówki i etykiety opisują temat lub cel treści.",
                 "rules": [
                     {
                         id: "RPT_Header_HasContent",
@@ -21887,9 +21900,9 @@ var a11yRulesets = [
             },
             {
                 "num": "2.4.7",
-                "name": "Focus Visible",
+                "name": "Widoczny fokus",
                 "wcagLevel": "AA",
-                "summary": "Any keyboard operable user interface has a mode of operation where the keyboard focus indicator is visible.",
+                "summary": "Każdy interfejs posiadający możliwość obsługi przy pomocy klawiatury ma tryb obsługi, w którym fokus klawiatury jest stale widoczny.",
                 "rules": [
                     {
                         id: "RPT_Style_HinderFocus1",
@@ -21905,23 +21918,23 @@ var a11yRulesets = [
             },
             {
                 "num": "2.5.1",
-                "name": "Pointer Gestures",
+                "name": "Gesty dotykowe",
                 "wcagLevel": "A",
-                "summary": "All functionality that uses multipoint or path-based gestures for operation can be operated with a single pointer without a path-based gesture.",
+                "summary": "Wszystkie funkcjonalności wykorzystujące do obsługi gesty wielopunktowe lub oparte na ścieżkach mogą być obsługiwane za pomocą dotyku jednopunktowego bez gestu opartego na ścieżce.",
                 "rules": []
             },
             {
                 "num": "2.5.2",
-                "name": "Pointer Cancellation",
+                "name": "Rezygnacja ze wskazania",
                 "wcagLevel": "A",
-                "summary": "For functionality that can be operated using a single pointer, completion of the function is on the up-event with an ability to abort, undo or reverse the outcome.",
+                "summary": "W przypadku funkcjonalności, które są wywoływane za pomocą dotyku jednopunktowego, zakończenie funkcjonalności następuje wskutek zwolnienia nacisku albo może być przerwane lub cofnięte.",
                 "rules": []
             },
             {
                 "num": "2.5.3",
-                "name": "Label in Name",
+                "name": "Etykieta w nazwie",
                 "wcagLevel": "A",
-                "summary": "For user interface components with labels that include text or images of text, the accessible name contains the text that is presented visually.",
+                "summary": "W przypadku komponentów interfejsu użytkownika z etykietami zawierającymi tekst lub obrazy tekstu, nazwa zawiera tekst, który jest prezentowany wizualnie.",
                 "rules": [
                     {
                         id: "WCAG21_Label_Accessible",
@@ -21932,16 +21945,16 @@ var a11yRulesets = [
             },
             {
                 "num": "2.5.4",
-                "name": "Motion Actuation",
+                "name": "Aktywowanie ruchem",
                 "wcagLevel": "A",
-                "summary": "Functionality that can be operated by motion can also be operated by user interface components, and the motion trigger can be disabled.",
+                "summary": "Funkcjonalność, którą można obsługiwać za pomocą ruchu urządzenia lub ruchu użytkownika, można również obsługiwać za pomocą komponentów interfejsu użytkownika, a reagowanie na ruch można wyłączyć.",
                 "rules": []
             },
             {
                 "num": "3.1.1",
-                "name": "Language of Page",
+                "name": "Język strony",
                 "wcagLevel": "A",
-                "summary": "The default human language of Web pages, non-Web documents, or software can be programmatically determined.",
+                "summary": "Domyślny język naturalny każdej strony internetowej może zostać odczytany przez program komputerowy.",
                 "rules": [
                     {
                         id: "WCAG20_Html_HasLang",
@@ -21952,9 +21965,9 @@ var a11yRulesets = [
             },
             {
                 "num": "3.1.2",
-                "name": "Language of Parts",
+                "name": "Język części",
                 "wcagLevel": "AA",
-                "summary": "The human language of each passage or phrase in the content can be programmatically determined.",
+                "summary": "Język naturalny każdej innojęzycznej części lub frazy zawartej w treści może zostać odczytany przez program komputerowy.",
                 "rules": [
                     {
                         id: "WCAG20_Elem_Lang_Valid",
@@ -21965,9 +21978,9 @@ var a11yRulesets = [
             },
             {
                 "num": "3.2.1",
-                "name": "On Focus",
+                "name": "Po otrzymaniu fokusu",
                 "wcagLevel": "A",
-                "summary": "When any component receives focus, it does not initiate a change of context.",
+                "summary": "Przyjęcie fokusu przez dowolny komponent interfejsu użytkownika nie powoduje nieoczekiwanej zmiany kontekstu.",
                 "rules": [
                     {
                         id: "WCAG20_Select_NoChangeAction",
@@ -21983,9 +21996,9 @@ var a11yRulesets = [
             },
             {
                 "num": "3.2.2",
-                "name": "On Input",
+                "name": "Podczas wprowadzania danych",
                 "wcagLevel": "A",
-                "summary": "Changing the setting of any user interface component does not automatically cause a change of context unless the user has been advised of the behavior before using the component.",
+                "summary": "Zmiana ustawień jakiegokolwiek komponentu interfejsu użytkownika nie powoduje automatycznej zmiany kontekstu, chyba, że użytkownik został poinformowany o takim działaniu, zanim zaczął korzystać z komponentu.",
                 "rules": [
                     {
                         id: "WCAG20_A_TargetAndText",
@@ -22016,23 +22029,23 @@ var a11yRulesets = [
             },
             {
                 "num": "3.2.3",
-                "name": "Consistent Navigation",
+                "name": "Spójna nawigacja",
                 "wcagLevel": "AA",
-                "summary": "Navigational mechanisms that are repeated on multiple Web pages within a set of Web pages occur in the same relative order each time they are repeated, unless a change is initiated by the user.",
+                "summary": "Mechanizmy nawigacji, które powtarzają się na wielu stronach internetowych w ramach jednego zestawu stron internetowych, występują w tej samej względnej kolejności za każdym razem, gdy są powtarzane, chyba że zmiana jest inicjowana przez użytkownika.",
                 "rules": []
             },
             {
                 "num": "3.2.4",
-                "name": "Consistent Identification",
+                "name": "Spójna identyfikacja",
                 "wcagLevel": "AA",
-                "summary": "Components that have the same functionality within a set of Web pages are identified consistently.",
+                "summary": "Komponenty, które mają tę samą funkcjonalność w ramach jednego zestawu stron internetowych, są w taki sam sposób zidentyfikowane.",
                 "rules": []
             },
             {
                 "num": "3.3.1",
-                "name": "Error Identification",
+                "name": "Identyfikacja błędu",
                 "wcagLevel": "A",
-                "summary": "If an input error is automatically detected, the item that is in error is identified and the error is described to the user in text.",
+                "summary": "Jeśli automatycznie zostanie wykryty błąd wprowadzania danych, system wskazuje błędny element, a użytkownik otrzymuje opis błędu w postaci tekstu.",
                 "rules": [
                     {
                         id: "HAAC_Aria_ErrorMessage",
@@ -22043,9 +22056,9 @@ var a11yRulesets = [
             },
             {
                 "num": "3.3.2",
-                "name": "Labels or Instructions",
+                "name": "Etykiety lub instrukcje",
                 "wcagLevel": "A",
-                "summary": "Labels or instructions are provided when content requires user input.",
+                "summary": "Gdy w treści wymagane jest wprowadzenie danych przez użytkownika, zapewnione są etykiety lub instrukcje.",
                 "rules": [
                     {
                         id: "WCAG20_Input_LabelBefore",
@@ -22081,23 +22094,23 @@ var a11yRulesets = [
             },
             {
                 "num": "3.3.3",
-                "name": "Error Suggestion",
+                "name": "Sugestie korekty błędów",
                 "wcagLevel": "AA",
-                "summary": "If an input error is automatically detected and suggestions for correction are known, then the suggestions are provided to the user, unless it would jeopardize the security or purpose of the content.",
+                "summary": "Jeśli automatycznie zostanie wykryty błąd wprowadzania danych i znane są sugestie korekty, wtedy użytkownik otrzymuje takie sugestie, chyba, że zagrażałoby to bezpieczeństwu treści lub zmieniło jej cel.",
                 "rules": []
             },
             {
                 "num": "3.3.4",
-                "name": "Error Prevention (Legal, Financial, Data)",
+                "name": "Zapobieganie błędom (prawnym, finansowym, w danych)",
                 "wcagLevel": "AA",
-                "summary": "For content that cause legal commitments or financial transactions for the user to occur, that modify or delete user-controllable data in data storage systems, or that submit user test responses, the user can reverse, correct, or confirm the action.",
+                "summary": "W przypadku treści, , które powodują zobowiązania prawne, albo na których użytkownik przeprowadza transakcje finansowe, modyfikuje lub usuwa dane w systemach przechowywania danych, nad którymi ma kontrolę, albo udziela odpowiedzi na testy, użytkownik może cofnąć, poprawić lub potwierdzić działanie.",
                 "rules": []
             },
             {
                 "num": "4.1.1",
-                "name": "Parsing",
+                "name": "Poprawność kodu",
                 "wcagLevel": "A",
-                "summary": "In content implemented using markup languages, elements have complete start and end tags, elements are nested according to their specifications, elements do not contain duplicate attributes, and any IDs are unique, except where the specifications allow these features.",
+                "summary": "W treści wprowadzonej przy użyciu języka znaczników, elementy posiadają kompletne znaczniki początkowe i końcowe, elementy są zagnieżdżane według swoich specyfikacji, nie posiadają zduplikowanych atrybutów, a wszystkie ID są unikalne, z wyjątkiem przypadków, kiedy specyfikacja zezwala na wyżej wymienione cechy.",
                 "rules": [
                     {
                         id: "RPT_Elem_UniqueId",
@@ -22113,9 +22126,9 @@ var a11yRulesets = [
             },
             {
                 "num": "4.1.2",
-                "name": "Name, Role, Value",
+                "name": "Nazwa, rola, wartość",
                 "wcagLevel": "A",
-                "summary": "For all user interface components (including, but not limited to: form elements, links and components generated by scripts), the name and role can be programmatically determined; states, properties, and values that can be set by the user can be programmatically set; and notification of changes to these items is available to user agents, including assistive technologies.",
+                "summary": "Dla wszystkich komponentów interfejsu użytkownika (w tym, ale nie tylko, elementów formularzy, łączy oraz komponentów wygenerowanych przez skrypty) nazwa oraz rola mogą być określone programowo; stan, właściwości oraz wartości, które mogą być ustawione przez użytkownika, mogą również być ustawione programowo; powiadomienie o zmianach w tych elementach dostępne jest dla programów użytkownika, w tym technologii wspomagających.",
                 "rules": [
                     {
                         id: "WCAG20_Input_ExplicitLabel",
@@ -22260,13 +22273,13 @@ var a11yRulesets = [
         id: "WCAG_2_0",
         name: "WCAG 2.0 (A, AA)",
         category: IEngine_1.eRuleCategory.ACCESSIBILITY,
-        description: "Rules for WCAG 2.0 AA. Referenced by US Section 508, but not the latest W3C recommendation.",
+        description: "Reguły dla WCAG 2.0 AA. Przywołane przez US Section 508, ale nie w najnowszym zaleceniu W3C.",
         "checkpoints": [
             {
                 "num": "1.1.1",
-                "name": "Non-text Content",
+                "name": "Treść nietekstowa",
                 "wcagLevel": "A",
-                "summary": "All non-text content that is presented to the user has a text alternative that serves the equivalent purpose.",
+                "summary": "Wszystkie treści nietekstowe przedstawione użytkownikowi mają alternatywę tekstową, która służy równoważnemu celowi.",
                 "rules": [
                     {
                         id: "WCAG20_Input_ExplicitLabelImage",
@@ -22397,9 +22410,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.2.1",
-                "name": "Audio-only and Video-only (Prerecorded)",
+                "name": "Tylko audio lub tylko wideo (nagranie)",
                 "wcagLevel": "A",
-                "summary": "For prerecorded audio-only or video-only media, an alternative provides equivalent information.",
+                "summary": "Dla mediów nagranych w systemie tylko audio lub tylko wideo, w alternatywny sposób zapewnione są równoważne informacje.",
                 "rules": [
                     {
                         id: "HAAC_Video_HasNoTrack",
@@ -22415,9 +22428,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.2.2",
-                "name": "Captions (Prerecorded)",
+                "name": "Napisy rozszerzone (nagranie)",
                 "wcagLevel": "A",
-                "summary": "Captions are provided for all prerecorded audio content in synchronized media.",
+                "summary": "Do wszystkich nagrań audio w multimediach zsynchronizowanych zapewnione są napisy rozszerzone.",
                 "rules": [
                     {
                         id: "HAAC_Video_HasNoTrack",
@@ -22428,9 +22441,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.2.3",
-                "name": "Audio Description or Media Alternative (Prerecorded)",
+                "name": "Audiodeskrypcja lub alternatywa tekstowa dla mediów (nagranie)",
                 "wcagLevel": "A",
-                "summary": "An alternative for time-based media or audio description of the prerecorded video content is provided for synchronized media.",
+                "summary": "Zapewniona jest alternatywa dla multimediów lub audiodeskrypcja dla nagrań wideo w multimediach zsynchronizowanych.",
                 "rules": [
                     {
                         id: "RPT_Media_VideoReferenceTrigger",
@@ -22441,9 +22454,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.2.4",
-                "name": "Captions (Live)",
+                "name": "Napisy rozszerzone (na żywo)",
                 "wcagLevel": "AA",
-                "summary": "Captions are provided for all live audio content in synchronized media.",
+                "summary": "Do wszystkich treści audio w multimediach zsynchronizowanych przekazywanych na żywo zapewnione są napisy rozszerzone.",
                 "rules": [
                     {
                         id: "HAAC_Video_HasNoTrack",
@@ -22459,9 +22472,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.2.5",
-                "name": "Audio Description (Prerecorded)",
+                "name": "Audiodeskrypcja (nagranie)",
                 "wcagLevel": "AA",
-                "summary": "Audio description is provided for all prerecorded video content in synchronized media.",
+                "summary": "Zapewniona jest audiodeskrypcja dla wszystkich nagrań wideo w multimediach zsynchronizowanych.",
                 "rules": [
                     {
                         id: "RPT_Media_VideoReferenceTrigger",
@@ -22472,9 +22485,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.3.1",
-                "name": "Info and Relationships",
+                "name": "Informacje i relacje",
                 "wcagLevel": "A",
-                "summary": "Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text.",
+                "summary": "Informacje, struktura oraz relacje między treściami przekazywane poprzez prezentację mogą być odczytane przez program komputerowy lub istnieją w postaci tekstu.",
                 "rules": [
                     {
                         id: "RPT_Headers_FewWords",
@@ -22600,9 +22613,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.3.2",
-                "name": "Meaningful Sequence",
+                "name": "Zrozumiała kolejność",
                 "wcagLevel": "A",
-                "summary": "When the sequence in which content is presented affects its meaning, a correct reading sequence can be programmatically determined.",
+                "summary": "Jeśli kolejność, w jakiej przedstawiona jest treść, ma znaczenie dla zrozumienia treści — prawidłowa kolejność odczytu musi być określona programowo.",
                 "rules": [
                     {
                         id: "Valerie_Elem_DirValid",
@@ -22618,9 +22631,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.3.3",
-                "name": "Sensory Characteristics",
+                "name": "Właściwości zmysłowe",
                 "wcagLevel": "A",
-                "summary": "Instructions provided for understanding and operating content do not rely solely on sensory characteristics of components such as shape, size, visual location, orientation, or sound.",
+                "summary": "Instrukcje co do zrozumienia i operowania treścią nie opierają się wyłącznie na właściwościach zmysłowych, takich jak: kształt, rozmiar, wzrokowa lokalizacja, orientacja w przestrzeni lub dźwięk.",
                 "rules": [
                     {
                         id: "RPT_Text_SensoryReference",
@@ -22631,9 +22644,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.4.1",
-                "name": "Use of Color",
+                "name": "Użycie koloru",
                 "wcagLevel": "A",
-                "summary": "Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.",
+                "summary": "Kolor nie jest wykorzystywany jako jedyny wizualny sposób przekazywania informacji, wskazywania czynności do wykonania lub oczekiwania na odpowiedź, czy też wyróżniania elementów wizualnych.",
                 "rules": [
                     {
                         id: "RPT_Font_ColorInForm",
@@ -22649,9 +22662,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.4.2",
-                "name": "Audio Control",
+                "name": "Kontrola odtwarzania dźwięku",
                 "wcagLevel": "A",
-                "summary": "If any audio plays automatically for more than 3 seconds, either a mechanism is available to pause or stop the audio, or a mechanism is available to control audio volume independently from the overall system volume level.",
+                "summary": "Jeśli jakieś nagranie audio włącza się automatycznie na danej stronie i jest odtwarzane przez okres dłuższy niż 3 sekundy, istnieje mechanizm umożliwiający przerwanie lub wyłączenie nagrania albo mechanizm kontrolujący poziom głośności niezależnie od poziomu głośności całego systemu.",
                 "rules": [
                     {
                         id: "RPT_Embed_AutoStart",
@@ -22662,9 +22675,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.4.3",
-                "name": "Contrast (Minimum)",
+                "name": "Kontrast (minimalny)",
                 "wcagLevel": "AA",
-                "summary": "The visual presentation of text and images of text has a contrast ratio of at least 4.5:1, with a 3:1 ratio for large-scale text.",
+                "summary": "Wizualna prezentacja tekstu lub obrazu tekstu posiada współczynnik kontrastu wynoszący 4,5:1 w przypadku zwykłego tekstu, a 3:1 w przypadku dużego tekstu.",
                 "rules": [
                     {
                         id: "IBMA_Color_Contrast_WCAG2AA",
@@ -22680,9 +22693,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.4.4",
-                "name": "Resize Text",
+                "name": "Zmiana rozmiaru tekstu",
                 "wcagLevel": "AA",
-                "summary": "Text can be resized without assistive technology up to 200 percent without loss of content or functionality.",
+                "summary": "Rozmiar tekstu może zostać powiększony do 200% bez użycia technologii wspomagających oraz bez utraty treści lub funkcjonalności.",
                 "rules": [
                     {
                         id: "WCAG21_Style_Viewport",
@@ -22693,16 +22706,16 @@ var a11yRulesets = [
             },
             {
                 "num": "1.4.5",
-                "name": "Images of Text",
+                "name": "Obrazy tekstu",
                 "wcagLevel": "AA",
-                "summary": "If the technologies being used can achieve the visual presentation, text is used to convey information rather than images of text.",
+                "summary": "Jeśli wykorzystywane technologie mogą przedstawiać treść wizualnie, do przekazywania informacji wykorzystuje się tekst, a nie obraz tekstu.",
                 "rules": []
             },
             {
                 "num": "2.1.1",
-                "name": "Keyboard",
+                "name": "Klawiatura",
                 "wcagLevel": "A",
-                "summary": "All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes.",
+                "summary": "Wszystkie funkcjonalności w treści są obsługiwane za pomocą interfejsu klawiatury, bez wymogu określonego czasu użycia poszczególnych klawiszy.",
                 "rules": [
                     {
                         id: "RPT_Elem_EventMouseAndKey",
@@ -22738,9 +22751,9 @@ var a11yRulesets = [
             },
             {
                 "num": "2.1.2",
-                "name": "No Keyboard Trap",
+                "name": "Bez pułapki na klawiaturę",
                 "wcagLevel": "A",
-                "summary": "If keyboard focus can be moved to a component using a keyboard interface, then focus can be moved away from that component using only a keyboard interface, and, if it requires more than unmodified arrow or tab keys or other standard exit methods, the user is advised of the method for moving focus away.",
+                "summary": "Jeśli fokus klawiatury można przemieścić do danego komponentu treści za pomocą interfejsu klawiatury, to może on być z niego usunięty również za pomocą interfejsu klawiatury, a jeśli wymagane jest użycie czegoś więcej niż tylko strzałek, tabulatora lub innych standardowych metod wyjścia, użytkownik musi otrzymać odpowiednią podpowiedź, w jaki sposób usunąć fokus z danego komponentu.",
                 "rules": [
                     {
                         id: "HAAC_Media_DocumentTrigger2",
@@ -22751,9 +22764,9 @@ var a11yRulesets = [
             },
             {
                 "num": "2.2.1",
-                "name": "Timing Adjustable",
+                "name": "Dostosowanie czasu",
                 "wcagLevel": "A",
-                "summary": "For each time limit that is set by the content, the user can turn off, adjust, or extend the limit.",
+                "summary": "Gdy czas korzystania z treści jest ograniczany, użytkownik może wyłączyć, dostosować lub przedłużyć limit.",
                 "rules": [
                     {
                         id: "RPT_Meta_Refresh",
@@ -22769,9 +22782,9 @@ var a11yRulesets = [
             },
             {
                 "num": "2.2.2",
-                "name": "Pause, Stop, Hide",
+                "name": "Pauza, zatrzymanie, ukrycie",
                 "wcagLevel": "A",
-                "summary": "For moving, blinking, scrolling, or auto-updating information, the user can pause, stop, hide or adjust the information.",
+                "summary": "Gdy treść się porusza, migocze, przesuwa lub jest automatycznie aktualizowana, użytkownik może wstrzymać, zatrzymać, ukryć lub dostosować częstość aktualizacji.",
                 "rules": [
                     {
                         id: "RPT_Marquee_Trigger",
@@ -22792,16 +22805,16 @@ var a11yRulesets = [
             },
             {
                 "num": "2.3.1",
-                "name": "Three Flashes or Below Threshold",
+                "name": "Trzy błyski lub wartości poniżej progu",
                 "wcagLevel": "A",
-                "summary": "Content does not contain anything that flashes more than three times in any one second period, or the flash is below the general flash and red flash thresholds.",
+                "summary": "Treść nie zawiera niczego, co błyska częściej niż trzy razy w ciągu jednej sekundy, lub też błysk nie przekracza wartości granicznych dla błysków ogólnych i czerwonych.",
                 "rules": []
             },
             {
                 "num": "2.4.1",
-                "name": "Bypass Blocks",
+                "name": "Możliwość pominięcia bloków",
                 "wcagLevel": "A",
-                "summary": "A mechanism is available to bypass blocks of content that are repeated on multiple Web pages.",
+                "summary": "Istnieje mechanizm, który umożliwia pominięcie bloków treści powtarzanych na wielu stronach internetowych.",
                 "rules": [
                     {
                         id: "WCAG20_Frame_HasTitle",
@@ -22937,9 +22950,9 @@ var a11yRulesets = [
             },
             {
                 "num": "2.4.2",
-                "name": "Page Titled",
+                "name": "Tytuły stron",
                 "wcagLevel": "A",
-                "summary": "Web pages, non-web documents, and software have titles that describe topic or purpose.",
+                "summary": "Strony internetowe, dokumenty inne niż internetowe i oprogramowanie mają tytuły, które opisują ich cel lub przedstawiają ich temat.",
                 "rules": [
                     {
                         id: "WCAG20_Doc_HasTitle",
@@ -22955,16 +22968,16 @@ var a11yRulesets = [
             },
             {
                 "num": "2.4.3",
-                "name": "Focus Order",
+                "name": "Kolejność fokusu",
                 "wcagLevel": "A",
-                "summary": "If content can be navigated sequentially and the navigation sequences affect meaning or operation, focusable components receive focus in an order that preserves meaning and operability.",
+                "summary": "Jeśli po treści można nawigować sekwencyjnie, a kolejność nawigacji wpływa na zrozumienie lub funkcjonalność strony, komponenty przyjmują fokus w kolejności, dzięki której zachowany jest sens i funkcjonalność treści.",
                 "rules": []
             },
             {
                 "num": "2.4.4",
-                "name": "Link Purpose (In Context)",
+                "name": "Cel łącza (w kontekście)",
                 "wcagLevel": "A",
-                "summary": "The purpose of each link can be determined from the link text alone or from the link text together with its programmatically determined link content.",
+                "summary": "Cel każdego łącza można określić na podstawie samej treści łącza lub treści tekstu powiązanego z kontekstem łącza określonym programowo.",
                 "rules": [
                     {
                         id: "WCAG20_A_HasText",
@@ -22975,16 +22988,16 @@ var a11yRulesets = [
             },
             {
                 "num": "2.4.5",
-                "name": "Multiple Ways",
+                "name": "Wiele dróg",
                 "wcagLevel": "AA",
-                "summary": "More than one way is available to locate a Web page within a set of Web pages, except where the Web Page is the result of, or a step in, a process.",
+                "summary": "Istnieje więcej niż jeden sposób umożliwiający zlokalizowanie strony internetowej w zestawie stron internetowych, z wyjątkiem sytuacji, kiedy dana strona jest wynikiem jakiejś procedury lub jednym z jej etapów.",
                 "rules": []
             },
             {
                 "num": "2.4.6",
-                "name": "Headings and Labels",
+                "name": "Nagłówki i etykiety",
                 "wcagLevel": "AA",
-                "summary": "Headings and labels describe topic or purpose.",
+                "summary": "Nagłówki i etykiety opisują temat lub cel treści.",
                 "rules": [
                     {
                         id: "RPT_Header_HasContent",
@@ -22995,9 +23008,9 @@ var a11yRulesets = [
             },
             {
                 "num": "2.4.7",
-                "name": "Focus Visible",
+                "name": "Widoczny fokus",
                 "wcagLevel": "AA",
-                "summary": "Any keyboard operable user interface has a mode of operation where the keyboard focus indicator is visible.",
+                "summary": "Każdy interfejs posiadający możliwość obsługi przy pomocy klawiatury ma tryb obsługi, w którym fokus klawiatury jest stale widoczny.",
                 "rules": [
                     {
                         id: "RPT_Style_HinderFocus1",
@@ -23013,9 +23026,9 @@ var a11yRulesets = [
             },
             {
                 "num": "3.1.1",
-                "name": "Language of Page",
+                "name": "Język strony",
                 "wcagLevel": "A",
-                "summary": "The default human language of Web pages, non-Web documents, or software can be programmatically determined.",
+                "summary": "Domyślny język naturalny każdej strony internetowej może zostać odczytany przez program komputerowy.",
                 "rules": [
                     {
                         id: "WCAG20_Html_HasLang",
@@ -23026,9 +23039,9 @@ var a11yRulesets = [
             },
             {
                 "num": "3.1.2",
-                "name": "Language of Parts",
+                "name": "Język części",
                 "wcagLevel": "AA",
-                "summary": "The human language of each passage or phrase in the content can be programmatically determined.",
+                "summary": "Język naturalny każdej innojęzycznej części lub frazy zawartej w treści może zostać odczytany przez program komputerowy.",
                 "rules": [
                     {
                         id: "WCAG20_Elem_Lang_Valid",
@@ -23039,9 +23052,9 @@ var a11yRulesets = [
             },
             {
                 "num": "3.2.1",
-                "name": "On Focus",
+                "name": "Po otrzymaniu fokusu",
                 "wcagLevel": "A",
-                "summary": "When any component receives focus, it does not initiate a change of context.",
+                "summary": "Przyjęcie fokusu przez dowolny komponent interfejsu użytkownika nie powoduje nieoczekiwanej zmiany kontekstu.",
                 "rules": [
                     {
                         id: "WCAG20_Select_NoChangeAction",
@@ -23057,9 +23070,9 @@ var a11yRulesets = [
             },
             {
                 "num": "3.2.2",
-                "name": "On Input",
+                "name": "Podczas wprowadzania danych",
                 "wcagLevel": "A",
-                "summary": "Changing the setting of any user interface component does not automatically cause a change of context unless the user has been advised of the behavior before using the component.",
+                "summary": "Zmiana ustawień jakiegokolwiek komponentu interfejsu użytkownika nie powoduje automatycznej zmiany kontekstu, chyba, że użytkownik został poinformowany o takim działaniu, zanim zaczął korzystać z komponentu.",
                 "rules": [
                     {
                         id: "WCAG20_A_TargetAndText",
@@ -23090,23 +23103,23 @@ var a11yRulesets = [
             },
             {
                 "num": "3.2.3",
-                "name": "Consistent Navigation",
+                "name": "Spójna nawigacja",
                 "wcagLevel": "AA",
-                "summary": "Navigational mechanisms that are repeated on multiple Web pages within a set of Web pages occur in the same relative order each time they are repeated, unless a change is initiated by the user.",
+                "summary": "Mechanizmy nawigacji, które powtarzają się na wielu stronach internetowych w ramach jednego zestawu stron internetowych, występują w tej samej względnej kolejności za każdym razem, gdy są powtarzane, chyba że zmiana jest inicjowana przez użytkownika.",
                 "rules": []
             },
             {
                 "num": "3.2.4",
-                "name": "Consistent Identification",
+                "name": "Spójna identyfikacja",
                 "wcagLevel": "AA",
-                "summary": "Components that have the same functionality within a set of Web pages are identified consistently.",
+                "summary": "Komponenty, które mają tę samą funkcjonalność w ramach jednego zestawu stron internetowych, są w taki sam sposób zidentyfikowane.",
                 "rules": []
             },
             {
                 "num": "3.3.1",
-                "name": "Error Identification",
+                "name": "Identyfikacja błędu",
                 "wcagLevel": "A",
-                "summary": "If an input error is automatically detected, the item that is in error is identified and the error is described to the user in text.",
+                "summary": "Jeśli automatycznie zostanie wykryty błąd wprowadzania danych, system wskazuje błędny element, a użytkownik otrzymuje opis błędu w postaci tekstu.",
                 "rules": [
                     {
                         id: "HAAC_Aria_ErrorMessage",
@@ -23117,9 +23130,9 @@ var a11yRulesets = [
             },
             {
                 "num": "3.3.2",
-                "name": "Labels or Instructions",
+                "name": "Etykiety lub instrukcje",
                 "wcagLevel": "A",
-                "summary": "Labels or instructions are provided when content requires user input.",
+                "summary": "Gdy w treści wymagane jest wprowadzenie danych przez użytkownika, zapewnione są etykiety lub instrukcje.",
                 "rules": [
                     {
                         id: "WCAG20_Input_LabelBefore",
@@ -23155,23 +23168,23 @@ var a11yRulesets = [
             },
             {
                 "num": "3.3.3",
-                "name": "Error Suggestion",
+                "name": "Sugestie korekty błędów",
                 "wcagLevel": "AA",
-                "summary": "If an input error is automatically detected and suggestions for correction are known, then the suggestions are provided to the user, unless it would jeopardize the security or purpose of the content.",
+                "summary": "Jeśli automatycznie zostanie wykryty błąd wprowadzania danych i znane są sugestie korekty, wtedy użytkownik otrzymuje takie sugestie, chyba, że zagrażałoby to bezpieczeństwu treści lub zmieniło jej cel.",
                 "rules": []
             },
             {
                 "num": "3.3.4",
-                "name": "Error Prevention (Legal, Financial, Data)",
+                "name": "Zapobieganie błędom (prawnym, finansowym, w danych)",
                 "wcagLevel": "AA",
-                "summary": "For content that cause legal commitments or financial transactions for the user to occur, that modify or delete user-controllable data in data storage systems, or that submit user test responses, the user can reverse, correct, or confirm the action.",
+                "summary": "W przypadku treści, , które powodują zobowiązania prawne, albo na których użytkownik przeprowadza transakcje finansowe, modyfikuje lub usuwa dane w systemach przechowywania danych, nad którymi ma kontrolę, albo udziela odpowiedzi na testy, użytkownik może cofnąć, poprawić lub potwierdzić działanie.",
                 "rules": []
             },
             {
                 "num": "4.1.1",
-                "name": "Parsing",
+                "name": "Poprawność kodu",
                 "wcagLevel": "A",
-                "summary": "In content implemented using markup languages, elements have complete start and end tags, elements are nested according to their specifications, elements do not contain duplicate attributes, and any IDs are unique, except where the specifications allow these features.",
+                "summary": "W treści wprowadzonej przy użyciu języka znaczników, elementy posiadają kompletne znaczniki początkowe i końcowe, elementy są zagnieżdżane według swoich specyfikacji, nie posiadają zduplikowanych atrybutów, a wszystkie ID są unikalne, z wyjątkiem przypadków, kiedy specyfikacja zezwala na wyżej wymienione cechy.",
                 "rules": [
                     {
                         id: "RPT_Elem_UniqueId",
@@ -23187,9 +23200,9 @@ var a11yRulesets = [
             },
             {
                 "num": "4.1.2",
-                "name": "Name, Role, Value",
+                "name": "Nazwa, rola, wartość",
                 "wcagLevel": "A",
-                "summary": "For all user interface components (including, but not limited to: form elements, links and components generated by scripts), the name and role can be programmatically determined; states, properties, and values that can be set by the user can be programmatically set; and notification of changes to these items is available to user agents, including assistive technologies.",
+                "summary": "Dla wszystkich komponentów interfejsu użytkownika (w tym, ale nie tylko, elementów formularzy, łączy oraz komponentów wygenerowanych przez skrypty) nazwa oraz rola mogą być określone programowo; stan, właściwości oraz wartości, które mogą być ustawione przez użytkownika, mogą również być ustawione programowo; powiadomienie o zmianach w tych elementach dostępne jest dla programów użytkownika, w tym technologii wspomagających.",
                 "rules": [
                     {
                         id: "WCAG20_Input_ExplicitLabel",
@@ -23334,13 +23347,13 @@ var a11yRulesets = [
         id: "IBM_Accessibility_BETA",
         name: "IBM Accessibility BETA",
         category: IEngine_1.eRuleCategory.ACCESSIBILITY,
-        description: "Rules for WCAG 2.1 AA plus additional IBM checklist supplemental requirements and experimental rules.",
+        description: "Reguły dla WCAG 2.1 AA oraz dodatkowe wymagania uzupełniające dla listy kontrolnej IBM i reguły eksperymentalne.",
         "checkpoints": [
             {
                 "num": "1.1.1",
-                "name": "Non-text Content",
+                "name": "Treść nietekstowa",
                 "wcagLevel": "A",
-                "summary": "All non-text content that is presented to the user has a text alternative that serves the equivalent purpose.",
+                "summary": "Wszystkie treści nietekstowe przedstawione użytkownikowi mają alternatywę tekstową, która służy równoważnemu celowi.",
                 "rules": [
                     {
                         id: "WCAG20_Input_ExplicitLabelImage",
@@ -23471,9 +23484,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.2.1",
-                "name": "Audio-only and Video-only (Prerecorded)",
+                "name": "Tylko audio lub tylko wideo (nagranie)",
                 "wcagLevel": "A",
-                "summary": "For prerecorded audio-only or video-only media, an alternative provides equivalent information.",
+                "summary": "Dla mediów nagranych w systemie tylko audio lub tylko wideo, w alternatywny sposób zapewnione są równoważne informacje.",
                 "rules": [
                     {
                         id: "HAAC_Video_HasNoTrack",
@@ -23489,9 +23502,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.2.2",
-                "name": "Captions (Prerecorded)",
+                "name": "Napisy rozszerzone (nagranie)",
                 "wcagLevel": "A",
-                "summary": "Captions are provided for all prerecorded audio content in synchronized media.",
+                "summary": "Do wszystkich nagrań audio w multimediach zsynchronizowanych zapewnione są napisy rozszerzone.",
                 "rules": [
                     {
                         id: "HAAC_Video_HasNoTrack",
@@ -23502,9 +23515,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.2.3",
-                "name": "Audio Description or Media Alternative (Prerecorded)",
+                "name": "Audiodeskrypcja lub alternatywa tekstowa dla mediów (nagranie)",
                 "wcagLevel": "A",
-                "summary": "An alternative for time-based media or audio description of the prerecorded video content is provided for synchronized media.",
+                "summary": "Zapewniona jest alternatywa dla multimediów lub audiodeskrypcja dla nagrań wideo w multimediach zsynchronizowanych.",
                 "rules": [
                     {
                         id: "RPT_Media_VideoReferenceTrigger",
@@ -23515,9 +23528,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.2.4",
-                "name": "Captions (Live)",
+                "name": "Napisy rozszerzone (na żywo)",
                 "wcagLevel": "AA",
-                "summary": "Captions are provided for all live audio content in synchronized media.",
+                "summary": "Do wszystkich treści audio w multimediach zsynchronizowanych przekazywanych na żywo zapewnione są napisy rozszerzone.",
                 "rules": [
                     {
                         id: "HAAC_Video_HasNoTrack",
@@ -23533,9 +23546,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.2.5",
-                "name": "Audio Description (Prerecorded)",
+                "name": "Audiodeskrypcja (nagranie)",
                 "wcagLevel": "AA",
-                "summary": "Audio description is provided for all prerecorded video content in synchronized media.",
+                "summary": "Zapewniona jest audiodeskrypcja dla wszystkich nagrań wideo w multimediach zsynchronizowanych.",
                 "rules": [
                     {
                         id: "RPT_Media_VideoReferenceTrigger",
@@ -23546,9 +23559,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.3.1",
-                "name": "Info and Relationships",
+                "name": "Informacje i relacje",
                 "wcagLevel": "A",
-                "summary": "Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text.",
+                "summary": "Informacje, struktura oraz relacje między treściami przekazywane poprzez prezentację mogą być odczytane przez program komputerowy lub istnieją w postaci tekstu.",
                 "rules": [
                     {
                         id: "RPT_Headers_FewWords",
@@ -23674,9 +23687,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.3.2",
-                "name": "Meaningful Sequence",
+                "name": "Zrozumiała kolejność",
                 "wcagLevel": "A",
-                "summary": "When the sequence in which content is presented affects its meaning, a correct reading sequence can be programmatically determined.",
+                "summary": "Jeśli kolejność, w jakiej przedstawiona jest treść, ma znaczenie dla zrozumienia treści — prawidłowa kolejność odczytu musi być określona programowo.",
                 "rules": [
                     {
                         id: "Valerie_Elem_DirValid",
@@ -23692,9 +23705,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.3.3",
-                "name": "Sensory Characteristics",
+                "name": "Właściwości zmysłowe",
                 "wcagLevel": "A",
-                "summary": "Instructions provided for understanding and operating content do not rely solely on sensory characteristics of components such as shape, size, visual location, orientation, or sound.",
+                "summary": "Instrukcje co do zrozumienia i operowania treścią nie opierają się wyłącznie na właściwościach zmysłowych, takich jak: kształt, rozmiar, wzrokowa lokalizacja, orientacja w przestrzeni lub dźwięk.",
                 "rules": [
                     {
                         id: "RPT_Text_SensoryReference",
@@ -23705,16 +23718,16 @@ var a11yRulesets = [
             },
             {
                 "num": "1.3.4",
-                "name": "Orientation",
+                "name": "Orientacja",
                 "wcagLevel": "A",
-                "summary": "Content does not restrict its view and operation to a single display orientation, such as portrait or landscape.",
+                "summary": "Treść nie ogranicza swojego widoku i działania do jednej orientacji wyświetlania, takiej jak pionowa lub pozioma.",
                 "rules": []
             },
             {
                 "num": "1.3.5",
-                "name": "Identify Input Purpose",
+                "name": "Określenie pożądanej wartości",
                 "wcagLevel": "AA",
-                "summary": "The purpose of each input field that collects information about the user can be programmatically determined when the field serves a common purpose.",
+                "summary": "Cel każdego pola zbierającego informacje o użytkowniku może być programowo określony.",
                 "rules": [
                     {
                         id: "WCAG21_Input_Autocomplete",
@@ -23725,9 +23738,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.4.1",
-                "name": "Use of Color",
+                "name": "Użycie koloru",
                 "wcagLevel": "A",
-                "summary": "Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.",
+                "summary": "Kolor nie jest wykorzystywany jako jedyny wizualny sposób przekazywania informacji, wskazywania czynności do wykonania lub oczekiwania na odpowiedź, czy też wyróżniania elementów wizualnych.",
                 "rules": [
                     {
                         id: "RPT_Font_ColorInForm",
@@ -23743,9 +23756,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.4.2",
-                "name": "Audio Control",
+                "name": "Kontrola odtwarzania dźwięku",
                 "wcagLevel": "A",
-                "summary": "If any audio plays automatically for more than 3 seconds, either a mechanism is available to pause or stop the audio, or a mechanism is available to control audio volume independently from the overall system volume level.",
+                "summary": "Jeśli jakieś nagranie audio włącza się automatycznie na danej stronie i jest odtwarzane przez okres dłuższy niż 3 sekundy, istnieje mechanizm umożliwiający przerwanie lub wyłączenie nagrania albo mechanizm kontrolujący poziom głośności niezależnie od poziomu głośności całego systemu.",
                 "rules": [
                     {
                         id: "RPT_Embed_AutoStart",
@@ -23756,9 +23769,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.4.3",
-                "name": "Contrast (Minimum)",
+                "name": "Kontrast (minimalny)",
                 "wcagLevel": "AA",
-                "summary": "The visual presentation of text and images of text has a contrast ratio of at least 4.5:1, with a 3:1 ratio for large-scale text.",
+                "summary": "Wizualna prezentacja tekstu lub obrazu tekstu posiada współczynnik kontrastu wynoszący 4,5:1 w przypadku zwykłego tekstu, a 3:1 w przypadku dużego tekstu.",
                 "rules": [
                     {
                         id: "IBMA_Color_Contrast_WCAG2AA",
@@ -23774,9 +23787,9 @@ var a11yRulesets = [
             },
             {
                 "num": "1.4.4",
-                "name": "Resize Text",
+                "name": "Zmiana rozmiaru tekstu",
                 "wcagLevel": "AA",
-                "summary": "Text can be resized without assistive technology up to 200 percent without loss of content or functionality.",
+                "summary": "Rozmiar tekstu może zostać powiększony do 200% bez użycia technologii wspomagających oraz bez utraty treści lub funkcjonalności.",
                 "rules": [
                     {
                         id: "WCAG21_Style_Viewport",
@@ -23787,44 +23800,44 @@ var a11yRulesets = [
             },
             {
                 "num": "1.4.5",
-                "name": "Images of Text",
+                "name": "Obrazy tekstu",
                 "wcagLevel": "AA",
-                "summary": "If the technologies being used can achieve the visual presentation, text is used to convey information rather than images of text.",
+                "summary": "Jeśli wykorzystywane technologie mogą przedstawiać treść wizualnie, do przekazywania informacji wykorzystuje się tekst, a nie obraz tekstu.",
                 "rules": []
             },
             {
                 "num": "1.4.10",
-                "name": "Reflow",
+                "name": "Dopasowanie do ekranu",
                 "wcagLevel": "AA",
-                "summary": "Content can reflow without loss of information or functionality, and without requiring scrolling in two dimensions.",
+                "summary": "Treść może być prezentowana bez utraty informacji lub funkcjonalności, bez konieczności przewijania w dwóch wymiarach.",
                 "rules": []
             },
             {
                 "num": "1.4.11",
-                "name": "Non-text Contrast",
+                "name": "Kontrast elementów nietekstowych",
                 "wcagLevel": "AA",
-                "summary": "The parts of graphical objects required to understand the content, and the visual information required to identify UI components and states, have a contrast ratio of at least 3:1 against adjacent colors.",
+                "summary": "Części obiektów graficznych wymagane do zrozumienia treści oraz informacje wizualne wymagane do zidentyfikowania komponentów i stanów interfejsu użytkownika mają współczynnik kontrastu wynoszący co najmniej 3:1 względem sąsiednich kolorów.",
                 "rules": []
             },
             {
                 "num": "1.4.12",
-                "name": "Text Spacing",
+                "name": "Odstępy w tekście",
                 "wcagLevel": "AA",
-                "summary": "No loss of content or functionality occurs when users change letter, word and paragraph spacing, as well as line height.",
+                "summary": "Zmiana odstępów między literami, wyrazami i akapitami, a także wysokości wiersza nie powoduje utraty treści ani funkcjonalności.",
                 "rules": []
             },
             {
                 "num": "1.4.13",
-                "name": "Content on Hover or Focus",
+                "name": "Treść spod kursora lub fokusu",
                 "wcagLevel": "AA",
-                "summary": "Where hover or focus actions cause additional content to become visible and hidden, the additional content is dismissable, hoverable and persistent.",
+                "summary": "Gdy jakaś treść staje się widoczna po otrzymaniu kursora lub fokusu klawiatury, dodatkowa treść może być odrzucona, wskazana kursorem lub pozostaje widoczna do usunięcia wskazania lub gdy przestaje być ważna.",
                 "rules": []
             },
             {
                 "num": "2.1.1",
-                "name": "Keyboard",
+                "name": "Klawiatura",
                 "wcagLevel": "A",
-                "summary": "All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes.",
+                "summary": "Wszystkie funkcjonalności w treści są obsługiwane za pomocą interfejsu klawiatury, bez wymogu określonego czasu użycia poszczególnych klawiszy.",
                 "rules": [
                     {
                         id: "RPT_Elem_EventMouseAndKey",
@@ -23860,9 +23873,9 @@ var a11yRulesets = [
             },
             {
                 "num": "2.1.2",
-                "name": "No Keyboard Trap",
+                "name": "Bez pułapki na klawiaturę",
                 "wcagLevel": "A",
-                "summary": "If keyboard focus can be moved to a component using a keyboard interface, then focus can be moved away from that component using only a keyboard interface, and, if it requires more than unmodified arrow or tab keys or other standard exit methods, the user is advised of the method for moving focus away.",
+                "summary": "Jeśli fokus klawiatury można przemieścić do danego komponentu treści za pomocą interfejsu klawiatury, to może on być z niego usunięty również za pomocą interfejsu klawiatury, a jeśli wymagane jest użycie czegoś więcej niż tylko strzałek, tabulatora lub innych standardowych metod wyjścia, użytkownik musi otrzymać odpowiednią podpowiedź, w jaki sposób usunąć fokus z danego komponentu.",
                 "rules": [
                     {
                         id: "HAAC_Media_DocumentTrigger2",
@@ -23873,16 +23886,16 @@ var a11yRulesets = [
             },
             {
                 "num": "2.1.4",
-                "name": "Character Key Shortcuts",
+                "name": "Jednoznakowe skróty klawiaturowe",
                 "wcagLevel": "A",
-                "summary": "If a keyboard shortcut is implemented using only letter, punctuation, number or symbol characters, then the shortcut can be turned off, remapped or activated only on focus.",
+                "summary": "Jeśli skrót klawiaturowy jest zaimplementowany w treści tylko przy użyciu jednego znaku (litery, w tym wielkiej i małej, cyfry lub symbolu), to skrót można wyłączyć, przemapować lub aktywować tylko, gdy komponent ma fokus.",
                 "rules": []
             },
             {
                 "num": "2.2.1",
-                "name": "Timing Adjustable",
+                "name": "Dostosowanie czasu",
                 "wcagLevel": "A",
-                "summary": "For each time limit that is set by the content, the user can turn off, adjust, or extend the limit.",
+                "summary": "Gdy czas korzystania z treści jest ograniczany, użytkownik może wyłączyć, dostosować lub przedłużyć limit.",
                 "rules": [
                     {
                         id: "RPT_Meta_Refresh",
@@ -23898,9 +23911,9 @@ var a11yRulesets = [
             },
             {
                 "num": "2.2.2",
-                "name": "Pause, Stop, Hide",
+                "name": "Pauza, zatrzymanie, ukrycie",
                 "wcagLevel": "A",
-                "summary": "For moving, blinking, scrolling, or auto-updating information, the user can pause, stop, hide or adjust the information.",
+                "summary": "Gdy treść się porusza, migocze, przesuwa lub jest automatycznie aktualizowana, użytkownik może wstrzymać, zatrzymać, ukryć lub dostosować częstość aktualizacji.",
                 "rules": [
                     {
                         id: "RPT_Marquee_Trigger",
@@ -23921,16 +23934,16 @@ var a11yRulesets = [
             },
             {
                 "num": "2.3.1",
-                "name": "Three Flashes or Below Threshold",
+                "name": "Trzy błyski lub wartości poniżej progu",
                 "wcagLevel": "A",
-                "summary": "Content does not contain anything that flashes more than three times in any one second period, or the flash is below the general flash and red flash thresholds.",
+                "summary": "Treść nie zawiera niczego, co błyska częściej niż trzy razy w ciągu jednej sekundy, lub też błysk nie przekracza wartości granicznych dla błysków ogólnych i czerwonych.",
                 "rules": []
             },
             {
                 "num": "2.4.1",
-                "name": "Bypass Blocks",
+                "name": "Możliwość pominięcia bloków",
                 "wcagLevel": "A",
-                "summary": "A mechanism is available to bypass blocks of content that are repeated on multiple Web pages.",
+                "summary": "Istnieje mechanizm, który umożliwia pominięcie bloków treści powtarzanych na wielu stronach internetowych.",
                 "rules": [
                     {
                         id: "WCAG20_Frame_HasTitle",
@@ -24066,9 +24079,9 @@ var a11yRulesets = [
             },
             {
                 "num": "2.4.2",
-                "name": "Page Titled",
+                "name": "Tytuły stron",
                 "wcagLevel": "A",
-                "summary": "Web pages, non-web documents, and software have titles that describe topic or purpose.",
+                "summary": "Strony internetowe, dokumenty inne niż internetowe i oprogramowanie mają tytuły, które opisują ich cel lub przedstawiają ich temat.",
                 "rules": [
                     {
                         id: "WCAG20_Doc_HasTitle",
@@ -24084,9 +24097,9 @@ var a11yRulesets = [
             },
             {
                 "num": "2.4.3",
-                "name": "Focus Order",
+                "name": "Kolejność fokusu",
                 "wcagLevel": "A",
-                "summary": "If content can be navigated sequentially and the navigation sequences affect meaning or operation, focusable components receive focus in an order that preserves meaning and operability.",
+                "summary": "Jeśli po treści można nawigować sekwencyjnie, a kolejność nawigacji wpływa na zrozumienie lub funkcjonalność strony, komponenty przyjmują fokus w kolejności, dzięki której zachowany jest sens i funkcjonalność treści.",
                 "rules": [
                     {
                         id: "IBMA_Focus_Tabbable",
@@ -24102,9 +24115,9 @@ var a11yRulesets = [
             },
             {
                 "num": "2.4.4",
-                "name": "Link Purpose (In Context)",
+                "name": "Cel łącza (w kontekście)",
                 "wcagLevel": "A",
-                "summary": "The purpose of each link can be determined from the link text alone or from the link text together with its programmatically determined link content.",
+                "summary": "Cel każdego łącza można określić na podstawie samej treści łącza lub treści tekstu powiązanego z kontekstem łącza określonym programowo.",
                 "rules": [
                     {
                         id: "WCAG20_A_HasText",
@@ -24115,16 +24128,16 @@ var a11yRulesets = [
             },
             {
                 "num": "2.4.5",
-                "name": "Multiple Ways",
+                "name": "Wiele dróg",
                 "wcagLevel": "AA",
-                "summary": "More than one way is available to locate a Web page within a set of Web pages, except where the Web Page is the result of, or a step in, a process.",
+                "summary": "Istnieje więcej niż jeden sposób umożliwiający zlokalizowanie strony internetowej w zestawie stron internetowych, z wyjątkiem sytuacji, kiedy dana strona jest wynikiem jakiejś procedury lub jednym z jej etapów.",
                 "rules": []
             },
             {
                 "num": "2.4.6",
-                "name": "Headings and Labels",
+                "name": "Nagłówki i etykiety",
                 "wcagLevel": "AA",
-                "summary": "Headings and labels describe topic or purpose.",
+                "summary": "Nagłówki i etykiety opisują temat lub cel treści.",
                 "rules": [
                     {
                         id: "RPT_Header_HasContent",
@@ -24135,9 +24148,9 @@ var a11yRulesets = [
             },
             {
                 "num": "2.4.7",
-                "name": "Focus Visible",
+                "name": "Widoczny fokus",
                 "wcagLevel": "AA",
-                "summary": "Any keyboard operable user interface has a mode of operation where the keyboard focus indicator is visible.",
+                "summary": "Każdy interfejs posiadający możliwość obsługi przy pomocy klawiatury ma tryb obsługi, w którym fokus klawiatury jest stale widoczny.",
                 "rules": [
                     {
                         id: "RPT_Style_HinderFocus1",
@@ -24153,23 +24166,23 @@ var a11yRulesets = [
             },
             {
                 "num": "2.5.1",
-                "name": "Pointer Gestures",
+                "name": "Gesty dotykowe",
                 "wcagLevel": "A",
-                "summary": "All functionality that uses multipoint or path-based gestures for operation can be operated with a single pointer without a path-based gesture.",
+                "summary": "Wszystkie funkcjonalności wykorzystujące do obsługi gesty wielopunktowe lub oparte na ścieżkach mogą być obsługiwane za pomocą dotyku jednopunktowego bez gestu opartego na ścieżce.",
                 "rules": []
             },
             {
                 "num": "2.5.2",
-                "name": "Pointer Cancellation",
+                "name": "Rezygnacja ze wskazania",
                 "wcagLevel": "A",
-                "summary": "For functionality that can be operated using a single pointer, completion of the function is on the up-event with an ability to abort, undo or reverse the outcome.",
+                "summary": "W przypadku funkcjonalności, które są wywoływane za pomocą dotyku jednopunktowego, zakończenie funkcjonalności następuje wskutek zwolnienia nacisku albo może być przerwane lub cofnięte.",
                 "rules": []
             },
             {
                 "num": "2.5.3",
-                "name": "Label in Name",
+                "name": "Etykieta w nazwie",
                 "wcagLevel": "A",
-                "summary": "For user interface components with labels that include text or images of text, the accessible name contains the text that is presented visually.",
+                "summary": "W przypadku komponentów interfejsu użytkownika z etykietami zawierającymi tekst lub obrazy tekstu, nazwa zawiera tekst, który jest prezentowany wizualnie.",
                 "rules": [
                     {
                         id: "WCAG21_Label_Accessible",
@@ -24180,16 +24193,16 @@ var a11yRulesets = [
             },
             {
                 "num": "2.5.4",
-                "name": "Motion Actuation",
+                "name": "Aktywowanie ruchem",
                 "wcagLevel": "A",
-                "summary": "Functionality that can be operated by motion can also be operated by user interface components, and the motion trigger can be disabled.",
+                "summary": "Funkcjonalność, którą można obsługiwać za pomocą ruchu urządzenia lub ruchu użytkownika, można również obsługiwać za pomocą komponentów interfejsu użytkownika, a reagowanie na ruch można wyłączyć.",
                 "rules": []
             },
             {
                 "num": "3.1.1",
-                "name": "Language of Page",
+                "name": "Język strony",
                 "wcagLevel": "A",
-                "summary": "The default human language of Web pages, non-Web documents, or software can be programmatically determined.",
+                "summary": "Domyślny język naturalny każdej strony internetowej może zostać odczytany przez program komputerowy.",
                 "rules": [
                     {
                         id: "WCAG20_Html_HasLang",
@@ -24200,9 +24213,9 @@ var a11yRulesets = [
             },
             {
                 "num": "3.1.2",
-                "name": "Language of Parts",
+                "name": "Język części",
                 "wcagLevel": "AA",
-                "summary": "The human language of each passage or phrase in the content can be programmatically determined.",
+                "summary": "Język naturalny każdej innojęzycznej części lub frazy zawartej w treści może zostać odczytany przez program komputerowy.",
                 "rules": [
                     {
                         id: "WCAG20_Elem_Lang_Valid",
@@ -24213,9 +24226,9 @@ var a11yRulesets = [
             },
             {
                 "num": "3.2.1",
-                "name": "On Focus",
+                "name": "Po otrzymaniu fokusu",
                 "wcagLevel": "A",
-                "summary": "When any component receives focus, it does not initiate a change of context.",
+                "summary": "Przyjęcie fokusu przez dowolny komponent interfejsu użytkownika nie powoduje nieoczekiwanej zmiany kontekstu.",
                 "rules": [
                     {
                         id: "WCAG20_Select_NoChangeAction",
@@ -24231,9 +24244,9 @@ var a11yRulesets = [
             },
             {
                 "num": "3.2.2",
-                "name": "On Input",
+                "name": "Podczas wprowadzania danych",
                 "wcagLevel": "A",
-                "summary": "Changing the setting of any user interface component does not automatically cause a change of context unless the user has been advised of the behavior before using the component.",
+                "summary": "Zmiana ustawień jakiegokolwiek komponentu interfejsu użytkownika nie powoduje automatycznej zmiany kontekstu, chyba, że użytkownik został poinformowany o takim działaniu, zanim zaczął korzystać z komponentu.",
                 "rules": [
                     {
                         id: "WCAG20_A_TargetAndText",
@@ -24264,23 +24277,23 @@ var a11yRulesets = [
             },
             {
                 "num": "3.2.3",
-                "name": "Consistent Navigation",
+                "name": "Spójna nawigacja",
                 "wcagLevel": "AA",
-                "summary": "Navigational mechanisms that are repeated on multiple Web pages within a set of Web pages occur in the same relative order each time they are repeated, unless a change is initiated by the user.",
+                "summary": "Mechanizmy nawigacji, które powtarzają się na wielu stronach internetowych w ramach jednego zestawu stron internetowych, występują w tej samej względnej kolejności za każdym razem, gdy są powtarzane, chyba że zmiana jest inicjowana przez użytkownika.",
                 "rules": []
             },
             {
                 "num": "3.2.4",
-                "name": "Consistent Identification",
+                "name": "Spójna identyfikacja",
                 "wcagLevel": "AA",
-                "summary": "Components that have the same functionality within a set of Web pages are identified consistently.",
+                "summary": "Komponenty, które mają tę samą funkcjonalność w ramach jednego zestawu stron internetowych, są w taki sam sposób zidentyfikowane.",
                 "rules": []
             },
             {
                 "num": "3.3.1",
-                "name": "Error Identification",
+                "name": "Identyfikacja błędu",
                 "wcagLevel": "A",
-                "summary": "If an input error is automatically detected, the item that is in error is identified and the error is described to the user in text.",
+                "summary": "Jeśli automatycznie zostanie wykryty błąd wprowadzania danych, system wskazuje błędny element, a użytkownik otrzymuje opis błędu w postaci tekstu.",
                 "rules": [
                     {
                         id: "HAAC_Aria_ErrorMessage",
@@ -24291,9 +24304,9 @@ var a11yRulesets = [
             },
             {
                 "num": "3.3.2",
-                "name": "Labels or Instructions",
+                "name": "Etykiety lub instrukcje",
                 "wcagLevel": "A",
-                "summary": "Labels or instructions are provided when content requires user input.",
+                "summary": "Gdy w treści wymagane jest wprowadzenie danych przez użytkownika, zapewnione są etykiety lub instrukcje.",
                 "rules": [
                     {
                         id: "WCAG20_Input_LabelBefore",
@@ -24329,23 +24342,23 @@ var a11yRulesets = [
             },
             {
                 "num": "3.3.3",
-                "name": "Error Suggestion",
+                "name": "Sugestie korekty błędów",
                 "wcagLevel": "AA",
-                "summary": "If an input error is automatically detected and suggestions for correction are known, then the suggestions are provided to the user, unless it would jeopardize the security or purpose of the content.",
+                "summary": "Jeśli automatycznie zostanie wykryty błąd wprowadzania danych i znane są sugestie korekty, wtedy użytkownik otrzymuje takie sugestie, chyba, że zagrażałoby to bezpieczeństwu treści lub zmieniło jej cel.",
                 "rules": []
             },
             {
                 "num": "3.3.4",
-                "name": "Error Prevention (Legal, Financial, Data)",
+                "name": "Zapobieganie błędom (prawnym, finansowym, w danych)",
                 "wcagLevel": "AA",
-                "summary": "For content that cause legal commitments or financial transactions for the user to occur, that modify or delete user-controllable data in data storage systems, or that submit user test responses, the user can reverse, correct, or confirm the action.",
+                "summary": "W przypadku treści, , które powodują zobowiązania prawne, albo na których użytkownik przeprowadza transakcje finansowe, modyfikuje lub usuwa dane w systemach przechowywania danych, nad którymi ma kontrolę, albo udziela odpowiedzi na testy, użytkownik może cofnąć, poprawić lub potwierdzić działanie.",
                 "rules": []
             },
             {
                 "num": "4.1.1",
-                "name": "Parsing",
+                "name": "Poprawność kodu",
                 "wcagLevel": "A",
-                "summary": "In content implemented using markup languages, elements have complete start and end tags, elements are nested according to their specifications, elements do not contain duplicate attributes, and any IDs are unique, except where the specifications allow these features.",
+                "summary": "W treści wprowadzonej przy użyciu języka znaczników, elementy posiadają kompletne znaczniki początkowe i końcowe, elementy są zagnieżdżane według swoich specyfikacji, nie posiadają zduplikowanych atrybutów, a wszystkie ID są unikalne, z wyjątkiem przypadków, kiedy specyfikacja zezwala na wyżej wymienione cechy.",
                 "rules": [
                     {
                         id: "RPT_Elem_UniqueId",
@@ -24361,9 +24374,9 @@ var a11yRulesets = [
             },
             {
                 "num": "4.1.2",
-                "name": "Name, Role, Value",
+                "name": "Nazwa, rola, wartość",
                 "wcagLevel": "A",
-                "summary": "For all user interface components (including, but not limited to: form elements, links and components generated by scripts), the name and role can be programmatically determined; states, properties, and values that can be set by the user can be programmatically set; and notification of changes to these items is available to user agents, including assistive technologies.",
+                "summary": "Dla wszystkich komponentów interfejsu użytkownika (w tym, ale nie tylko, elementów formularzy, łączy oraz komponentów wygenerowanych przez skrypty) nazwa oraz rola mogą być określone programowo; stan, właściwości oraz wartości, które mogą być ustawione przez użytkownika, mogą również być ustawione programowo; powiadomienie o zmianach w tych elementach dostępne jest dla programów użytkownika, w tym technologii wspomagających.",
                 "rules": [
                     {
                         id: "WCAG20_Input_ExplicitLabel",

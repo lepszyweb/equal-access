@@ -185,7 +185,7 @@ export default class ReportManagerTable extends React.Component<IReportManagerTa
                 //@ts-ignore
                 rows[i].date = this.format_date(this.props.storedScans[i].dateTime);
                 rows[i].label = this.props.storedScans[i].userScanLabel;
-                rows[i].details = "view"
+                rows[i].details = "pokaż"
             }
         }
         

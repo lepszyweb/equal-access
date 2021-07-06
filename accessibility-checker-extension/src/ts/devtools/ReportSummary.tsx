@@ -98,8 +98,8 @@ export default class ReportSummary extends React.Component<IReportSummaryProps, 
                     <div className="bx--col-lg-8 bx--col-md-8 box--col-sm-4">
                         <Tile className="tile count-tile">
                             <div>
-                                <h3 className="tile-title" style={{ display: "inline" }}>Zalecenia</h3>
-                                <span><img src={Recommendation16} style={{ verticalAlign: "top", float: "right" }} alt="Zalecenia" /></span>
+                                <h3 className="tile-title" style={{ display: "inline" }}>Rekomendacje</h3>
+                                <span><img src={Recommendation16} style={{ verticalAlign: "top", float: "right" }} alt="Rekomendacje" /></span>
                             </div>
                             <div className="tile-score">{summaryNumbers[2]}</div>
                             <div className="tile-description2">Możliwości zastosowania najlepszych praktyk w celu dalszej poprawy dostępności</div>

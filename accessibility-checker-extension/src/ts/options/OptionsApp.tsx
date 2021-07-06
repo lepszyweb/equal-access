@@ -177,8 +177,9 @@ class OptionsApp extends React.Component<{}, OptionsAppState> {
                 <img src={beeLogoUrl} alt="fioletowa ikona pszczoły" className="icon" />
                 <h2>
                   IBM <strong>Accessibility</strong>
-                  <br /> Zestaw narzędzi Equal Access:
-                  <br /> Tester dostępności
+				  <br /> Zestaw narzędzi 
+                  <br /> Equal Access
+                  <br /> Accessibility Checker
                 </h2>
               </div>
               <aside aria-label="O opcjach Testera dostępności">
@@ -186,11 +187,11 @@ class OptionsApp extends React.Component<{}, OptionsAppState> {
                   Wersja {manifest.version}
                 </div>
                 <p>
-                  Tester dostępności korzysta domyślnie z zestawu reguł, 
+                  Tester dostępności korzysta domyślnie z&nbsp;zestawu reguł, 
 				  które odpowiadają najnowszym wytycznym WCAG oraz kilku 
 				  dodatkowym wymaganiom IBM. Dostępne są również zestawy reguł 
 				  dla poszczególnych wersji WCAG. Zestawy reguł są regularnie aktualizowane, 
-				  aby stale poprawiać ich zasięg i dokładność.
+				  aby stale poprawiać ich zasięg i&nbsp;dokładność.
                 </p>
               </aside>
             </div>

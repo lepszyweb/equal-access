@@ -507,17 +507,17 @@ export default class Header extends React.Component<IHeaderProps, IHeaderState> 
                             className="checkboxLabel"
                             disabled={!this.props.counts}
                             // title="Filter recommendations"
-                            aria-label="Filtruj według Zalecenia"
+                            aria-label="Filtruj według Rekomendacje"
                             defaultChecked
                             id="Recommendations"
                             indeterminate={false}
-                            labelText={<React.Fragment><img src={Recommendation16} style={{ verticalAlign: "middle", paddingTop: "0px", marginRight: "4px" }} alt="Zalecenia" /><span className="summaryBarCounts" >{noScan ? ((bDiff ? counts.filtered["Recommendation"] + "/" : "") + counts.total["Recommendation"]) : " "}<span className="summaryBarLabels" style={{ marginLeft: "4px" }}>Zalecenia</span></span></React.Fragment>}
+                            labelText={<React.Fragment><img src={Recommendation16} style={{ verticalAlign: "middle", paddingTop: "0px", marginRight: "4px" }} alt="Rekomendacje" /><span className="summaryBarCounts" >{noScan ? ((bDiff ? counts.filtered["Recommendation"] + "/" : "") + counts.total["Recommendation"]) : " "}<span className="summaryBarLabels" style={{ marginLeft: "4px" }}>Rekomendacje</span></span></React.Fragment>}
                             // hideLabel
                             onChange={(value, id) => this.processFilterCheckBoxes(value, id)} // Receives three arguments: true/false, the checkbox's id, and the dom event.
                             wrapperClassName="checkboxWrapper"
                         />
                         <ReactTooltip id="filterRecommendationTip" place="top" effect="solid">
-                            Filtruj według Zalecenia
+                            Filtruj według Rekomendacje
                         </ReactTooltip>
                     </span>
                 </div>

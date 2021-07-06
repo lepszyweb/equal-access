@@ -177,7 +177,7 @@ export default class ReportRow extends React.Component<IReportRowProps, IReportR
                     <span style={{paddingRight:"16px"}}>{open ? <ChevronUp16/>: <ChevronDown16 />}</span>
                     { <span style={{whiteSpace:"nowrap"}}>{(this.props.dataFromParent[0] || this.props.dataFromParent[1]) && vCount > 0 && <><img src={Violation16} style={{verticalAlign:"middle",marginBottom:"12px"}} alt="Naruszenia" /><span style={{verticalAlign:"text-top",lineHeight:"8px", paddingLeft:"4px"}}>{vCount}</span> &nbsp;</>}</span> }
                     { <span style={{whiteSpace:"nowrap"}}>{(this.props.dataFromParent[0] || this.props.dataFromParent[2]) && nrCount > 0 && <><img src={NeedsReview16} style={{verticalAlign:"middle",marginBottom:"12px"}} alt="Do przeglądu" /><span style={{verticalAlign:"text-top",lineHeight:"8px", paddingLeft:"4px"}}>{nrCount}</span> &nbsp;</>}</span> }
-                    { <span style={{whiteSpace:"nowrap"}}>{(this.props.dataFromParent[0] || this.props.dataFromParent[3]) && rCount > 0 &&  <><img src={Recommendation16} style={{verticalAlign:"middle",marginBottom:"10px"}} alt="Zalecenia" /><span style={{verticalAlign:"text-top",lineHeight:"8px", paddingLeft:"4px"}}>{rCount}</span> </>}</span> }
+                    { <span style={{whiteSpace:"nowrap"}}>{(this.props.dataFromParent[0] || this.props.dataFromParent[3]) && rCount > 0 &&  <><img src={Recommendation16} style={{verticalAlign:"middle",marginBottom:"10px"}} alt="Rekomendacje" /><span style={{verticalAlign:"text-top",lineHeight:"8px", paddingLeft:"4px"}}>{rCount}</span> </>}</span> }
                 </div>
                 <div role="cell" className="bx--col-md-4 bx--col-sm-2">
                     <span style={{wordBreak:"break-all"}}>{group.title.length === 0 ? "Strona" : group.title}</span>
@@ -211,7 +211,7 @@ export default class ReportRow extends React.Component<IReportRowProps, IReportR
                                             }
                                             { (this.props.dataFromParent[0] || this.props.dataFromParent[3]) && val === "Recommendation" && 
                                             <React.Fragment>
-                                            <span><img src={Recommendation16} style={{verticalAlign:"middle",marginBottom:"0px"}} alt="Zalecenia" /></span>
+                                            <span><img src={Recommendation16} style={{verticalAlign:"middle",marginBottom:"0px"}} alt="Rekomendacje" /></span>
                                             <span style={{fontSize:"12px"}}>{item.message}</span>
                                             {this.props.layout === "sub" ? (<React.Fragment><span> </span><a className="helpLink" href="#" style={{cursor:'default'}} onKeyDown={(event) =>{this.learnMoreKeyDownHandler(event, item)}} onClick={(event) =>{this.learnMoreClickHandler(event, item)}} ref={this.learnMoreRef(item)}>Dowiedz się więcej</a></React.Fragment>) : ""}
                                             </React.Fragment>

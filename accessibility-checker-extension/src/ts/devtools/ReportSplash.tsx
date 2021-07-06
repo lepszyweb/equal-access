@@ -34,7 +34,7 @@ export default class ReportSplash extends React.Component<IReportSplashProps, IR
                     <div className="bx--col-lg-8 bx--col-md-8 box--col-sm-4">
                         <h2>
                             <div className="title">IBM <span style={{ fontWeight: 600 }}>Dostępność</span></div>
-                            <div className="subtitle">IBM Equal Access Accessibility Checker</div>
+                            <div className="subtitle">Equal Access Accessibility Checker</div>
                             <div className="version">Wersja {manifest.version}</div>
                         </h2>
                         <div className="description">

@@ -187,7 +187,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
             </p>
             <p>
               Rozszerzenie prezentuje dwa widoki. Widok panelu{" "}
-              <strong>Ocena dostępności</strong> jest kompleksowym narzędziem, które pomaga wykryć problemy z&nbsp;dostępnością i zrozumieć, jak je naprawić. Natomiast karta {" "}
+              <strong>Ocena dostępności</strong> jest kompleksowym narzędziem, które pomaga wykryć problemy z&nbsp;dostępnością i&nbsp;zrozumieć, jak je naprawić. Natomiast karta {" "}
               <strong>Tester dostępności</strong> w panelu Elementy w Chrome lub panelu Inspektor w&nbsp;Firefoksie jest skanerem kodu dla programistów, którzy chcą szybko znaleźć i naprawić problemy w&nbsp;kodzie i na stronie.
 			</p>
 			<p>
@@ -225,7 +225,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                   w Chrome Web Store.
                 </li>
                 <li>
-                  Naciśnij przycisk <strong>'Dodaj do Chrome'</strong>.
+                  Naciśnij przycisk <strong>Dodaj do Chrome</strong>.
                 </li>
               </ol>
             </div>
@@ -247,7 +247,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                   na stronie Dodatki do przeglądarki.
                 </li>
                 <li>
-                  Naciśnij przycisk <strong>'Dodaj do Firefoksa'</strong> .
+                  Naciśnij przycisk <strong>Dodaj do Firefoksa</strong>.
                 </li>
               </ol>
             </div>
@@ -280,17 +280,17 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 <p>
                   <img
                     src={recommendation}
-                    alt="ikona Zalecenia"
+                    alt="ikona Ulepszenia"
                     style={{ verticalAlign: "middle" }}
                   />{" "}
-                  <strong> Zalecenia</strong> - możliwości zastosowania najlepszych praktyk w celu dalszej poprawy dostępności.
+                  <strong> Ulepszenia</strong> - możliwości zastosowania najlepszych praktyk w celu dalszej poprawy dostępności.
                 </p>
               </li>
             </ul>
             <p>
               Jak w przypadku każdego narzędzia do automatycznego testowania dostępności, 
-			  testy te nie wychwytują wszystkich problemów. Dopełnij swoją ocenę dostępności  
-			  <a className="link" href="https://ibm.com/able/toolkit/develop/considerations/unit-testing" target="_blank">szybkim testem jednostkowym</a> lub przejdź do <a className="link" href="https://ibm.com/able/toolkit/verify" target="_blank">pełnego procesu testowania dostępności</a>.
+			  testy te nie wychwytują wszystkich problemów. Dopełnij swoją ocenę dostępności 
+			  <a className="link" href="https://ibm.com/able/toolkit/develop/considerations/unit-testing" target="_blank">&nbsp;szybkim testem jednostkowym</a> lub przejdź do<a className="link" href="https://ibm.com/able/toolkit/verify" target="_blank"> pełnego procesu testowania dostępności</a>.
 			  
            </p>
 
@@ -311,7 +311,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
               </li>
               <li>
                 <p>
-                  <strong>Reguły</strong> - problemy są uporządkowane według reguł w zestawie wymagań. Są podzielone na naruszenia, kwestie wymagające przeglądu i zalecenia. Ten widok jest najlepszym sposobem na równoczesny przegląd wszystkich problemów różnego typu.
+                  <strong>Reguły</strong> - problemy są uporządkowane według reguł w zestawie wymagań. Są podzielone na naruszenia, kwestie wymagające przeglądu i ulepszenia. Ten widok jest najlepszym sposobem na równoczesny przegląd wszystkich problemów różnego typu.
                 </p>
               </li>
             </ul>
@@ -344,7 +344,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
               </li>
               <li>
                 <p>
-                  Wybierz w nakładce <strong>„Opcje”</strong>. Opcje zostaną otwarte na nowej karcie przeglądarki. <strong>Uwaga:</strong> W przeglądarce Firefox, gdy w opcjach Wzmocniona ochrony przed śledzeniem wybrano ustawienie <strong>Ścisła</strong>, zdarza się, że niektóre witryny lub treści mogą zostać uszkodzone i może to uniemożliwić otwarcie strony Opcje. Zmień ustawienia prywatności przeglądarki na Standard, aby uniknąć tej sytuacji.
+                  Wybierz w nakładce <strong>Opcje</strong>. Opcje zostaną otwarte na nowej karcie przeglądarki. <strong>Uwaga:</strong> W przeglądarce Firefox, gdy w opcjach <em>Wzmocniona ochrona przed śledzeniem</em> wybrano ustawienie <strong>Ścisła</strong>, zdarza się, że niektóre witryny lub treści mogą zostać uszkodzone i może to uniemożliwić otwarcie strony Opcje. Zmień ustawienia prywatności przeglądarki na Standard, aby uniknąć tej sytuacji.
 
                 </p>
               </li>
@@ -361,7 +361,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
             <h3 id="rule_deploy">5.1 Data wdrożenia zestawu reguł</h3>
             <p>
               {" "}
-              Z listy rozwijanej <strong>'Wybierz datę wdrożenia zestawu reguł'</strong> wybierz jedną z opcji:
+              Z listy rozwijanej <strong>Wybierz datę wdrożenia zestawu reguł</strong> wybierz jedną z opcji:
             </p>
             <ul style={{ marginInlineStart: "2rem" }}>
               <li>
@@ -381,12 +381,12 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
               </li>
             </ul>
             <p>
-              Wybierz przycisk <strong>„Zapisz”</strong>, aby zachować zmiany, lub przycisk <strong>„Przywróć domyślne”</strong>, aby odrzucić zmiany. Zamknij i otwórz ponownie narzędzia programistyczne, aby zmiany zaczęły obowiązywać.
+              Wybierz przycisk <strong>Zapisz</strong>, aby zachować zmiany, lub przycisk <strong>Przywróć domyślne</strong>, aby odrzucić zmiany. Zamknij i otwórz ponownie narzędzia programistyczne, aby zmiany zaczęły obowiązywać.
             </p>
 
             <h3 id="ruleset">5.2 Wybierz wytyczne dla dostępności</h3>
             <p>
-               Z listy rozwijanej <strong>„Wybierz wytyczne dla dostępności”</strong> wybierz jedną z opcji :
+               Z listy rozwijanej <strong>Wybierz wytyczne dla dostępności</strong> wybierz jedną z opcji:
             </p>
             <ul style={{ marginInlineStart: "2rem" }}>
               <li>
@@ -403,7 +403,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
 
               <li>
                 <p>
-                  <strong>WCAG 2.0 (A,AA)</strong> - Te reguły te są zgodne z obwiązującymi w USA poprawionymi normami Sekcja 508, ale nie z najnowszą rekomendacją W3C.
+                  <strong>WCAG 2.0 (A,AA)</strong> - Te reguły są zgodne z obowiązującym w USA poprawionym standardem Sekcja 508, ale nie z najnowszą rekomendacją W3C.
                 </p>
               </li>
 
@@ -415,7 +415,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
 
             </ul>
             <p>
-			  Po wprowadzeniu zmiany należy wybrać przycisk <strong>„Zapisz”</strong>, a następnie zamknąć i&nbsp;ponownie otworzyć narzędzia programistyczne, aby zmiana zaczęła obowiązywać.
+			  Po wprowadzeniu zmiany należy wybrać przycisk <strong>Zapisz</strong>, a następnie zamknąć i&nbsp;ponownie otworzyć narzędzia programistyczne, aby zmiana zaczęła obowiązywać.
             </p>
 
             <h2 id="usage">6. Stosowanie</h2>
@@ -451,7 +451,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                     </li>
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        W Firefox: w menu przeglądarki „Narzędzia” wybierz „Narzędzia przeglądarki” , a następnie wybierz „Narzędzia dla twórców witryn”, lub
+                        W Firefox: w menu przeglądarki „Narzędzia” wybierz „Narzędzia przeglądarki”, a następnie wybierz „Narzędzia dla twórców witryn”, lub
                       </p>
                     </li>
                     <li>
@@ -475,7 +475,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Wybierz <strong>„Tester dostępności”</strong> z&nbsp;kart w&nbsp;prawym okienku:{" "}
+                    Wybierz <strong>Tester dostępności</strong> z&nbsp;kart w&nbsp;prawym okienku:{" "}
                   </p>
                   <p>
                     <img
@@ -488,7 +488,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Kliknij przycisk <strong>„Skanuj”</strong>, aby zeskanować stronę internetową.
+                    Kliknij przycisk <strong>Skanuj</strong>, aby zeskanować stronę internetową.
                   </p>
                 </li>
                 <li>
@@ -506,8 +506,8 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Aby <strong>filtrować</strong> problemy i skupić się tylko na naruszeniach, elementach, które wymagają sprawdzenia lub zaleceniach, usuń zaznaczenie pola wyboru obok typu problemu w obszarze liczby problemów poniżej przycisku{" "}
-                    <strong>„Skanuj”</strong>, aby wykluczyć typ problemu z wyników. Zaznacz pole wyboru obok typu problemów, aby uwzględnić typ problemu w wynikach. Na tym zrzucie ekranu elementy „Do przeglądu” zostały odfiltrowane. 
+                    Aby <strong>filtrować</strong> problemy i skupić się tylko na naruszeniach, kwestiach, które wymagają sprawdzenia lub na ulepszeniach, usuń zaznaczenie pola wyboru obok typu problemu w obszarze liczby problemów poniżej przycisku{" "}
+                    <strong>Skanuj</strong>, aby wykluczyć typ problemu z wyników. Zaznacz pole wyboru obok typu problemów, aby uwzględnić typ problemu w wynikach. Na tym zrzucie ekranu elementy „Do przeglądu” zostały odfiltrowane. 
                   </p>
                   <p>
                     <img
@@ -580,7 +580,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                   >
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        Wybierz kartę <strong>„Wymagania”</strong>, aby wyświetlić wyniki skanowania{" "}
+                        Wybierz kartę <strong>Wymagania</strong>, aby wyświetlić wyniki skanowania{" "}
                         <a href="https://www.ibm.com/able/requirements/requirements/">
                           według wymagań dostępności IBM</a>.{" "}
                       </p>
@@ -603,7 +603,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                     <li>
                       <p style={{ marginTop: "0rem" }}>
                         {" "}
-                        Wybierz kartę <strong>„Reguły”</strong>, aby wyświetlić wyniki skanowania według reguł sprawdzania dostępności.
+                        Wybierz kartę <strong>Reguły</strong>, aby wyświetlić wyniki skanowania według reguł sprawdzania dostępności.
                       </p>
                     </li>
                     <li>
@@ -620,7 +620,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Użyj przycisku menu <strong>„Raporty”</strong>, aby pobrać raporty oraz przechowywać i&nbsp;zarządzać skanami w celu połączenia ich w raporty. Aby uzyskać szczegółowe informacje, zobacz sekcje {" "}
+                    Użyj przycisku menu <strong>Raporty</strong>, aby pobrać raporty oraz przechowywać i&nbsp;zarządzać skanami w celu połączenia ich w raporty. Aby uzyskać szczegółowe informacje, zobacz sekcje {" "}
                     <a href="#t_single_scan_report" title="Utwórz raport skanowania">6.4 Tworzenie raportu ze skanowania</a>,{" "} 
                     <a href="#t_multi_scan_report" title="Utwórz raport z wielu skanowań">6.5 Tworzenie raportu z wielu skanów</a>{" "}
                     oraz <a href="#the_report" title="Raporty sprawdzania dostępności">7 Raporty sprawdzania dostępności</a>.
@@ -628,7 +628,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Opcjonalnie możesz zaktualizować kod w panelu Elementy przeglądarki i ponownie uruchomić <strong>„Skanuj”</strong>, aby potwierdzić, że zmiany w kodzie rozwiązują problem.
+                    Opcjonalnie możesz zaktualizować kod w panelu Elementy przeglądarki i&nbsp;ponownie uruchomić <strong>Skanuj</strong>, aby potwierdzić, że zmiany w kodzie rozwiązują problem.
                   </p>
                 </li>
               </ol>
@@ -656,12 +656,12 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Wybierz nazwę elementu w przełączniku <strong>„Widok skoncentrowany”</strong>, aby wyświetlić tylko problemy dotyczące tego elementu i&nbsp;jego dzieci.
+                    Wybierz nazwę elementu w przełączniku <strong>Widok skoncentrowany</strong>, aby wyświetlić tylko problemy dotyczące tego elementu i&nbsp;jego dzieci.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Wybierz opcję <strong>„Wszystko”</strong> w przełączniku <strong>„Widok skoncentrowany”</strong>, aby wyświetlić wszystkie problemy na stronie.
+                    Wybierz opcję <strong>Wszystko</strong> w przełączniku <strong>Widok skoncentrowany</strong>, aby wyświetlić wszystkie problemy na stronie.
                   </p>
                 </li>
               
@@ -678,7 +678,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                     />
               </p>
               <p>Na tym zrzucie ekranu wybrano element wyszukiwania &lt;input&gt; w DOM, a przełącznik {" "} 
-              <strong>„Widok skoncentrowany”</strong> został ustawiony tak, aby wyświetlał wszystkie problemy na całej stronie:
+              <strong>Widok skoncentrowany</strong> został ustawiony tak, aby wyświetlał wszystkie problemy na całej stronie:
               <br/>
               </p>
               <p>
@@ -690,7 +690,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                     />
               </p>
               <p>Na tym zrzucie ekranu wybrano pole wyszukiwania &lt;input&gt; w DOM, a przełącznik{" "}
-              <strong>„skoncentrowany”</strong>  został ustawiony tak, aby wyświetlał tylko problemy dla tego elementu wyszukiwania &lt;input&gt;:
+              <strong>Widok skoncentrowany</strong>  został ustawiony tak, aby wyświetlał tylko problemy dla tego elementu wyszukiwania &lt;input&gt;:
               </p>
               <p>
                     <img
@@ -748,7 +748,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Wybierz panel  <strong>„Ocena dostępności”</strong>{" "}
+                    Wybierz panel  <strong>Ocena dostępności</strong>{" "}
                     panel:{" "}
                   </p>
                   <p>
@@ -762,18 +762,18 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Kliknij przycisk <strong>„Skanuj”</strong>, aby zeskanować stronę internetową.
+                    Kliknij przycisk <strong>Skanuj</strong>, aby zeskanować stronę internetową.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
                     Domyślnie wyniki są wyświetlane według {" "}
-                    <strong>„Wymagań”</strong> with z podziałem całkowitej liczby wykrytych problemów według kategorii.
+                    <strong>Wymagań</strong> with z podziałem całkowitej liczby wykrytych problemów według kategorii.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Prawy panel wyświetla podsumowanie raportu Kontrolera dostępności, a lewy panel pokazuje wynik skanowania z łączną liczbą wykrytych problemów, z liczbami naruszeń, kwestii, które wymagają sprawdzenia oraz zaleceniami:{" "}
+                    Prawy panel wyświetla podsumowanie raportu Testera dostępności, a lewy panel pokazuje wynik skanowania z łączną liczbą wykrytych problemów, z liczbami naruszeń, kwestii, które wymagają sprawdzenia oraz ulepszeniami:{" "}
                   </p>
                   <p>
                     <img
@@ -828,7 +828,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                   >
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        Wybierz kartę <strong>„Role elementów”</strong>, aby wyświetlić wyniki skanowania uporządkowane według ról elementów na stronie internetowej.
+                        Wybierz kartę <strong>Role elementów</strong>, aby wyświetlić wyniki skanowania uporządkowane według ról elementów na stronie internetowej.
                       </p>
                     </li>
                     <li>
@@ -868,7 +868,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                   >
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        Wybierz kartę <strong>„Reguły”</strong>, aby wyświetlić wyniki skanowania według reguły sprawdzania dostępności.
+                        Wybierz kartę <strong>Reguły</strong>, aby wyświetlić wyniki skanowania według reguły sprawdzania dostępności.
                       </p>
                       <li>
                         {" "}
@@ -901,7 +901,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Opcjonalnie możesz wybrać panel Element przeglądarki, aby wyświetlić wyniki sprawdzania dostępności wraz z&nbsp;poprawkami kodu i&nbsp;testów.
+                    Opcjonalnie możesz wybrać panel Elementy w przeglądarce Chrome lub Inspektor w Firefox, aby wyświetlić wyniki sprawdzania dostępności wraz z&nbsp;poprawkami kodu i&nbsp;testów.
                   </p>
                 </li>
               </ol>
@@ -921,7 +921,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                   Otwórz menu rozwijane <strong>„Raporty”</strong>, które znajduje się za przyciskiem skanowania.
+                   Otwórz menu rozwijane <strong>Raporty</strong>, które znajduje się za przyciskiem skanowania.
                   </p>
                   <p>
               <img
@@ -935,12 +935,12 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Wybierz <strong>„Pobierz aktualny skan”</strong>.
+                    Wybierz <strong>Pobierz aktualny skan</strong>.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Raport z ostatniego skanowania zostanie pobrany w formacie arkusza kalkulacyjnego HTML i MS Excel.
+                    Raport z ostatniego skanowania zostanie pobrany w&nbsp;formacie arkusza kalkulacyjnego HTML i MS Excel.
                 </p>
                 </li>
                 </ol>
@@ -956,7 +956,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Wybierz przycisk <strong>„Raporty”</strong>.
+                    Wybierz przycisk <strong>Raporty</strong>.
                   </p>
                 </li>
                 <li>
@@ -983,12 +983,12 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Otwórz menu rozwijane <strong>„Raporty”</strong>.
+                    Otwórz menu rozwijane <strong>Raporty</strong>.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Wybierz pozycję menu <strong>„Rozpocznij przechowywanie skanów”</strong>.
+                    Wybierz pozycję menu <strong>Rozpocznij przechowywanie skanów</strong>.
                   </p>
                 </li>
                 <li>
@@ -1019,23 +1019,23 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Podczas zapisywania skanów możesz przestać zapisywać skany, wybierając opcję <strong>„Zatrzymaj przechowywanie skanów”</strong>{" "} w&nbsp;menu rozwijanym <strong>„Raporty”</strong>, a&nbsp;zapisane skany nie zostaną utracone. W&nbsp;dowolnym momencie możesz ponownie zapisywać skany.
+                    Podczas zapisywania skanów możesz przestać zapisywać skany, wybierając opcję <strong>Zatrzymaj przechowywanie skanów</strong>{" "} w&nbsp;menu rozwijanym <strong>Raporty</strong>, a&nbsp;zapisane skany nie zostaną utracone. W&nbsp;dowolnym momencie możesz ponownie zapisywać skany.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Aby usunąć wszystkie zapisane skany, otwórz menu rozwijane <strong>„Raporty”</strong> i&nbsp;wybierz opcję  <strong>„Wyczyść przechowywane skany”</strong>.
+                    Aby usunąć wszystkie zapisane skany, otwórz menu rozwijane <strong>Raporty</strong> i&nbsp;wybierz opcję  <strong>Wyczyść przechowywane skany</strong>.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Po zapisaniu skanów do raportu otwórz menu rozwijane <strong>„Raporty”</strong>i&nbsp;wybierz opcję {" "} 
-                    <strong>„Pokaż przechowywane skany”</strong>. Spowoduje to otwarcie widoku menedżera skanowania, zawierającego tabelę zawierającą wszystkie zapisane skany. 
+                    Po zapisaniu skanów do raportu otwórz menu rozwijane <strong>Raporty</strong>i&nbsp;wybierz opcję {" "} 
+                    <strong>Pokaż przechowywane skany</strong>. Spowoduje to otwarcie widoku menedżera skanowania, zawierającego tabelę zawierającą wszystkie zapisane skany. 
                   </p>
                   <p>
                         <img
                           src="assets/img/6_5_CreatingMulti-scanReport8.png"
-                          alt="Zrzut ekranu panelu Accessibility Checker Stored Scans - tabela zawierająca listę zapisanych skanów "
+                          alt="Zrzut ekranu panelu przechowywanych skanów - tabela zawierająca listę zapisanych skanów "
                           width="100%"
                           height="100%"
                         />
@@ -1053,7 +1053,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Użyj linku <strong>„Wyświetl”</strong> w kolumnie „Szczegóły” po prawej stronie tabeli, aby zobaczyć zrzut ekranu każdego skanu.
+                    Użyj linku <strong>Wyświetl</strong> w kolumnie „Szczegóły” po prawej stronie tabeli, aby zobaczyć zrzut ekranu każdego skanu.
                   </p>
                   <p>
                         <img
@@ -1071,7 +1071,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                   <p>
                         <img
                           src="assets/img/6_5_CreatingMulti-scanReport11.png"
-                          alt="Zrzut ekranu panelu Accessibility Checker Stored Scans - jeden skan jest niezaznaczony "
+                          alt="Zrzut ekranu panelu przechowywanych skanów - jeden skan jest niezaznaczony "
                           width="100%"
                           height="100%"
                         />
@@ -1084,7 +1084,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                   <p>
                         <img
                           src="assets/img/6_5_CreatingMulti-scanReport12.png"
-                          alt="Zrzut ekranu panelu Accessibility Checker Stored Scans - trzy skany są oznaczone jako 'oryginalny skan', 'z formularzem' i 'z linkiem'. "
+                          alt="Zrzut ekranu panelu przechowywanych skanów - trzy skany są oznaczone jako 'oryginalny skan', 'z formularzem' i 'z linkiem'. "
                           width="100%"
                           height="100%"
                         />
@@ -1092,17 +1092,17 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Pobierz arkusz z raportem z wielu skanów, wybierając przycisk  <strong>„Pobierz”</strong> u&nbsp;góry tabeli. Arkusz kalkulacyjny zostanie pobrany automatycznie.
+                    Pobierz arkusz z raportem z wielu skanów, wybierając przycisk  <strong>Pobierz</strong> u&nbsp;góry tabeli. Arkusz kalkulacyjny zostanie pobrany automatycznie.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Usuń wybrane zapisane skany za pomocą przycisku  <strong>„Usuń”</strong> Pozwala to zachować pamięć do przechowywania nowych skanów.
+                    Usuń wybrane zapisane skany za pomocą przycisku  <strong>Usuń</strong> Pozwala to zachować pamięć do przechowywania nowych skanów.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Wróć do głównego widoku sprawdzania, wybierając <strong>„Powrót do widoku listy”</strong>.
+                    Wróć do głównego widoku sprawdzania, wybierając <strong>Powrót do widoku listy</strong>.
                   </p>
                 </li>
               </ol>
@@ -1111,7 +1111,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
             <h3 id="t_select_hidden_settings">6.6 Skanowanie ukrytych treści</h3>
             <p>
               Domyślnie narzędzie pomija ukrytą zawartość (strony internetowe, które używają elementów{" "}
-              <var>visibility:hidden</var> lub <var>display:none</var>, jeśli ta zawartość jest wyświetlana użytkownikowi w&nbsp;dowolnym momencie, należy przetestować zawartość sieci Web, w pełni wykorzystując interfejs użytkownika zgodnie z scenariusze użycia w&nbsp;planie testów. Upewnij się, że testy uruchamiają wyświetlanie ukrytej zawartości, aby narzędzie sprawdzania ułatwień dostępu mogło sprawdzić poprawność wyświetlanej zawartości.
+              <var>visibility:hidden</var> lub <var>display:none</var>, jeśli ta zawartość jest wyświetlana użytkownikowi w&nbsp;dowolnym momencie, należy przetestować zawartość strony internetowej, w&nbsp;pełni wykorzystując interfejs użytkownika zgodnie z scenariusze użycia w&nbsp;planie testów. Upewnij się, że testy uruchamiają wyświetlanie ukrytej zawartości, aby narzędzie sprawdzania ułatwień dostępu mogło sprawdzić poprawność wyświetlanej zawartości.
             </p>
             <h3 id="scan_local_files">6.7 Skanuj pliki lokalne</h3>
             <p>
@@ -1128,22 +1128,22 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Otwórz menu <strong>„Okno”</strong>.
+                    Otwórz menu <strong>Okno</strong>.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Wybierz opcję menu <strong>„Rozszerzenia”</strong>, aby zobaczyć wszystkie zainstalowane rozszerzenia.
+                    Wybierz opcję menu <strong>Rozszerzenia</strong>, aby zobaczyć wszystkie zainstalowane rozszerzenia.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Wybierz przycisk <strong>„Szczegóły”</strong> rozszerzenia IBM Equal Accessibility Checker.
+                    Wybierz przycisk <strong>Szczegóły</strong> rozszerzenia IBM Equal Accessibility Checker.
                   </p>
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Przewiń w dół do <strong>„Zezwól na dostęp do adresów URL plików”</strong>{" "}
+                    Przewiń w dół do <strong>Zezwól na dostęp do adresów URL plików</strong>{" "}
                      i&nbsp;włącz tę opcję.
                   </p>
                 </li>
@@ -1165,7 +1165,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 </li>
                 <li>
                   <p style={{ marginTop: "0rem" }}>
-                    Zarówno widok Oceny dostępności, jak i widok Tester dostępności są w&nbsp;pełni dostępne za pomocą klawiatury, nawiguj w następujący sposób:
+                    Zarówno widok Ocena dostępności, jak i widok Tester dostępności są w&nbsp;pełni dostępne za pomocą klawiatury, nawiguj w następujący sposób:
                   </p>
                 </li>
                   <ul
@@ -1176,37 +1176,37 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                   >
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        Użyj klawisza <strong>„Tab”</strong>, aby przejść do dowolnego elementu sprawdzania, który można ustawić, zaczynając od przycisku <strong>„Skanuj”</strong> po uruchomieniu sprawdzania.
+                        Użyj klawisza <strong>Tab</strong>, aby przejść do dowolnego elementu sprawdzania, który można ustawić, zaczynając od przycisku <strong>Skanuj</strong> po uruchomieniu sprawdzania.
                       </p>
                     </li>
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        Po uruchomieniu skanowania ponownie naciśnij klawisz <strong>„tab”</strong>, aby przejść do przycisku menu rozwijanego <strong>„Raporty”</strong>.
+                        Po uruchomieniu skanowania ponownie naciśnij klawisz <strong>Tab</strong>, aby przejść do przycisku menu rozwijanego <strong>Raporty</strong>.
                       </p>
                     </li>
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        W widoku Tester dostępności ponownie naciśnij klawisz <strong>„Tab”</strong>, aby przejść do przycisku przełączania „Widok skoncentrowany”. Użyj klawiszy strzałek, aby wybrać, czy lista spraw zawiera wszystkie sprawy (domyślnie), czy tylko sprawy dla aktualnie wybranego elementu i&nbsp;jego elementów podrzędnych. Ta funkcja nie jest dostępna w widoku Ocena dostępności. 
+                        W widoku Tester dostępności ponownie naciśnij klawisz <strong>Tab</strong>, aby przejść do przycisku przełączania „Widok skoncentrowany”. Użyj klawiszy strzałek, aby wybrać, czy lista spraw zawiera wszystkie sprawy (domyślnie), czy tylko sprawy dla aktualnie wybranego elementu i&nbsp;jego elementów podrzędnych. Ta funkcja nie jest dostępna w widoku Ocena dostępności. 
                       </p>
                     </li>
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        Naciśnij klawisz <strong>„Tab”</strong>, aby przejść do pola wyboru według każdego typu problemu i naciśnij klawisz <strong>„enter”</strong>, aby przefiltrować listę problemów według <strong>naruszeń</strong>, <strong>Do przeglądu</strong> lub według <strong>Zaleceń</strong>.
+                        Naciśnij klawisz <strong>Tab</strong>, aby przejść do pola wyboru według każdego typu problemu i naciśnij klawisz <strong>Enter</strong>, aby przefiltrować listę problemów według <strong>Naruszeń</strong>, <strong>Do przeglądu</strong> lub według <strong>Rekomendacji</strong>.
                       </p>
                     </li>
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        Naciśnij klawisz <strong>„Tab”</strong>, aby przejść do kart z <strong>listą problemów</strong> i użyj klawiszy <strong>„strzałka w&nbsp;prawo”</strong> lub <strong>„strzałka w&nbsp;lewo”</strong>, aby przechodzić między widokami <strong>„Role elementów”</strong>, <strong>„Wymagania”</strong> i&nbsp;widokiem <strong>„Reguły”</strong>.
+                        Naciśnij klawisz <strong>Tab</strong>, aby przejść do kart z <strong>listą problemów</strong> i użyj klawiszy <strong>strzałka w&nbsp;prawo</strong> lub <strong>strzałka w&nbsp;lewo</strong>, aby przechodzić między widokami <strong>Role elementów</strong>, <strong>Wymagania</strong> i&nbsp;widokiem <strong>Reguły</strong>.
                       </p>
                     </li>
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        Naciśnij klawisz <strong>„Tab”</strong>, aby poruszać się po <strong>grupach problemów</strong> związanych z każdym wymaganiem, rolą elementu lub regułą. Użyj klawisza <strong>„enter”</strong>, aby otworzyć lub zamknąć grupowanie spraw. W ramach otwartej grupy naciśnij klawisz <strong>„Tab”</strong>, aby przejść do każdego problemu, i&nbsp;naciśnij klawisz <strong>„Enter”</strong>, aby wybrać bieżący problem.
+                        Naciśnij klawisz <strong>Tab</strong>, aby poruszać się po <strong>grupach problemów</strong> związanych z&nbsp;każdym wymaganiem, rolą elementu lub regułą. Użyj klawisza <strong>Enter</strong>, aby otworzyć lub zamknąć grupowanie spraw. W ramach otwartej grupy naciśnij klawisz <strong>Tab</strong>, aby przejść do każdego problemu, i&nbsp;naciśnij klawisz <strong>Enter</strong>, aby wybrać bieżący problem.
                       </p>
                     </li>
                     <li>
                       <p style={{ marginTop: "0rem" }}>
-                        Naciśnij klawisz <strong>„Tab”</strong>, aby przejść do linku <strong>„Więcej informacji”</strong> lub przejść do następnego problemu.
+                        Naciśnij klawisz <strong>Tab</strong>, aby przejść do linku <strong>Więcej informacji</strong> lub przejść do następnego problemu.
                       </p>
                     </li>
                   </ul>  
@@ -1277,7 +1277,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
             </p>
             <h3 id="t_html_report">7.1 Raport HTML</h3>
             <p>
-              Jest to interaktywny raport zapisany jako plik HTML do wykorzystania w przyszłości. Zawiera datę i godzinę skanowania raportu, adres URL oraz podsumowanie wyników testów, a następnie szczegóły problemu uporządkowane według wymagań, ról elementów i reguł. Każde wystąpienie problemu zawiera również łącze <strong>„Dowiedz się więcej”</strong>, które otwiera nakładkę zawierającą bardziej szczegółowy opis problemu.
+              Jest to interaktywny raport zapisany jako plik HTML do wykorzystania w przyszłości. Zawiera datę i godzinę skanowania raportu, adres URL oraz podsumowanie wyników testów, a następnie szczegóły problemu uporządkowane według wymagań, ról elementów i reguł. Każde wystąpienie problemu zawiera również łącze <strong>Dowiedz się więcej</strong>, które otwiera nakładkę zawierającą bardziej szczegółowy opis problemu.
             </p>
             <p>
               Bieżący stan dostępności treści internetowych jest wyświetlany jako procent elementów bez wykrytych naruszeń lub elementów do przejrzenia.{" "}
@@ -1317,7 +1317,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
               </li>
               <li>
                 <p style={{ marginTop: "0rem" }}>
-                  <strong>Zestawienie problemów</strong> zawiera przegląd problemów znalezionych we wszystkich skanach. Zagadnienia są podsumowywane według priorytetów, zaczynając od pozycji Poziomu 1, zgodnie z&nbsp;definicją w IBM Equal Access Toolkit, a następnie Poziomu 2 oraz Poziomów 3 i 4. Poziomy 1-3 są niezbędne do spełnienia wymagań IBM. Na każdym poziomie podsumowanie zawiera listę problemów, które stanowią naruszenia, kwestie wymagające przeglądu oraz zalecenia. Liczby są podane dla każdego rodzaju problemu.
+                  <strong>Zestawienie problemów</strong> zawiera przegląd problemów znalezionych we wszystkich skanach. Zagadnienia są podsumowywane według priorytetów, zaczynając od pozycji Poziomu 1, zgodnie z&nbsp;definicją w IBM Equal Access Toolkit, a następnie Poziomu 2 oraz Poziomów 3 i 4. Poziomy 1-3 są niezbędne do spełnienia wymagań IBM. Na każdym poziomie zestawienie zawiera listę problemów, które stanowią naruszenia, kwestie wymagające przeglądu oraz ulepszenia. Liczby są podane dla każdego rodzaju problemu.
                 </p>            
               </li>
               <li>
@@ -1332,7 +1332,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
               </li>
             </ol>
             <p>
-            W raporcie z wielu skanów, w którym ta sama strona jest skanowana kilka razy, problemy mogą się powtarzać w różnych skanach tej samej strony. Te zduplikowane problemy można zidentyfikować, mając ten sam identyfikator problemu. W przypadku wystąpienia problemów z&nbsp;szablonem witryny lub ponownie użytym komponentem, zostaną one również powtórzone w&nbsp;raporcie, ale mogą mieć różne identyfikatory problemów.
+            W raporcie z wielu skanów, w którym ta sama strona jest skanowana kilka razy, problemy mogą się powtarzać w różnych skanach tej samej strony. Te zduplikowane problemy można zidentyfikować, mając ten sam identyfikator problemu. W&nbsp;przypadku wystąpienia problemów z&nbsp;szablonem witryny lub ponownie użytym komponentem, zostaną one również powtórzone w&nbsp;raporcie, ale mogą mieć różne identyfikatory problemów.
             </p>            
             <h2 id="feedback">8. Informacje zwrotne</h2>
               <div className="pa">

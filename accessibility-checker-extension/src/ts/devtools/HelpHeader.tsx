@@ -47,7 +47,7 @@
          let headerContent = (<div className="bx--grid" style={{paddingLeft:"1rem", marginTop:"6px"}}>
              <div className="bx--row">
                  <div className="bx--col-sm-2">
-                     <Button id='backToListView' onClick={this.props.learnHelp} size="small" kind='tertiary'>Back to list view</Button>
+                     <Button id='backToListView' onClick={this.props.learnHelp} size="small" kind='tertiary'>Wróć do widoku listy</Button>
                  </div>
                  <div className="bx--col-sm-2" style={{position: "relative"}}>
                      <div className="headerTools" >

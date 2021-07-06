@@ -1,5 +1,5 @@
 ---
-title: "Pomoc dla regułyi: WCAG20_Img_AltTriggerNonDecorative"
+title: "Pomoc dla reguły: WCAG20_Img_AltTriggerNonDecorative"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,11 +8,12 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Informacja jest przekazywana za pomocą obrazu tekstu, a nie tekstu
+### Obraz nie ma alternatywy w postaci krótkiego tekstu
 
 <div id="locLevel"></div>
 
-Obrazy tekstu nie mogą być wykorzystywane do przekazywania informacji
+Obrazy, które przekazują znaczenie, muszą mieć alternatywę w postaci krótkiego tekstu.
+
 </Column>
 </Row>
 <Row>
@@ -27,8 +28,8 @@ W przypadku gdy obraz zawiera ważne informacje, podanie alternatywy tekstowej p
 
 ### Co zrobić
 
-* Użyj atrybutu alt w elemencie <img>, aby podać krótki tekst, który służy temu samemu celowi, co obraz (przekazuje tę samą treść). Jeśli obraz zawiera ważne słowa, umieść je w krótkim opisie (np. <img alt="Wyślij">);
-* LUB, jeśli obraz jest ozdobny lub nadmiarowy (powtarza treści istniejące w ilustrowanym tekście), można pozostawić atrybut alt pusty (np. <img alt="">, bez żadnych znaków między ograniczającymi znakami cala) lub określić atrybut role="presentation" albo role="none".
+* Użyj atrybutu alt w elemencie `<img>`, aby podać krótki tekst, który służy temu samemu celowi, co obraz (przekazuje tę samą treść). Jeśli obraz zawiera ważne słowa, umieść je w krótkim opisie (np. `<img alt="Wyślij">`);
+* LUB, jeśli obraz jest ozdobny lub nadmiarowy (powtarza treści istniejące w ilustrowanym tekście), można pozostawić atrybut alt pusty (np. `<img alt="">`, bez żadnych znaków między ograniczającymi znakami cala) lub określić atrybut role="presentation" albo role="none".
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">

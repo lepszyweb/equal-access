@@ -267,8 +267,8 @@ export default class MultiScanReport {
 
         const cellA1 = worksheet.getCell('A1'); cellA1.value = "Tytuł strony";
         const cellB1 = worksheet.getCell('B1'); cellB1.value = "URL strony";
-        const cellC1 = worksheet.getCell('C1'); cellC1.value = "Etykieta skanowania";
-        const cellD1 = worksheet.getCell('D1'); cellD1.value = "Podstawa skanowania";
+        const cellC1 = worksheet.getCell('C1'); cellC1.value = "Etykieta skanu";
+        const cellD1 = worksheet.getCell('D1'); cellD1.value = "Skan bazowy";
 
         const cellObjects1 = [cellA1, cellB1, cellC1, cellD1];
 
@@ -711,7 +711,7 @@ export default class MultiScanReport {
         descriptionRow.height = "20.25"; // actual is 27
 
         const cellA2 = worksheet.getCell("A2");
-        cellA2.value = "     W zestawie narzędzi IBM Equal Access Toolkit problemy są podzielone na trzy poziomy (1-3). Przeanalizuj poziomy, aby w pierwszej kolejności zająć się najbardziej istotnymi kwestiami.";
+        cellA2.value = "     W zestawie narzędzi IBM Equal Access Toolkit waga problemów jest oznaczona jednym z czterech poziomów - priorytetów. Przeanalizuj poziomy, aby w pierwszej kolejności zająć się najbardziej istotnymi kwestiami.";
         cellA2.alignment = { vertical: "middle", horizontal: "left"};
         cellA2.font = { name: "Calibri", color: { argb: "FF000000" }, size: "12" };
         // cellA2.fill = { type: 'pattern', pattern: 'solid', fgColor:{argb:'FFCCC0DA'} };
@@ -771,7 +771,7 @@ export default class MultiScanReport {
         level1Row.height = "27"; // actual is 36
 
         const cellA5 = worksheet.getCell("A5");
-        cellA5.value = "Poziom 1 - najistotniejsze kwestie, którymi należy się zająć w pierwszej kolejności";
+        cellA5.value = "Poziom 1 - najistotniejsze kwestie o dużym wpływie na użytkowników, którymi należy się zająć w pierwszej kolejności";
         cellA5.alignment = { vertical: "middle", horizontal: "left"};
         cellA5.font = { name: "Calibri", color: { argb: "FFFFFFFF" }, size: "16" };
         cellA5.fill = { type: 'pattern', pattern: 'solid', fgColor:{argb:'FF403151'} };
@@ -787,7 +787,7 @@ export default class MultiScanReport {
         level1ViolationRow.height = "18"; // target is 21
 
         const cellA6 = worksheet.getCell("A6");
-        cellA6.value = "     Naruszenie";
+        cellA6.value = "     Naruszenia";
         cellA6.alignment = { vertical: "middle", horizontal: "left"};
         cellA6.font = { name: "Calibri", color: { argb: "FF000000" }, size: "12" };
         cellA6.fill = { type: 'pattern', pattern: 'solid', fgColor:{argb:'FFE4AAAF'} };
@@ -921,7 +921,7 @@ export default class MultiScanReport {
         const level1RecommendationRow = worksheet.addRow(["", 0]);
         level1RecommendationRow.height = "18"; // target is 21
 
-        level1RecommendationRow.getCell(1).value = "     Zalecenie";
+        level1RecommendationRow.getCell(1).value = "     Rekomendacje";
         level1RecommendationRow.getCell(1).alignment = { vertical: "middle", horizontal: "left"};
         level1RecommendationRow.getCell(1).font = { name: "Calibri", color: { argb: "FF000000" }, size: "12" };
         level1RecommendationRow.getCell(1).fill = { type: 'pattern', pattern: 'solid', fgColor:{argb:'FF96A9D7'} };
@@ -993,7 +993,7 @@ export default class MultiScanReport {
         const level2Row = worksheet.addRow(["",0]);
         level2Row.height = "27"; // actual is 36
 
-        level2Row.getCell(1).value = "Poziom 2 - kolejne najważniejsze kwestie";
+        level2Row.getCell(1).value = "Poziom 2 - należy rozwiązać te problemy, bo mogą uniemożliwić niekttórym użytkownikom korzystanie ze strony.";
         level2Row.getCell(1).alignment = { vertical: "middle", horizontal: "left"};
         level2Row.getCell(1).font = { name: "Calibri", color: { argb: "FFFFFFFF" }, size: "16" };
         level2Row.getCell(1).fill = { type: 'pattern', pattern: 'solid', fgColor:{argb:'FF403151'} };
@@ -1007,7 +1007,7 @@ export default class MultiScanReport {
         const level2ViolationRow = worksheet.addRow(["",0]);
         level2ViolationRow.height = "18"; // target is 21
 
-        level2ViolationRow.getCell(1).value = "     Naruszenie";
+        level2ViolationRow.getCell(1).value = "     Naruszenia";
         level2ViolationRow.getCell(1).alignment = { vertical: "middle", horizontal: "left"};
         level2ViolationRow.getCell(1).font = { name: "Calibri", color: { argb: "FF000000" }, size: "12" };
         level2ViolationRow.getCell(1).fill = { type: 'pattern', pattern: 'solid', fgColor:{argb:'FFE4AAAF'} };
@@ -1140,7 +1140,7 @@ export default class MultiScanReport {
         const level2RecommendationRow = worksheet.addRow(["", 0]);
         level2RecommendationRow.height = "18"; // target is 21
 
-        level2RecommendationRow.getCell(1).value = "     Zalecenia";
+        level2RecommendationRow.getCell(1).value = "     Rekomendacje";
         level2RecommendationRow.getCell(1).alignment = { vertical: "middle", horizontal: "left"};
         level2RecommendationRow.getCell(1).font = { name: "Calibri", color: { argb: "FF000000" }, size: "12" };
         level2RecommendationRow.getCell(1).fill = { type: 'pattern', pattern: 'solid', fgColor:{argb:'FF96A9D7'} };
@@ -1210,7 +1210,7 @@ export default class MultiScanReport {
         const level3Row = worksheet.addRow(["",0]);
         level3Row.height = "27"; // actual is 36
 
-        level3Row.getCell(1).value = "Poziom 3 - niezbędne do spełnienia wymogów IBM";
+        level3Row.getCell(1).value = "Poziom 3 - rozwiązanie wszystkich trzech poziomów zapewnia zgoddność z badanymi kryteriami A i AA wytycznych WCAG";
         level3Row.getCell(1).alignment = { vertical: "middle", horizontal: "left"};
         level3Row.getCell(1).font = { name: "Calibri", color: { argb: "FFFFFFFF" }, size: "16" };
         level3Row.getCell(1).fill = { type: 'pattern', pattern: 'solid', fgColor:{argb:'FF403151'} };
@@ -1224,7 +1224,7 @@ export default class MultiScanReport {
         const level3ViolationRow = worksheet.addRow(["",0]);
         level3ViolationRow.height = "18"; // target is 21
 
-        level3ViolationRow.getCell(1).value = "     Naruszenie";
+        level3ViolationRow.getCell(1).value = "     Naruszenia";
         level3ViolationRow.getCell(1).alignment = { vertical: "middle", horizontal: "left"};
         level3ViolationRow.getCell(1).font = { name: "Calibri", color: { argb: "FF000000" }, size: "12" };
         level3ViolationRow.getCell(1).fill = { type: 'pattern', pattern: 'solid', fgColor:{argb:'FFE4AAAF'} };
@@ -1357,7 +1357,7 @@ export default class MultiScanReport {
         const level3RecommendationRow = worksheet.addRow(["", 0]);
         level3RecommendationRow.height = "18"; // target is 21
 
-        level3RecommendationRow.getCell(1).value = "     Zalecenia";
+        level3RecommendationRow.getCell(1).value = "     Rekomendacje";
         level3RecommendationRow.getCell(1).alignment = { vertical: "middle", horizontal: "left"};
         level3RecommendationRow.getCell(1).font = { name: "Calibri", color: { argb: "FF000000" }, size: "12" };
         level3RecommendationRow.getCell(1).fill = { type: 'pattern', pattern: 'solid', fgColor:{argb:'FF96A9D7'} };
@@ -1428,7 +1428,7 @@ export default class MultiScanReport {
         const level4Row = worksheet.addRow(["",0]);
         level4Row.height = "27"; // actual is 36
 
-        level4Row.getCell(1).value = "Poziom 4 - dalsze zalecane usprawnienia w zakresie dostępności";
+        level4Row.getCell(1).value = "Poziom 4 - zalecane usprawnienia i ulepszenia dostępności, których wdrożenie poprawi dostępność niektórym użytkownikom";
         level4Row.getCell(1).alignment = { vertical: "middle", horizontal: "left"};
         level4Row.getCell(1).font = { name: "Calibri", color: { argb: "FFFFFFFF" }, size: "16" };
         level4Row.getCell(1).fill = { type: 'pattern', pattern: 'solid', fgColor:{argb:'FF403151'} };
@@ -1442,7 +1442,7 @@ export default class MultiScanReport {
         const level4ViolationRow = worksheet.addRow(["",0]);
         level4ViolationRow.height = "18"; // target is 21
 
-        level4ViolationRow.getCell(1).value = "     naruszenie";
+        level4ViolationRow.getCell(1).value = "     naruszenia";
         level4ViolationRow.getCell(1).alignment = { vertical: "middle", horizontal: "left"};
         level4ViolationRow.getCell(1).font = { name: "Calibri", color: { argb: "FF000000" }, size: "12" };
         level4ViolationRow.getCell(1).fill = { type: 'pattern', pattern: 'solid', fgColor:{argb:'FFE4AAAF'} };
@@ -1575,7 +1575,7 @@ export default class MultiScanReport {
         const level4RecommendationRow = worksheet.addRow(["", 0]);
         level4RecommendationRow.height = "18"; // target is 21
 
-        level4RecommendationRow.getCell(1).value = "     Zalecenie";
+        level4RecommendationRow.getCell(1).value = "     Rekomendacje";
         level4RecommendationRow.getCell(1).alignment = { vertical: "middle", horizontal: "left"};
         level4RecommendationRow.getCell(1).font = { name: "Calibri", color: { argb: "FF000000" }, size: "12" };
         level4RecommendationRow.getCell(1).fill = { type: 'pattern', pattern: 'solid', fgColor:{argb:'FF96A9D7'} };
@@ -1832,10 +1832,10 @@ export default class MultiScanReport {
             {key1: 'Skan bazowy', key2: 'Etykieta poprzedniego skanu, z którym porównywany jest ten skan. W przypadku użycia skanowania podstawowego zgłaszane są tylko nowe problemy.'},
             {key1: 'Naruszenia', key2: 'Błędy w dostępności, które muszą zostać poprawione.'},
             {key1: 'Do przeglądu', key2: 'Kwestie, które mogą stanowić naruszenia. Wymagają one ręcznego przeglądu w celu określenia, czy istnieje problem z dostępnością.'}, 
-            {key1: 'Zalecenia', key2: 'Możliwości zastosowania dobrych praktyk w celu dalszej poprawy dostępności.'},
+            {key1: 'Rekomendacje', key2: 'Możliwości zastosowania dobrych praktyk w celu dalszej poprawy dostępności.'},
             {key1: '% elementów bez naruszeń', key2: 'Procent elementów na stronie, w których nie znaleziono naruszeń.'},
             {key1: '% elementów bez naruszeń i do przeglądu', key2: 'Procent elementów na stronie, w których nie stwierdzono naruszeń i nie ma elementów do przeglądu.'},
-            {key1: 'Poziom 1,2,3', key2: 'Poziom priorytetu określony przez IBM Equal Access Toolkit. Zobacz https://www.ibm.com/able/toolkit/plan#pace-of-completion, aby dowiedziec się więcej.'}
+            {key1: 'Poziom 1,2,3,4', key2: 'Poziom priorytetu określony przez IBM Equal Access Toolkit. Zobacz https://www.ibm.com/able/toolkit/plan#pace-of-completion, aby dowiedziec się więcej.'}
         ];
 
         for (let i=5; i<14; i++) {
@@ -1888,7 +1888,7 @@ export default class MultiScanReport {
             {key1: 'Etykieta skanu', key2: 'Etykieta dla skanowania. Wartości domyślne mogą być edytowane w programie sprawdzania dostępności przed zapisaniem raportu, lub programowo przypisane w testach automatycznych.'},
             {key1: 'ID problemu', key2: 'Identyfikator problemu na tej stronie. Ponowne skanowanie tej samej strony spowoduje wyświetlenie tego samego identyfikatora problemu. '},
             {key1: 'Rodzaj problemu', key2: 'Naruszenie, do przeglądu lub zalecenie'},
-            {key1: 'Poziom zestawu', key2: '1, 2 lub 3. Poziom priorytetu określony przez IBM Equal Access Toolkit. Zobacz  https://www.ibm.com/able/toolkit/plan#pace-of-completion, aby dowiedzieć się więcej'}, 
+            {key1: 'Poziom zestawu', key2: '1, 2, 3 lub 4. Poziom priorytetu określony przez IBM Equal Access Toolkit. Zobacz  https://www.ibm.com/able/toolkit/plan#pace-of-completion, aby dowiedzieć się więcej'}, 
             {key1: 'Punkt kontrolny', key2: 'Wytyczne dla dostępności treści internetowych (WCAG) określają punkty kontrolne, do których należy ten problem.'},
             {key1: 'Poziom WCAG', key2: 'A, AA lub AAA. Poiom WCAG dla tego problemu.'},
             {key1: 'Reguła', key2: 'Nazwa reguły testu dostępności, która wykryła ten problem.'},
