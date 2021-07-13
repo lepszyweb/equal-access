@@ -8,12 +8,12 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Atrybut `aria-owns` lub `aria-controls` rozwijanego comboboksu nie odnosi się do poprawnego `id` popupu.
+### Atrybut `aria-owns` lub `aria-controls` rozwijanego comboboksu nie odnosi się do poprawnego `id` okna wyskakującego.
 
 
 <div id="locLevel"></div>
 
-Atrybut `aria-owns` lub `aria-controls` rozwijanego comboboksu musi odnosić się do poprawnego `id` popupu (?? `id` poprawnego popupu)
+Atrybut `aria-owns` lub `aria-controls` rozwijanego comboboksu musi odnosić się do poprawnego `id` okna wyskakującego
 
 </Column>
 </Row>
@@ -22,7 +22,7 @@ Atrybut `aria-owns` lub `aria-controls` rozwijanego comboboksu musi odnosić si�
 
 ### Dlaczego to jest ważne
 
-Kontrolka combobox łączy w sobie cechy kontrolek textbox i listbox, która pomaga użytkownikowi ustawić wartość wprowadzanych danych. Wyskakujące okienko z listą wartosci do wyboru staje się widoczne, gdy pole wyboru jest w stanie rozwiniętym i jest kontrolowane za pomocą atrybutu `aria-owns` lub `aria-controls` odwołującego się do jego `id`. Jeśli wartość atrybutu `aria-owns` lub `aria-controls` rozwiniętego pola wyboru nie odwołuje się do poprawnego `id` elementu wyskakującego, technologie wspomagające mogą nie być w stanie poprawnie przedstawić i kontrolować treści.
+Pole kombinowane (combobox) to interaktywny komponent UI, który łączy dane wejściowe i inny element, taki jak pole listy lub siatka, który może dynamicznie wyskakiwać, aby pomóc użytkownikowi ustawić wartość wprowadzanych danych. Wyskakujące okienko z listą wartosci do wyboru staje się widoczne, gdy pole wyboru jest w stanie rozwiniętym i jest kontrolowane za pomocą atrybutu `aria-owns` lub `aria-controls` odwołującego się do jego `id`. Jeśli wartość atrybutu `aria-owns` lub `aria-controls` rozwiniętego pola wyboru nie odwołuje się do poprawnego `id` elementu wyskakującego, technologie wspomagające mogą nie być w stanie poprawnie przedstawić i kontrolować treści.
 
 
 <div id="locSnippet"></div>
@@ -31,10 +31,10 @@ Kontrolka combobox łączy w sobie cechy kontrolek textbox i listbox, która pom
 
 
  * Zakoduj combobox jak w przykładzie WAI-ARIA 1.2 poniżej;
- * ORAZ, ustaw wartość atrybutu combobox `aria-controls` na wartość `id` elementu z `role="listbox"`;
+ * ORAZ ustaw wartość atrybutu combobox `aria-controls` na wartość `id` elementu z `role="listbox"`;
  * LUB, jeśli używany jest styl comboboxa WAI-ARIA 1.1, zaktualizuj wartość atrybutu `aria-owns` w comboboksie, aby odnieść się do wartości `id` elementu wyskakującego comboboxa; 
  
-Alert: Wytyczne dla comboboxa zmieniły się znacząco w WAI-ARIA 1.2 z powodu problemów z implementacją wzorca WAI-ARIA 1.1. Rekomendowanym wzorcem comboboxa dla WAI-ARIA 1.2 jest:
+**Uwaga**: Wytyczne dla comboboxa zmieniły się znacząco w WAI-ARIA 1.2 z powodu problemów z implementacją wzorca WAI-ARIA 1.1. Rekomendowanym wzorcem comboboxa dla WAI-ARIA 1.2 jest:
 
 <CodeSnippet type="multi" light={true}> &lt;label for="tag_combo"&gt;Znacznik&lt;/label&gt;
   &lt;input type="text" id="tag_combo"
@@ -53,8 +53,8 @@ Uwaga, przykładowy kod obejmuje materiały skopiowane lub pochodzące z [W3C, A
 
 ### O tym wymaganiu
 
-[4.1.2 Nazwa, rola, wartość](http://www.ibm.com/able/guidelines/ci162/name_role_value.html)
-[W3C WAI-ARIA v1.2 Authoring Practices - Combobox](https://www.w3.org/TR/wai-aria-1.2/#combobox)
+* [4.1.2 Nazwa, rola, wartość](https://wcag.lepszyweb.pl/#name-role-value)
+* [WAI-ARIA v1.2 Authoring Practices - Combobox](https://www.w3.org/TR/wai-aria-practices-1.2/#combobox)
 
 ### Na kogo to wpływa
 

@@ -1,5 +1,5 @@
 ---
-title: "Pomoc dotycząca reguł testowania dostępności: Rpt_Aria_MultipleFormLandmarks_Implicit"
+title: "Pomoc dla reguły: Rpt_Aria_MultipleFormLandmarks_Implicit"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -21,7 +21,7 @@ Jeśli na stronie istnieje wiecej niż jeden element z rolą `"form"`, każdy mu
 
 ### Dlaczego to jest ważne
 
-Element HTML `<form>` z etykietą lub tytułem, lub jakikolwiek element z rolą `"form"` jest typem regionu WAI-ARIA. Jeśli istnieje wiele obszarów `"form"`, muszą one mieć unikalne etykiety, aby osoby korzystające z technologii wspomagajacych mogły szybko zidentyfikować i nawigować do każdego formularza.
+Element HTML `<form>` z etykietą lub tytułem, lub jakikolwiek element z rolą `"form"` jest typem regionu WAI-ARIA. Jeśli istnieje wiele obszarów `"form"`, muszą one mieć unikalne etykiety, aby osoby korzystające z technologii wspomagajacych mogły szybko zidentyfikować i&nbsp;nawigować do każdego formularza.
 
 
 <div id="locSnippet"></div>
@@ -29,7 +29,7 @@ Element HTML `<form>` z etykietą lub tytułem, lub jakikolwiek element z rolą 
 ### Co zrobić
 
 * Dla każdego elementu z rolą `"form" ustaw wartość atrybutu `aria-labelledby` na wartość `id` dowolnego widocznego tekstu, który odpowiednio i jednoznacznie opisuje zawartość tego obszaru;
-* LUB, użyj atrybutu „aria-label”, aby dodać niewidoczną, unikalną, niepustą etykietę do każdego elementu z rolą `"form"`.
+* LUB użyj atrybutu „aria-label”, aby dodać niewidoczną, unikalną, niepustą etykietę do każdego elementu z rolą `"form"`.
 
 
 Na przykład:
@@ -56,13 +56,14 @@ Na przykład:
 
 ### O tym wymaganiu
 
-[IBM 2.4.1 Możliwość pominięcia bloków](http://www.ibm.com/able/guidelines/ci162/bypass_blocks.html)
-[Techniki WCAG 2.1 - Technika ARIA6](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA6)
-[Techniki WCAG 2.1 - Technika ARIA13](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA13)
+* [2.4.1 Możliwość pominięcia bloków](https://wcag.lepszyweb.pl/#bypass-blocks)
+* [Technika WCAG 2.1: ARIA6](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA6)
+* [Technika WCAG 2.1: ARIA13](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA13)
 
 ### Na kogo to wpływa
 
 * Osoby niewidome korzystające z czytników ekranu
+* Osoby słabowidzące korzystające z czytników ekranu
 
 </Column>
 </Row>

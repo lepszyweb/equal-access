@@ -1,5 +1,5 @@
 ---
-title: "Pomoc dotycząca reguł testowania dostępności: Rpt_Aria_ApplicationLandmarkLabel"
+title: "Pomoc dla reguły: Rpt_Aria_ApplicationLandmarkLabel"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -16,7 +16,9 @@ Element z rolą WAI-ARIA `"application"` musi mieć etykietę
 
 </Column>
 </Row>
+
 <Row>
+
 <Column colLg={11} colMd={5} colSm={4} className="toolMain">
 
 ### Dlaczego to jest ważne
@@ -30,8 +32,6 @@ Elementy z rolą strukturalną `"application"` muszą mieć etykietę z dostępn
 * Jeśli istnieje widoczny tekst, który odpowiednio opisuje cel treści, ustaw atrybut `aria-labelledby` elementu na wartość `id` tego tekstu (przykład poniżej);
 * LUB użyj atrybutu `aria-label`, aby dodać etykietę bezpośrednio do elementu z rolą `"application"`.
 
-
-
 Na przykład:
 
 <CodeSnippet type="multi" light={true}>   &lt;h1 id="pogoda"&gt;Prognoza pogody&lt;/h1&gt;
@@ -41,12 +41,13 @@ Na przykład:
    &lt;/div&gt;</CodeSnippet>
 
 </Column>
+
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
 ### O tym wymaganiu
 
-[IBM 2.4.1 Możliwość pominięcia bloków](http://www.ibm.com/able/guidelines/ci162/bypass_blocks.html)
-[WAI-ARIA 1.1 Application Role](https://www.w3.org/TR/wai-aria-1.1/#application)
+* [2.4.1 Możliwość pominięcia bloków](https://wcag.lepszyweb.pl/?showtechniques=111#bypass-blocks)
+* [WAI-ARIA 1.1 Application Role](https://www.w3.org/TR/wai-aria-1.1/#application)
 
 ### Na kogo to wpływa
 

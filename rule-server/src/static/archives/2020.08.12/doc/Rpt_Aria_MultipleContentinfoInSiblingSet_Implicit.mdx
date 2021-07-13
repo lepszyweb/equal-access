@@ -1,5 +1,5 @@
 ---
-title: "Pomoc dotycząca reguł testowania dostępności: Rpt_Aria_MultipleContentinfoInSiblingSet_Implicit"
+title: "Pomoc dla reguły: Rpt_Aria_MultipleContentinfoInSiblingSet_Implicit"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -21,16 +21,13 @@ Strona, dokument lub aplikacja może mieć tylko jeden element z rolą `"content
 
 ### Dlaczego to jest ważne
 
-Na stronie (w dokumencie, aplikacji) powinien istnieć tylko jeden element z rolą `"contentinfo"`, aby uniknąć zamieszania co do tego, gdzie znaleźć informacje o treści. Element z rolą `"contentinfo"` jest punktem orientacyjnym, który identyfikuje typowe informacje stopki o jego rodzicu, takie jak prawa autorskie, dostępność i oświadczenia o prywatności, zwykle powtarzane na dole każdej strony. Element HTML `<footer>` ma niejawną rolę `"contentinfo"` gdy jego kontekstem jest element `<body>`.
-
-
+Na stronie (w dokumencie, aplikacji) powinien istnieć tylko jeden element z rolą `"contentinfo"`, aby uniknąć zamieszania co do tego, gdzie znaleźć informacje o treści. Element z rolą `"contentinfo"` jest punktem orientacyjnym, który identyfikuje typowe informacje stopki o jego rodzicu, takie jak prawa autorskie, dostępność i oświadczenia o prywatności, zwykle powtarzane na dole każdej strony. Element HTML `<footer>` ma niejawną rolę `"contentinfo"`, gdy jego kontekstem jest element `<body>`.
 
 <div id="locSnippet"></div>
 
 ### Co zrobić
 
 * Usuń rolę `"contentinfo"` ze wszystkich elementów poza jednym, który reprezentuje stopkę dla głównej treści  strony, dokumentu lub aplikacji.
-
 
 Na przykład:
 
@@ -45,12 +42,13 @@ Na przykład:
 
 ### O tym wymaganiu
 
-[IBM 2.4.1 Możliwość pominięcia bloków](http://www.ibm.com/able/guidelines/ci162/bypass_blocks.html)
-[WAI-ARIA 1.1 Contentinfo Landmark](https://www.w3.org/TR/wai-aria-practices/examples/landmarks/contentinfo.html)
+* [2.4.1 Możliwość pominięcia bloków](https://wcag.lepszyweb.pl/#bypass-blocks)
+* [WAI-ARIA 1.1 Contentinfo Landmark](https://www.w3.org/TR/wai-aria-practices/examples/landmarks/contentinfo.html)
 
 ### Na kogo to wpływa
 
 * Osoby niewidome korzystające z czytników ekranu
+* Osoby słabowidzące korzystające z czytników ekranu
 
 </Column>
 </Row>

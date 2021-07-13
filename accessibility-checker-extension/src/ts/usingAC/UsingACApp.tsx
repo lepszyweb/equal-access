@@ -768,7 +768,7 @@ class UsingACApp extends React.Component<{}, UsingACAppState> {
                 <li>
                   <p style={{ marginTop: "0rem" }}>
                     Domyślnie wyniki są wyświetlane według {" "}
-                    <strong>Wymagań</strong> with z podziałem całkowitej liczby wykrytych problemów według kategorii.
+                    <strong>Wymagań</strong> z podziałem całkowitej liczby wykrytych problemów według kategorii.
                   </p>
                 </li>
                 <li>

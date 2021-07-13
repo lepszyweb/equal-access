@@ -1,5 +1,5 @@
 ---
-title: "Pomoc dotycząca reguł testowania dostępności: Rpt_Aria_MultipleMainsVisibleLabel_Implicit"
+title: "Pomoc dla reguły: Rpt_Aria_MultipleMainsVisibleLabel_Implicit"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -23,12 +23,11 @@ Każdy element z rolą `"main"` powinien mieć widoczną, niepowtarzalną etykie
 
 Elementy z rolą `"main"` to typ obszaru używany do umieszczania na stronie głównej treści. Zapewnienie widocznej etykiety dla każdego obszaru głównej tresci na stronie zapewnia lepszy kontekst wszystkim użytkownikom, w tym osobom korzystającym z technologii wspomagających, które opierają się na punktach orientacyjnych, w celu zidentyfikowania głównej treści i nawigowania do niej.
 
-
 <div id="locSnippet"></div>
 
 ### Co zrobić
 
- * Dla każdego elementu `<main>` lub elementu z atrybutem `role="main"` ustaw wartość atrybutu `aria-labelledby` na wartość `id` dowolnego widocznego tekstu, który odpowiednio i jednoznacznie opisuje tę główną treść.
+* Dla każdego elementu `<main>` lub elementu z atrybutem `role="main"` ustaw wartość atrybutu `aria-labelledby` na wartość `id` dowolnego widocznego tekstu, który odpowiednio i jednoznacznie opisuje tę główną treść.
 
 
 Na przykład:
@@ -49,11 +48,12 @@ Na przykład:
 
 ### O tym wymaganiu
 
-[IBM 2.4.1 Możliwość pominięcia bloków](http://www.ibm.com/able/guidelines/ci162/bypass_blocks.html)
+* [2.4.1 Możliwość pominięcia bloków](https://wcag.lepszyweb.pl/#bypass-blocks)
 
 ### Na kogo to wpływa
 
 * Osoby niewidome korzystające z czytników ekranu
+* Osoby słabowidzące korzystające z czytników ekranu
 
 </Column>
 </Row>

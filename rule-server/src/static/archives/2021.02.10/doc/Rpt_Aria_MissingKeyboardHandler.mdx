@@ -1,5 +1,5 @@
 ---
-title: "Pomoc dotycząca reguł testowania dostępności: Rpt_Aria_MissingKeyboardHandler"
+title: "Pomoc dla reguły: Rpt_Aria_MissingKeyboardHandler"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -25,15 +25,12 @@ Interaktywny komponent interfejsu użytkownika WAI_ARIA muszą zapewniać dostę
 
 W przeciwieństwie do rdzennych elementów formularzy HTML, przeglądarki nie zapewniają obsługi klawiatury dla komponentów graficznego interfejsu użytkownika (GUI), które są dostępne za pomocą WAI-ARIA. Autorzy muszą zaimplementować dostęp z klawiatury przy użyciu funkcji obsługi klawiatury, takich jak `onkeydown` lub `onkeypress`.
 
-
-
 <div id="locSnippet"></div>
 
 ### Co zrobić
 
  * Potwierdź, że możesz używać klawiatury do nawigacji i interakcji z komponentem interfejsu użytkownika;
- * LUB, jeśli komponent nie jest dostępny za pomocą klawiatury, zaimplementuj programy obsługi klawiatury `onkeydown` lub `onkeypress` w samym elemencie, korzystając z [ARIA 1.2 Authoring practice tips](https://www.w3.org/TR/wai-aria -praktyki-1.2);
- * LUB, jeśli niedostępny komponent ma wymagane elementy potomne, zaimplementuj obsługę klawiatury `onkeydown` lub` onkeypress` we wszystkich wymaganych elementach potomnych (przykład poniżej) lub wszystkich wnukach;
+ * LUB, jeśli komponent nie jest dostępny za pomocą klawiatury, zaimplementuj programy obsługi klawiatury `onkeydown` lub `onkeypress` w samym elemencie, korzystając z [ARIA 1.2 Authoring practice tips](https://www.w3.org/TR/wai-aria-practices-1.2);
  * LUB, jeśli niedostępny komponent ma wymagane elementy potomne, zaimplementuj obsługę klawiatury `onkeydown` lub` onkeypress` we wszystkich wymaganych elementach potomnych (przykład poniżej) lub wszystkich wnukach;
  * LUB użyj innych metod, aby zapewnić dostęp z klawiatury, jak opisano w [WAI-ARIA Authoring Practices 1.2, Design Patterns and Widgets](https://www.w3.org/TR/wai-aria-practices-1.2/#aria_ex) . 
   
@@ -48,9 +45,9 @@ Na przykład:
 
 ### O tym wymaganiu
 
-[IBM 2.1.1 Klawiatura](http://www.ibm.com/able/guidelines/ci162/keyboard.html)
-[WAI-ARIA Authoring Practices 1.2, Design Patterns and Widgets](https://www.w3.org/TR/wai-aria-practices-1.2/#aria_ex)
-[W3C WAI-ARIA 1.2, Developing a Keyboard Interface](https://www.w3.org/TR/wai-aria-practices-1.2/#keyboard)
+* [2.1.1 Klawiatura](https://wcag.lepszyweb.pl/#keyboard)
+* [WAI-ARIA Authoring Practices 1.2, Design Patterns and Widgets](https://www.w3.org/TR/wai-aria-practices-1.2/#aria_ex)
+* [W3C WAI-ARIA 1.2, Developing a Keyboard Interface](https://www.w3.org/TR/wai-aria-practices-1.2/#keyboard)
 
 ### Na kogo to wpływa
 

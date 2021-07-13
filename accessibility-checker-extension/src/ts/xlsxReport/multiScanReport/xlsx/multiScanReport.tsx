@@ -1890,7 +1890,7 @@ export default class MultiScanReport {
             {key1: 'Rodzaj problemu', key2: 'Naruszenie, do przeglądu lub zalecenie'},
             {key1: 'Poziom zestawu', key2: '1, 2, 3 lub 4. Poziom priorytetu określony przez IBM Equal Access Toolkit. Zobacz  https://www.ibm.com/able/toolkit/plan#pace-of-completion, aby dowiedzieć się więcej'}, 
             {key1: 'Punkt kontrolny', key2: 'Wytyczne dla dostępności treści internetowych (WCAG) określają punkty kontrolne, do których należy ten problem.'},
-            {key1: 'Poziom WCAG', key2: 'A, AA lub AAA. Poiom WCAG dla tego problemu.'},
+            {key1: 'Poziom WCAG', key2: 'A, AA lub AAA. Poziom WCAG dla tego problemu.'},
             {key1: 'Reguła', key2: 'Nazwa reguły testu dostępności, która wykryła ten problem.'},
             {key1: 'Problem', key2: 'Komunikat opisujący problem.'},
             {key1: 'Element', key2: 'Typ elementu HTML, w którym wystąpił problem.'},

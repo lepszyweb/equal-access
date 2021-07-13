@@ -1,5 +1,5 @@
 ---
-title: "Pomoc dotycząca reguł testowania dostępności: HAAC_Media_DocumentTrigger2"
+title: "Pomoc dla reguły: HAAC_Media_DocumentTrigger2"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -12,7 +12,6 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div id="locLevel"></div>
 
-File download mechanisms should be keyboard-operable and preserve page focus location
 Mechanizmy pobierania plików powinny być obsługiwane za pomocą klawiatury i zachowywać położenie fokusu klawiatury.
 
 </Column>
@@ -22,14 +21,14 @@ Mechanizmy pobierania plików powinny być obsługiwane za pomocą klawiatury i 
 
 ### Dlaczego to jest ważne
 
-Pułapka klawiaturowa to sytuacja, w której użytkownik korzystający z klawiatury nie jest w stanie wydostać się z obszaru treści. Na przykład, jeśli mechanizm pobierania plików jest zaimplementowany w oknie dialogowym, powoduje to przeniesienie fokusu klawiatury poza stronę internetową. Jeśli fokus klawiatury nie jest obsługiwany poprawnie, może to nieumyślnie uwięzić użytkowników korzystających tylko z klawiatury w oknie dialogowym. Ponadto, po zamknięciu okna dialogowego, jeśli fokus klawiatury nie zostanie przywrócony do pierwotnej pozycji użytkownika na stronie internetowej ("punktu pzeglądania", &bdquo;punktu uwagi&rdquo;), użytkownik może być zmuszony do poświęcenia znacznego wysiłku na nawigację z powrotem do miejsca, w którym znajdował się na stronie.
+Pułapka klawiaturowa to sytuacja, w której użytkownik korzystający z klawiatury nie jest w stanie wydostać się z obszaru treści. Na przykład, jeśli mechanizm pobierania plików jest zaimplementowany w oknie dialogowym, powoduje to przeniesienie fokusu klawiatury poza stronę internetową. Jeśli fokus klawiatury nie jest obsługiwany poprawnie, może to nieumyślnie uwięzić użytkowników korzystających tylko z&nbsp;klawiatury w oknie dialogowym. Ponadto, po zamknięciu okna dialogowego, jeśli fokus klawiatury nie zostanie przywrócony do pierwotnej pozycji użytkownika na stronie internetowej ("punktu pzeglądania", &bdquo;punktu uwagi&rdquo;), użytkownik może być zmuszony do poświęcenia znacznego wysiłku na nawigację z powrotem do miejsca, w którym znajdował się na stronie.
 
 <div id="locSnippet"></div>
 
 ### Co zrobić
 
- * Przetestuj ręcznie, przechodząc za pomocą klawisza TAB do mechanizmu pobierania i wychodząc z mechanizmu pobierania pliku;
- * ORAZ, po wyjściu z mechanizmu pobierania, upewnij się, że fokus klawiatury powraca do tego samego punktu na stronie internetowej, w którym rozpoczęto pobieranie.
+* Przetestuj ręcznie, przechodząc za pomocą klawisza TAB do mechanizmu pobierania i wychodząc z mechanizmu pobierania pliku;
+* ORAZ, po wyjściu z mechanizmu pobierania, upewnij się, że fokus klawiatury powraca do tego samego punktu na stronie internetowej, w&nbsp;którym rozpoczęto pobieranie.
  
 
 </Column>
@@ -37,7 +36,7 @@ Pułapka klawiaturowa to sytuacja, w której użytkownik korzystający z klawiat
 
 ### O tym wymaganiu
 
-[IBM 2.1.2 Bez pułaplki na klawiaturę](https://www.ibm.com/able/guidelines/ci162/no_keyboard_trap.html)
+* [2.1.2 Bez pułapki na klawiaturę](https://wcag.lepszyweb.pl/#no-keyboard-trap)
 
 ### Na kogo to wpływa
 

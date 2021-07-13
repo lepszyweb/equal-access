@@ -1,5 +1,5 @@
 ---
-title: "Pomoc dotycząca reguł testowania dostępności: Rpt_Aria_MultipleGroupRoles_Implicit"
+title: "Pomoc dla reguły: Rpt_Aria_MultipleGroupRoles_Implicit"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -22,14 +22,14 @@ Każdy element z rolą `"group"` powinien mieć widoczną, niepowtarzalną etyki
 
 ### Dlaczego to jest ważne
 
-Jeśli strona zawiera więcej niż jeden obszar z rolą `"group", każdy z nich powinien mieć unikalną etykietę, aby osoby korzystające z technologii pomocniczych mogły szybko zidentyfikować i przejść do każdego obszaru `"group".
+Jeśli strona zawiera więcej niż jeden obszar z rolą `"group", każdy z nich powinien mieć unikalną etykietę, aby osoby korzystające z&nbsp;technologii pomocniczych mogły szybko zidentyfikować i przejść do każdego obszaru `"group".
 
 <div id="locSnippet"></div>
 
 ### Co zrobić
 
 * Dla każdego elementu z rolą `"group" ustaw wartość atrybutu `aria-labelledby` na wartość `id` dowolnego widocznego tekstu, który odpowiednio i jednoznacznie opisuje treść tego obszaru;
-* LUB, użyj atrybutu `aria-label`, aby dodać etykietę bezpośrednio do elementu z rolą `"group"`.
+* LUB użyj atrybutu `aria-label`, aby dodać etykietę bezpośrednio do elementu z rolą `"group"`.
 
 Na przykład:
 
@@ -47,9 +47,9 @@ Na przykład:
 
 ### O tym wymaganiu
 
-[IBM 2.4.1 Możliwość pominięcia bloków](http://www.ibm.com/able/guidelines/ci162/bypass_blocks.html)
-[Techniki WCAG 2.1 - Technika ARIA6](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA6)
-[Techniki WCAG 2.1 - Technika ARIA13](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA13)
+* [2.4.1 Możliwość pominięcia bloków](https://wcag.lepszyweb.pl/#bypass-blocks)
+* [Technika WCAG 2.1: ARIA6](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA6)
+* [Technika WCAG 2.1: ARIA13](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA13)
 
 ### Na kogo to wpływa
 

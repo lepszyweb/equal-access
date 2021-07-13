@@ -1,5 +1,5 @@
 ---
-title: "Pomoc dotycząca reguł testowania dostępności: combobox_popup_reference"
+title: "Pomoc dla reguły: combobox_popup_reference"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,11 +8,10 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Atrybut `aria-owns` lub `aria-controls` rozwiniętego pola combo nie odwołuje się do prawidłowego `id` okna wyskakującego (rozwijanego)
-
+### Atrybut `aria-owns` lub `aria-controls` rozwiniętego pola combo nie odwołuje się do prawidłowego `id` rozwijanego okna
 <div id="locLevel"></div>
 
-Atrybut 'aria-controls' (dla WAI-ARIA 1.2) lub 'aria-owns' (dla WAI-ARIA 1.0) rozwiniętego combo musi odwoływać się do prawidłowej wartości 'id' wyskakującego okienka
+Atrybut `aria-controls` (dla WAI-ARIA 1.2) lub `aria-owns` (dla WAI-ARIA 1.0) rozwiniętego combo musi się odwoływać do prawidłowej wartości `id` wyskakującego okienka
 
 </Column>
 </Row>
@@ -21,7 +20,7 @@ Atrybut 'aria-controls' (dla WAI-ARIA 1.2) lub 'aria-owns' (dla WAI-ARIA 1.0) ro
 
 ### Dlaczego to jest ważne
 
-Pole kombinowane (combobox) to interaktywny komponentem UI, który łączy dane wejściowe i inny element, taki jak pole listy lub siatka, który może dynamicznie wyskakiwać, aby pomóc użytkownikowi ustawić wartość wprowadzanych danych.  Wyskakujące okienko staje się widoczne, gdy pole kombi jest w stanie rozwiniętym i jest kontrolowane za pomocą atrybutu `aria-controls` odnoszącego się do jego `id`. Gdy wartość atrybutu `aria-controls` rozwiniętego pola kombi nie odwołuje się do prawidłowego `id` okna wyskakujacego, technologie wspomagające mogą nie być w stanie poprawnie przedstawić i kontrolować zawartości. 
+Pole kombinowane (combobox) to interaktywny komponent interfejsu użytkownika, który łączy w sobie cechy kontrolek `textbox` z innym elementem, takim jak `listbox` lub `grid`, które mogą być dynamicznie odsłaniane, aby pomóc użytkownikowi ustawić wprowadzaną wartość.  Wyskakujące okienko staje się widoczne, gdy pole kombi jest w stanie rozwiniętym i jest kontrolowane za pomocą atrybutu `aria-controls` odnoszącego się do jego `id`. Gdy wartość atrybutu `aria-controls` rozwiniętego pola kombi nie odwołuje się do prawidłowego `id` okna wyskakujacego, technologie wspomagające mogą nie być w stanie poprawnie przedstawić i kontrolować zawartości. 
 
 Dodatkowo, gdy element z atrybutem `role="combobox"` ma atrybut `aria-expanded` o wartości `true`, powiązany element popup musi być widoczny, aby technologia wspomagająca mogła zaprezentować wyskakujące okienko użytkownikowi.
 
@@ -50,8 +49,8 @@ Dodatkowo, gdy element z atrybutem `role="combobox"` ma atrybut `aria-expanded` 
 
 ### O tym wymaganiu
 
-[4.1.2 Nazwa, rola, wartość](https://www.ibm.com/able/requirements/requirements/#4_1_2)
-[W3C WAI-ARIA v1.2 Authoring Practices - Combobox](https://www.w3.org/TR/wai-aria-1.2/#combobox)
+* [4.1.2 Nazwa, rola, wartość](https://wcag.lepszyweb.pl/#name-role-value)
+* [WAI-ARIA v1.2 Authoring Practices - Combobox](https://www.w3.org/TR/wai-aria-practices-1.2/#combobox)
 
 ### Kogo to dotyczy?
 

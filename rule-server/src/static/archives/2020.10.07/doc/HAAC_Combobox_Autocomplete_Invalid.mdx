@@ -1,5 +1,5 @@
 ---
-title: "Pomoc dotycząca reguł testowania dostępności: HAAC_Combobox_Autocomplete_Invalid"
+title: "Pomoc dla reguły: HAAC_Combobox_Autocomplete_Invalid"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,14 +8,9 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### The `aria-autocomplete` attribute value of `"inline"` is not valid for a combobox
-
-
-### Wartość `"inline"` atrybutu `aria-autocomplete` dla pola combobox  nie jest prawidłowa
+### Wartość `"inline"` atrybutu `aria-autocomplete` dla pola combobox nie jest prawidłowa
 
 <div id="locLevel"></div>
-
-The `aria-autocomplete` attribute value for a combobox text input element must not be `"inline"`
 
 Wartością atrybutu `aria-autocomplete` dla elementu kombi nie może być `"inline"`
 
@@ -26,17 +21,15 @@ Wartością atrybutu `aria-autocomplete` dla elementu kombi nie może być `"inl
 
 ### Dlaczego to jest ważne
 
-Technologie wspomagające mogą przedstawiać użytkownikom różne typy combobox zgodnie z ich zamierzonym zachowaniem. Wartość `"inline"` atrybutu `aria-autocomplete` nie jest prawidłowa dla tekstu w polu kombi, więc technologie wspomagające mogą nie być w stanie go obsługiwać. Kombinacja, która obsługuje wbudowane formularze autouzupełniania, zrobiłaby to w połączeniu z elementem wyskakującym i powinna używać `aria-autocomplete="both"`.
+Technologie wspomagające mogą przedstawiać użytkownikom różne typy combobox zgodnie z ich zamierzonym zachowaniem. Wartość `"inline"` atrybutu `aria-autocomplete` nie jest prawidłowa dla tekstu w polu kombi, więc technologie wspomagające mogą nie być w stanie go obsługiwać. Kombinacja, która obsługuje wbudowane formularze autouzupełniania, zrobiłaby to w połączeniu z elementem wyskakującym i&nbsp;powinna używać `aria-autocomplete="both"`.
 
 <div id="locSnippet"></div>
 
 ### Co zrobić
 
-* Jeśli kontrolka combo ma funkcję autouzupełniania, która obejmuje zarówno tekst w wierszu pojawiający się za kursorem użytkownika, jak i element wyskakujący, użyj `aria-autocomplete="both"`;
+* Jeśli kontrolka combo ma funkcję autouzupełniania, która obejmuje zarówno tekst w wierszu pojawiający się za kursorem użytkownika, jak i&nbsp;element wyskakujący, użyj `aria-autocomplete="both"`;
 * LUB, jeśli element combobox ma zachowanie autouzupełniania zapewniane tylko przez element popup, użyj `aria-autocomplete="list"`;
 * LUB, jeśli  element combobox nie ma funkcji autouzupełniania, usuń atrybut `aria-autocomplete` (wartość domyślna to `"none"`).
-
-
 
 Na przykład:
 
@@ -57,8 +50,8 @@ Uwaga, przykładowy kod obejmuje materiał skopiowany lub uzyskany z [W3C, ARIA 
 
 ### O tym wymaganiu
 
-[4.1.2 Nazwa, rola, wartość](http://www.ibm.com/able/guidelines/ci162/name_role_value.html)
-[WAI-ARIA v1.2 Authoring Practices - Combobox](https://www.w3.org/TR/wai-aria-practices-1.2/#combobox)
+* [4.1.2 Nazwa, rola, wartość](https://wcag.lepszyweb.pl/#name-role-value)
+* [WAI-ARIA v1.2 Authoring Practices - Combobox](https://www.w3.org/TR/wai-aria-practices-1.2/#combobox)
 
 ### Na kogo to wpływa
 

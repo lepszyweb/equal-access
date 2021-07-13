@@ -1,5 +1,5 @@
 ---
-title: "Pomoc dotycząca reguł testowania dostępności: Rpt_Aria_ComplementaryLandmarkLabel_Implicit"
+title: "Pomoc dla reguły: Rpt_Aria_ComplementaryLandmarkLabel_Implicit"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -28,6 +28,7 @@ Elementy z rolą `"complementary"` są typem obszaru używanego do umieszczenia 
 ### Co zrobić
 
 * Dla każdego elementu `<aside>`lub elementu z `role="complementary"` ustaw wartość atrybutu `aria-labelledby` na wartość `id` dowolnego widocznego tekstu, który odpowiednio i jednoznacznie opisuje uzupełniającą treść.
+* LUB użyj atrybutu `aria-label`, aby dodać etykietę bezpośrednio do elementu z rolą `"complementary"`
 
 Na przykład:
 
@@ -42,8 +43,8 @@ Na przykład:
 
 ### O tym wymaganiu
 
-[IBM 2.4.1 Możliwość pominięcia bloków](http://www.ibm.com/able/guidelines/ci162/bypass_blocks.html)
-[WAI-ARIA 1.1 Complementary Role](https://www.w3.org/TR/wai-aria-1.1/#complementary)
+* [2.4.1 Możliwość pominięcia bloków](https://wcag.lepszyweb.pl/?showtechniques=111#bypass-blocks)
+* [WAI-ARIA 1.1 Complementary Role](https://www.w3.org/TR/wai-aria-1.1/#complementary)
 
 ### Na kogo to wpływa
 

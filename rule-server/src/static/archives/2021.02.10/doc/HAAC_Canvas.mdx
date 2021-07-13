@@ -21,9 +21,7 @@ Element `<canvas>` może nie być dostępny
 
 ### Dlaczego to jest ważne
 
-The HTML5 `<canvas>` element can be used to create a canvas area on the page where an author can draw to or include graphic elements. However, canvas content is not exposed to assistive technologies like semantic HTML. To make a `<canvas>` element accessible, any image content must be described in text, and interactive content must be made available in canvas fallback content that has keyboard access.
-
-Element HTML5 `<canvas>` może zostać użyty do stworzenia obszaru płótna na stronie, na którym autor może rysować lub dołączać elementy graficzne. Jednak zawartość kanwy nie jest widoczna dla technologii wspomagających, takich jak semantyczny HTML. Aby uczynić dostępnym element `<canvas>`, treść obrazu musi być opisana w tekście, a treść interaktywna musi być dostępna w alternatywnej (zastępczej)treści dla kanwy, która ma dostęp do klawiatury.
+Element HTML5 `<canvas>` może zostać użyty do stworzenia obszaru płótna (kanwy) na stronie, na którym autor może rysować lub dołączać elementy graficzne. Jednak zawartość kanwy nie jest widoczna dla technologii wspomagających, takich jak semantyczny HTML. Aby uczynić dostępnym element `<canvas>`, treść obrazu musi być opisana w tekście, a treść interaktywna musi być dostępna w alternatywnej (zastępczej) treści dla kanwy, która ma dostęp do klawiatury.
 
 
 <div id="locSnippet"></div>
@@ -35,7 +33,7 @@ Element HTML5 `<canvas>` może zostać użyty do stworzenia obszaru płótna na 
  * LUB, jeśli element `<canvas>` jest bardziej złożony, na przykład statyczny wykres lub interaktywny rysunek, zapewnij alternatywne dostępne odwzorowanie;
  * LUB, użyj alternatywy tekstowej  kanwy (między znacznikami `<canvas>`) z dostępem za pomocą klawiatury.
 
-Przykład poniżej pokazuje użycie elementu  `<canvas>`, którego treść jest widoczna jako obraz z atrybutem role, etykietą i opisem:
+Przykład poniżej pokazuje użycie elementu `<canvas>`, którego treść jest widoczna jako obraz z atrybutem role, etykietą i opisem:
 
 <CodeSnippet type="multi" light={true}>&lt;!-- Kanwa eksponująca obraz. --&gt;
 &lt;canvas id="example" role="img" alt="Kółka" aria-describedby="img1">&lt;/canvas&gt;
@@ -54,15 +52,15 @@ Kolejny przykład ilustruje interaktywny element `&lt;canvas&gt;` z równoważny
 
 ### O tym wymaganiu
 
-[IBM 1.1.1 Treść nietekstowa](http://www.ibm.com/able/guidelines/ci162/non_text_content.html)
-[IBM 2.1.1 Klawiatura](http://www.ibm.com/able/guidelines/ci162/keyboard.html)
-[IBM 2.4.7 Widoczny fokus](http://www.ibm.com/able/guidelines/ci162/focus_visible.html)
-[4.1.2 Nazwa, rola, wartość](http://www.ibm.com/able/guidelines/ci162/name_role_value.html)
+* [1.1.1 Treść nietekstowa](https://wcag.lepszyweb.pl/#non-text-content)
+* [2.1.1 Klawiatura](https://wcag.lepszyweb.pl/#keyboard)
+* [2.4.7 Widoczny fokus](https://wcag.lepszyweb.pl/#focus-visible)
+* [4.1.2 Nazwa, rola, wartość](https://wcag.lepszyweb.pl/#name-role-value)
 
 ### Na kogo to wpływa
 
- * Osoby, które polegają na sterowaniu klawiaturą
- * Osoby niewidome korzystające z czytników ekranu
+* Osoby, które polegają na sterowaniu klawiaturą
+* Osoby niewidome korzystające z czytników ekranu
 
 </Column>
 </Row>

@@ -1,5 +1,5 @@
 ---
-title: "Pomoc dotycząca reguł testowania dostępności: Rpt_Aria_MissingFocusableChild"
+title: "Pomoc dla reguły: Rpt_Aria_MissingFocusableChild"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -27,7 +27,7 @@ Ustawienie wartości `tabindex` na 0 lub -1 w elemencie podrzędnym, na którym 
 
 ### Co zrobić
 
-* Ustaw wartość atrybutu `tabindex` równą 0 lub -1 na co najmniej jednym z wymaganych elementów podrzędnych, aby uwzględnić komponent interfejsu użytkownika w sekwencji tabulacji.
+* Ustaw wartość atrybutu `tabindex` równą `0` lub `-1` na co najmniej jednym z wymaganych elementów podrzędnych, aby uwzględnić komponent interfejsu użytkownika w sekwencji tabulacji.
 
 Poniższy przykład pokazuje komponent z `role="tree"` i wymaganym elementem podrzędnym z `role="treeitem"`. Element potomny zawiera `tabindex="0"`, co sprawia, że `treeitem` jest obsługiwane przez klawiaturę:
 
@@ -41,7 +41,7 @@ Poniższy przykład pokazuje komponent z `role="tree"` i wymaganym elementem pod
 
 ### O tym wymaganiu
 
-[IBM 2.1.1 Klawiatura](http://www.ibm.com/able/guidelines/ci162/keyboard.html)
+* [2.1.1 Klawiatura](https://wcag.lepszyweb.pl/#keyboard)
 
 ### Na kogo to wpływa
 

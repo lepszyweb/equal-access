@@ -1,5 +1,5 @@
 ---
-title: "Pomoc dotycząca reguł testowania dostępności: Rpt_Aria_MultipleApplicationLandmarks"
+title: "Pomoc dla reguły: Rpt_Aria_MultipleApplicationLandmarks"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -28,9 +28,8 @@ Element z rolą `"application"` jest typem obszaru kluczowego WAI-ARIA. Jeśli i
 ### Co zrobić
 
 * Dla każdego elementu z `role="application"` ustaw wartość atrybutu `aria-labelledby` na wartość `id` dowolnego widocznego tekstu, który odpowiednio i jednoznacznie opisuje zawartość tego obszaru;
-* LUB, użyj atrybutu `aria-label`, aby dodać niewidoczną, unikalną, niepustą etykietę do każdego elementu z rolą `"application"`.  
+* LUB  użyj atrybutu `aria-label`, aby dodać niewidoczną, unikalną, niepustą etykietę do każdego elementu z rolą `"application"`.  
   
-
 Na przykład:
 
 <CodeSnippet type="multi" light={true}>&lt;h1 id="pogoda"&gt;Prognoza pogory&lt;/h1&gt;
@@ -47,13 +46,13 @@ Na przykład:
 
 ### O tym wymaganiu
 
-[IBM 2.4.1 Możliwość pominięcia bloków](http://www.ibm.com/able/guidelines/ci162/bypass_blocks.html)
-[Techniki WCAG 2.1 - Technika ARIA6](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA6)
-[Techniki WCAG 2.1 - Technika ARIA13](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA13)
+* [2.4.1 Możliwość pominięcia bloków](https://wcag.lepszyweb.pl/#bypass-blocks)
+* [Technika WCAG 2.1: ARIA6](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA6)
+* [Technika WCAG 2.1: ARIA13](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA13)
 
 ### Na kogo to wpływa
 
- * Osoby niewidome korzystające z czytników ekranu
+* Osoby niewidome korzystające z czytników ekranu
 
 </Column>
 </Row>

@@ -14,8 +14,6 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 
 Niedekoracyjna  statyczna treść tekstowa i graficzna w ramach elementu z rolą `"application"` musi być dostępna
 
-
-
 </Column>
 </Row>
 <Row>
@@ -23,8 +21,7 @@ Niedekoracyjna  statyczna treść tekstowa i graficzna w ramach elementu z rolą
 
 ### Dlaczego to jest ważne
 
-W ramach elementu z `role="application"`, tylko elementy przyjmujące fokus są domyślnie dostępne dla użytkowników niektórych technologii wspomagających. Dlatego też, aby zapewnić dostęp do wszelkich niedekoracyjnych, statycznych treści tekstowych lub obrazkowych, które nie otrzymują domyślnie ustawionego fokusu, muszą być one zaimplementowane w dostępny sposób.
-
+W ramach elementu z `role="application"` tylko elementy przyjmujące fokus są domyślnie dostępne dla użytkowników niektórych technologii wspomagających. Dlatego też, aby zapewnić dostęp do wszelkich niedekoracyjnych, statycznych treści tekstowych lub obrazkowych, które nie otrzymują domyślnie ustawionego fokusu, muszą być one zaimplementowane w dostępny sposób.
 
 <div id="locSnippet"></div>
 
@@ -35,15 +32,13 @@ W ramach elementu z `role="application"`, tylko elementy przyjmujące fokus są 
 * LUB, umieść treść w elemencie przyjmującym fokus, który ma rolę `"document"` lub `"article";
 * LUB, zarządzaj fokusem potomków, jak opisano w [Managing Focus](https://www.w3.org/TR/wai-aria-1.2/#managingfocus), aktualizując wartość `aria-activedescendant`, aby odnieść się do elementu zawierającego treść przyjmującą fokus (z fokusem).
 
-
-
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
 ### O tym wymaganiu
 
-[4.1.2 Nazwa, rola, wartość](http://www.ibm.com/able/guidelines/ci162/name_role_value.html)
-[WAI ARIA 1.2: Application Role](https://www.w3.org/TR/wai-aria-1.2/#application)
+* [4.1.2 Nazwa, rola, wartość](https://www.ibm.com/able/requirements/requirements/#4_1_2)
+* [WAI ARIA 1.2: Application Role](https://www.w3.org/TR/wai-aria-1.2/#application)
 
 ### Na kogo to wpływa
 

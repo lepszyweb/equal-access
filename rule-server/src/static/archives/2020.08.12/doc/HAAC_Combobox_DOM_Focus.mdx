@@ -1,5 +1,5 @@
 ---
-title: "Pomoc dla regułyi: HAAC_Combobox_DOM_Focus"
+title: "Pomoc dla reguły: HAAC_Combobox_DOM_Focus"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -21,7 +21,7 @@ Początkowy fokus DOM w combobox musi być ustawiony w polu tekstowym
 
 ### Dlaczego to jest ważne
 
-Combobox jest interaktywnym komponentem interfejsu użytkownika, który łączy w sobie cechy kontrolek textbox z innym elementem, takim jak listbox lub grid, który może dynamicznie wyskakiwać, aby pomóc użytkownikowi ustawić wprowadzaną wartość. Gdy combobox otrzymuje fokus, powinien on być ustawiony na elemencie wejściowym `<text>`, który może albo wyświetlać aktualną wartość albo obsługiwać edycję, tak aby osoby korzystające z technologii wspomagających mogły precyzyjnie nawigować i wchodzić w interakcję z treścią.
+Pole kombinowane (combobox) to interaktywny komponent UI, który łączy dane wejściowe i inny element, taki jak pole listy lub siatka, który może dynamicznie wyskakiwać, aby pomóc użytkownikowi ustawić wartość wprowadzanych danych. Gdy combobox otrzymuje fokus, powinien on być ustawiony na elemencie wejściowym `<text>`, który może albo wyświetlać aktualną wartość albo obsługiwać edycję, tak aby osoby korzystające z technologii wspomagających mogły precyzyjnie nawigować i wchodzić w interakcję z treścią.
 
 <div id="locSnippet"></div>
 
@@ -29,17 +29,18 @@ Combobox jest interaktywnym komponentem interfejsu użytkownika, który łączy 
 
 * Ustaw początkowy fokus DOM tylko na elemencie comboboxa `<text>` przyjmującym dane. 
 
-(Uwaga: Było to konieczne w przypadku `combobox` wykorzystującego ARIA 1.1, czego należy unikać ze względu na problemy z implementacja. Należy stosować się do wskazówek dotyczących stosowania combobox zawartych w [ARIA 1.2](https://www.w3.org/TR/wai-aria-1.2/#combobox), które uległy znacznej zmianie).
+(Uwaga: Było to konieczne w przypadku `combobox` wykorzystującego ARIA 1.1, czego należy unikać ze względu na problemy z implementacją. Należy stosować się do wskazówek dotyczących stosowania combobox zawartych w [ARIA 1.2](https://www.w3.org/TR/wai-aria-1.2/#combobox), które uległy znacznej zmianie).
 
-Alert: Wytyczne dla comboboxa zmieniły się znacząco w WAI-ARIA 1.2 z powodu problemów z implementacją wzorca WAI-ARIA 1.1. Rekomendowanym wzorcem comboboxa dla WAI-ARIA 1.2 jest:
+**Uwaga**: Wytyczne dla comboboxa zmieniły się znacząco w WAI-ARIA 1.2 z powodu problemów z implementacją wzorca WAI-ARIA 1.1. Rekomendowanym wzorcem comboboxa dla WAI-ARIA 1.2 jest:
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
 ### O tym wymaganiu
 
-[4.1.2 Nazwa, rola, wartość](http://www.ibm.com/able/guidelines/ci162/name_role_value.html)
-[WAI-ARIA v1.1 Authoring Practices - Combobox](https://www.w3.org/TR/wai-aria-practices-1.1/#combobox)
+* [4.1.2 Nazwa, rola, wartość](https://wcag.lepszyweb.pl/#name-role-value)
+* [WAI-ARIA v1.1 Authoring Practices - Combobox](https://www.w3.org/TR/wai-aria-practices-1.1/#combobox)
+* [WAI-ARIA v1.2 Authoring Practices - Combobox](https://www.w3.org/TR/wai-aria-practices-1.2/#combobox)
 
 ### Na kogo to wpływa
 

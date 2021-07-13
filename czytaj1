@@ -1,0 +1,86 @@
+Rejestr wykonanych tłumaczeń
+katalogi: 
+
+accessibility-checker/README.md
+
+accessibility-checker-engine/README.md
+accessibility-checker-engine/README-RULES.md
+dist ========== generowany
+help ========== generowany
+accessibility-checker-engine/src/v2/api/IEngine.ts
+accessibility-checker-engine/src/v2/aria/NameComputation.md --------- do przetłumaczenia
+accessibility-checker-engine/src/v2/checker/Checker.ts
+accessibility-checker-engine/src/v2/checker/accessibility/nls/index.ts
+accessibility-checker-engine/src/v2/checker/accessibility/
+accessibility-checker-engine/src/v2/checker/accessibility/ruleset/index.ts
+accessibility-checker-engine/src/v2/checker/design/nls/index.ts
+accessibility-checker-engine/src/v2/common/Context.ts
+accessibility-checker-engine/src/v2/common/Engine.ts
+accessibility-checker-engine/src/v2/config/Config.ts ------------ adres serwera pomocy
+
+
+accessibility-checker-extension/README.md
+accessibility-checker-extension/webpack.config.js
+
+
+accessibility-checker-extension/src/html/manifest.json
+accessibility-checker-extension/src/html/devtools.html
+accessibility-checker-extension/src/html/devtoolsPanel.html
+accessibility-checker-extension/src/html/devtoolsSubpanel.html
+accessibility-checker-extension/src/html/reports.html
+accessibility-checker-extension/src/html/usingAC.html
+
+accessibility-checker-extension/src/ts/background/helper/engineCache.ts
+accessibility-checker-extension/src/ts/background/helper/fetch.ts
+
+accessibility-checker-extension/src/ts/devtools/DevToolsPanelApp.tsx
+accessibility-checker-extension/src/ts/devtools/Header.tsx
+accessibility-checker-extension/src/ts/devtools/HelpHeader.tsx
+accessibility-checker-extension/src/ts/devtools/index.tsx
+accessibility-checker-extension/src/ts/devtools/MultiScanData.tsx ---------- nowy bez do sprawdzenia
+accessibility-checker-extension/src/ts/devtools/Report.tsx
+accessibility-checker-extension/src/ts/devtools/ReportChecklist.tsx
+accessibility-checker-extension/src/ts/devtools/ReportElements.tsx
+accessibility-checker-extension/src/ts/devtools/ReportManagerHeader.tsx
+accessibility-checker-extension/src/ts/devtools/ReportManagerTable.tsx
+accessibility-checker-extension/src/ts/devtools/ReportRow.tsx
+accessibility-checker-extension/src/ts/devtools/ReportRules.tsx
+accessibility-checker-extension/src/ts/devtools/ReportSplash.tsx
+accessibility-checker-extension/src/ts/devtools/ReportSummary.tsx
+accessibility-checker-extension/src/ts/usingAC/UsingACApp.tsx   ------------- częściowo
+
+accessibility-checker-extension/src/ts/xlsxReport/multiScanReport/xlsx/multiScanReport.tsx   ==== nowy
+accessibility-checker-extension/src/ts/xlsxReport/singlePageReport/xlsx/singlePageReport.tsx ==== stary
+
+Uwaga: w oryginale nie ma tutaj katalogu; accessibility-checker-extension/src/ts/help 
+i jego zawartości - ten katalog jest generowany, pytanie skąd
+
+
+accessibility-checker-extension/src/ts/options/OptionsApp.tsx
+accessibility-checker-extension/src/ts/popup/PopupApp.tsx
+accessibility-checker-extension/src/ts/tab/tabListeners.ts
+
+report-react/README.md
+report-react/src/report/ReportRules.tsx
+report-react/src/report/ReportRow.tsx
+report-react/src/report/ReportChecklist.tsx
+report-react/src/report/ReportElements.tsx
+
+report-react/src/Report.tsx
+report-react/src/SavedReport.tsx
+report-react/src/SummScoreCard.tsx  -------------- do przetłumaczenia
+report-react/gulp/gulpfile.js
+
+rule-server/README.md
+rule-server\src\static\archives.json = uaktualniac - dodawać najnowszy reguł
+rule-server\src\static\index.html
+rule-server\src\static\2021.06.16\doc - cały katalog
+rule-server\src\static\2021.06.16\js - cały katalog: --- zobacz uwagę
+rule-server\src\static\2021.04.27\doc - cały katalog
+rule-server\src\static\2021.04.27\js - cały katalog
+rule-server\src\static\2021.02.10\doc - cały katalog
+rule-server\src\static\2021.02.10\js - cały katalog
+rule-server\src\static\2020.10.07\doc - cały katalog
+rule-server\src\static\2020.10.07\js - cały katalog
+
+Uwaga: pliki js trzeba stworzyć pojedynczo i przekopiować z accessibility-checker-engine/disc 

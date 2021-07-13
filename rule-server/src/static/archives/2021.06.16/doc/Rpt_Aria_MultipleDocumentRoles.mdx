@@ -1,5 +1,5 @@
 ---
-title: "Pomoc dotycząca reguł testowania dostępności: Rpt_Aria_MultipleDocumentRoles_Implicit"
+title: "Pomoc dla reguły: Rpt_Aria_MultipleDocumentRoles_Implicit"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -29,16 +29,16 @@ Gdy istnieje wiele elementów z rolą `"document"`, muszą one mieć unikalne et
 ### Co zrobić
 
 * Dla każdego elementu z rolą `"document"` ustaw wartość atrybutu `aria-labelledby` na wartość `id` dowolnego widocznego tekstu, który odpowiednio i jednoznacznie opisuje cel tego dokumentu;
-* LUB, użyj atrybutu `aria-label` aby dodać niewidoczną, unikalną, niepustą etykietę do każdego elementu z rolą `"document"`.
+* LUB użyj atrybutu `aria-label`, aby dodać niewidoczną, unikalną, niepustą etykietę do każdego elementu z rolą `"document"`.
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
 ### O tym wymaganiu
 
-[IBM 2.4.1 Możliwość pominięcia bloków](http://www.ibm.com/able/guidelines/ci162/bypass_blocks.html)
-[Technika WCAG 2.1 ARIA6](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA6.html)
-[Technika WCAG 2.1 ARIA13](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA13)
+* [2.4.1 Możliwość pominięcia bloków](https://wcag.lepszyweb.pl/#bypass-blocks)
+* [Technika WCAG 2.1: ARIA6](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA6)
+* [Technika WCAG 2.1: ARIA13](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA13)
 
 ### Na kogo to wpływa
 

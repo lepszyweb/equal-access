@@ -1,5 +1,5 @@
 ---
-title: "Pomoc dotycząca reguł testowania dostępności: Rpt_Aria_InvalidTabindexForActivedescendant"
+title: "Pomoc dla reguły: Rpt_Aria_InvalidTabindexForActivedescendant"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -10,11 +10,9 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 
 ### Element {0} używający właściwości `aria-activedescendant` ustawionej na {1} nie posiada wartości atrybutu `tabindex` ustawionej na 0 lub -1  
 
-
 <div id="locLevel"></div>
 
 Element używający właściwości `aria-activedescendant` musi mieć wartość atrybutu `tabindex` ustawioną na 0 lub -1, aby był dostępny z klawiatury.
-
 
 </Column>
 </Row>
@@ -24,22 +22,13 @@ Element używający właściwości `aria-activedescendant` musi mieć wartość 
 ### Dlaczego to jest ważne
 
 Elementy używają właściwości `aria-activedescendant` do zarządzania fokusem ich aktywnych potomków. 
-Ustawienie wartości tabindex na 0 lub -1 zapewnia, że element zostanie uwzględniony w sekwencji tabulacji i pozwala jego potomkom otrzymać fokus dla dostępu z klawiatury. 
-Należy unikać używania wartości większych niż 0, ponieważ może to uszkodzić logiczną kolejność tabulacji.
-
-
+Ustawienie wartości tabindex na 0 lub -1 zapewnia, że element zostanie uwzględniony w sekwencji tabulacji i pozwala jego potomkom otrzymać fokus dla dostępu z klawiatury. Należy unikać używania wartości większych niż 0, ponieważ może to uszkodzić logiczną kolejność tabulacji.
 
 <div id="locSnippet"></div>
 
 ### Co zrobić
 
- * Set the value of the `tabindex` attribute equal to 0 or -1 on the element using `aria-activedescendant` property to include the element in the tab sequence. 
-
- The following example shows a toolbar element using the `aria-activedescendant` property with a tabindex attribute set to zero:
- 
- 
- 
- * Ustaw w elemencie  wartość atrybutu `tabindex` równą 0 lub -1, używając właściwości `aria-activedescendant` aby włączyć element do sekwencji tabulacji. 
+* Ustaw w elemencie  wartość atrybutu `tabindex` równą 0 lub -1, używając właściwości `aria-activedescendant` aby włączyć element do sekwencji tabulacji. 
 
 Poniższy przykład pokazuje element paska narzędzi używający właściwości `aria-activedescendant` z atrybutem tabindex ustawionym na zero: 
 
@@ -53,8 +42,8 @@ Poniższy przykład pokazuje element paska narzędzi używający właściwości 
 
 ### O tym wymaganiu
 
-[IBM 2.1.1 Klawiatura](http://www.ibm.com/able/guidelines/ci162/keyboard.html)
-[WAI-ARIA Authoring Practices 1.1: ARIA Managing focus with aria-activedescendant](https://www.w3.org/TR/wai-aria-practices-1.1/#kbd_focus_activedescendant)
+* [2.1.1 Klawiatura](https://wcag.lepszyweb.pl/#keyboard)
+* [WAI-ARIA Authoring Practices 1.1: ARIA Managing focus with aria-activedescendant](https://www.w3.org/TR/wai-aria-practices-1.1/#kbd_focus_activedescendant)
 
 ### Na kogo to wpływa
 
