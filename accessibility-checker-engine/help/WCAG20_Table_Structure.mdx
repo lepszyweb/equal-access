@@ -8,7 +8,7 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Element {0} z rolą WAI-ARIA `presentation lub `none` ma element(y) i atrybut(y) strukturalny(e) {1}
+### Element {0} z rolą WAI-ARIA `presentation` lub `none` ma element(y) i atrybut(y) strukturalny(e) {1}
 
 <div id="locLevel"></div>
 
@@ -22,7 +22,7 @@ Elementy tabeli z `role=presentation` lub `role=none` nie powinny mieć struktur
 
 ### Dlaczego to jest ważne
 
-Technologie wspomagające wykorzystują elementy strukturalne (`<th>`, `<caption>`)`) i atrybuty (`summary`, `scope`, `header`), aby pomóc użytkownikom w nawigacji i zrozumieniu tabel danych. Włączenie tych funkcji do tabelu powoduje, że cel tabeli jest niejasny.
+Technologie wspomagające wykorzystują elementy strukturalne (`<th>`, `<caption>`) i atrybuty (`summary`, `scope`, `header`), aby pomóc użytkownikom w nawigacji i zrozumieniu tabel danych. Włączenie tych funkcji do tabelu powoduje, że cel tabeli jest niejasny.
 
 <div id="locSnippet"></div>
 
@@ -30,7 +30,7 @@ Technologie wspomagające wykorzystują elementy strukturalne (`<th>`, `<caption
 
  * Jeśli tabela jest tabelą danych, usuń atrybut `role`;
  * LUB, jeśli tabela jest używana do rozmieszczenia elementów, użyj zamiast tego układów opartych na CSS;
- * LUB, jeśli musi być zastosowana tabela układu, usuń elementy, `<th>``<caption>` oraz atrybuty `summary`, `scope` lub `header` z elementów `<td>`.
+ * LUB, jeśli musi być zastosowana tabela układu, usuń elementy, `<th>`, `<caption>` oraz atrybuty `summary`, `scope` lub `header` z elementów `<td>`.
  
  </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
