@@ -1,5 +1,5 @@
 ---
-title: "Pomoc dotycząca reguł testowania dostępności: Rpt_Aria_EventHandlerMissingRole_Native_Host_Sematics"
+title: "Pomoc dla reguły: Rpt_Aria_EventHandlerMissingRole_Native_Host_Sematics"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -12,7 +12,7 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div id="locLevel"></div>
 
-Elementy obsługujące zdarzenia muszą mieć ważną rolę WAI-ARIA
+Elementy obsługujące zdarzenia muszą mieć poprawną wartość roli WAI-ARIA
 
 </Column>
 </Row>
@@ -21,14 +21,14 @@ Elementy obsługujące zdarzenia muszą mieć ważną rolę WAI-ARIA
 
 ### Dlaczego to jest ważne
 
-Kiedy elementy interfejsu użytkownika są zaprogramowane za pomocą skryptu, aby były aktywne i interaktywne, ustawienie prawidłowego atrybutu`role` lub użycie elementu z niejawną rolą umożliwia technologiom wspomagającym dostarczanie informacji o elemencie interaktywnym i odpowiednie zarządzanie nim, w tym zapewnienie obsługi klawiatury.
+Kiedy elementy interfejsu użytkownika są zaprogramowane za pomocą skryptu, aby były aktywne i interaktywne, ustawienie prawidłowego atrybutu `role` lub użycie elementu z niejawną rolą umożliwia technologiom wspomagającym dostarczanie informacji o elemencie interaktywnym i odpowiednie zarządzanie nim, w tym zapewnienie obsługi klawiatury.
 
 <div id="locSnippet"></div>
 
 ### Co zrobić
 
- * Zmień typ elementu na taki, który pasuje do zachowania elementu i ma niejawną rolę (np. `<button>`);
- * LUB, przypisz prawidłową wartość atrybutu WAI-ARIA `role`, która odzwierciedla zachowanie elementu (patrz przykład poniżej). 
+* Zmień typ elementu na taki, który pasuje do zachowania elementu i ma niejawną rolę (np. `<button>`);
+* LUB przypisz prawidłową wartość atrybutu WAI-ARIA `role`, która odzwierciedla zachowanie elementu (patrz przykład poniżej). 
 
 Na przykład:
 
@@ -40,13 +40,13 @@ Na przykład:
 
 ### O tym wymaganiu
 
-[4.1.2 Nazwa, rola, wartość](http://www.ibm.com/able/guidelines/ci162/name_role_value.html)
-[W3C WAI-ARIA 1.1 Design Patterns and Widgets](https://www.w3.org/TR/wai-aria-practices-1.1/#aria_ex)
+* [4.1.2 Nazwa, rola, wartość](http://www.ibm.com/able/guidelines/ci162/name_role_value.html)
+* [W3C WAI-ARIA 1.1 Design Patterns and Widgets](https://www.w3.org/TR/wai-aria-practices-1.1/#aria_ex)
 
 ### Na kogo to wpływa
 
- * Osoby, które polegają na sterowaniu klawiaturą
- * Osoby niewidome korzystające z czytników ekranu
+* Osoby, które polegają na sterowaniu klawiaturą
+* Osoby niewidome korzystające z czytników ekranu
 
 </Column>
 </Row>

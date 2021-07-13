@@ -1,5 +1,5 @@
 ---
-title: "Pomoc dotycząca reguł testowania dostępności: combobox_haspopup"
+title: "Pomoc dla reguły: combobox_haspopup"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -12,7 +12,7 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div id="locLevel"></div>
 
-Wartość atrybutu 'aria-haspopup' w combobox  musi być odpowiednia dla roli elementu, do którego odwołuje się `aria-controls` (WAI-ARIA 1.2) lub `aria-owns` (WAI-ARIA 1.0)
+Wartość atrybutu `aria-haspopup` w combobox  musi być odpowiednia dla roli elementu, do którego odwołuje się `aria-controls` (WAI-ARIA 1.2) lub `aria-owns` (WAI-ARIA 1.0)
 
 </Column>
 </Row>
@@ -21,15 +21,15 @@ Wartość atrybutu 'aria-haspopup' w combobox  musi być odpowiednia dla roli el
 
 ### Dlaczego to jest ważne
 
-Element z atrybutem `role="combobox"` może mieć wyskakujący element z rolą „listbox”, „tree”, „grid” lub „dialog”. Jeśli wartość atrybutu `aria-haspopup nie jest zgodna z wartością atrybutu `role` elementu wyskakującego, osoby korzystające z technologii wspomagających mogą zobaczyć nieoczekiwane zachowanie i nie będą wiedzieć, jak korzystać z treści.
+Element z atrybutem `role="combobox"` może mieć wyskakujący element z rolą "listbox", "tree", "grid" lub "dialog". Jeśli wartość atrybutu `aria-haspopup` nie jest zgodna z wartością atrybutu `role` elementu wyskakującego, osoby korzystające z technologii wspomagających mogą zobaczyć nieoczekiwane zachowanie i nie będą wiedzieć, jak korzystać z treści.
 
 <div id="locSnippet"></div>
 
 ### Co zrobić
 
- * Ustaw wartość atrybutu `aria-haspopup` elementu combobox tak, aby odpowiadała wartości atrybutu `role` zaimplementowanego wyskakującego okienka. Dozwolone wartości atrybutu `role` elementu wyskakującego to „listbox”, „tree”, „grid” i „dialog”.
+* Ustaw wartość atrybutu `aria-haspopup` elementu combobox tak, aby odpowiadała wartości atrybutu `role` zaimplementowanego wyskakującego okienka. Dozwolone wartości atrybutu `role` elementu wyskakującego to "listbox", "tree", "grid" lub "dialog".
 
-Alert: Wytyczne dla comboboxa zmieniły się znacząco w WAI-ARIA 1.2 z powodu problemów z implementacją wzorca WAI-ARIA 1.1. Rekomendowanym wzorcem comboboxa dla WAI-ARIA 1.2 jest:
+**Uwaga**: Wytyczne dla comboboxa zmieniły się znacząco w WAI-ARIA 1.2 z powodu problemów z implementacją wzorca WAI-ARIA 1.1. Rekomendowanym wzorcem comboboxa dla WAI-ARIA 1.2 jest:
 
 <CodeSnippet type="multi" light={true}> &lt;label for="tag_combo"&gt;Znacznik&lt;/label&gt;
   &lt;input type="text" id="tag_combo"
@@ -48,8 +48,8 @@ Alert: Wytyczne dla comboboxa zmieniły się znacząco w WAI-ARIA 1.2 z powodu p
 
 ### O tym wymaganiu
 
-[4.1.2 Nazwa, rola, wartość](https://www.ibm.com/able/requirements/requirements/#4_1_2)
-[W3C WAI-ARIA v1.2 Authoring Practices - Combobox](https://www.w3.org/TR/wai-aria-1.2/#combobox)
+* [4.1.2 Nazwa, rola, wartość](https://wcag.lepszyweb.pl/#name-role-value)
+* [WAI-ARIA v1.2 Authoring Practices - Combobox](https://www.w3.org/TR/wai-aria-practices-1.2/#combobox)
 
 ### Kogo to dotyczy?
 

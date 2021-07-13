@@ -22,7 +22,6 @@ W przypadku złożonej tabeli danych wszystkie elementy `<th>` i `<td>` muszą b
 
 ### Dlaczego to jest ważne
 
-
 Nawigacja po komórce poprzez złożoną tabelę danych jest szczególnie trudna, gdy użytkownicy muszą szukać znaczenia każdej komórki. Użycie atrybutów `id` i `header` wychwytuje złożone relacje między komórkami danych a komórkami nagłówkowymi, które mogą być następnie przekazywane użytkownikom, wspierając wydajną nawigację po tabeli.
 
 <div id="locSnippet"></div>
@@ -30,9 +29,9 @@ Nawigacja po komórce poprzez złożoną tabelę danych jest szczególnie trudna
 ### Co zrobić
 
  * Jeśli to nie jest tabela danych (brak danych relacyjnych), do rozplanowania treści użyj CSS zamiast elementu `<table>` (wysoce zalecane);
- * lub, określ tabelę jako układ za pomocą `role="presentation"` lub `role="none"`;
- * lub, gdy jest to tabela danych, użyj atrybutów `id`, aby podać identyfikatory dla komórek nagłówków (np. `<th id="szkola">`);
- * oraz  użyj atrybutu `headers` w komórkach danych, aby określić odpowiednie komórki nagłówka (np. `<td headers="szkola nauczyciel poziom">`).
+ * LUB określ tabelę jako układ za pomocą `role="presentation"` lub `role="none"`;
+ * LUB, gdy jest to tabela danych, użyj atrybutów `id`, aby podać identyfikatory dla komórek nagłówków (np. `<th id="szkola">`);
+ * ORAZ użyj atrybutu `headers` w komórkach danych, aby określić odpowiednie komórki nagłówka (np. `<td headers="szkola nauczyciel poziom">`).
 
 
 </Column>
@@ -40,8 +39,8 @@ Nawigacja po komórce poprzez złożoną tabelę danych jest szczególnie trudna
 
 ### O tym wymaganiu
 
-[IBM 1.3.1 Info and Relationships](https://www.ibm.com/able/guidelines/ci162/info_and_relationships.html)
-[WCAG 2.1 technique H43](https://www.w3.org/WAI/WCAG21/Techniques/html/H43)
+* [1.3.1 Informacje i relacje](https://wcag.lepszyweb.pl/#info-and-relationships)
+* [Technika WCAG 2.1: H43](https://www.w3.org/WAI/WCAG21/Techniques/html/H43)
 
 ### Na kogo to wpływa
 

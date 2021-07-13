@@ -1,5 +1,5 @@
 ---
-title: "Pomoc dotycząca reguł testowania dostępności: Rpt_Aria_MultipleMainsRequireLabel_Implicit_2"
+title: "Pomoc dla reguły: Rpt_Aria_MultipleMainsRequireLabel_Implicit_2"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -21,7 +21,7 @@ Każdy element z rolą `"main"` powinien mieć widoczną, niepowtarzalną etykie
 
 ### Dlaczego to jest ważne
 
-Element `<main>` ma niejawną rolę puktu orientacyjnego `" main "`, który reprezentuje główny temat dokumentu. Zapewnia to niezauważalną alternatywę dla łącza „przejdź do głównej treści”. Możliwe, ale nie pożądane, jest posiadanie więcej niż jednego elementu z rolą `"main"`, na przykład poprzez zagnieżdżanie DOM (np. dokument w dokumencie) lub użycie atrybutu `aria-owns`. W takiej sytuacji potrzebne są powiązane unikalne etykiety opisująca każdy obszar głównej treści, aby umożliwić użytkownikom technologii wspomagających zrozumienie celu każdego głównego obszaru i nawigację do nich. Idealnie, autor POWINIEN oznaczyć nie więcej niż jeden element z rolą `"main"`.
+Element `<main>` ma niejawną rolę puktu orientacyjnego `" main "`, który reprezentuje główną treść dokumentu. Zapewnia to niezauważalną alternatywę dla łącza „przejdź do głównej treści”. Możliwe, ale nie pożądane, jest posiadanie więcej niż jednego elementu z rolą `"main"`, na przykład poprzez zagnieżdżanie DOM (np. dokument w dokumencie) lub użycie atrybutu `aria-owns`. W takiej sytuacji potrzebne są powiązane unikalne etykiety opisująca każdy obszar głównej treści, aby umożliwić użytkownikom technologii wspomagających zrozumienie celu każdego głównego obszaru i nawigację do nich. Idealnie, autor POWINIEN oznaczyć nie więcej niż jeden element z rolą `"main"`.
 
 
 <div id="locSnippet"></div>
@@ -31,8 +31,6 @@ Element `<main>` ma niejawną rolę puktu orientacyjnego `" main "`, który repr
 * Usuń rolę `"main"` ze wszystkich elementów oprócz jednego, który reprezentuje główną treść strony (wysoce zalecane);
 * LUB dla każdego elementu z rolą `"main"` ustaw wartość atrybutu `aria-labelledby` na wartość `id` dowolnego widocznego tekstu, który odpowiednio i jednoznacznie opisuje główną zawartość elementu;
 * LUB, w przypadku elementów, w których projekt nie może pomieścić odpowiedniego widocznego tekstu, użyj atrybutu `aria-label`, aby dodać niewidoczną, niepowtarzalną, niepustą etykietę do elementu.
-
-
 
 Na przykład:
 
@@ -53,8 +51,8 @@ Na przykład:
 
 ### O tym wymaganiu
 
-[IBM 2.4.1 Możliwość pominięcia bloków](http://www.ibm.com/able/guidelines/ci162/bypass_blocks.html)
-[W3C WAI-ARIA 1.1 Main Landmark](https://www.w3.org/TR/wai-aria-practices/examples/landmarks/main.html)
+* [2.4.1 Możliwość pominięcia bloków](https://wcag.lepszyweb.pl/#bypass-blocks)
+* [W3C WAI-ARIA 1.1 Main Landmark](https://www.w3.org/TR/wai-aria-practices/examples/landmarks/main.html)
 
 ### Na kogo to wpływa
 

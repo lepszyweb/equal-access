@@ -1,5 +1,5 @@
 ---
-title: "Pomoc dotycząca reguł testowania dostępności: WCAG20_Blink_AlwaysTrigger"
+title: "Pomoc dla reguły: WCAG20_Blink_AlwaysTrigger"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -21,25 +21,23 @@ Nie wolno używać treści, które migają w sposób ciągły.
 
 ### Dlaczego to jest ważne
 
-Tekst wewnątrz elementu `blink` może migać w określonym tempie, ponieważ nie ma sposobu na przerwanie lub wyłączenie migania. Chociaż miganie zwraca uwagę na treść, może być problemem dla niektórych użytkowników, jeśli utrzymuje się dłużej,  może utrudnić lub uniemożliwić interakcję z resztą strony. Użycie elementu `blink` zostało wycofane.
-
-
+Tekst wewnątrz elementu `blink` może migać w określonym tempie, ponieważ nie ma sposobu na przerwanie lub wyłączenie migania. Chociaż miganie zwraca uwagę na treść, może być problemem dla niektórych użytkowników, jeśli utrzymuje się dłużej, może utrudnić lub uniemożliwić interakcję z resztą strony. Użycie elementu `blink` zostało wycofane.
 
 <div id="locSnippet"></div>
 
 ### Co zrobić
 
 * Jeśli konieczne jest włączenia migającej treści, należy użyć technologii, która zatrzymuje miganie w czasie do 5 sekund;
-* LUB, należy zapewnić opcję wyłączenia migania;
-* LUB, należy podać łącze do alternatywnej strony bez migającej treści.
+* LUB zapewnij opcję wyłączenia migania;
+* LUB podaj łącze do alternatywnej strony bez migającej treści.
 
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
 ### O tym wymaganiu
 
-[IBM 2.2.2 Pauza, zatrzymanie, ukrycie](http://www.ibm.com/able/guidelines/ci162/pause_stop_hide.html)
-[Techniki błędów WCAG 2.1 F47](https://www.w3.org/WAI/WCAG21/Techniques/failures/F47)
+* [Pauza, zatrzymanie, ukrycie](https://wcag.lepszyweb.pl/#pause-stop-hide)
+* [Technika WCAG 2.1: F47](https://www.w3.org/WAI/WCAG21/Techniques/failures/F47)
 
 ### Na kogo to wpływa
 

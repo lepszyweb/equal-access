@@ -21,37 +21,28 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 
 ### Dlaczego to jest ważne
 
-When using the `<select>` element, the user should be allowed to control when an action is performed, rather than having an action occur as a side effect of choosing a value. This mechanism provides the user with an opportunity to inspect the different values of the `<select>` element, or to correct a choice. When the user is satisfied with their choice, they can select a button to perform the action. This interaction is particularly important for users who are choosing the value of the `<select>` element via the keyboard, because navigating through the options of the `<select>` element changes the value of the control and would otherwise submit the value after seeing only the first option.
-
 Korzystając z elementu `<select>`, użytkownik powinien mieć możliwość kontrolowania, kiedy wykonywana jest akcja. Akcja nie powinna być wywołąna w efekcie przeniesienia fokusu na którąkolwiek z wybieranych opcji. Mechanizm ten daje użytkownikowi możliwość sprawdzenia różnych wartości elementu `<select>` lub skorygowania wyboru. Gdy użytkownik jest zadowolony ze swojego wyboru, może wybrać przycisk, aby wykonać akcję. Ta interakcja jest szczególnie ważna dla użytkowników, którzy wybierają wartość elementu `<select>` za pomocą klawiatury. Gdy jest inaczej, użytkownik posługujący się klawiaturą nie może dokonać skutecznie wyboru, bo system automatycznie wywoła akcję po przeniesieniu kursora (fokusu) na pierwszy na pierwszą opcję elementu `<select>`.
-
-
 
 <div id="locSnippet"></div>
 
 ### Co zrobić
 
- * Użyj klawiatury, aby przejść do i wewnątrz komponentu  `<select>`;
- * AND, verify that when each selection option receives focus, no [change of context](https://www.w3.org/WAI/WCAG21/Understanding/on-focus.html#dfn-changes-of-context) is triggered.
-
-
-* `<select>`;
-  * ORAZ upewnij się, że po oznaczeniu fokusem którejkolwiek opcji nie jest wywoływana żadna zmiana kontekstu, dopóki wybór nie zostanie potwierdzony.
+* Użyj klawiatury, aby przejść do i wewnątrz komponentu  `<select>`;
+* ORAZ upewnij się, że po oznaczeniu fokusem którejkolwiek opcji nie jest wywoływana żadna [zmiana kontekstu](https://www.w3.org/WAI/WCAG21/Understanding/on-focus.html#dfn-changes-of-context), dopóki wybór nie zostanie potwierdzony.
   
 </Column>
 <Column colLg={5} colMd={3} colSm={4} className="toolLeft">
 
 ### O tym wymaganiu
 
-[3.2.1 Po otrzymaniu fokusu](http://www.ibm.com/able/guidelines/ci162/on_focus.html)
-[Technika WCAG 2.1 G107] (https://www.w3.org/WAI/WCAG21/Techniques/general/G107)
+* [3.2.1 Po otrzymaniu fokusu](https://wcag.lepszyweb.pl/#on-focus)
+* [Technika WCAG 2.1: G107] (https://www.w3.org/WAI/WCAG21/Techniques/general/G107)
 
 ### Na kogo to wpływa
 
  * Osoby niewidome korzystające z czytników ekranu
  * Osoby słabowidzące używające powiększalników ekranu
  * Osoby, które polegają na sterowaniu klawiaturą
- * People with dexterity impairment
  * Osoby z ograniczonymi możliwościami poznawczymi
 
 </Column>

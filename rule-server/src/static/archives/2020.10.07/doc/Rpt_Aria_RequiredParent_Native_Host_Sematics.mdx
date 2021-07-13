@@ -1,5 +1,5 @@
 ---
-title: "Pomoc dotycząca reguł testowania dostępności: Rpt_Aria_RequiredParent_Native_Host_Sematics"
+title: "Pomoc dla reguły: Rpt_Aria_RequiredParent_Native_Host_Sematics"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,8 +8,7 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Element z rolą WAI-ARIA `{0}` nie jest zawarty w elemencie z jedną z następujących ról WAI-ARIA ani nie jest przez niego własnością: `{1}`
-
+### Element z rolą WAI-ARIA `{0}` nie jest zawarty w elemencie ani nie jest własnością elementu z jedną z następujących ról WAI-ARIA: `{1}`.
 
 <div id="locLevel"></div>
 
@@ -22,7 +21,7 @@ Element z rolą WAI-ARIA musi być zawarty w poprawnym elemencie
 
 ### Dlaczego to jest ważne
 
-Jeśli atrybut WAI-ARIA `role` jest określony dla elementu, każdy element nadrzędny WAI-ARIA, który jest wymagany dla tej roli, musi być również ustawiony dla tego elementu. Jeśli rodzima rola WAI-ARIA elementu nadrzędnego spełnia wymagania, rola ta nie musi być jawnie ustawiona. Bez wymaganego elementu nadrzędnego technologie wspomagające mogą nie być w stanie dokładnie odwzorować elementu lub wchozić z nim w interakcję.
+Jeśli atrybut WAI-ARIA `role` jest określony dla elementu, każdy element nadrzędny WAI-ARIA, który jest wymagany dla tej roli, musi być również ustawiony dla tego elementu. Jeśli rodzima rola WAI-ARIA elementu nadrzędnego spełnia wymagania, rola ta nie musi być jawnie ustawiona. Bez wymaganego elementu nadrzędnego technologie wspomagające mogą nie być w stanie dokładnie odwzorować elementu lub wchodzić z nim w interakcję.
 
 
 <div id="locSnippet"></div>
@@ -43,8 +42,8 @@ Na przykład, następujący element `<li>` używa roli `"option"`. Rola `"option
 
 ### O tym wymaganiu
 
-[4.1.2 Nazwa, rola, wartość](http://www.ibm.com/able/guidelines/ci162/name_role_value.html)
-[W3C WAI-ARIA 1.1 Required Context Role](https://www.w3.org/TR/wai-aria/#scope)
+* [4.1.2 Nazwa, rola, wartość](https://wcag.lepszyweb.pl/#name-role-value)
+* [W3C WAI-ARIA 1.1 Required Context Role](https://www.w3.org/TR/wai-aria/#scope)
 
 ### Na kogo to wpływa
 

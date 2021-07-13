@@ -1,5 +1,5 @@
 ---
-title: "Pomoc dotycząca reguł testowania dostępności: combobox_autocomplete"
+title: "Pomoc dla reguły: combobox_autocomplete"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,16 +8,11 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Pole kombinowane, które obsługuje funkcję autouzupełniania, musi mieć atrybut 'aria-autocomplete' z prawidłową wartością tylko w elemencie wprowadzania tekstu; wartość '\"inline\"' nie jest obsługiwana
-
+### Pole kombinowane, które obsługuje funkcję autouzupełniania, musi mieć atrybut 'aria-autocomplete' z prawidłową wartością tylko w&nbsp;elemencie wprowadzania tekstu; wartość '\"inline\"' nie jest obsługiwana
 
 <div id="locLevel"></div>
 
-Pole kombinowane nie używa w atrybucie 'aria-autocomplete' wartości '\"inline\"' ani nie ma zdefiniowanego 'aria-autocomplete' w wyskakującym okienku
-
-Pole kombinowane ma nieprawidłowo ustawiony atrybut 'aria-autocomplete' dla elementu w wyskakującym okienku, do którego odwołuje się \"{0}\"
-
-Pole kombinowane nie obsługuje wartości atrybutu 'aria-autocomplete' ustawionej na '\"inline\"'
+Pole kombinowane nie używa w atrybucie 'aria-autocomplete' wartości '\"inline\"' ani nie ma zdefiniowanego 'aria-autocomplete' w&nbsp;wyskakującym okienku
 
 </Column>
 </Row>
@@ -26,9 +21,9 @@ Pole kombinowane nie obsługuje wartości atrybutu 'aria-autocomplete' ustawione
 
 ### Dlaczego to jest ważne
 
-Technologie wspomagające mogą przedstawiać użytkownikom różne typy combobox zgodnie z ich zamierzonym zachowaniem. Wartość `"inline"` atrybutu `aria-autocomplete` nie jest prawidłowa dla elementu wprowadzania tekstu w polu kombi, więc technologie wspomagające mogą nie być w stanie go obsługiwać. Comboobox, który obsługuje śródliniowe formularze autouzupełniania, będzie to robić w połączeniu z elementem wyskakującym i powinien używać `aria-autocomplete="both"`.
+Technologie wspomagające mogą przedstawiać użytkownikom różne typy combobox zgodnie z ich zamierzonym zachowaniem. Wartość `"inline"` atrybutu `aria-autocomplete` nie jest prawidłowa dla elementu wprowadzania tekstu w polu kombi, więc technologie wspomagające mogą nie być w stanie jej obsługiwać. Comboobox, który obsługuje śródliniowe formularze autouzupełniania, będzie to robić w połączeniu z elementem wyskakującym i powinien używać `aria-autocomplete="both"`.
 
-Dodatkowo pole kombinowane (`combobox`) jest interaktywnym komponentem interfejsu użytkownika, który łączy w sobie cechy kontrolek `textbox` z innym elementem, takim jak `listbox` lub `grid`, które mogą się dynamicznie odsłaniać, aby pomóc użytkownikowi ustawić wprowadzaną wartość. Tylko element przeznaczony na wprowadzenie danych tekstowych może mieć atrybut `aria-autocomplete`.  W przeciwnym razie technologie wspomagające mogą nie być w stanie skutecznie zrozumieć i przedstawić funkcji autouzupełniania tego komponentu.
+Dodatkowo pole kombinowane (`combobox`) to interaktywny komponent interfejsu użytkownika, który łączy w sobie cechy kontrolek `textbox` z innym elementem, takim jak `listbox` lub `grid`, które mogą być dynamicznie odsłaniane, aby pomóc użytkownikowi ustawić wprowadzaną wartość. Tylko element przeznaczony na wprowadzenie danych tekstowych może mieć atrybut `aria-autocomplete`.  W przeciwnym razie technologie wspomagające mogą nie być w stanie skutecznie zrozumieć i przedstawić funkcji autouzupełniania tego komponentu.
 
 
 <div id="locSnippet"></div>
@@ -66,8 +61,8 @@ Na przykład:
 
 ### O tym wymaganiu
 
-[4.1.2 Nazwa, rola, wartość](https://www.ibm.com/able/requirements/requirements/#4_1_2)
-[WAI-ARIA v1.2 Authoring Practices - Combobox](https://www.w3.org/TR/wai-aria-practices-1.2/#combobox)
+* [4.1.2 Nazwa, rola, wartość](https://wcag.lepszyweb.pl/#name-role-value)
+* [WAI-ARIA v1.2 Authoring Practices - Combobox](https://www.w3.org/TR/wai-aria-practices-1.2/#combobox)
 
 ### Kogo to dotyczy?
 

@@ -1,5 +1,5 @@
 ---
-title: "Pomoc dotycząca reguł testowania dostępności: combobox_active_descendant"
+title: "Pomoc dla reguły: combobox_active_descendant"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -22,7 +22,7 @@ Do ustawienia fokusu w wyskakującym polu kobinowanym musi być użyta właściw
 
 ### Dlaczego to jest ważne?
 
-Pole kombinowane (combobox) to interaktywny komponentem UI, który łączy dane wejściowe i inny element, taki jak pole listy lub siatka, który może dynamicznie wyskakiwać, aby pomóc użytkownikowi ustawić wartość wprowadzanych danych. Gdy pole kombinowane jest aktywowane, fokus powinien być ustawiony na elemencie tekstowym `<input>. Jeśli nie używamy okna wyskakującego `dialog`, `aria-activedescendant` musi być użyte do identyfikacji aktualnie fokusowanego wyboru w wyskakującym okienku, aby osoby korzystające z technologii wspomagających były w stanie precyzyjnie nawigować i wchodzić w interakcję z treścią.
+Pole kombinowane (combobox) to interaktywny komponent UI, który łączy dane wejściowe i inny element, taki jak pole listy lub siatka, który może dynamicznie wyskakiwać, aby pomóc użytkownikowi ustawić wartość wprowadzanych danych. Gdy pole kombinowane jest aktywowane, fokus powinien być ustawiony na elemencie tekstowym `<input>. Jeśli nie używamy okna wyskakującego `dialog`, `aria-activedescendant` musi być użyte do identyfikacji aktualnie fokusowanego wyboru w wyskakującym okienku, aby osoby korzystające z technologii wspomagających były w&nbsp;stanie precyzyjnie nawigować i wchodzić w interakcję z treścią.
 
 
 <div id="locSnippet"></div>
@@ -31,7 +31,7 @@ Pole kombinowane (combobox) to interaktywny komponentem UI, który łączy dane 
 
 * Jeśli wartość atrybutu `has-popup` nie jest równa `dialog`, ustaw fokus aktywnego elementu potomnego za pomocą atrybutu `aria-activedescendant` tylko w elemencie `<input>` elementu `combobox`.
 
-Alert: Wytyczne dla comboboxa zmieniły się znacząco w WAI-ARIA 1.2 z powodu problemów z implementacją wzorca WAI-ARIA 1.1. Rekomendowanym wzorcem comboboxa dla WAI-ARIA 1.2 jest:
+**Uwaga**: Wytyczne dla comboboxa zmieniły się znacząco w WAI-ARIA 1.2 z powodu problemów z implementacją wzorca WAI-ARIA 1.1. Rekomendowanym wzorcem comboboxa dla WAI-ARIA 1.2 jest:
 
 
 <CodeSnippet type="multi" light={true}> &lt;label for="tag_combo"&gt;Znacznik&lt;/label&gt;
@@ -51,8 +51,8 @@ Alert: Wytyczne dla comboboxa zmieniły się znacząco w WAI-ARIA 1.2 z powodu p
 
 ### O tym wymaganiu
 
-[4.1.2 Nazwa, rola, wartość](http://www.ibm.com/able/guidelines/ci162/name_role_value.html)
-[WAI-ARIA v1.2 Authoring Practices - Combobox](https://www.w3.org/TR/wai-aria-practices-1.2/#combobox)
+* [4.1.2 Nazwa, rola, wartość](https://wcag.lepszyweb.pl/#name-role-value)
+* [WAI-ARIA v1.2 Authoring Practices - Combobox](https://www.w3.org/TR/wai-aria-practices-1.2/#combobox)
 
 ### Kogo to dotyczy?
 

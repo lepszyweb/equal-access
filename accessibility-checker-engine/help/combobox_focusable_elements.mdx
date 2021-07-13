@@ -1,5 +1,5 @@
 ---
-title: "Pomoc dotycząca reguł testowania dostępności: combobox_focusable_elements"
+title: "Pomoc dla reguły: combobox_focusable_elements"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -8,7 +8,7 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Fokus klawiatury nie jest poprawnie ustawiony wewnątrz combobox lub powiązanym wyskakującym okienku
+### Fokus klawiatury nie jest poprawnie ustawiony wewnątrz combobox lub w powiązanym wyskakującym okienku
 
 <div id="locLevel"></div>
 
@@ -21,14 +21,11 @@ Fokus klawiatury wewnątrz combobox można ustawić tylko na polu wprowadzania t
 
 ### Dlaczego to jest ważne
 
-Pole kombinowane (combobox) to interaktywny komponentem UI, który łączy dane wejściowe i inny element, taki jak pole listy lub siatka, który może dynamicznie wyskakiwać, aby pomóc użytkownikowi ustawić wartość wprowadzanych danych. Gdy pole kombi jest aktywowane, fokus powinien być ustawiony na elemencie tekstowym `<input>`, który może wyświetlać bieżącą wartość lub obsługuje edycję, aby osoby korzystające z technologii wspomagających mogły dokładnie nawigować i wchodzić w interakcje z treścią.
-
+Pole kombinowane (combobox) to interaktywny komponent interfejsu użytkownika, który łączy w sobie cechy kontrolek `textbox` z innym elementem, takim jak `listbox` lub `grid`, które mogą być dynamicznie odsłaniane, aby pomóc użytkownikowi ustawić wprowadzaną wartość. Gdy pole kombi jest aktywowane, fokus powinien być ustawiony na elemencie tekstowym `<input>`, który może wyświetlać bieżącą wartość lub obsługuje edycję, aby osoby korzystające z technologii wspomagających mogły dokładnie nawigować i wchodzić w interakcje z treścią.
 
 <div id="locSnippet"></div>
 
 ### Co zrobić
-
-* Unless the `has-popup` attribute value is `dialog`, set the initial DOM focus only on the combobox’s `<input>` element.
 
 * Jeśli wartością atrybutu `has-popup` nie jest `dialog`, ustaw początkowy fokus DOM tylko na elemencie `<input>` elementu combobox.
 
@@ -37,8 +34,8 @@ Pole kombinowane (combobox) to interaktywny komponentem UI, który łączy dane 
 
 ### O tym wymaganiu
 
-[4.1.2 Nazwa, rola, wartość](https://www.ibm.com/able/requirements/requirements/#4_1_2)
-[WAI-ARIA v1.2 Authoring Practices - Combobox](https://www.w3.org/TR/wai-aria-practices-1.2/#combobox)
+* [4.1.2 Nazwa, rola, wartość](https://wcag.lepszyweb.pl/#name-role-value)
+* [WAI-ARIA v1.2 Authoring Practices - Combobox](https://www.w3.org/TR/wai-aria-practices-1.2/#combobox)
 
 ### Kogo to dotyczy?
 

@@ -1,5 +1,5 @@
 ---
-title: "Pomoc dotycząca reguł testowania dostępności: Rpt_Aria_MultipleBannerLandmarks_Implicit"
+title: "Pomoc dla reguły: Rpt_Aria_MultipleBannerLandmarks_Implicit"
 ---
 import "../../../styles/ToolHelp.scss"
 import { CodeSnippet, Tag } from "carbon-components-react";
@@ -12,7 +12,7 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 
 <div id="locLevel"></div>
 
-Jeśli na stronie istnieje wiecej niż jeden element  pełniący  rolę `"banner"`, każdy musi mieć unikalną etykietę opisującą jego przeznaczenie
+Jeśli na stronie istnieje wiecej niż jeden element pełniący rolę `"banner"`, każdy musi mieć unikalną etykietę opisującą jego przeznaczenie
 
 </Column>
 </Row>
@@ -21,7 +21,7 @@ Jeśli na stronie istnieje wiecej niż jeden element  pełniący  rolę `"banner
 
 ### Dlaczego to jest ważne
 
-Element HTML `<header>` będący potomkiem elementu `<body>` lub dowolny element z jawną rolą `"banner"` jest typem obszaru kluczowego WAI-ARIA, który określa treść zorientowaną na witrynę w początek strony. Jeśli strona zawiera więcej niż jeden obszar baneru, każdy z nich powinien mieć unikalną etykietę, aby osoby korzystające z technologii pomocniczych mogły szybko zidentyfikować i przejść do każdego obszaru `"banner"`.
+Element HTML `<header>` będący potomkiem elementu `<body>` lub dowolny element z jawną rolą `"banner"` jest typem obszaru kluczowego WAI-ARIA, który określa treść zorientowaną na witrynę umieszczaną na  początku stron. Jeśli strona zawiera więcej niż jeden obszar baneru, każdy z nich powinien mieć unikalną etykietę, aby osoby korzystające z technologii pomocniczych mogły szybko zidentyfikować i przejść do każdego obszaru `"banner"`.
 
 
 <div id="locSnippet"></div>
@@ -29,9 +29,7 @@ Element HTML `<header>` będący potomkiem elementu `<body>` lub dowolny element
 ### Co zrobić
 
 * Dla każdego elementu `<header>`, który jest potomkiem elementu`<body>`, i dla każdego elementu z atrybutem `role="banner"`, ustaw wartość atrybutu `aria-labelledby` każdego nagłówka na wartość `id` dowolnego widocznego tekstu, który odpowiednio i jednoznacznie opisuje przeznaczenie tego nagłówka;
-* LUB, użyj atrybutu `aria-label`, aby dodać niewidoczną, unikalną, niepustą etykietę do każdego elementu z rolą `"banner"`.
-
-
+* LUB użyj atrybutu `aria-label`, aby dodać niewidoczną, unikalną, niepustą etykietę do każdego elementu z rolą `"banner"`.
 
 Na przykład:
 
@@ -49,9 +47,9 @@ Na przykład:
 
 ### O tym wymaganiu
 
-[IBM 2.4.1 Możliwość pominięcia bloków](http://www.ibm.com/able/guidelines/ci162/bypass_blocks.html)
-[Techniki WCAG 2.1 - Technika ARIA6](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA6)
-[Techniki WCAG 2.1 - Technika ARIA13](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA13)
+* [2.4.1 Możliwość pominięcia bloków](https://wcag.lepszyweb.pl/#bypass-blocks)
+* [Technika WCAG 2.1: ARIA6](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA6)
+* [Technika WCAG 2.1: ARIA13](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA13)
 
 ### Na kogo to wpływa
 
