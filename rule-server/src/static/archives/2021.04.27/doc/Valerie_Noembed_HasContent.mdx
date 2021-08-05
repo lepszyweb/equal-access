@@ -8,11 +8,11 @@ import { CodeSnippet, Tag } from "carbon-components-react";
 <Row>
 <Column colLg={16} colMd={8} colSm={4} className="toolHead">
 
-### Element `<noembed>` nie ma opisowego tekstu 
+### Element `<noembed>` nie ma alternatywnego opisowego tekstu 
 
 <div id="locLevel"></div>
 
-Elementy `<noembed>` powinny zawierać opisowy tekst
+Elementy `<noembed>` powinny zawierać alternatywny opisowy tekst
 
 </Column>
 </Row>
@@ -27,7 +27,7 @@ Treść elementu `<noembed>` jest udostępniana użytkownikom czytników ekranu 
 
 ### Co zrobić
 
- * Element `<noembed>` jest przestarzały i należy go unikać. Użyj elementu `<object>` zamiast elementu `<embed>` i użyj treści elementu, aby zapewnić zawartość zastępczą, gdy obiekt nie zostanie załadowany.
+ * Element `<noembed>` jest przestarzały i należy go unikać. Użyj elementu `<object>` zamiast elementu `<embed>` i użyj treści elementu, aby zapewnić treść zastępczą, gdy obiekt nie zostanie załadowany.
 
 
  Na przykład:
@@ -41,7 +41,7 @@ Treść elementu `<noembed>` jest udostępniana użytkownikom czytników ekranu 
 
 ### O tym wymaganiu
 
-* [1.1.1 Treść nietekstowa](https://wcag.lepszyweb.pl/#non-text-content)
+* [KS 1.1.1 Treść nietekstowa](https://wcag.lepszyweb.pl/#non-text-content)
 * [Technika WCAG 2.1: H53](https://www.w3.org/WAI/WCAG21/Techniques/html/H53)
 * [Technika WCAG 2.1: H46](https://www.w3.org/WAI/WCAG21/Techniques/html/H46.html)
 

@@ -21,38 +21,38 @@ Tokeny atrybutu `autocomplete` w pola wejściowym formularza muszą być odpowie
 
 ### Dlaczego to jest ważne
 
-Użycie odpowiedniego tokena `autocomplete` (typu danych) w polu formularza, który zbiera informacje o użytkowniku sprawia, że cel wprowadzanych danych jest programowo możliwy do określenia. Pomaga to programom użytkownika i technologiom pomocniczym w przedstawieniu użytkownikom programowo określonego celu oczekiwanych danych wejściowych. Atrybut `autocomplete` może również pomagać w wypełnianiu pól formularzy wartościami, które użytkownik wprowadził wcześniej.
+Użycie odpowiedniego tokena `autocomplete` (typu danych) w polu formularza, który zbiera informacje o użytkowniku, sprawia, że cel wprowadzanych danych jest programowo możliwy do określenia. Pomaga to programom użytkownika i technologiom wspomagająym w przedstawieniu użytkownikom programowo określonego celu oczekiwanych danych. Atrybut `autocomplete` może również pomagać w wypełnianiu pól formularzy wartościami, które użytkownik wprowadził wcześniej.
 
 <div id="locSnippet"></div>
 
 ### Co zrobić
 
  * Jeśli atrybut  `autocomplete` jest odpowiedni dla tego pola formularza, należy skorygować token `autocomplete`, aby użyć dobrze zdefiniowanych stałych wartości, w prawidłowej kolejności dla prawidłowego celu wprowadzenia, jak opisano w [HTML 5.2 sekcja specyfikacji - Kontrola automatycznego wypełniania  formularzy: atrybut autocomplete](https://www.w3.org/TR/html52/sec-forms.html#autofilling-form-controls-the-autocomplete-attribute);
- * LUB, jeśli atrybut `autocomplete` jest używany do opisu &bdquo;niestandardowej&rdquo; taksonomii, a nie tokenów opisanych w specyfikacji HTML 5.2, ręcznie zatwierdzić taksonomię niestandardową.
+ * LUB, jeśli atrybut `autocomplete` jest używany do opisu „niestandardowej” taksonomii, a nie tokenów opisanych w specyfikacji HTML 5.2, ręcznie zatwierdzić taksonomię niestandardową.
  
 
-Poprawny prykład:
+Poprawny przykład:
 
 <CodeSnippet type="multi" light={true}>&lt;form method="post" action="step2"&gt;
- &lt;div&gt;
-   &lt;label for="fname"&gt;Imię:&lt;/label&gt;
-  &lt;input id="fname" type="text" autocomplete="given-name" ... /&gt;
- &lt;/div&gt;
- &lt;div&gt;
-    &lt;label for="lname"&gt;Nazwisko:&lt;/label&gt;
-  &lt;input id="lname" type="text" autocomplete="family-name" ... /&gt;
- &lt;/div&gt;
- &lt;div&gt;
-    &lt;label for="cc-num"&gt;Numer karty kredytowej:&lt;/label&gt;
-    &lt;input type="text" id="cc-num" autocomplete="cc-number"/&gt;
- &lt;/div&gt;
- &lt;div&gt;
-    &lt;label for="exp-date"&gt;Data ważności karty kredytowej:&lt;/label&gt;
-    &lt;input type="month" id="exp-date" autocomplete="cc-exp"/&gt;
- &lt;/div&gt;
- &lt;div&gt;
-    &lt;input type="submit" value="Dalej..."&gt;
- &lt;/div&gt;
+    &lt;div&gt;
+        &lt;label for="fname"&gt;Imię:&lt;/label&gt;
+        &lt;input id="fname" type="text" autocomplete="given-name" ... /&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+        &lt;label for="lname"&gt;Nazwisko:&lt;/label&gt;
+        &lt;input id="lname" type="text" autocomplete="family-name" ... /&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;label for="cc-num"&gt;Numer karty kredytowej:&lt;/label&gt;
+        &lt;input type="text" id="cc-num" autocomplete="cc-number"/&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;label for="exp-date"&gt;Data ważności karty kredytowej:&lt;/label&gt;
+        &lt;input type="month" id="exp-date" autocomplete="cc-exp"/&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;input type="submit" value="Dalej..."&gt;
+    &lt;/div&gt;
 &lt;/form&gt;</CodeSnippet>
 
 Przykładowy kod obejmuje materiał skopiowany z lub uzyskany z [Using HTML5 Autocomplete attributes, technique H98](https://www.w3.org/WAI/WCAG21/Techniques/html/H98). Copyright © 2017-2018 W3C® (MIT, ERCIM, Keio, Beihang)

@@ -8,9 +8,9 @@
 
 if this project is maintained on behalf of other organization, complete the following two items tool
 
-**Owning Organization**:  
+**Owning Organization**:  Pracownia Dostępności Cyfrowej LepszyWeb.pl
 
-**Owning Project Lead**:
+**Owning Project Lead**:  Stefan Wajda, audyt@lepszyweb.pl
 
 **Classification**:   IBM original code / Social Coding
 

@@ -39,7 +39,7 @@ export default class ReportSplash extends React.Component<IReportSplashProps, IR
                         </h2>
                         <div className="description">
                             Rozszerzenie pomaga wykrywać problemy z dostępnością i zrozumieć, jak je usunąć. Użyj karty <span style={{ fontWeight: 600 }}>'Tester dostępności' w panelu&nbsp;{BrowserDetection.isChrome()?"Elementy":"Inspektor" }</span>, aby zlokalizować swoje problemy w kodzie i na stronie.<br /><br />
-                            Te zautomatyzowane testy nie wychwytują wszystkich problemów. . Dopełnij swoją ocenę za pomocą&nbsp;<a className="link" href="https://ibm.com/able/toolkit/develop/considerations/unit-testing" target="_blank">szybkiego jednostkowego testu dostępności</a><span> </span>
+                            Te zautomatyzowane testy nie wychwytują wszystkich problemów. Dopełnij swoją ocenę za pomocą&nbsp;<a className="link" href="https://ibm.com/able/toolkit/develop/considerations/unit-testing" target="_blank">szybkiego jednostkowego testu dostępności</a><span> </span>
                             lub przejdź do <a className="link" href="https://ibm.com/able/toolkit/verify" target="_blank">pełnego procesu testowania dostępności</a>.<br /><br />
                             Naucz się projektować, budować i testować dostępność z <a className="link" href="https://ibm.com/able/toolkit" target="_blank">IBM Equal Access Toolkit</a>.
                         </div>
